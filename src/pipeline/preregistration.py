@@ -31,6 +31,8 @@ def validate(spec: dict[str, Any]) -> None:
 def build_manifest(repo: Path, spec: dict[str, Any]) -> dict[str, Any]:
     inputs = [
         repo / "config" / "assets.json", repo / "config" / "stablecoin_risk_inputs.json",
+        repo / "config" / "stablecoin_evidence_plan.json",
+        repo / "config" / "stablecoin_evidence_extractions.json",
         repo / "config" / "preregistration_h5_h7.json",
         repo / "data" / "processed" / "empirical" / "stablecoin_daily.csv",
         repo / "data" / "processed" / "empirical" / "stablecoin_depeg_episodes.csv",
@@ -44,6 +46,7 @@ def build_manifest(repo: Path, spec: dict[str, Any]) -> dict[str, Any]:
         repo / "data" / "processed" / "historical" / "stablecoin_usage_daily_coinmetrics.csv",
         repo / "data" / "processed" / "empirical" / "stablecoin_h7_usage_exploratory_daily.csv",
         repo / "data" / "processed" / "empirical" / "stablecoin_h7_readiness.json",
+        repo / "data" / "processed" / "evidence" / "stablecoin_evidence_summary.json",
     ]
     return {"document_version": spec["document_version"], "status": spec["status"], "inputs": {str(path.relative_to(repo)): sha256(path) for path in inputs}}
 

@@ -4,6 +4,7 @@ import argparse
 import csv
 import hashlib
 import json
+import os
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +41,30 @@ class Paths:
 def load_json(path: Path) -> Any:
     with path.open(encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def load_env_file(path: Path, override: bool = False) -> dict[str, str]:
+    """Load simple KEY=VALUE settings without adding a runtime dependency."""
+    loaded: dict[str, str] = {}
+    if not path.exists():
+        return loaded
+    for line_number, raw_line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("export "):
+            line = line[7:].lstrip()
+        if "=" not in line:
+            raise ValueError(f"invalid .env entry at {path}:{line_number}")
+        key, value = (part.strip() for part in line.split("=", 1))
+        if not key or not key.replace("_", "a").isalnum() or key[0].isdigit():
+            raise ValueError(f"invalid .env key at {path}:{line_number}")
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+            value = value[1:-1]
+        loaded[key] = value
+        if override or key not in os.environ:
+            os.environ[key] = value
+    return loaded
 
 
 def sha256(path: Path) -> str:

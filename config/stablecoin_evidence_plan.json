@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "plan_version": "2026-08-25-v1",
+  "selected_assets": [
+    "stable_usdt", "stable_usdc", "stable_pyusd", "stable_rlusd",
+    "stable_fdusd", "stable_usde", "stable_dai", "stable_usds"
+  ],
+  "selection_rule": "four largest or structurally important existing evidence cases plus four high-market-relevance or design-diverse assets with accessible official disclosures",
+  "required_evidence_classes": [
+    "reserve_or_collateral_composition",
+    "independent_assurance_or_onchain_verification",
+    "redemption_terms_and_eligibility",
+    "segregation_legal_or_protocol_claim",
+    "suspension_and_operational_constraints"
+  ],
+  "allowed_extraction_statuses": ["candidate_unextracted", "partially_extracted", "verified_extracted"],
+  "assets": [
+    {
+      "asset_id": "stable_usdc",
+      "design_type": "fiat_reserve_backed",
+      "sources": [
+        {"title":"Circle transparency and reserve reports","url":"https://www.circle.com/transparency","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification","segregation_legal_or_protocol_claim"],"extraction_status":"partially_extracted"},
+        {"title":"USDC terms","url":"https://www.circle.com/legal/usdc-terms","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["redemption_terms_and_eligibility","suspension_and_operational_constraints","segregation_legal_or_protocol_claim"],"extraction_status":"partially_extracted"}
+      ]
+    },
+    {
+      "asset_id": "stable_usdt",
+      "design_type": "fiat_reserve_backed",
+      "sources": [
+        {"title":"Tether transparency","url":"https://tether.to/en/transparency/","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification"],"extraction_status":"partially_extracted"},
+        {"title":"Tether International relevant information document","url":"https://tether.to/public/Relevant_Information_Document_-_Tether_International%2C_S.A._de_C.V..pdf","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["redemption_terms_and_eligibility","segregation_legal_or_protocol_claim","suspension_and_operational_constraints"],"extraction_status":"partially_extracted"}
+      ]
+    },
+    {
+      "asset_id": "stable_pyusd",
+      "design_type": "fiat_reserve_backed",
+      "sources": [
+        {"title":"PYUSD transparency","url":"https://www.paxos.com/pyusd-transparency","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification","segregation_legal_or_protocol_claim"],"extraction_status":"partially_extracted"},
+        {"title":"Paxos stablecoin terms","url":"https://www.paxos.com/terms-and-conditions/stablecoin-terms-conditions","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["redemption_terms_and_eligibility","suspension_and_operational_constraints","segregation_legal_or_protocol_claim"],"extraction_status":"partially_extracted"}
+      ]
+    },
+    {
+      "asset_id": "stable_rlusd",
+      "design_type": "fiat_reserve_backed",
+      "sources": [
+        {"title":"RLUSD transparency","url":"https://ripple.com/products/stablecoin/transparency/","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification","segregation_legal_or_protocol_claim"],"extraction_status":"partially_extracted"},
+        {"title":"RLUSD legal terms","url":"https://ripple.com/legal/stablecoin/","source_owner":"issuer","publication_or_effective_date":"2026-08-22","evidence_classes":["redemption_terms_and_eligibility","suspension_and_operational_constraints","segregation_legal_or_protocol_claim"],"extraction_status":"partially_extracted"}
+      ]
+    },
+    {
+      "asset_id": "stable_fdusd",
+      "design_type": "fiat_reserve_backed",
+      "sources": [
+        {"title":"First Digital Labs transparency and monthly reserve reports","url":"https://www.firstdigitallabs.com/transparency","source_owner":"issuer","publication_or_effective_date":"2026-02-28","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification","segregation_legal_or_protocol_claim"],"extraction_status":"candidate_unextracted"},
+        {"title":"FDD terms","url":"https://www.firstdigitallabs.com/legal/fdd-terms","source_owner":"issuer","publication_or_effective_date":"2025-08-01","evidence_classes":["redemption_terms_and_eligibility","suspension_and_operational_constraints","segregation_legal_or_protocol_claim"],"extraction_status":"candidate_unextracted"}
+      ]
+    },
+    {
+      "asset_id": "stable_usde",
+      "design_type": "synthetic_delta_hedged",
+      "sources": [
+        {"title":"Ethena custodian attestations","url":"https://docs.ethena.fi/resources/custodian-attestations","source_owner":"protocol","publication_or_effective_date":"2026-08-01","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification","segregation_legal_or_protocol_claim"],"extraction_status":"candidate_unextracted"},
+        {"title":"Ethena minting and redemption overview","url":"https://docs.ethena.fi/api-documentation/overview","source_owner":"protocol","publication_or_effective_date":"2026-08-22","evidence_classes":["redemption_terms_and_eligibility","suspension_and_operational_constraints"],"extraction_status":"candidate_unextracted"},
+        {"title":"Ethena peg arbitrage mechanism","url":"https://docs.ethena.fi/solution-overview/peg-arbitrage-mechanism","source_owner":"protocol","publication_or_effective_date":"2026-08-22","evidence_classes":["reserve_or_collateral_composition","redemption_terms_and_eligibility","suspension_and_operational_constraints"],"extraction_status":"candidate_unextracted"}
+      ]
+    },
+    {
+      "asset_id": "stable_dai",
+      "design_type": "overcollateralized_protocol",
+      "sources": [
+        {"title":"Sky multi-collateral DAI system whitepaper","url":"https://makerdao.com/whitepaper/","source_owner":"protocol","publication_or_effective_date":"2019-11-18","evidence_classes":["reserve_or_collateral_composition","segregation_legal_or_protocol_claim","redemption_terms_and_eligibility","suspension_and_operational_constraints"],"extraction_status":"candidate_unextracted"},
+        {"title":"Sky protocol financial dashboard","url":"https://info.skyeco.com/","source_owner":"protocol","publication_or_effective_date":"2026-08-22","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification"],"extraction_status":"candidate_unextracted"}
+      ]
+    },
+    {
+      "asset_id": "stable_usds",
+      "design_type": "overcollateralized_protocol",
+      "sources": [
+        {"title":"What is USDS","url":"https://sky.money/blog/what-is-usds","source_owner":"protocol_interface","publication_or_effective_date":"2026-06-12","evidence_classes":["reserve_or_collateral_composition","redemption_terms_and_eligibility","segregation_legal_or_protocol_claim"],"extraction_status":"candidate_unextracted"},
+        {"title":"Sky protocol financial dashboard","url":"https://info.skyeco.com/","source_owner":"protocol","publication_or_effective_date":"2026-08-22","evidence_classes":["reserve_or_collateral_composition","independent_assurance_or_onchain_verification"],"extraction_status":"candidate_unextracted"},
+        {"title":"Sky interface conversion disclosures","url":"https://sky.money/","source_owner":"protocol_interface","publication_or_effective_date":"2026-08-22","evidence_classes":["redemption_terms_and_eligibility","suspension_and_operational_constraints"],"extraction_status":"candidate_unextracted"}
+      ]
+    }
+  ]
+}

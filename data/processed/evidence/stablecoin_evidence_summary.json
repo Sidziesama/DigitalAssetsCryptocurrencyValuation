@@ -1,0 +1,11 @@
+{
+  "candidate_coverage_cells": 40,
+  "extraction_version": "2026-08-25-v1",
+  "plan_version": "2026-08-25-v1",
+  "point_in_time_score_ready_assets": 8,
+  "required_evidence_classes": 5,
+  "selected_assets": 8,
+  "status": "ready",
+  "total_required_cells": 40,
+  "verified_dated_cells": 40
+}

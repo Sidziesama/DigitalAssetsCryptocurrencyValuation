@@ -13,5 +13,12 @@ tmp/
 outputs/generated/
 *.log
 
-# Keep research source snapshots and curated deliverables tracked unless a
-# future file-size or data-license review explicitly changes this policy.
+# Private working documentation: retained locally, excluded from Git.
+docs/
+research/
+NEXT_STEPS.md
+*.docx
+*.doc
+*.pages
+**/team_*notes*.md
+**/*meeting*notes*.md

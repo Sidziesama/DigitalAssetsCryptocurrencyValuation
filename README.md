@@ -12,6 +12,7 @@ Build a reproducible economic taxonomy of stablecoins and cryptocurrencies, tran
 - `data/raw/` — immutable dated source snapshots. Never edit these files in place.
 - `data/reference/` — editable classification workbooks and research codebooks.
 - `research/findings/` — dated findings, selection decisions, and analytical notes.
+- `research/manuscript/` — Overleaf-ready publication manuscript and BibTeX references.
 - `src/artifacts/` — reproducible builders for document and workbook artifacts.
 - `src/pipeline/` — data acquisition, normalization, quality-control, and panel-building code.
 - `tests/` — tests for identifiers, classifications, transformations, and empirical inputs.
@@ -51,6 +52,7 @@ python -m src.pipeline.stablecoin_supply --repo . --start 2019-01-01 --end 2026-
 python -m src.pipeline.stablecoin_global_market --repo . --start 2019-01-01 --end 2026-08-22
 python -m src.pipeline.source_availability --repo .
 python -m src.pipeline.stablecoin_risk --repo .
+python -m src.pipeline.stablecoin_evidence --repo .
 python -m src.pipeline.coinpaprika_market --repo . --start 2025-08-25 --end 2026-08-22
 python -m src.pipeline.cryptocompare_volume --repo . --start 2019-01-01 --end 2026-08-22
 python -m src.pipeline.binance_klines --repo . --start 2019-01-01 --end 2026-08-22
@@ -71,11 +73,15 @@ The registry command validates the asset configuration and frozen raw snapshots,
 
 The historical command performs a bounded example pull. The collector chunks long requests, caches immutable raw responses and retrieval metadata, normalizes data to UTC dates, merges incremental runs without discarding earlier assets, and writes daily data plus a missingness report to `data/processed/historical/`. Set `COINGECKO_API_KEY` when the selected CoinGecko plan requires authenticated historical access.
 
+For local authenticated APIs, copy `.env.example` to `.env` and add keys there. The CoinGecko historical collector loads the repository `.env` automatically; existing shell environment variables take precedence. `.env` is excluded from Git and must never contain credentials intended for sharing.
+
 The DeFiLlama fallback command builds the long daily-price history when early CoinGecko access is unavailable. It uses one asset per provider request, yearly cache partitions, nearest-UTC-day normalization, and active-window coverage diagnostics. It supplies price only; historical market capitalization, volume, and circulating supply remain separate data workstreams.
 
 The stablecoin-supply command collects DeFiLlama `circulating.peggedUSD` histories for supported assets. The source-availability command produces the explicit metric-by-asset matrix showing which histories are implemented or still blocked.
 
 The stablecoin-risk command validates evidence-linked component inputs and calculates strict reserve-quality, transparency, and redemption-friction scores. Strict composites are withheld when any required component is unknown.
+
+The stablecoin-evidence command enforces the focused eight-asset H5/H6 evidence plan and separates source discovery from verified point-in-time extraction. Verified, dated summaries and reconstructible locators live in `config/stablecoin_evidence_extractions.json`; the command audits five required evidence classes per asset and prohibits treating an undated or merely discovered source as score-ready evidence.
 
 The CoinPaprika command builds a no-key, rolling recent-market panel containing daily price, reported market capitalization, and 24-hour volume. CoinPaprika's free tier exposes only the latest year of daily history, so this source is a recent-period and cross-source-validation layer rather than a substitute for the full 2019–2026 market-cap panel. Identifier ambiguity is surfaced in a separate audit and never resolved by symbol alone when multiple active candidates exist.
 

@@ -13,7 +13,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-from .registry import load_json, sha256, validate_asset_config
+from .registry import load_env_file, load_json, sha256, validate_asset_config
 
 
 def unix_seconds(value: date, end_of_day: bool = False) -> int:
@@ -120,6 +120,7 @@ def merge_rows(existing: list[dict[str, Any]], new: list[dict[str, Any]], key_fi
 
 
 def collect(repo: Path, start: date, end: date, asset_ids: set[str] | None, force: bool = False, chunk_days: int = 365) -> list[dict[str, Any]]:
+    load_env_file(repo / ".env")
     config = load_json(repo / "config" / "assets.json")
     assets = validate_asset_config(config)
     if asset_ids:

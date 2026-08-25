@@ -1,0 +1,9 @@
+asset_id,design_type,source_count,required_classes,classes_with_candidates,classes_verified_dated,point_in_time_score_ready,status
+stable_usdc,fiat_reserve_backed,2,5,5,5,1,ready
+stable_usdt,fiat_reserve_backed,2,5,5,5,1,ready
+stable_pyusd,fiat_reserve_backed,2,5,5,5,1,ready
+stable_rlusd,fiat_reserve_backed,2,5,5,5,1,ready
+stable_fdusd,fiat_reserve_backed,2,5,5,5,1,ready
+stable_usde,synthetic_delta_hedged,3,5,5,5,1,ready
+stable_dai,overcollateralized_protocol,2,5,5,5,1,ready
+stable_usds,overcollateralized_protocol,3,5,5,5,1,ready

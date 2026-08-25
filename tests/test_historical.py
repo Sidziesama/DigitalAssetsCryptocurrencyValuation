@@ -1,7 +1,11 @@
 import unittest
 from datetime import date
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 from src.pipeline.historical import chunk_ranges, coverage_record, longest_missing_run, market_chart_url, merge_rows, normalize_daily
+from src.pipeline.registry import load_env_file
 
 
 class HistoricalTests(unittest.TestCase):
@@ -34,6 +38,15 @@ class HistoricalTests(unittest.TestCase):
     def test_incremental_merge_replaces_same_key(self):
         rows=merge_rows([{"asset_id":"a","date":"2026-01-01","price_usd":"1"}],[{"asset_id":"a","date":"2026-01-01","price_usd":2}],("asset_id","date"))
         self.assertEqual(rows[0]["price_usd"],2)
+
+    def test_loads_local_env_without_overriding_shell(self):
+        with TemporaryDirectory() as directory, patch.dict("os.environ", {"EXISTING_KEY": "shell"}, clear=True):
+            path = Path(directory) / ".env"
+            path.write_text("# local keys\nAPI_KEY='secret'\nEXISTING_KEY=file\n", encoding="utf-8")
+            loaded = load_env_file(path)
+            self.assertEqual(loaded["API_KEY"], "secret")
+            self.assertEqual(__import__("os").environ["API_KEY"], "secret")
+            self.assertEqual(__import__("os").environ["EXISTING_KEY"], "shell")
 
 
 if __name__ == "__main__": unittest.main()
