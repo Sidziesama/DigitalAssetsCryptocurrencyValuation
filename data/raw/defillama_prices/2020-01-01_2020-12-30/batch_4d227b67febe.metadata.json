@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_bch"
+  ],
+  "end": "2020-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:44.393814+00:00",
+  "sha256": "b091dbd4f7d30b5ed0dfbb6a84ab7eab9eeaf2b49695fcdeb32f349d7299c057",
+  "start": "2020-01-01"
+}

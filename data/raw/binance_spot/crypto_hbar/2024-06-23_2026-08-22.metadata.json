@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_hbar",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:44.992619+00:00",
+  "sha256": "6e26f006c8b427b9b5fb660f68ae9c2fb7ad3de93d1f95e18b742b50efba9849",
+  "start": "2024-06-23",
+  "symbol": "HBARUSDT"
+}

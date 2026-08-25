@@ -1,0 +1,9 @@
+{
+  "endpoint": "https://stablecoins.llama.fi/stablecoincharts/all",
+  "http_status": 200,
+  "normalized_field": "totalCirculatingUSD.peggedUSD",
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-24T05:59:26.639793+00:00",
+  "sha256": "2401b2c42841bc965e0b1eecf05d9e82839deb929ea83cc1fe0e6e7613beec73",
+  "universe_definition": "DeFiLlama aggregate peggedUSD assets"
+}

@@ -1,0 +1,17 @@
+{
+  "asset_id": "stable_tusd",
+  "coinmetrics_asset": "tusd",
+  "end": "2026-08-24",
+  "endpoint": "timeseries/asset-metrics",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current Creative Commons terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-25T13:26:36.614021+00:00",
+  "sha256": "c573447ba050ee006e06492f3f732e9316f0b4f2cdc805ea98126b5c5b599adb",
+  "start": "2019-01-01"
+}

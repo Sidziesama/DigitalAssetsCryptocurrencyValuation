@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_avax",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "avax-avalanche",
+  "retrieved_at_utc": "2026-08-24T02:38:02.530317+00:00",
+  "sha256": "c60ec4f9f17234c514a3d064f11e9961de51e7e6d83a9f3a075fcd5376b593fc",
+  "start": "2025-08-25"
+}

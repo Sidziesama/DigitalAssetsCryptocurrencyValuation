@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_zec",
+  "end": "2024-06-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:09.970290+00:00",
+  "sha256": "142070b343fe477a5ea1fe13119cded45d718863ae78cc820ae0154842e82644",
+  "start": "2021-09-27",
+  "symbol": "ZECUSDT"
+}

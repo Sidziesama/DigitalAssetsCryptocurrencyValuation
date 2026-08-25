@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_dai",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "dai-dai",
+  "retrieved_at_utc": "2026-08-24T02:38:06.291113+00:00",
+  "sha256": "cc88f4c5c96f290d3813a25f868e0154cbeb96e77fd2c58620e59acfc26a91d2",
+  "start": "2025-08-25"
+}

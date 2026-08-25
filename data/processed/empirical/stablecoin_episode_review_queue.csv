@@ -1,0 +1,9 @@
+episode_id,asset_id,onset_date,last_episode_date,maximum_absolute_deviation_bps,review_class,proposed_primary_treatment,review_status,reviewer_notes
+stable_usdg_50bps_002,stable_usdg,2025-01-30,2025-01-30,6499.999999999999,source_crosscheck_required,withhold_until_cross_source_confirmed,blocked_free_source,No Binance USDG pair in frozen exchange-info snapshot; CoinGecko public history is limited to 365 days. Requires an archival venue or provider crosscheck.
+stable_ustc_50bps_062,stable_ustc,2022-05-10,2022-05-19,9117.872532746771,expected_failure_regime_validation,exclude_failure_control_from_primary_models,pending,
+stable_ustc_50bps_063,stable_ustc,2022-05-21,2022-08-17,9935.08217697936,expected_failure_regime_validation,exclude_failure_control_from_primary_models,pending,
+stable_ustc_50bps_064,stable_ustc,2022-08-19,2022-08-19,9736.000281724788,expected_failure_regime_validation,exclude_failure_control_from_primary_models,pending,
+stable_ustc_50bps_065,stable_ustc,2022-08-21,2022-10-07,9775.544173620347,expected_failure_regime_validation,exclude_failure_control_from_primary_models,pending,
+stable_ustc_50bps_066,stable_ustc,2022-10-09,2025-02-04,9893.0224,expected_failure_regime_validation,exclude_failure_control_from_primary_models,pending,
+stable_ustc_50bps_067,stable_ustc,2025-02-06,2025-07-02,9896.2059,expected_failure_regime_validation,exclude_failure_control_from_primary_models,pending,
+stable_ustc_50bps_068,stable_ustc,2025-07-04,2026-08-22,9956.640248879236,expected_failure_regime_validation,exclude_failure_control_from_primary_models,pending,

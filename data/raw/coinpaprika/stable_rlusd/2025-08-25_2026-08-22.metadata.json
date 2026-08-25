@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_rlusd",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "rlusd-ripple-usd",
+  "retrieved_at_utc": "2026-08-24T02:38:08.324613+00:00",
+  "sha256": "679922fc1f50bdaf268cd6d8bb10adb8f7818be228f58232a081f5e1ff18134c",
+  "start": "2025-08-25"
+}

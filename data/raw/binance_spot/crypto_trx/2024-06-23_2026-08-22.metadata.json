@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_trx",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:01.345894+00:00",
+  "sha256": "3858b961675cf8a5e04c5f29d82c3c2ab0a518809219a700db21fa86313cb3b3",
+  "start": "2024-06-23",
+  "symbol": "TRXUSDT"
+}

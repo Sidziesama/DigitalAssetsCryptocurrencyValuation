@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_gho"
+  ],
+  "end": "2024-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:42.460027+00:00",
+  "sha256": "ea853a4a748eb48261536a5f58abfb923ba88d3b1a21b023cae28b61528092f8",
+  "start": "2023-12-31"
+}

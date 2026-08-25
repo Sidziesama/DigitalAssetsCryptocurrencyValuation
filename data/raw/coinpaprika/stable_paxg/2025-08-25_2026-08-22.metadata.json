@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_paxg",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "paxg-pax-gold",
+  "retrieved_at_utc": "2026-08-24T02:38:11.334320+00:00",
+  "sha256": "a6c0df0d007c5c2b51008f3ecb9d5cafed87e726fe9d21a0d8f3ee1b6b9ca1e9",
+  "start": "2025-08-25"
+}

@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_bnb"
+  ],
+  "end": "2020-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:37.021030+00:00",
+  "sha256": "698b474513979cc8dfefcad9f903c48cf91a90cea3f1c40a31ca963686d2a561",
+  "start": "2020-01-01"
+}

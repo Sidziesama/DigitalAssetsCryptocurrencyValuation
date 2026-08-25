@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_aave",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:46:06.856394+00:00",
+  "sha256": "51abeaf358b9a748640eb317b346b6fd7747871283c9f97e8121227e7cab87d7",
+  "start": "2019-01-01",
+  "symbol": "AAVEUSDT"
+}

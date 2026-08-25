@@ -1,0 +1,11 @@
+{
+  "assets": 14,
+  "cross_provider_turnover_rows": 5023,
+  "end_date": "2026-08-21",
+  "interpretation": "provider-reported 24-hour trading activity proxy; not order-book depth, spread, price impact, or executable liquidity",
+  "market_cap_supply_ratio_within_5pct_rate": 0.26916185546486165,
+  "market_cap_supply_reconciliation_rows": 5023,
+  "rows": 5068,
+  "same_provider_turnover_rows": 5068,
+  "start_date": "2025-08-25"
+}

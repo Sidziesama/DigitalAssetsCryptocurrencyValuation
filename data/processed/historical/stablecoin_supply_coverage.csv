@@ -1,0 +1,17 @@
+asset_id,provider,start_date,end_date,supported,first_observed_date,last_observed_date,active_window_expected_days,observed_days,active_window_coverage_ratio,trailing_gap_days,status
+stable_usdt,defillama,2019-01-01,2026-08-22,1,2019-01-01,2026-08-22,2791,2791,1.0,0,pass
+stable_usdc,defillama,2019-01-01,2026-08-22,1,2019-01-01,2026-08-22,2791,2791,1.0,0,pass
+stable_usds,defillama,2019-01-01,2026-08-22,1,2024-09-18,2026-08-22,704,704,1.0,0,pass
+stable_dai,defillama,2019-01-01,2026-08-22,1,2019-11-19,2026-08-22,2469,2469,1.0,0,pass
+stable_usde,defillama,2019-01-01,2026-08-22,1,2023-12-11,2026-08-22,986,986,1.0,0,pass
+stable_usd1,defillama,2019-01-01,2026-08-22,1,2025-04-28,2026-08-22,482,482,1.0,0,pass
+stable_usdg,defillama,2019-01-01,2026-08-22,1,2025-07-12,2026-08-22,407,407,1.0,0,pass
+stable_pyusd,defillama,2019-01-01,2026-08-22,1,2023-08-08,2026-08-22,1111,1111,1.0,0,pass
+stable_rlusd,defillama,2019-01-01,2026-08-22,1,2024-08-23,2026-08-22,730,710,0.9726027397260274,0,pass
+stable_usdd,defillama,2019-01-01,2026-08-22,1,2022-05-02,2026-07-07,1574,1528,0.9707750952986023,46,review
+stable_gho,defillama,2019-01-01,2026-08-22,1,2023-07-15,2026-08-22,1135,1135,1.0,0,pass
+stable_fdusd,defillama,2019-01-01,2026-08-22,1,2023-05-27,2026-08-22,1184,1184,1.0,0,pass
+stable_tusd,defillama,2019-01-01,2026-08-22,1,2019-01-05,2026-08-22,2787,2787,1.0,0,pass
+stable_frax,defillama,2019-01-01,2026-08-22,1,2020-12-21,2026-08-22,2071,2067,0.9980685659101883,0,pass
+stable_ustc,defillama,2019-01-01,2026-08-22,1,2020-11-26,2022-06-22,2096,533,0.25429389312977096,1522,review
+stable_paxg,defillama,2019-01-01,2026-08-22,0,,,0,0,0,2791,unsupported

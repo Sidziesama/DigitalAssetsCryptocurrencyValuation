@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_fdusd",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "fdusd-first-digital-usd",
+  "retrieved_at_utc": "2026-08-24T02:38:09.882793+00:00",
+  "sha256": "7739394f520db4b52bc8325b915f3d964f8b38603983dff0293236a009265cdd",
+  "start": "2025-08-25"
+}

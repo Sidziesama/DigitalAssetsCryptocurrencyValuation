@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_tusd"
+  ],
+  "end": "2019-12-31",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:33.433632+00:00",
+  "sha256": "dbe03887faf7f25b41110730442e44e271f0265df218cc1ba5684246cc8dbe85",
+  "start": "2019-01-01"
+}

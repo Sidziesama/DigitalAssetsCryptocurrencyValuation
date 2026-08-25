@@ -1,0 +1,10 @@
+[project]
+name = "digital-assets-valuation"
+version = "0.1.0"
+description = "Reproducible data and empirical research pipeline for digital asset valuation"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+

@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_paxg"
+  ],
+  "end": "2024-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:45.430155+00:00",
+  "sha256": "c97952ff674dc43ecdd80ad32cb18c0534867deff3539bdef916e3e7ff9d95bb",
+  "start": "2023-12-31"
+}

@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_btc",
+  "end": "2024-06-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:44:34.301044+00:00",
+  "sha256": "e36b74156d1522c6280055fdf4a01e38b5342996b9768a5dccd66ecb7ad3b5e6",
+  "start": "2021-09-27",
+  "symbol": "BTCUSDT"
+}

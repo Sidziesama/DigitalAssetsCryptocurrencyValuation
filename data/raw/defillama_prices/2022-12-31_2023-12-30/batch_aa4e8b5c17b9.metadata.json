@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_aave"
+  ],
+  "end": "2023-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:04.057253+00:00",
+  "sha256": "b013d458eb22e432f436cff5f2a276cc47254dff27a7b5a1463070083859b36e",
+  "start": "2022-12-31"
+}

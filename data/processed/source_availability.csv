@@ -1,0 +1,206 @@
+asset_id,metric,source,availability,constraint
+crypto_btc,price_daily,defillama_coin_prices,implemented,price only
+crypto_btc,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_btc,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_btc,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_btc,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_eth,price_daily,defillama_coin_prices,implemented,price only
+crypto_eth,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_eth,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_eth,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_eth,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_bnb,price_daily,defillama_coin_prices,implemented,price only
+crypto_bnb,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_bnb,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_bnb,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_bnb,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_xrp,price_daily,defillama_coin_prices,implemented,price only
+crypto_xrp,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_xrp,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_xrp,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_xrp,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_sol,price_daily,defillama_coin_prices,implemented,price only
+crypto_sol,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_sol,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_sol,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_sol,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_trx,price_daily,defillama_coin_prices,implemented,price only
+crypto_trx,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_trx,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_trx,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_trx,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_hype,price_daily,defillama_coin_prices,implemented,price only
+crypto_hype,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_hype,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_hype,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_hype,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+crypto_doge,price_daily,defillama_coin_prices,implemented,price only
+crypto_doge,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_doge,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_doge,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_doge,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_zec,price_daily,defillama_coin_prices,implemented,price only
+crypto_zec,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_zec,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_zec,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_zec,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_link,price_daily,defillama_coin_prices,implemented,price only
+crypto_link,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_link,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_link,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_link,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_ada,price_daily,defillama_coin_prices,implemented,price only
+crypto_ada,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_ada,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_ada,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_ada,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_xmr,price_daily,defillama_coin_prices,implemented,price only
+crypto_xmr,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_xmr,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_xmr,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_xmr,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_xlm,price_daily,defillama_coin_prices,implemented,price only
+crypto_xlm,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_xlm,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_xlm,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_xlm,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_bch,price_daily,defillama_coin_prices,implemented,price only
+crypto_bch,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_bch,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_bch,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_bch,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_ltc,price_daily,defillama_coin_prices,implemented,price only
+crypto_ltc,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_ltc,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_ltc,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_ltc,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_hbar,price_daily,defillama_coin_prices,implemented,price only
+crypto_hbar,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_hbar,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_hbar,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_hbar,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_sui,price_daily,defillama_coin_prices,implemented,price only
+crypto_sui,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_sui,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_sui,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_sui,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_avax,price_daily,defillama_coin_prices,implemented,price only
+crypto_avax,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_avax,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_avax,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_avax,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_ton,price_daily,defillama_coin_prices,implemented,price only
+crypto_ton,market_cap_daily,none_selected,blocked,no verified free provider mapping
+crypto_ton,volume_daily,none_selected,blocked,no verified free provider mapping
+crypto_ton,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_ton,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_tao,price_daily,defillama_coin_prices,implemented,price only
+crypto_tao,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_tao,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_tao,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_tao,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_uni,price_daily,defillama_coin_prices,implemented,price only
+crypto_uni,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_uni,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_uni,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_uni,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_aave,price_daily,defillama_coin_prices,implemented,price only
+crypto_aave,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_aave,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_aave,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_aave,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_arb,price_daily,defillama_coin_prices,implemented,price only
+crypto_arb,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_arb,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_arb,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_arb,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_op,price_daily,defillama_coin_prices,implemented,price only
+crypto_op,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_op,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_op,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_op,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+crypto_pol,price_daily,defillama_coin_prices,implemented,price only
+crypto_pol,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_pol,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+crypto_pol,circulating_supply_daily,none_selected,blocked,source-specific token supply history required
+crypto_pol,venue_ohlcv_daily,binance_spot,implemented_partial,venue-specific stablecoin-quoted spot data; listing-window coverage varies
+stable_usdt,price_daily,defillama_coin_prices,implemented,price only
+stable_usdt,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdt,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdt,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_usdt,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_usdc,price_daily,defillama_coin_prices,implemented,price only
+stable_usdc,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdc,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdc,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_usdc,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_usds,price_daily,defillama_coin_prices,implemented,price only
+stable_usds,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usds,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usds,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_usds,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_dai,price_daily,defillama_coin_prices,implemented,price only
+stable_dai,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_dai,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_dai,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_dai,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_usde,price_daily,defillama_coin_prices,implemented,price only
+stable_usde,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usde,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usde,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_usde,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_usd1,price_daily,defillama_coin_prices,implemented,price only
+stable_usd1,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usd1,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usd1,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_usd1,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_usdg,price_daily,defillama_coin_prices,implemented,price only
+stable_usdg,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdg,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdg,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_usdg,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_pyusd,price_daily,defillama_coin_prices,implemented,price only
+stable_pyusd,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_pyusd,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_pyusd,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_pyusd,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_rlusd,price_daily,defillama_coin_prices,implemented,price only
+stable_rlusd,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_rlusd,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_rlusd,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_rlusd,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_usdd,price_daily,defillama_coin_prices,implemented,price only
+stable_usdd,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdd,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_usdd,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_usdd,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_gho,price_daily,defillama_coin_prices,implemented,price only
+stable_gho,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_gho,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_gho,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_gho,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_fdusd,price_daily,defillama_coin_prices,implemented,price only
+stable_fdusd,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_fdusd,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_fdusd,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_fdusd,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_tusd,price_daily,defillama_coin_prices,implemented,price only
+stable_tusd,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_tusd,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_tusd,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_tusd,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_frax,price_daily,defillama_coin_prices,implemented,price only
+stable_frax,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_frax,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_frax,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_frax,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_ustc,price_daily,defillama_coin_prices,implemented,price only
+stable_ustc,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_ustc,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_ustc,circulating_supply_daily,defillama_stablecoins,implemented,USD-valued circulation
+stable_ustc,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair
+stable_paxg,price_daily,defillama_coin_prices,implemented,price only
+stable_paxg,market_cap_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_paxg,volume_daily,coinpaprika,implemented_recent,free rolling one-year history; full 2019-2026 history unavailable
+stable_paxg,circulating_supply_daily,none_selected,blocked,commodity issuer source required
+stable_paxg,venue_ohlcv_daily,none_selected,blocked,no verified supported Binance spot pair

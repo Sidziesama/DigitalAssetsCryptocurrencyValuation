@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_xrp",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "xrp-xrp",
+  "retrieved_at_utc": "2026-08-24T02:37:55.932188+00:00",
+  "sha256": "150423aff0e32b70b10e4c8260fa8050f5683786892135ad773421e0d3653b8a",
+  "start": "2025-08-25"
+}

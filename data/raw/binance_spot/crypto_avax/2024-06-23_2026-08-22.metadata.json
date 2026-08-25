@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_avax",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:53.793226+00:00",
+  "sha256": "1ab8575221e89f7910724fbd938235ac1859cb8173fcab1ae0f4e275842f8409",
+  "start": "2024-06-23",
+  "symbol": "AVAXUSDT"
+}

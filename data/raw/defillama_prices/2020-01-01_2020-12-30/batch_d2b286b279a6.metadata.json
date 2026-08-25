@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_dai"
+  ],
+  "end": "2020-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:53.707014+00:00",
+  "sha256": "0172f418c4a43dcd3b89e6d6d4d24ad12e7153542c0e654876b292004159ea8d",
+  "start": "2020-01-01"
+}

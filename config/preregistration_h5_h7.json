@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "document_version": "0.1-draft",
+  "status": "draft_not_frozen",
+  "scope": "Stablecoin hypotheses H5-H7",
+  "analysis_window": {"start": "2019-01-01", "end": "2026-08-22"},
+  "unit_of_observation": {"daily": "asset-day", "episode": "depeg episode"},
+  "sample": {
+    "include": "USD-target stablecoins in the frozen 41-asset pilot universe",
+    "exclude_reference_assets": ["stable_paxg"],
+    "failure_controls_excluded_primary": ["stable_ustc"],
+    "failure_controls_retained_robustness": ["stable_ustc"],
+    "h7_primary_supply_share_sample": "all 14 USD-target primary stablecoins passing the preregistered coverage gate",
+    "h7_exploratory_usage_assets": ["stable_usdt", "stable_usdc", "stable_dai", "stable_tusd"],
+    "h7_exploratory_usage_rationale": "Coin Metrics Community provides common daily active-address, ledger-transaction, and token-transfer histories for these four assets; the subsample is source-defined before usage estimation",
+    "h7_usage_scope_rule": "usage coefficients are exploratory and are not required for the 14-asset primary supply/share specification",
+    "minimum_active_observations": 90,
+    "unresolved_observations": [{"asset_id": "stable_usdg", "date": "2025-01-30", "primary_treatment": "withhold_until_cross_source_confirmed"}],
+    "no_outcome_based_asset_replacement": true
+  },
+  "peg_measurement": {
+    "target_usd": 1.0,
+    "primary_breach_bps": 50,
+    "primary_recovery_bps": 25,
+    "robustness_bands_bps": [10, 25, 100, 500],
+    "daily_episode_onset": "first daily observation strictly outside primary breach band",
+    "daily_episode_recovery": "first later daily observation at or inside recovery band",
+    "calendar_gap_treatment": "right-censor open episode",
+    "intraday_rule": "future five-minute panel requires three consecutive observations outside 50 bps after one hour inside 25 bps; recovery requires twelve consecutive observations inside 25 bps"
+  },
+  "hypotheses": {
+    "H5": {"claim": "Higher reserve quality reduces peg error, breach probability, severity, and recovery time", "expected_sign": "negative"},
+    "H6": {"claim": "Greater redemption friction increases peg error, breach probability, severity, and recovery time, especially under stress", "expected_sign": "positive"},
+    "H7": {"claim": "Liquidity, integrations, usage, and supply growth explain stablecoin adoption and market share", "expected_sign": "positive for adoption; liquidity expected negative for peg error"}
+  },
+  "outcomes": {
+    "continuous_primary": "log1p(absolute_peg_error_bps)",
+    "binary_primary": "breach_50bps",
+    "episode_primary": ["elapsed_days_to_recovery_or_censor", "area_under_deviation_bps_days", "maximum_absolute_deviation_bps"],
+    "adoption_primary": ["log_circulating_peg_usd", "pilot_observed_supply_share", "supply_growth_30d"],
+    "global_market_share_status": "global_peggedusd_supply_share uses the exact-date DeFiLlama totalCirculatingUSD.peggedUSD denominator; pilot_observed_supply_share remains a within-pilot measure"
+  },
+  "covariates": {
+    "design_primary": ["reserve_quality_score", "redemption_friction_score", "transparency_score"],
+    "market_controls": ["log_circulating_peg_usd_lag1", "market_stress", "asset_age_days"],
+    "distribution_proxies": ["material_chain_count_1m_usd", "effective_chain_count", "top_chain_share"],
+    "distribution_proxy_caveat": "chain distribution is not protocol integration count or transaction usage",
+    "trading_activity_proxies": ["log1p_volume_24h_usd", "volume_to_reported_market_cap"],
+    "cross_provider_turnover": "cross_provider_volume_to_supply is diagnostic only",
+    "trading_activity_caveat": "reported 24-hour volume is not spread, depth, price impact, or executable liquidity and is available only for the recent free window",
+    "usage_exploratory": ["active_addresses_lag1", "ledger_transaction_count_lag1", "token_transfer_count_lag1"],
+    "usage_caveat": "Coin Metrics coverage is restricted to USDT, USDC, DAI, and TUSD; active addresses are not unique users; results are exploratory and cannot be generalized to the full 14-asset sample",
+    "required_lag_rule": "time-varying explanatory variables use information available by t-1 unless explicitly contemporaneous in a descriptive specification",
+    "design_effective_date_rule": "scores apply only on or after their evidence/effective date; no backward propagation"
+  },
+  "models": {
+    "continuous_peg_error": "asset and calendar-time fixed-effects panel model; standard errors clustered by asset and date where supported",
+    "breach_probability": "linear probability primary; rare-event logit robustness",
+    "episode_recovery": "Cox proportional hazards primary; accelerated failure-time robustness",
+    "adoption": "asset and time fixed-effects panel on log supply, market share, and growth for the 14-asset coverage-qualified sample",
+    "usage_exploratory": "separate four-asset lagged panel for USDT, USDC, DAI, and TUSD; report as exploratory and do not replace the primary 14-asset adoption specification"
+  },
+  "stress_definition": {
+    "primary": "predeclared external event windows from a dated event registry completed before headline estimation",
+    "data_driven_robustness": "months in the top decile of leave-one-asset-out marketwide 50-bps breach intensity",
+    "leave_one_asset_out_required": true
+  },
+  "missing_data": {
+    "no_silent_imputation": true,
+    "unknown_design_scores": "excluded from design-score regressions and counted in a completeness table",
+    "missing_price_day": "no observation; open episode right-censored at preceding date",
+    "missing_supply": "retain peg outcome row with supply fields null",
+    "partial_scores": "diagnostic only; prohibited from headline models"
+  },
+  "outliers": {
+    "primary": "no winsorization of verified peg outcomes",
+    "unverified_source_anomaly": "withhold only under documented review flag set before model estimation",
+    "robustness": ["exclude observations above 2000 bps", "verified-event-only sample"]
+  },
+  "multiple_testing": {"families": ["H5", "H6", "H7"], "method": "Benjamini-Hochberg false-discovery-rate adjustment within family", "report_unadjusted": true},
+  "readiness_gates": {
+    "H5": ["point-in-time reserve scores for at least 8 primary assets", "second-coder review complete", "at least two score dates per asset where time variation is claimed"],
+    "H6": ["strict redemption-friction scores for at least 8 primary assets", "point-in-time evidence", "second-coder review complete"],
+    "H7": ["daily supply coverage gate passed", "pilot-share denominator constructed", "DeFiLlama global pegged-USD denominator source-audited", "market-depth and integration variables source-audited", "four-asset usage subsample fixed before estimation and labeled exploratory"]
+  },
+  "current_readiness": {"H5": "blocked_point_in_time_scores", "H6": "blocked_incomplete_strict_scores", "H7": "primary_14_asset_supply_share_ready_exploratory_4_asset_usage_ready_historical_depth_and_validated_integrations_pending"}
+}

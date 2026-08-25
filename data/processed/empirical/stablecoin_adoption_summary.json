@@ -1,0 +1,13 @@
+{
+  "asset_days": 21249,
+  "assets": 14,
+  "global_share_definition": "asset circulating.peggedUSD divided by DeFiLlama totalCirculatingUSD.peggedUSD on the same UTC date",
+  "global_share_rows": 20933,
+  "growth_30d_rows": 20483,
+  "latest_assets_with_supply": 13,
+  "latest_date": "2026-08-22",
+  "latest_pilot_total_circulating_peg_usd": 286371244240.54834,
+  "market_days": 2789,
+  "share_definition": "asset supply divided by observed primary-pilot supply on the same date; not global market share",
+  "share_rows": 20933
+}

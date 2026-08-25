@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_xrp",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:44:47.353153+00:00",
+  "sha256": "180d55ec99c35e7cdb92c12a43ef14b4076e52f0346c8b58b4c96311bff6cabb",
+  "start": "2019-01-01",
+  "symbol": "XRPUSDT"
+}

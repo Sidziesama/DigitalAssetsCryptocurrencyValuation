@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_arb"
+  ],
+  "end": "2025-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:03.861429+00:00",
+  "sha256": "a8fc39da5cfdb6804ea0b66094f03d6f9c1c3d2162bd1a3a281584b9a15de5f8",
+  "start": "2024-12-30"
+}

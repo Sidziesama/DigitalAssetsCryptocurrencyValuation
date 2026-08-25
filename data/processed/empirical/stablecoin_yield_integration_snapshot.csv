@@ -1,0 +1,15 @@
+asset_id,snapshot_utc,yield_pool_count,yield_project_count,yield_chain_count,gross_matched_pool_tvl_usd,pools_with_tvl,provider,interpretation
+stable_usdt,2026-08-24T06:28:21.228834+00:00,1155,151,44,3758037550,1155,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_usdc,2026-08-24T06:28:21.228834+00:00,3290,252,64,26451351947,3290,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_usds,2026-08-24T06:28:21.228834+00:00,41,23,5,2351544717,41,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_dai,2026-08-24T06:28:21.228834+00:00,154,48,14,374273558,154,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_usde,2026-08-24T06:28:21.228834+00:00,71,33,17,1516848951,71,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_usd1,2026-08-24T06:28:21.228834+00:00,48,20,7,311083920,48,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_usdg,2026-08-24T06:28:21.228834+00:00,77,23,5,525177014,77,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_pyusd,2026-08-24T06:28:21.228834+00:00,43,19,4,346988484,43,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_rlusd,2026-08-24T06:28:21.228834+00:00,14,9,3,178267354,14,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_usdd,2026-08-24T06:28:21.228834+00:00,3,3,3,379096958,3,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_gho,2026-08-24T06:28:21.228834+00:00,44,15,9,167594051,44,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_fdusd,2026-08-24T06:28:21.228834+00:00,10,9,4,3282058,10,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_tusd,2026-08-24T06:28:21.228834+00:00,11,11,7,2101615,11,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption
+stable_frax,2026-08-24T06:28:21.228834+00:00,72,14,10,101162935,72,defillama_yields,current yield-pool integration proxy; not exhaustive protocol adoption

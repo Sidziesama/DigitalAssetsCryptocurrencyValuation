@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_bnb",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "bnb-binance-coin",
+  "retrieved_at_utc": "2026-08-24T02:37:55.439287+00:00",
+  "sha256": "639e620b4e31402ec8112dcedc1f571770da3fda57457b6f1304804b2f5fd3e9",
+  "start": "2025-08-25"
+}

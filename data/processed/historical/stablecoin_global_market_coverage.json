@@ -1,0 +1,10 @@
+{
+  "coverage_ratio": 1.0,
+  "end_date": "2026-08-22",
+  "expected_days": 2791,
+  "first_observed_date": "2019-01-01",
+  "last_observed_date": "2026-08-22",
+  "observed_days": 2791,
+  "start_date": "2019-01-01",
+  "status": "pass"
+}

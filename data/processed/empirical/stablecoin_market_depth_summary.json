@@ -1,0 +1,14 @@
+{
+  "eligible_assets": 14,
+  "readiness": "snapshot_only_not_historical_panel_ready",
+  "resolved_assets": 9,
+  "snapshot_rows_added": 9,
+  "total_snapshot_rows": 15,
+  "unresolved": {
+    "stable_dai": "no_active_binance_pair_against_usdt_usdc_or_fdusd",
+    "stable_gho": "no_active_binance_pair_against_usdt_usdc_or_fdusd",
+    "stable_pyusd": "no_active_binance_pair_against_usdt_usdc_or_fdusd",
+    "stable_usdd": "no_active_binance_pair_against_usdt_usdc_or_fdusd",
+    "stable_usdg": "no_active_binance_pair_against_usdt_usdc_or_fdusd"
+  }
+}

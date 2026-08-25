@@ -1,0 +1,42 @@
+asset_id,symbol,name,universe,tier,coingecko_id,defillama_symbol
+crypto_btc,BTC,Bitcoin,crypto,market_core,bitcoin,
+crypto_eth,ETH,Ethereum,crypto,market_core,ethereum,
+crypto_bnb,BNB,BNB,crypto,market_core,binancecoin,
+crypto_xrp,XRP,XRP,crypto,market_core,ripple,
+crypto_sol,SOL,Solana,crypto,market_core,solana,
+crypto_trx,TRX,TRON,crypto,market_core,tron,
+crypto_hype,HYPE,Hyperliquid,crypto,growth_sleeve,hyperliquid,
+crypto_doge,DOGE,Dogecoin,crypto,market_core,dogecoin,
+crypto_zec,ZEC,Zcash,crypto,market_core,zcash,
+crypto_link,LINK,Chainlink,crypto,market_core,chainlink,
+crypto_ada,ADA,Cardano,crypto,market_core,cardano,
+crypto_xmr,XMR,Monero,crypto,market_core,monero,
+crypto_xlm,XLM,Stellar,crypto,economic_coverage,stellar,
+crypto_bch,BCH,Bitcoin Cash,crypto,economic_coverage,bitcoin-cash,
+crypto_ltc,LTC,Litecoin,crypto,economic_coverage,litecoin,
+crypto_hbar,HBAR,Hedera,crypto,economic_coverage,hedera-hashgraph,
+crypto_sui,SUI,Sui,crypto,growth_sleeve,sui,
+crypto_avax,AVAX,Avalanche,crypto,economic_coverage,avalanche-2,
+crypto_ton,TON,Toncoin,crypto,economic_coverage,the-open-network,
+crypto_tao,TAO,Bittensor,crypto,growth_sleeve,bittensor,
+crypto_uni,UNI,Uniswap,crypto,economic_coverage,uniswap,
+crypto_aave,AAVE,Aave,crypto,economic_coverage,aave,
+crypto_arb,ARB,Arbitrum,crypto,economic_coverage,arbitrum,
+crypto_op,OP,Optimism,crypto,economic_coverage,optimism,
+crypto_pol,POL,Polygon Ecosystem Token,crypto,economic_coverage,polygon-ecosystem-token,
+stable_usdt,USDT,Tether,stablecoin,market_core,tether,USDT
+stable_usdc,USDC,USD Coin,stablecoin,market_core,usd-coin,USDC
+stable_usds,USDS,Sky Dollar,stablecoin,market_core,usds,USDS
+stable_dai,DAI,Dai,stablecoin,market_core,dai,DAI
+stable_usde,USDE,Ethena USDe,stablecoin,market_core,ethena-usde,USDe
+stable_usd1,USD1,World Liberty Financial USD,stablecoin,market_core,usd1-wlfi,USD1
+stable_usdg,USDG,Global Dollar,stablecoin,market_core,global-dollar,USDG
+stable_pyusd,PYUSD,PayPal USD,stablecoin,growth_sleeve,paypal-usd,PYUSD
+stable_rlusd,RLUSD,Ripple USD,stablecoin,growth_sleeve,ripple-usd,RLUSD
+stable_usdd,USDD,USDD,stablecoin,growth_sleeve,usdd,USDD
+stable_gho,GHO,GHO,stablecoin,growth_sleeve,gho,GHO
+stable_fdusd,FDUSD,First Digital USD,stablecoin,structural_coverage,first-digital-usd,FDUSD
+stable_tusd,TUSD,TrueUSD,stablecoin,structural_coverage,true-usd,TUSD
+stable_frax,FRAX,Frax,stablecoin,structural_coverage,frax,FRAX
+stable_ustc,USTC,TerraClassicUSD,stablecoin,failure_control,terrausd,USTC
+stable_paxg,PAXG,PAX Gold,stablecoin,structural_coverage,pax-gold,PAXG

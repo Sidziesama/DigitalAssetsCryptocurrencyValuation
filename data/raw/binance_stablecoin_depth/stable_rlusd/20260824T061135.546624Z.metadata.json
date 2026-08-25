@@ -1,0 +1,11 @@
+{
+  "anchor_asset": "USDT",
+  "asset_id": "stable_rlusd",
+  "endpoint": "/api/v3/depth",
+  "limit": 1000,
+  "pair": "RLUSDUSDT",
+  "provider": "binance_spot",
+  "retrieved_at_utc": "2026-08-24T06:11:35.546624+00:00",
+  "sha256": "5e8b8295ff28ffce80ede4b235def5096e4eb4e3c64ca6dd6151cb18430aa027",
+  "target_is_base": true
+}

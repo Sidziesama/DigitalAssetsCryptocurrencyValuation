@@ -1,0 +1,15 @@
+asset_id,comparable_rows,mean_market_cap_to_supply_ratio,within_5pct_rows,within_5pct_rate,cross_provider_turnover_status
+stable_dai,362,0.7278352604771381,31,0.0856353591160221,diagnostic_only
+stable_fdusd,362,2.877703316759116,31,0.0856353591160221,diagnostic_only
+stable_frax,362,2.4317995387871147,0,0.0,diagnostic_only
+stable_gho,362,0.6819455432110859,19,0.052486187845303865,diagnostic_only
+stable_pyusd,362,0.23618863599451517,39,0.10773480662983426,diagnostic_only
+stable_rlusd,362,0.14211724276955473,0,0.0,diagnostic_only
+stable_tusd,362,1.02098188947984,362,1.0,diagnostic_only
+stable_usd1,362,0.6325765847986374,22,0.06077348066298342,diagnostic_only
+stable_usdc,362,1.0008483861605177,362,1.0,diagnostic_only
+stable_usdd,317,0.803808805011468,100,0.31545741324921134,diagnostic_only
+stable_usde,362,0.8835609332577278,33,0.09116022099447514,diagnostic_only
+stable_usdg,362,0.31029166642497613,42,0.11602209944751381,diagnostic_only
+stable_usds,362,1.3416432992394454,25,0.06906077348066299,diagnostic_only
+stable_usdt,362,0.9670236488868962,286,0.7900552486187845,diagnostic_only

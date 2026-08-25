@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_ada"
+  ],
+  "end": "2020-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:42.014367+00:00",
+  "sha256": "546abda0b37d4a32b5aff068895e30d807c64c78547c60bfd228880ade60e2de",
+  "start": "2020-01-01"
+}

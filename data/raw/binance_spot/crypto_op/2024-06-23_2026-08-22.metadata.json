@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_op",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:46:18.268978+00:00",
+  "sha256": "226d75e3f8bc3b3b64a7731b0a615a0b30a16077528447d9944e124a06046cdc",
+  "start": "2024-06-23",
+  "symbol": "OPUSDT"
+}

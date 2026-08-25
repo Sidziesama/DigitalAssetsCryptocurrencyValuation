@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_op"
+  ],
+  "end": "2023-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:05.393795+00:00",
+  "sha256": "d07d9de8614454fda68acfd5df1aa881996d5d0933179921136446f1a898fcb4",
+  "start": "2022-12-31"
+}

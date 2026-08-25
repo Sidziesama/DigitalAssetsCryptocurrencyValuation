@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_arb",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:46:14.128622+00:00",
+  "sha256": "2f8c49105b455bc58a1ac37b9e05da232a67ad3d45c833432514c8331b7c83fd",
+  "start": "2024-06-23",
+  "symbol": "ARBUSDT"
+}

@@ -1,0 +1,21 @@
+{
+  "asset_count": 41,
+  "crypto_count": 25,
+  "generated_at_utc": "2026-08-24T05:40:00.062587+00:00",
+  "indicative_combined_coverage": 0.9564012298238026,
+  "pass_count": 41,
+  "raw_sha256": {
+    "coingecko_global.json": "5485d3d6c4f2e6d898e687ac34e0e2aa44cb4b431bf5a590a2818752b50f5383",
+    "coingecko_markets.json": "67e2c3f19cc235cd648bd275140ae5d4051ea10dbcd1f3147f2177ccb5c95e7e",
+    "defillama_stablecoins.json": "32104bb1bd862c7b619468adae05f519db7072488e869725e7b6b449ebb89a25",
+    "expanded/coingecko_review_assets.json": "74015fbb43a00b94e236556405524600bfdbb7cbab729007bd87a246f91a53dd"
+  },
+  "review_assets": [],
+  "review_count": 0,
+  "schema_version": 1,
+  "selected_crypto_market_cap_usd": 2214863937206,
+  "selected_stablecoin_supply_usd": 287833682097.6061,
+  "snapshot_date": "2026-08-22",
+  "stablecoin_count": 16,
+  "total_market_cap_usd": 2616786283058.9175
+}

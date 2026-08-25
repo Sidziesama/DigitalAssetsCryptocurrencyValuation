@@ -1,0 +1,37 @@
+{
+  "assets_evaluated": 14,
+  "complete_rows": 5005,
+  "gates": {
+    "chain_distribution_proxy": "pass",
+    "global_peggedusd_market_share": "pass",
+    "market_depth_spread_price_impact": "fail_snapshot_only_insufficient_time_coverage",
+    "pilot_supply_and_share": "pass",
+    "protocol_integration_count": "fail_cross_sectional_yield_proxy_only",
+    "recent_trading_activity_proxy": "pass_recent_window_only",
+    "transaction_volume_and_users": "pass_exploratory_four_asset_subsample_only"
+  },
+  "minimum_asset_coverage": 0.8,
+  "proposed_recent_sample": [
+    "stable_dai",
+    "stable_fdusd",
+    "stable_frax",
+    "stable_gho",
+    "stable_pyusd",
+    "stable_rlusd",
+    "stable_tusd",
+    "stable_usd1",
+    "stable_usdc",
+    "stable_usdd",
+    "stable_usde",
+    "stable_usdg",
+    "stable_usds",
+    "stable_usdt"
+  ],
+  "proposed_recent_sample_size": 14,
+  "recent_window": {
+    "end": "2026-08-21",
+    "start": "2025-08-25"
+  },
+  "status": "partial_not_analysis_ready",
+  "total_recent_rows": 5068
+}

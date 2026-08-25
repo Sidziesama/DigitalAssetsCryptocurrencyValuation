@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_uni",
+  "end": "2024-06-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:46:03.808301+00:00",
+  "sha256": "477adbbd9493d59c597b8a7a0484b2845b6c1b2a4819d0ff9be0fb523c8e872c",
+  "start": "2021-09-27",
+  "symbol": "UNIUSDT"
+}

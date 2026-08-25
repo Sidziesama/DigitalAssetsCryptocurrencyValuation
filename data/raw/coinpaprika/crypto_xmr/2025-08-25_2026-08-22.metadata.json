@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_xmr",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "xmr-monero",
+  "retrieved_at_utc": "2026-08-24T02:37:59.716655+00:00",
+  "sha256": "02727b9f23875429b01b95ac464d6ad16a0699b38c796269fe260f06ff1eb63d",
+  "start": "2025-08-25"
+}

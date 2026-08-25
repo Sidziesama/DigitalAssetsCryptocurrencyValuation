@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_sui",
+  "end": "2024-06-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:47.369093+00:00",
+  "sha256": "9ddb797509bdbdf2bb7d1320a4fbe3b172a03c3d8f80531d66c862a9d5fa7738",
+  "start": "2021-09-27",
+  "symbol": "SUIUSDT"
+}

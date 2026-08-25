@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_eth",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "eth-ethereum",
+  "retrieved_at_utc": "2026-08-24T02:37:54.984462+00:00",
+  "sha256": "544e0c847c40b608a915c5c908943b948b348c3e8d6418d73f39e8cca3281f96",
+  "start": "2025-08-25"
+}

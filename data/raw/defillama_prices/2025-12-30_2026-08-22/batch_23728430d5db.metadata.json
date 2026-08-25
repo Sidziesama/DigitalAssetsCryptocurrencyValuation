@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_avax"
+  ],
+  "end": "2026-08-22",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:28.486114+00:00",
+  "sha256": "3050dceb383cd9f971546e5dfb961a3f11c8e1d4ed41085b4b44495bd7b88abc",
+  "start": "2025-12-30"
+}

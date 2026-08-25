@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_ltc"
+  ],
+  "end": "2019-12-31",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:19.607946+00:00",
+  "sha256": "7c22b8fdfbb6bbcbd61b2f3dfde9ac6e00e14d713df6d9188e6401868419adfc",
+  "start": "2019-01-01"
+}

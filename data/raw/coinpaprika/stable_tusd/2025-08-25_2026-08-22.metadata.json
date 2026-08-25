@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_tusd",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "tusd-trueusd",
+  "retrieved_at_utc": "2026-08-24T02:38:10.384786+00:00",
+  "sha256": "5e74e1743cdf9c3d6a1adaef1eb56ad0d7f0b664ed69a261fe44512f67d0f63b",
+  "start": "2025-08-25"
+}

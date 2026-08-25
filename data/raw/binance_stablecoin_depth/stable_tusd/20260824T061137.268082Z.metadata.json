@@ -1,0 +1,11 @@
+{
+  "anchor_asset": "USDT",
+  "asset_id": "stable_tusd",
+  "endpoint": "/api/v3/depth",
+  "limit": 1000,
+  "pair": "TUSDUSDT",
+  "provider": "binance_spot",
+  "retrieved_at_utc": "2026-08-24T06:11:37.268082+00:00",
+  "sha256": "a7854853e39d7d22dd1db6ae81463fabcb4caee3f614981d2099963cd815295a",
+  "target_is_base": true
+}

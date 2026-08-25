@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_btc",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "btc-bitcoin",
+  "retrieved_at_utc": "2026-08-24T02:37:54.525964+00:00",
+  "sha256": "40133a6002964ae14bca3e8393f3040ee2a6033870614157f8c727868c8c8916",
+  "start": "2025-08-25"
+}

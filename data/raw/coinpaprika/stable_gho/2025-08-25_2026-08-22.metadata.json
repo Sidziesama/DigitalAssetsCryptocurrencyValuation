@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_gho",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "gho-gho",
+  "retrieved_at_utc": "2026-08-24T02:38:09.420346+00:00",
+  "sha256": "0b404e4e39b84779f9906dd5704c688020a753506a10ffc002a2c8a18462e6e2",
+  "start": "2025-08-25"
+}

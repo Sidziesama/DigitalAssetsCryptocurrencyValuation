@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_sol",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:44:52.483920+00:00",
+  "sha256": "df4b2041f10385943f9fbd18880695430822f3bf14f4687dcddbaa17fe049d23",
+  "start": "2019-01-01",
+  "symbol": "SOLUSDT"
+}

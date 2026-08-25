@@ -1,0 +1,15 @@
+asset_id,coinmetrics_asset,supported,start_date,end_date,first_observed_date,last_observed_date,active_window_expected_days,observed_days,active_addresses_days,active_addresses_coverage_ratio,ledger_transaction_count_days,ledger_transaction_count_coverage_ratio,token_transfer_count_days,token_transfer_count_coverage_ratio,status
+stable_usdt,usdt,1,2019-01-01,2026-08-24,2019-01-01,2026-08-24,2793,2793,2793,1.0,2793,1.0,2793,1.0,pass
+stable_usdc,usdc,1,2019-01-01,2026-08-24,2019-01-01,2026-08-24,2793,2793,2793,1.0,2793,1.0,2793,1.0,pass
+stable_usds,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_dai,dai,1,2019-01-01,2026-08-24,2019-11-13,2026-08-24,2477,2477,2477,1.0,2477,1.0,2477,1.0,pass
+stable_usde,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_usd1,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_usdg,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_pyusd,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_rlusd,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_usdd,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_gho,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_fdusd,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported
+stable_tusd,tusd,1,2019-01-01,2026-08-24,2019-01-01,2026-08-24,2793,2793,2793,1.0,2793,1.0,2793,1.0,pass
+stable_frax,,0,2019-01-01,2026-08-24,,,0,0,0,0,0,0,0,0,unsupported

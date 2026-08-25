@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_usd1",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "usd1-usd1",
+  "retrieved_at_utc": "2026-08-24T02:39:16.364217+00:00",
+  "sha256": "0ebc8ee73f0baef770cb181d0571773892b612437d45bfd085831d33c6cd867d",
+  "start": "2025-08-25"
+}

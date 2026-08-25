@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "methodology_version": "2026-08-22-v1",
+  "score_direction": {"reserve_quality":"higher_is_better","transparency":"higher_is_better","redemption_friction":"higher_is_worse"},
+  "weights": {
+    "reserve_quality":{"liquidity":25,"credit_quality":20,"duration_risk":15,"valuation_certainty":10,"currency_match":10,"diversification":10,"unencumbered_availability":10},
+    "transparency":{"frequency":30,"publication_lag":20,"independent_assurance":25,"asset_granularity":15,"liability_coverage":10},
+    "redemption_friction":{"access_eligibility":25,"minimum_size":15,"explicit_fee":15,"settlement_time":15,"suspension_gating":20,"operational_dependence":10}
+  },
+  "assets": [
+    {
+      "asset_id":"stable_usdc","evidence_date":"2026-08-22","confidence":"high",
+      "evidence_urls":["https://www.circle.com/transparency","https://www.circle.com/legal/usdc-terms","https://help.circle.com/support/en/usdc-eurc-redemption-structure?id=kb_article_view&sysparm_article=KB0010644"],
+      "reserve_quality":{"liquidity":98,"credit_quality":99,"duration_risk":98,"valuation_certainty":98,"currency_match":100,"diversification":90,"unencumbered_availability":95},
+      "transparency":{"frequency":100,"publication_lag":90,"independent_assurance":100,"asset_granularity":95,"liability_coverage":100},
+      "redemption_friction":{"access_eligibility":80,"minimum_size":null,"explicit_fee":null,"settlement_time":25,"suspension_gating":80,"operational_dependence":50},
+      "rationale":"Weekly reserve disclosure and monthly Big Four assurance; reserves emphasize short Treasuries, overnight repo/MMF structures and bank deposits. Circle Mint is institution-focused and issuer terms preserve suspension/discretion; 2026 fees are tiered, so minimum and fee components remain unscored."
+    },
+    {
+      "asset_id":"stable_usdt","evidence_date":"2026-08-22","confidence":"high",
+      "evidence_urls":["https://tether.to/public/Relevant_Information_Document_-_Tether_International%2C_S.A._de_C.V..pdf","https://tether.to/en/transparency/"],
+      "reserve_quality":{"liquidity":null,"credit_quality":null,"duration_risk":null,"valuation_certainty":null,"currency_match":null,"diversification":null,"unencumbered_availability":null},
+      "transparency":{"frequency":60,"publication_lag":60,"independent_assurance":85,"asset_granularity":75,"liability_coverage":100},
+      "redemption_friction":{"access_eligibility":100,"minimum_size":100,"explicit_fee":100,"settlement_time":null,"suspension_gating":80,"operational_dependence":70},
+      "rationale":"Official 2026 document states KYC approval, $100,000 minimum redemption, and the greater of $1,000 or 0.1% fee. Reserve reports and independent assurance are quarterly. Reserve-quality components await extraction of the dated portfolio report rather than being inferred from generic reserve descriptions."
+    },
+    {
+      "asset_id":"stable_pyusd","evidence_date":"2026-08-22","confidence":"high",
+      "evidence_urls":["https://www.paxos.com/pyusd","https://www.paxos.com/pyusd-transparency","https://www.paxos.com/terms-and-conditions/stablecoin-terms-conditions"],
+      "reserve_quality":{"liquidity":95,"credit_quality":99,"duration_risk":95,"valuation_certainty":95,"currency_match":100,"diversification":85,"unencumbered_availability":95},
+      "transparency":{"frequency":90,"publication_lag":90,"independent_assurance":100,"asset_granularity":90,"liability_coverage":100},
+      "redemption_friction":{"access_eligibility":80,"minimum_size":null,"explicit_fee":0,"settlement_time":null,"suspension_gating":70,"operational_dependence":50},
+      "rationale":"Paxos states reserves are USD deposits, Treasuries and cash equivalents, held in segregated bankruptcy-remote accounts, with monthly portfolio reports and independent attestations. Public materials state zero conversion fees but do not fully establish minimum size or settlement SLA for every holder channel."
+    },
+    {
+      "asset_id":"stable_rlusd","evidence_date":"2026-08-22","confidence":"high",
+      "evidence_urls":["https://ripple.com/legal/stablecoin/","https://ripple.com/products/stablecoin/transparency/","https://docs.ripple.com/products/stablecoin/user-interface/tutorials/redeem-rlusd"],
+      "reserve_quality":{"liquidity":95,"credit_quality":99,"duration_risk":98,"valuation_certainty":95,"currency_match":100,"diversification":85,"unencumbered_availability":95},
+      "transparency":{"frequency":90,"publication_lag":80,"independent_assurance":100,"asset_granularity":90,"liability_coverage":100},
+      "redemption_friction":{"access_eligibility":100,"minimum_size":null,"explicit_fee":null,"settlement_time":10,"suspension_gating":80,"operational_dependence":50},
+      "rationale":"Issuer terms specify segregated reserves limited to deposits, short Treasury bills, overnight Treasury repo and government MMFs. Monthly independent CPA attestations cover circulation and reserve composition. Direct redemption requires customer status; processing is described as real-time but bank settlement varies, and suspension rights are broad."
+    }
+  ]
+}

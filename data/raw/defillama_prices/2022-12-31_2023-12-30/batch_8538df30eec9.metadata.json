@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_hbar"
+  ],
+  "end": "2023-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:00.174999+00:00",
+  "sha256": "915f36b9997440bd9c057541d689cef888ebf8e9d6b707e8c61300aead12a132",
+  "start": "2022-12-31"
+}

@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_xmr",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:22.970593+00:00",
+  "sha256": "6dcc03eb00afd4016fcb7eaf6201c702999b89a568d0baf1a09c1d35465cc29c",
+  "start": "2019-01-01",
+  "symbol": "XMRUSDT"
+}

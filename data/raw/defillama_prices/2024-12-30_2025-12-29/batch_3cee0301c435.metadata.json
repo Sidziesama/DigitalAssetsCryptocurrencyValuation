@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_xlm"
+  ],
+  "end": "2025-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:56.180234+00:00",
+  "sha256": "5e08323a14156996b9fc6264d3edfeedab29554970f70df414e49f5c9c49bc32",
+  "start": "2024-12-30"
+}

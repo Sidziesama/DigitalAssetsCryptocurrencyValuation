@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_xrp"
+  ],
+  "end": "2021-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:15:03.744943+00:00",
+  "sha256": "37c6383633a4f6fed40fff45c66d293f6191f4289b597a681dbb54d2a28c564b",
+  "start": "2020-12-31"
+}

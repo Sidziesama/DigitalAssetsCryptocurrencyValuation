@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_frax",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "frax-frax",
+  "retrieved_at_utc": "2026-08-24T02:39:16.844123+00:00",
+  "sha256": "6ad18192ce82e53c0a8545ebc931e8c3a81d9bfe7f281dad4ec79e8b6bfe45f7",
+  "start": "2025-08-25"
+}

@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_usdt",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "usdt-tether",
+  "retrieved_at_utc": "2026-08-24T02:38:05.804516+00:00",
+  "sha256": "6ee349b4984be2d3ac9b768df1bfbd4d8c2c7554958a8e19dffebef0874da9de",
+  "start": "2025-08-25"
+}

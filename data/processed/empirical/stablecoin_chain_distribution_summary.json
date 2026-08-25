@@ -1,0 +1,9 @@
+{
+  "assets": 14,
+  "interpretation": "cross-chain distribution proxy; not protocol integration count, transaction volume, or user activity",
+  "reconciled_rows": 20923,
+  "rows": 21652,
+  "unsupported_assets": [],
+  "within_5pct_reconciliation_rate": 0.9718969555035128,
+  "within_5pct_reconciliation_rows": 20335
+}

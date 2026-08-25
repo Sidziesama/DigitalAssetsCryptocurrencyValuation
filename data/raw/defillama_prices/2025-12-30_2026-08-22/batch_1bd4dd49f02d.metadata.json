@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_eth"
+  ],
+  "end": "2026-08-22",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:16.251569+00:00",
+  "sha256": "e5c7e32bfab7584db9a13c73f2de35a47eda43dcba433c520ad32940e418a6d0",
+  "start": "2025-12-30"
+}

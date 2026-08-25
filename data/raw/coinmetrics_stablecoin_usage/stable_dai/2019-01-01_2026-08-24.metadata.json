@@ -1,0 +1,17 @@
+{
+  "asset_id": "stable_dai",
+  "coinmetrics_asset": "dai",
+  "end": "2026-08-24",
+  "endpoint": "timeseries/asset-metrics",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current Creative Commons terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-25T13:26:36.260430+00:00",
+  "sha256": "a20175f10b44dd9675e7d01f2c7d5b8c2598f7654155ea477443ea26719fdf5d",
+  "start": "2019-01-01"
+}

@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_sui",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "sui-sui",
+  "retrieved_at_utc": "2026-08-24T02:38:02.083369+00:00",
+  "sha256": "a871c14f531e304ef165a7464b322e8c33762cc236fa40041eee6684f1b0f893",
+  "start": "2025-08-25"
+}

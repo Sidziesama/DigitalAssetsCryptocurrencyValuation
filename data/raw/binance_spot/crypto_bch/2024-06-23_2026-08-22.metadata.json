@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_bch",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:35.188018+00:00",
+  "sha256": "cc90f84247dbb5fc4a34abfd58e40c29d4cba2c52faa693b5f75dc545ccbb7f2",
+  "start": "2024-06-23",
+  "symbol": "BCHUSDT"
+}

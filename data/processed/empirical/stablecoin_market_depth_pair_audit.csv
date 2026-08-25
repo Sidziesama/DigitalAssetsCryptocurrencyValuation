@@ -1,0 +1,15 @@
+asset_id,pair,target_is_base,anchor_asset,status
+stable_usdt,USDCUSDT,False,USDC,resolved
+stable_usdc,USDCUSDT,True,USDT,resolved
+stable_usds,USDSUSDT,True,USDT,resolved
+stable_dai,,,,no_active_binance_pair_against_usdt_usdc_or_fdusd
+stable_usde,USDEUSDT,True,USDT,resolved
+stable_usd1,USD1USDT,True,USDT,resolved
+stable_usdg,,,,no_active_binance_pair_against_usdt_usdc_or_fdusd
+stable_pyusd,,,,no_active_binance_pair_against_usdt_usdc_or_fdusd
+stable_rlusd,RLUSDUSDT,True,USDT,resolved
+stable_usdd,,,,no_active_binance_pair_against_usdt_usdc_or_fdusd
+stable_gho,,,,no_active_binance_pair_against_usdt_usdc_or_fdusd
+stable_fdusd,FDUSDUSDT,True,USDT,resolved
+stable_tusd,TUSDUSDT,True,USDT,resolved
+stable_frax,FRAXUSDT,True,USDT,resolved

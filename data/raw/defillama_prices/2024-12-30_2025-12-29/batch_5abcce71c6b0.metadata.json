@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_pyusd"
+  ],
+  "end": "2025-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:10.865410+00:00",
+  "sha256": "d6f5d65bc141d9dd42d40ba3742bd97b173fd8e8e87b231c966ea4409c8a3593",
+  "start": "2024-12-30"
+}

@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_pol"
+  ],
+  "end": "2026-08-22",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:33.249659+00:00",
+  "sha256": "bb942499ad62f81b4a3ef69256002175d8dcbc752870e61595de692346f40fa5",
+  "start": "2025-12-30"
+}

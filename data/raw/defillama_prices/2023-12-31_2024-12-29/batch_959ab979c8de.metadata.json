@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_tao"
+  ],
+  "end": "2024-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:30.789519+00:00",
+  "sha256": "dbc8306235376ed0c8818f8f70c234495855ab2b3bfd113a579d56874abbd586",
+  "start": "2023-12-31"
+}

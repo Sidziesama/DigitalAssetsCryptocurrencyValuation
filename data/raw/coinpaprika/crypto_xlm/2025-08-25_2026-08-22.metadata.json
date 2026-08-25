@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_xlm",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "xlm-stellar",
+  "retrieved_at_utc": "2026-08-24T02:38:00.196805+00:00",
+  "sha256": "40474c07a408ec1137ed31a58883028c705710733314b2b7daf0a1def70add18",
+  "start": "2025-08-25"
+}

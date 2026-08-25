@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_doge",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:03.430801+00:00",
+  "sha256": "580fd5069c6a48e11792c0c3115f29b151fac6cdd765afcecc26485e29ba93a9",
+  "start": "2019-01-01",
+  "symbol": "DOGEUSDT"
+}

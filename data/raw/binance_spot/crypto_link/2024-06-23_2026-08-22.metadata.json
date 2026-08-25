@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_link",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:16.497576+00:00",
+  "sha256": "6eb29c93e362a4cea39595f5b06c8d3f301cccf39bb7bea9af3dbac8f35a23c1",
+  "start": "2024-06-23",
+  "symbol": "LINKUSDT"
+}

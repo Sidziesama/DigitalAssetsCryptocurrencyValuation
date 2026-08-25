@@ -1,0 +1,11 @@
+{
+  "assets": 15,
+  "failure_control_reviews": 7,
+  "highest_primary_episode_count_asset": "stable_frax",
+  "highest_primary_median_ape_asset": "stable_frax",
+  "highest_primary_stress_month": "2024-01",
+  "months": 92,
+  "primary_assets": 14,
+  "review_queue": 8,
+  "source_crosschecks": 1
+}

@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_ada",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "ada-cardano",
+  "retrieved_at_utc": "2026-08-24T02:37:59.237800+00:00",
+  "sha256": "7932a5428280496bb8db9f555a345af568518f4f269165006a813e6899d26e75",
+  "start": "2025-08-25"
+}

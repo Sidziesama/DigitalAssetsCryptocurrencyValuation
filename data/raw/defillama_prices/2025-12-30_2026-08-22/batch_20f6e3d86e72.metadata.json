@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_btc"
+  ],
+  "end": "2026-08-22",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:15.636664+00:00",
+  "sha256": "f7be1bc0c4d4ff185d72a347ac70f1d03b84826ec55e67014bc305ffeb265dfe",
+  "start": "2025-12-30"
+}

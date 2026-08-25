@@ -1,0 +1,9 @@
+{
+  "endpoint": "https://yields.llama.fi/pools",
+  "http_status": 200,
+  "match_rule": "exact alphanumeric component of provider pool symbol",
+  "pool_records": 16844,
+  "provider": "defillama_yields",
+  "retrieved_at_utc": "2026-08-24T06:28:21.228834+00:00",
+  "sha256": "8f04ad5be318061d2b8691a0f5dfce1383651eade5e2d55ee0c41bb9bf1aa0c0"
+}

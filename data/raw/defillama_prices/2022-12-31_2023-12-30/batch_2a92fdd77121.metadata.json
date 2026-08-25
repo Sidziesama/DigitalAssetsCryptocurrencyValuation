@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_fdusd"
+  ],
+  "end": "2023-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:14.704773+00:00",
+  "sha256": "7bf16ae2702ea2b8957f4578c6f59dabfc9f5863b153baca8f63eb64ddd88ccd",
+  "start": "2022-12-31"
+}

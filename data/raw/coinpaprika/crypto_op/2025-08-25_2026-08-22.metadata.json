@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_op",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "op-optimism",
+  "retrieved_at_utc": "2026-08-24T02:38:04.854595+00:00",
+  "sha256": "edeb7f1f36e2de14ebc43b9f76a06ef62926a6aff2576d6f00a7d4c0a7f359c3",
+  "start": "2025-08-25"
+}

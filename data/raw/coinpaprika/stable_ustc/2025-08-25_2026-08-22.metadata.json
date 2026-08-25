@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_ustc",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "ust-terrausd",
+  "retrieved_at_utc": "2026-08-24T02:38:10.828743+00:00",
+  "sha256": "be413e197481478e312c9972e05ddbe3b04ad137de03601e180912ff77e9b8bc",
+  "start": "2025-08-25"
+}

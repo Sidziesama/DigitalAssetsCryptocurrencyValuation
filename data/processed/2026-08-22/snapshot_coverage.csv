@@ -1,0 +1,42 @@
+asset_id,symbol,name,universe,tier,coingecko_id,defillama_symbol,snapshot_coingecko_present,snapshot_defillama_present,market_cap_rank,market_cap_usd,volume_24h_usd,stablecoin_supply_usd,stablecoin_month_growth,required_snapshot_coverage,coverage_status
+crypto_btc,BTC,Bitcoin,crypto,market_core,bitcoin,,1,0,1,1544045891462,38742870014,,,1.0,pass
+crypto_eth,ETH,Ethereum,crypto,market_core,ethereum,,1,0,2,290979582996,22981198829,,,1.0,pass
+crypto_bnb,BNB,BNB,crypto,market_core,binancecoin,,1,0,4,92320483927,2307326750,,,1.0,pass
+crypto_xrp,XRP,XRP,crypto,market_core,ripple,,1,0,5,91528702801,12105411237,,,1.0,pass
+crypto_sol,SOL,Solana,crypto,market_core,solana,,1,0,7,54252134726,7845551178,,,1.0,pass
+crypto_trx,TRX,TRON,crypto,market_core,tron,,1,0,8,32731178003,767576551,,,1.0,pass
+crypto_hype,HYPE,Hyperliquid,crypto,growth_sleeve,hyperliquid,,1,0,10,17375231692,1520887508,,,1.0,pass
+crypto_doge,DOGE,Dogecoin,crypto,market_core,dogecoin,,1,0,11,14262068952,3066637512,,,1.0,pass
+crypto_zec,ZEC,Zcash,crypto,market_core,zcash,,1,0,12,13510161798,2318566530,,,1.0,pass
+crypto_link,LINK,Chainlink,crypto,market_core,chainlink,,1,0,16,8615461157,920883991,,,1.0,pass
+crypto_ada,ADA,Cardano,crypto,market_core,cardano,,1,0,18,8414631528,1261605266,,,1.0,pass
+crypto_xmr,XMR,Monero,crypto,market_core,monero,,1,0,19,8035792758,156990079,,,1.0,pass
+crypto_xlm,XLM,Stellar,crypto,economic_coverage,stellar,,1,0,20,6715986307,660812862,,,1.0,pass
+crypto_bch,BCH,Bitcoin Cash,crypto,economic_coverage,bitcoin-cash,,1,0,21,5494943831,390796138,,,1.0,pass
+crypto_ltc,LTC,Litecoin,crypto,economic_coverage,litecoin,,1,0,25,4040206072,679772237,,,1.0,pass
+crypto_hbar,HBAR,Hedera,crypto,economic_coverage,hedera-hashgraph,,1,0,29,3362722113,220721698,,,1.0,pass
+crypto_sui,SUI,Sui,crypto,growth_sleeve,sui,,1,0,30,3301759153,1245557826,,,1.0,pass
+crypto_avax,AVAX,Avalanche,crypto,economic_coverage,avalanche-2,,1,0,31,3221421656,528336249,,,1.0,pass
+crypto_ton,TON,Toncoin,crypto,economic_coverage,the-open-network,,1,0,27,3926757723,83407745,,,1.0,pass
+crypto_tao,TAO,Bittensor,crypto,growth_sleeve,bittensor,,1,0,43,2116323280,306446738,,,1.0,pass
+crypto_uni,UNI,Uniswap,crypto,economic_coverage,uniswap,,1,0,37,2661784950,680840826,,,1.0,pass
+crypto_aave,AAVE,Aave,crypto,economic_coverage,aave,,1,0,46,1938190892,725125353,,,1.0,pass
+crypto_arb,ARB,Arbitrum,crypto,economic_coverage,arbitrum,,1,0,91,648532508,157204882,,,1.0,pass
+crypto_op,OP,Optimism,crypto,economic_coverage,optimism,,1,0,152,245388061,89040709,,,1.0,pass
+crypto_pol,POL,Polygon Ecosystem Token,crypto,economic_coverage,polygon-ecosystem-token,,1,0,69,1118598860,278304761,,,1.0,pass
+stable_usdt,USDT,Tether,stablecoin,market_core,tether,USDT,1,1,3,183201457604,87332034824,183194214365.4839,0.0001450107139435719,1.0,pass
+stable_usdc,USDC,USD Coin,stablecoin,market_core,usd-coin,USDC,1,1,6,73523898393,20866850093,73631690904.13843,-0.005905466788646563,1.0,pass
+stable_usds,USDS,Sky Dollar,stablecoin,market_core,usds,USDS,1,1,14,9751144457,159256510,6643745919.323423,-0.00504073451713416,1.0,pass
+stable_dai,DAI,Dai,stablecoin,market_core,dai,DAI,1,1,23,4563821896,317403165,4769199663.0195465,-0.016988795425184833,1.0,pass
+stable_usde,USDE,Ethena USDe,stablecoin,market_core,ethena-usde,USDe,1,1,24,4091845995,138757508,4092296721.7788463,0.01399651940431701,1.0,pass
+stable_usd1,USD1,World Liberty Financial USD,stablecoin,market_core,usd1-wlfi,USD1,1,1,26,3993140590,1602721021,4009532929.593248,-0.045933091705331996,1.0,pass
+stable_usdg,USDG,Global Dollar,stablecoin,market_core,global-dollar,USDG,1,1,28,3386706182,339266344,3322797323.383993,0.02992593929799603,1.0,pass
+stable_pyusd,PYUSD,PayPal USD,stablecoin,growth_sleeve,paypal-usd,PYUSD,1,1,34,2895255262,145806017,2895535523.46808,0.05338773993168311,1.0,pass
+stable_rlusd,RLUSD,Ripple USD,stablecoin,growth_sleeve,ripple-usd,RLUSD,1,1,44,2073571120,906994359,2073521895.8146625,0.31637418557359376,1.0,pass
+stable_usdd,USDD,USDD,stablecoin,growth_sleeve,usdd,USDD,1,1,57,1497374852,1762513,1507483405.8477507,0.10147645538488548,1.0,pass
+stable_gho,GHO,GHO,stablecoin,growth_sleeve,gho,GHO,1,1,88,698219954,2772978,698320975.5080183,0.07704160246533132,1.0,pass
+stable_fdusd,FDUSD,First Digital USD,stablecoin,structural_coverage,first-digital-usd,FDUSD,1,1,121,351316993,246426188,351345289.1541943,0.013731560473579707,1.0,pass
+stable_tusd,TUSD,TrueUSD,stablecoin,structural_coverage,true-usd,TUSD,1,1,105,493761086,24317382,483777227.3175011,0.0,1.0,pass
+stable_frax,FRAX,Frax,stablecoin,structural_coverage,frax,FRAX,1,1,158,217373320,907949,160219953.77449858,-0.036533622290131684,1.0,pass
+stable_ustc,USTC,TerraClassicUSD,stablecoin,failure_control,terrausd,USTC,1,1,641,29660755,2468830,0,,1.0,pass
+stable_paxg,PAXG,PAX Gold,stablecoin,structural_coverage,pax-gold,PAXG,1,0,45,1987013970,108246579,,,1.0,pass

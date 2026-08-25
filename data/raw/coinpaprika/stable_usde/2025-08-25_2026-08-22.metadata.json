@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_usde",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "usde-ethena-usde",
+  "retrieved_at_utc": "2026-08-24T02:38:06.828618+00:00",
+  "sha256": "000dd0643c59ceb6236795e7dbe3fbf5f7febf3c834f12f321a27d7ec8921567",
+  "start": "2025-08-25"
+}

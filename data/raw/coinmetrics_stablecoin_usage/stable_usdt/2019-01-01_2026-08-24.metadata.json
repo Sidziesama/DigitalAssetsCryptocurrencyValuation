@@ -1,0 +1,17 @@
+{
+  "asset_id": "stable_usdt",
+  "coinmetrics_asset": "usdt",
+  "end": "2026-08-24",
+  "endpoint": "timeseries/asset-metrics",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current Creative Commons terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-25T13:26:35.442253+00:00",
+  "sha256": "25f06023878f6cd0a92e671c466436e49c46f4587aa1f5e66ff47adfc1bb3a1e",
+  "start": "2019-01-01"
+}

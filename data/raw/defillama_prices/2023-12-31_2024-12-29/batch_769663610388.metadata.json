@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_frax"
+  ],
+  "end": "2024-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:44.402843+00:00",
+  "sha256": "1251645a5ffefb072ef8d5d31c51f6dd5b9bbc0103bf28c7a95280c2928327a6",
+  "start": "2023-12-31"
+}

@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_ltc",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "ltc-litecoin",
+  "retrieved_at_utc": "2026-08-24T02:38:01.136713+00:00",
+  "sha256": "c0bf53682341f236179b7ef20d7086c0d6ca88bb932257c8b984bc22edb7ccf3",
+  "start": "2025-08-25"
+}

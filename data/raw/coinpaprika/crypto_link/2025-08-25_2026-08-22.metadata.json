@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_link",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "link-chainlink",
+  "retrieved_at_utc": "2026-08-24T02:37:58.783050+00:00",
+  "sha256": "52d3542830ee095b85db29d4667fd0f79cb797eb163885ddd05e6466b92d96dc",
+  "start": "2025-08-25"
+}

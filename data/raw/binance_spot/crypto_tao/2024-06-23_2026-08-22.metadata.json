@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_tao",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:46:00.800695+00:00",
+  "sha256": "f0a62a27b5362ff369ff032b0664cfaab90ac8580059d5504c21d03c75c84790",
+  "start": "2024-06-23",
+  "symbol": "TAOUSDT"
+}

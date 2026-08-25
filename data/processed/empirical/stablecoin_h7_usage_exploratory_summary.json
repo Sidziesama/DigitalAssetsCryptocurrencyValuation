@@ -1,0 +1,41 @@
+{
+  "analysis_role": "exploratory_usage_subsample",
+  "asset_count": 4,
+  "assets": [
+    "stable_dai",
+    "stable_tusd",
+    "stable_usdc",
+    "stable_usdt"
+  ],
+  "complete_rows": 10821,
+  "coverage_by_asset": [
+    {
+      "asset_id": "stable_dai",
+      "complete_ratio": 1.0,
+      "complete_rows": 2466,
+      "rows": 2466
+    },
+    {
+      "asset_id": "stable_tusd",
+      "complete_ratio": 0.9985652797704447,
+      "complete_rows": 2784,
+      "rows": 2788
+    },
+    {
+      "asset_id": "stable_usdc",
+      "complete_ratio": 0.9996413199426112,
+      "complete_rows": 2787,
+      "rows": 2788
+    },
+    {
+      "asset_id": "stable_usdt",
+      "complete_ratio": 0.999640933572711,
+      "complete_rows": 2784,
+      "rows": 2785
+    }
+  ],
+  "first_date": "2019-01-01",
+  "last_date": "2026-08-22",
+  "rows": 10827,
+  "scope_rule": "does not replace or determine the primary 14-asset H7 supply/share sample"
+}

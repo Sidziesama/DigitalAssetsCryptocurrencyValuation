@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_sui"
+  ],
+  "end": "2025-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:59.313972+00:00",
+  "sha256": "5688a5bdc17184fdbe43d7bb5ee34f05d0be6dacb0401428dcf202dec0c1eda3",
+  "start": "2024-12-30"
+}

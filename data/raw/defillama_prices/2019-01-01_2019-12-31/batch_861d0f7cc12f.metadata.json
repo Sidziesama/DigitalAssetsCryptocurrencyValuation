@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_zec"
+  ],
+  "end": "2019-12-31",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:15.154948+00:00",
+  "sha256": "abcef1f9f756b82d75f7f49d84a8fbc0067df7a8d005a231543a146eec259412",
+  "start": "2019-01-01"
+}

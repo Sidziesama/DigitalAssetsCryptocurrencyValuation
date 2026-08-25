@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_bnb",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:44:42.439210+00:00",
+  "sha256": "2ceb22f86ab545952cddf97197a4959acbdf53089e133a8f3323a9d1ac658ffa",
+  "start": "2019-01-01",
+  "symbol": "BNBUSDT"
+}

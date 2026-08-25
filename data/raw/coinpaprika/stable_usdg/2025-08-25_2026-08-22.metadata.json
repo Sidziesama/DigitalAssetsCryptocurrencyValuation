@@ -1,0 +1,9 @@
+{
+  "asset_id": "stable_usdg",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "usdg-global-dollar",
+  "retrieved_at_utc": "2026-08-24T02:38:07.328396+00:00",
+  "sha256": "1c117cccc5fc2788917b5046ce8d648232cd46303f27e4b0e62f334bbf0ef1ac",
+  "start": "2025-08-25"
+}

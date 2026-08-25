@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_bch",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "bch-bitcoin-cash",
+  "retrieved_at_utc": "2026-08-24T02:38:00.642226+00:00",
+  "sha256": "78f2f6f4210629dff6397ffefe1c6677b386c5c4e4d7a9e3709ee56bebcd58a4",
+  "start": "2025-08-25"
+}

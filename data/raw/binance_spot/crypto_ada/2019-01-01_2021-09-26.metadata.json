@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_ada",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:18.152284+00:00",
+  "sha256": "a043b4b08c6d760c387ff4a512881b2d36f181f6b8a13153220a67a01bec1258",
+  "start": "2019-01-01",
+  "symbol": "ADAUSDT"
+}

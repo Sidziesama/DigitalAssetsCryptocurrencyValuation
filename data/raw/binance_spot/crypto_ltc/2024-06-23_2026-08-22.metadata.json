@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_ltc",
+  "end": "2026-08-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:40.091036+00:00",
+  "sha256": "0396fb22bfe714f70839338413be5150fa70e405eb29463c2876d82c6a8f7ec7",
+  "start": "2024-06-23",
+  "symbol": "LTCUSDT"
+}

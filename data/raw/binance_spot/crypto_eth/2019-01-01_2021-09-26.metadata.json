@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_eth",
+  "end": "2021-09-26",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:44:37.530862+00:00",
+  "sha256": "fe088dd821fa43941c10c6cb70eab05e19bd8eef78fe84b9622f106237e7623a",
+  "start": "2019-01-01",
+  "symbol": "ETHUSDT"
+}

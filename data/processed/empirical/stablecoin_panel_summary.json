@@ -1,0 +1,32 @@
+{
+  "asset_ids": [
+    "stable_dai",
+    "stable_fdusd",
+    "stable_frax",
+    "stable_gho",
+    "stable_pyusd",
+    "stable_rlusd",
+    "stable_tusd",
+    "stable_usd1",
+    "stable_usdc",
+    "stable_usdd",
+    "stable_usde",
+    "stable_usdg",
+    "stable_usds",
+    "stable_usdt",
+    "stable_ustc"
+  ],
+  "assets": 15,
+  "breach_bps": 50.0,
+  "breach_days_50bps": 3670,
+  "censored_episodes": 14,
+  "data_review_episodes": 8,
+  "episodes": 533,
+  "median_absolute_peg_error_bps": 9.999999999998899,
+  "panel_rows": 23384,
+  "paxg_excluded_reason": "commodity-referenced target requires gold benchmark",
+  "primary_sample_breach_days_50bps": 1943,
+  "primary_sample_episodes_ex_failure_control": 465,
+  "recovered_episodes": 519,
+  "recovery_bps": 25.0
+}

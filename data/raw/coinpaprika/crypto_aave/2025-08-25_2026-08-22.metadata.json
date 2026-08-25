@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_aave",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "aave-new",
+  "retrieved_at_utc": "2026-08-24T02:38:03.946140+00:00",
+  "sha256": "3a2082d5534aaeb1c65e90fa35a44b1f24cad6f76bde6202b5630a23309283ac",
+  "start": "2025-08-25"
+}

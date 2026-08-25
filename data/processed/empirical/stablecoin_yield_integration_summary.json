@@ -1,0 +1,13 @@
+{
+  "assets_with_matched_projects": 14,
+  "eligible_assets": 14,
+  "limitations": [
+    "symbol-component rather than contract-address matching",
+    "yield-bearing pools only",
+    "gross pool TVL is not token-specific TVL"
+  ],
+  "matched_asset_pool_rows": 5033,
+  "provider_pool_records": 16844,
+  "readiness": "cross_sectional_proxy_only_not_historical_or_exhaustive",
+  "snapshot_utc": "2026-08-24T06:28:21.228834+00:00"
+}

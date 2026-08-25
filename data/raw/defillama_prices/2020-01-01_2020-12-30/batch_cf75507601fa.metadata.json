@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_trx"
+  ],
+  "end": "2020-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:39.299957+00:00",
+  "sha256": "8a90c30add3c0f7fee914c52be0ce606f0b84f55fd951245e234ee19b2b8fba0",
+  "start": "2020-01-01"
+}

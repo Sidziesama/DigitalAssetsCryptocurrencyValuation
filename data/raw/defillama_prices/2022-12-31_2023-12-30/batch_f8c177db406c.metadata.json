@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_xmr"
+  ],
+  "end": "2023-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:15:57.914719+00:00",
+  "sha256": "1322e0c8e25ad443c4fc4793cf228c77e136b6c5e51109813ea7e6fb04119dc3",
+  "start": "2022-12-31"
+}

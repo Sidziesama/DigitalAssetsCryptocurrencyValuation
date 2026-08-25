@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_uni",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "uni-uniswap",
+  "retrieved_at_utc": "2026-08-24T02:38:03.469122+00:00",
+  "sha256": "7067edd6a974484a5490f757a4e78a5cc9c3a902610f57d53ecfb69a24acfb91",
+  "start": "2025-08-25"
+}

@@ -1,0 +1,10 @@
+{
+  "asset_id": "crypto_xlm",
+  "end": "2024-06-22",
+  "provider": "binance_spot",
+  "quote_asset": "USDT",
+  "retrieved_at_utc": "2026-08-24T02:45:28.745541+00:00",
+  "sha256": "4d90991897674af6ad41055599f367dc51b61f9064faceabe1feeaefacde1393",
+  "start": "2021-09-27",
+  "symbol": "XLMUSDT"
+}

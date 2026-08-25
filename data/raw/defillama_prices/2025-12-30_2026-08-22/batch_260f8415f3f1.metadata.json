@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_hype"
+  ],
+  "end": "2026-08-22",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:19.411036+00:00",
+  "sha256": "654dc5d66e8832209e2b5bf6249b22b532ddf3e12a038d3bb746488ede95fb5c",
+  "start": "2025-12-30"
+}

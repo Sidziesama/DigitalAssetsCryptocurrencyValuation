@@ -1,0 +1,10 @@
+{
+  "coverage_pass_assets": 4,
+  "daily_rows": 10856,
+  "eligible_assets": 14,
+  "end_date": "2026-08-24",
+  "interpretation": "Coin Metrics asset-level active-address, ledger-transaction, and token-transfer metrics; active addresses are addresses, not identified users",
+  "provider_supported_assets": 4,
+  "readiness": "partial_asset_coverage_not_full_h7_sample_ready",
+  "start_date": "2019-01-01"
+}

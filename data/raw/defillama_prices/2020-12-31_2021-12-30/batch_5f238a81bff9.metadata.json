@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_ton"
+  ],
+  "end": "2021-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:15:13.056910+00:00",
+  "sha256": "36dad2cb85fde8df1309ba73e98bcf040a2b8247996b283ba54839d2c69bce6e",
+  "start": "2020-12-31"
+}

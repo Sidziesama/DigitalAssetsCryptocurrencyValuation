@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_rlusd"
+  ],
+  "end": "2026-08-22",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:17:39.048687+00:00",
+  "sha256": "fc58b7f2fb5df877fa09db09ccfc275e08ac2ca35145d9ebd5d17baf0120cf39",
+  "start": "2025-12-30"
+}

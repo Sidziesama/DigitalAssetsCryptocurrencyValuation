@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_sol"
+  ],
+  "end": "2020-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:14:38.522948+00:00",
+  "sha256": "50396676a2ac06d4f5368d84dd7e30fd1b64809ee9edf271c0001167147bd29b",
+  "start": "2020-01-01"
+}

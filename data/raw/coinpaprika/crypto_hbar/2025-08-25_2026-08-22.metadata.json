@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_hbar",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "hbar-hedera-hashgraph",
+  "retrieved_at_utc": "2026-08-24T02:38:01.599012+00:00",
+  "sha256": "592c03ad8bd48ca951e0a14e500977802d012d575114372368769ffaa3837650",
+  "start": "2025-08-25"
+}

@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_doge",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "doge-dogecoin",
+  "retrieved_at_utc": "2026-08-24T02:37:57.840028+00:00",
+  "sha256": "50286d0831726392dd826a5cbe8207609b7875ddf13650dd0b4baa154d1d0ec8",
+  "start": "2025-08-25"
+}

@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "crypto_doge"
+  ],
+  "end": "2024-12-29",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:16:22.389051+00:00",
+  "sha256": "3dbfb6eef09dffff0429101a77400c60554fc8b4f9597a32663561bcf5f9b790",
+  "start": "2023-12-31"
+}

@@ -1,0 +1,11 @@
+{
+  "anchor_asset": "USDT",
+  "asset_id": "stable_frax",
+  "endpoint": "/api/v3/depth",
+  "limit": 1000,
+  "pair": "FRAXUSDT",
+  "provider": "binance_spot",
+  "retrieved_at_utc": "2026-08-24T06:11:38.133869+00:00",
+  "sha256": "ee153f3f23b13b5872a017c71b7943945caf2999490d3ee218c1e7a038295448",
+  "target_is_base": true
+}

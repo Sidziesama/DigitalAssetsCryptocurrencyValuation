@@ -1,0 +1,11 @@
+{
+  "asset_ids": [
+    "stable_ustc"
+  ],
+  "end": "2021-12-30",
+  "http_status": 200,
+  "provider": "defillama",
+  "retrieved_at_utc": "2026-08-22T22:15:25.135531+00:00",
+  "sha256": "65e155576d91ae8da2c1ddc0d329f133c86f26323842cc3e2eff23f49456ea60",
+  "start": "2020-12-31"
+}

@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_tao",
+  "end": "2026-08-22",
+  "provider": "coinpaprika",
+  "provider_id": "tao-bittensor",
+  "retrieved_at_utc": "2026-08-24T02:38:02.996384+00:00",
+  "sha256": "b1419170c8bccb4796abccc48c19d6296d9ef3d9f4ead102cb44814ed4b11e55",
+  "start": "2025-08-25"
+}

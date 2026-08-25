@@ -1,0 +1,8 @@
+{
+  "asset_id": "crypto_btc",
+  "end": "2026-08-22",
+  "provider_id": "bitcoin",
+  "retrieved_at_utc": "2026-08-22T22:06:35.170724+00:00",
+  "sha256": "ea2f06ba92680ec2a6fa4219e7c2b5b2e912c312a9ff6da11d6783d18d5d405c",
+  "start": "2026-07-24"
+}
