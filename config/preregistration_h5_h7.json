@@ -83,5 +83,5 @@
     "H6": ["strict redemption-friction scores for at least 8 primary assets", "point-in-time evidence", "second-coder review complete"],
     "H7": ["daily supply coverage gate passed", "pilot-share denominator constructed", "DeFiLlama global pegged-USD denominator source-audited", "market-depth and integration variables source-audited", "four-asset usage subsample fixed before estimation and labeled exploratory"]
   },
-  "current_readiness": {"H5": "blocked_point_in_time_scores", "H6": "blocked_incomplete_strict_scores", "H7": "primary_14_asset_supply_share_ready_exploratory_4_asset_usage_ready_historical_depth_and_validated_integrations_pending"}
+  "current_readiness": {"H5": "temporal_overlap_ready_8_assets_targeted_review_and_additional_historical_score_dates_pending", "H6": "temporal_overlap_ready_8_assets_targeted_review_pending", "H7": "primary_14_asset_supply_share_ready_exploratory_4_asset_usage_ready_historical_depth_and_validated_integrations_pending"}
 }

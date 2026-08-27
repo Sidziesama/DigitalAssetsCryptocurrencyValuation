@@ -1,0 +1,19 @@
+{
+  "status": "provisional_pending_targeted_review",
+  "assets": 25,
+  "review_decisions": 250,
+  "active_capture_assets": 18,
+  "mean_va_breadth": 5.36,
+  "consensus_counts": {
+    "DPoS": 1,
+    "NA": 2,
+    "PoS": 6,
+    "PoS family": 4,
+    "PoW": 6,
+    "federated consensus": 2,
+    "hashgraph PoS": 1,
+    "rollup": 2,
+    "service staking": 1
+  },
+  "next_requirement": "Complete evidence-backed targeted review before freezing H2/H8 design variables."
+}

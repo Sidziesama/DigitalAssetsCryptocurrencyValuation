@@ -1,0 +1,83 @@
+{
+  "as_of": "2026-08-22",
+  "checkpoint": "point_in_time_design_evidence_pilot",
+  "status": "commit_ready_methodology_checkpoint_not_model_ready",
+  "checks": {
+    "crypto_grid_complete": true,
+    "crypto_verified_counts_reconcile": true,
+    "crypto_no_verified_mismatches": true,
+    "unresolved_count_reconciles": true,
+    "missing_activity_not_classified_negative": true,
+    "mechanism_state_passes": true,
+    "historical_collateral_state_available": true,
+    "stablecoin_temporal_overlap_ready": true
+  },
+  "crypto_evidence": {
+    "assets": 6,
+    "targeted_decisions": 24,
+    "verified_decisions": 18,
+    "pending_decisions": 6,
+    "coverage_ratio": 0.75,
+    "unresolved": [
+      {
+        "asset_id": "crypto_bnb",
+        "code": "VA_MONETARY",
+        "status": "pending_quantitative_behavior"
+      },
+      {
+        "asset_id": "crypto_bnb",
+        "code": "VA_COLLATERAL",
+        "status": "pending_quantitative_threshold"
+      },
+      {
+        "asset_id": "crypto_uni",
+        "code": "VA_COLLATERAL",
+        "status": "pending_quantitative_threshold"
+      },
+      {
+        "asset_id": "crypto_aave",
+        "code": "VA_COLLATERAL",
+        "status": "pending_quantitative_threshold"
+      },
+      {
+        "asset_id": "crypto_arb",
+        "code": "VA_MONETARY",
+        "status": "pending_absence_review"
+      },
+      {
+        "asset_id": "crypto_arb",
+        "code": "VA_COLLATERAL",
+        "status": "pending_quantitative_threshold"
+      }
+    ]
+  },
+  "source_coverage": {
+    "free_fundamentals_assets_with_behavioral_coverage": 4,
+    "monetary_unresolved_assets": [
+      "crypto_bnb",
+      "crypto_arb"
+    ],
+    "collateral_proxy_pass_assets": [
+      "crypto_btc",
+      "crypto_eth"
+    ],
+    "historical_collateral_state_assets": 2,
+    "effective_dated_mechanism_states": 12
+  },
+  "stablecoin_evidence": {
+    "temporally_eligible_assets": 8,
+    "post_score_outcome_rows": 1016,
+    "status": "temporal_overlap_ready"
+  },
+  "model_readiness": {
+    "h2_h8": "not_ready_until_remaining_pilot_decisions_are_resolved_and_evidence_is_extended",
+    "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation"
+  },
+  "guardrails": [
+    "Unknown or unsupported provider coverage remains null and is never encoded as zero.",
+    "DeFiLlama supplied balances are a screen, not collateral-eligibility proof.",
+    "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
+    "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results."
+  ],
+  "next_checkpoint": "Resolve the six remaining pilot decisions, freeze the focused review, and build the first estimation-ready H2/H8 panel."
+}

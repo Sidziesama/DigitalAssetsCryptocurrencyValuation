@@ -1,0 +1,18 @@
+{
+  "asset_id": "crypto_uni",
+  "coinmetrics_asset": "uni",
+  "end": "2026-08-22",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt",
+    "CapMrktCurUSD",
+    "SplyCur"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-26T15:38:46.189004+00:00",
+  "sha256": "037d4753bc2fdc93a451327a350016a080656a97c65b417fee6b83057c687a62",
+  "start": "2026-05-25"
+}

@@ -1,0 +1,18 @@
+{
+  "asset_id": "crypto_eth",
+  "coinmetrics_asset": "eth",
+  "end": "2026-08-22",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt",
+    "CapMrktCurUSD",
+    "SplyCur"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-26T01:03:43.979440+00:00",
+  "sha256": "5e7d3b2768604d1f099f2b65604979e069ae20975460bbbff157d6247c333b48",
+  "start": "2026-07-24"
+}

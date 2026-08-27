@@ -1,0 +1,251 @@
+asset_id,symbol,valid_from,consensus_context,code,decision_0_or_1,confidence_low_medium_high,evidence_url,evidence_date,reviewer_note,rule
+crypto_btc,BTC,2026-08-22,PoW,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_btc,BTC,2026-08-22,PoW,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_btc,BTC,2026-08-22,PoW,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_btc,BTC,2026-08-22,PoW,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_btc,BTC,2026-08-22,PoW,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_btc,BTC,2026-08-22,PoW,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_btc,BTC,2026-08-22,PoW,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_btc,BTC,2026-08-22,PoW,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_btc,BTC,2026-08-22,PoW,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_btc,BTC,2026-08-22,PoW,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_eth,ETH,2026-08-22,PoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_eth,ETH,2026-08-22,PoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_eth,ETH,2026-08-22,PoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_eth,ETH,2026-08-22,PoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_eth,ETH,2026-08-22,PoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_eth,ETH,2026-08-22,PoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_eth,ETH,2026-08-22,PoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_eth,ETH,2026-08-22,PoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_eth,ETH,2026-08-22,PoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_eth,ETH,2026-08-22,PoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_bnb,BNB,2026-08-22,PoS family,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_bnb,BNB,2026-08-22,PoS family,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_bnb,BNB,2026-08-22,PoS family,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_bnb,BNB,2026-08-22,PoS family,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_bnb,BNB,2026-08-22,PoS family,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_bnb,BNB,2026-08-22,PoS family,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_bnb,BNB,2026-08-22,PoS family,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_bnb,BNB,2026-08-22,PoS family,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_bnb,BNB,2026-08-22,PoS family,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_bnb,BNB,2026-08-22,PoS family,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_xrp,XRP,2026-08-22,federated consensus,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_sol,SOL,2026-08-22,PoS family,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_sol,SOL,2026-08-22,PoS family,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_sol,SOL,2026-08-22,PoS family,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_sol,SOL,2026-08-22,PoS family,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_sol,SOL,2026-08-22,PoS family,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_sol,SOL,2026-08-22,PoS family,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_sol,SOL,2026-08-22,PoS family,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_sol,SOL,2026-08-22,PoS family,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_sol,SOL,2026-08-22,PoS family,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_sol,SOL,2026-08-22,PoS family,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_trx,TRX,2026-08-22,DPoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_trx,TRX,2026-08-22,DPoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_trx,TRX,2026-08-22,DPoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_trx,TRX,2026-08-22,DPoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_trx,TRX,2026-08-22,DPoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_trx,TRX,2026-08-22,DPoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_trx,TRX,2026-08-22,DPoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_trx,TRX,2026-08-22,DPoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_trx,TRX,2026-08-22,DPoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_trx,TRX,2026-08-22,DPoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_hype,HYPE,2026-08-22,PoS family,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_hype,HYPE,2026-08-22,PoS family,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_hype,HYPE,2026-08-22,PoS family,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_hype,HYPE,2026-08-22,PoS family,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_hype,HYPE,2026-08-22,PoS family,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_hype,HYPE,2026-08-22,PoS family,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_hype,HYPE,2026-08-22,PoS family,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_hype,HYPE,2026-08-22,PoS family,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_hype,HYPE,2026-08-22,PoS family,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_hype,HYPE,2026-08-22,PoS family,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_doge,DOGE,2026-08-22,PoW,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_doge,DOGE,2026-08-22,PoW,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_doge,DOGE,2026-08-22,PoW,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_doge,DOGE,2026-08-22,PoW,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_doge,DOGE,2026-08-22,PoW,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_doge,DOGE,2026-08-22,PoW,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_doge,DOGE,2026-08-22,PoW,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_doge,DOGE,2026-08-22,PoW,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_doge,DOGE,2026-08-22,PoW,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_doge,DOGE,2026-08-22,PoW,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_zec,ZEC,2026-08-22,PoW,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_zec,ZEC,2026-08-22,PoW,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_zec,ZEC,2026-08-22,PoW,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_zec,ZEC,2026-08-22,PoW,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_zec,ZEC,2026-08-22,PoW,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_zec,ZEC,2026-08-22,PoW,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_zec,ZEC,2026-08-22,PoW,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_zec,ZEC,2026-08-22,PoW,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_zec,ZEC,2026-08-22,PoW,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_zec,ZEC,2026-08-22,PoW,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_link,LINK,2026-08-22,service staking,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_link,LINK,2026-08-22,service staking,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_link,LINK,2026-08-22,service staking,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_link,LINK,2026-08-22,service staking,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_link,LINK,2026-08-22,service staking,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_link,LINK,2026-08-22,service staking,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_link,LINK,2026-08-22,service staking,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_link,LINK,2026-08-22,service staking,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_link,LINK,2026-08-22,service staking,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_link,LINK,2026-08-22,service staking,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_ada,ADA,2026-08-22,PoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_ada,ADA,2026-08-22,PoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_ada,ADA,2026-08-22,PoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_ada,ADA,2026-08-22,PoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_ada,ADA,2026-08-22,PoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_ada,ADA,2026-08-22,PoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_ada,ADA,2026-08-22,PoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_ada,ADA,2026-08-22,PoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_ada,ADA,2026-08-22,PoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_ada,ADA,2026-08-22,PoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_xmr,XMR,2026-08-22,PoW,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_xmr,XMR,2026-08-22,PoW,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_xmr,XMR,2026-08-22,PoW,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_xmr,XMR,2026-08-22,PoW,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_xmr,XMR,2026-08-22,PoW,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_xmr,XMR,2026-08-22,PoW,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_xmr,XMR,2026-08-22,PoW,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_xmr,XMR,2026-08-22,PoW,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_xmr,XMR,2026-08-22,PoW,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_xmr,XMR,2026-08-22,PoW,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_xlm,XLM,2026-08-22,federated consensus,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_bch,BCH,2026-08-22,PoW,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_bch,BCH,2026-08-22,PoW,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_bch,BCH,2026-08-22,PoW,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_bch,BCH,2026-08-22,PoW,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_bch,BCH,2026-08-22,PoW,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_bch,BCH,2026-08-22,PoW,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_bch,BCH,2026-08-22,PoW,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_bch,BCH,2026-08-22,PoW,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_bch,BCH,2026-08-22,PoW,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_bch,BCH,2026-08-22,PoW,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_ltc,LTC,2026-08-22,PoW,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_ltc,LTC,2026-08-22,PoW,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_ltc,LTC,2026-08-22,PoW,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_ltc,LTC,2026-08-22,PoW,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_ltc,LTC,2026-08-22,PoW,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_ltc,LTC,2026-08-22,PoW,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_ltc,LTC,2026-08-22,PoW,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_ltc,LTC,2026-08-22,PoW,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_ltc,LTC,2026-08-22,PoW,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_ltc,LTC,2026-08-22,PoW,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_hbar,HBAR,2026-08-22,hashgraph PoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_sui,SUI,2026-08-22,PoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_sui,SUI,2026-08-22,PoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_sui,SUI,2026-08-22,PoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_sui,SUI,2026-08-22,PoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_sui,SUI,2026-08-22,PoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_sui,SUI,2026-08-22,PoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_sui,SUI,2026-08-22,PoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_sui,SUI,2026-08-22,PoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_sui,SUI,2026-08-22,PoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_sui,SUI,2026-08-22,PoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_avax,AVAX,2026-08-22,PoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_avax,AVAX,2026-08-22,PoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_avax,AVAX,2026-08-22,PoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_avax,AVAX,2026-08-22,PoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_avax,AVAX,2026-08-22,PoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_avax,AVAX,2026-08-22,PoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_avax,AVAX,2026-08-22,PoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_avax,AVAX,2026-08-22,PoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_avax,AVAX,2026-08-22,PoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_avax,AVAX,2026-08-22,PoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_ton,TON,2026-08-22,PoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_ton,TON,2026-08-22,PoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_ton,TON,2026-08-22,PoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_ton,TON,2026-08-22,PoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_ton,TON,2026-08-22,PoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_ton,TON,2026-08-22,PoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_ton,TON,2026-08-22,PoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_ton,TON,2026-08-22,PoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_ton,TON,2026-08-22,PoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_ton,TON,2026-08-22,PoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_tao,TAO,2026-08-22,PoS family,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_tao,TAO,2026-08-22,PoS family,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_tao,TAO,2026-08-22,PoS family,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_tao,TAO,2026-08-22,PoS family,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_tao,TAO,2026-08-22,PoS family,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_tao,TAO,2026-08-22,PoS family,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_tao,TAO,2026-08-22,PoS family,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_tao,TAO,2026-08-22,PoS family,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_tao,TAO,2026-08-22,PoS family,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_tao,TAO,2026-08-22,PoS family,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_uni,UNI,2026-08-22,NA,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_uni,UNI,2026-08-22,NA,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_uni,UNI,2026-08-22,NA,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_uni,UNI,2026-08-22,NA,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_uni,UNI,2026-08-22,NA,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_uni,UNI,2026-08-22,NA,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_uni,UNI,2026-08-22,NA,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_uni,UNI,2026-08-22,NA,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_uni,UNI,2026-08-22,NA,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_uni,UNI,2026-08-22,NA,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_aave,AAVE,2026-08-22,NA,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_aave,AAVE,2026-08-22,NA,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_aave,AAVE,2026-08-22,NA,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_aave,AAVE,2026-08-22,NA,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_aave,AAVE,2026-08-22,NA,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_aave,AAVE,2026-08-22,NA,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_aave,AAVE,2026-08-22,NA,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_aave,AAVE,2026-08-22,NA,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_aave,AAVE,2026-08-22,NA,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_aave,AAVE,2026-08-22,NA,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_arb,ARB,2026-08-22,rollup,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_arb,ARB,2026-08-22,rollup,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_arb,ARB,2026-08-22,rollup,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_arb,ARB,2026-08-22,rollup,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_arb,ARB,2026-08-22,rollup,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_arb,ARB,2026-08-22,rollup,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_arb,ARB,2026-08-22,rollup,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_arb,ARB,2026-08-22,rollup,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_arb,ARB,2026-08-22,rollup,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_arb,ARB,2026-08-22,rollup,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_op,OP,2026-08-22,rollup,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_op,OP,2026-08-22,rollup,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_op,OP,2026-08-22,rollup,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_op,OP,2026-08-22,rollup,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_op,OP,2026-08-22,rollup,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_op,OP,2026-08-22,rollup,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_op,OP,2026-08-22,rollup,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_op,OP,2026-08-22,rollup,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_op,OP,2026-08-22,rollup,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_op,OP,2026-08-22,rollup,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."
+crypto_pol,POL,2026-08-22,PoS,VA_MONETARY,,,,,,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests."
+crypto_pol,POL,2026-08-22,PoS,VA_GAS,,,,,,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees."
+crypto_pol,POL,2026-08-22,PoS,VA_STAKE,,,,,,"Token is locked, delegated, or economically at risk to secure a network or protocol service."
+crypto_pol,POL,2026-08-22,PoS,VA_BURN,,,,,,A live rules-based mechanism irreversibly destroys tokens.
+crypto_pol,POL,2026-08-22,PoS,VA_SCARCITY,,,,,,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.
+crypto_pol,POL,2026-08-22,PoS,VA_COLLATERAL,,,,,,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.
+crypto_pol,POL,2026-08-22,PoS,VA_GOV,,,,,,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control."
+crypto_pol,POL,2026-08-22,PoS,VA_PROTOCOL,,,,,,"A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights."
+crypto_pol,POL,2026-08-22,PoS,VA_UTILITY,,,,,,Token is required to consume an identifiable non-generic service beyond transfer.
+crypto_pol,POL,2026-08-22,PoS,VA_INCENTIVE,,,,,,"A systematic program subsidizes liquidity, usage, development, or participation."

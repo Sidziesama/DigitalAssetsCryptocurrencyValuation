@@ -1,0 +1,3 @@
+asset_id,expected_days,observed_days,collateral_enabled_days,minimum_ltv_bps,maximum_ltv_bps,eligibility_pass
+crypto_btc,90,90,90,7300,7300,1
+crypto_eth,90,90,90,8050,8050,1

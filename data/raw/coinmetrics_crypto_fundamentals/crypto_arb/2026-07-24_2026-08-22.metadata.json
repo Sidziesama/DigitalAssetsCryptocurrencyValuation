@@ -1,0 +1,18 @@
+{
+  "asset_id": "crypto_arb",
+  "coinmetrics_asset": "arb",
+  "end": "2026-08-22",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt",
+    "CapMrktCurUSD",
+    "SplyCur"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-26T01:04:26.855221+00:00",
+  "sha256": "bf5b2811beee0307daff9054b60ff8c4f875faeb7bb0c9a1216d5302d77f6432",
+  "start": "2026-07-24"
+}

@@ -1,0 +1,18 @@
+{
+  "asset_id": "crypto_aave",
+  "coinmetrics_asset": "aave",
+  "end": "2026-08-22",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt",
+    "CapMrktCurUSD",
+    "SplyCur"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-26T15:38:46.276168+00:00",
+  "sha256": "4e65d20cba1b45e3438f37b85f383d8eb0cde23b817416da0b122c8d5265cf70",
+  "start": "2026-05-25"
+}

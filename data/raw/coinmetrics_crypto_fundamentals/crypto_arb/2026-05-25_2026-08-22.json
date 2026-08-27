@@ -1,0 +1,1 @@
+{"data":[],"availability_error":{"error":{"type":"bad_parameter","message":"Bad parameter 'metrics'. All requested metrics aren't supported for asset 'arb' and frequency '1d'."}}}

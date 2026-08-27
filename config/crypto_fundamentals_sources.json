@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider": "coinmetrics_community",
+  "assets": [
+    {"asset_id":"crypto_btc","provider_id":"btc"},
+    {"asset_id":"crypto_eth","provider_id":"eth"},
+    {"asset_id":"crypto_bnb","provider_id":"bnb"},
+    {"asset_id":"crypto_uni","provider_id":"uni"},
+    {"asset_id":"crypto_aave","provider_id":"aave"},
+    {"asset_id":"crypto_arb","provider_id":"arb"}
+  ]
+}

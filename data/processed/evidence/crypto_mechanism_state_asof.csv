@@ -1,0 +1,13 @@
+asset_id,code,effective_from,value,source_url,rationale,as_of,design_value,matches_design
+crypto_aave,VA_BURN,2026-04-19,0,https://governance.aave.com/t/arfc-pause-aave-buybacks/24686,Buybacks are not burn and were paused.,2026-08-22,0,1
+crypto_aave,VA_PROTOCOL,2026-04-19,0,https://governance.aave.com/t/arfc-pause-aave-buybacks/24686,"The active buyback route was paused; retain as an option, not active capture.",2026-08-22,0,1
+crypto_arb,VA_BURN,2023-03-23,0,https://github.com/ArbitrumFoundation/governance,The reviewed ARB governance-token implementation and allocation workflow contain no live automatic rules-based burn mechanism.,2026-08-22,0,1
+crypto_arb,VA_PROTOCOL,2023-12-31,1,https://docs.arbitrum.foundation/assets/files/ArbitrumFoundationTransparencyReport2023-75b1b491667ad2fa1d9d574a2108f28b.pdf,Network revenue enters the DAO treasury governed by ARB tokenholders.,2026-08-22,1,1
+crypto_bnb,VA_BURN,2023-01-17,1,https://www.bnbchain.org/en/blog/22nd-bnb-burn,Completed Auto-Burn and live gas-fee burn documented.,2026-08-22,1,1
+crypto_bnb,VA_PROTOCOL,2023-01-17,1,https://www.bnbchain.org/en/blog/22nd-bnb-burn,Network activity is linked to BNB burning.,2026-08-22,1,1
+crypto_btc,VA_BURN,2009-01-03,0,https://developer.bitcoin.org/devguide/transactions.html,"Fees are transferred to miners, not burned.",2026-08-22,0,1
+crypto_btc,VA_PROTOCOL,2009-01-03,0,https://developer.bitcoin.org/devguide/transactions.html,"Mining revenue is compensation to block producers, not a holder route.",2026-08-22,0,1
+crypto_eth,VA_BURN,2021-08-05,1,https://eips.ethereum.org/EIPS/eip-1559,The base fee is burned.,2026-08-22,1,1
+crypto_eth,VA_PROTOCOL,2021-08-05,1,https://eips.ethereum.org/EIPS/eip-1559,Usage-linked base-fee burning satisfies the capture rule.,2026-08-22,1,1
+crypto_uni,VA_BURN,2026-02-18,1,https://gov.uniswap.org/t/temp-check-protocol-fee-expansion-eight-more-chains-and-remaining-mainnet-v3-pools/26035,The live fee system converts collected fees to UNI burns.,2026-08-22,1,1
+crypto_uni,VA_PROTOCOL,2026-02-18,1,https://gov.uniswap.org/t/temp-check-protocol-fee-expansion-eight-more-chains-and-remaining-mainnet-v3-pools/26035,Live protocol revenue is routed to UNI burns.,2026-08-22,1,1

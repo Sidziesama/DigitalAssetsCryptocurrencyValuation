@@ -1,0 +1,14 @@
+{
+  "assets": 6,
+  "daily_rows": 360,
+  "monetary_behavior_coverage_pass": 4,
+  "free_market_baseline_coverage_pass": 4,
+  "unavailable_on_free_tier": [
+    "adjusted_transfer_value_usd",
+    "fees_usd",
+    "continuous_issuance_native"
+  ],
+  "start_date": "2026-05-25",
+  "end_date": "2026-08-22",
+  "interpretation": "Address, transaction, and transfer counts can support one monetary-use behavioral test; they cannot alone establish VA_MONETARY. Collateral classification requires a separate protocol-level source."
+}

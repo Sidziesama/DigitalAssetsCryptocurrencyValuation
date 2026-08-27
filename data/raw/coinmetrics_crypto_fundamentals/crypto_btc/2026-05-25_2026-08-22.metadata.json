@@ -1,0 +1,18 @@
+{
+  "asset_id": "crypto_btc",
+  "coinmetrics_asset": "btc",
+  "end": "2026-08-22",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt",
+    "CapMrktCurUSD",
+    "SplyCur"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-26T15:38:45.946553+00:00",
+  "sha256": "f05701f99f8718224a45ff65fcdd58770f75733afce2dff4cd477db71273abb2",
+  "start": "2026-05-25"
+}

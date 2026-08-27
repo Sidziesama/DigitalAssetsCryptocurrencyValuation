@@ -1,0 +1,14 @@
+{
+  "assets": 6,
+  "protocols": 3,
+  "detail_rows": 1530,
+  "daily_rows": 540,
+  "proxy_pass_assets": [
+    "crypto_btc",
+    "crypto_eth"
+  ],
+  "classification_ready_assets": 0,
+  "start_date": "2026-05-25",
+  "end_date": "2026-08-22",
+  "interpretation": "DeFiLlama token TVL is a screening proxy for supplied balances, not proof that every balance is collateral-enabled. A positive VA_COLLATERAL decision additionally requires point-in-time protocol eligibility evidence."
+}

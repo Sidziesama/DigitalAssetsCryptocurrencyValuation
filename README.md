@@ -31,13 +31,15 @@ The Phase 2 pilot contains 25 non-stable cryptoassets and 16 stable-value assets
 5. Every analytical table must be reproducible from frozen raw inputs and version-controlled transformations.
 6. Market snapshots, issuer terms, protocol designs, and legal rights are treated as time-varying.
 
-## Immediate workstream
+## Current checkpoint and immediate workstream
 
-1. Independent second-coder review of the pilot classifications.
-2. Component-level stablecoin reserve-quality, transparency, and redemption-friction scoring.
-3. Historical data-coverage audit for 2019–2026 daily panels and selected intraday depeg episodes.
-4. Identifier registry and ingestion pipeline.
-5. Descriptive atlas and preregistration freeze before headline hypothesis testing.
+The project has reached a **commit-ready point-in-time design-evidence pilot**. The stablecoin scorecard has temporally valid post-score outcomes for eight assets. The first non-stable crypto tranche covers six assets and four prioritized value-accrual codes: 18 of 24 decisions are verified, six remain explicitly unresolved, and no verified decision conflicts with the current design matrix. This is a methodology and provenance checkpoint, not an estimation-ready or hypothesis-result checkpoint.
+
+1. Resolve the remaining BNB/ARB monetary and BNB/UNI/AAVE/ARB collateral decisions without converting missing provider coverage into zero.
+2. Run the focused review only on fields that will enter H2/H8 and H5/H6 estimation.
+3. Extend the evidence schema from the six-asset tranche to the remaining non-stable pilot assets.
+4. Freeze estimation samples and build the first hypothesis-ready panels.
+5. Estimate descriptive and baseline models, then run preregistered robustness and sensitivity checks.
 
 ## Run the current pipeline
 
@@ -53,6 +55,17 @@ python -m src.pipeline.stablecoin_global_market --repo . --start 2019-01-01 --en
 python -m src.pipeline.source_availability --repo .
 python -m src.pipeline.stablecoin_risk --repo .
 python -m src.pipeline.stablecoin_evidence --repo .
+python -m src.pipeline.stablecoin_scorecard --repo .
+python -m src.pipeline.stablecoin_score_intervals --repo .
+python -m src.pipeline.h5_h6_readiness --repo .
+python -m src.pipeline.crypto_economic_design --repo .
+python -m src.pipeline.crypto_design_evidence --repo .
+python -m src.pipeline.crypto_fundamentals --repo . --start 2026-07-24 --end 2026-08-22
+python -m src.pipeline.crypto_collateral --repo . --start 2026-05-25 --end 2026-08-22
+python -m src.pipeline.aave_collateral_state --repo . --start 2026-05-25 --end 2026-08-22
+python -m src.pipeline.crypto_monetary --repo .
+python -m src.pipeline.crypto_mechanism_state --repo .
+python -m src.pipeline.checkpoint_readiness --repo .
 python -m src.pipeline.coinpaprika_market --repo . --start 2025-08-25 --end 2026-08-22
 python -m src.pipeline.cryptocompare_volume --repo . --start 2019-01-01 --end 2026-08-22
 python -m src.pipeline.binance_klines --repo . --start 2019-01-01 --end 2026-08-22
@@ -82,6 +95,28 @@ The stablecoin-supply command collects DeFiLlama `circulating.peggedUSD` histori
 The stablecoin-risk command validates evidence-linked component inputs and calculates strict reserve-quality, transparency, and redemption-friction scores. Strict composites are withheld when any required component is unknown.
 
 The stablecoin-evidence command enforces the focused eight-asset H5/H6 evidence plan and separates source discovery from verified point-in-time extraction. Verified, dated summaries and reconstructible locators live in `config/stablecoin_evidence_extractions.json`; the command audits five required evidence classes per asset and prohibits treating an undated or merely discovered source as score-ready evidence.
+
+The stablecoin-scorecard command applies a versioned 0--4 ordinal rubric to the five verified evidence classes and produces an eight-asset point-in-time scorecard. It validates that every component has matching dated evidence, reports confidence, and keeps developmental design scores distinct from estimated H5/H6 results.
+
+The stablecoin-score-intervals command combines current scores with independently evidenced historical intervals, validates source availability and non-overlap, and prohibits gaps between explicitly consecutive regimes for the same asset.
+
+The H5-H6 readiness command generates a blind, 40-row targeted component-review worksheet and audits temporal overlap between score dates and peg outcomes. It explicitly blocks retrospective use of later design scores, preventing look-ahead bias before model estimation.
+
+The crypto-economic-design command validates the provisional ten-code value-accrual matrix against the frozen 25-asset non-stable universe. It creates an asset-level H2/H8 profile and a blind 250-decision review worksheet; provisional classifications cannot be treated as frozen research inputs until evidence-backed review is complete.
+
+The crypto-design-evidence command audits the first prioritized H2/H8 evidence tranche. It requires a complete asset-code grid, dated HTTPS sources, binary values only for verified decisions, and explicit nulls for unresolved quantitative or mechanism tests.
+
+The crypto-fundamentals command collects the Coin Metrics Community fields confirmed to be free: daily addresses, transactions, transfer count, market capitalization, and supply for the first evidence tranche. Coverage is audited per metric; activity supplies at most one `VA_MONETARY` behavioral test and never substitutes for separate acceptance or holding evidence. Adjusted transfer value, fees, and issuance are explicitly reported as unavailable on this free tier.
+
+The crypto-collateral command screens exact token balances across selected lending protocols against the preregistered 1%-of-market-cap or $100m-for-90-days rule. DeFiLlama supplied-token TVL is treated only as a screening proxy: a passing asset still requires effective-dated proof that the balance was collateral-enabled before `VA_COLLATERAL=1` can be frozen.
+
+The Aave collateral-state command resolves daily Ethereum blocks and performs historical read-only `Pool.getConfiguration` calls for WBTC and WETH. Eligibility passes only when LTV is positive, the reserve is active, and it is not paused on every day of the 90-day materiality window; raw RPC responses and hashes are archived.
+
+The crypto-monetary command implements the two-test `VA_MONETARY` rule: 90 days of material address/transaction activity plus independent, dated primary evidence of monetary or payment design. Missing provider data and failure of this pilot screen remain unresolved rather than being converted into negative classifications.
+
+The crypto-mechanism-state command resolves burn and protocol-capture classifications from effective-dated activation, pause, and deactivation events. The latest event known by the observation date must match the design matrix; promised, paused, or inactive mechanisms remain zero.
+
+The checkpoint-readiness command reconciles the stablecoin and crypto evidence outputs, lists every unresolved pilot decision, enforces missingness and temporal guardrails, and writes a single machine-readable checkpoint. A passing checkpoint means the methodology increment is safe to commit; it does not mean H2/H8 or H5/H6 are ready for final estimation.
 
 The CoinPaprika command builds a no-key, rolling recent-market panel containing daily price, reported market capitalization, and 24-hour volume. CoinPaprika's free tier exposes only the latest year of daily history, so this source is a recent-period and cross-source-validation layer rather than a substitute for the full 2019–2026 market-cap panel. Identifier ambiguity is surfaced in a separate audit and never resolved by symbol alone when multiple active candidates exist.
 

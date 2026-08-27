@@ -1,0 +1,7 @@
+{
+  "as_of": "2026-08-22",
+  "resolved_asset_code_states": 12,
+  "mismatches": 0,
+  "status": "pass",
+  "rule": "Use the latest evidenced event effective on or before the observation date; inactive or paused mechanisms are zero even if a future option remains."
+}

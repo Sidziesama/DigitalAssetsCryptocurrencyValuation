@@ -1,0 +1,10 @@
+{
+  "status": "tranche_complete_pending_remaining_evidence",
+  "assets": 6,
+  "targeted_decisions": 24,
+  "verified_decisions": 18,
+  "pending_decisions": 6,
+  "verified_mismatches": 0,
+  "coverage_ratio": 0.75,
+  "next_requirement": "Resolve quantitative monetary/collateral tests and absence/mechanism reviews; then extend the same evidence schema to the remaining 19 assets."
+}

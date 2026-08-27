@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "provider": "defillama",
+  "protocols": [
+    {"slug":"aave","name":"Aave","category":"lending"},
+    {"slug":"compound-v3","name":"Compound V3","category":"lending"},
+    {"slug":"sparklend","name":"SparkLend","category":"lending"}
+  ],
+  "assets": [
+    {"asset_id":"crypto_btc","token_aliases":["WBTC","WBTC.E","BTCB"]},
+    {"asset_id":"crypto_eth","token_aliases":["WETH","ETH"]},
+    {"asset_id":"crypto_bnb","token_aliases":["WBNB","BNB"]},
+    {"asset_id":"crypto_uni","token_aliases":["UNI"]},
+    {"asset_id":"crypto_aave","token_aliases":["AAVE","AAVE.E"]},
+    {"asset_id":"crypto_arb","token_aliases":["ARB"]}
+  ],
+  "primary_rule": {"absolute_usd": 100000000, "market_cap_ratio": 0.01, "minimum_consecutive_days": 90},
+  "interpretation": "DeFiLlama token TVL is a screening proxy for supplied balances, not proof that every balance is collateral-enabled. A positive VA_COLLATERAL decision additionally requires point-in-time protocol eligibility evidence."
+}

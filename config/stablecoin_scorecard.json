@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "methodology_version": "2026-08-25-v1",
+  "as_of_date": "2026-08-25",
+  "scale": {"minimum": 0, "maximum": 4, "normalized_minimum": 0, "normalized_maximum": 100},
+  "dimensions": {
+    "backing_quality": {"evidence_class": "reserve_or_collateral_composition", "direction": "higher_is_better", "weight": 30},
+    "verification_quality": {"evidence_class": "independent_assurance_or_onchain_verification", "direction": "higher_is_better", "weight": 20},
+    "redemption_access_quality": {"evidence_class": "redemption_terms_and_eligibility", "direction": "higher_is_better", "weight": 20},
+    "legal_protection_quality": {"evidence_class": "segregation_legal_or_protocol_claim", "direction": "higher_is_better", "weight": 15},
+    "operational_resilience": {"evidence_class": "suspension_and_operational_constraints", "direction": "higher_is_better", "weight": 15}
+  },
+  "derived_scores": {
+    "redemption_friction": {
+      "direction": "higher_is_worse",
+      "quality_inputs": {"redemption_access_quality": 60, "operational_resilience": 40}
+    }
+  },
+  "rubric": {
+    "backing_quality": {
+      "4": "Predominantly cash, short sovereign instruments, or transparently overcollateralized liquid assets with strong asset-liability matching.",
+      "3": "Generally high-quality backing with identifiable concentration, custody, hedging, duration, or liquidity dependencies.",
+      "2": "Mixed backing quality or material counterparty, market, duration, or valuation exposure.",
+      "1": "Weak, highly endogenous, opaque, or materially undercollateralized backing.",
+      "0": "No credible backing mechanism or demonstrated insolvency."
+    },
+    "verification_quality": {
+      "4": "Monthly independent assurance or continuously reconstructible onchain assets and liabilities with strong coverage.",
+      "3": "Quarterly independent assurance, custodian attestations, or onchain state with meaningful offchain verification gaps.",
+      "2": "Regular detailed management reporting with limited independent verification.",
+      "1": "Infrequent, aggregate, or weakly verifiable disclosure.",
+      "0": "No usable verification."
+    },
+    "redemption_access_quality": {
+      "4": "Permissionless or broadly accessible par conversion with low or zero stated fees and no material minimum.",
+      "3": "Direct par redemption is available after standard onboarding, with modest or incompletely disclosed friction.",
+      "2": "Direct redemption is institution-, customer-, jurisdiction-, or whitelist-limited, or material terms are undisclosed.",
+      "1": "High minimums, material fees, narrow eligibility, or substantial intermediation.",
+      "0": "No credible primary conversion or redemption mechanism."
+    },
+    "legal_protection_quality": {
+      "4": "Segregation plus explicit holder-benefit or bankruptcy-remoteness protection and a strong enforceable claim.",
+      "3": "Segregated or protocol-controlled backing with meaningful protection but no direct claim to specific assets.",
+      "2": "Custody or protocol separation is described, but holder priority and insolvency treatment remain unclear or indirect.",
+      "1": "Issuer beneficially owns reserves or terms materially disclaim holder property rights without equivalent protection.",
+      "0": "No identifiable protection or claim."
+    },
+    "operational_resilience": {
+      "4": "Multiple permissionless execution paths with narrow suspension powers and limited centralized dependencies.",
+      "3": "Operationally robust route with standard compliance, governance, network, or liquidity constraints.",
+      "2": "Broad suspension rights or material dependence on issuer, custodian, exchange, oracle, API, cloud, or whitelist infrastructure.",
+      "1": "Multiple concentrated dependencies or mechanisms capable of extended suspension under ordinary stress.",
+      "0": "Conversion is unavailable or the mechanism has failed."
+    }
+  },
+  "assets": [
+    {
+      "asset_id": "stable_usdc", "confidence": "high", "available_from_date": "2026-08-20", "availability_basis": "Circle transparency snapshot dated August 20, 2026; later coding does not delay the public information date.",
+      "scores": {"backing_quality": 4, "verification_quality": 4, "redemption_access_quality": 2, "legal_protection_quality": 4, "operational_resilience": 2},
+      "rationale": "Highly liquid short-duration reserves, monthly assurance, and holder-benefit segregation are offset by institution-focused direct access and broad compliance and operational suspension rights."
+    },
+    {
+      "asset_id": "stable_usdt", "confidence": "high", "available_from_date": "2026-07-31", "availability_basis": "Tether published its Q2 2026 reserve attestation on July 31, 2026; terms were already public.",
+      "scores": {"backing_quality": 2, "verification_quality": 3, "redemption_access_quality": 1, "legal_protection_quality": 1, "operational_resilience": 2},
+      "rationale": "A diversified consolidated reserve pool and quarterly assurance coexist with a $100,000 direct-redemption minimum, explicit fees, primary-customer limitations, and no established universal segregated holder claim."
+    },
+    {
+      "asset_id": "stable_pyusd", "confidence": "high", "available_from_date": "2026-07-31", "availability_basis": "Conservative month-end availability for the June 2026 attestation; Paxos terms were effective June 30, 2026.",
+      "scores": {"backing_quality": 4, "verification_quality": 4, "redemption_access_quality": 3, "legal_protection_quality": 4, "operational_resilience": 2},
+      "rationale": "Permitted reserves are cash and short government instruments in holder-benefit segregated accounts with monthly KPMG examinations; direct access still requires an eligible Paxos customer account."
+    },
+    {
+      "asset_id": "stable_rlusd", "confidence": "high", "available_from_date": "2026-07-30", "availability_basis": "Ripple states monthly reports are available no more than 30 days after month-end; June evidence is conservatively available July 30.",
+      "scores": {"backing_quality": 4, "verification_quality": 4, "redemption_access_quality": 2, "legal_protection_quality": 3, "operational_resilience": 2},
+      "rationale": "Short-duration reserve eligibility and monthly CPA attestations are strong; customer qualification, undisclosed public fee and SLA details, broad suspension powers, and the lack of a direct property interest reduce access and legal scores."
+    },
+    {
+      "asset_id": "stable_fdusd", "confidence": "high", "available_from_date": "2026-08-25", "availability_basis": "July 31 composition was verified at the August 25 research retrieval; no earlier publication date is assumed.",
+      "scores": {"backing_quality": 3, "verification_quality": 4, "redemption_access_quality": 2, "legal_protection_quality": 2, "operational_resilience": 1},
+      "rationale": "The dated portfolio is mostly Treasury bills and cash with monthly attestations, but includes fixed deposits; access excludes retail and U.S. persons, reserves are beneficially issuer-owned, and stress suspension powers are broad."
+    },
+    {
+      "asset_id": "stable_usde", "confidence": "medium", "available_from_date": "2026-08-22", "availability_basis": "The complete component set includes protocol documentation verified as available by August 22, 2026.",
+      "scores": {"backing_quality": 2, "verification_quality": 3, "redemption_access_quality": 2, "legal_protection_quality": 2, "operational_resilience": 1},
+      "rationale": "Delta-neutral backing and off-exchange custody are observable through custodian attestations, but hedge, exchange, custodian, API, whitelist, cloud, liquidity, and execution dependencies remain material."
+    },
+    {
+      "asset_id": "stable_dai", "confidence": "medium", "available_from_date": "2026-08-22", "availability_basis": "Current protocol-state evidence and dashboard snapshot were verified August 22, 2026.",
+      "scores": {"backing_quality": 3, "verification_quality": 3, "redemption_access_quality": 3, "legal_protection_quality": 2, "operational_resilience": 3},
+      "rationale": "Overcollateralization, liquidation, public smart-contract state, and permissionless modules support quality and access, while shared backing, offchain exposures, oracle and governance dependence, and no ordinary claim to specific collateral constrain protection."
+    },
+    {
+      "asset_id": "stable_usds", "confidence": "medium", "available_from_date": "2026-08-22", "availability_basis": "Current protocol-state and interface evidence were verified August 22, 2026.",
+      "scores": {"backing_quality": 3, "verification_quality": 3, "redemption_access_quality": 4, "legal_protection_quality": 2, "operational_resilience": 3},
+      "rationale": "Overcollateralized and observable protocol backing plus a permissionless, zero-fee PSM route support conversion quality; shared and partly offchain collateral and governance, oracle, network, and liquidity dependencies remain."
+    }
+  ]
+}

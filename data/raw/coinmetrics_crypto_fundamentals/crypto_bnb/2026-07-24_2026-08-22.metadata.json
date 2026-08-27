@@ -1,0 +1,18 @@
+{
+  "asset_id": "crypto_bnb",
+  "coinmetrics_asset": "bnb",
+  "end": "2026-08-22",
+  "frequency": "1d",
+  "license_note": "Coin Metrics Community Data; verify current terms before redistribution",
+  "metrics": [
+    "AdrActCnt",
+    "TxCnt",
+    "TxTfrCnt",
+    "CapMrktCurUSD",
+    "SplyCur"
+  ],
+  "provider": "coinmetrics_community",
+  "retrieved_at_utc": "2026-08-26T01:03:44.087625+00:00",
+  "sha256": "25ac29823ea32c588d7536a57d86d5eca0f9a65b9f951dabc9de7e8c6560ad90",
+  "start": "2026-07-24"
+}

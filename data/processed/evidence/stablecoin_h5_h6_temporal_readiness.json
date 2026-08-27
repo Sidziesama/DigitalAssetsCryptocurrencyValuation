@@ -1,0 +1,22 @@
+{
+  "assets_with_post_score_outcomes": 8,
+  "earliest_score_date": "2025-01-23",
+  "eligible_assets": [
+    "stable_dai",
+    "stable_fdusd",
+    "stable_pyusd",
+    "stable_rlusd",
+    "stable_usdc",
+    "stable_usde",
+    "stable_usds",
+    "stable_usdt"
+  ],
+  "next_requirement": "Complete the targeted component review before H5/H6 estimation; add further independently evidenced historical score dates before claiming time-varying H5 effects.",
+  "outcome_end_date": "2026-08-22",
+  "outcome_start_date": "2019-01-01",
+  "post_score_outcome_rows": 1016,
+  "pre_score_rows_prohibited_from_backfill": 11527,
+  "rule": "A design score may join only to observations on or after its evidence/as-of date; later scores are never backfilled.",
+  "scored_assets": 8,
+  "status": "temporal_overlap_ready"
+}

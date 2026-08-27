@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "methodology_version": "2026-08-25-historical-v1",
+  "intervals": [
+    {
+      "asset_id": "stable_rlusd",
+      "effective_from": "2025-01-23",
+      "effective_to": "2026-07-29",
+      "confidence": "high",
+      "scores": {"backing_quality": 4, "verification_quality": 4, "redemption_access_quality": 2, "legal_protection_quality": 3, "operational_resilience": 2},
+      "sources": [
+        {"title": "RLUSD December 2024 independent accountants' report", "url": "https://assets.ctfassets.net/st43jm402pmo/77oaz1v7B9zUKlDos0bong/7100b0bb5a532f435dcb5e9b724ae02f/RLUSD_Reserves_Report_Dec_2024_Issued.pdf", "information_date": "2024-12-31", "available_from_date": "2025-01-23"},
+        {"title": "RLUSD user terms", "url": "https://ripple.com/legal/stablecoin/", "information_date": "2024-10-03", "available_from_date": "2024-10-03"}
+      ],
+      "rationale": "The January 23 report independently examined short Treasury bills, government money-market funds, regulated-bank deposits, full liability coverage, holder-benefit accounts, and segregation. Public user terms dated October 3, 2024 establish redemption eligibility and suspension mechanics."
+    },
+    {
+      "asset_id": "stable_fdusd",
+      "effective_from": "2025-08-01",
+      "effective_to": "2026-08-24",
+      "confidence": "high",
+      "scores": {"backing_quality": 3, "verification_quality": 4, "redemption_access_quality": 2, "legal_protection_quality": 2, "operational_resilience": 1},
+      "sources": [
+        {"title": "FDUSD December 2024 reserve accounts report", "url": "https://firstdigitallabs.com/workspace/uploads/fdusd-attestation-2024-12-31-67906c4e1056b.pdf", "information_date": "2024-12-31", "available_from_date": "2025-01-21"},
+        {"title": "FDD terms", "url": "https://www.firstdigitallabs.com/legal/fdd-terms", "information_date": "2025-08-01", "available_from_date": "2025-08-01"}
+      ],
+      "rationale": "The January 21 independent report documents short Treasuries, overnight Treasury repo, cash, fixed deposits, full liability coverage, and segregated reserve accounts. The August 1 terms supply the later legal, redemption, and operational conditions; the interval therefore begins only when both sources were available."
+    }
+  ]
+}
