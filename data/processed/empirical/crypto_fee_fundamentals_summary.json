@@ -1,0 +1,11 @@
+{
+  "status": "free_fee_layer_ready_scope_comparability_review_pending",
+  "assets": 6,
+  "daily_rows": 534,
+  "start_date": "2026-05-25",
+  "end_date": "2026-08-21",
+  "complete_fee_assets": 6,
+  "complete_revenue_assets": 6,
+  "complete_holders_revenue_assets": 5,
+  "interpretation": "USD fields share provider labels but not identical economic scope. Chain-level observations for native-network assets and application-level observations for protocol tokens must be identified in every model; fees, protocol revenue, and holder revenue are not interchangeable."
+}

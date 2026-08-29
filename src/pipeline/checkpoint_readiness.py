@@ -21,6 +21,9 @@ def build_readiness(repo: Path) -> dict[str, Any]:
     fundamentals = load_json(repo / "data/processed/empirical/crypto_fundamentals_summary.json")
     stablecoin = load_json(repo / "data/processed/evidence/stablecoin_h5_h6_temporal_readiness.json")
     h2_h8 = load_json(repo / "data/processed/evidence/crypto_h2_h8_pilot_readiness.json")
+    h2_panel = load_json(repo / "data/processed/empirical/crypto_h2_exploratory_summary.json")
+    h8_plan = load_json(repo / "data/processed/evidence/crypto_h8_evidence_plan_summary.json")
+    fee_layer = load_json(repo / "data/processed/empirical/crypto_fee_fundamentals_summary.json")
 
     with decisions_path.open(newline="", encoding="utf-8") as handle:
         decisions = list(csv.DictReader(handle))
@@ -46,6 +49,9 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             for row in decisions
             if row["code"] == "VA_COLLATERAL" and row["status"] == "verified" and row["recommended_value"] == "0"
         ),
+        "h2_candidate_panel_guarded": h2_panel["status"] == "candidate_h2_fee_panel_ready_scope_comparability_review_pending" and bool(h2_panel["primary_h2_blocker"]),
+        "h8_extension_plan_complete": h8_plan["targeted_decisions"] == 36 and h8_plan["verified_decisions"] == 15 and h8_plan["verified_mismatches"] == 0,
+        "free_fee_layer_complete": fee_layer["complete_fee_assets"] == 6 and fee_layer["complete_revenue_assets"] == 6,
     }
     if not all(checks.values()):
         failed = [name for name, passed in checks.items() if not passed]
@@ -78,7 +84,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "status": stablecoin["status"],
         },
         "model_readiness": {
-            "h2": "six_asset_pilot_design_ready; outcome-panel and sample freeze still required",
+            "h2": "six-asset candidate fee-capture panel ready; scope comparability review and preregistration freeze required",
             "h8": "not_ready_until_all_ten_codes_are_evidence_backed",
             "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation",
         },
@@ -88,7 +94,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
             "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results.",
         ],
-        "next_checkpoint": "Resolve the five focused-review decisions, extend evidence for the six remaining H8 codes, and join frozen outcomes for estimation.",
+        "next_checkpoint": "Resolve the five focused-review and 21 remaining H8-extension decisions, predeclare fee-scope sensitivities, and freeze the H2/H8 preregistration before estimation.",
     }
 
 

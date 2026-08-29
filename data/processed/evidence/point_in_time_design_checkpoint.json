@@ -12,7 +12,10 @@
     "historical_collateral_state_available": true,
     "stablecoin_temporal_overlap_ready": true,
     "h2_pilot_design_ready": true,
-    "verified_negative_collateral_reconciles": true
+    "verified_negative_collateral_reconciles": true,
+    "h2_candidate_panel_guarded": true,
+    "h8_extension_plan_complete": true,
+    "free_fee_layer_complete": true
   },
   "crypto_evidence": {
     "assets": 6,
@@ -72,7 +75,7 @@
     "status": "temporal_overlap_ready"
   },
   "model_readiness": {
-    "h2": "six_asset_pilot_design_ready; outcome-panel and sample freeze still required",
+    "h2": "six-asset candidate fee-capture panel ready; scope comparability review and preregistration freeze required",
     "h8": "not_ready_until_all_ten_codes_are_evidence_backed",
     "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation"
   },
@@ -82,5 +85,5 @@
     "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
     "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results."
   ],
-  "next_checkpoint": "Resolve the five focused-review decisions, extend evidence for the six remaining H8 codes, and join frozen outcomes for estimation."
+  "next_checkpoint": "Resolve the five focused-review and 21 remaining H8-extension decisions, predeclare fee-scope sensitivities, and freeze the H2/H8 preregistration before estimation."
 }

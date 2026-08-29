@@ -29,6 +29,9 @@ class CheckpointReadinessTests(unittest.TestCase):
                 "data/processed/empirical/crypto_fundamentals_summary.json",
                 "data/processed/evidence/stablecoin_h5_h6_temporal_readiness.json",
                 "data/processed/evidence/crypto_h2_h8_pilot_readiness.json",
+                "data/processed/empirical/crypto_h2_exploratory_summary.json",
+                "data/processed/evidence/crypto_h8_evidence_plan_summary.json",
+                "data/processed/empirical/crypto_fee_fundamentals_summary.json",
             ]:
                 target = copy / source
                 target.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-22",
+  "assets": ["crypto_btc","crypto_eth","crypto_bnb","crypto_uni","crypto_aave","crypto_arb"],
+  "codes": {
+    "VA_GAS": {"positive_rule":"Protocol rules require the asset to pay ordinary transaction, execution, storage, or blockspace fees.","negative_rule":"Native denomination, optional tips, fee discounts, or automatic conversion do not qualify unless the asset is protocol-required at settlement.","required_evidence":"Effective-dated protocol documentation or executable fee rules."},
+    "VA_STAKE": {"positive_rule":"Locking or delegating the asset is required for consensus, service security, or protocol risk absorption and exposes capital to protocol-defined consequences.","negative_rule":"Passive yield, liquidity provision, or governance escrow without a security function does not qualify.","required_evidence":"Effective staking/slashing or security-module rules plus activation status."},
+    "VA_SCARCITY": {"positive_rule":"A credible enforceable issuance cap or terminal-supply rule constrains long-run supply.","negative_rule":"A discretionary target, burn mechanism alone, or currently low issuance does not qualify.","required_evidence":"Protocol issuance specification and governance/change authority."},
+    "VA_GOV": {"positive_rule":"Holding or delegated ownership of the asset confers binding protocol or treasury decision rights.","negative_rule":"Informal signaling, forum participation, or governance controlled independently of holders does not qualify.","required_evidence":"Effective governance contracts, constitution, or binding voting documentation."},
+    "VA_UTILITY": {"positive_rule":"The asset is required or materially privileged for consuming a non-governance network or application service.","negative_rule":"Tradability, collateral use, incentives, or generic ecosystem branding alone do not qualify.","required_evidence":"Product or protocol rules showing required or privileged consumption use."},
+    "VA_INCENTIVE": {"positive_rule":"A separable active rules-based program distributes the asset to subsidize liquidity, usage, development, or other participation.","negative_rule":"Consensus staking issuance, historical distributions, discretionary grants, and inactive programs do not qualify.","required_evidence":"Effective-dated emissions, rewards, or distribution rules and active status."}
+  },
+  "review_rule": "Each asset-code decision requires a binary value, dated primary source, date basis, rationale, and reviewer. Unknown remains null; provisional design values are excluded from the review worksheet."
+}

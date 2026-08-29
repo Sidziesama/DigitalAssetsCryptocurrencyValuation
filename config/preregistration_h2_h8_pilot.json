@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "document_version": "0.1-draft",
+  "status": "draft_not_frozen",
+  "as_of": "2026-08-22",
+  "analysis_window": {"start":"2026-05-25","end":"2026-08-21"},
+  "sample": {
+    "market_assets": ["crypto_btc","crypto_eth","crypto_bnb","crypto_uni","crypto_aave","crypto_arb"],
+    "activity_assets": ["crypto_btc","crypto_eth","crypto_uni","crypto_aave"],
+    "selection_rule": "First evidence tranche selected before outcome construction; unsupported provider assets remain in the market panel and out of activity specifications.",
+    "no_outcome_based_replacement": true
+  },
+  "H2": {
+    "claim": "Economic activity predicts value more strongly when an active burn or protocol-capture mechanism exists.",
+    "primary_status": "candidate_fee_layer_ready_scope_comparability_review_pending",
+    "candidate_economic_variables": ["log1p_fees_usd_lag1","log1p_protocol_revenue_usd_lag1","log1p_holders_revenue_usd_lag1"],
+    "exploratory_activity_proxies": ["log1p_active_addresses_lag1","log1p_transaction_count_lag1"],
+    "capture_variable": "effective_dated_h2_active_capture",
+    "interaction_variables": ["active_addresses_x_capture","transaction_count_x_capture"],
+    "outcomes": ["log_market_cap_usd","forward_log_return_7d"],
+    "interpretation": "Fees, protocol revenue, and holder revenue remain separate. Chain-level BTC/ETH/BNB/ARB observations and application-level UNI/AAVE observations require scope indicators and within-scope sensitivity analysis before headline estimation."
+  },
+  "H8": {
+    "claim": "Active and material multi-function assets command a valuation premium.",
+    "status": "blocked_until_all_ten_codes_are_evidence_backed",
+    "outcome": "log_market_cap_usd",
+    "breadth_rule": "Withhold breadth unless all ten VA codes are verified for the asset-date."
+  },
+  "time_rules": {
+    "activity_lag": "exact calendar t-1; gaps remain null",
+    "forward_return": "log price at exact t+7 minus log price at t; gaps remain null",
+    "realized_volatility": "annualized sample standard deviation of 30 consecutive daily log returns",
+    "mechanism_state": "latest evidenced effective event on or before t; no August-state backfill"
+  },
+  "estimation_gate": "This pilot output is construction- and coverage-ready only. Freeze the draft and predeclare scope sensitivity, model, and standard-error choices before estimation."
+}

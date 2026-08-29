@@ -1,0 +1,37 @@
+asset_id,code,status,recommended_value,provisional_value,verified_matches_design,source_url,source_date,date_basis,rationale
+crypto_btc,VA_GAS,pending_adjudication,,0,,https://developer.bitcoin.org/devguide/transactions.html,2026-08-22,retrieved_as_of,"Bitcoin relay policy generally requires fees and miners prioritize fee rate, but consensus can admit zero-fee transactions. Adjudication is required on whether the codebook's protocol-required test means consensus validity or ordinary relay/inclusion."
+crypto_btc,VA_STAKE,verified,0,0,1,https://developer.bitcoin.org/devguide/mining.html,2026-08-22,retrieved_as_of,"Bitcoin block production uses proof of work; BTC is not locked, delegated, or slashable to secure consensus."
+crypto_btc,VA_SCARCITY,planned_not_extracted,,1,,,,,
+crypto_btc,VA_GOV,verified,0,0,1,https://bitcoin.org/en/faq#who-controls-the-bitcoin-network,2026-08-22,retrieved_as_of,"Bitcoin changes require broad participant consensus; BTC ownership does not confer binding token-weighted proposal, voting, veto, or treasury rights."
+crypto_btc,VA_UTILITY,planned_not_extracted,,0,,,,,
+crypto_btc,VA_INCENTIVE,planned_not_extracted,,0,,,,,
+crypto_eth,VA_GAS,verified,1,1,1,https://ethereum.org/developers/docs/gas/,2026-06-25,published,Ethereum documentation states that gas fees must be paid in the native currency ETH.
+crypto_eth,VA_STAKE,verified,1,1,1,https://ethereum.org/developers/docs/consensus-mechanisms/pos/gasper/,2026-04-29,published,"Validators provide ETH as a security deposit and face rewards, penalties, and destruction of stake for slashable behavior."
+crypto_eth,VA_SCARCITY,planned_not_extracted,,0,,,,,
+crypto_eth,VA_GOV,verified,0,0,1,https://ethereum.org/governance/,2026-06-29,published,Ethereum protocol governance is an off-chain social and technical coordination process; ETH ownership does not provide binding token-weighted governance rights.
+crypto_eth,VA_UTILITY,planned_not_extracted,,1,,,,,
+crypto_eth,VA_INCENTIVE,planned_not_extracted,,0,,,,,
+crypto_bnb,VA_GAS,verified,1,1,1,https://docs.bnbchain.org/bc-fusion/validators/key-management/,2024-05-06,published,BNB Chain documentation requires wallets to hold BNB for transaction gas fees.
+crypto_bnb,VA_STAKE,verified,1,1,1,https://docs.bnbchain.org/bnb-smart-chain/staking/overview/,2024-07-02,published,"BNB is delegated to validators to determine the active validator set, secure BSC, earn rewards, and remains subject to slashing rules."
+crypto_bnb,VA_SCARCITY,planned_not_extracted,,0,,,,,
+crypto_bnb,VA_GOV,verified,1,1,1,https://docs.bnbchain.org/bnb-smart-chain/governance/overview/,2024-07-02,published,"Staked-BNB credit holders have live proposal, voting, delegation, quorum, timelock, and execution rights through BSC governance contracts."
+crypto_bnb,VA_UTILITY,planned_not_extracted,,1,,,,,
+crypto_bnb,VA_INCENTIVE,planned_not_extracted,,1,,,,,
+crypto_uni,VA_GAS,verified,0,0,1,https://docs.uniswap.org/concepts/governance/overview,2026-08-22,retrieved_as_of,UNI supplies governance rights; ordinary Uniswap execution fees are paid in the native gas asset of each deployment rather than UNI.
+crypto_uni,VA_STAKE,pending_absence_review,,0,,https://docs.uniswap.org/concepts/governance/overview,2026-08-22,retrieved_as_of,Governance delegation and fee-linked burn do not establish an active slashable UNI security-staking mechanism; a focused contract review is still required before coding zero.
+crypto_uni,VA_SCARCITY,planned_not_extracted,,0,,,,,
+crypto_uni,VA_GOV,verified,1,1,1,https://docs.uniswap.org/concepts/governance/overview,2026-08-22,retrieved_as_of,Delegated UNI voting power provides live proposal and voting rights over Uniswap governance.
+crypto_uni,VA_UTILITY,planned_not_extracted,,0,,,,,
+crypto_uni,VA_INCENTIVE,planned_not_extracted,,1,,,,,
+crypto_aave,VA_GAS,verified,0,0,1,https://aave.com/help/aave-101/introduction-to-aave,2026-08-22,retrieved_as_of,AAVE governs and secures the application but is not the protocol-required network gas asset for ordinary Aave transactions.
+crypto_aave,VA_STAKE,verified,1,1,1,https://aave.com/help/umbrella/safety-incentives,2026-08-22,retrieved_as_of,AAVE Safety Module participants stake assets at protocol-defined slashing risk to cover deficits and receive active safety incentives.
+crypto_aave,VA_SCARCITY,planned_not_extracted,,0,,,,,
+crypto_aave,VA_GOV,verified,1,1,1,https://www.aave.com/help/governance/voting,2026-08-22,retrieved_as_of,"AAVE, stkAAVE, and aAAVE voting power can approve binding on-chain Aave Improvement Proposals."
+crypto_aave,VA_UTILITY,planned_not_extracted,,1,,,,,
+crypto_aave,VA_INCENTIVE,planned_not_extracted,,1,,,,,
+crypto_arb,VA_GAS,verified,0,0,1,https://docs.arbitrum.io/how-arbitrum-works/gas-fees,2026-08-22,retrieved_as_of,Arbitrum One fees are denominated and paid in ETH; ARB is not required for ordinary execution.
+crypto_arb,VA_STAKE,pending_absence_review,,0,,https://docs.arbitrum.foundation/concepts/arbitrumdao-governance,2026-08-22,retrieved_as_of,ARB delegation for governance is not itself slashable security staking; a focused review of current validation and staking contracts is required before coding zero.
+crypto_arb,VA_SCARCITY,planned_not_extracted,,0,,,,,
+crypto_arb,VA_GOV,verified,1,1,1,https://docs.arbitrum.foundation/concepts/arbitrumdao-governance,2026-08-22,retrieved_as_of,"Delegated ARB voting power controls binding ArbitrumDAO proposals, upgrades, and treasury decisions."
+crypto_arb,VA_UTILITY,planned_not_extracted,,0,,,,,
+crypto_arb,VA_INCENTIVE,planned_not_extracted,,1,,,,,

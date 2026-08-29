@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_eth",
+  "scope": "chain",
+  "economic_system": "Ethereum",
+  "provider_metric": "dailyFees",
+  "source_url": "https://api.llama.fi/overview/fees/ethereum?dataType=dailyFees&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-29T20:08:11.937300+00:00",
+  "sha256": "f82bf9fbe9a5ed4364a3ab6dbc2a96a9a6a850446e83a92e58a0007a91e6034e"
+}

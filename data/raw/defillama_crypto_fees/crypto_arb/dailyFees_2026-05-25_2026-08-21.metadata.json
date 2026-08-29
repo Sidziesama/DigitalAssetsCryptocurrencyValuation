@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_arb",
+  "scope": "chain",
+  "economic_system": "Arbitrum",
+  "provider_metric": "dailyFees",
+  "source_url": "https://api.llama.fi/overview/fees/arbitrum?dataType=dailyFees&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-29T20:08:14.823477+00:00",
+  "sha256": "150dad55dcb5eab1c6abf84ba000acb0a92f1d16aef0b5014a3bfa164d970660"
+}

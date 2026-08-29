@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "provider": "defillama_free_fees_api",
+  "assets": [
+    {"asset_id":"crypto_btc","scope":"chain","endpoint":"overview/fees/bitcoin","economic_system":"Bitcoin"},
+    {"asset_id":"crypto_eth","scope":"chain","endpoint":"overview/fees/ethereum","economic_system":"Ethereum"},
+    {"asset_id":"crypto_bnb","scope":"chain","endpoint":"overview/fees/bsc","economic_system":"BSC"},
+    {"asset_id":"crypto_uni","scope":"application_protocol","endpoint":"summary/fees/uniswap","economic_system":"Uniswap"},
+    {"asset_id":"crypto_aave","scope":"application_protocol","endpoint":"summary/fees/aave","economic_system":"Aave"},
+    {"asset_id":"crypto_arb","scope":"chain","endpoint":"overview/fees/arbitrum","economic_system":"Arbitrum"}
+  ],
+  "metrics": {"dailyFees":"fees_usd","dailyRevenue":"protocol_revenue_usd","dailyHoldersRevenue":"holders_revenue_usd"},
+  "interpretation": "USD fields share provider labels but not identical economic scope. Chain-level observations for native-network assets and application-level observations for protocol tokens must be identified in every model; fees, protocol revenue, and holder revenue are not interchangeable."
+}

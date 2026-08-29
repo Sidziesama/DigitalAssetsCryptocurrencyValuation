@@ -38,7 +38,7 @@ The project has reached an **expanded point-in-time design-evidence pilot**. The
 1. Resolve the remaining BNB/ARB monetary, BNB/AAVE positive collateral-eligibility, and ARB market-cap completeness decisions without interpolation or converting missing coverage into zero.
 2. Run the focused review only on fields that will enter H2/H8 and H5/H6 estimation.
 3. Extend the evidence schema from the six-asset tranche to the remaining non-stable pilot assets.
-4. Freeze estimation samples and build the first hypothesis-ready panels.
+4. Freeze the H2/H8 draft, predeclare chain-versus-application fee-scope sensitivities, and extend the candidate panel beyond the current 89-day market window.
 5. Estimate descriptive and baseline models, then run preregistered robustness and sensitivity checks.
 
 ## Run the current pipeline
@@ -66,6 +66,9 @@ python -m src.pipeline.aave_collateral_state --repo . --start 2026-05-25 --end 2
 python -m src.pipeline.crypto_monetary --repo .
 python -m src.pipeline.crypto_mechanism_state --repo .
 python -m src.pipeline.crypto_h2_h8_readiness --repo .
+python -m src.pipeline.crypto_fee_fundamentals --repo . --start 2026-05-25 --end 2026-08-21
+python -m src.pipeline.crypto_h2_pilot_panel --repo .
+python -m src.pipeline.crypto_h8_evidence_plan --repo .
 python -m src.pipeline.checkpoint_readiness --repo .
 python -m src.pipeline.coinpaprika_market --repo . --start 2025-08-25 --end 2026-08-22
 python -m src.pipeline.cryptocompare_volume --repo . --start 2019-01-01 --end 2026-08-22
@@ -118,6 +121,12 @@ The crypto-monetary command implements the two-test `VA_MONETARY` rule: 90 days 
 The crypto-mechanism-state command resolves burn and protocol-capture classifications from effective-dated activation, pause, and deactivation events. The latest event known by the observation date must match the design matrix; promised, paused, or inactive mechanisms remain zero.
 
 The crypto-H2/H8-readiness command creates a six-asset pilot design panel without filling unevidenced fields from the provisional matrix. H2 capture is released only when burn and protocol capture are verified; H8 breadth stays null until all ten value-accrual codes are verified.
+
+The crypto-fee-fundamentals command archives DeFiLlama's free daily fees, protocol revenue, and holder revenue for six associated economic systems. Coverage is chain-level for BTC, ETH, BNB, and ARB but application-level for UNI and AAVE; these scopes are retained explicitly, and the three accounting concepts are never treated as interchangeable.
+
+The crypto-H2-pilot-panel command joins six-asset CoinPaprika market outcomes, four-asset Coin Metrics activity, free fee/revenue histories, and effective-dated capture events without backfilling later classifications. Exact one-day explanatory lags and exact seven-day forward returns preserve gaps. The candidate H2 panel is construction-ready, but pooled estimation remains blocked until chain-versus-application scope sensitivity and model choices are frozen.
+
+The crypto-H8-evidence-plan command formalizes positive, negative, and source requirements for gas, staking, scarcity, governance, utility, and incentive classifications. Its first evidence tranche verifies 15 of 36 decisions across gas, staking, and governance, corrects BNB's provisional governance classification, audits agreement with the design matrix, and emits a blind worksheet for the remaining 21 decisions. H8 breadth remains unavailable until all ten codes and the five focused pilot decisions are resolved.
 
 The checkpoint-readiness command reconciles the stablecoin and crypto evidence outputs, lists every unresolved pilot decision, enforces missingness and temporal guardrails, and writes a single machine-readable checkpoint. A passing checkpoint means the methodology increment is safe to commit; it does not mean H2/H8 or H5/H6 are ready for final estimation.
 

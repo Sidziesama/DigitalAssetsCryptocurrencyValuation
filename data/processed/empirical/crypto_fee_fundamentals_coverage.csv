@@ -1,0 +1,7 @@
+asset_id,scope,economic_system,expected_days,observed_days,protocol_revenue_usd_days,holders_revenue_usd_days,fees_usd_days
+crypto_btc,chain,Bitcoin,89,89,89,61,89
+crypto_eth,chain,Ethereum,89,89,89,89,89
+crypto_bnb,chain,BSC,89,89,89,89,89
+crypto_uni,application_protocol,Uniswap,89,89,89,89,89
+crypto_aave,application_protocol,Aave,89,89,89,89,89
+crypto_arb,chain,Arbitrum,89,89,89,89,89

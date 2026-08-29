@@ -1,0 +1,56 @@
+{
+  "status": "candidate_h2_fee_panel_ready_scope_comparability_review_pending",
+  "market_assets": 6,
+  "activity_assets": 4,
+  "rows": 534,
+  "level_eligible_rows": 352,
+  "forward_return_eligible_rows": 324,
+  "fee_level_eligible_rows": 528,
+  "fee_forward_return_eligible_rows": 486,
+  "per_asset": {
+    "crypto_aave": {
+      "rows": 89,
+      "activity_rows": 88,
+      "forward_return_rows": 81,
+      "fee_rows": 88,
+      "fee_forward_return_rows": 81
+    },
+    "crypto_arb": {
+      "rows": 89,
+      "activity_rows": 0,
+      "forward_return_rows": 0,
+      "fee_rows": 88,
+      "fee_forward_return_rows": 81
+    },
+    "crypto_bnb": {
+      "rows": 89,
+      "activity_rows": 0,
+      "forward_return_rows": 0,
+      "fee_rows": 88,
+      "fee_forward_return_rows": 81
+    },
+    "crypto_btc": {
+      "rows": 89,
+      "activity_rows": 88,
+      "forward_return_rows": 81,
+      "fee_rows": 88,
+      "fee_forward_return_rows": 81
+    },
+    "crypto_eth": {
+      "rows": 89,
+      "activity_rows": 88,
+      "forward_return_rows": 81,
+      "fee_rows": 88,
+      "fee_forward_return_rows": 81
+    },
+    "crypto_uni": {
+      "rows": 89,
+      "activity_rows": 88,
+      "forward_return_rows": 81,
+      "fee_rows": 88,
+      "fee_forward_return_rows": 81
+    }
+  },
+  "primary_h2_blocker": "Chain-level and application-level fee scopes require predeclared pooled-versus-within-scope sensitivity analysis before estimation.",
+  "guardrail": "Do not pool chain and application observations without scope indicators; fees, protocol revenue, and holder revenue remain separate variables."
+}

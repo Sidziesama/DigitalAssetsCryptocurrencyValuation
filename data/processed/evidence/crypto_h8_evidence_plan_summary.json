@@ -1,0 +1,10 @@
+{
+  "status": "evidence_extraction_in_progress",
+  "assets": 6,
+  "codes": 6,
+  "targeted_decisions": 36,
+  "verified_decisions": 15,
+  "pending_decisions": 21,
+  "verified_mismatches": 0,
+  "guardrail": "The blind worksheet contains rules but excludes every provisional design value. H8 breadth remains null until all ten codes are verified per asset."
+}

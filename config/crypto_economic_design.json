@@ -6,7 +6,7 @@
   "assets": [
     {"asset_id":"crypto_btc","consensus":"PoW","codes":[1,0,0,0,1,1,0,0,0,0]},
     {"asset_id":"crypto_eth","consensus":"PoS","codes":[1,1,1,1,0,1,0,1,1,0]},
-    {"asset_id":"crypto_bnb","consensus":"PoS family","codes":[0,1,1,1,0,1,0,1,1,1]},
+    {"asset_id":"crypto_bnb","consensus":"PoS family","codes":[0,1,1,1,0,1,1,1,1,1]},
     {"asset_id":"crypto_xrp","consensus":"federated consensus","codes":[1,1,0,1,1,0,0,1,1,0]},
     {"asset_id":"crypto_sol","consensus":"PoS family","codes":[0,1,1,1,0,1,0,1,1,0]},
     {"asset_id":"crypto_trx","consensus":"DPoS","codes":[1,1,1,1,0,1,1,1,1,1]},
