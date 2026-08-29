@@ -57,7 +57,7 @@ def audit(evidence: dict[str, Any], design: dict[str, Any], registry: dict[str, 
         "verified_decisions": len(verified), "pending_decisions": len(rows) - len(verified),
         "verified_mismatches": sum(r["verified_matches_design"] == 0 for r in verified),
         "coverage_ratio": len(verified) / len(rows),
-        "next_requirement": "Resolve quantitative monetary/collateral tests and absence/mechanism reviews; then extend the same evidence schema to the remaining 19 assets."
+        "next_requirement": "Resolve the remaining monetary and positive collateral-eligibility tests; then extend the same evidence schema to the remaining 19 assets."
     }
     return rows, summary
 
@@ -69,7 +69,11 @@ def run(repo: Path) -> dict[str, Any]:
     rows, summary = audit(evidence, design, registry)
     out = repo / "data" / "processed" / "evidence"; out.mkdir(parents=True, exist_ok=True)
     with (out / "crypto_design_evidence_tranche_1.csv").open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0])); writer.writeheader(); writer.writerows(rows)
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n"); writer.writeheader(); writer.writerows(rows)
+    pending = [{"asset_id": row["asset_id"], "code": row["code"], "reviewer_value": "", "reviewer_source_url": "", "reviewer_rationale": ""} for row in rows if row["status"] != "verified"]
+    with (out / "crypto_design_evidence_focused_review.csv").open("w", newline="", encoding="utf-8") as handle:
+        fields = ["asset_id", "code", "reviewer_value", "reviewer_source_url", "reviewer_rationale"]
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n"); writer.writeheader(); writer.writerows(pending)
     (out / "crypto_design_evidence_tranche_1_summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     return summary
 

@@ -46,14 +46,17 @@ def normalize_protocol(slug: str,payload: dict[str,Any],alias_index: dict[str,st
     return rows
 
 
-def market_caps(path: Path)->dict[tuple[str,str],float]:
-    if not path.exists(): return {}
-    with path.open(newline="",encoding="utf-8") as handle:
-        result={}
-        for row in csv.DictReader(handle):
-            try: result[(row["asset_id"],row["date"])]=float(row["market_cap_usd"])
-            except (KeyError,TypeError,ValueError): pass
-        return result
+def market_caps(paths: list[Path])->dict[tuple[str,str],float]:
+    result={}
+    for path in paths:
+        if not path.exists(): continue
+        with path.open(newline="",encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                try:
+                    key=(row["asset_id"],row["date"])
+                    if key not in result and float(row["market_cap_usd"])>0: result[key]=float(row["market_cap_usd"])
+                except (KeyError,TypeError,ValueError): pass
+    return result
 
 
 def longest_consecutive(days: list[date])->int:
@@ -64,7 +67,7 @@ def longest_consecutive(days: list[date])->int:
     return best
 
 
-def aggregate(rows:list[dict[str,Any]],assets:list[dict[str,Any]],caps:dict[tuple[str,str],float],rule:dict[str,Any])->tuple[list[dict[str,Any]],list[dict[str,Any]]]:
+def aggregate(rows:list[dict[str,Any]],assets:list[dict[str,Any]],caps:dict[tuple[str,str],float],rule:dict[str,Any],screen_complete:bool=True)->tuple[list[dict[str,Any]],list[dict[str,Any]]]:
     totals=defaultdict(float)
     for row in rows: totals[(row["asset_id"],row["date"])]+=row["supplied_balance_usd"]
     daily=[]
@@ -76,26 +79,34 @@ def aggregate(rows:list[dict[str,Any]],assets:list[dict[str,Any]],caps:dict[tupl
     for asset in assets:
         selected=[row for row in daily if row["asset_id"]==asset["asset_id"]]
         material_days=[date.fromisoformat(row["date"]) for row in selected if row["material_proxy"]]
+        market_cap_days=sum(row["market_cap_usd"] is not None for row in selected)
         streak=longest_consecutive(material_days); passed=streak>=rule["minimum_consecutive_days"]
-        summaries.append({"asset_id":asset["asset_id"],"observed_days":len(selected),"material_days":len(material_days),"longest_material_streak_days":streak,"balance_proxy_pass":int(passed),"classification_status":"requires_point_in_time_collateral_eligibility_validation" if passed else "proxy_threshold_not_met_or_insufficient_history"})
+        if passed: status="requires_point_in_time_collateral_eligibility_validation"
+        elif screen_complete and len(selected)==rule["minimum_consecutive_days"] and market_cap_days==rule["minimum_consecutive_days"]: status="verified_below_threshold_in_selected_protocol_sample"
+        else: status="proxy_threshold_not_met_or_insufficient_history"
+        summaries.append({"asset_id":asset["asset_id"],"observed_days":len(selected),"market_cap_days":market_cap_days,"material_days":len(material_days),"longest_material_streak_days":streak,"balance_proxy_pass":int(passed),"screen_complete":int(screen_complete),"classification_status":status})
     return daily,summaries
 
 
 def collect(repo:Path,start:date,end:date,force:bool=False,base_url:str=BASE_URL)->dict[str,Any]:
     spec=load_json(repo/"config"/"crypto_collateral_sources.json"); registry=load_json(repo/"config"/"assets.json"); validate_config(spec,registry)
     alias_index={alias:a["asset_id"] for a in spec["assets"] for alias in a["token_aliases"]}
-    detail=[]; raw_root=repo/"data"/"raw"/"defillama_protocol_collateral"
+    detail=[]; raw_root=repo/"data"/"raw"/"defillama_protocol_collateral"; complete_protocols=[]; expected=(end-start).days+1
     for protocol in spec["protocols"]:
         raw=raw_root/f"{protocol['slug']}.json"
         if raw.exists() and not force: payload=load_json(raw)
         else:
             payload=request_json(f"{base_url.rstrip('/')}/{protocol['slug']}"); raw.parent.mkdir(parents=True,exist_ok=True); raw.write_text(json.dumps(payload,separators=(",",":"))+"\n",encoding="utf-8")
             raw.with_suffix(".metadata.json").write_text(json.dumps({"protocol_slug":protocol["slug"],"provider":"defillama","retrieved_at_utc":datetime.now(timezone.utc).isoformat(),"sha256":sha256(raw)},indent=2)+"\n",encoding="utf-8")
+        history_days={datetime.fromtimestamp(int(point["date"]),timezone.utc).date() for point in payload.get("tokensInUsd") or [] if point.get("date")}
+        if sum(start<=day<=end for day in history_days)==expected: complete_protocols.append(protocol["slug"])
         detail.extend(normalize_protocol(protocol["slug"],payload,alias_index,start,end))
-    caps=market_caps(repo/"data"/"processed"/"historical"/"crypto_fundamentals_daily_coinmetrics.csv")
-    daily,summaries=aggregate(detail,spec["assets"],caps,spec["primary_rule"])
+    caps=market_caps([repo/"data"/"processed"/"historical"/"crypto_fundamentals_daily_coinmetrics.csv",repo/"data"/"processed"/"historical"/"market_daily_coinpaprika.csv"])
+    screen_complete=len(complete_protocols)==len(spec["protocols"])
+    daily,summaries=aggregate(detail,spec["assets"],caps,spec["primary_rule"],screen_complete)
     out=repo/"data"/"processed"/"evidence"; write_rows(out/"crypto_collateral_protocol_detail.csv",detail,["asset_id","date","protocol_slug","token_alias","supplied_balance_usd","provider"]); write_rows(out/"crypto_collateral_daily_proxy.csv",daily,["asset_id","date","supplied_balance_usd","market_cap_usd","supplied_to_market_cap","material_proxy"]); write_rows(out/"crypto_collateral_screen_summary.csv",summaries,list(summaries[0]))
-    result={"assets":len(spec["assets"]),"protocols":len(spec["protocols"]),"detail_rows":len(detail),"daily_rows":len(daily),"proxy_pass_assets":[s["asset_id"] for s in summaries if s["balance_proxy_pass"]],"classification_ready_assets":0,"start_date":start.isoformat(),"end_date":end.isoformat(),"interpretation":spec["interpretation"]}
+    negative=[s["asset_id"] for s in summaries if s["classification_status"]=="verified_below_threshold_in_selected_protocol_sample"]
+    result={"assets":len(spec["assets"]),"protocols":len(spec["protocols"]),"complete_protocols":len(complete_protocols),"screen_complete":screen_complete,"detail_rows":len(detail),"daily_rows":len(daily),"proxy_pass_assets":[s["asset_id"] for s in summaries if s["balance_proxy_pass"]],"verified_below_threshold_assets":negative,"classification_ready_assets":len(negative),"start_date":start.isoformat(),"end_date":end.isoformat(),"selection_rule":spec["selection_rule"],"interpretation":spec["interpretation"]}
     (out/"crypto_collateral_screen_summary.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8"); return result
 
 

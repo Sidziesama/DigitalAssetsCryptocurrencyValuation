@@ -1,6 +1,8 @@
 import unittest
+import csv
+from pathlib import Path
 
-from src.pipeline.crypto_design_evidence import audit, validate_evidence
+from src.pipeline.crypto_design_evidence import audit, run, validate_evidence
 from src.pipeline.crypto_economic_design import CODES
 
 
@@ -35,6 +37,15 @@ class CryptoDesignEvidenceTests(unittest.TestCase):
     def test_audit_detects_verified_mismatch(self):
         _,summary=audit(evidence("verified",1),DESIGN,REGISTRY)
         self.assertEqual(summary["verified_mismatches"],1)
+
+    def test_repository_run_writes_blind_focused_review(self):
+        repo=Path(__file__).resolve().parents[1]
+        run(repo)
+        with (repo/"data/processed/evidence/crypto_design_evidence_focused_review.csv").open(newline="") as handle:
+            rows=list(csv.DictReader(handle))
+        self.assertEqual(len(rows),5)
+        self.assertNotIn("provisional_value",rows[0])
+        self.assertNotIn("recommended_value",rows[0])
 
 
 if __name__ == "__main__": unittest.main()

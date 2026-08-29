@@ -10,14 +10,16 @@
     "missing_activity_not_classified_negative": true,
     "mechanism_state_passes": true,
     "historical_collateral_state_available": true,
-    "stablecoin_temporal_overlap_ready": true
+    "stablecoin_temporal_overlap_ready": true,
+    "h2_pilot_design_ready": true,
+    "verified_negative_collateral_reconciles": true
   },
   "crypto_evidence": {
     "assets": 6,
     "targeted_decisions": 24,
-    "verified_decisions": 18,
-    "pending_decisions": 6,
-    "coverage_ratio": 0.75,
+    "verified_decisions": 19,
+    "pending_decisions": 5,
+    "coverage_ratio": 0.7916666666666666,
     "unresolved": [
       {
         "asset_id": "crypto_bnb",
@@ -26,11 +28,6 @@
       },
       {
         "asset_id": "crypto_bnb",
-        "code": "VA_COLLATERAL",
-        "status": "pending_quantitative_threshold"
-      },
-      {
-        "asset_id": "crypto_uni",
         "code": "VA_COLLATERAL",
         "status": "pending_quantitative_threshold"
       },
@@ -59,10 +56,15 @@
     ],
     "collateral_proxy_pass_assets": [
       "crypto_btc",
-      "crypto_eth"
+      "crypto_eth",
+      "crypto_bnb",
+      "crypto_aave"
     ],
     "historical_collateral_state_assets": 2,
-    "effective_dated_mechanism_states": 12
+    "effective_dated_mechanism_states": 12,
+    "verified_below_collateral_threshold_assets": [
+      "crypto_uni"
+    ]
   },
   "stablecoin_evidence": {
     "temporally_eligible_assets": 8,
@@ -70,7 +72,8 @@
     "status": "temporal_overlap_ready"
   },
   "model_readiness": {
-    "h2_h8": "not_ready_until_remaining_pilot_decisions_are_resolved_and_evidence_is_extended",
+    "h2": "six_asset_pilot_design_ready; outcome-panel and sample freeze still required",
+    "h8": "not_ready_until_all_ten_codes_are_evidence_backed",
     "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation"
   },
   "guardrails": [
@@ -79,5 +82,5 @@
     "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
     "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results."
   ],
-  "next_checkpoint": "Resolve the six remaining pilot decisions, freeze the focused review, and build the first estimation-ready H2/H8 panel."
+  "next_checkpoint": "Resolve the five focused-review decisions, extend evidence for the six remaining H8 codes, and join frozen outcomes for estimation."
 }

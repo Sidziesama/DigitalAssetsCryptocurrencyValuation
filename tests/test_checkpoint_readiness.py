@@ -11,8 +11,8 @@ class CheckpointReadinessTests(unittest.TestCase):
         repo = Path(__file__).resolve().parents[1]
         result = build_readiness(repo)
         self.assertEqual(result["status"], "commit_ready_methodology_checkpoint_not_model_ready")
-        self.assertEqual(result["crypto_evidence"]["pending_decisions"], 6)
-        self.assertEqual(len(result["crypto_evidence"]["unresolved"]), 6)
+        self.assertEqual(result["crypto_evidence"]["pending_decisions"], 5)
+        self.assertEqual(len(result["crypto_evidence"]["unresolved"]), 5)
         self.assertTrue(all(result["checks"].values()))
 
     def test_checkpoint_rejects_verified_mismatch(self):
@@ -28,6 +28,7 @@ class CheckpointReadinessTests(unittest.TestCase):
                 "data/processed/evidence/crypto_mechanism_state_summary.json",
                 "data/processed/empirical/crypto_fundamentals_summary.json",
                 "data/processed/evidence/stablecoin_h5_h6_temporal_readiness.json",
+                "data/processed/evidence/crypto_h2_h8_pilot_readiness.json",
             ]:
                 target = copy / source
                 target.parent.mkdir(parents=True, exist_ok=True)

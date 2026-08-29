@@ -20,6 +20,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
     mechanisms = load_json(repo / "data/processed/evidence/crypto_mechanism_state_summary.json")
     fundamentals = load_json(repo / "data/processed/empirical/crypto_fundamentals_summary.json")
     stablecoin = load_json(repo / "data/processed/evidence/stablecoin_h5_h6_temporal_readiness.json")
+    h2_h8 = load_json(repo / "data/processed/evidence/crypto_h2_h8_pilot_readiness.json")
 
     with decisions_path.open(newline="", encoding="utf-8") as handle:
         decisions = list(csv.DictReader(handle))
@@ -39,6 +40,12 @@ def build_readiness(repo: Path) -> dict[str, Any]:
         "mechanism_state_passes": mechanisms["status"] == "pass" and mechanisms["mismatches"] == 0,
         "historical_collateral_state_available": collateral_state["assets"] >= 2,
         "stablecoin_temporal_overlap_ready": stablecoin["status"] == "temporal_overlap_ready",
+        "h2_pilot_design_ready": h2_h8["h2_design_ready_assets"] == evidence["assets"],
+        "verified_negative_collateral_reconciles": all(
+            row["asset_id"] in collateral["verified_below_threshold_assets"]
+            for row in decisions
+            if row["code"] == "VA_COLLATERAL" and row["status"] == "verified" and row["recommended_value"] == "0"
+        ),
     }
     if not all(checks.values()):
         failed = [name for name, passed in checks.items() if not passed]
@@ -63,6 +70,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "collateral_proxy_pass_assets": collateral["proxy_pass_assets"],
             "historical_collateral_state_assets": collateral_state["assets"],
             "effective_dated_mechanism_states": mechanisms["resolved_asset_code_states"],
+            "verified_below_collateral_threshold_assets": collateral["verified_below_threshold_assets"],
         },
         "stablecoin_evidence": {
             "temporally_eligible_assets": stablecoin["assets_with_post_score_outcomes"],
@@ -70,7 +78,8 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "status": stablecoin["status"],
         },
         "model_readiness": {
-            "h2_h8": "not_ready_until_remaining_pilot_decisions_are_resolved_and_evidence_is_extended",
+            "h2": "six_asset_pilot_design_ready; outcome-panel and sample freeze still required",
+            "h8": "not_ready_until_all_ten_codes_are_evidence_backed",
             "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation",
         },
         "guardrails": [
@@ -79,7 +88,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
             "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results.",
         ],
-        "next_checkpoint": "Resolve the six remaining pilot decisions, freeze the focused review, and build the first estimation-ready H2/H8 panel.",
+        "next_checkpoint": "Resolve the five focused-review decisions, extend evidence for the six remaining H8 codes, and join frozen outcomes for estimation.",
     }
 
 

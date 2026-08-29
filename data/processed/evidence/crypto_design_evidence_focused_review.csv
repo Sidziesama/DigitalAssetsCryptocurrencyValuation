@@ -1,0 +1,6 @@
+asset_id,code,reviewer_value,reviewer_source_url,reviewer_rationale
+crypto_bnb,VA_MONETARY,,,
+crypto_bnb,VA_COLLATERAL,,,
+crypto_aave,VA_COLLATERAL,,,
+crypto_arb,VA_MONETARY,,,
+crypto_arb,VA_COLLATERAL,,,

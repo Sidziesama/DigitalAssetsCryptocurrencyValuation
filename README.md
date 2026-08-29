@@ -33,9 +33,9 @@ The Phase 2 pilot contains 25 non-stable cryptoassets and 16 stable-value assets
 
 ## Current checkpoint and immediate workstream
 
-The project has reached a **commit-ready point-in-time design-evidence pilot**. The stablecoin scorecard has temporally valid post-score outcomes for eight assets. The first non-stable crypto tranche covers six assets and four prioritized value-accrual codes: 18 of 24 decisions are verified, six remain explicitly unresolved, and no verified decision conflicts with the current design matrix. This is a methodology and provenance checkpoint, not an estimation-ready or hypothesis-result checkpoint.
+The project has reached an **expanded point-in-time design-evidence pilot**. The stablecoin scorecard has temporally valid post-score outcomes for eight assets. The first non-stable crypto tranche covers six assets and four prioritized value-accrual codes: 19 of 24 decisions are verified, five remain explicitly unresolved, and no verified decision conflicts with the current design matrix. H2's burn/protocol-capture design fields are complete for the six-asset pilot; H8 breadth remains withheld until all ten codes are evidence-backed. This is a methodology and provenance checkpoint, not a hypothesis-result checkpoint.
 
-1. Resolve the remaining BNB/ARB monetary and BNB/UNI/AAVE/ARB collateral decisions without converting missing provider coverage into zero.
+1. Resolve the remaining BNB/ARB monetary, BNB/AAVE positive collateral-eligibility, and ARB market-cap completeness decisions without interpolation or converting missing coverage into zero.
 2. Run the focused review only on fields that will enter H2/H8 and H5/H6 estimation.
 3. Extend the evidence schema from the six-asset tranche to the remaining non-stable pilot assets.
 4. Freeze estimation samples and build the first hypothesis-ready panels.
@@ -65,6 +65,7 @@ python -m src.pipeline.crypto_collateral --repo . --start 2026-05-25 --end 2026-
 python -m src.pipeline.aave_collateral_state --repo . --start 2026-05-25 --end 2026-08-22
 python -m src.pipeline.crypto_monetary --repo .
 python -m src.pipeline.crypto_mechanism_state --repo .
+python -m src.pipeline.crypto_h2_h8_readiness --repo .
 python -m src.pipeline.checkpoint_readiness --repo .
 python -m src.pipeline.coinpaprika_market --repo . --start 2025-08-25 --end 2026-08-22
 python -m src.pipeline.cryptocompare_volume --repo . --start 2019-01-01 --end 2026-08-22
@@ -108,13 +109,15 @@ The crypto-design-evidence command audits the first prioritized H2/H8 evidence t
 
 The crypto-fundamentals command collects the Coin Metrics Community fields confirmed to be free: daily addresses, transactions, transfer count, market capitalization, and supply for the first evidence tranche. Coverage is audited per metric; activity supplies at most one `VA_MONETARY` behavioral test and never substitutes for separate acceptance or holding evidence. Adjusted transfer value, fees, and issuance are explicitly reported as unavailable on this free tier.
 
-The crypto-collateral command screens exact token balances across selected lending protocols against the preregistered 1%-of-market-cap or $100m-for-90-days rule. DeFiLlama supplied-token TVL is treated only as a screening proxy: a passing asset still requires effective-dated proof that the balance was collateral-enabled before `VA_COLLATERAL=1` can be frozen.
+The crypto-collateral command screens exact token balances across a named eight-protocol, chain-relevant lending sample against the preregistered 1%-of-market-cap or $100m-for-90-days rule. Every selected protocol must cover the full window before a below-threshold result can support zero. DeFiLlama supplied-token TVL remains a screening proxy: a passing asset still requires effective-dated proof that the balance was collateral-enabled before `VA_COLLATERAL=1` can be frozen.
 
 The Aave collateral-state command resolves daily Ethereum blocks and performs historical read-only `Pool.getConfiguration` calls for WBTC and WETH. Eligibility passes only when LTV is positive, the reserve is active, and it is not paused on every day of the 90-day materiality window; raw RPC responses and hashes are archived.
 
 The crypto-monetary command implements the two-test `VA_MONETARY` rule: 90 days of material address/transaction activity plus independent, dated primary evidence of monetary or payment design. Missing provider data and failure of this pilot screen remain unresolved rather than being converted into negative classifications.
 
 The crypto-mechanism-state command resolves burn and protocol-capture classifications from effective-dated activation, pause, and deactivation events. The latest event known by the observation date must match the design matrix; promised, paused, or inactive mechanisms remain zero.
+
+The crypto-H2/H8-readiness command creates a six-asset pilot design panel without filling unevidenced fields from the provisional matrix. H2 capture is released only when burn and protocol capture are verified; H8 breadth stays null until all ten value-accrual codes are verified.
 
 The checkpoint-readiness command reconciles the stablecoin and crypto evidence outputs, lists every unresolved pilot decision, enforces missingness and temporal guardrails, and writes a single machine-readable checkpoint. A passing checkpoint means the methodology increment is safe to commit; it does not mean H2/H8 or H5/H6 are ready for final estimation.
 

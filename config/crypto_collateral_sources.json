@@ -4,7 +4,12 @@
   "protocols": [
     {"slug":"aave","name":"Aave","category":"lending"},
     {"slug":"compound-v3","name":"Compound V3","category":"lending"},
-    {"slug":"sparklend","name":"SparkLend","category":"lending"}
+    {"slug":"sparklend","name":"SparkLend","category":"lending"},
+    {"slug":"venus-core-pool","name":"Venus Core Pool","category":"lending"},
+    {"slug":"venus-isolated-pools","name":"Venus Isolated Pools","category":"lending"},
+    {"slug":"radiant-v2","name":"Radiant V2","category":"lending"},
+    {"slug":"dolomite","name":"Dolomite","category":"lending"},
+    {"slug":"silo-v2","name":"Silo V2","category":"lending"}
   ],
   "assets": [
     {"asset_id":"crypto_btc","token_aliases":["WBTC","WBTC.E","BTCB"]},
@@ -15,5 +20,6 @@
     {"asset_id":"crypto_arb","token_aliases":["ARB"]}
   ],
   "primary_rule": {"absolute_usd": 100000000, "market_cap_ratio": 0.01, "minimum_consecutive_days": 90},
+  "selection_rule": "Named lending markets selected before classification to cover Ethereum, BNB Chain, and Arbitrum and to include both general-purpose and chain-relevant markets. Every selected protocol must have a complete observation window before a below-threshold result can support zero.",
   "interpretation": "DeFiLlama token TVL is a screening proxy for supplied balances, not proof that every balance is collateral-enabled. A positive VA_COLLATERAL decision additionally requires point-in-time protocol eligibility evidence."
 }

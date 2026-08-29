@@ -1,14 +1,22 @@
 {
   "assets": 6,
-  "protocols": 3,
-  "detail_rows": 1530,
+  "protocols": 8,
+  "complete_protocols": 8,
+  "screen_complete": true,
+  "detail_rows": 4020,
   "daily_rows": 540,
   "proxy_pass_assets": [
     "crypto_btc",
-    "crypto_eth"
+    "crypto_eth",
+    "crypto_bnb",
+    "crypto_aave"
   ],
-  "classification_ready_assets": 0,
+  "verified_below_threshold_assets": [
+    "crypto_uni"
+  ],
+  "classification_ready_assets": 1,
   "start_date": "2026-05-25",
   "end_date": "2026-08-22",
+  "selection_rule": "Named lending markets selected before classification to cover Ethereum, BNB Chain, and Arbitrum and to include both general-purpose and chain-relevant markets. Every selected protocol must have a complete observation window before a below-threshold result can support zero.",
   "interpretation": "DeFiLlama token TVL is a screening proxy for supplied balances, not proof that every balance is collateral-enabled. A positive VA_COLLATERAL decision additionally requires point-in-time protocol eligibility evidence."
 }
