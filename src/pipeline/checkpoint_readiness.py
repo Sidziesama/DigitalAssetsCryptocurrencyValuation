@@ -27,6 +27,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
     h2_diagnostics = load_json(repo / "data/processed/empirical/crypto_h2_estimator_diagnostics.json")
     h2_estimates = load_json(repo / "data/processed/empirical/crypto_h2_exploratory_estimates.json")
     blockers = load_json(repo / "data/processed/evidence/crypto_evidence_blockers_summary.json")
+    small_cluster = load_json(repo / "data/processed/empirical/crypto_h2_small_cluster_inference.json")
 
     with decisions_path.open(newline="", encoding="utf-8") as handle:
         decisions = list(csv.DictReader(handle))
@@ -57,6 +58,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
         "h2_estimator_diagnostics_pass": h2_diagnostics["status"] == "pass_with_small_sample_limits" and all(item["full_rank"] and item["balanced_panel"] for item in h2_diagnostics["diagnostics"]) and all(item["full_rank"] for item in h2_diagnostics["leave_one_asset_out"]),
         "h2_exploratory_estimates_guarded": h2_estimates["status"] == "exploratory_point_estimates_only" and all(item["standard_errors"] is None and item["p_values"] is None for item in h2_estimates["estimates"]),
         "bnb_blockers_documented": blockers["status"] == "documented_open_blockers" and blockers["open_blockers"] == 2 and blockers["assets_affected"] == ["crypto_bnb"],
+        "h2_small_cluster_inference_guarded": small_cluster["status"] == "exploratory_small_cluster_inference_complete" and all(item["bootstrap_assignments"] == 2 ** item["clusters"] for item in small_cluster["results"]) and all(item["overlapping_outcome"] == (item["outcome"] == "forward_log_return_7d") for item in small_cluster["results"]),
         "h8_extension_plan_complete": h8_plan["status"] == "six_code_evidence_complete" and h8_plan["targeted_decisions"] == 36 and h8_plan["verified_decisions"] == 36 and h8_plan["pending_decisions"] == 0 and h8_plan["verified_mismatches"] == 0,
         "free_fee_layer_complete": fee_layer["complete_fee_assets"] == 6 and fee_layer["complete_revenue_assets"] == 6,
     }
@@ -91,7 +93,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "status": stablecoin["status"],
         },
         "model_readiness": {
-            "h2": "guarded six-asset exploratory point estimates available without p-values; preregistration freeze required before confirmatory inference",
+            "h2": "exact wild-cluster pilot inference available; no specification rejects zero at 10%, and overlapping-return inference remains incomplete",
             "h8": "five-asset complete-case design ready; BNB withheld under documented monetary and collateral evidence blockers",
             "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation",
         },
@@ -101,7 +103,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
             "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results.",
         ],
-        "next_checkpoint": "Approve the documented BNB complete-case exclusion and freeze the H2/H8 pilot before adding confirmatory inference.",
+        "next_checkpoint": "Freeze the documented H2/H8 pilot, add horizon-robust forward-return inference, and extend the time window before confirmatory testing.",
     }
 
 

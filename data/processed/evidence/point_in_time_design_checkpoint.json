@@ -18,6 +18,7 @@
     "h2_estimator_diagnostics_pass": true,
     "h2_exploratory_estimates_guarded": true,
     "bnb_blockers_documented": true,
+    "h2_small_cluster_inference_guarded": true,
     "h8_extension_plan_complete": true,
     "free_fee_layer_complete": true
   },
@@ -64,7 +65,7 @@
     "status": "temporal_overlap_ready"
   },
   "model_readiness": {
-    "h2": "guarded six-asset exploratory point estimates available without p-values; preregistration freeze required before confirmatory inference",
+    "h2": "exact wild-cluster pilot inference available; no specification rejects zero at 10%, and overlapping-return inference remains incomplete",
     "h8": "five-asset complete-case design ready; BNB withheld under documented monetary and collateral evidence blockers",
     "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation"
   },
@@ -74,5 +75,5 @@
     "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
     "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results."
   ],
-  "next_checkpoint": "Approve the documented BNB complete-case exclusion and freeze the H2/H8 pilot before adding confirmatory inference."
+  "next_checkpoint": "Freeze the documented H2/H8 pilot, add horizon-robust forward-return inference, and extend the time window before confirmatory testing."
 }

@@ -35,6 +35,7 @@ class CheckpointReadinessTests(unittest.TestCase):
                 "data/processed/empirical/crypto_h2_estimator_diagnostics.json",
                 "data/processed/empirical/crypto_h2_exploratory_estimates.json",
                 "data/processed/evidence/crypto_evidence_blockers_summary.json",
+                "data/processed/empirical/crypto_h2_small_cluster_inference.json",
             ]:
                 target = copy / source
                 target.parent.mkdir(parents=True, exist_ok=True)

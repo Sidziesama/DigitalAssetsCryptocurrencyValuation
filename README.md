@@ -33,7 +33,7 @@ The Phase 2 pilot contains 25 non-stable cryptoassets and 16 stable-value assets
 
 ## Current checkpoint and immediate workstream
 
-The project has reached an **expanded point-in-time design-evidence and exploratory-estimation pilot**. The stablecoin scorecard has temporally valid post-score outcomes for eight assets. The first non-stable crypto tranche covers six assets and four prioritized value-accrual codes: 22 of 24 decisions are verified, leaving only BNB monetary and collateral status unresolved. The six-code H8 extension verifies all 36 gas, staking, scarcity, governance, utility, and incentive decisions with no verified conflicts against the corrected design matrix. H2's burn/protocol-capture fields are complete, its fee-scope sensitivities are predeclared, and its estimator diagnostics pass with small-sample limits. Guarded H2 point estimates and leave-one-asset-out sensitivities are reproducible, but they intentionally omit p-values. Full ten-code H8 breadth is available for five assets; BNB is withheld under a machine-readable blocker policy. This remains an exploratory methodology checkpoint, not a confirmatory hypothesis result.
+The project has reached an **expanded point-in-time design-evidence and exploratory-estimation pilot**. The stablecoin scorecard has temporally valid post-score outcomes for eight assets. The first non-stable crypto tranche covers six assets and four prioritized value-accrual codes: 22 of 24 decisions are verified, leaving only BNB monetary and collateral status unresolved. The six-code H8 extension verifies all 36 gas, staking, scarcity, governance, utility, and incentive decisions with no verified conflicts against the corrected design matrix. H2's burn/protocol-capture fields are complete, its fee-scope sensitivities are predeclared, and its estimator diagnostics pass with small-sample limits. Guarded H2 point estimates, leave-one-asset-out sensitivities, and exhaustive wild-cluster tests are reproducible. The fee-capture interaction is positive in every predeclared specification, but no wild-cluster result rejects zero at 10%; the pooled market-cap result is closest at $p=0.156$. Full ten-code H8 breadth is available for five assets; BNB is withheld under a machine-readable blocker policy. This remains an exploratory methodology checkpoint, not a confirmatory hypothesis result.
 
 1. Approve or revise the documented policy that retains BNB as null and excludes it from five-asset complete-case H8 estimation.
 2. Freeze the H2/H8 pilot specification before adding uncertainty estimates or testing additional variants.
@@ -69,6 +69,9 @@ python -m src.pipeline.crypto_h2_h8_readiness --repo .
 python -m src.pipeline.crypto_fee_fundamentals --repo . --start 2026-05-25 --end 2026-08-21
 python -m src.pipeline.crypto_h2_pilot_panel --repo .
 python -m src.pipeline.crypto_h2_estimator_diagnostics --repo .
+python -m src.pipeline.crypto_h2_exploratory_estimates --repo .
+python -m src.pipeline.crypto_h2_small_cluster_inference --repo .
+python -m src.pipeline.crypto_evidence_blockers --repo .
 python -m src.pipeline.crypto_h8_evidence_plan --repo .
 python -m src.pipeline.checkpoint_readiness --repo .
 python -m src.pipeline.coinpaprika_market --repo . --start 2025-08-25 --end 2026-08-22
@@ -130,6 +133,8 @@ The crypto-H2-pilot-panel command joins six-asset CoinPaprika market outcomes, f
 The crypto-H2-estimator-diagnostics command audits usable observations, within-asset fee variation, two-way fixed-effect design rank, scope representation, and every leave-one-asset-out sample without estimating hypothesis coefficients. A pass establishes computational feasibility only; the two-asset application scope remains descriptive and the six-cluster pilot remains exploratory.
 
 The crypto-H2-exploratory-estimates command produces guarded two-way fixed-effect point estimates for the predeclared pooled and chain-only market-cap and forward-return specifications. It reports within-fit and leave-one-asset-out sensitivity but intentionally omits standard errors and p-values at the six-cluster pilot stage.
+
+The crypto-H2-small-cluster-inference command adds CR1 asset-clustered statistics and exhaustively enumerates every Rademacher wild-cluster assignment under the zero-interaction null. Six-cluster tests have 64 assignments and four-cluster tests only 16, so attainable p-values are coarse; overlapping forward-return results remain exploratory pending horizon-robust inference.
 
 The crypto-evidence-blockers command reconciles a machine-readable blocker manifest to the unresolved evidence grid. It documents the exact evidence required to resolve BNB monetary and collateral classifications and enforces a five-asset complete-case H8 policy while those fields remain null.
 
