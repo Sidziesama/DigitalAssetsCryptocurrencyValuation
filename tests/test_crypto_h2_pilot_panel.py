@@ -7,7 +7,7 @@ SPEC={
     "schema_version":1,"status":"draft_not_frozen","as_of":"2026-01-08",
     "analysis_window":{"start":"2026-01-01","end":"2026-01-08"},
     "sample":{"market_assets":["crypto_x","crypto_a","crypto_b","crypto_c","crypto_d","crypto_e"],"activity_assets":["crypto_x"],"no_outcome_based_replacement":True},
-    "H2":{"primary_status":"candidate_fee_layer_ready_scope_comparability_review_pending"},
+    "H2":{"primary_status":"candidate_fee_layer_ready_preregistration_freeze_pending","scope_design":{"scope_indicator":"application_protocol_scope","sensitivities":["a","b","c","d"],"pooling_guardrail":"required"},"models":{"market_cap":"x","forward_return":"x","secondary":"x"},"standard_errors":{"primary":"wild-cluster-bootstrap","small_sample_guardrail":"exploratory with six assets"}},
     "H8":{"status":"blocked_until_all_ten_codes_are_evidence_backed"},
 }
 
@@ -20,6 +20,10 @@ class CryptoH2PilotPanelTests(unittest.TestCase):
     def test_zero_activity_is_observed_not_missing(self):
         self.assertEqual(number("0",True),0)
         self.assertIsNone(number("0"))
+
+    def test_scope_design_is_required(self):
+        bad={**SPEC,"H2":{**SPEC["H2"],"scope_design":{}}}
+        with self.assertRaisesRegex(ValueError,"fee-scope design"): validate_spec(bad)
 
     def test_effective_event_never_backfills(self):
         events=[{"asset_id":"crypto_x","code":"VA_BURN","effective_from":"2026-01-02","value":1}]
@@ -39,6 +43,7 @@ class CryptoH2PilotPanelTests(unittest.TestCase):
         ]
         rows,summary=build(SPEC,market,activity,events); by_date={row["date"]:row for row in rows}
         self.assertEqual(by_date["2026-01-02"]["active_addresses_lag1"],10)
+        self.assertEqual(by_date["2026-01-02"]["application_protocol_scope"],None)
         self.assertIsNotNone(by_date["2026-01-01"]["forward_log_return_7d"])
         self.assertIsNone(by_date["2026-01-02"]["forward_log_return_7d"])
         self.assertEqual(summary["level_eligible_rows"],1)

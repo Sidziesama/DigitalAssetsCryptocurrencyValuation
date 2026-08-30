@@ -43,9 +43,15 @@ class CryptoDesignEvidenceTests(unittest.TestCase):
         run(repo)
         with (repo/"data/processed/evidence/crypto_design_evidence_focused_review.csv").open(newline="") as handle:
             rows=list(csv.DictReader(handle))
-        self.assertEqual(len(rows),5)
-        self.assertNotIn("provisional_value",rows[0])
-        self.assertNotIn("recommended_value",rows[0])
+        self.assertEqual(
+            {(row["asset_id"], row["code"]) for row in rows},
+            {
+                ("crypto_bnb", "VA_MONETARY"),
+                ("crypto_bnb", "VA_COLLATERAL"),
+            },
+        )
+        self.assertNotIn("provisional_value", rows[0])
+        self.assertNotIn("recommended_value", rows[0])
 
 
 if __name__ == "__main__": unittest.main()

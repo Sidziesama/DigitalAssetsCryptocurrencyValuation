@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_arb",
+  "end": "2026-08-23",
+  "provider": "coinpaprika",
+  "provider_id": "arb-arbitrum",
+  "retrieved_at_utc": "2026-08-30T22:40:16.453847+00:00",
+  "sha256": "c2c25f45801ece9353e2167e33b21bd925906d2f8940d5833a64d804d76a1e69",
+  "start": "2026-08-22"
+}

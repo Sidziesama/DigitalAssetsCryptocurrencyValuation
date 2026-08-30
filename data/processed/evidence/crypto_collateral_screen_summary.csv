@@ -4,4 +4,4 @@ crypto_eth,90,90,90,90,1,1,requires_point_in_time_collateral_eligibility_validat
 crypto_bnb,90,89,90,90,1,1,requires_point_in_time_collateral_eligibility_validation
 crypto_uni,90,90,0,0,0,1,verified_below_threshold_in_selected_protocol_sample
 crypto_aave,90,90,90,90,1,1,requires_point_in_time_collateral_eligibility_validation
-crypto_arb,90,89,0,0,0,1,proxy_threshold_not_met_or_insufficient_history
+crypto_arb,90,90,0,0,0,1,verified_below_threshold_in_selected_protocol_sample

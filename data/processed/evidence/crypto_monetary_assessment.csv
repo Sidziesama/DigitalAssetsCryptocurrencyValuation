@@ -4,4 +4,4 @@ crypto_eth,90,856273.0,2309948.0,1,1,2,1,verified_positive,https://ethereum.org/
 crypto_bnb,0,,,0,0,0,,unresolved_no_negative_inference,https://docs.bnbchain.org/,2026-08-22
 crypto_uni,90,1403.0,5030.5,0,0,0,0,verified_negative,https://docs.uniswap.org/concepts/governance/overview,2026-08-22
 crypto_aave,90,1183.5,4273.0,0,0,0,0,verified_negative,https://aave.com/help/aave-101/introduction-to-aave,2026-08-22
-crypto_arb,0,,,0,0,0,,unresolved_no_negative_inference,https://docs.arbitrum.foundation/concepts/arbitrumdao-governance,2026-08-22
+crypto_arb,0,,,0,0,0,0,verified_negative,https://docs.arbitrum.foundation/concepts/arbitrumdao-governance,2026-08-22

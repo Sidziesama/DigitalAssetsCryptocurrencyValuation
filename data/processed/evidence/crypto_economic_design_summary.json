@@ -3,7 +3,7 @@
   "assets": 25,
   "review_decisions": 250,
   "active_capture_assets": 18,
-  "mean_va_breadth": 5.4,
+  "mean_va_breadth": 5.36,
   "consensus_counts": {
     "DPoS": 1,
     "NA": 2,

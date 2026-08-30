@@ -24,5 +24,32 @@ class CryptoH2H8ReadinessTests(unittest.TestCase):
         self.assertIsNone(panel[0]["h2_active_capture"])
         self.assertEqual(panel[0]["h2_design_ready"], 0)
 
+    def test_complete_ten_code_evidence_releases_h8_breadth(self):
+        from src.pipeline.crypto_economic_design import CODES
 
-if __name__ == "__main__": unittest.main()
+        rows = [
+            {
+                "asset_id": "crypto_x",
+                "code": code,
+                "status": "verified",
+                "recommended_value": int(code in {"VA_BURN", "VA_PROTOCOL"}),
+            }
+            for code in CODES
+        ]
+        panel, summary = build(rows, ["crypto_x"])
+        self.assertEqual(panel[0]["h8_value_accrual_breadth"], 2)
+        self.assertEqual(summary["status"], "h2_h8_pilot_design_ready")
+
+    def test_duplicate_evidence_is_rejected(self):
+        row = {
+            "asset_id": "crypto_x",
+            "code": "VA_BURN",
+            "status": "verified",
+            "recommended_value": 1,
+        }
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            build([row, row], ["crypto_x"])
+
+
+if __name__ == "__main__":
+    unittest.main()

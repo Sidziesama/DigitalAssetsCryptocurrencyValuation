@@ -1,5 +1,5 @@
 {
-  "status": "candidate_h2_fee_panel_ready_scope_comparability_review_pending",
+  "status": "candidate_h2_fee_panel_ready_preregistration_freeze_pending",
   "market_assets": 6,
   "activity_assets": 4,
   "rows": 534,
@@ -51,6 +51,7 @@
       "fee_forward_return_rows": 81
     }
   },
-  "primary_h2_blocker": "Chain-level and application-level fee scopes require predeclared pooled-versus-within-scope sensitivity analysis before estimation.",
-  "guardrail": "Do not pool chain and application observations without scope indicators; fees, protocol revenue, and holder revenue remain separate variables."
+  "scope_design_predeclared": true,
+  "primary_h2_blocker": "Scope design and estimator diagnostics are complete, but the draft must remain exploratory until the preregistration is frozen.",
+  "guardrail": "Do not pool chain and application observations without the predeclared scope indicator and interactions; fees, protocol revenue, and holder revenue remain separate variables."
 }

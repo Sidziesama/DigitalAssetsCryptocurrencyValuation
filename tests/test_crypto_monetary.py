@@ -14,8 +14,13 @@ class CryptoMonetaryTests(unittest.TestCase):
         result=assess(s,rows)[0]
         self.assertIsNone(result["recommended_va_monetary"])
 
-    def test_missing_activity_never_becomes_negative(self):
-        s=spec(); s["activity_window"]["minimum_days"]=30
+    def test_missing_activity_does_not_block_verified_design_negative(self):
+        s=spec("verified",0); s["activity_window"]["minimum_days"]=30
+        result=assess(s,[])[0]
+        self.assertEqual(result["recommended_va_monetary"],0)
+
+    def test_missing_activity_and_pending_design_remain_unresolved(self):
+        s=spec("pending",None); s["activity_window"]["minimum_days"]=30
         result=assess(s,[])[0]
         self.assertEqual(result["status"],"unresolved_no_negative_inference")
 

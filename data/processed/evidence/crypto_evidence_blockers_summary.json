@@ -1,0 +1,12 @@
+{
+  "status": "documented_open_blockers",
+  "open_blockers": 2,
+  "assets_affected": [
+    "crypto_bnb"
+  ],
+  "codes_affected": [
+    "VA_COLLATERAL",
+    "VA_MONETARY"
+  ],
+  "h8_policy": "retain null and estimate H8 on the five complete-case assets unless new evidence resolves BNB"
+}

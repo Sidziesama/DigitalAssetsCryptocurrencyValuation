@@ -1,10 +1,11 @@
 {
-  "assets": 2,
+  "assets": 3,
   "expected_days_per_asset": 90,
-  "daily_state_rows": 180,
+  "daily_state_rows": 270,
   "eligibility_pass_assets": [
     "crypto_btc",
-    "crypto_eth"
+    "crypto_eth",
+    "crypto_aave"
   ],
   "start_date": "2026-05-25",
   "end_date": "2026-08-22",

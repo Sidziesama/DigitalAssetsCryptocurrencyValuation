@@ -16,6 +16,8 @@ def validate(spec:dict[str,Any])->None:
     if spec.get("method")!="getConfiguration(address)" or spec.get("selector")!="0xc44b11f7": raise ValueError("unexpected Aave Pool configuration selector")
     for field in ("pool_address","rpc_url","block_lookup_base"):
         if not str(spec.get(field,"")).startswith(("0x","https://")): raise ValueError(f"invalid {field}")
+    namespace=spec.get("snapshot_namespace","v1")
+    if not namespace.replace("_","").replace("-","").isalnum(): raise ValueError("invalid snapshot namespace")
     ids=[a.get("asset_id") for a in spec.get("assets",[])]
     if not ids or len(ids)!=len(set(ids)): raise ValueError("Aave reserve assets must be non-empty and unique")
     for asset in spec["assets"]:
@@ -43,7 +45,7 @@ def day_timestamp(day:date)->int:
 
 def collect(repo:Path,start:date,end:date,force:bool=False)->dict[str,Any]:
     spec=load_json(repo/"config"/"aave_collateral_state.json"); validate(spec)
-    raw_root=repo/"data"/"raw"/"aave_collateral_state"; rows=[]; day=start
+    raw_root=repo/"data"/"raw"/"aave_collateral_state"/spec.get("snapshot_namespace","v1"); rows=[]; day=start
     while day<=end:
         raw_path=raw_root/f"{day.isoformat()}.json"
         if raw_path.exists() and not force: payload=load_json(raw_path)

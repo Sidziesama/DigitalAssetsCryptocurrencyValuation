@@ -46,6 +46,20 @@ def validate_evidence(evidence: dict[str,Any],spec:dict[str,Any])->None:
         if not row.get("rationale"): raise ValueError("H8 decisions require rationale")
 
 
+def merge_evidence(spec:dict[str,Any],tranches:list[dict[str,Any]])->dict[str,Any]:
+    """Validate independently authored tranches and reject overlapping decisions."""
+    decisions=[]; codes=[]; keys=set()
+    for tranche in tranches:
+        validate_evidence(tranche,spec)
+        for code in tranche["codes"]:
+            if code not in codes: codes.append(code)
+        for row in tranche["decisions"]:
+            key=(row["asset_id"],row["code"])
+            if key in keys: raise ValueError(f"duplicate H8 evidence decision: {key[0]} {key[1]}")
+            keys.add(key); decisions.append(row)
+    return {"schema_version":1,"as_of":spec["as_of"],"assets":spec["assets"],"codes":codes,"decisions":decisions}
+
+
 def build(spec: dict[str, Any],evidence:dict[str,Any]|None=None,design:dict[str,Any]|None=None) -> tuple[list[dict[str, Any]], list[dict[str,Any]], dict[str, Any]]:
     validate(spec)
     if evidence: validate_evidence(evidence,spec)
@@ -68,7 +82,7 @@ def build(spec: dict[str, Any],evidence:dict[str,Any]|None=None,design:dict[str,
             })
     targeted=len(spec["assets"])*len(spec["codes"])
     return audit,review,{
-        "status":"evidence_extraction_in_progress",
+        "status":"six_code_evidence_complete" if verified==targeted else "evidence_extraction_in_progress",
         "assets":len(spec["assets"]),"codes":len(spec["codes"]),"targeted_decisions":targeted,
         "verified_decisions":verified,"pending_decisions":targeted-verified,"verified_mismatches":mismatches,
         "guardrail":"The blind worksheet contains rules but excludes every provisional design value. H8 breadth remains null until all ten codes are verified per asset."
@@ -77,13 +91,15 @@ def build(spec: dict[str, Any],evidence:dict[str,Any]|None=None,design:dict[str,
 
 def run(repo:Path)->dict[str,Any]:
     spec=json.loads((repo/"config/crypto_h8_evidence_plan.json").read_text())
-    evidence=json.loads((repo/"config/crypto_h8_evidence_tranche_1.json").read_text())
+    tranches=[json.loads(path.read_text()) for path in sorted((repo/"config").glob("crypto_h8_evidence_tranche_*.json"))]
+    evidence=merge_evidence(spec,tranches)
     design=json.loads((repo/"config/crypto_economic_design.json").read_text())
     audit,rows,summary=build(spec,evidence,design); out=repo/"data/processed/evidence"; out.mkdir(parents=True,exist_ok=True)
     with (out/"crypto_h8_evidence_audit.csv").open("w",newline="",encoding="utf-8") as handle:
         writer=csv.DictWriter(handle,fieldnames=list(audit[0]),lineterminator="\n"); writer.writeheader(); writer.writerows(audit)
     with (out/"crypto_h8_evidence_review.csv").open("w",newline="",encoding="utf-8") as handle:
-        writer=csv.DictWriter(handle,fieldnames=list(rows[0]),lineterminator="\n"); writer.writeheader(); writer.writerows(rows)
+        fields=["asset_id","code","positive_rule","negative_rule","required_evidence","reviewer_value","source_url","source_date","date_basis","reviewer","rationale"]
+        writer=csv.DictWriter(handle,fieldnames=fields,lineterminator="\n"); writer.writeheader(); writer.writerows(rows)
     (out/"crypto_h8_evidence_plan_summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     return summary
 

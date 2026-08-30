@@ -24,8 +24,8 @@
     {"asset_id":"crypto_avax","consensus":"PoS","codes":[0,1,1,1,1,1,1,1,1,1]},
     {"asset_id":"crypto_ton","consensus":"PoS","codes":[0,1,1,0,0,1,1,1,1,1]},
     {"asset_id":"crypto_tao","consensus":"PoS family","codes":[0,1,1,0,1,0,1,1,1,1]},
-    {"asset_id":"crypto_uni","consensus":"NA","codes":[0,0,0,1,0,0,1,1,0,1]},
-    {"asset_id":"crypto_aave","consensus":"NA","codes":[0,0,1,0,0,0,1,0,1,1]},
+    {"asset_id":"crypto_uni","consensus":"NA","codes":[0,0,0,1,0,0,1,1,0,0]},
+    {"asset_id":"crypto_aave","consensus":"NA","codes":[0,0,1,0,0,1,1,0,0,1]},
     {"asset_id":"crypto_arb","consensus":"rollup","codes":[0,0,0,0,0,0,1,1,0,1]},
     {"asset_id":"crypto_op","consensus":"rollup","codes":[0,0,0,0,0,0,1,1,0,1]},
     {"asset_id":"crypto_pol","consensus":"PoS","codes":[0,1,1,0,0,0,1,1,1,1]}

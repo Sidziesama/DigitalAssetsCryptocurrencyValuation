@@ -1,0 +1,213 @@
+{
+  "status": "pass_with_small_sample_limits",
+  "rows": 534,
+  "assets": 6,
+  "scope_counts": {
+    "chain": 4,
+    "application_protocol": 2
+  },
+  "diagnostics": [
+    {
+      "specification": "pooled_market_cap",
+      "rows": 528,
+      "assets": 6,
+      "dates": 88,
+      "balanced_panel": true,
+      "asset_ids": [
+        "crypto_aave",
+        "crypto_arb",
+        "crypto_bnb",
+        "crypto_btc",
+        "crypto_eth",
+        "crypto_uni"
+      ],
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "columns": [
+        "log1p_fees_usd_lag1",
+        "fees_x_capture",
+        "fees_x_application_scope"
+      ],
+      "two_way_fe_rank": 3,
+      "expected_rank": 3,
+      "nonzero_within_columns": {
+        "log1p_fees_usd_lag1": true,
+        "fees_x_capture": true,
+        "fees_x_application_scope": true
+      },
+      "full_rank": true
+    },
+    {
+      "specification": "pooled_forward_return",
+      "rows": 486,
+      "assets": 6,
+      "dates": 81,
+      "balanced_panel": true,
+      "asset_ids": [
+        "crypto_aave",
+        "crypto_arb",
+        "crypto_bnb",
+        "crypto_btc",
+        "crypto_eth",
+        "crypto_uni"
+      ],
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "columns": [
+        "log1p_fees_usd_lag1",
+        "fees_x_capture",
+        "fees_x_application_scope"
+      ],
+      "two_way_fe_rank": 3,
+      "expected_rank": 3,
+      "nonzero_within_columns": {
+        "log1p_fees_usd_lag1": true,
+        "fees_x_capture": true,
+        "fees_x_application_scope": true
+      },
+      "full_rank": true
+    },
+    {
+      "specification": "chain_market_cap",
+      "rows": 352,
+      "assets": 4,
+      "dates": 88,
+      "balanced_panel": true,
+      "asset_ids": [
+        "crypto_arb",
+        "crypto_bnb",
+        "crypto_btc",
+        "crypto_eth"
+      ],
+      "scopes": [
+        "chain"
+      ],
+      "columns": [
+        "log1p_fees_usd_lag1",
+        "fees_x_capture"
+      ],
+      "two_way_fe_rank": 2,
+      "expected_rank": 2,
+      "nonzero_within_columns": {
+        "log1p_fees_usd_lag1": true,
+        "fees_x_capture": true
+      },
+      "full_rank": true
+    },
+    {
+      "specification": "chain_forward_return",
+      "rows": 324,
+      "assets": 4,
+      "dates": 81,
+      "balanced_panel": true,
+      "asset_ids": [
+        "crypto_arb",
+        "crypto_bnb",
+        "crypto_btc",
+        "crypto_eth"
+      ],
+      "scopes": [
+        "chain"
+      ],
+      "columns": [
+        "log1p_fees_usd_lag1",
+        "fees_x_capture"
+      ],
+      "two_way_fe_rank": 2,
+      "expected_rank": 2,
+      "nonzero_within_columns": {
+        "log1p_fees_usd_lag1": true,
+        "fees_x_capture": true
+      },
+      "full_rank": true
+    }
+  ],
+  "leave_one_asset_out": [
+    {
+      "excluded_asset": "crypto_aave",
+      "rows": 440,
+      "assets": 5,
+      "balanced_panel": true,
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "two_way_fe_rank": 3,
+      "full_rank": true
+    },
+    {
+      "excluded_asset": "crypto_arb",
+      "rows": 440,
+      "assets": 5,
+      "balanced_panel": true,
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "two_way_fe_rank": 3,
+      "full_rank": true
+    },
+    {
+      "excluded_asset": "crypto_bnb",
+      "rows": 440,
+      "assets": 5,
+      "balanced_panel": true,
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "two_way_fe_rank": 3,
+      "full_rank": true
+    },
+    {
+      "excluded_asset": "crypto_btc",
+      "rows": 440,
+      "assets": 5,
+      "balanced_panel": true,
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "two_way_fe_rank": 3,
+      "full_rank": true
+    },
+    {
+      "excluded_asset": "crypto_eth",
+      "rows": 440,
+      "assets": 5,
+      "balanced_panel": true,
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "two_way_fe_rank": 3,
+      "full_rank": true
+    },
+    {
+      "excluded_asset": "crypto_uni",
+      "rows": 440,
+      "assets": 5,
+      "balanced_panel": true,
+      "scopes": [
+        "application_protocol",
+        "chain"
+      ],
+      "two_way_fe_rank": 3,
+      "full_rank": true
+    }
+  ],
+  "application_scope": {
+    "assets": 2,
+    "rows": 176,
+    "inference": "descriptive_only"
+  },
+  "guardrails": [
+    "Rank checks use asset-and-date-demeaned regressors and do not estimate hypothesis coefficients.",
+    "Two application assets cannot support reliable clustered inference.",
+    "Six total asset clusters require wild-cluster-bootstrap inference and exploratory interpretation."
+  ]
+}

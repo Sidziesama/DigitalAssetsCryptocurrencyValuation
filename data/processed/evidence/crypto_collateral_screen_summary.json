@@ -12,9 +12,10 @@
     "crypto_aave"
   ],
   "verified_below_threshold_assets": [
-    "crypto_uni"
+    "crypto_uni",
+    "crypto_arb"
   ],
-  "classification_ready_assets": 1,
+  "classification_ready_assets": 2,
   "start_date": "2026-05-25",
   "end_date": "2026-08-22",
   "selection_rule": "Named lending markets selected before classification to cover Ethereum, BNB Chain, and Arbitrum and to include both general-purpose and chain-relevant markets. Every selected protocol must have a complete observation window before a below-threshold result can support zero.",

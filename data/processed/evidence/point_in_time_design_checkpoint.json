@@ -12,17 +12,21 @@
     "historical_collateral_state_available": true,
     "stablecoin_temporal_overlap_ready": true,
     "h2_pilot_design_ready": true,
+    "h8_five_asset_design_ready": true,
     "verified_negative_collateral_reconciles": true,
     "h2_candidate_panel_guarded": true,
+    "h2_estimator_diagnostics_pass": true,
+    "h2_exploratory_estimates_guarded": true,
+    "bnb_blockers_documented": true,
     "h8_extension_plan_complete": true,
     "free_fee_layer_complete": true
   },
   "crypto_evidence": {
     "assets": 6,
     "targeted_decisions": 24,
-    "verified_decisions": 19,
-    "pending_decisions": 5,
-    "coverage_ratio": 0.7916666666666666,
+    "verified_decisions": 22,
+    "pending_decisions": 2,
+    "coverage_ratio": 0.9166666666666666,
     "unresolved": [
       {
         "asset_id": "crypto_bnb",
@@ -33,29 +37,13 @@
         "asset_id": "crypto_bnb",
         "code": "VA_COLLATERAL",
         "status": "pending_quantitative_threshold"
-      },
-      {
-        "asset_id": "crypto_aave",
-        "code": "VA_COLLATERAL",
-        "status": "pending_quantitative_threshold"
-      },
-      {
-        "asset_id": "crypto_arb",
-        "code": "VA_MONETARY",
-        "status": "pending_absence_review"
-      },
-      {
-        "asset_id": "crypto_arb",
-        "code": "VA_COLLATERAL",
-        "status": "pending_quantitative_threshold"
       }
     ]
   },
   "source_coverage": {
     "free_fundamentals_assets_with_behavioral_coverage": 4,
     "monetary_unresolved_assets": [
-      "crypto_bnb",
-      "crypto_arb"
+      "crypto_bnb"
     ],
     "collateral_proxy_pass_assets": [
       "crypto_btc",
@@ -63,10 +51,11 @@
       "crypto_bnb",
       "crypto_aave"
     ],
-    "historical_collateral_state_assets": 2,
+    "historical_collateral_state_assets": 3,
     "effective_dated_mechanism_states": 12,
     "verified_below_collateral_threshold_assets": [
-      "crypto_uni"
+      "crypto_uni",
+      "crypto_arb"
     ]
   },
   "stablecoin_evidence": {
@@ -75,8 +64,8 @@
     "status": "temporal_overlap_ready"
   },
   "model_readiness": {
-    "h2": "six-asset candidate fee-capture panel ready; scope comparability review and preregistration freeze required",
-    "h8": "not_ready_until_all_ten_codes_are_evidence_backed",
+    "h2": "guarded six-asset exploratory point estimates available without p-values; preregistration freeze required before confirmatory inference",
+    "h8": "five-asset complete-case design ready; BNB withheld under documented monetary and collateral evidence blockers",
     "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation"
   },
   "guardrails": [
@@ -85,5 +74,5 @@
     "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
     "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results."
   ],
-  "next_checkpoint": "Resolve the five focused-review and 21 remaining H8-extension decisions, predeclare fee-scope sensitivities, and freeze the H2/H8 preregistration before estimation."
+  "next_checkpoint": "Approve the documented BNB complete-case exclusion and freeze the H2/H8 pilot before adding confirmatory inference."
 }

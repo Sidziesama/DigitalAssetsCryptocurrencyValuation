@@ -12,19 +12,44 @@
   },
   "H2": {
     "claim": "Economic activity predicts value more strongly when an active burn or protocol-capture mechanism exists.",
-    "primary_status": "candidate_fee_layer_ready_scope_comparability_review_pending",
+    "primary_status": "candidate_fee_layer_ready_preregistration_freeze_pending",
     "candidate_economic_variables": ["log1p_fees_usd_lag1","log1p_protocol_revenue_usd_lag1","log1p_holders_revenue_usd_lag1"],
     "exploratory_activity_proxies": ["log1p_active_addresses_lag1","log1p_transaction_count_lag1"],
     "capture_variable": "effective_dated_h2_active_capture",
-    "interaction_variables": ["active_addresses_x_capture","transaction_count_x_capture"],
+    "interaction_variables": ["active_addresses_x_capture","transaction_count_x_capture","fees_x_capture","fees_x_application_scope"],
     "outcomes": ["log_market_cap_usd","forward_log_return_7d"],
-    "interpretation": "Fees, protocol revenue, and holder revenue remain separate. Chain-level BTC/ETH/BNB/ARB observations and application-level UNI/AAVE observations require scope indicators and within-scope sensitivity analysis before headline estimation."
+    "scope_design": {
+      "primary": "Pooled six-asset panel with fee-by-scope and fee-by-capture interactions; the time-invariant scope main effect is absorbed by asset fixed effects.",
+      "primary_fee_measure": "log1p_fees_usd_lag1",
+      "scope_indicator": "application_protocol_scope",
+      "sensitivities": [
+        "Chain-only panel: BTC, ETH, BNB, and ARB.",
+        "Application-only panel: UNI and AAVE, reported descriptively because two cross-sectional units do not support reliable clustered inference.",
+        "Leave-one-asset-out estimates for the pooled and chain-only panels.",
+        "Protocol revenue and holder revenue as separate secondary specifications; never substitute them for fees or combine the accounting concepts."
+      ],
+      "pooling_guardrail": "A pooled coefficient without the scope indicator and predeclared interactions is inadmissible. Cross-scope differences may reflect measurement units rather than token economics."
+    },
+    "models": {
+      "market_cap": "Asset and date fixed-effects panel using lagged log fees, active capture, fee-by-capture, application scope, and fee-by-scope.",
+      "forward_return": "Asset fixed-effects panel using exact seven-day forward returns and the same lagged fee/capture terms; overlapping-return inference must be horizon-robust.",
+      "secondary": "Repeat each model separately for protocol revenue and holder revenue only where the relevant field is observed."
+    },
+    "standard_errors": {
+      "primary": "Asset-clustered covariance with wild-cluster-bootstrap p-values reported because the pilot has only six asset clusters.",
+      "forward_return": "Asset-clustered and seven-day horizon-robust inference.",
+      "small_sample_guardrail": "All pilot inference remains exploratory; conventional clustered asymptotics are not treated as reliable with six assets."
+    },
+    "interpretation": "Fees, protocol revenue, and holder revenue remain separate. Chain-level BTC/ETH/BNB/ARB observations and application-level UNI/AAVE observations use explicit scope controls and within-scope sensitivity analysis."
   },
   "H8": {
     "claim": "Active and material multi-function assets command a valuation premium.",
-    "status": "blocked_until_all_ten_codes_are_evidence_backed",
+    "status": "five_asset_complete_case_ready_bnb_withheld",
     "outcome": "log_market_cap_usd",
-    "breadth_rule": "Withhold breadth unless all ten VA codes are verified for the asset-date."
+    "breadth_rule": "Withhold breadth unless all ten VA codes are verified for the asset-date.",
+    "complete_case_assets": ["crypto_btc", "crypto_eth", "crypto_uni", "crypto_aave", "crypto_arb"],
+    "withheld_assets": ["crypto_bnb"],
+    "withholding_reason": "BNB VA_MONETARY and VA_COLLATERAL remain null under the documented evidence-blocker policy."
   },
   "time_rules": {
     "activity_lag": "exact calendar t-1; gaps remain null",
@@ -32,5 +57,5 @@
     "realized_volatility": "annualized sample standard deviation of 30 consecutive daily log returns",
     "mechanism_state": "latest evidenced effective event on or before t; no August-state backfill"
   },
-  "estimation_gate": "This pilot output is construction- and coverage-ready only. Freeze the draft and predeclare scope sensitivity, model, and standard-error choices before estimation."
+  "estimation_gate": "H2 implementation diagnostics pass and guarded point estimates may be reported as exploratory without p-values. H8 may proceed only as a five-asset complete-case pilot while BNB remains withheld. Keep the preregistration draft unfrozen until the exclusion policy and stablecoin review gates are approved."
 }

@@ -33,13 +33,13 @@ The Phase 2 pilot contains 25 non-stable cryptoassets and 16 stable-value assets
 
 ## Current checkpoint and immediate workstream
 
-The project has reached an **expanded point-in-time design-evidence pilot**. The stablecoin scorecard has temporally valid post-score outcomes for eight assets. The first non-stable crypto tranche covers six assets and four prioritized value-accrual codes: 19 of 24 decisions are verified, five remain explicitly unresolved, and no verified decision conflicts with the current design matrix. H2's burn/protocol-capture design fields are complete for the six-asset pilot; H8 breadth remains withheld until all ten codes are evidence-backed. This is a methodology and provenance checkpoint, not a hypothesis-result checkpoint.
+The project has reached an **expanded point-in-time design-evidence and exploratory-estimation pilot**. The stablecoin scorecard has temporally valid post-score outcomes for eight assets. The first non-stable crypto tranche covers six assets and four prioritized value-accrual codes: 22 of 24 decisions are verified, leaving only BNB monetary and collateral status unresolved. The six-code H8 extension verifies all 36 gas, staking, scarcity, governance, utility, and incentive decisions with no verified conflicts against the corrected design matrix. H2's burn/protocol-capture fields are complete, its fee-scope sensitivities are predeclared, and its estimator diagnostics pass with small-sample limits. Guarded H2 point estimates and leave-one-asset-out sensitivities are reproducible, but they intentionally omit p-values. Full ten-code H8 breadth is available for five assets; BNB is withheld under a machine-readable blocker policy. This remains an exploratory methodology checkpoint, not a confirmatory hypothesis result.
 
-1. Resolve the remaining BNB/ARB monetary, BNB/AAVE positive collateral-eligibility, and ARB market-cap completeness decisions without interpolation or converting missing coverage into zero.
-2. Run the focused review only on fields that will enter H2/H8 and H5/H6 estimation.
-3. Extend the evidence schema from the six-asset tranche to the remaining non-stable pilot assets.
-4. Freeze the H2/H8 draft, predeclare chain-versus-application fee-scope sensitivities, and extend the candidate panel beyond the current 89-day market window.
-5. Estimate descriptive and baseline models, then run preregistered robustness and sensitivity checks.
+1. Approve or revise the documented policy that retains BNB as null and excludes it from five-asset complete-case H8 estimation.
+2. Freeze the H2/H8 pilot specification before adding uncertainty estimates or testing additional variants.
+3. Complete the targeted stablecoin component review required for H5/H6 estimation.
+4. Extend the candidate panels beyond the current 89-day market window using reproducible free sources.
+5. Add horizon-robust and small-cluster inference, then run the preregistered sensitivity checks.
 
 ## Run the current pipeline
 
@@ -68,6 +68,7 @@ python -m src.pipeline.crypto_mechanism_state --repo .
 python -m src.pipeline.crypto_h2_h8_readiness --repo .
 python -m src.pipeline.crypto_fee_fundamentals --repo . --start 2026-05-25 --end 2026-08-21
 python -m src.pipeline.crypto_h2_pilot_panel --repo .
+python -m src.pipeline.crypto_h2_estimator_diagnostics --repo .
 python -m src.pipeline.crypto_h8_evidence_plan --repo .
 python -m src.pipeline.checkpoint_readiness --repo .
 python -m src.pipeline.coinpaprika_market --repo . --start 2025-08-25 --end 2026-08-22
@@ -124,9 +125,15 @@ The crypto-H2/H8-readiness command creates a six-asset pilot design panel withou
 
 The crypto-fee-fundamentals command archives DeFiLlama's free daily fees, protocol revenue, and holder revenue for six associated economic systems. Coverage is chain-level for BTC, ETH, BNB, and ARB but application-level for UNI and AAVE; these scopes are retained explicitly, and the three accounting concepts are never treated as interchangeable.
 
-The crypto-H2-pilot-panel command joins six-asset CoinPaprika market outcomes, four-asset Coin Metrics activity, free fee/revenue histories, and effective-dated capture events without backfilling later classifications. Exact one-day explanatory lags and exact seven-day forward returns preserve gaps. The candidate H2 panel is construction-ready, but pooled estimation remains blocked until chain-versus-application scope sensitivity and model choices are frozen.
+The crypto-H2-pilot-panel command joins six-asset CoinPaprika market outcomes, four-asset Coin Metrics activity, free fee/revenue histories, and effective-dated capture events without backfilling later classifications. Exact one-day explanatory lags and exact seven-day forward returns preserve gaps. The candidate H2 panel now carries an application-scope indicator and predeclared pooled, chain-only, application-only, and leave-one-asset-out sensitivities. Pilot inference remains exploratory because six asset clusters are too few for conventional clustered asymptotics.
 
-The crypto-H8-evidence-plan command formalizes positive, negative, and source requirements for gas, staking, scarcity, governance, utility, and incentive classifications. Its first evidence tranche verifies 15 of 36 decisions across gas, staking, and governance, corrects BNB's provisional governance classification, audits agreement with the design matrix, and emits a blind worksheet for the remaining 21 decisions. H8 breadth remains unavailable until all ten codes and the five focused pilot decisions are resolved.
+The crypto-H2-estimator-diagnostics command audits usable observations, within-asset fee variation, two-way fixed-effect design rank, scope representation, and every leave-one-asset-out sample without estimating hypothesis coefficients. A pass establishes computational feasibility only; the two-asset application scope remains descriptive and the six-cluster pilot remains exploratory.
+
+The crypto-H2-exploratory-estimates command produces guarded two-way fixed-effect point estimates for the predeclared pooled and chain-only market-cap and forward-return specifications. It reports within-fit and leave-one-asset-out sensitivity but intentionally omits standard errors and p-values at the six-cluster pilot stage.
+
+The crypto-evidence-blockers command reconciles a machine-readable blocker manifest to the unresolved evidence grid. It documents the exact evidence required to resolve BNB monetary and collateral classifications and enforces a five-asset complete-case H8 policy while those fields remain null.
+
+The crypto-H8-evidence-plan command formalizes positive, negative, and source requirements for gas, staking, scarcity, governance, utility, and incentive classifications. Two independently validated evidence tranches verify all 36 decisions, correct BNB governance, UNI incentive, and AAVE utility classifications, reject duplicate tranche decisions, and audit agreement with the design matrix. Full H8 breadth remains unavailable for BNB until its monetary and collateral fields in the focused four-code tranche are resolved.
 
 The checkpoint-readiness command reconciles the stablecoin and crypto evidence outputs, lists every unresolved pilot decision, enforces missingness and temporal guardrails, and writes a single machine-readable checkpoint. A passing checkpoint means the methodology increment is safe to commit; it does not mean H2/H8 or H5/H6 are ready for final estimation.
 

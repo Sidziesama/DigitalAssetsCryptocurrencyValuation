@@ -24,6 +24,9 @@ def build_readiness(repo: Path) -> dict[str, Any]:
     h2_panel = load_json(repo / "data/processed/empirical/crypto_h2_exploratory_summary.json")
     h8_plan = load_json(repo / "data/processed/evidence/crypto_h8_evidence_plan_summary.json")
     fee_layer = load_json(repo / "data/processed/empirical/crypto_fee_fundamentals_summary.json")
+    h2_diagnostics = load_json(repo / "data/processed/empirical/crypto_h2_estimator_diagnostics.json")
+    h2_estimates = load_json(repo / "data/processed/empirical/crypto_h2_exploratory_estimates.json")
+    blockers = load_json(repo / "data/processed/evidence/crypto_evidence_blockers_summary.json")
 
     with decisions_path.open(newline="", encoding="utf-8") as handle:
         decisions = list(csv.DictReader(handle))
@@ -44,13 +47,17 @@ def build_readiness(repo: Path) -> dict[str, Any]:
         "historical_collateral_state_available": collateral_state["assets"] >= 2,
         "stablecoin_temporal_overlap_ready": stablecoin["status"] == "temporal_overlap_ready",
         "h2_pilot_design_ready": h2_h8["h2_design_ready_assets"] == evidence["assets"],
+        "h8_five_asset_design_ready": h2_h8["h8_design_ready_assets"] == 5,
         "verified_negative_collateral_reconciles": all(
             row["asset_id"] in collateral["verified_below_threshold_assets"]
             for row in decisions
             if row["code"] == "VA_COLLATERAL" and row["status"] == "verified" and row["recommended_value"] == "0"
         ),
-        "h2_candidate_panel_guarded": h2_panel["status"] == "candidate_h2_fee_panel_ready_scope_comparability_review_pending" and bool(h2_panel["primary_h2_blocker"]),
-        "h8_extension_plan_complete": h8_plan["targeted_decisions"] == 36 and h8_plan["verified_decisions"] == 15 and h8_plan["verified_mismatches"] == 0,
+        "h2_candidate_panel_guarded": h2_panel["status"] == "candidate_h2_fee_panel_ready_preregistration_freeze_pending" and h2_panel["scope_design_predeclared"] is True and bool(h2_panel["primary_h2_blocker"]),
+        "h2_estimator_diagnostics_pass": h2_diagnostics["status"] == "pass_with_small_sample_limits" and all(item["full_rank"] and item["balanced_panel"] for item in h2_diagnostics["diagnostics"]) and all(item["full_rank"] for item in h2_diagnostics["leave_one_asset_out"]),
+        "h2_exploratory_estimates_guarded": h2_estimates["status"] == "exploratory_point_estimates_only" and all(item["standard_errors"] is None and item["p_values"] is None for item in h2_estimates["estimates"]),
+        "bnb_blockers_documented": blockers["status"] == "documented_open_blockers" and blockers["open_blockers"] == 2 and blockers["assets_affected"] == ["crypto_bnb"],
+        "h8_extension_plan_complete": h8_plan["status"] == "six_code_evidence_complete" and h8_plan["targeted_decisions"] == 36 and h8_plan["verified_decisions"] == 36 and h8_plan["pending_decisions"] == 0 and h8_plan["verified_mismatches"] == 0,
         "free_fee_layer_complete": fee_layer["complete_fee_assets"] == 6 and fee_layer["complete_revenue_assets"] == 6,
     }
     if not all(checks.values()):
@@ -84,8 +91,8 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "status": stablecoin["status"],
         },
         "model_readiness": {
-            "h2": "six-asset candidate fee-capture panel ready; scope comparability review and preregistration freeze required",
-            "h8": "not_ready_until_all_ten_codes_are_evidence_backed",
+            "h2": "guarded six-asset exploratory point estimates available without p-values; preregistration freeze required before confirmatory inference",
+            "h8": "five-asset complete-case design ready; BNB withheld under documented monetary and collateral evidence blockers",
             "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation",
         },
         "guardrails": [
@@ -94,7 +101,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
             "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results.",
         ],
-        "next_checkpoint": "Resolve the five focused-review and 21 remaining H8-extension decisions, predeclare fee-scope sensitivities, and freeze the H2/H8 preregistration before estimation.",
+        "next_checkpoint": "Approve the documented BNB complete-case exclusion and freeze the H2/H8 pilot before adding confirmatory inference.",
     }
 
 

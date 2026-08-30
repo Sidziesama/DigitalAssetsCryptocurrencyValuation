@@ -1,0 +1,11 @@
+specification,outcome,variable,coefficient,rows,assets,within_r_squared
+pooled_market_cap,log_market_cap_usd,log1p_fees_usd_lag1,-0.04817728088276506,528,6,0.12973408528252173
+pooled_market_cap,log_market_cap_usd,fees_x_capture,0.08688256861518794,528,6,0.12973408528252173
+pooled_market_cap,log_market_cap_usd,fees_x_application_scope,0.04471572203562007,528,6,0.12973408528252173
+pooled_forward_return,forward_log_return_7d,log1p_fees_usd_lag1,0.00323578585732679,486,6,0.01723598030038853
+pooled_forward_return,forward_log_return_7d,fees_x_capture,0.005875383392109525,486,6,0.01723598030038853
+pooled_forward_return,forward_log_return_7d,fees_x_application_scope,-0.034426779303843434,486,6,0.01723598030038853
+chain_market_cap,log_market_cap_usd,log1p_fees_usd_lag1,0.0003601598769901529,352,4,0.0010838109858133382
+chain_market_cap,log_market_cap_usd,fees_x_capture,0.003191825860292167,352,4,0.0010838109858133382
+chain_forward_return,forward_log_return_7d,log1p_fees_usd_lag1,-0.0059552020416300715,324,4,0.010004205509864583
+chain_forward_return,forward_log_return_7d,fees_x_capture,0.011509851201161131,324,4,0.010004205509864583

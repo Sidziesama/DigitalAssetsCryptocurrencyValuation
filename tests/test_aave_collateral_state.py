@@ -17,5 +17,9 @@ class AaveCollateralStateTests(unittest.TestCase):
         spec={"schema_version":1,"chain":"ethereum","pool_address":"0x"+"1"*40,"rpc_url":"https://rpc.test","block_lookup_base":"https://blocks.test","method":"getConfiguration(address)","selector":"0xdeadbeef","assets":[{"asset_id":"crypto_x","reserve_symbol":"X","reserve_address":"0x"+"2"*40}]}
         with self.assertRaisesRegex(ValueError,"selector"): validate(spec)
 
+    def test_rejects_unsafe_snapshot_namespace(self):
+        spec={"schema_version":1,"snapshot_namespace":"../bad","chain":"ethereum","pool_address":"0x"+"1"*40,"rpc_url":"https://rpc.test","block_lookup_base":"https://blocks.test","method":"getConfiguration(address)","selector":"0xc44b11f7","assets":[{"asset_id":"crypto_x","reserve_symbol":"X","reserve_address":"0x"+"2"*40}]}
+        with self.assertRaisesRegex(ValueError,"namespace"): validate(spec)
+
 
 if __name__=="__main__": unittest.main()

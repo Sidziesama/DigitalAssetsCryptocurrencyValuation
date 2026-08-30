@@ -6,11 +6,11 @@
   ],
   "verified_negative_assets": [
     "crypto_uni",
-    "crypto_aave"
+    "crypto_aave",
+    "crypto_arb"
   ],
   "unresolved_assets": [
-    "crypto_bnb",
-    "crypto_arb"
+    "crypto_bnb"
   ],
   "activity_rule": {
     "start": "2026-05-25",
@@ -19,5 +19,5 @@
     "median_active_addresses": 10000,
     "median_transactions": 10000
   },
-  "interpretation": "VA_MONETARY=1 requires persistent material activity plus verified monetary-design evidence. A zero requires complete activity coverage below threshold and primary-source review showing no qualifying monetary function; missingness never becomes zero."
+  "interpretation": "VA_MONETARY=1 requires both persistent material activity and verified monetary-design evidence. A zero requires primary-source review establishing no qualifying monetary function; generic activity cannot override a verified non-monetary design. Missing design evidence never becomes zero."
 }

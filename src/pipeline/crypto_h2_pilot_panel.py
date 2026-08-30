@@ -24,8 +24,15 @@ def validate_spec(spec: dict[str, Any]) -> None:
         raise ValueError("invalid frozen pilot samples")
     if spec["sample"].get("no_outcome_based_replacement") is not True:
         raise ValueError("outcome-based asset replacement must be prohibited")
-    if spec.get("H2",{}).get("primary_status") != "candidate_fee_layer_ready_scope_comparability_review_pending":
-        raise ValueError("primary H2 must remain blocked pending fee-scope comparability review")
+    if spec.get("H2",{}).get("primary_status") != "candidate_fee_layer_ready_preregistration_freeze_pending":
+        raise ValueError("primary H2 must remain blocked pending preregistration freeze")
+    h2=spec["H2"]; scope=h2.get("scope_design",{}); models=h2.get("models",{}); errors=h2.get("standard_errors",{})
+    if scope.get("scope_indicator")!="application_protocol_scope" or len(scope.get("sensitivities",[]))!=4 or not scope.get("pooling_guardrail"):
+        raise ValueError("H2 fee-scope design must predeclare the indicator, four sensitivities, and pooling guardrail")
+    if set(models)!={"market_cap","forward_return","secondary"}:
+        raise ValueError("H2 models must predeclare market-cap, forward-return, and secondary specifications")
+    if "wild-cluster-bootstrap" not in errors.get("primary","") or "six assets" not in errors.get("small_sample_guardrail",""):
+        raise ValueError("H2 standard errors must address six-cluster pilot inference")
     if spec.get("H8",{}).get("status") != "blocked_until_all_ten_codes_are_evidence_backed":
         raise ValueError("H8 must remain blocked until all ten codes are evidenced")
 
@@ -86,9 +93,11 @@ def build(spec: dict[str, Any], market_rows: list[dict[str, str]], activity_rows
             "active_addresses_x_capture":log_addresses*capture if log_addresses is not None and capture is not None else None,
             "transaction_count_x_capture":log_transactions*capture if log_transactions is not None and capture is not None else None,
             "fee_scope":fee_lag.get("scope") if fee_lag else None,"economic_system":fee_lag.get("economic_system") if fee_lag else None,
+            "application_protocol_scope":int(fee_lag.get("scope")=="application_protocol") if fee_lag else None,
             "fees_usd_lag1":fee_value,"protocol_revenue_usd_lag1":revenue,"holders_revenue_usd_lag1":holder_revenue,
             "log1p_fees_usd_lag1":log_fees,"log1p_protocol_revenue_usd_lag1":log_revenue,"log1p_holders_revenue_usd_lag1":log_holder_revenue,
             "fees_x_capture":log_fees*capture if log_fees is not None and capture is not None else None,
+            "fees_x_application_scope":log_fees*int(fee_lag.get("scope")=="application_protocol") if log_fees is not None and fee_lag else None,
             "h2_exploratory_level_eligible":int(cap is not None and log_addresses is not None and log_transactions is not None and capture is not None),
             "h2_exploratory_forward_return_eligible":int(forward_return is not None and log_addresses is not None and log_transactions is not None and capture is not None),
             "h2_fee_level_eligible":int(cap is not None and log_fees is not None and capture is not None),
@@ -98,15 +107,16 @@ def build(spec: dict[str, Any], market_rows: list[dict[str, str]], activity_rows
     for row in output:
         item=per_asset[row["asset_id"]]; item["rows"]+=1; item["activity_rows"]+=row["h2_exploratory_level_eligible"]; item["forward_return_rows"]+=row["h2_exploratory_forward_return_eligible"]; item["fee_rows"]+=row["h2_fee_level_eligible"]; item["fee_forward_return_rows"]+=row["h2_fee_forward_return_eligible"]
     summary={
-        "status":"candidate_h2_fee_panel_ready_scope_comparability_review_pending",
+        "status":"candidate_h2_fee_panel_ready_preregistration_freeze_pending",
         "market_assets":len(market_assets),"activity_assets":len(activity_assets),"rows":len(output),
         "level_eligible_rows":sum(row["h2_exploratory_level_eligible"] for row in output),
         "forward_return_eligible_rows":sum(row["h2_exploratory_forward_return_eligible"] for row in output),
         "fee_level_eligible_rows":sum(row["h2_fee_level_eligible"] for row in output),
         "fee_forward_return_eligible_rows":sum(row["h2_fee_forward_return_eligible"] for row in output),
         "per_asset":dict(sorted(per_asset.items())),
-        "primary_h2_blocker":"Chain-level and application-level fee scopes require predeclared pooled-versus-within-scope sensitivity analysis before estimation.",
-        "guardrail":"Do not pool chain and application observations without scope indicators; fees, protocol revenue, and holder revenue remain separate variables."
+        "scope_design_predeclared":True,
+        "primary_h2_blocker":"Scope design and estimator diagnostics are complete, but the draft must remain exploratory until the preregistration is frozen.",
+        "guardrail":"Do not pool chain and application observations without the predeclared scope indicator and interactions; fees, protocol revenue, and holder revenue remain separate variables."
     }
     return output,summary
 

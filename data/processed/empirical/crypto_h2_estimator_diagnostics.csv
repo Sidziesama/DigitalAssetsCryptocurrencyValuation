@@ -1,0 +1,7 @@
+asset_id,fee_scope,fee_rows,first_date,last_date,log_fee_sd,capture_values
+crypto_aave,application_protocol,88,2026-05-26,2026-08-21,0.2688729582951633,0
+crypto_arb,chain,88,2026-05-26,2026-08-21,0.7085493876663982,1
+crypto_bnb,chain,88,2026-05-26,2026-08-21,0.3927077140197685,1
+crypto_btc,chain,88,2026-05-26,2026-08-21,1.0681537321283836,0
+crypto_eth,chain,88,2026-05-26,2026-08-21,0.25087126061835097,1
+crypto_uni,application_protocol,88,2026-05-26,2026-08-21,0.5370937002032463,1
