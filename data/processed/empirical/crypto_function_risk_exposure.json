@@ -1,0 +1,180 @@
+{
+  "status": "exploratory_function_risk_exposure_complete",
+  "experiment_id": "P1_H6",
+  "specification_version": "1.0-frozen-function-risk-exposure",
+  "freeze_date": "2026-09-07",
+  "window": {
+    "start": "2023-03-24",
+    "end": "2026-08-22",
+    "expected_days": 1248,
+    "minimum_coverage_share": 0.9
+  },
+  "outcomes": [
+    "market_beta",
+    "realized_volatility_annualized",
+    "max_drawdown_log"
+  ],
+  "predictors": [
+    "bundle_monetary_store",
+    "bundle_transaction_service_demand",
+    "bundle_security_commitment",
+    "bundle_supply_absorption",
+    "bundle_financial_integration",
+    "bundle_control_rights",
+    "bundle_holder_capture",
+    "bundle_subsidized_participation",
+    "raw_function_breadth"
+  ],
+  "control": "mean_log_dollar_volume",
+  "samples": [
+    {
+      "sample": "verified_core",
+      "evidence_status": "evidence_verified",
+      "assets": 6,
+      "asset_ids": [
+        "crypto_aave",
+        "crypto_arb",
+        "crypto_bnb",
+        "crypto_btc",
+        "crypto_eth",
+        "crypto_uni"
+      ],
+      "tests": 27,
+      "estimable_tests": 27,
+      "unestimable_predictors": [],
+      "tests_p_at_or_below_5pct": 0,
+      "tests_surviving_fdr_10pct": 0,
+      "expected_false_positives_at_5pct": 1.35,
+      "strongest_associations": [
+        {
+          "outcome": "market_beta",
+          "predictor": "bundle_control_rights",
+          "coefficient": -0.7339137833806653,
+          "permutation_p_two_sided": 0.06666666666666667,
+          "benjamini_hochberg_q": 0.54,
+          "leave_one_out_same_sign": 5,
+          "leave_one_out_samples": 6
+        },
+        {
+          "outcome": "realized_volatility_annualized",
+          "predictor": "bundle_control_rights",
+          "coefficient": -0.45738944988568564,
+          "permutation_p_two_sided": 0.06666666666666667,
+          "benjamini_hochberg_q": 0.54,
+          "leave_one_out_same_sign": 6,
+          "leave_one_out_samples": 6
+        },
+        {
+          "outcome": "market_beta",
+          "predictor": "bundle_monetary_store",
+          "coefficient": -0.6870532098073917,
+          "permutation_p_two_sided": 0.1,
+          "benjamini_hochberg_q": 0.54,
+          "leave_one_out_same_sign": 6,
+          "leave_one_out_samples": 6
+        },
+        {
+          "outcome": "realized_volatility_annualized",
+          "predictor": "bundle_monetary_store",
+          "coefficient": -0.40420005571716233,
+          "permutation_p_two_sided": 0.1,
+          "benjamini_hochberg_q": 0.54,
+          "leave_one_out_same_sign": 5,
+          "leave_one_out_samples": 6
+        },
+        {
+          "outcome": "max_drawdown_log",
+          "predictor": "bundle_monetary_store",
+          "coefficient": 2.1036375803336926,
+          "permutation_p_two_sided": 0.1,
+          "benjamini_hochberg_q": 0.54,
+          "leave_one_out_same_sign": 6,
+          "leave_one_out_samples": 6
+        }
+      ]
+    },
+    {
+      "sample": "provisional_universe",
+      "evidence_status": "provisional_pending_targeted_review",
+      "assets": 20,
+      "asset_ids": [
+        "crypto_aave",
+        "crypto_ada",
+        "crypto_arb",
+        "crypto_avax",
+        "crypto_bch",
+        "crypto_bnb",
+        "crypto_btc",
+        "crypto_doge",
+        "crypto_eth",
+        "crypto_hbar",
+        "crypto_link",
+        "crypto_ltc",
+        "crypto_op",
+        "crypto_sol",
+        "crypto_sui",
+        "crypto_trx",
+        "crypto_uni",
+        "crypto_xlm",
+        "crypto_xrp",
+        "crypto_zec"
+      ],
+      "tests": 27,
+      "estimable_tests": 27,
+      "unestimable_predictors": [],
+      "tests_p_at_or_below_5pct": 3,
+      "tests_surviving_fdr_10pct": 0,
+      "expected_false_positives_at_5pct": 1.35,
+      "strongest_associations": [
+        {
+          "outcome": "max_drawdown_log",
+          "predictor": "bundle_transaction_service_demand",
+          "coefficient": 0.9106390715660275,
+          "permutation_p_two_sided": 0.02675,
+          "benjamini_hochberg_q": 0.40454999999999997,
+          "leave_one_out_same_sign": 20,
+          "leave_one_out_samples": 20
+        },
+        {
+          "outcome": "max_drawdown_log",
+          "predictor": "bundle_monetary_store",
+          "coefficient": 0.8356739314490909,
+          "permutation_p_two_sided": 0.03215,
+          "benjamini_hochberg_q": 0.40454999999999997,
+          "leave_one_out_same_sign": 20,
+          "leave_one_out_samples": 20
+        },
+        {
+          "outcome": "market_beta",
+          "predictor": "bundle_monetary_store",
+          "coefficient": -0.22680436653614192,
+          "permutation_p_two_sided": 0.04495,
+          "benjamini_hochberg_q": 0.40454999999999997,
+          "leave_one_out_same_sign": 20,
+          "leave_one_out_samples": 20
+        },
+        {
+          "outcome": "max_drawdown_log",
+          "predictor": "bundle_control_rights",
+          "coefficient": -0.6100679441447376,
+          "permutation_p_two_sided": 0.10405,
+          "benjamini_hochberg_q": 0.7023375000000001,
+          "leave_one_out_same_sign": 20,
+          "leave_one_out_samples": 20
+        },
+        {
+          "outcome": "max_drawdown_log",
+          "predictor": "bundle_subsidized_participation",
+          "coefficient": -0.4858274858588636,
+          "permutation_p_two_sided": 0.20955,
+          "benjamini_hochberg_q": 0.7027714285714286,
+          "leave_one_out_same_sign": 20,
+          "leave_one_out_samples": 20
+        }
+      ]
+    }
+  ],
+  "multiple_testing": "Benjamini-Hochberg false-discovery-rate q-values computed across all predictor-by-outcome tests within each sample.",
+  "selection_rule": "Outcomes, predictors, control, window, samples, and inference are listed here before any estimate is produced. Predictors whose values do not vary across a sample are reported as unestimable, never dropped silently.",
+  "interpretation": "Association between classification and realized risk exposure, not causation and not a return forecast. Verified-core results carry six assets and are descriptive. Provisional-universe results use classifications that have not passed evidence review, so they are hypothesis-generating and must be re-estimated when the remaining assets are verified."
+}

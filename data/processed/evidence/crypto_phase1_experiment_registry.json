@@ -69,6 +69,23 @@
         "volume"
       ],
       "design": "event_study_or_difference_in_differences"
+    },
+    {
+      "id": "P1_H6",
+      "hypothesis": "Economic function predicts exposure to the common crypto market factor, realized volatility, and drawdown across the full universe.",
+      "predictors": [
+        "bundle_indicators",
+        "raw_function_breadth",
+        "active_bundle_count"
+      ],
+      "outcomes": [
+        "market_beta",
+        "volatility_annualized",
+        "max_drawdown_log"
+      ],
+      "design": "cross_sectional_regression_with_size_control_and_permutation_inference",
+      "registered": "2026-09-07",
+      "registration_note": "Frozen after six-asset descriptive sorts were observed and before any classification beyond the verified core was estimated; the full-universe test uses provisional codes and is labeled as such."
     }
   ],
   "guardrails": [

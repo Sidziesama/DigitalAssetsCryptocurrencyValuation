@@ -38,15 +38,18 @@
       "date_placebos": 26
     }
   ],
-  "fee_comovement_results": [
+  "primary_outcome": "log_market_cap_usd",
+  "secondary_outcome_results": [
     {
       "event_id": "uni_unification_fee_to_burn_activation",
+      "outcome": "log1p_fees_usd_lag1",
       "difference_in_differences": -0.3601900386109584,
       "asset_placebo_p_two_sided": 0.36363636363636365,
       "date_placebo_p_two_sided": 0.2962962962962963
     },
     {
       "event_id": "aave_buyback_pause",
+      "outcome": "log1p_fees_usd_lag1",
       "difference_in_differences": 0.09457630189790737,
       "asset_placebo_p_two_sided": 0.45454545454545453,
       "date_placebo_p_two_sided": 0.5185185185185185

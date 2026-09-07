@@ -27,7 +27,7 @@ Build a reproducible economic taxonomy of cryptoassets, translate active token m
 | `crypto_classification` | no | Validates the ten-code economic-design matrix, audits evidence tranches, resolves effective-dated mechanism states, reconciles independent review, and freezes the Phase 1 taxonomy and research map. |
 | `crypto_h2` | no | Builds the eleven-asset fee-capture panel, runs diagnostics, frozen exploratory estimates, exact small-cluster inference, non-overlap and strict-rule sensitivities, and the mechanism event study. |
 | `crypto_cross_section` | no | H1 activity pilot, H3 supply diagnostic, H4 source readiness, H8 breadth pilot and six-asset extension, Phase 1 bundle comparison. |
-| `crypto_returns` | no | Daily return panel (24 assets, 2019-2026) and the market, momentum, and volatility factor baseline with descriptive function sorts. |
+| `crypto_returns` | no | Daily return panel (24 assets, 2019-2026), the market, momentum, and volatility factor baseline, and the frozen P1_H6 test of economic function against market beta, realized volatility, and drawdown. |
 | `stablecoin_deferred` | no | Stablecoin H5-H7 scorecard, panels, and readiness; preserved for a later phase and not an active gate. |
 | `reporting` | no | Plain-language findings summary and the commit-readiness checkpoint. |
 
@@ -59,8 +59,8 @@ The project has reached a **frozen exploratory H2 checkpoint** and completed gua
 
 The Phase 1 taxonomy is frozen and complete for six assets; the H8 six-asset extension, bundle comparison, strict-rule H2 sensitivity, mechanism event study, return panel, and factor baseline are estimated and documented above. Immediate workstream:
 
-1. Freeze a P1_H6 specification, economic function predicts risk exposure (market beta, realized volatility, drawdown) across the full universe, before any further classification is verified.
-2. Verify the remaining nineteen assets' ten-code classifications in evidence tranches under the existing blind-review protocol.
+1. Verify the remaining nineteen assets' ten-code classifications in evidence tranches under the existing blind-review protocol, then re-estimate the already-frozen P1_H6 test on evidence-verified codes. The specification must not be revised.
+2. Collect point-in-time unlock and issuance events so that H3 becomes identification-ready.
 3. Resume H4 once an archival Ethereum consensus endpoint is available; extend the mechanism event study to the pre-2025 ledger events using the long return panel.
 4. Extend the frozen H2 panel only under a separately versioned future specification.
 
@@ -103,6 +103,10 @@ The crypto-H2-strict-capture-sensitivity command re-estimates the two frozen H2 
 The crypto-return-panel command builds the first daily return panel for the research universe from archived Binance USDT closes: 24 assets, 2019 through August 2026, about 52,000 asset-days. Fields are predeclared (daily log return with a three-day gap rule, seven- and thirty-day forward returns, thirty-day momentum skipping the last week, thirty-day realized volatility, log dollar volume, an equal-weighted market return, the BTC return, and a lagged 180-day rolling market beta). The risk-free rate is set to zero and declared as such. The panel supports description and factor baselines; daily crypto returns are close to unpredictable, so the intended findings concern risk exposure and behaviour conditional on economic function.
 
 The crypto-return-factor-baseline command establishes what is already known before any economic-function return test. Per-asset market models give a median beta near one and a median R-squared of 0.60, so the common factor explains most daily variation. Daily Fama-MacBeth cross-sections with Newey-West standard errors show a negative lagged-beta premium, flat momentum, and no volatility premium. Equal-weighted sorts of the six verified assets by bundle are descriptive previews on the 2023-2026 common window: monetary-store and financial-integration positives carry lower beta and shallower drawdowns than negatives, control-rights positives the reverse. Three-versus-three portfolios cannot support inference; the sorts show what the classification will be tested on once the remaining universe is verified.
+
+The crypto-function-risk-exposure command estimates the frozen P1_H6 experiment: whether economic function predicts market beta, realized volatility, and maximum drawdown. All assets are measured on one common window (24 March 2023 to 22 August 2026, set by the ARB listing) so the three risk measures are comparable, and every regression carries mean log dollar volume as a size control. Two samples are reported separately: the six evidence-verified assets with exact 720-assignment permutation inference, and twenty provisional-matrix assets with fixed-seed Monte Carlo permutation. Benjamini-Hochberg q-values cover all 27 predictor-by-outcome tests within each sample, and predictors without cross-asset variation are reported as unestimable rather than dropped. In the provisional universe three tests reach $p \le 0.05$ against 1.35 expected by chance and none survive a 10 percent false-discovery rate.
+
+The long-panel variant of the mechanism event study (`--spec config/crypto_mechanism_event_study_long.json`) applies the same design to the 2019-2026 daily return panel. A stated transition rule admits only ledger events that differ from the preceding recorded state, which adds the April 2025 Aave buyback activation that falls outside the one-year H2 window, and expands each event's placebo pool to twenty-two control assets and roughly 280 non-overlapping calendar placebos. One of three events carries its expected sign and none reject at 10 percent.
 
 The crypto-design-evidence command audits the first prioritized H2/H8 evidence tranche. It requires a complete asset-code grid, dated HTTPS sources, binary values only for verified decisions, and explicit nulls for unresolved quantitative or mechanism tests.
 

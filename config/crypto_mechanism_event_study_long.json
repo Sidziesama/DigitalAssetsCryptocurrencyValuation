@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-long-panel-mechanism-event-study",
+  "status": "frozen_before_event_estimation",
+  "freeze_date": "2026-09-07",
+  "experiment_id": "P1_H5",
+  "output_stem": "crypto_mechanism_event_study_long",
+  "hypothesis": "Activation or suspension of a live token-linked capture mechanism changes returns relative to unaffected control assets.",
+  "panel": "data/processed/empirical/crypto_return_panel_daily.csv",
+  "ledger": "config/crypto_mechanism_events.json",
+  "selection_rule": "Events are every effective-dated burn or protocol-capture state change in the ledger that (a) differs from the immediately preceding recorded state for the same asset and code, so an initial coding at an asset's first evidence date is not an event, and (b) has a full thirty-day pre and post window inside the 2019-2026 return panel. No event was chosen or dropped from outcomes.",
+  "pre_window_days": 30,
+  "post_window_days": 30,
+  "minimum_days_per_window": 20,
+  "date_placebo_step_days": 7,
+  "outcomes": ["log_return"],
+  "events": [
+    {
+      "event_id": "aave_buyback_activation",
+      "asset_id": "crypto_aave",
+      "codes": ["VA_PROTOCOL"],
+      "effective_from": "2025-04-09",
+      "transition": "activation",
+      "expected_sign": "positive",
+      "announcement_caveat": "The Aave DAO approved the buyback program before the reported launch date, so an execution-date window can understate an effect priced at proposal or vote time. This event lies outside the one-year H2 panel and is estimable only on the long return panel."
+    },
+    {
+      "event_id": "uni_unification_fee_to_burn_activation",
+      "asset_id": "crypto_uni",
+      "codes": ["VA_BURN", "VA_PROTOCOL"],
+      "effective_from": "2025-12-27",
+      "transition": "activation",
+      "expected_sign": "positive",
+      "announcement_caveat": "The UNIfication proposal and vote preceded execution, so the execution-date window can understate an effect that markets priced earlier."
+    },
+    {
+      "event_id": "aave_buyback_pause",
+      "asset_id": "crypto_aave",
+      "codes": ["VA_PROTOCOL"],
+      "effective_from": "2026-04-19",
+      "transition": "suspension",
+      "expected_sign": "negative",
+      "announcement_caveat": "Pause discussion may have preceded the effective date recorded in the ledger."
+    }
+  ],
+  "excluded_ledger_changes": [
+    {"asset_id": "crypto_trx", "codes": ["VA_BURN", "VA_PROTOCOL"], "effective_from": "2025-08-26",
+     "reason": "First recorded state for TRON rather than a change from a preceding state; excluded by the transition rule, not by outcome."},
+    {"asset_id": "multiple", "codes": ["VA_BURN", "VA_PROTOCOL"], "effective_from": "various founding dates",
+     "reason": "Initial codings for BTC, ETH, BNB, ARB, ADA, AVAX, SOL, XRP and the pre-activation UNI and AAVE states are baseline states, not transitions."}
+  ],
+  "interpretation": "Three events with thirty-day windows, nineteen-asset placebo pools, and a seven-year calendar placebo range are exploratory sensitivity evidence about mechanism timing, not causal estimates, price targets, or investment recommendations. The outcome is the mean daily log return, so a difference in differences is a difference in average abnormal return rather than a valuation level."
+}

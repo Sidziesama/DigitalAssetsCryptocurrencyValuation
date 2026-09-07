@@ -48,9 +48,14 @@
       "summary": "Needs an archival Ethereum consensus endpoint and Aave Umbrella coverage."
     },
     "P1_H5": {
-      "status": "frozen_exploratory_event_study",
-      "artifact": "data/processed/empirical/crypto_mechanism_event_study.json",
-      "summary": "Two within-window effective-dated mechanism events: UNIfication activation and the Aave buyback pause."
+      "status": "frozen_exploratory_event_study_two_panels",
+      "artifact": "data/processed/empirical/crypto_mechanism_event_study_long.json",
+      "summary": "Two events on the one-year market-cap panel and three on the 2019-2026 return panel; one of three carries the expected sign and none reject at 10 percent."
+    },
+    "P1_H6": {
+      "status": "frozen_exploratory_risk_exposure_complete",
+      "artifact": "data/processed/empirical/crypto_function_risk_exposure.json",
+      "summary": "Function versus market beta, volatility, and drawdown on a common 2023-2026 window with a size control; three of 27 provisional-universe tests reach p<=0.05 against 1.35 expected by chance and none survive a 10 percent false-discovery rate."
     }
   },
   "guardrail": "Documentary indicators support classification only; valuation tests may use measured or proxied series and must label proxies as proxies."

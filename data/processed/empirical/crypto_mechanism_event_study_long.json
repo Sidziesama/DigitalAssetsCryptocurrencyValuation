@@ -1,0 +1,63 @@
+{
+  "status": "exploratory_mechanism_event_study_complete",
+  "experiment_id": "P1_H5",
+  "specification_version": "1.0-frozen-long-panel-mechanism-event-study",
+  "freeze_date": "2026-09-07",
+  "panel_start": "2019-01-02",
+  "panel_end": "2026-08-22",
+  "events": 3,
+  "outcomes": [
+    "log_return"
+  ],
+  "pre_window_days": 30,
+  "post_window_days": 30,
+  "valuation_results": [
+    {
+      "event_id": "aave_buyback_activation",
+      "transition": "activation",
+      "expected_sign": "positive",
+      "difference_in_differences": 0.010654930452516262,
+      "sign_matches_expectation": 1,
+      "asset_placebo_p_two_sided": 0.2608695652173913,
+      "date_placebo_p_two_sided": 0.23404255319148937,
+      "controls_used": 22,
+      "asset_placebos": 22,
+      "date_placebos": 281
+    },
+    {
+      "event_id": "uni_unification_fee_to_burn_activation",
+      "transition": "activation",
+      "expected_sign": "positive",
+      "difference_in_differences": -0.00884229483366137,
+      "sign_matches_expectation": 0,
+      "asset_placebo_p_two_sided": 0.21739130434782608,
+      "date_placebo_p_two_sided": 0.24825174825174826,
+      "controls_used": 22,
+      "asset_placebos": 22,
+      "date_placebos": 285
+    },
+    {
+      "event_id": "aave_buyback_pause",
+      "transition": "suspension",
+      "expected_sign": "negative",
+      "difference_in_differences": 0.00102043995996957,
+      "sign_matches_expectation": 0,
+      "asset_placebo_p_two_sided": 0.7391304347826086,
+      "date_placebo_p_two_sided": 0.9219858156028369,
+      "controls_used": 22,
+      "asset_placebos": 22,
+      "date_placebos": 281
+    }
+  ],
+  "primary_outcome": "log_return",
+  "secondary_outcome_results": [],
+  "events_with_expected_sign": 1,
+  "events_rejecting_at_10pct_asset_placebo": 0,
+  "selection_rule": "Events are every effective-dated burn or protocol-capture state change in the ledger that (a) differs from the immediately preceding recorded state for the same asset and code, so an initial coding at an asset's first evidence date is not an event, and (b) has a full thirty-day pre and post window inside the 2019-2026 return panel. No event was chosen or dropped from outcomes.",
+  "interpretation": "Three events with thirty-day windows, nineteen-asset placebo pools, and a seven-year calendar placebo range are exploratory sensitivity evidence about mechanism timing, not causal estimates, price targets, or investment recommendations. The outcome is the mean daily log return, so a difference in differences is a difference in average abnormal return rather than a valuation level.",
+  "announcement_caveats": {
+    "aave_buyback_activation": "The Aave DAO approved the buyback program before the reported launch date, so an execution-date window can understate an effect priced at proposal or vote time. This event lies outside the one-year H2 panel and is estimable only on the long return panel.",
+    "uni_unification_fee_to_burn_activation": "The UNIfication proposal and vote preceded execution, so the execution-date window can understate an effect that markets priced earlier.",
+    "aave_buyback_pause": "Pause discussion may have preceded the effective date recorded in the ledger."
+  }
+}

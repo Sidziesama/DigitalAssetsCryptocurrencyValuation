@@ -128,7 +128,9 @@ def build(spec: dict[str, Any], ledger: dict[str, Any], rows: list[dict[str, str
                 "date_placebos": len(date_placebos),
                 "date_placebo_p_two_sided": sum(abs(v) >= abs(observed_value) - 1e-12 for v in date_pool) / len(date_pool),
             })
-    valuation = [row for row in results if row["outcome"] == "log_market_cap_usd"]
+    primary_outcome = spec["outcomes"][0]
+    secondary_outcomes = spec["outcomes"][1:]
+    valuation = [row for row in results if row["outcome"] == primary_outcome]
     summary = {
         "status": "exploratory_mechanism_event_study_complete", "experiment_id": spec["experiment_id"],
         "specification_version": spec["document_version"], "freeze_date": spec["freeze_date"],
@@ -138,8 +140,9 @@ def build(spec: dict[str, Any], ledger: dict[str, Any], rows: list[dict[str, str
         "valuation_results": [{k: row[k] for k in ("event_id", "transition", "expected_sign", "difference_in_differences",
                                                     "sign_matches_expectation", "asset_placebo_p_two_sided", "date_placebo_p_two_sided",
                                                     "controls_used", "asset_placebos", "date_placebos")} for row in valuation],
-        "fee_comovement_results": [{k: row[k] for k in ("event_id", "difference_in_differences", "asset_placebo_p_two_sided",
-                                                         "date_placebo_p_two_sided")} for row in results if row["outcome"] == "log1p_fees_usd_lag1"],
+        "primary_outcome": primary_outcome,
+        "secondary_outcome_results": [{k: row[k] for k in ("event_id", "outcome", "difference_in_differences", "asset_placebo_p_two_sided",
+                                                            "date_placebo_p_two_sided")} for row in results if row["outcome"] in secondary_outcomes],
         "events_with_expected_sign": sum(row["sign_matches_expectation"] for row in valuation),
         "events_rejecting_at_10pct_asset_placebo": sum(row["asset_placebo_p_two_sided"] <= 0.10 for row in valuation),
         "selection_rule": spec["selection_rule"], "interpretation": spec["interpretation"],
@@ -148,21 +151,24 @@ def build(spec: dict[str, Any], ledger: dict[str, Any], rows: list[dict[str, str
     return results, summary
 
 
-def run(repo: Path) -> dict[str, Any]:
-    spec = json.loads((repo / "config/crypto_mechanism_event_study.json").read_text(encoding="utf-8"))
+def run(repo: Path, spec_path: str = "config/crypto_mechanism_event_study.json") -> dict[str, Any]:
+    spec = json.loads((repo / spec_path).read_text(encoding="utf-8"))
     ledger = json.loads((repo / spec["ledger"]).read_text(encoding="utf-8"))
     results, summary = build(spec, ledger, read_csv(repo / spec["panel"]))
     out = repo / "data/processed/empirical"
     out.mkdir(parents=True, exist_ok=True)
-    with (out / "crypto_mechanism_event_study.csv").open("w", newline="", encoding="utf-8") as handle:
+    stem = spec.get("output_stem", "crypto_mechanism_event_study")
+    with (out / f"{stem}.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(results[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(results)
-    (out / "crypto_mechanism_event_study.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    (out / f"{stem}.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     return summary
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Estimate the frozen exploratory mechanism activation event study")
     parser.add_argument("--repo", type=Path, default=Path.cwd())
-    print(json.dumps(run(parser.parse_args().repo.resolve()), indent=2))
+    parser.add_argument("--spec", default="config/crypto_mechanism_event_study.json")
+    arguments = parser.parse_args()
+    print(json.dumps(run(arguments.repo.resolve(), arguments.spec), indent=2))

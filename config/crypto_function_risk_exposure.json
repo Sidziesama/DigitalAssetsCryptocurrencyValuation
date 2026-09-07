@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-function-risk-exposure",
+  "status": "frozen_before_risk_estimation",
+  "freeze_date": "2026-09-07",
+  "experiment_id": "P1_H6",
+  "hypothesis": "Economic function predicts exposure to the common crypto market factor, realized volatility, and drawdown, even though it does not predict return.",
+  "motivation": "The six-asset descriptive sorts in the factor baseline showed monetary and collateral positives with lower beta and shallower drawdowns and governance positives with the reverse. This specification is frozen before estimation and before the remaining assets are classification-verified, so the test cannot be fitted to those sorts or steered by later classification choices.",
+  "panel": "data/processed/empirical/crypto_return_panel_daily.csv",
+  "verified_profiles": "data/processed/evidence/crypto_phase1_taxonomy_profiles.csv",
+  "provisional_design": "config/crypto_economic_design.json",
+  "bundle_map": "config/crypto_phase1_taxonomy.json",
+  "window": {"start": "2023-03-24", "end": "2026-08-22", "expected_days": 1248, "minimum_coverage_share": 0.9,
+             "rule": "The window is the six-asset verified core's common window, set by the ARB listing date. Every sample uses the same window so that beta, volatility, and drawdown are comparable across assets."},
+  "samples": [
+    {"id": "verified_core", "source": "verified_profiles", "evidence_status": "evidence_verified",
+     "rule": "The six assets whose ten-code Phase 1 classification is complete and verified.", "inference": "exact_permutation"},
+    {"id": "provisional_universe", "source": "provisional_design", "evidence_status": "provisional_pending_targeted_review",
+     "rule": "Every asset in the return panel meeting the window coverage rule, coded from the provisional design matrix.", "inference": "monte_carlo_permutation"}
+  ],
+  "outcomes": {
+    "market_beta": "Slope of the asset's daily log return on the equal-weighted market log return over the window.",
+    "realized_volatility_annualized": "Standard deviation of daily log returns over the window times sqrt(365).",
+    "max_drawdown_log": "Most negative peak-to-trough cumulative log return over the window; more negative is worse."
+  },
+  "predictors": ["bundle_monetary_store", "bundle_transaction_service_demand", "bundle_security_commitment",
+                 "bundle_supply_absorption", "bundle_financial_integration", "bundle_control_rights",
+                 "bundle_holder_capture", "bundle_subsidized_participation", "raw_function_breadth"],
+  "control": "mean_log_dollar_volume",
+  "model": "Ordinary least squares of the outcome on one predictor and the size control across assets; the coefficient of interest is the predictor slope.",
+  "inference": {
+    "exact_permutation_assignments": 720,
+    "monte_carlo_draws": 20000,
+    "random_seed": 20260907,
+    "rule": "Permute the predictor across assets, holding the outcome and the size control fixed, and count assignments whose absolute coefficient is at least the observed one. Six-asset samples enumerate all 720 assignments exactly; larger samples use the fixed seed and draw count above.",
+    "multiple_testing": "Benjamini-Hochberg false-discovery-rate q-values computed across all predictor-by-outcome tests within each sample."
+  },
+  "selection_rule": "Outcomes, predictors, control, window, samples, and inference are listed here before any estimate is produced. Predictors whose values do not vary across a sample are reported as unestimable, never dropped silently.",
+  "interpretation": "Association between classification and realized risk exposure, not causation and not a return forecast. Verified-core results carry six assets and are descriptive. Provisional-universe results use classifications that have not passed evidence review, so they are hypothesis-generating and must be re-estimated when the remaining assets are verified.",
+  "prohibited": "No predictor, outcome, window, or sample may be added, removed, or reweighted after estimates are observed. A revision requires a new document version and a new freeze date."
+}

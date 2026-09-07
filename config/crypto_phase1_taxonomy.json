@@ -2,8 +2,19 @@
   "schema_version": 1,
   "as_of": "2026-08-22",
   "phase": "phase_1_cryptoasset_economic_function_taxonomy",
-  "verified_core_assets": ["crypto_btc", "crypto_eth", "crypto_bnb", "crypto_uni", "crypto_aave", "crypto_arb"],
-  "classification_states": ["verified_positive", "verified_negative", "unresolved"],
+  "verified_core_assets": [
+    "crypto_btc",
+    "crypto_eth",
+    "crypto_bnb",
+    "crypto_uni",
+    "crypto_aave",
+    "crypto_arb"
+  ],
+  "classification_states": [
+    "verified_positive",
+    "verified_negative",
+    "unresolved"
+  ],
   "architecture_rule": "Consensus and deployment architecture are contextual attributes, not economic functions or value-accrual mechanisms.",
   "architecture_context": {
     "crypto_btc": "proof_of_work_base_layer",
@@ -14,33 +25,98 @@
     "crypto_arb": "rollup_governance_token"
   },
   "value_indicators": {
-    "VA_MONETARY": ["payment_or_settlement_activity", "active_addresses", "transfer_value", "reserve_or_store_of_value_evidence"],
-    "VA_GAS": ["fees_paid_in_native_token", "transactions", "computational_or_blockspace_demand"],
-    "VA_STAKE": ["staked_native_units", "staked_supply_ratio", "slashing_or_loss_exposure"],
-    "VA_BURN": ["tokens_burned", "burn_value_usd", "net_issuance"],
-    "VA_SCARCITY": ["terminal_supply_rule", "issuance_schedule", "change_authority"],
-    "VA_COLLATERAL": ["collateral_balance_usd", "collateral_to_market_cap", "materiality_persistence_days"],
-    "VA_GOV": ["voting_power", "delegated_supply", "binding_proposals", "treasury_or_upgrade_authority"],
-    "VA_PROTOCOL": ["holder_distributions", "buybacks", "usage_linked_burn", "enforceable_holder_claim"],
-    "VA_UTILITY": ["required_service_payments", "access_or_consumption_demand", "service_usage"],
-    "VA_INCENTIVE": ["program_emissions", "recipient_activity", "subsidy_expenditure", "program_effective_dates"]
+    "VA_MONETARY": [
+      "payment_or_settlement_activity",
+      "active_addresses",
+      "transfer_value",
+      "reserve_or_store_of_value_evidence"
+    ],
+    "VA_GAS": [
+      "fees_paid_in_native_token",
+      "transactions",
+      "computational_or_blockspace_demand"
+    ],
+    "VA_STAKE": [
+      "staked_native_units",
+      "staked_supply_ratio",
+      "slashing_or_loss_exposure"
+    ],
+    "VA_BURN": [
+      "tokens_burned",
+      "burn_value_usd",
+      "net_issuance"
+    ],
+    "VA_SCARCITY": [
+      "terminal_supply_rule",
+      "issuance_schedule",
+      "change_authority"
+    ],
+    "VA_COLLATERAL": [
+      "collateral_balance_usd",
+      "collateral_to_market_cap",
+      "materiality_persistence_days"
+    ],
+    "VA_GOV": [
+      "voting_power",
+      "delegated_supply",
+      "binding_proposals",
+      "treasury_or_upgrade_authority"
+    ],
+    "VA_PROTOCOL": [
+      "holder_distributions",
+      "buybacks",
+      "usage_linked_burn",
+      "enforceable_holder_claim"
+    ],
+    "VA_UTILITY": [
+      "required_service_payments",
+      "access_or_consumption_demand",
+      "service_usage"
+    ],
+    "VA_INCENTIVE": [
+      "program_emissions",
+      "recipient_activity",
+      "subsidy_expenditure",
+      "program_effective_dates"
+    ]
   },
   "bundles": {
-    "monetary_store": ["VA_MONETARY", "VA_SCARCITY"],
-    "transaction_service_demand": ["VA_GAS", "VA_UTILITY"],
-    "security_commitment": ["VA_STAKE"],
-    "supply_absorption": ["VA_BURN"],
-    "financial_integration": ["VA_COLLATERAL"],
-    "control_rights": ["VA_GOV"],
-    "holder_capture": ["VA_PROTOCOL"],
-    "subsidized_participation": ["VA_INCENTIVE"]
+    "monetary_store": [
+      "VA_MONETARY",
+      "VA_SCARCITY"
+    ],
+    "transaction_service_demand": [
+      "VA_GAS",
+      "VA_UTILITY"
+    ],
+    "security_commitment": [
+      "VA_STAKE"
+    ],
+    "supply_absorption": [
+      "VA_BURN"
+    ],
+    "financial_integration": [
+      "VA_COLLATERAL"
+    ],
+    "control_rights": [
+      "VA_GOV"
+    ],
+    "holder_capture": [
+      "VA_PROTOCOL"
+    ],
+    "subsidized_participation": [
+      "VA_INCENTIVE"
+    ]
   },
   "bundle_rule": "Bundles are theory-defined before outcome estimation. Every code appears in exactly one bundle, and no outcome-tuned weights are permitted in Phase 1.",
   "capture_rule_strict": "VA_PROTOCOL requires a live mechanical route through which protocol revenue or surplus terminates at the token or holders through distribution, buyback, burn, or an enforceable holder claim. Governance over ecosystem spending alone is VA_GOV, not VA_PROTOCOL.",
   "consistency_cases": [
     {
       "case_id": "governed_treasury_capture_boundary",
-      "assets": ["crypto_arb", "crypto_ada"],
+      "assets": [
+        "crypto_arb",
+        "crypto_ada"
+      ],
       "code": "VA_PROTOCOL",
       "status": "adjudicated_strict_holder_capture",
       "reason": "ARB and ADA treasury authority is classified as governance rather than protocol capture because the evidenced spending does not mechanically terminate at the token or holders."
@@ -61,37 +137,87 @@
     {
       "id": "P1_H1",
       "hypothesis": "Economically material usage is positively associated with network value.",
-      "predictors": ["active_addresses", "transaction_count", "fees_usd"],
-      "outcomes": ["log_market_cap_usd", "network_value_to_activity"],
+      "predictors": [
+        "active_addresses",
+        "transaction_count",
+        "fees_usd"
+      ],
+      "outcomes": [
+        "log_market_cap_usd",
+        "network_value_to_activity"
+      ],
       "design": "asset_and_date_fixed_effect_panel"
     },
     {
       "id": "P1_H2",
       "hypothesis": "Usage has a stronger valuation association when a live token-linked capture route is active.",
-      "predictors": ["fees_usd", "active_capture", "fees_x_active_capture"],
-      "outcomes": ["log_market_cap_usd", "forward_return_7d"],
+      "predictors": [
+        "fees_usd",
+        "active_capture",
+        "fees_x_active_capture"
+      ],
+      "outcomes": [
+        "log_market_cap_usd",
+        "forward_return_7d"
+      ],
       "design": "effective_dated_interaction_panel"
     },
     {
       "id": "P1_H3",
       "hypothesis": "Theory-defined function bundles explain valuation multiples better than an unweighted count of functions.",
-      "predictors": ["bundle_indicators", "raw_function_breadth"],
-      "outcomes": ["market_cap_to_fees", "market_cap_to_activity"],
+      "predictors": [
+        "bundle_indicators",
+        "raw_function_breadth"
+      ],
+      "outcomes": [
+        "market_cap_to_fees",
+        "market_cap_to_activity"
+      ],
       "design": "nested_out_of_sample_model_comparison"
     },
     {
       "id": "P1_H4",
       "hypothesis": "Greater staking participation reduces liquid float and is associated with lower turnover or greater trading frictions.",
-      "predictors": ["staked_supply_ratio"],
-      "outcomes": ["turnover", "spread", "market_depth", "volatility"],
+      "predictors": [
+        "staked_supply_ratio"
+      ],
+      "outcomes": [
+        "turnover",
+        "spread",
+        "market_depth",
+        "volatility"
+      ],
       "design": "consensus_stake_panel_with_protocol_risk_stake_separate"
     },
     {
       "id": "P1_H5",
       "hypothesis": "Activation or suspension of a value-accrual mechanism changes valuation or valuation multiples relative to unaffected controls.",
-      "predictors": ["effective_dated_mechanism_event"],
-      "outcomes": ["abnormal_return", "valuation_multiple", "volume"],
+      "predictors": [
+        "effective_dated_mechanism_event"
+      ],
+      "outcomes": [
+        "abnormal_return",
+        "valuation_multiple",
+        "volume"
+      ],
       "design": "event_study_or_difference_in_differences"
+    },
+    {
+      "id": "P1_H6",
+      "hypothesis": "Economic function predicts exposure to the common crypto market factor, realized volatility, and drawdown across the full universe.",
+      "predictors": [
+        "bundle_indicators",
+        "raw_function_breadth",
+        "active_bundle_count"
+      ],
+      "outcomes": [
+        "market_beta",
+        "volatility_annualized",
+        "max_drawdown_log"
+      ],
+      "design": "cross_sectional_regression_with_size_control_and_permutation_inference",
+      "registered": "2026-09-07",
+      "registration_note": "Frozen after six-asset descriptive sorts were observed and before any classification beyond the verified core was estimated; the full-universe test uses provisional codes and is labeled as such."
     }
   ]
 }

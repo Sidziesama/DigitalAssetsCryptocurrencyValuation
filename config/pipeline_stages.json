@@ -8,27 +8,181 @@
       "title": "Source collection (network, some credentials)",
       "network": true,
       "commands": [
-        {"module": "registry", "args": ["--snapshot-date", "2026-08-22"]},
-        {"module": "historical", "args": ["--start", "2026-07-24", "--end", "2026-08-22", "--asset-id", "crypto_btc"]},
-        {"module": "llama_history", "args": ["--start", "2019-01-01", "--end", "2026-08-22"]},
-        {"module": "coinpaprika_market", "args": ["--start", "2025-08-25", "--end", "2026-08-22"]},
-        {"module": "cryptocompare_volume", "args": ["--start", "2019-01-01", "--end", "2026-08-22"]},
-        {"module": "binance_klines", "args": ["--start", "2019-01-01", "--end", "2026-08-22"]},
-        {"module": "crypto_fundamentals", "args": ["--start", "2026-07-24", "--end", "2026-08-22"]},
-        {"module": "crypto_fee_fundamentals", "args": ["--start", "2025-08-25", "--end", "2026-08-21"]},
-        {"module": "crypto_collateral", "args": ["--start", "2026-05-25", "--end", "2026-08-22"]},
-        {"module": "aave_collateral_state", "args": ["--start", "2026-05-25", "--end", "2026-08-22"]},
-        {"module": "venus_bnb_collateral_state", "args": ["--start", "2026-05-25", "--end", "2026-08-22"]},
-        {"module": "bnb_monetary_activity", "args": [], "requires_env": ["DUNE_API_KEY"]},
-        {"module": "crypto_h4_aave_legacy_stake", "args": ["--start", "2026-05-25", "--end", "2026-08-22"]},
-        {"module": "crypto_h4_bnb_stake", "args": ["--start", "2026-05-25", "--end", "2026-08-22"]},
-        {"module": "crypto_h4_eth_stake", "args": ["--start", "2026-05-25", "--end", "2026-08-22"], "requires_env": ["ETH_BEACON_ARCHIVE_API_URL"]},
-        {"module": "stablecoin_supply", "args": ["--start", "2019-01-01", "--end", "2026-08-22"]},
-        {"module": "stablecoin_global_market", "args": ["--start", "2019-01-01", "--end", "2026-08-22"]},
-        {"module": "binance_stablecoin_depth", "args": []},
-        {"module": "defillama_yield_integrations", "args": []},
-        {"module": "coinmetrics_stablecoin_usage", "args": ["--start", "2019-01-01", "--end", "2026-08-24"]},
-        {"module": "source_availability", "args": []}
+        {
+          "module": "registry",
+          "args": [
+            "--snapshot-date",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "historical",
+          "args": [
+            "--start",
+            "2026-07-24",
+            "--end",
+            "2026-08-22",
+            "--asset-id",
+            "crypto_btc"
+          ]
+        },
+        {
+          "module": "llama_history",
+          "args": [
+            "--start",
+            "2019-01-01",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "coinpaprika_market",
+          "args": [
+            "--start",
+            "2025-08-25",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "cryptocompare_volume",
+          "args": [
+            "--start",
+            "2019-01-01",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "binance_klines",
+          "args": [
+            "--start",
+            "2019-01-01",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "crypto_fundamentals",
+          "args": [
+            "--start",
+            "2026-07-24",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "crypto_fee_fundamentals",
+          "args": [
+            "--start",
+            "2025-08-25",
+            "--end",
+            "2026-08-21"
+          ]
+        },
+        {
+          "module": "crypto_collateral",
+          "args": [
+            "--start",
+            "2026-05-25",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "aave_collateral_state",
+          "args": [
+            "--start",
+            "2026-05-25",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "venus_bnb_collateral_state",
+          "args": [
+            "--start",
+            "2026-05-25",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "bnb_monetary_activity",
+          "args": [],
+          "requires_env": [
+            "DUNE_API_KEY"
+          ]
+        },
+        {
+          "module": "crypto_h4_aave_legacy_stake",
+          "args": [
+            "--start",
+            "2026-05-25",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "crypto_h4_bnb_stake",
+          "args": [
+            "--start",
+            "2026-05-25",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "crypto_h4_eth_stake",
+          "args": [
+            "--start",
+            "2026-05-25",
+            "--end",
+            "2026-08-22"
+          ],
+          "requires_env": [
+            "ETH_BEACON_ARCHIVE_API_URL"
+          ]
+        },
+        {
+          "module": "stablecoin_supply",
+          "args": [
+            "--start",
+            "2019-01-01",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "stablecoin_global_market",
+          "args": [
+            "--start",
+            "2019-01-01",
+            "--end",
+            "2026-08-22"
+          ]
+        },
+        {
+          "module": "binance_stablecoin_depth",
+          "args": []
+        },
+        {
+          "module": "defillama_yield_integrations",
+          "args": []
+        },
+        {
+          "module": "coinmetrics_stablecoin_usage",
+          "args": [
+            "--start",
+            "2019-01-01",
+            "--end",
+            "2026-08-24"
+          ]
+        },
+        {
+          "module": "source_availability",
+          "args": []
+        }
       ]
     },
     {
@@ -36,19 +190,58 @@
       "title": "Economic-function taxonomy and evidence",
       "network": false,
       "commands": [
-        {"module": "crypto_research_scope", "args": []},
-        {"module": "crypto_economic_design", "args": []},
-        {"module": "crypto_design_evidence", "args": []},
-        {"module": "crypto_h8_evidence_plan", "args": []},
-        {"module": "crypto_monetary", "args": []},
-        {"module": "crypto_mechanism_state", "args": []},
-        {"module": "crypto_evidence_blockers", "args": []},
-        {"module": "crypto_h2_h8_readiness", "args": []},
-        {"module": "crypto_h2_expansion_readiness", "args": []},
-        {"module": "crypto_h2_expansion_evidence", "args": []},
-        {"module": "review_adjudication", "args": []},
-        {"module": "crypto_phase1_taxonomy", "args": []},
-        {"module": "crypto_phase1_research_map", "args": []}
+        {
+          "module": "crypto_research_scope",
+          "args": []
+        },
+        {
+          "module": "crypto_economic_design",
+          "args": []
+        },
+        {
+          "module": "crypto_design_evidence",
+          "args": []
+        },
+        {
+          "module": "crypto_h8_evidence_plan",
+          "args": []
+        },
+        {
+          "module": "crypto_monetary",
+          "args": []
+        },
+        {
+          "module": "crypto_mechanism_state",
+          "args": []
+        },
+        {
+          "module": "crypto_evidence_blockers",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_h8_readiness",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_expansion_readiness",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_expansion_evidence",
+          "args": []
+        },
+        {
+          "module": "review_adjudication",
+          "args": []
+        },
+        {
+          "module": "crypto_phase1_taxonomy",
+          "args": []
+        },
+        {
+          "module": "crypto_phase1_research_map",
+          "args": []
+        }
       ]
     },
     {
@@ -56,13 +249,34 @@
       "title": "H2 fee-capture panel, frozen exploratory estimates, and sensitivities",
       "network": false,
       "commands": [
-        {"module": "crypto_h2_pilot_panel", "args": []},
-        {"module": "crypto_h2_estimator_diagnostics", "args": []},
-        {"module": "crypto_h2_exploratory_estimates", "args": []},
-        {"module": "crypto_h2_small_cluster_inference", "args": []},
-        {"module": "crypto_h2_nonoverlap_sensitivity", "args": []},
-        {"module": "crypto_h2_strict_capture_sensitivity", "args": []},
-        {"module": "crypto_mechanism_event_study", "args": []}
+        {
+          "module": "crypto_h2_pilot_panel",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_estimator_diagnostics",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_exploratory_estimates",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_small_cluster_inference",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_nonoverlap_sensitivity",
+          "args": []
+        },
+        {
+          "module": "crypto_h2_strict_capture_sensitivity",
+          "args": []
+        },
+        {
+          "module": "crypto_mechanism_event_study",
+          "args": []
+        }
       ]
     },
     {
@@ -70,21 +284,49 @@
       "title": "H1, H3, H4 readiness, H8 breadth, and Phase 1 bundle comparison",
       "network": false,
       "commands": [
-        {"module": "crypto_h1_activity_pilot", "args": []},
-        {"module": "crypto_h3_supply_pilot", "args": []},
-        {"module": "crypto_h4_readiness", "args": []},
-        {"module": "crypto_h8_breadth_pilot", "args": []},
-        {"module": "crypto_h8_six_asset_extension", "args": []},
-        {"module": "crypto_phase1_bundle_comparison", "args": []}
+        {
+          "module": "crypto_h1_activity_pilot",
+          "args": []
+        },
+        {
+          "module": "crypto_h3_supply_pilot",
+          "args": []
+        },
+        {
+          "module": "crypto_h4_readiness",
+          "args": []
+        },
+        {
+          "module": "crypto_h8_breadth_pilot",
+          "args": []
+        },
+        {
+          "module": "crypto_h8_six_asset_extension",
+          "args": []
+        },
+        {
+          "module": "crypto_phase1_bundle_comparison",
+          "args": []
+        }
       ]
     },
     {
       "id": "crypto_returns",
-      "title": "Daily return panel and factor baseline",
+      "title": "Daily return panel, factor baseline, and function-versus-risk test",
       "network": false,
       "commands": [
-        {"module": "crypto_return_panel", "args": []},
-        {"module": "crypto_return_factor_baseline", "args": []}
+        {
+          "module": "crypto_return_panel",
+          "args": []
+        },
+        {
+          "module": "crypto_return_factor_baseline",
+          "args": []
+        },
+        {
+          "module": "crypto_function_risk_exposure",
+          "args": []
+        }
       ]
     },
     {
@@ -92,19 +334,63 @@
       "title": "Stablecoin H5-H7 (preserved, not an active gate)",
       "network": false,
       "commands": [
-        {"module": "stablecoin_risk", "args": []},
-        {"module": "stablecoin_evidence", "args": []},
-        {"module": "stablecoin_scorecard", "args": []},
-        {"module": "stablecoin_score_intervals", "args": []},
-        {"module": "h5_h6_readiness", "args": []},
-        {"module": "stablecoin_panel", "args": ["--breach-bps", "50", "--recovery-bps", "25"]},
-        {"module": "stablecoin_atlas", "args": []},
-        {"module": "preregistration", "args": []},
-        {"module": "stablecoin_adoption", "args": []},
-        {"module": "stablecoin_chain_distribution", "args": []},
-        {"module": "stablecoin_trading_activity", "args": []},
-        {"module": "stablecoin_usage_panel", "args": []},
-        {"module": "h7_readiness", "args": []}
+        {
+          "module": "stablecoin_risk",
+          "args": []
+        },
+        {
+          "module": "stablecoin_evidence",
+          "args": []
+        },
+        {
+          "module": "stablecoin_scorecard",
+          "args": []
+        },
+        {
+          "module": "stablecoin_score_intervals",
+          "args": []
+        },
+        {
+          "module": "h5_h6_readiness",
+          "args": []
+        },
+        {
+          "module": "stablecoin_panel",
+          "args": [
+            "--breach-bps",
+            "50",
+            "--recovery-bps",
+            "25"
+          ]
+        },
+        {
+          "module": "stablecoin_atlas",
+          "args": []
+        },
+        {
+          "module": "preregistration",
+          "args": []
+        },
+        {
+          "module": "stablecoin_adoption",
+          "args": []
+        },
+        {
+          "module": "stablecoin_chain_distribution",
+          "args": []
+        },
+        {
+          "module": "stablecoin_trading_activity",
+          "args": []
+        },
+        {
+          "module": "stablecoin_usage_panel",
+          "args": []
+        },
+        {
+          "module": "h7_readiness",
+          "args": []
+        }
       ]
     },
     {
@@ -112,8 +398,14 @@
       "title": "Findings summary and commit checkpoint",
       "network": false,
       "commands": [
-        {"module": "crypto_findings_summary", "args": []},
-        {"module": "checkpoint_readiness", "args": []}
+        {
+          "module": "crypto_findings_summary",
+          "args": []
+        },
+        {
+          "module": "checkpoint_readiness",
+          "args": []
+        }
       ]
     }
   ]
