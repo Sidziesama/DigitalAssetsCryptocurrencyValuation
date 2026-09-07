@@ -1,0 +1,30 @@
+{
+  "document_version": "0.1-draft",
+  "inputs": {
+    "config/assets.json": "5e429aa693ad5af95c4656accd57bfc7ebd41853607af709a1c3ff747cb0bd2d",
+    "config/preregistration_h5_h7.json": "7a0b066b6640becfc42bb30fc9955632e705186cbd8f98caa0c8a79660a5dc46",
+    "config/stablecoin_evidence_extractions.json": "b29be6191dcc73da12c7a3dd9e47f6f00ac1ba9545b9ef6a31314a07c253e67a",
+    "config/stablecoin_evidence_plan.json": "54e31738635850da8d9df07133528ce5790725e15ac4bf303577315fac90ff0f",
+    "config/stablecoin_historical_score_intervals.json": "667779c29b52f416c4f66ffe1dc837864240b7563c040bd77bc09d4006071c2f",
+    "config/stablecoin_risk_inputs.json": "061bedcbbafc7de86a1d201fef4260e671bc4fe2537083fe634dcaff8a15c6d3",
+    "config/stablecoin_scorecard.json": "d3d7fb967e95da9b7b7f5fac1264e4dd602c5919472c0290714eb46910256852",
+    "data/processed/empirical/stablecoin_adoption_daily.csv": "2094b02ba9c1d5673b964910389addc8b2eda94a3b27286a904254dbe02fde68",
+    "data/processed/empirical/stablecoin_chain_distribution_daily.csv": "a39347453bc8deda90dca9eb40f84ede411ce684bd12ad017b5420f90542bd63",
+    "data/processed/empirical/stablecoin_daily.csv": "7f4bcaef1ac2101d52ab577df4f7c61ffd37a9f6ccc98f470a160858f8aa2e00",
+    "data/processed/empirical/stablecoin_depeg_episodes.csv": "ba7d86792873c365e7ff6c5893e918141a7bc6d66f21edd4396a3c8b79654350",
+    "data/processed/empirical/stablecoin_episode_review_queue.csv": "3f9a68afa0460afe6a8e96d01e482665a2299a5fa380aab42ecc4088d053bc11",
+    "data/processed/empirical/stablecoin_h7_readiness.json": "c3e1fa2f4e520fa82689f1ec7735e25503e8b879a4fa5e292e5319f08ccdf265",
+    "data/processed/empirical/stablecoin_h7_usage_exploratory_daily.csv": "2a75294b16975db7844ed99d3da7814471ce661045305e69332060dfaddd0481",
+    "data/processed/empirical/stablecoin_market_depth_snapshots.csv": "549bb9d33e0b97072a9fa4e90394b96243383973974b81e3e78a026dc1c0ff19",
+    "data/processed/empirical/stablecoin_trading_activity_daily.csv": "bbae624883634c4897fc0f2c0f0bc8a259270771082facc7403be5269ccdd346",
+    "data/processed/empirical/stablecoin_yield_integration_snapshot.csv": "d0b380ad3bade8efe03d6a4fa1fdcf571ba406f714bcbf5d08969053575518f3",
+    "data/processed/evidence/stablecoin_evidence_summary.json": "36b1c6f6fd9840aa91937dd40780f0bbff880c55dbd0a52ffe7b9825996e0250",
+    "data/processed/evidence/stablecoin_h5_h6_temporal_readiness.json": "3dada54c8e84df9a7aac69fbccc213aac5b22e29da92ac5172a7b2aacf27b4fa",
+    "data/processed/evidence/stablecoin_h5_h6_temporally_valid_panel.csv": "6ccb7dece6d7a2bc198acf57ffecdaa1edb158bf299f1549b54c86cec983fe1c",
+    "data/processed/evidence/stablecoin_point_in_time_scorecard.csv": "aa43d2113c172328c3a73a1f84409587f68faece6a8760761f76f04f5e3a19a2",
+    "data/processed/evidence/stablecoin_score_intervals.csv": "2a5c3274e290b5af47293f9d7eb76457ee100eebaf33bf8202ef066f05d13671",
+    "data/processed/historical/stablecoin_global_market_daily.csv": "ce6b4f614ab0bf3c214b04bc688d7e71a8ebb1ff88c889d826591ba9dafb19dc",
+    "data/processed/historical/stablecoin_usage_daily_coinmetrics.csv": "671fa7992e7cfb5bfcc59f5c437243284042971c19c6789c025b955c2d356c40"
+  },
+  "status": "draft_not_frozen"
+}

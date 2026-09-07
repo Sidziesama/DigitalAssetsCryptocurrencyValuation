@@ -14,8 +14,9 @@ outputs/generated/
 *.log
 
 # Private working documentation: retained locally, excluded from Git.
+# research/ is deliberately NOT ignored: the manuscript, findings notes,
+# methods and preregistration are part of what a reviewer must be able to check.
 docs/
-research/
 review_inputs/
 data/processed/evidence/stablecoin_score_review_audit.csv
 NEXT_STEPS.md

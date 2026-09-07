@@ -1,0 +1,337 @@
+% Overleaf-ready master manuscript. If olplainarticle.cls is available, replace
+% the next line with: \documentclass[fleqn,10pt]{olplainarticle}
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,hyperref,natbib,longtable}
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+\title{Economic Functions and Cryptoasset Valuation:\\
+A Reproducible Classification and Its Empirical Tests}
+\author{First Author\\NYU Tandon School of Engineering
+\and Second Author\\NYU Tandon School of Engineering}
+\date{Living manuscript, version 0.6, 7 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Cryptoassets are sorted by technical architecture or by marketing label, neither of which identifies a valuation model. This paper builds a reproducible classification of cryptoassets by economic function and asks whether function explains value and risk. Ten binary functions, covering monetary use, gas demand, staking, burn, scarcity, collateral, governance, protocol capture, utility and incentives, are defined by written rules, scored from dated primary sources, reconciled through blind independent review, and grouped into eight theory-defined bundles fixed before estimation. Architecture is recorded as context and never as a function. Every classification is effective-dated, so a mechanism activated in 2025 is never applied to 2024 prices. On a six-asset evidence-verified core the classification separates assets that share an architecture and unites assets that do not, and it isolates a boundary that practice blurs, namely that governance authority over a treasury is not value capture unless value mechanically terminates at the token. An eleven-asset daily panel finds fee activity more strongly associated with market value when a live capture route exists, with an exact wild-cluster $p$-value of $0.082$ under a broad definition of capture; the estimate halves and loses significance under the strict definition, so the result is reported as definition-dependent rather than as a finding. Neither raw function breadth nor bundle count predicts value. On a twenty-four-asset daily return panel spanning 2019 to 2026 a single market factor explains a median sixty percent of daily variation and lagged beta is negatively priced. A pre-registered test of function against market beta, realized volatility and drawdown produces three of twenty-seven tests at $p \le 0.05$ against $1.35$ expected by chance, none surviving a ten percent false-discovery rate. The contributions are the classification instrument and its reliability statistics, the capture-boundary result, and a set of pre-registered null findings, delivered with an execution pipeline in which every reported number is regenerable by one command.
+\end{abstract}
+
+\noindent\textbf{Keywords:} cryptoassets; cryptocurrency valuation; token economics; value capture; economic classification; reproducible research
+
+\noindent\textbf{Code and data:} \url{https://github.com/Sidziesama/DigitalAssetsCryptocurrencyValuation} \citep{repo2026}
+
+\section{Introduction}
+
+\subsection{The problem}
+Valuing an equity begins with agreement about what kind of claim it is. Cryptoassets have no equivalent agreement. They are grouped by the technology beneath them, so that Bitcoin and Ethereum are both ``Layer 1'' despite opposite monetary designs: Bitcoin has a fixed terminal supply and no fee destruction, Ethereum has no supply cap and destroys fees as they are paid. They are grouped by application category, so that Uniswap and Aave are both ``DeFi tokens'' while sharing one economic function out of ten. Neither grouping states how the asset is supposed to accrue value, and neither can be tested.
+
+Formal theory has advanced faster than measurement. \citet{congliwang2021tokenomics} model token value as arising from adoption in a platform economy, and the empirical crypto asset-pricing literature has established a small set of price-based factors \citep{liutsyvinski2021risks,liutsyvinskiwu2022common}. What is missing between them is an instrument: a way to say what economic job a given token performs on a given date, defensibly enough that the classification can be an independent variable.
+
+\subsection{What this paper builds}
+We build that instrument and then test it. The research question is:
+
+\begin{quote}
+Do the economic functions a token actually performs explain what it is worth and how risky it is, beyond what its architecture and its size already imply?
+\end{quote}
+
+The approach has three commitments that distinguish it from existing descriptive taxonomies.
+
+\textbf{Rules before cases.} Each of ten functions is defined by a written classification rule and a list of the evidence that satisfies it. A code is set to one only when the mechanism is live at the observation date, economically material, and supported by dated primary evidence. Unknown states remain null and never become zero.
+
+\textbf{Dates on everything.} Token economics change. Uniswap did not route fees to a burn until December 2025; Aave began a buyback in April 2025 and paused it in April 2026. Applying today's classification to yesterday's prices imports future information into past outcomes. Every mechanism therefore carries an effective date and the panel resolves the state prevailing on each observation day.
+
+\textbf{Specifications before estimates.} Each experiment has a specification file committed with a freeze date before its estimate is produced, naming outcomes, predictors, samples, inference procedure and multiple-testing treatment. Two results in this paper became weaker when those rules were applied honestly, which is the evidence that the rules bind.
+
+\subsection{Contributions}
+First, a classification instrument with reported reliability: sixty of sixty decisions verified on a six-asset core, reconciled with a blind independent reviewer at $\kappa = 1.00$ after one adjudication, plus a drafted second tranche of seventy decisions across fourteen further assets. Second, a conceptual result with a demonstrated empirical consequence, the governed-treasury capture boundary, which changes the sign significance of the paper's central test. Third, a set of pre-registered null results on function breadth, mechanism activation events, and function versus risk exposure. Fourth, the execution pipeline itself, in which raw snapshots are immutable, sixty-seven modules run in seven ordered stages, 238 unit tests pass, and every number below is regenerable from one command \citep{repo2026}.
+
+\section{Key Findings}
+
+\begin{enumerate}
+\item \textbf{Architecture does not predict economics.} Two proof-of-stake base layers in the verified core differ on two of ten functions; two application tokens share one. Collateral use and governance are the most common functions on the core, a credible hard cap the rarest.
+
+\item \textbf{The central capture result is definition-dependent.} Fee activity is more strongly associated with market value where a live capture route exists: pooled interaction $0.132$, exact eleven-cluster $p = 0.082$, positive in all eleven leave-one-asset-out samples. Applying the strict holder-capture rule to the same panel halves the estimate to $0.061$ with $p = 0.478$. Whether a tokenholder-governed treasury counts as capture is the difference between a result and no result.
+
+\item \textbf{Counting functions explains nothing.} Raw breadth against mean log market value gives a slope of $0.484$ with exact permutation $p = 0.442$ on six assets. Bundle count does not improve on it, because on this core the two are nearly the same variable ($\rho = 0.956$). The only predictor that lowers out-of-sample error is the monetary-store bundle, and that is partly a size effect.
+
+\item \textbf{Mechanism activations are not visibly priced.} Across three effective-dated events with thirty-day windows, twenty-two control assets and roughly 280 calendar placebos each, one carries its expected sign and none rejects at ten percent. The one event that looked strong on a one-year market-capitalization panel reverses on the seven-year return panel.
+
+\item \textbf{A single market factor dominates.} Median market beta $1.03$ and median $R^2$ of $0.60$ across twenty-four assets. Daily Fama--MacBeth cross-sections give a negative lagged-beta premium ($t = -2.12$), flat momentum and no volatility premium, echoing the betting-against-beta pattern of \citet{frazzinipedersen2014}.
+
+\item \textbf{Function and risk move together but do not survive correction.} Assets classified as monetary average beta $0.93$ and worst log drawdown $-1.44$ against $1.19$ and $-2.37$ for the rest, with the same ordering for transaction-service demand and the reverse for governance. Three of twenty-seven tests reach $p \le 0.05$ against $1.35$ expected by chance and none survives a ten percent false-discovery rate.
+
+\item \textbf{Evidence review changes classifications.} The first drafted tranche disagrees with the provisional matrix in five of fifty-nine verified cells. The clearest case is Stellar, where fees enter a locked account and are not destroyed: sequestration is not a burn.
+\end{enumerate}
+
+\section{Method}
+
+\subsection{Classification and effective dating}
+Let $c_{i,k}(t) \in \{0,1,\varnothing\}$ denote the state of function $k$ for asset $i$ on date $t$. Time-varying codes are resolved from an event ledger $\mathcal{E}$ of tuples $(i,k,\tau,v)$ where $\tau$ is an effective date:
+\begin{equation}
+c_{i,k}(t) = v\big(\arg\max\{\tau : (i,k,\tau,v) \in \mathcal{E},\ \tau \le t\}\big),
+\end{equation}
+so only evidence in force on or before $t$ can determine the state at $t$. A pause is an event with $v=0$; an announced-but-inactive mechanism generates no event. Eight bundles $\mathcal{B}_b$ partition the ten codes, fixed before estimation, giving bundle indicators and raw breadth
+\begin{equation}
+B_{i,b}(t) = \max_{k \in \mathcal{B}_b} c_{i,k}(t), \qquad
+N_i(t) = \sum_{k=1}^{10} c_{i,k}(t).
+\end{equation}
+Active capture, the H2 treatment, is $C_{it} = \max\{c_{i,\mathrm{BURN}}(t),\, c_{i,\mathrm{PROTOCOL}}(t)\}$.
+
+\subsection{Classification reliability}
+A second reviewer scores the same cells blind. With observed agreement $p_o$ and chance agreement $p_e$ computed from the marginal distributions, Cohen's $\kappa$ \citep{cohen1960kappa} is
+\begin{equation}
+\kappa = \frac{p_o - p_e}{1 - p_e},
+\end{equation}
+interpreted on the \citet{landiskoch1977} scale. Disagreements are adjudicated by a written rule that is then binding on all future cases.
+
+\subsection{H2: usage interacted with value capture}
+The panel specification is a two-way fixed-effects regression
+\begin{equation}
+y_{it} = \alpha_i + \gamma_t + \beta_1 F_{i,t-1} + \beta_2 C_{it} + \beta_3\big(F_{i,t-1} \times C_{it}\big) + \beta_4\big(F_{i,t-1} \times A_i\big) + \varepsilon_{it},
+\label{eq:h2}
+\end{equation}
+where $F$ is log lagged fees, $A_i$ marks application-level rather than chain-level fee measurement, and $y$ is either log market capitalization or the seven-day forward log return. The parameter of interest is $\beta_3$. Estimation uses the within transformation $\tilde{x}_{it} = x_{it} - \bar{x}_{i\cdot} - \bar{x}_{\cdot t} + \bar{x}$, which absorbs $\alpha_i$ and $\gamma_t$; the time-invariant scope main effect is absorbed by the asset effect.
+
+With $G$ asset clusters the CR1 cluster-robust variance is
+\begin{equation}
+\widehat{V} = \frac{G}{G-1}\cdot\frac{N-1}{N-K}\,(X'X)^{-1}\Big(\sum_{g=1}^{G} X_g'\hat{u}_g\hat{u}_g'X_g\Big)(X'X)^{-1}.
+\end{equation}
+Because $G$ is small, asymptotic cluster inference is unreliable \citep{cameron2008bootstrap,mackinnonwebb2017}. We therefore impose $H_0:\beta_3=0$, obtain restricted fitted values and residuals $(\hat{y}^r,\hat{u}^r)$, and for every one of the $2^G$ Rademacher sign vectors $v \in \{-1,+1\}^G$ construct
+\begin{equation}
+y^*_{it} = \hat{y}^r_{it} + v_{g(i)}\hat{u}^r_{it},
+\end{equation}
+re-estimate, and form the bootstrap $t$ statistic. The two-sided $p$-value is the exact enumeration
+\begin{equation}
+p = \frac{1}{2^G}\sum_{b=1}^{2^G}\mathbf{1}\{|t^*_b| \ge |t_{\mathrm{obs}}|\},
+\end{equation}
+with $2^{11}=2048$ assignments pooled and $2^{9}=512$ for the nine-chain sample, so attainable $p$-values are coarse but exact rather than approximate \citep{roodman2019boottest}. Seven-day forward returns overlap; we therefore partition dates into all seven calendar offsets, each internally spaced seven days apart, and report the offsets separately rather than choosing one.
+
+The strict-rule sensitivity re-estimates \eqref{eq:h2} on a copy of the panel in which pre-listed classification overrides are applied. The frozen panel, its evidence files and its ledger are not modified.
+
+\subsection{Cross-sectional tests and permutation inference}
+Breadth, bundle and risk tests are cross-sectional with $n$ assets, so we use exact randomization inference \citep{fisher1935design}. For a statistic $\theta$ computed from predictor $x$ and outcome $y$,
+\begin{equation}
+p = \frac{1}{n!}\sum_{\pi \in S_n}\mathbf{1}\{|\theta(x_{\pi},y)| \ge |\theta(x,y)|\},
+\end{equation}
+enumerated exactly when $n \le 6$ ($6! = 720$) and estimated by $R = 20{,}000$ fixed-seed Monte Carlo draws when $n = 20$. Sign stability is reported by re-estimating on every leave-one-asset-out subsample. Model comparison uses leave-one-out root mean squared prediction error,
+\begin{equation}
+\mathrm{RMSE}_{\mathrm{LOO}} = \sqrt{\tfrac{1}{n}\textstyle\sum_{i=1}^{n}\big(\hat{y}^{(-i)}_i - y_i\big)^2},
+\end{equation}
+where $\hat{y}^{(-i)}_i$ is the prediction for asset $i$ from a model fitted without it, so a richer model is not rewarded for fitting its own sample.
+
+\subsection{P1\_H6: function against realized risk}
+All assets are measured on one common window so that risk measures are comparable. For asset $i$ over that window, with $r_{it}$ the daily log return and $r_{mt}$ the equal-weighted market log return,
+\begin{align}
+\beta_i &= \frac{\mathrm{Cov}(r_{it},r_{mt})}{\mathrm{Var}(r_{mt})},
+&\sigma_i &= \mathrm{sd}(r_{it})\sqrt{365},
+&\mathrm{MDD}_i &= \min_{T}\Big(\sum_{t \le T} r_{it} - \max_{U \le T}\sum_{t \le U} r_{it}\Big).
+\end{align}
+Each outcome is regressed on one classification predictor and a size control $v_i$, the mean log dollar volume, because the largest assets are also the lowest-beta assets:
+\begin{equation}
+y_i = a + b\,x_i + c\,v_i + e_i .
+\end{equation}
+Predictors with no cross-asset variation are reported as unestimable rather than dropped. Across the $m = 27$ predictor-by-outcome tests within each sample we control the false discovery rate \citep{benjaminihochberg1995,harvey2016cross}: with ordered $p$-values $p_{(1)} \le \cdots \le p_{(m)}$,
+\begin{equation}
+q_{(j)} = \min_{\ell \ge j}\ \min\Big\{1,\ \frac{m\,p_{(\ell)}}{\ell}\Big\}.
+\end{equation}
+
+\subsection{Factor baseline}
+Before any classification variable is tested we establish what price-based factors already explain. Per-asset market models give $\beta_i$ and $R^2_i$. Daily cross-sections follow \citet{famamacbeth1973}: for each date $t$,
+\begin{equation}
+r_{it} = \lambda_{0t} + \sum_{k}\lambda_{kt}\,x_{i,k,t-1} + e_{it},
+\end{equation}
+with predictors lagged one day; the reported premium is $\bar{\lambda}_k = T^{-1}\sum_t \lambda_{kt}$ and its standard error is autocorrelation-consistent \citep{neweywest1987},
+\begin{equation}
+\widehat{\mathrm{Var}}(\bar{\lambda}_k) = \frac{1}{T}\Big[\hat{\gamma}_0 + 2\sum_{\ell=1}^{L}\Big(1-\frac{\ell}{L+1}\Big)\hat{\gamma}_\ell\Big],
+\qquad \hat{\gamma}_\ell = \frac{1}{T}\sum_{t>\ell}(\lambda_{kt}-\bar{\lambda}_k)(\lambda_{k,t-\ell}-\bar{\lambda}_k),
+\end{equation}
+with $L = 7$.
+
+\subsection{Mechanism event study}
+Events are every ledger transition whose state differs from the preceding recorded state and whose full pre and post window lies inside the panel; an initial coding at an asset's first evidence date is not an event. For treated asset $i$, control set $\mathcal{C}$ of assets with no ledger event inside the window, and windows of $W$ days either side of $\tau$,
+\begin{equation}
+\Delta_j = \frac{1}{W}\sum_{t=\tau+1}^{\tau+W} y_{jt} - \frac{1}{W}\sum_{t=\tau-W}^{\tau-1} y_{jt},
+\qquad
+\mathrm{DiD} = \Delta_i - \frac{1}{|\mathcal{C}|}\sum_{j \in \mathcal{C}}\Delta_j .
+\end{equation}
+Two placebo distributions are constructed. The asset placebo reassigns treatment to each control in turn; the calendar placebo shifts $\tau$ by multiples of seven days to windows that do not overlap the true event window. In each case
+\begin{equation}
+p = \frac{\#\{|\mathrm{DiD}_{\text{placebo}}| \ge |\mathrm{DiD}_{\text{obs}}|\} + 1}{\#\text{placebos} + 1},
+\end{equation}
+counting the observed statistic in its own reference distribution. The same statistic is computed for lagged fees, so that a valuation move is not attributed to capture when usage moved simultaneously.
+
+\section{Data and Evidence}
+
+\subsection{Sources and construction}
+The registry contains twenty-five non-stable cryptoassets selected on market capitalization, volume, economic relevance and reproducible free-data access, plus sixteen preserved stable-value assets held for a deferred phase. Raw snapshots are archived once with retrieval metadata and SHA-256 hashes and are never edited; all processed series are rebuilt from them by code.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.26\linewidth}p{0.30\linewidth}p{0.36\linewidth}}
+\toprule
+Dataset & Coverage & Role \\
+\midrule
+Exchange daily OHLCV & 24 assets, 2019-01-02 to 2026-08-22, 52,116 asset-days & Return panel, factor baseline, risk measures \\
+Chain and protocol fees & 11 economic systems, 362 days & H2 usage variable \\
+Network activity & 4--5 assets on free provider tiers & H1, H3 \\
+Collateral balances & Protocol state reads, 90-day windows & VA\_COLLATERAL evidence \\
+Staking series & BNB validator pools and legacy stkAAVE, 90 days & H4 (blocked) \\
+Classification evidence & Dated primary-source URLs per decision & All classification codes \\
+Mechanism ledger & Effective-dated burn and capture events, 11 assets & H2 treatment, event study \\
+\bottomrule
+\end{tabular}
+\caption{Data assets and the role each plays. Fee scope is chain-level for nine assets and application-level for two; the distinction is carried as a measurement attribute, never collapsed.}
+\end{table}
+
+\subsection{The verified classification}
+Six assets are verified across all ten functions with no unresolved cells (Table~\ref{tab:core}). The ten burn and capture decisions added for the H2 expansion reconciled with a blind reviewer at raw agreement $1.00$ and $\kappa = 1.00$ after one adjudication.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{llcccccccccc c}
+\toprule
+Asset & Architecture & MON & GAS & STK & BRN & SCR & COL & GOV & PRO & UTL & INC & $N_i$ \\
+\midrule
+BTC  & PoW base layer            & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 3 \\
+ETH  & PoS base layer            & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 7 \\
+BNB  & PoS-family base layer     & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 9 \\
+UNI  & Application token         & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 3 \\
+AAVE & Application, risk staking & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 4 \\
+ARB  & Rollup governance token   & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 2 \\
+\bottomrule
+\end{tabular}
+\caption{Verified ten-function profiles, six-asset core, as of 22 August 2026.}
+\label{tab:core}
+\end{table}
+
+\subsection{The governed-treasury capture boundary}
+ARB and ADA tokenholders exercise binding control over treasuries funded by network revenue, but the evidenced disbursements fund ecosystem grants, infrastructure and development \citep{cardano2026cip1694,arbitrum2026transparency}. Under the strict rule both are governance, not capture, because value never mechanically reaches the token. Fee destruction is capture, because it does: the XRP Ledger states that the transaction cost ``is not paid to any party'' and the XRP ``is irrevocably destroyed'' \citep{xrpl2026cost}, and Solana burns half of every base fee \citep{solana2026fees}. The same boundary settles Zcash, whose development fund routes newly issued subsidy to organizations rather than to the token \citep{zcash2026zip1014}.
+
+\subsection{Evidence supporting each finding}
+
+\paragraph{H2, usage and capture.} Eleven assets, 26 August 2025 to 21 August 2026, 3,971 fee-level and 3,894 forward-return observations.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+Specification & Clusters & Broad rule $\hat{\beta}_3$ & $p$ & Strict rule $\hat{\beta}_3$ & $p$ \\
+\midrule
+Pooled, log market cap        & 11 & $0.132$  & $0.082$ & $0.061$  & $0.478$ \\
+Chain-only, log market cap    & 9  & $0.141$  & $0.125$ & $0.060$  & $0.555$ \\
+Pooled, 7-day forward return  & 11 & $-0.002$ & $0.751$ & --- & --- \\
+Chain-only, 7-day forward return & 9 & $-0.005$ & $0.328$ & --- & --- \\
+\bottomrule
+\end{tabular}
+\caption{Fee-capture interaction under both capture definitions. $p$-values are exact wild-cluster enumerations. No non-overlapping calendar offset rejects zero at ten percent.}
+\end{table}
+
+\paragraph{Breadth and bundles.} On the five-asset pilot the raw-breadth slope is $0.740$ with exact $p = 0.700$; on the separately frozen six-asset extension it is $0.484$ with $p = 0.442$, positive in all six leave-one-out samples. Bundle count does not beat raw breadth on either outcome (LOO RMSE $3.858$ against $3.487$ for mean log market value), and the two predictors have rank correlation $0.956$ because seven of eight bundles contain a single function. The monetary-store bundle alone attains $\rho = 0.878$, exact $p = 0.100$, and LOO RMSE $1.297$; control rights runs negative at $\rho = -0.828$.
+
+\paragraph{Mechanism events.}
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+Event & Transition & Expected & DiD & $p$ (asset) & $p$ (calendar) \\
+\midrule
+Aave buyback activation, 9 Apr 2025 & activation & positive & $+0.0107$ & $0.261$ & $0.234$ \\
+UNIfication fee-to-burn, 27 Dec 2025 & activation & positive & $-0.0088$ & $0.217$ & $0.248$ \\
+Aave buyback pause, 19 Apr 2026 & suspension & negative & $+0.0010$ & $0.739$ & $0.922$ \\
+\bottomrule
+\end{tabular}
+\caption{Long-panel event study, mean daily log return, twenty-two controls and roughly 280 calendar placebos per event. On the one-year market-capitalization panel the Aave pause measures about $-13$ percent with $p = 0.182$; it reverses here.}
+\end{table}
+
+\paragraph{Factor baseline.} Median market beta $1.03$, median $R^2$ $0.602$. BTC is the low-beta asset ($0.67$, $R^2$ $0.70$), ETH the most market-like ($0.95$, $R^2$ $0.81$), the rollups the high-beta tail (ARB $1.27$, OP $1.40$) with annualized alphas of $-76$ and $-53$ percent. Across 2,596 daily cross-sections the lagged-beta premium is $-0.0030$ ($t = -2.12$), momentum $-0.0020$ ($t = -1.13$), volatility $+0.0019$ ($t = 1.19$).
+
+\paragraph{Function and risk.} Common window 24 March 2023 to 22 August 2026, 1,248 days.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Bundle & $n^{+}$ & $\beta^{+}$ & $\mathrm{MDD}^{+}$ & $n^{-}$ & $\beta^{-}$ & $\mathrm{MDD}^{-}$ \\
+\midrule
+Monetary store              & 14 & $0.93$ & $-1.44$ & 6  & $1.19$ & $-2.37$ \\
+Transaction service demand  & 15 & $0.97$ & $-1.48$ & 5  & $1.10$ & $-2.42$ \\
+Financial integration       & 9  & $0.91$ & $-1.48$ & 11 & $1.08$ & $-1.91$ \\
+Holder capture              & 13 & $1.02$ & $-1.84$ & 7  & $0.98$ & $-1.49$ \\
+Control rights              & 11 & $1.04$ & $-2.06$ & 9  & $0.96$ & $-1.30$ \\
+\bottomrule
+\end{tabular}
+\caption{Unadjusted group means, provisional-universe sample. Regression results with the size control give three of twenty-seven tests at $p \le 0.05$ (transaction service demand on drawdown $+0.911$, $p=0.027$; monetary store on drawdown $+0.836$, $p=0.032$; monetary store on beta $-0.227$, $p=0.045$), each sign-stable in all twenty leave-one-out samples, none surviving FDR control (minimum $q = 0.405$).}
+\end{table}
+
+\paragraph{H1, H3, H4.} The four-asset activity panel (352 observations) gives positive coefficients of $0.028$ for active addresses and $0.112$ for transaction count with exact four-cluster $p$-values of $0.500$ and $0.250$. The supply diagnostic (296 observations) has a positive rather than the hypothesized negative coefficient, $p = 0.250$, and within-window supply variation for only two of four assets, making it a measurement-readiness result. H4 has a complete ninety-day BNB consensus-staking series and a partial legacy stkAAVE component; the exact Ethereum effective-balance collector is implemented but requires an archival consensus endpoint, so estimation is blocked.
+
+\subsection{Classification coverage and what remains}
+Of $25 \times 10 = 250$ registry cells, $119$ are now evidence-verified: sixty on the core and fifty-nine in the drafted first tranche. Tranche A covers the five rule-mechanical codes for the fourteen return-panel assets not yet verified; fifty-nine of its seventy decisions are verified and eleven are held pending, including four cases of a newly opened consistency question. On UTXO proof-of-work chains a zero-fee transaction is consensus-valid and fee minimums are relay policy, which is why the verified Bitcoin decision scores VA\_GAS as zero; Bitcoin Cash, Litecoin, Dogecoin and Zcash share that property and are held rather than scored inconsistently. Completing the twenty panel assets requires eighty-one further decisions: eleven adjudications, twenty-eight data-pull decisions and forty-two judgment decisions.
+
+\section{Next Steps}
+\begin{enumerate}
+\item Complete tranches B and C for the fourteen drafted assets and adjudicate the eleven pending cells, under the existing blind-review protocol. Tranche order is fixed by evidence difficulty and deliberately not by which bundle showed signal, since selecting codes by outcome would compromise the frozen P1\_H6 test.
+\item Re-estimate P1\_H6 on evidence-verified codes without revising its specification. The provisional matrix codes fourteen of twenty assets as monetary, which review is expected to tighten.
+\item Convert documentary functions into series. Governance can become delegated supply, incentives can become programme emissions, at which point four currently static codes become panel variables.
+\item Extend the mechanism event study as the ledger accumulates transitions, so that three events become a powered test.
+\item Resume H4 with an archival Ethereum consensus endpoint and Aave Umbrella coverage, and collect point-in-time unlock events so that H3 becomes identification-ready.
+\end{enumerate}
+
+\section{Limitations}
+Six fully verified assets support description, not inference, and cannot separate a function from size: the three monetary assets in the core are also the three largest. The twenty-asset risk test therefore relies on provisional classifications that have not passed evidence review, and the first tranche found five disagreements in fifty-nine cells, so those results are hypothesis-generating only. Eleven asset clusters remain few even with exact enumeration, and only two application protocols are represented. Four of ten functions are documentary rather than measured and cannot yet enter a panel. The common risk window begins at a 2023 listing date and therefore excludes the 2022 drawdown. Fee, revenue and holder-revenue concepts retain provider definitions \citep{defillama2026definitions} and are not interchangeable. Free-tier activity data covers a subset of assets, which is why one multiple was withheld rather than estimated on a convenient subsample. Classifications are research codes, not legal conclusions, and every result is an association rather than a causal or investment claim.
+
+\section{Conclusion}
+The instrument works and the results are mostly null, which is the honest state of this literature at this sample size. Economic function can be classified reproducibly from dated primary sources, reconciled by blind review, and it separates assets that architecture groups together. Where the classification bites hardest is on a definitional question the field has not settled: whether a tokenholder-governed treasury constitutes value capture. Answering yes yields a fee-capture interaction significant at the ten percent exploratory level; answering no, on the ground that value never mechanically reaches the token, halves the estimate and removes the significance. That sensitivity is the paper's most portable finding, because it applies to any study that treats governance and capture as interchangeable.
+
+Beyond it, function breadth commands no premium, mechanism activations are not visibly priced, and function-based differences in beta and drawdown are large and consistently signed but do not survive multiple-testing correction on provisional classifications. A single market factor explains most daily variation, and any functional claim must clear that first. The path to a valuation model runs through measurement rather than modelling: completing the classification, converting documentary codes into series, and accumulating effective-dated mechanism events until the tests have power. On present evidence the defensible target is an account of what kind of asset a token is and what risk that implies, not a forecast of its return.
+
+\section*{Acknowledgments}
+This manuscript is maintained as an independent research project at NYU Tandon School of Engineering. Advisory implications are research outputs, not investment or legal advice.
+
+\section*{Reproducibility}
+All code, frozen experiment specifications, evidence files and processed outputs are at \url{https://github.com/Sidziesama/DigitalAssetsCryptocurrencyValuation}. Specifications live in \texttt{config/}, one JSON per experiment with a freeze date; classification outputs in \texttt{data/processed/evidence/}; estimation outputs in \texttt{data/processed/empirical/}. The command \texttt{python -m src.pipeline.run\_stages --repo . --offline} rebuilds every processed artifact from archived raw snapshots, and \texttt{python -m unittest discover -s tests} runs 238 tests including one that fails if any module is absent from the ordered stage map. Every number in this manuscript is regenerable from that pipeline.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\section{Classification Rules}
+A code is set to one only when the mechanism is live at the observation date, economically material, supported by dated primary evidence, and linked to token demand, supply or holder rights.
+\begin{description}
+  \item[VA\_MONETARY] Material money, settlement, reserve or store-of-value use supported by at least two behavioral tests.
+  \item[VA\_GAS] The native asset is protocol-required to settle ordinary execution, storage, transaction or blockspace fees; relay policy and optional discounts do not qualify.
+  \item[VA\_STAKE] Active bonding or delegation secures consensus, a material service or protocol risk absorption, exposing capital to protocol-defined consequences.
+  \item[VA\_BURN] A live rules-based mechanism irreversibly destroys tokens.
+  \item[VA\_SCARCITY] A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change; burn alone and discretionary targets do not qualify.
+  \item[VA\_COLLATERAL] Collateral balances of at least one percent of market capitalization or one hundred million dollars for at least ninety days.
+  \item[VA\_GOV] Holding or delegating provides live proposal, voting, veto, treasury or parameter control.
+  \item[VA\_PROTOCOL] A live mechanical route sends protocol revenue or surplus to the token or holders through distribution, buyback, burn or an enforceable holder claim. Governance over ecosystem spending alone does not qualify.
+  \item[VA\_UTILITY] The token is required to consume an identifiable non-generic service beyond transfer.
+  \item[VA\_INCENTIVE] A systematic rules-based programme subsidizes liquidity, usage, development or participation; consensus issuance and discretionary grants do not qualify.
+\end{description}
+
+\section{Bundle Map}
+Monetary store (MONETARY, SCARCITY); transaction service demand (GAS, UTILITY); security commitment (STAKE); supply absorption (BURN); financial integration (COLLATERAL); control rights (GOV); holder capture (PROTOCOL); subsidized participation (INCENTIVE). Every function belongs to exactly one bundle and the map was fixed before estimation.
+
+\section{Registered Experiments}
+\begin{longtable}{p{0.10\linewidth}p{0.52\linewidth}p{0.30\linewidth}}
+\toprule
+ID & Hypothesis & Status \\
+\midrule
+P1\_H1 & Economically valid usage is associated with higher network value. & Estimated; positive, not significant. \\
+P1\_H2 & Usage has a stronger valuation association when a live capture route is active. & Estimated; definition-dependent. \\
+P1\_H3 & Theory-defined bundles explain valuation better than an unweighted function count. & Estimated; bundles do not improve on the count. \\
+P1\_H4 & Higher staking reduces liquid float and affects trading frictions. & Source-ready; estimation blocked. \\
+P1\_H5 & Activation or suspension of a capture mechanism changes valuation. & Estimated; no effect detected. \\
+P1\_H6 & Economic function predicts market beta, volatility and drawdown. & Estimated; not supported after FDR control. \\
+\bottomrule
+\end{longtable}
+\end{document}
