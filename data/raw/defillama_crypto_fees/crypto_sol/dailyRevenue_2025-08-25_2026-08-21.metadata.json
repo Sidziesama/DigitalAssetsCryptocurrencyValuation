@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_sol",
+  "scope": "chain",
+  "economic_system": "Solana",
+  "provider_metric": "dailyRevenue",
+  "source_url": "https://api.llama.fi/overview/fees/solana?dataType=dailyRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-31T01:19:16.092804+00:00",
+  "sha256": "b2e021feadf7931de1f49de5edd33286f2832483dad89104b223976b3e1d157d"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "snapshot_namespace": "v1_venus_core_vbnb",
+  "chain": "bsc",
+  "asset_id": "crypto_bnb",
+  "comptroller_address": "0xfD36E2c2a6789Db23113685031d7F16329158384",
+  "vtoken_address": "0xA07c5b74C9B40447a954e1466938b865b6BBea36",
+  "vtoken_symbol": "vBNB",
+  "block_lookup_base": "https://coins.llama.fi/block/bsc",
+  "rpc_url": "https://bsc-mainnet.public.blastapi.io",
+  "method": "markets(address)",
+  "selector": "0x8e8f294b",
+  "official_deployment_source": "https://github.com/venusprotocol/venus-protocol-documentation/blob/main/.gitbook/assets/swagger.json",
+  "official_method_source": "https://docs-v4.venus.io/technical-reference/reference-core-pool/comptroller/diamond/facets/market-facet",
+  "eligibility_rule": "vBNB must be listed with a positive core-pool collateral factor at every daily archival block in the 90-day materiality window."
+}

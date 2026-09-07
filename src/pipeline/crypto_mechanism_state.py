@@ -38,7 +38,7 @@ def resolve(events_spec:dict[str,Any],design:dict[str,Any])->tuple[list[dict[str
 
 
 def run(repo:Path)->dict[str,Any]:
-    rows,summary=resolve(load_json(repo/"config"/"crypto_mechanism_events.json"),load_json(repo/"config"/"crypto_economic_design.json")); out=repo/"data"/"processed"/"evidence"; write_rows(out/"crypto_mechanism_state_asof.csv",rows,list(rows[0])); (out/"crypto_mechanism_state_summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8"); return summary
+    rows,summary=resolve(load_json(repo/"config"/"crypto_mechanism_events.json"),load_json(repo/"config"/"crypto_economic_design.json")); out=repo/"data"/"processed"/"evidence"; fields=list(dict.fromkeys(key for row in rows for key in row)); write_rows(out/"crypto_mechanism_state_asof.csv",rows,fields); (out/"crypto_mechanism_state_summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8"); return summary
 
 
 if __name__=="__main__":

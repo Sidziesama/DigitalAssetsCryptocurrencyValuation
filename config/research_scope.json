@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-31",
+  "active_phase": "cryptoasset_economic_functions_and_valuation",
+  "active_hypotheses": ["H1", "H2", "H3", "H4", "H8"],
+  "active_objective": "Classify cryptoassets by evidenced economic function and test whether usage, value capture, issuance, staking, and active functional breadth explain valuation, liquidity, risk, or returns.",
+  "communication_priority": "Lead with plain-language discoveries and distinguish descriptive associations, exploratory tests, and confirmatory findings.",
+  "hypothesis_status": {
+    "H1": "four_asset_exploratory_activity_pilot_complete_positive_association_not_confirmed",
+    "H2": "eleven_asset_post_pilot_specification_frozen_exploratory_evidence_at_10pct",
+    "H3": "four_asset_supply_proxy_diagnostic_complete_but_only_two_assets_vary_unlock_event_panel_pending",
+    "H4": "fixed_six_asset_bnb_consensus_history_complete_aave_legacy_component_collected_eth_and_umbrella_pending",
+    "H8": "five_asset_exploratory_breadth_pilot_complete_no_robust_premium_evidence"
+  },
+  "deferred_phase": {
+    "name": "stablecoin_design_depeg_risk_and_adoption",
+    "hypotheses": ["H5", "H6", "H7"],
+    "status": "preserved_deferred_not_an_active_gate",
+    "policy": "Retain all stablecoin code, evidence, outputs, and review templates without requiring them for the active crypto research checkpoint."
+  }
+}

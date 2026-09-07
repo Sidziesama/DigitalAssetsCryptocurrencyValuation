@@ -1,0 +1,11 @@
+asset_id,code,recommended_value,effective_from,source_url,rationale,event_match,secondary_source_url
+crypto_sol,VA_BURN,1,2020-03-16,https://solana.com/docs/core/fees/fee-structure,Solana permanently burns 50% of each transaction base fee.,1,
+crypto_sol,VA_PROTOCOL,1,2020-03-16,https://solana.com/docs/core/fees/fee-structure,Usage-linked base-fee burning provides a live automatic value-capture route.,1,
+crypto_avax,VA_BURN,1,2020-09-21,https://build.avax.network/docs/primary-network/avax-token,Avalanche transaction fees are permanently burned.,1,
+crypto_avax,VA_PROTOCOL,1,2020-09-21,https://build.avax.network/docs/primary-network/avax-token,Usage-linked transaction-fee burning provides a live automatic value-capture route.,1,
+crypto_trx,VA_BURN,1,2025-08-26,https://developers.tron.network/docs/tron-economic-model,The official economic model documents ongoing transaction-fee burning and a sustained deflationary trend predating the analysis window; the study conservatively dates verification from window start.,1,
+crypto_trx,VA_PROTOCOL,1,2025-08-26,https://developers.tron.network/docs/tron-economic-model,"Resource shortfalls automatically burn TRX at governed fixed rates, linking network usage to token destruction.",1,
+crypto_xrp,VA_BURN,1,2012-06-02,https://xrpl.org/docs/concepts/transactions/transaction-cost,Every applied XRP Ledger transaction irrevocably destroys its XRP transaction cost.,1,
+crypto_xrp,VA_PROTOCOL,1,2012-06-02,https://xrpl.org/docs/concepts/transactions/transaction-cost,Usage-linked transaction-cost destruction provides a live automatic value-capture route.,1,
+crypto_ada,VA_BURN,0,2020-07-29,https://docs.cardano.org/about-cardano/explore-more/monetary-policy,Cardano transaction fees enter the epoch reward pot rather than being destroyed.,1,
+crypto_ada,VA_PROTOCOL,0,2020-07-29,https://docs.cardano.org/about-cardano/explore-more/monetary-policy,"Ordinary proof-of-stake rewards are service compensation, while the governance treasury funds third-party projects and protocol infrastructure rather than mechanically burning, buying back, or distributing value to ADA holders. Governance authority remains VA_GOV, not VA_PROTOCOL.",1,https://developers.cardano.org/docs/community/funding/

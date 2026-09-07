@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_eth",
+  "scope": "chain",
+  "economic_system": "Ethereum",
+  "provider_metric": "dailyHoldersRevenue",
+  "source_url": "https://api.llama.fi/overview/fees/ethereum?dataType=dailyHoldersRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-30T23:00:11.126176+00:00",
+  "sha256": "9af0bcdec89b034264860fc3b4c65512693f1278438e86963de607a0e74a9b1c"
+}

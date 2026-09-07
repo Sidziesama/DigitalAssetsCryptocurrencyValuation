@@ -1,0 +1,63 @@
+{
+  "status": "exploratory_mechanism_event_study_complete",
+  "experiment_id": "P1_H5",
+  "specification_version": "1.0-frozen-mechanism-event-study",
+  "freeze_date": "2026-09-07",
+  "panel_start": "2025-08-26",
+  "panel_end": "2026-08-21",
+  "events": 2,
+  "outcomes": [
+    "log_market_cap_usd",
+    "log1p_fees_usd_lag1"
+  ],
+  "pre_window_days": 30,
+  "post_window_days": 30,
+  "valuation_results": [
+    {
+      "event_id": "uni_unification_fee_to_burn_activation",
+      "transition": "activation",
+      "expected_sign": "positive",
+      "difference_in_differences": -0.03860128005934094,
+      "sign_matches_expectation": 0,
+      "asset_placebo_p_two_sided": 0.36363636363636365,
+      "date_placebo_p_two_sided": 0.7407407407407407,
+      "controls_used": 10,
+      "asset_placebos": 10,
+      "date_placebos": 26
+    },
+    {
+      "event_id": "aave_buyback_pause",
+      "transition": "suspension",
+      "expected_sign": "negative",
+      "difference_in_differences": -0.13357495346412626,
+      "sign_matches_expectation": 1,
+      "asset_placebo_p_two_sided": 0.18181818181818182,
+      "date_placebo_p_two_sided": 0.14814814814814814,
+      "controls_used": 10,
+      "asset_placebos": 10,
+      "date_placebos": 26
+    }
+  ],
+  "fee_comovement_results": [
+    {
+      "event_id": "uni_unification_fee_to_burn_activation",
+      "difference_in_differences": -0.3601900386109584,
+      "asset_placebo_p_two_sided": 0.36363636363636365,
+      "date_placebo_p_two_sided": 0.2962962962962963
+    },
+    {
+      "event_id": "aave_buyback_pause",
+      "difference_in_differences": 0.09457630189790737,
+      "asset_placebo_p_two_sided": 0.45454545454545453,
+      "date_placebo_p_two_sided": 0.5185185185185185
+    }
+  ],
+  "events_with_expected_sign": 1,
+  "events_rejecting_at_10pct_asset_placebo": 0,
+  "selection_rule": "Events are every effective-dated burn or protocol-capture state change recorded in the mechanism ledger whose full pre and post window lies inside the frozen H2 panel. No event was chosen or dropped from outcomes.",
+  "interpretation": "Two events with thirty-day windows and eleven-asset placebo pools are exploratory sensitivity evidence about mechanism timing, not causal estimates, price targets, or investment recommendations. Fee co-movement is reported so that a valuation shift is not attributed to capture when usage moved at the same time.",
+  "announcement_caveats": {
+    "uni_unification_fee_to_burn_activation": "The UNIfication proposal and vote preceded execution, so the execution-date window can understate an effect that markets priced at proposal or vote time.",
+    "aave_buyback_pause": "Pause discussion may have preceded the effective date recorded in the ledger."
+  }
+}

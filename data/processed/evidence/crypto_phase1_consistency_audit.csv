@@ -1,0 +1,2 @@
+case_id,assets,code,status,reason
+governed_treasury_capture_boundary,crypto_arb|crypto_ada,VA_PROTOCOL,adjudicated_strict_holder_capture,ARB and ADA treasury authority is classified as governance rather than protocol capture because the evidenced spending does not mechanically terminate at the token or holders.

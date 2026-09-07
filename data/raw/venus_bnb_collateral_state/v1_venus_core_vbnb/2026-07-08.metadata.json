@@ -1,0 +1,7 @@
+{
+  "provider": "bsc_json_rpc",
+  "official_deployment_source": "https://github.com/venusprotocol/venus-protocol-documentation/blob/main/.gitbook/assets/swagger.json",
+  "official_method_source": "https://docs-v4.venus.io/technical-reference/reference-core-pool/comptroller/diamond/facets/market-facet",
+  "retrieved_at_utc": "2026-09-07T03:13:06.808935+00:00",
+  "sha256": "5f71625abf4da12ade62a81cdb95cfc51fe943d98f594581b64680ea3c95b6d8"
+}

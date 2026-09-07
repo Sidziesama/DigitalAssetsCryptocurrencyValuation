@@ -1,0 +1,84 @@
+{
+  "status": "crypto_findings_frozen_exploratory",
+  "active_hypotheses": [
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H8"
+  ],
+  "headline": "Fee activity has a persistent positive association with valuation when active capture exists, but the evidence is exploratory and does not predict seven-day returns.",
+  "findings": {
+    "H1": {
+      "status": "exploratory_positive_association_not_confirmed",
+      "assets": 4,
+      "rows": 352,
+      "active_addresses_coefficient": 0.02843860020498784,
+      "active_addresses_exact_p": 0.5,
+      "transaction_count_coefficient": 0.11223930210248013,
+      "transaction_count_exact_p": 0.25,
+      "plain_finding": "Active-address and transaction-count coefficients are positive in the four-asset panel, and transaction count remains positive in every leave-one-out sample. Exact four-cluster inference does not reject zero, so H1 remains suggestive and cannot be generalized beyond BTC, ETH, UNI, and AAVE."
+    },
+    "H2": {
+      "status": "exploratory_evidence_at_10pct_not_confirmatory",
+      "pooled_market_cap_interaction": 0.1322235356471139,
+      "pooled_market_cap_exact_p": 0.08203125,
+      "chain_market_cap_interaction": 0.1408560910924019,
+      "chain_market_cap_exact_p": 0.125,
+      "pooled_forward_return_interaction": -0.0015794909463502367,
+      "pooled_forward_return_exact_p": 0.7509765625,
+      "chain_forward_return_interaction": -0.004901662696016015,
+      "chain_forward_return_exact_p": 0.328125,
+      "leave_one_asset_out_positive": true,
+      "nonoverlap_pooled_positive_offsets": 2,
+      "nonoverlap_chain_positive_offsets": 2,
+      "nonoverlap_offsets_rejecting_10pct": 0,
+      "plain_finding": "Higher fees are more strongly associated with market value when active capture exists. The result is persistent across asset exclusions and crosses the 10% exploratory reference threshold, but the post-pilot freeze and small sample prevent confirmatory interpretation; there is no robust short-horizon return signal."
+    },
+    "H3": {
+      "status": "supply_proxy_diagnostic_not_identification_ready",
+      "assets": 4,
+      "rows": 296,
+      "assets_with_within_supply_variation": 2,
+      "supply_growth_coefficient": 1130.6496492090846,
+      "effect_per_basis_point": 0.11306496492090846,
+      "exact_p": 0.25,
+      "observed_sign": "positive",
+      "plain_finding": "The free circulating-supply diagnostic does not support H3: its coefficient is positive rather than the predicted negative and exact inference does not reject zero. More importantly, only BTC and ETH vary within the window, so a point-in-time unlock and issuance event panel is still required for an identification-ready test."
+    },
+    "H4": {
+      "status": "source_readiness_complete_estimation_blocked",
+      "assets": 6,
+      "verified_stake_positive_assets": 3,
+      "positive_assets_with_historical_staking": 1,
+      "positive_assets_with_partial_component_history": 2,
+      "market_proxy_assets": 6,
+      "plain_finding": "H4 is not yet estimable. A complete 90-day BNB consensus-staking series ranges from about 25.51m to 25.78m BNB. The exact ETH active-effective-balance collector is implemented but needs an archival consensus endpoint, while the legacy stkAAVE series excludes current Umbrella aToken/GHO stake. One complete positive-staking series remains insufficient to identify liquid-float effects."
+    },
+    "H8": {
+      "status": "exploratory_no_robust_breadth_premium_evidence",
+      "design_ready_assets": 6,
+      "raw_breadth_slope": 0.7401016715332025,
+      "exact_permutation_p_two_sided": 0.7,
+      "spearman_rank_correlation": 0.11180339887498948,
+      "exact_rank_permutation_p_two_sided": 1.0,
+      "leave_one_asset_out_positive": 4,
+      "six_asset_extension_slope": 0.48443072371220147,
+      "six_asset_extension_exact_p": 0.44166666666666665,
+      "six_asset_extension_rank_correlation": 0.2125118592516207,
+      "six_asset_extension_rank_exact_p": 0.7333333333333333,
+      "six_asset_extension_leave_one_out_positive": 6,
+      "plain_finding": "The frozen five-asset breadth result was positive but unstable. In the separately frozen six-asset extension, the slope remains positive and is positive in all six leave-one-out samples, but exact permutation inference does not reject zero. Breadth is more sign-stable after adding BNB, yet there is still no statistically robust valuation-premium evidence."
+    }
+  },
+  "classification_review": {
+    "decisions": 10,
+    "agreements": 10,
+    "disagreements": 0,
+    "raw_agreement": 1.0,
+    "cohen_kappa": 1.0,
+    "resolution": "Cardano VA_PROTOCOL = 0. Ordinary staking rewards are service compensation, and governance treasury spending on ecosystem projects is VA_GOV rather than holder-directed protocol capture."
+  },
+  "deferred": "Stablecoin H5, H6, and H7 are preserved for a separate later phase and do not gate these findings.",
+  "interpretation_guardrail": "These are research findings about associations and evidence readiness, not causal claims, price targets, or investment recommendations."
+}

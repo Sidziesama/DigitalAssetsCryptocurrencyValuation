@@ -1,7 +1,7 @@
 asset_id,symbol,selection_tier,valid_from,consensus,va_monetary,va_gas,va_stake,va_burn,va_scarcity,va_collateral,va_gov,va_protocol,va_utility,va_incentive,va_breadth_count,direct_capture_active,h2_capture_group,classification_status
 crypto_btc,BTC,market_core,2026-08-22,PoW,1,0,0,0,1,1,0,0,0,0,3,0,no_active_capture,provisional_pending_targeted_review
 crypto_eth,ETH,market_core,2026-08-22,PoS,1,1,1,1,0,1,0,1,1,0,7,1,active_capture,provisional_pending_targeted_review
-crypto_bnb,BNB,market_core,2026-08-22,PoS family,0,1,1,1,0,1,1,1,1,1,8,1,active_capture,provisional_pending_targeted_review
+crypto_bnb,BNB,market_core,2026-08-22,PoS family,1,1,1,1,0,1,1,1,1,1,9,1,active_capture,provisional_pending_targeted_review
 crypto_xrp,XRP,market_core,2026-08-22,federated consensus,1,1,0,1,1,0,0,1,1,0,6,1,active_capture,provisional_pending_targeted_review
 crypto_sol,SOL,market_core,2026-08-22,PoS family,0,1,1,1,0,1,0,1,1,0,6,1,active_capture,provisional_pending_targeted_review
 crypto_trx,TRX,market_core,2026-08-22,DPoS,1,1,1,1,0,1,1,1,1,1,9,1,active_capture,provisional_pending_targeted_review
@@ -9,7 +9,7 @@ crypto_hype,HYPE,growth_sleeve,2026-08-22,PoS family,0,1,1,1,0,0,1,1,1,1,7,1,act
 crypto_doge,DOGE,market_core,2026-08-22,PoW,1,1,0,0,0,0,0,0,0,0,2,0,no_active_capture,provisional_pending_targeted_review
 crypto_zec,ZEC,market_core,2026-08-22,PoW,1,1,0,0,1,0,0,0,0,0,3,0,no_active_capture,provisional_pending_targeted_review
 crypto_link,LINK,market_core,2026-08-22,service staking,0,0,1,0,0,0,0,1,1,1,4,1,active_capture,provisional_pending_targeted_review
-crypto_ada,ADA,market_core,2026-08-22,PoS,0,1,1,0,1,1,1,1,1,0,7,1,active_capture,provisional_pending_targeted_review
+crypto_ada,ADA,market_core,2026-08-22,PoS,0,1,1,0,1,1,1,0,1,0,6,0,no_active_capture,provisional_pending_targeted_review
 crypto_xmr,XMR,market_core,2026-08-22,PoW,1,1,0,0,0,0,0,0,0,0,2,0,no_active_capture,provisional_pending_targeted_review
 crypto_xlm,XLM,economic_coverage,2026-08-22,federated consensus,1,1,0,1,1,0,1,1,1,0,7,1,active_capture,provisional_pending_targeted_review
 crypto_bch,BCH,economic_coverage,2026-08-22,PoW,1,1,0,0,1,0,0,0,0,0,3,0,no_active_capture,provisional_pending_targeted_review

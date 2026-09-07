@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_aave",
+  "scope": "application_protocol",
+  "economic_system": "Aave",
+  "provider_metric": "dailyRevenue",
+  "source_url": "https://api.llama.fi/summary/fees/aave?dataType=dailyRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-30T23:00:18.076611+00:00",
+  "sha256": "e4f969c2036dd0db3d66211ae8f792664d5e825773d4b89f03fd56d804b96780"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-22",
+  "analysis_window": {"start": "2025-08-26", "end": "2026-08-21"},
+  "original_assets": ["crypto_btc", "crypto_eth", "crypto_bnb", "crypto_uni", "crypto_aave", "crypto_arb"],
+  "expansion_assets": ["crypto_sol", "crypto_avax", "crypto_trx", "crypto_xrp", "crypto_ada"],
+  "requirements": {
+    "market_provider": "coinpaprika",
+    "market_status": "pass",
+    "complete_daily_fees": true,
+    "required_mechanism_codes": ["VA_BURN", "VA_PROTOCOL"],
+    "mechanism_state_known_by_window_start": true,
+    "selection_uses_model_outcomes": false
+  }
+}

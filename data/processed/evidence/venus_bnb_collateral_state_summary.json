@@ -1,0 +1,15 @@
+{
+  "status": "venus_bnb_collateral_verified_positive",
+  "asset_id": "crypto_bnb",
+  "start_date": "2026-05-25",
+  "end_date": "2026-08-22",
+  "expected_days": 90,
+  "observed_state_days": 90,
+  "materiality_days": 90,
+  "classification_pass_days": 90,
+  "minimum_collateral_factor": 0.8,
+  "maximum_collateral_factor": 0.8,
+  "failures": [],
+  "recommended_va_collateral": 1,
+  "rule": "vBNB must be listed with a positive core-pool collateral factor at every daily archival block in the 90-day materiality window."
+}

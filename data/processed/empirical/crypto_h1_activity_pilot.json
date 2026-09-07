@@ -1,0 +1,66 @@
+{
+  "status": "exploratory_four_asset_h1_complete",
+  "sample_rule": "Source-defined common Coin Metrics coverage fixed to BTC, ETH, UNI, and AAVE; it does not represent the broader crypto universe.",
+  "rows": 352,
+  "assets": [
+    "crypto_aave",
+    "crypto_btc",
+    "crypto_eth",
+    "crypto_uni"
+  ],
+  "dates": 88,
+  "outcome": "log_market_cap_usd",
+  "coefficients": {
+    "log1p_active_addresses_lag1": 0.02843860020498784,
+    "log1p_transaction_count_lag1": 0.11223930210248013
+  },
+  "within_r_squared": 0.21686413056163245,
+  "inference": {
+    "log1p_active_addresses_lag1": {
+      "coefficient": 0.02843860020498784,
+      "cluster_robust_standard_error_cr1": 0.04860622752337434,
+      "observed_t": 0.5850814114572448,
+      "wild_cluster_bootstrap_p_two_sided": 0.5,
+      "bootstrap_assignments": 16,
+      "clusters": 4,
+      "minimum_two_sided_p_resolution": 0.125
+    },
+    "log1p_transaction_count_lag1": {
+      "coefficient": 0.11223930210248013,
+      "cluster_robust_standard_error_cr1": 0.04935613359674126,
+      "observed_t": 2.274069987319484,
+      "wild_cluster_bootstrap_p_two_sided": 0.25,
+      "bootstrap_assignments": 16,
+      "clusters": 4,
+      "minimum_two_sided_p_resolution": 0.125
+    }
+  },
+  "leave_one_asset_out": [
+    {
+      "excluded_asset": "crypto_aave",
+      "log1p_active_addresses_lag1": -0.003991696254006749,
+      "log1p_transaction_count_lag1": 0.1603846106996698
+    },
+    {
+      "excluded_asset": "crypto_btc",
+      "log1p_active_addresses_lag1": 0.04321253764086372,
+      "log1p_transaction_count_lag1": 0.10330056084541468
+    },
+    {
+      "excluded_asset": "crypto_eth",
+      "log1p_active_addresses_lag1": -0.020152882497340763,
+      "log1p_transaction_count_lag1": 0.14234821657159843
+    },
+    {
+      "excluded_asset": "crypto_uni",
+      "log1p_active_addresses_lag1": 0.07526061351026474,
+      "log1p_transaction_count_lag1": 0.050617686900663886
+    }
+  ],
+  "guardrails": [
+    "Four clusters yield only 16 wild-cluster sign assignments and cannot support reliable generalization.",
+    "Active addresses are ledger addresses, not unique users; transaction definitions remain provider-specific.",
+    "Usage and valuation are jointly determined, so coefficients are associations rather than causal network effects.",
+    "The four-asset source-defined sample cannot be selected or expanded based on coefficient results."
+  ]
+}

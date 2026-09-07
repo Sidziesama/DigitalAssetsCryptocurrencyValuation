@@ -1,29 +1,29 @@
 {
   "schema_version": 1,
-  "document_version": "0.1-draft",
-  "status": "draft_not_frozen",
+  "document_version": "0.2-frozen-post-pilot",
+  "status": "frozen_post_pilot_for_reproducibility",
   "as_of": "2026-08-22",
-  "analysis_window": {"start":"2026-05-25","end":"2026-08-21"},
+  "analysis_window": {"start":"2025-08-26","end":"2026-08-21"},
   "sample": {
-    "market_assets": ["crypto_btc","crypto_eth","crypto_bnb","crypto_uni","crypto_aave","crypto_arb"],
+    "market_assets": ["crypto_btc","crypto_eth","crypto_bnb","crypto_uni","crypto_aave","crypto_arb","crypto_sol","crypto_avax","crypto_trx","crypto_xrp","crypto_ada"],
     "activity_assets": ["crypto_btc","crypto_eth","crypto_uni","crypto_aave"],
-    "selection_rule": "First evidence tranche selected before outcome construction; unsupported provider assets remain in the market panel and out of activity specifications.",
+    "selection_rule": "The original six-asset evidence tranche is retained. SOL, AVAX, TRX, XRP, and ADA are added by a pre-outcome screen requiring one-year market coverage, complete free chain-fee history, and primary effective-dated capture evidence; unsupported assets are not substituted based on model results.",
     "no_outcome_based_replacement": true
   },
   "H2": {
     "claim": "Economic activity predicts value more strongly when an active burn or protocol-capture mechanism exists.",
-    "primary_status": "candidate_fee_layer_ready_preregistration_freeze_pending",
+    "primary_status": "frozen_exploratory_fee_layer",
     "candidate_economic_variables": ["log1p_fees_usd_lag1","log1p_protocol_revenue_usd_lag1","log1p_holders_revenue_usd_lag1"],
     "exploratory_activity_proxies": ["log1p_active_addresses_lag1","log1p_transaction_count_lag1"],
     "capture_variable": "effective_dated_h2_active_capture",
     "interaction_variables": ["active_addresses_x_capture","transaction_count_x_capture","fees_x_capture","fees_x_application_scope"],
     "outcomes": ["log_market_cap_usd","forward_log_return_7d"],
     "scope_design": {
-      "primary": "Pooled six-asset panel with fee-by-scope and fee-by-capture interactions; the time-invariant scope main effect is absorbed by asset fixed effects.",
+      "primary": "Pooled eleven-asset panel with fee-by-scope and fee-by-capture interactions; the time-invariant scope main effect is absorbed by asset fixed effects.",
       "primary_fee_measure": "log1p_fees_usd_lag1",
       "scope_indicator": "application_protocol_scope",
       "sensitivities": [
-        "Chain-only panel: BTC, ETH, BNB, and ARB.",
+        "Chain-only panel: BTC, ETH, BNB, ARB, SOL, AVAX, TRX, XRP, ADA.",
         "Application-only panel: UNI and AAVE, reported descriptively because two cross-sectional units do not support reliable clustered inference.",
         "Leave-one-asset-out estimates for the pooled and chain-only panels.",
         "Protocol revenue and holder revenue as separate secondary specifications; never substitute them for fees or combine the accounting concepts."
@@ -36,9 +36,9 @@
       "secondary": "Repeat each model separately for protocol revenue and holder revenue only where the relevant field is observed."
     },
     "standard_errors": {
-      "primary": "Asset-clustered covariance with wild-cluster-bootstrap p-values reported because the pilot has only six asset clusters.",
+      "primary": "Asset-clustered covariance with wild-cluster-bootstrap p-values reported because the expanded pilot still has only eleven asset clusters.",
       "forward_return": "Asset-clustered and seven-day horizon-robust inference.",
-      "small_sample_guardrail": "All pilot inference remains exploratory; conventional clustered asymptotics are not treated as reliable with six assets."
+      "small_sample_guardrail": "All pilot inference remains exploratory; conventional clustered asymptotics are not treated as reliable with only eleven assets."
     },
     "interpretation": "Fees, protocol revenue, and holder revenue remain separate. Chain-level BTC/ETH/BNB/ARB observations and application-level UNI/AAVE observations use explicit scope controls and within-scope sensitivity analysis."
   },
@@ -49,7 +49,7 @@
     "breadth_rule": "Withhold breadth unless all ten VA codes are verified for the asset-date.",
     "complete_case_assets": ["crypto_btc", "crypto_eth", "crypto_uni", "crypto_aave", "crypto_arb"],
     "withheld_assets": ["crypto_bnb"],
-    "withholding_reason": "BNB VA_MONETARY and VA_COLLATERAL remain null under the documented evidence-blocker policy."
+    "withholding_reason": "BNB was unresolved when this five-asset pilot was frozen. Its classifications were subsequently resolved, but the original sample is preserved; BNB belongs in a separately versioned six-asset extension."
   },
   "time_rules": {
     "activity_lag": "exact calendar t-1; gaps remain null",
@@ -57,5 +57,5 @@
     "realized_volatility": "annualized sample standard deviation of 30 consecutive daily log returns",
     "mechanism_state": "latest evidenced effective event on or before t; no August-state backfill"
   },
-  "estimation_gate": "H2 implementation diagnostics pass and guarded point estimates may be reported as exploratory without p-values. H8 may proceed only as a five-asset complete-case pilot while BNB remains withheld. Keep the preregistration draft unfrozen until the exclusion policy and stablecoin review gates are approved."
+  "estimation_gate": "The reviewed eleven-asset H2 specification is frozen after the initial pilot was observed; all H2 estimates remain exploratory rather than confirmatory. The original H8 five-asset pilot is immutable, and newly eligible BNB must enter only a separately versioned six-asset extension. Stablecoin gates belong to a deferred phase."
 }

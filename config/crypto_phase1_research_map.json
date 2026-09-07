@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-07",
+  "purpose": "Join the frozen Phase 1 function taxonomy to what the repository can actually observe and to the registered experiments, so every function code carries its bundle, rule, indicators, prevalence, measured series, and experimental use in one place.",
+  "observability_states": [
+    "observed_series",
+    "partial_series",
+    "documentary_only",
+    "not_collected"
+  ],
+  "indicator_observability": {
+    "payment_or_settlement_activity": {
+      "state": "partial_series",
+      "dataset": "data/processed/historical/crypto_fundamentals_daily_coinmetrics.csv",
+      "measure": "transaction_count",
+      "note": "Coin Metrics Community counts for the four covered assets plus a Dune series for BNB; transfer value is unavailable on the free tier."
+    },
+    "active_addresses": {
+      "state": "observed_series",
+      "dataset": "data/processed/historical/crypto_fundamentals_daily_coinmetrics.csv",
+      "measure": "active_addresses",
+      "note": "Ledger addresses, not users."
+    },
+    "transfer_value": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Adjusted transfer value is not available on the free Coin Metrics tier."
+    },
+    "reserve_or_store_of_value_evidence": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_monetary_evidence.json",
+      "measure": null,
+      "note": "Dated primary evidence of monetary or payment design."
+    },
+    "fees_paid_in_native_token": {
+      "state": "observed_series",
+      "dataset": "data/processed/empirical/crypto_fee_fundamentals_daily.csv",
+      "measure": "fees_usd",
+      "note": "DeFiLlama daily fees in USD for eleven economic systems; chain scope for nine, application scope for UNI and AAVE."
+    },
+    "transactions": {
+      "state": "observed_series",
+      "dataset": "data/processed/historical/crypto_fundamentals_daily_coinmetrics.csv",
+      "measure": "transaction_count",
+      "note": "Four covered assets on the free provider tier."
+    },
+    "computational_or_blockspace_demand": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Gas-used or blockspace utilization series are not yet archived."
+    },
+    "staked_native_units": {
+      "state": "partial_series",
+      "dataset": "data/processed/historical/crypto_h4_bnb_stake_daily.csv",
+      "measure": "total_staked_native_units",
+      "note": "BNB consensus stake is complete for 90 days; legacy stkAAVE is a partial component; ETH requires an archival consensus endpoint."
+    },
+    "staked_supply_ratio": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Requires the staked series joined to circulating supply; blocked with staked_native_units."
+    },
+    "slashing_or_loss_exposure": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h4_staking_sources.json",
+      "measure": null,
+      "note": "Official staking documentation only."
+    },
+    "tokens_burned": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Native burn quantities are not archived; holder revenue is the current USD proxy."
+    },
+    "burn_value_usd": {
+      "state": "partial_series",
+      "dataset": "data/processed/empirical/crypto_fee_fundamentals_daily.csv",
+      "measure": "holders_revenue_usd",
+      "note": "DeFiLlama holder revenue mixes burn and distribution routes and is only a proxy."
+    },
+    "net_issuance": {
+      "state": "partial_series",
+      "dataset": "data/processed/historical/crypto_fundamentals_daily_coinmetrics.csv",
+      "measure": "current_supply",
+      "note": "Circulating supply varies within the window only for BTC and ETH under the free measure."
+    },
+    "terminal_supply_rule": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_1.json",
+      "measure": null,
+      "note": "Dated protocol documentation."
+    },
+    "issuance_schedule": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_1.json",
+      "measure": null,
+      "note": "Dated protocol documentation."
+    },
+    "change_authority": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_1.json",
+      "measure": null,
+      "note": "Dated governance documentation."
+    },
+    "collateral_balance_usd": {
+      "state": "observed_series",
+      "dataset": "data/processed/evidence/crypto_collateral_protocol_detail.csv",
+      "measure": "supplied_balance_usd",
+      "note": "Protocol-level supplied balances across the named lending screen; Aave and Venus state reads verify eligibility."
+    },
+    "collateral_to_market_cap": {
+      "state": "observed_series",
+      "dataset": "data/processed/evidence/crypto_collateral_daily_proxy.csv",
+      "measure": "supplied_to_market_cap",
+      "note": "Derived from the collateral screen and market snapshots."
+    },
+    "materiality_persistence_days": {
+      "state": "observed_series",
+      "dataset": "data/processed/evidence/crypto_collateral_screen_summary.csv",
+      "measure": "material_days",
+      "note": "90-day persistence count from the collateral screen."
+    },
+    "voting_power": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_1.json",
+      "measure": null,
+      "note": "Governance documentation; no delegated-supply series yet."
+    },
+    "delegated_supply": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "On-chain delegation totals are not yet archived."
+    },
+    "binding_proposals": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_1.json",
+      "measure": null,
+      "note": "Governance documentation."
+    },
+    "treasury_or_upgrade_authority": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_1.json",
+      "measure": null,
+      "note": "Governance documentation; the ARB and ADA treasury boundary is adjudicated."
+    },
+    "holder_distributions": {
+      "state": "partial_series",
+      "dataset": "data/processed/empirical/crypto_fee_fundamentals_daily.csv",
+      "measure": "holders_revenue_usd",
+      "note": "USD proxy that does not separate distribution from buyback or burn."
+    },
+    "buybacks": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_mechanism_events.json",
+      "measure": null,
+      "note": "Effective-dated activation and pause events; the Aave buyback route is the evidenced case."
+    },
+    "usage_linked_burn": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_mechanism_events.json",
+      "measure": null,
+      "note": "Effective-dated burn activation events; UNIfication is the evidenced within-window activation."
+    },
+    "enforceable_holder_claim": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_design_evidence_tranche_1.json",
+      "measure": null,
+      "note": "Dated primary evidence only."
+    },
+    "required_service_payments": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_2.json",
+      "measure": null,
+      "note": "Service documentation only."
+    },
+    "access_or_consumption_demand": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Service-specific consumption series are not archived."
+    },
+    "service_usage": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Service-specific usage series are not archived."
+    },
+    "program_emissions": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_2.json",
+      "measure": null,
+      "note": "Program documentation with effective dates."
+    },
+    "recipient_activity": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Recipient-level activity is not archived."
+    },
+    "subsidy_expenditure": {
+      "state": "not_collected",
+      "dataset": null,
+      "measure": null,
+      "note": "Program expenditure series are not archived."
+    },
+    "program_effective_dates": {
+      "state": "documentary_only",
+      "dataset": "config/crypto_h8_evidence_tranche_2.json",
+      "measure": null,
+      "note": "Dated program documentation."
+    }
+  },
+  "experiment_use": {
+    "VA_MONETARY": [
+      "P1_H1",
+      "P1_H3"
+    ],
+    "VA_GAS": [
+      "P1_H1",
+      "P1_H3"
+    ],
+    "VA_STAKE": [
+      "P1_H4",
+      "P1_H3"
+    ],
+    "VA_BURN": [
+      "P1_H2",
+      "P1_H5",
+      "P1_H3"
+    ],
+    "VA_SCARCITY": [
+      "P1_H3"
+    ],
+    "VA_COLLATERAL": [
+      "P1_H3"
+    ],
+    "VA_GOV": [
+      "P1_H3"
+    ],
+    "VA_PROTOCOL": [
+      "P1_H2",
+      "P1_H5",
+      "P1_H3"
+    ],
+    "VA_UTILITY": [
+      "P1_H3"
+    ],
+    "VA_INCENTIVE": [
+      "P1_H3"
+    ]
+  },
+  "experiment_status": {
+    "P1_H1": {
+      "status": "exploratory_pilot_complete",
+      "artifact": "data/processed/empirical/crypto_h1_activity_pilot.json",
+      "summary": "Four-asset activity panel; positive coefficients, exact four-cluster inference does not reject zero."
+    },
+    "P1_H2": {
+      "status": "frozen_exploratory_checkpoint",
+      "artifact": "data/processed/empirical/crypto_h2_small_cluster_inference.json",
+      "summary": "Eleven-asset fee-capture interaction; pooled p=0.082 under the older broad treasury rule, not confirmatory.",
+      "strict_rule_sensitivity": "data/processed/empirical/crypto_h2_strict_capture_sensitivity.json"
+    },
+    "P1_H3": {
+      "status": "frozen_exploratory_comparison_complete",
+      "artifact": "data/processed/empirical/crypto_phase1_bundle_comparison.json",
+      "summary": "Six-asset leave-one-out comparison; bundle count does not beat raw breadth, and the monetary-store bundle is the only predictor that lowers prediction error."
+    },
+    "P1_H4": {
+      "status": "source_readiness_complete_estimation_blocked",
+      "artifact": "data/processed/evidence/crypto_h4_source_readiness.json",
+      "summary": "Needs an archival Ethereum consensus endpoint and Aave Umbrella coverage."
+    },
+    "P1_H5": {
+      "status": "frozen_exploratory_event_study",
+      "artifact": "data/processed/empirical/crypto_mechanism_event_study.json",
+      "summary": "Two within-window effective-dated mechanism events: UNIfication activation and the Aave buyback pause."
+    }
+  }
+}

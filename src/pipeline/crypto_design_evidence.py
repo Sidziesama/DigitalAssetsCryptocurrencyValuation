@@ -51,13 +51,14 @@ def audit(evidence: dict[str, Any], design: dict[str, Any], registry: dict[str, 
         rows.append({**row, "provisional_value": provisional,
                      "verified_matches_design": "" if recommended is None else int(provisional == recommended)})
     verified = [r for r in rows if r["status"] == "verified"]
+    complete = len(verified) == len(rows)
     summary = {
-        "status": "tranche_complete_pending_remaining_evidence",
+        "status": "tranche_evidence_complete" if complete else "tranche_complete_pending_remaining_evidence",
         "assets": len(evidence["assets"]), "targeted_decisions": len(rows),
         "verified_decisions": len(verified), "pending_decisions": len(rows) - len(verified),
         "verified_mismatches": sum(r["verified_matches_design"] == 0 for r in verified),
         "coverage_ratio": len(verified) / len(rows),
-        "next_requirement": "Resolve the remaining monetary and positive collateral-eligibility tests; then extend the same evidence schema to the remaining 19 assets."
+        "next_requirement": "Freeze this completed evidence tranche; any extension must be separately versioned and must not tune rules from outcomes." if complete else "Resolve every remaining null under its code-specific evidence rule; then extend the same evidence schema without outcome-tuning."
     }
     return rows, summary
 

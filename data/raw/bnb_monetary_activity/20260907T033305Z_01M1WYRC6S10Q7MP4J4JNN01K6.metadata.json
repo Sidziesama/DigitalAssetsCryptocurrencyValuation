@@ -1,0 +1,8 @@
+{
+  "provider": "dune",
+  "execution_id": "01M1WYRC6S10Q7MP4J4JNN01K6",
+  "retrieved_at_utc": "2026-09-07T03:33:05.764930+00:00",
+  "query_source": "Dune raw-SQL API over the curated bnb.transactions table",
+  "methodology_source": "https://docs.dune.com/data-catalog/evm/bnb/curated-data/transactions",
+  "sha256": "c88da8d79b16b8e8b54daa7332f801af2a76e4277e62f75436afa11e65c17e56"
+}

@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_trx",
+  "scope": "chain",
+  "economic_system": "TRON",
+  "provider_metric": "dailyFees",
+  "source_url": "https://api.llama.fi/overview/fees/tron?dataType=dailyFees&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-31T01:19:16.652025+00:00",
+  "sha256": "64bcebea1712b382f3ac735eae2e6354ae1bc13e79a00c21fee175bd31e41bfa"
+}

@@ -1,13 +1,23 @@
-asset_id,code,effective_from,value,source_url,rationale,as_of,design_value,matches_design
-crypto_aave,VA_BURN,2026-04-19,0,https://governance.aave.com/t/arfc-pause-aave-buybacks/24686,Buybacks are not burn and were paused.,2026-08-22,0,1
-crypto_aave,VA_PROTOCOL,2026-04-19,0,https://governance.aave.com/t/arfc-pause-aave-buybacks/24686,"The active buyback route was paused; retain as an option, not active capture.",2026-08-22,0,1
-crypto_arb,VA_BURN,2023-03-23,0,https://github.com/ArbitrumFoundation/governance,The reviewed ARB governance-token implementation and allocation workflow contain no live automatic rules-based burn mechanism.,2026-08-22,0,1
-crypto_arb,VA_PROTOCOL,2023-12-31,1,https://docs.arbitrum.foundation/assets/files/ArbitrumFoundationTransparencyReport2023-75b1b491667ad2fa1d9d574a2108f28b.pdf,Network revenue enters the DAO treasury governed by ARB tokenholders.,2026-08-22,1,1
-crypto_bnb,VA_BURN,2023-01-17,1,https://www.bnbchain.org/en/blog/22nd-bnb-burn,Completed Auto-Burn and live gas-fee burn documented.,2026-08-22,1,1
-crypto_bnb,VA_PROTOCOL,2023-01-17,1,https://www.bnbchain.org/en/blog/22nd-bnb-burn,Network activity is linked to BNB burning.,2026-08-22,1,1
-crypto_btc,VA_BURN,2009-01-03,0,https://developer.bitcoin.org/devguide/transactions.html,"Fees are transferred to miners, not burned.",2026-08-22,0,1
-crypto_btc,VA_PROTOCOL,2009-01-03,0,https://developer.bitcoin.org/devguide/transactions.html,"Mining revenue is compensation to block producers, not a holder route.",2026-08-22,0,1
-crypto_eth,VA_BURN,2021-08-05,1,https://eips.ethereum.org/EIPS/eip-1559,The base fee is burned.,2026-08-22,1,1
-crypto_eth,VA_PROTOCOL,2021-08-05,1,https://eips.ethereum.org/EIPS/eip-1559,Usage-linked base-fee burning satisfies the capture rule.,2026-08-22,1,1
-crypto_uni,VA_BURN,2026-02-18,1,https://gov.uniswap.org/t/temp-check-protocol-fee-expansion-eight-more-chains-and-remaining-mainnet-v3-pools/26035,The live fee system converts collected fees to UNI burns.,2026-08-22,1,1
-crypto_uni,VA_PROTOCOL,2026-02-18,1,https://gov.uniswap.org/t/temp-check-protocol-fee-expansion-eight-more-chains-and-remaining-mainnet-v3-pools/26035,Live protocol revenue is routed to UNI burns.,2026-08-22,1,1
+asset_id,code,effective_from,value,source_url,rationale,as_of,design_value,matches_design,secondary_source_url
+crypto_aave,VA_BURN,2026-04-19,0,https://governance.aave.com/t/arfc-pause-aave-buybacks/24686,Buybacks are not burn and were paused.,2026-08-22,0,1,
+crypto_aave,VA_PROTOCOL,2026-04-19,0,https://governance.aave.com/t/arfc-pause-aave-buybacks/24686,"The active buyback route was paused; retain as an option, not active capture.",2026-08-22,0,1,
+crypto_ada,VA_BURN,2020-07-29,0,https://docs.cardano.org/about-cardano/explore-more/monetary-policy,Cardano transaction fees enter the epoch reward pot rather than being destroyed.,2026-08-22,0,1,
+crypto_ada,VA_PROTOCOL,2020-07-29,0,https://docs.cardano.org/about-cardano/explore-more/monetary-policy,"Ordinary proof-of-stake rewards are service compensation, while the governance treasury funds third-party projects and protocol infrastructure rather than mechanically burning, buying back, or distributing value to ADA holders. Governance authority remains VA_GOV, not VA_PROTOCOL.",2026-08-22,0,1,https://developers.cardano.org/docs/community/funding/
+crypto_arb,VA_BURN,2023-03-23,0,https://github.com/ArbitrumFoundation/governance,The reviewed ARB governance-token implementation and allocation workflow contain no live automatic rules-based burn mechanism.,2026-08-22,0,1,
+crypto_arb,VA_PROTOCOL,2023-12-31,1,https://docs.arbitrum.foundation/assets/files/ArbitrumFoundationTransparencyReport2023-75b1b491667ad2fa1d9d574a2108f28b.pdf,Network revenue enters the DAO treasury governed by ARB tokenholders.,2026-08-22,1,1,
+crypto_avax,VA_BURN,2020-09-21,1,https://build.avax.network/docs/primary-network/avax-token,Avalanche transaction fees are permanently burned.,2026-08-22,1,1,
+crypto_avax,VA_PROTOCOL,2020-09-21,1,https://build.avax.network/docs/primary-network/avax-token,Usage-linked transaction-fee burning provides a live automatic value-capture route.,2026-08-22,1,1,
+crypto_bnb,VA_BURN,2023-01-17,1,https://www.bnbchain.org/en/blog/22nd-bnb-burn,Completed Auto-Burn and live gas-fee burn documented.,2026-08-22,1,1,
+crypto_bnb,VA_PROTOCOL,2023-01-17,1,https://www.bnbchain.org/en/blog/22nd-bnb-burn,Network activity is linked to BNB burning.,2026-08-22,1,1,
+crypto_btc,VA_BURN,2009-01-03,0,https://developer.bitcoin.org/devguide/transactions.html,"Fees are transferred to miners, not burned.",2026-08-22,0,1,
+crypto_btc,VA_PROTOCOL,2009-01-03,0,https://developer.bitcoin.org/devguide/transactions.html,"Mining revenue is compensation to block producers, not a holder route.",2026-08-22,0,1,
+crypto_eth,VA_BURN,2021-08-05,1,https://eips.ethereum.org/EIPS/eip-1559,The base fee is burned.,2026-08-22,1,1,
+crypto_eth,VA_PROTOCOL,2021-08-05,1,https://eips.ethereum.org/EIPS/eip-1559,Usage-linked base-fee burning satisfies the capture rule.,2026-08-22,1,1,
+crypto_sol,VA_BURN,2020-03-16,1,https://solana.com/docs/core/fees/fee-structure,Solana permanently burns 50% of each transaction base fee.,2026-08-22,1,1,
+crypto_sol,VA_PROTOCOL,2020-03-16,1,https://solana.com/docs/core/fees/fee-structure,Usage-linked base-fee burning provides a live automatic value-capture route.,2026-08-22,1,1,
+crypto_trx,VA_BURN,2025-08-26,1,https://developers.tron.network/docs/tron-economic-model,The official economic model documents ongoing transaction-fee burning and a sustained deflationary trend predating the analysis window; the study conservatively dates verification from window start.,2026-08-22,1,1,
+crypto_trx,VA_PROTOCOL,2025-08-26,1,https://developers.tron.network/docs/tron-economic-model,"Resource shortfalls automatically burn TRX at governed fixed rates, linking network usage to token destruction.",2026-08-22,1,1,
+crypto_uni,VA_BURN,2025-12-27,1,https://vote.uniswapfoundation.org/forum-article/7/duni-q4-and-year-end-2025-financial-statements-and-tax-update,"DUNI reports execution of UNIfication and the 100 million UNI burn on December 27, 2025; the approved architecture routes protocol fees to UNI burn.",2026-08-22,1,1,
+crypto_uni,VA_PROTOCOL,2025-12-27,1,https://vote.uniswapfoundation.org/forum-article/7/duni-q4-and-year-end-2025-financial-statements-and-tax-update,UNIfication execution activated the governance-approved fee-to-burn value-capture architecture.,2026-08-22,1,1,
+crypto_xrp,VA_BURN,2012-06-02,1,https://xrpl.org/docs/concepts/transactions/transaction-cost,Every applied XRP Ledger transaction irrevocably destroys its XRP transaction cost.,2026-08-22,1,1,
+crypto_xrp,VA_PROTOCOL,2012-06-02,1,https://xrpl.org/docs/concepts/transactions/transaction-cost,Usage-linked transaction-cost destruction provides a live automatic value-capture route.,2026-08-22,1,1,

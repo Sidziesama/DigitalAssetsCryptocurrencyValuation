@@ -1,0 +1,12 @@
+{
+  "status": "expansion_ready",
+  "candidates": 5,
+  "eligible_assets": [
+    "crypto_sol",
+    "crypto_avax",
+    "crypto_trx",
+    "crypto_xrp",
+    "crypto_ada"
+  ],
+  "selection_uses_model_outcomes": false
+}

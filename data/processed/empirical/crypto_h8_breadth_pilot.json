@@ -1,0 +1,40 @@
+{
+  "status": "exploratory_five_asset_h8_complete",
+  "assets": 5,
+  "outcome": "mean_log_market_cap_usd_over_common_h2_window",
+  "predictor": "verified_raw_ten_code_value_accrual_breadth",
+  "slope": 0.7401016715332025,
+  "exact_permutation_p_two_sided": 0.7,
+  "spearman_rank_correlation": 0.11180339887498948,
+  "exact_rank_permutation_p_two_sided": 1.0,
+  "permutations": 120,
+  "leave_one_asset_out": [
+    {
+      "excluded_asset": "crypto_aave",
+      "slope": 0.7401016715332025
+    },
+    {
+      "excluded_asset": "crypto_arb",
+      "slope": 0.4730622348338432
+    },
+    {
+      "excluded_asset": "crypto_btc",
+      "slope": 1.342399815397394
+    },
+    {
+      "excluded_asset": "crypto_eth",
+      "slope": -2.060519066800836
+    },
+    {
+      "excluded_asset": "crypto_uni",
+      "slope": 0.6002351089033033
+    }
+  ],
+  "leave_one_asset_out_positive": 4,
+  "guardrails": [
+    "Five assets provide only descriptive cross-sectional evidence and very coarse exact inference.",
+    "Raw breadth treats every verified function equally; no outcome-tuned weights are estimated.",
+    "Breadth may proxy for asset class, age, scale, or ecosystem maturity and is not causal.",
+    "BNB remains excluded only because this five-asset pilot was frozen before its classifications were resolved; it must enter a separately versioned extension."
+  ]
+}

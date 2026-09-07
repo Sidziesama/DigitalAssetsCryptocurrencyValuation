@@ -10,9 +10,9 @@ class CheckpointReadinessTests(unittest.TestCase):
     def test_repository_checkpoint_reconciles(self):
         repo = Path(__file__).resolve().parents[1]
         result = build_readiness(repo)
-        self.assertEqual(result["status"], "commit_ready_methodology_checkpoint_not_model_ready")
-        self.assertEqual(result["crypto_evidence"]["pending_decisions"], 2)
-        self.assertEqual(len(result["crypto_evidence"]["unresolved"]), 2)
+        self.assertEqual(result["status"], "commit_ready_frozen_exploratory_h2_checkpoint")
+        self.assertEqual(result["crypto_evidence"]["pending_decisions"], 0)
+        self.assertEqual(len(result["crypto_evidence"]["unresolved"]), 0)
         self.assertTrue(all(result["checks"].values()))
 
     def test_checkpoint_rejects_verified_mismatch(self):
@@ -36,6 +36,20 @@ class CheckpointReadinessTests(unittest.TestCase):
                 "data/processed/empirical/crypto_h2_exploratory_estimates.json",
                 "data/processed/evidence/crypto_evidence_blockers_summary.json",
                 "data/processed/empirical/crypto_h2_small_cluster_inference.json",
+                "data/processed/empirical/crypto_h2_nonoverlap_sensitivity.json",
+                "data/processed/evidence/crypto_h2_expansion_readiness.json",
+                "data/processed/evidence/crypto_h2_expansion_evidence_summary.json",
+                "data/processed/evidence/independent_review_summary.json",
+                "data/processed/evidence/crypto_research_scope.json",
+                "data/processed/empirical/crypto_h8_breadth_pilot.json",
+                "data/processed/empirical/crypto_h8_six_asset_extension.json",
+                "data/processed/empirical/crypto_h1_activity_pilot.json",
+                "data/processed/empirical/crypto_h3_supply_pilot.json",
+                "data/processed/evidence/crypto_h4_source_readiness.json",
+                "data/processed/evidence/crypto_h4_aave_legacy_stake_summary.json",
+                "data/processed/evidence/crypto_h4_bnb_stake_summary.json",
+                "data/processed/evidence/crypto_h4_eth_stake_summary.json",
+                "data/processed/evidence/crypto_phase1_taxonomy_summary.json",
             ]:
                 target = copy / source
                 target.parent.mkdir(parents=True, exist_ok=True)

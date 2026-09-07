@@ -1,7 +1,7 @@
 asset_id,verified_code_count,h2_active_capture,h2_design_ready,h8_value_accrual_breadth,h8_design_ready
 crypto_btc,10,0,1,3,1
 crypto_eth,10,1,1,7,1
-crypto_bnb,8,1,1,,0
+crypto_bnb,10,1,1,9,1
 crypto_uni,10,1,1,3,1
 crypto_aave,10,0,1,4,1
 crypto_arb,10,1,1,3,1

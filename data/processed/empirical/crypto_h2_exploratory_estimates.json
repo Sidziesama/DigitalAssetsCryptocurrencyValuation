@@ -5,66 +5,68 @@
     {
       "specification": "pooled_market_cap",
       "outcome": "log_market_cap_usd",
-      "rows": 528,
-      "assets": 6,
-      "dates": 88,
+      "rows": 3971,
+      "assets": 11,
+      "dates": 361,
       "coefficients": {
-        "log1p_fees_usd_lag1": -0.04817728088276506,
-        "fees_x_capture": 0.08688256861518794,
-        "fees_x_application_scope": 0.04471572203562007
+        "log1p_fees_usd_lag1": -0.03225988519209765,
+        "h2_active_capture": -1.8482104498595338,
+        "fees_x_capture": 0.1322235356471139,
+        "fees_x_application_scope": 0.06549260657674792
       },
-      "within_r_squared": 0.12973408528252173,
-      "residual_degrees_of_freedom": 433,
-      "residual_rmse": 0.08280872749656541,
+      "within_r_squared": 0.0827195145854257,
+      "residual_degrees_of_freedom": 3597,
+      "residual_rmse": 0.16871925894853257,
       "standard_errors": null,
       "p_values": null
     },
     {
       "specification": "pooled_forward_return",
       "outcome": "forward_log_return_7d",
-      "rows": 486,
-      "assets": 6,
-      "dates": 81,
+      "rows": 3894,
+      "assets": 11,
+      "dates": 354,
       "coefficients": {
-        "log1p_fees_usd_lag1": 0.00323578585732679,
-        "fees_x_capture": 0.005875383392109525,
-        "fees_x_application_scope": -0.034426779303843434
+        "log1p_fees_usd_lag1": 0.0018030911981810624,
+        "h2_active_capture": 0.01078548556910827,
+        "fees_x_capture": -0.0015794909463502367,
+        "fees_x_application_scope": -0.004352010691764322
       },
-      "within_r_squared": 0.01723598030038853,
-      "residual_degrees_of_freedom": 398,
-      "residual_rmse": 0.05932454010848445,
+      "within_r_squared": 0.0029690436726007574,
+      "residual_degrees_of_freedom": 3527,
+      "residual_rmse": 0.051709493189845496,
       "standard_errors": null,
       "p_values": null
     },
     {
       "specification": "chain_market_cap",
       "outcome": "log_market_cap_usd",
-      "rows": 352,
-      "assets": 4,
-      "dates": 88,
+      "rows": 3249,
+      "assets": 9,
+      "dates": 361,
       "coefficients": {
-        "log1p_fees_usd_lag1": 0.0003601598769901529,
-        "fees_x_capture": 0.003191825860292167
+        "log1p_fees_usd_lag1": -0.03275386776121572,
+        "fees_x_capture": 0.1408560910924019
       },
-      "within_r_squared": 0.0010838109858133382,
-      "residual_degrees_of_freedom": 260,
-      "residual_rmse": 0.04474625353938946,
+      "within_r_squared": 0.07058873063998217,
+      "residual_degrees_of_freedom": 2879,
+      "residual_rmse": 0.1780103392639449,
       "standard_errors": null,
       "p_values": null
     },
     {
       "specification": "chain_forward_return",
       "outcome": "forward_log_return_7d",
-      "rows": 324,
-      "assets": 4,
-      "dates": 81,
+      "rows": 3186,
+      "assets": 9,
+      "dates": 354,
       "coefficients": {
-        "log1p_fees_usd_lag1": -0.0059552020416300715,
-        "fees_x_capture": 0.011509851201161131
+        "log1p_fees_usd_lag1": 0.0022821848278964823,
+        "fees_x_capture": -0.004901662696016015
       },
-      "within_r_squared": 0.010004205509864583,
-      "residual_degrees_of_freedom": 239,
-      "residual_rmse": 0.03865719012563082,
+      "within_r_squared": 0.0012814243146310744,
+      "residual_degrees_of_freedom": 2823,
+      "residual_rmse": 0.044502703431156455,
       "standard_errors": null,
       "p_values": null
     }
@@ -72,43 +74,73 @@
   "leave_one_asset_out": [
     {
       "excluded_asset": "crypto_aave",
-      "rows": 440,
-      "fees_x_capture": 0.03797143077772296,
-      "within_r_squared": 0.20536223181700164
+      "rows": 3610,
+      "fees_x_capture": 0.14227559972655282,
+      "within_r_squared": 0.077332843155413
+    },
+    {
+      "excluded_asset": "crypto_ada",
+      "rows": 3610,
+      "fees_x_capture": 0.15179495651400582,
+      "within_r_squared": 0.12643514593214356
     },
     {
       "excluded_asset": "crypto_arb",
-      "rows": 440,
-      "fees_x_capture": 0.08147199935857233,
-      "within_r_squared": 0.15539325916677005
+      "rows": 3610,
+      "fees_x_capture": 0.11377357261499613,
+      "within_r_squared": 0.07516894136565389
+    },
+    {
+      "excluded_asset": "crypto_avax",
+      "rows": 3610,
+      "fees_x_capture": 0.11291757145497607,
+      "within_r_squared": 0.07308033897257504
     },
     {
       "excluded_asset": "crypto_bnb",
-      "rows": 440,
-      "fees_x_capture": 0.12305424842385784,
-      "within_r_squared": 0.23250102149153606
+      "rows": 3610,
+      "fees_x_capture": 0.16579987739247617,
+      "within_r_squared": 0.1122841389083229
     },
     {
       "excluded_asset": "crypto_btc",
-      "rows": 440,
-      "fees_x_capture": 0.27377161888948365,
-      "within_r_squared": 0.1448308362949211
+      "rows": 3610,
+      "fees_x_capture": 0.10380756954592796,
+      "within_r_squared": 0.0667653031580906
     },
     {
       "excluded_asset": "crypto_eth",
-      "rows": 440,
-      "fees_x_capture": 0.09075022001207152,
-      "within_r_squared": 0.14062983549764585
+      "rows": 3610,
+      "fees_x_capture": 0.1416735440157716,
+      "within_r_squared": 0.08893135821675058
+    },
+    {
+      "excluded_asset": "crypto_sol",
+      "rows": 3610,
+      "fees_x_capture": 0.1339779626474496,
+      "within_r_squared": 0.08282476814465922
+    },
+    {
+      "excluded_asset": "crypto_trx",
+      "rows": 3610,
+      "fees_x_capture": 0.08413272214603894,
+      "within_r_squared": 0.06716160829369588
     },
     {
       "excluded_asset": "crypto_uni",
-      "rows": 440,
-      "fees_x_capture": 0.028160916421140793,
-      "within_r_squared": 0.14122986414094507
+      "rows": 3610,
+      "fees_x_capture": 0.14406777226100848,
+      "within_r_squared": 0.10495893409274415
+    },
+    {
+      "excluded_asset": "crypto_xrp",
+      "rows": 3610,
+      "fees_x_capture": 0.1666548709321365,
+      "within_r_squared": 0.10553129518977189
     }
   ],
   "guardrails": [
-    "No standard errors or p-values are reported at the six-cluster pilot stage.",
+    "No standard errors or p-values are reported in this point-estimate artifact; inference is produced separately for the 11-cluster pilot.",
     "Coefficients are descriptive associations, not causal effects or valuation recommendations.",
     "Chain and application fee scopes are not interchangeable; pooled models retain the predeclared scope interaction.",
     "Overlapping seven-day returns require horizon-robust inference before confirmatory interpretation."

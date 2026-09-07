@@ -1,0 +1,11 @@
+code,bundle,classification_rule,verified_assets,positive_assets,positive_asset_ids,indicators,observed_series_indicators,partial_series_indicators,documentary_only_indicators,not_collected_indicators,measurement_readiness,experiments
+VA_MONETARY,monetary_store,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests.",6,3,crypto_bnb|crypto_btc|crypto_eth,4,1,1,1,1,measured,P1_H1|P1_H3
+VA_GAS,transaction_service_demand,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees.",6,2,crypto_bnb|crypto_eth,3,2,0,0,1,measured,P1_H1|P1_H3
+VA_STAKE,security_commitment,"Token is locked, delegated, or economically at risk to secure a network or protocol service.",6,3,crypto_aave|crypto_bnb|crypto_eth,3,0,1,1,1,proxied,P1_H4|P1_H3
+VA_BURN,supply_absorption,A live rules-based mechanism irreversibly destroys tokens.,6,3,crypto_bnb|crypto_eth|crypto_uni,3,0,2,0,1,proxied,P1_H2|P1_H5|P1_H3
+VA_SCARCITY,monetary_store,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.,6,1,crypto_btc,3,0,0,3,0,documentary,P1_H3
+VA_COLLATERAL,financial_integration,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.,6,4,crypto_aave|crypto_bnb|crypto_btc|crypto_eth,3,3,0,0,0,measured,P1_H3
+VA_GOV,control_rights,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control.",6,4,crypto_aave|crypto_arb|crypto_bnb|crypto_uni,4,0,0,3,1,documentary,P1_H3
+VA_PROTOCOL,holder_capture,"A live mechanical route sends protocol revenue or surplus to the token or holders through distribution, buyback, burn, or an enforceable holder claim; governance over ecosystem spending alone does not qualify.",6,3,crypto_bnb|crypto_eth|crypto_uni,4,0,1,3,0,proxied,P1_H2|P1_H5|P1_H3
+VA_UTILITY,transaction_service_demand,Token is required to consume an identifiable non-generic service beyond transfer.,6,2,crypto_bnb|crypto_eth,3,0,0,1,2,documentary,P1_H3
+VA_INCENTIVE,subsidized_participation,"A systematic program subsidizes liquidity, usage, development, or participation.",6,3,crypto_aave|crypto_arb|crypto_bnb,4,0,0,2,2,documentary,P1_H3

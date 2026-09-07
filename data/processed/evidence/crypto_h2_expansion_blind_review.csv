@@ -1,0 +1,11 @@
+asset_id,code,reviewer_value,reviewer_source_url,reviewer_rationale
+crypto_sol,VA_BURN,,,
+crypto_sol,VA_PROTOCOL,,,
+crypto_avax,VA_BURN,,,
+crypto_avax,VA_PROTOCOL,,,
+crypto_trx,VA_BURN,,,
+crypto_trx,VA_PROTOCOL,,,
+crypto_xrp,VA_BURN,,,
+crypto_xrp,VA_PROTOCOL,,,
+crypto_ada,VA_BURN,,,
+crypto_ada,VA_PROTOCOL,,,

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-strict-capture-sensitivity",
+  "status": "frozen_before_sensitivity_estimation",
+  "freeze_date": "2026-09-07",
+  "purpose": "Re-estimate the frozen exploratory H2 valuation specifications after relabeling capture states under the Phase 1 strict holder-capture rule, without modifying the frozen pilot, its evidence files, or its event ledger.",
+  "baseline": "data/processed/empirical/crypto_h2_small_cluster_inference.json",
+  "panel": "data/processed/empirical/crypto_h2_exploratory_daily.csv",
+  "specifications": ["pooled_market_cap", "chain_market_cap"],
+  "overrides": [
+    {
+      "asset_id": "crypto_arb",
+      "code": "VA_PROTOCOL",
+      "value": 0,
+      "applies_from": "2023-12-31",
+      "source": "config/crypto_phase1_taxonomy.json adjudication governed_treasury_capture_boundary",
+      "rationale": "Under the strict rule, ARB-governed treasury spending on ecosystem purposes is VA_GOV, not VA_PROTOCOL. The treasury structure did not change, so the relabel applies to the whole panel."
+    }
+  ],
+  "selection_rule": "Overrides are exactly the Phase 1 adjudications whose strict-rule value differs from the frozen pilot's ledger; ADA already carries VA_PROTOCOL=0 in both and needs no override.",
+  "interpretation": "This is a robustness check on the frozen exploratory H2 result, reported beside it. It does not replace the frozen checkpoint and inherits every limit of that checkpoint: post-pilot freeze, eleven clusters, and no causal reading."
+}

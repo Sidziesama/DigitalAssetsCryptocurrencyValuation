@@ -1,0 +1,47 @@
+{
+  "status": "exploratory_strict_capture_sensitivity_complete",
+  "specification_version": "1.0-frozen-strict-capture-sensitivity",
+  "freeze_date": "2026-09-07",
+  "overrides": [
+    {
+      "asset_id": "crypto_arb",
+      "code": "VA_PROTOCOL",
+      "value": 0,
+      "applies_from": "2023-12-31"
+    }
+  ],
+  "relabeled_rows": 361,
+  "results": [
+    {
+      "specification": "pooled_market_cap",
+      "outcome": "log_market_cap_usd",
+      "frozen_coefficient": 0.1322235356471139,
+      "frozen_p": 0.08203125,
+      "strict_coefficient": 0.0611752112047495,
+      "strict_p": 0.4775390625,
+      "strict_cluster_robust_standard_error_cr1": 0.08413487385119976,
+      "coefficient_ratio_strict_to_frozen": 0.46266506870620655,
+      "clusters": 11,
+      "bootstrap_assignments": 2048,
+      "frozen_rejects_at_10pct": true,
+      "strict_rejects_at_10pct": false
+    },
+    {
+      "specification": "chain_market_cap",
+      "outcome": "log_market_cap_usd",
+      "frozen_coefficient": 0.1408560910924019,
+      "frozen_p": 0.125,
+      "strict_coefficient": 0.06035542625118715,
+      "strict_p": 0.5546875,
+      "strict_cluster_robust_standard_error_cr1": 0.09869977259627502,
+      "coefficient_ratio_strict_to_frozen": 0.4284899984310502,
+      "clusters": 9,
+      "bootstrap_assignments": 512,
+      "frozen_rejects_at_10pct": false,
+      "strict_rejects_at_10pct": false
+    }
+  ],
+  "headline_survives_strict_rule": false,
+  "selection_rule": "Overrides are exactly the Phase 1 adjudications whose strict-rule value differs from the frozen pilot's ledger; ADA already carries VA_PROTOCOL=0 in both and needs no override.",
+  "interpretation": "This is a robustness check on the frozen exploratory H2 result, reported beside it. It does not replace the frozen checkpoint and inherits every limit of that checkpoint: post-pilot freeze, eleven clusters, and no causal reading."
+}

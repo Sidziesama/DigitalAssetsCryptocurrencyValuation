@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "asset_id": "crypto_bnb",
+  "provider": "dune",
+  "api_base": "https://api.dune.com/api/v1",
+  "start_date": "2026-05-25",
+  "end_date": "2026-08-22",
+  "expected_days": 90,
+  "poll_seconds": 2,
+  "maximum_polls": 150,
+  "query_source": "Dune raw-SQL API over the curated bnb.transactions table",
+  "methodology_source": "https://docs.dune.com/data-catalog/evm/bnb/curated-data/transactions",
+  "api_source": "https://docs.dune.com/api-reference/executions/endpoint/execute-sql-query",
+  "sql": "WITH tx_daily AS (SELECT block_date AS day, COUNT(*) AS transaction_count FROM bnb.transactions WHERE block_date BETWEEN DATE '2026-05-25' AND DATE '2026-08-22' GROUP BY 1), addresses AS (SELECT block_date AS day, \"from\" AS address FROM bnb.transactions WHERE block_date BETWEEN DATE '2026-05-25' AND DATE '2026-08-22' UNION ALL SELECT block_date AS day, \"to\" AS address FROM bnb.transactions WHERE block_date BETWEEN DATE '2026-05-25' AND DATE '2026-08-22'), active_daily AS (SELECT day, COUNT(DISTINCT address) AS active_addresses FROM addresses WHERE address IS NOT NULL GROUP BY 1) SELECT CAST(t.day AS VARCHAR) AS date, a.active_addresses, t.transaction_count FROM tx_daily t JOIN active_daily a ON t.day = a.day ORDER BY t.day"
+}

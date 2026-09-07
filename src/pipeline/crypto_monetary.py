@@ -52,7 +52,10 @@ def assess(spec:dict[str,Any],activity:list[dict[str,str]])->list[dict[str,Any]]
 
 
 def run(repo:Path)->dict[str,Any]:
-    spec=load_json(repo/"config"/"crypto_monetary_evidence.json"); rows=assess(spec,load_activity(repo/"data"/"processed"/"historical"/"crypto_fundamentals_daily_coinmetrics.csv")); out=repo/"data"/"processed"/"evidence"; write_rows(out/"crypto_monetary_assessment.csv",rows,list(rows[0]))
+    spec=load_json(repo/"config"/"crypto_monetary_evidence.json"); activity=load_activity(repo/"data"/"processed"/"historical"/"crypto_fundamentals_daily_coinmetrics.csv")
+    bnb_path=repo/"data"/"processed"/"historical"/"bnb_monetary_activity_dune.csv"
+    if bnb_path.exists(): activity.extend(load_activity(bnb_path))
+    rows=assess(spec,activity); out=repo/"data"/"processed"/"evidence"; write_rows(out/"crypto_monetary_assessment.csv",rows,list(rows[0]))
     result={"assets":len(rows),"verified_positive_assets":[r["asset_id"] for r in rows if r["recommended_va_monetary"]==1],"verified_negative_assets":[r["asset_id"] for r in rows if r["recommended_va_monetary"]==0],"unresolved_assets":[r["asset_id"] for r in rows if r["recommended_va_monetary"] is None],"activity_rule":spec["activity_window"],"interpretation":"VA_MONETARY=1 requires both persistent material activity and verified monetary-design evidence. A zero requires primary-source review establishing no qualifying monetary function; generic activity cannot override a verified non-monetary design. Missing design evidence never becomes zero."}; (out/"crypto_monetary_assessment.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8"); return result
 
 

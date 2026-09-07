@@ -16,6 +16,8 @@ outputs/generated/
 # Private working documentation: retained locally, excluded from Git.
 docs/
 research/
+review_inputs/
+data/processed/evidence/stablecoin_score_review_audit.csv
 NEXT_STEPS.md
 *.docx
 *.doc

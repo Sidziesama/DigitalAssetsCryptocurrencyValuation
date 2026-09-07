@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-return-factor-baseline",
+  "status": "frozen_before_baseline_estimation",
+  "freeze_date": "2026-09-07",
+  "purpose": "Establish what is already known about daily crypto returns before any economic-function test: the market factor, momentum, and volatility. Function sorts on the six verified assets are a descriptive preview, not a test.",
+  "panel": "data/processed/empirical/crypto_return_panel_daily.csv",
+  "profiles": "data/processed/evidence/crypto_phase1_taxonomy_profiles.csv",
+  "market_model": {"factor": "market_ew_log_return", "minimum_days": 365},
+  "fama_macbeth": {
+    "outcome": "log_return",
+    "predictors": ["market_beta_180d_lag1", "momentum_30d_skip7", "realized_volatility_30d_annualized"],
+    "lag_predictors_one_day": true,
+    "minimum_assets_per_day": 10,
+    "newey_west_lags": 7
+  },
+  "function_sorts": {
+    "assets": ["crypto_btc", "crypto_eth", "crypto_bnb", "crypto_uni", "crypto_aave", "crypto_arb"],
+    "bundles": ["bundle_monetary_store", "bundle_holder_capture", "bundle_control_rights", "bundle_security_commitment", "bundle_financial_integration"],
+    "common_window_rule": "Start on the first date every listed asset has a return; end on the last common date.",
+    "newey_west_lags": 7
+  },
+  "selection_rule": "Predictors and sort variables are listed before estimation; no factor or bundle was chosen from return outcomes.",
+  "interpretation": "Baseline exposures and descriptive sorts. Six-asset sorts cannot support inference about economic functions; they show what the classification would be tested on once the remaining universe is verified."
+}

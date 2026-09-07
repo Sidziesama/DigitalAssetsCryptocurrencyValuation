@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_bnb",
+  "scope": "chain",
+  "economic_system": "BSC",
+  "provider_metric": "dailyRevenue",
+  "source_url": "https://api.llama.fi/overview/fees/bsc?dataType=dailyRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-30T23:00:12.810268+00:00",
+  "sha256": "ae71e69346bf280c872a58c2b4c1c8e9127b66e2d3b801c1ecfbed99bb25da1f"
+}

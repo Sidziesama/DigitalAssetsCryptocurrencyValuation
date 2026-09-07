@@ -1,0 +1,90 @@
+{
+  "status": "h4_source_readiness_complete_estimation_blocked",
+  "assets": 6,
+  "verified_stake_positive_assets": 3,
+  "positive_assets_with_historical_staking": 1,
+  "positive_assets_with_partial_component_history": 2,
+  "market_proxy_assets": 6,
+  "identification_ready": false,
+  "audit": [
+    {
+      "asset_id": "crypto_btc",
+      "va_stake": 0,
+      "staking_system": "none; proof of work",
+      "official_source_url": "https://bitcoin.org/en/faq#how-does-bitcoin-mining-work",
+      "historical_staked_supply_status": "structural_zero",
+      "comparability_group": "negative_control",
+      "market_proxy_days": 362,
+      "partial_component_history": false,
+      "positive_staking_history_ready": false
+    },
+    {
+      "asset_id": "crypto_eth",
+      "va_stake": 1,
+      "staking_system": "consensus validator stake",
+      "official_source_url": "https://ethereum.github.io/beacon-APIs/",
+      "historical_staked_supply_status": "collector_ready_requires_archival_consensus_endpoint",
+      "comparability_group": "consensus_stake",
+      "market_proxy_days": 362,
+      "partial_component_history": false,
+      "positive_staking_history_ready": false
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "va_stake": 1,
+      "staking_system": "consensus validator delegation",
+      "official_source_url": "https://docs.bnbchain.org/bnb-smart-chain/staking/overview/",
+      "historical_staked_supply_status": "not_implemented_requires_chain_specific_history",
+      "comparability_group": "consensus_stake",
+      "market_proxy_days": 362,
+      "partial_component_history": true,
+      "positive_staking_history_ready": true
+    },
+    {
+      "asset_id": "crypto_uni",
+      "va_stake": 0,
+      "staking_system": "none under security-stake rule",
+      "official_source_url": "https://developers.uniswap.org/docs/ecosystem/governance/uni",
+      "historical_staked_supply_status": "structural_zero",
+      "comparability_group": "negative_control",
+      "market_proxy_days": 362,
+      "partial_component_history": false,
+      "positive_staking_history_ready": false
+    },
+    {
+      "asset_id": "crypto_aave",
+      "va_stake": 1,
+      "staking_system": "protocol deficit-risk absorption",
+      "official_source_url": "https://aave.com/help/umbrella/overview",
+      "historical_staked_supply_status": "not_implemented_requires_effective_dated_contract_events",
+      "comparability_group": "protocol_risk_stake",
+      "market_proxy_days": 362,
+      "partial_component_history": true,
+      "positive_staking_history_ready": false
+    },
+    {
+      "asset_id": "crypto_arb",
+      "va_stake": 0,
+      "staking_system": "governance delegation excluded from security stake",
+      "official_source_url": "https://forum.arbitrum.foundation/t/arb-staking-unlock-arb-utility-and-align-governance/25084",
+      "historical_staked_supply_status": "structural_zero",
+      "comparability_group": "negative_control",
+      "market_proxy_days": 363,
+      "partial_component_history": false,
+      "positive_staking_history_ready": false
+    }
+  ],
+  "blocker": "Only 1 of 3 verified positive-staking assets has an implemented complete-window participation series; at least three are required by the readiness rule.",
+  "required_next_data": [
+    "effective-dated staked native units and total/circulating supply",
+    "staking entry and exit timing or unbonding constraints",
+    "same-date volume turnover plus spread/depth where freely reproducible",
+    "separate consensus-stake and protocol-risk-stake specifications"
+  ],
+  "guardrails": [
+    "A verified VA_STAKE classification establishes mechanism presence, not the fraction staked.",
+    "Reported 24-hour volume divided by market cap is a turnover proxy, not executable liquidity or liquid float.",
+    "Consensus staking and Aave-style deficit-risk staking are not pooled without a predeclared comparability specification.",
+    "Structural zeros may be negative controls but cannot replace time variation among positive-staking assets."
+  ]
+}

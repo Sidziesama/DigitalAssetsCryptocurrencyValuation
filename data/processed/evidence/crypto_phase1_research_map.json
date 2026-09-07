@@ -1,0 +1,57 @@
+{
+  "status": "phase1_research_map_complete",
+  "as_of": "2026-09-07",
+  "codes": 10,
+  "indicators": 34,
+  "indicator_states": {
+    "documentary_only": 14,
+    "not_collected": 9,
+    "observed_series": 6,
+    "partial_series": 5
+  },
+  "measured_codes": [
+    "VA_MONETARY",
+    "VA_GAS",
+    "VA_COLLATERAL"
+  ],
+  "proxied_codes": [
+    "VA_STAKE",
+    "VA_BURN",
+    "VA_PROTOCOL"
+  ],
+  "documentary_codes": [
+    "VA_SCARCITY",
+    "VA_GOV",
+    "VA_UTILITY",
+    "VA_INCENTIVE"
+  ],
+  "experiment_status": {
+    "P1_H1": {
+      "status": "exploratory_pilot_complete",
+      "artifact": "data/processed/empirical/crypto_h1_activity_pilot.json",
+      "summary": "Four-asset activity panel; positive coefficients, exact four-cluster inference does not reject zero."
+    },
+    "P1_H2": {
+      "status": "frozen_exploratory_checkpoint",
+      "artifact": "data/processed/empirical/crypto_h2_small_cluster_inference.json",
+      "summary": "Eleven-asset fee-capture interaction; pooled p=0.082 under the older broad treasury rule, not confirmatory.",
+      "strict_rule_sensitivity": "data/processed/empirical/crypto_h2_strict_capture_sensitivity.json"
+    },
+    "P1_H3": {
+      "status": "frozen_exploratory_comparison_complete",
+      "artifact": "data/processed/empirical/crypto_phase1_bundle_comparison.json",
+      "summary": "Six-asset leave-one-out comparison; bundle count does not beat raw breadth, and the monetary-store bundle is the only predictor that lowers prediction error."
+    },
+    "P1_H4": {
+      "status": "source_readiness_complete_estimation_blocked",
+      "artifact": "data/processed/evidence/crypto_h4_source_readiness.json",
+      "summary": "Needs an archival Ethereum consensus endpoint and Aave Umbrella coverage."
+    },
+    "P1_H5": {
+      "status": "frozen_exploratory_event_study",
+      "artifact": "data/processed/empirical/crypto_mechanism_event_study.json",
+      "summary": "Two within-window effective-dated mechanism events: UNIfication activation and the Aave buyback pause."
+    }
+  },
+  "guardrail": "Documentary indicators support classification only; valuation tests may use measured or proxied series and must label proxies as proxies."
+}

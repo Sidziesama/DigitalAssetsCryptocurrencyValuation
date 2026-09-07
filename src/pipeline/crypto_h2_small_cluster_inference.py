@@ -137,13 +137,14 @@ def build(rows: list[dict[str, str]]) -> dict[str, Any]:
             }
         )
         results.append(result)
+    cluster_counts = sorted({result["clusters"] for result in results})
     return {
         "status": "exploratory_small_cluster_inference_complete",
         "null_hypothesis": "fees_x_capture = 0",
         "method": "CR1 asset-clustered t statistic with exhaustive Rademacher wild-cluster bootstrap under the null",
         "results": results,
         "guardrails": [
-            "Bootstrap assignments are enumerated exactly; p-value resolution is coarse with four or six clusters.",
+            f"Bootstrap assignments are enumerated exactly for cluster counts {cluster_counts}; finite-cluster p-value resolution is reported for every specification.",
             "Forward-return results remain non-confirmatory because overlapping seven-day outcomes require horizon-robust treatment.",
             "The pilot was not frozen before these estimates were observed, so all inference remains exploratory.",
             "Statistical association does not establish causality or investment value.",

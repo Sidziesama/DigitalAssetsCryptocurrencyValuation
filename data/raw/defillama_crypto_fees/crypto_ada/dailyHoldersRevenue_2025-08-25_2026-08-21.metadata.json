@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_ada",
+  "scope": "chain",
+  "economic_system": "Cardano",
+  "provider_metric": "dailyHoldersRevenue",
+  "source_url": "https://api.llama.fi/overview/fees/cardano?dataType=dailyHoldersRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-31T01:19:17.256960+00:00",
+  "sha256": "7593b054d9c25f8df5b29249a623576b6e0effd637fb94a533379486f2ac7e22"
+}

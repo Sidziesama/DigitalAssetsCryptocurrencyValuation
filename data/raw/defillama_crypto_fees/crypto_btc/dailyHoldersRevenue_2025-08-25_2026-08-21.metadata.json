@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_btc",
+  "scope": "chain",
+  "economic_system": "Bitcoin",
+  "provider_metric": "dailyHoldersRevenue",
+  "source_url": "https://api.llama.fi/overview/fees/bitcoin?dataType=dailyHoldersRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-30T23:00:06.889337+00:00",
+  "sha256": "62122a73cab0a468c5f29f4ebf216905e58a2b60779f8b2e58816cc5849393a7"
+}

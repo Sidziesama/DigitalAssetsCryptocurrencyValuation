@@ -1,25 +1,6 @@
 {
   "schema_version": 1,
   "as_of": "2026-08-22",
-  "status": "documented_open_blockers",
-  "blockers": [
-    {
-      "asset_id": "crypto_bnb",
-      "code": "VA_MONETARY",
-      "current_status": "pending_quantitative_behavior",
-      "required_evidence": "At least 90 consecutive daily observations for independent BNB Chain active-address and transaction activity, combined with separately verified monetary-design evidence.",
-      "free_source_audit": "The configured Coin Metrics Community feed does not provide the required BNB series. Gas use alone does not establish monetary use.",
-      "resolution_rule": "Resolve only from a reproducible independent daily source covering the preregistered window; otherwise retain null and exclude BNB from H8 breadth estimation.",
-      "acceptable_next_actions": ["add_free_reproducible_source", "retain_null_and_exclude_from_h8"]
-    },
-    {
-      "asset_id": "crypto_bnb",
-      "code": "VA_COLLATERAL",
-      "current_status": "pending_quantitative_threshold",
-      "required_evidence": "Historical collateral-enabled state plus material balances meeting the preregistered threshold over the 90-day window.",
-      "free_source_audit": "The balance screen passes, but supplied-token TVL does not prove collateral eligibility. A versioned Venus deployment address and archive-capable BSC RPC history are still required.",
-      "resolution_rule": "Resolve positive only from effective-dated collateral configuration and materiality evidence; otherwise retain null and exclude BNB from H8 breadth estimation.",
-      "acceptable_next_actions": ["add_historical_venus_state_source", "retain_null_and_exclude_from_h8"]
-    }
-  ]
+  "status": "evidence_complete_no_open_blockers",
+  "blockers": []
 }

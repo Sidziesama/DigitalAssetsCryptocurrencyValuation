@@ -1,0 +1,3 @@
+variable,coefficient,wild_cluster_p_two_sided
+log1p_active_addresses_lag1,0.02843860020498784,0.5
+log1p_transaction_count_lag1,0.11223930210248013,0.25

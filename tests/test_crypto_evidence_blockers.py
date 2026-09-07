@@ -4,23 +4,7 @@ from src.pipeline.crypto_evidence_blockers import build
 
 
 def manifest():
-    return {
-        "blockers": [
-            {
-                "asset_id": "crypto_bnb",
-                "code": code,
-                "current_status": status,
-                "required_evidence": "required",
-                "free_source_audit": "audited",
-                "resolution_rule": "retain null",
-                "acceptable_next_actions": ["retain_null_and_exclude_from_h8"],
-            }
-            for code, status in (
-                ("VA_MONETARY", "pending_quantitative_behavior"),
-                ("VA_COLLATERAL", "pending_quantitative_threshold"),
-            )
-        ]
-    }
+    return {"blockers": []}
 
 
 class CryptoEvidenceBlockersTests(unittest.TestCase):
@@ -29,13 +13,10 @@ class CryptoEvidenceBlockersTests(unittest.TestCase):
             {"asset_id": row["asset_id"], "code": row["code"], "status": row["current_status"]}
             for row in manifest()["blockers"]
         ]
-        self.assertEqual(build(manifest(), decisions)["open_blockers"], 2)
+        self.assertEqual(build(manifest(), decisions)["open_blockers"], 0)
 
     def test_manifest_rejects_stale_resolution(self):
-        decisions = [
-            {"asset_id": "crypto_bnb", "code": "VA_MONETARY", "status": "verified"},
-            {"asset_id": "crypto_bnb", "code": "VA_COLLATERAL", "status": "pending_quantitative_threshold"},
-        ]
+        decisions = [{"asset_id":"crypto_bnb","code":"VA_MONETARY","status":"pending_quantitative_behavior"}]
         with self.assertRaisesRegex(ValueError, "no longer reconciles"):
             build(manifest(), decisions)
 

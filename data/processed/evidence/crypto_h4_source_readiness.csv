@@ -1,0 +1,7 @@
+asset_id,va_stake,staking_system,official_source_url,historical_staked_supply_status,comparability_group,market_proxy_days,partial_component_history,positive_staking_history_ready
+crypto_btc,0,none; proof of work,https://bitcoin.org/en/faq#how-does-bitcoin-mining-work,structural_zero,negative_control,362,False,False
+crypto_eth,1,consensus validator stake,https://ethereum.github.io/beacon-APIs/,collector_ready_requires_archival_consensus_endpoint,consensus_stake,362,False,False
+crypto_bnb,1,consensus validator delegation,https://docs.bnbchain.org/bnb-smart-chain/staking/overview/,not_implemented_requires_chain_specific_history,consensus_stake,362,True,True
+crypto_uni,0,none under security-stake rule,https://developers.uniswap.org/docs/ecosystem/governance/uni,structural_zero,negative_control,362,False,False
+crypto_aave,1,protocol deficit-risk absorption,https://aave.com/help/umbrella/overview,not_implemented_requires_effective_dated_contract_events,protocol_risk_stake,362,True,False
+crypto_arb,0,governance delegation excluded from security stake,https://forum.arbitrum.foundation/t/arb-staking-unlock-arb-utility-and-align-governance/25084,structural_zero,negative_control,363,False,False

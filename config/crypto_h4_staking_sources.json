@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "universe_policy": "fixed_existing_six_assets_no_expansion",
+  "assets": ["crypto_btc","crypto_eth","crypto_bnb","crypto_uni","crypto_aave","crypto_arb"],
+  "groups": {
+    "consensus_stake": ["crypto_eth","crypto_bnb"],
+    "protocol_risk_stake_case_study": ["crypto_aave"],
+    "structural_nonstaking_controls": ["crypto_btc","crypto_uni","crypto_arb"]
+  },
+  "eth_consensus_stake": {
+    "chain": "ethereum_consensus",
+    "asset_id": "crypto_eth",
+    "component_id": "active_validator_effective_balance",
+    "api_url_env": "ETH_BEACON_ARCHIVE_API_URL",
+    "public_probe_url": "https://ethereum-beacon-api.publicnode.com",
+    "genesis_timestamp": 1606824023,
+    "seconds_per_slot": 12,
+    "snapshot_hour_utc": 12,
+    "validator_statuses": ["active_exiting", "active_ongoing", "active_slashed"],
+    "official_source_url": "https://ethereum.github.io/beacon-APIs/",
+    "measurement_role": "consensus_active_effective_balance",
+    "unblocks_h4_when_complete": true,
+    "limitation": "Requires a consensus archive endpoint that serves historical validator states. Effective balance measures consensus weight and excludes excess validator balance that is not active stake."
+  },
+  "aave_legacy_component": {
+    "chain": "ethereum",
+    "asset_id": "crypto_aave",
+    "component_id": "legacy_stkaave",
+    "contract_address": "0x4da27a545c0c5b758a6ba100e3a049001de870f5",
+    "method": "totalSupply()",
+    "selector": "0x18160ddd",
+    "decimals": 18,
+    "rpc_url": "https://eth-mainnet.public.blastapi.io",
+    "block_snapshot_root": "data/raw/aave_collateral_state/v2_aave_reserve_extension",
+    "official_source_url": "https://github.com/aave/aave-stake-v2",
+    "measurement_role": "legacy_component_only",
+    "unblocks_h4": false,
+    "limitation": "Umbrella also stakes aTokens and GHO; legacy stkAAVE totalSupply is not total Aave protocol-risk stake."
+  },
+  "bnb_consensus_stake": {
+    "chain": "bsc",
+    "asset_id": "crypto_bnb",
+    "component_id": "stakehub_all_validator_credit_pools",
+    "stake_hub_address": "0x0000000000000000000000000000000000002002",
+    "get_validators_selector": "0xbff02e20",
+    "total_pooled_bnb_selector": "0x15d1f898",
+    "rpc_url": "https://bsc-mainnet.public.blastapi.io",
+    "block_lookup_base": "https://coins.llama.fi/block/bsc",
+    "official_source_url": "https://docs.bnbchain.org/bnb-smart-chain/staking/developer-guide/",
+    "measurement_role": "consensus_stake_all_validator_pools",
+    "unblocks_h4_when_complete": true,
+    "limitation": "Measures BNB in validator credit pools returned by StakeHub at each historical block; it excludes BNB already moved into unbonding queues."
+  }
+}

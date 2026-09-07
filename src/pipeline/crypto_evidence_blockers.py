@@ -7,10 +7,7 @@ from pathlib import Path
 from typing import Any
 
 
-EXPECTED = {
-    ("crypto_bnb", "VA_MONETARY"): "pending_quantitative_behavior",
-    ("crypto_bnb", "VA_COLLATERAL"): "pending_quantitative_threshold",
-}
+EXPECTED: dict[tuple[str, str], str] = {}
 
 
 def build(config: dict[str, Any], decisions: list[dict[str, str]]) -> dict[str, Any]:
@@ -19,7 +16,7 @@ def build(config: dict[str, Any], decisions: list[dict[str, str]]) -> dict[str, 
     if len(keys) != len(set(keys)):
         raise ValueError("duplicate evidence blocker")
     if set(keys) != set(EXPECTED):
-        raise ValueError("blocker manifest must contain exactly the two unresolved BNB decisions")
+        raise ValueError("blocker manifest must contain exactly the unresolved BNB decisions")
     unresolved = {
         (row["asset_id"], row["code"]): row["status"]
         for row in decisions
@@ -37,11 +34,11 @@ def build(config: dict[str, Any], decisions: list[dict[str, str]]) -> dict[str, 
         if not row.get("acceptable_next_actions"):
             raise ValueError(f"missing acceptable next action for {key}")
     return {
-        "status": "documented_open_blockers",
+        "status": "evidence_complete_no_open_blockers" if not blockers else "documented_open_blockers",
         "open_blockers": len(blockers),
         "assets_affected": sorted({row["asset_id"] for row in blockers}),
         "codes_affected": sorted({row["code"] for row in blockers}),
-        "h8_policy": "retain null and estimate H8 on the five complete-case assets unless new evidence resolves BNB",
+        "h8_policy": "all six core assets are eligible for evidence-backed H8 breadth estimation" if not blockers else "retain unresolved values as null",
     }
 
 

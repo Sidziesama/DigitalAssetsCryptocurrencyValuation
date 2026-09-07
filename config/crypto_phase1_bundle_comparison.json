@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-bundle-comparison",
+  "status": "frozen_before_comparison_estimation",
+  "freeze_date": "2026-09-07",
+  "experiment_id": "P1_H3",
+  "hypothesis": "Theory-defined function bundles explain valuation multiples better than an unweighted count of functions.",
+  "assets": ["crypto_btc", "crypto_eth", "crypto_bnb", "crypto_uni", "crypto_aave", "crypto_arb"],
+  "profiles": "data/processed/evidence/crypto_phase1_taxonomy_profiles.csv",
+  "panel": "data/processed/empirical/crypto_h2_exploratory_daily.csv",
+  "outcomes": {
+    "mean_log_market_cap_usd": "Mean daily log market capitalization over the common frozen H2 window.",
+    "mean_log_market_cap_to_daily_fees": "Mean daily log of market capitalization divided by lagged daily fees, a fee multiple; chain-scope and application-scope fees are pooled and this scope mix is a declared limit."
+  },
+  "withheld_outcomes": {
+    "market_cap_to_activity": "Free activity data covers only four of the six assets; withheld rather than estimated on a subset chosen after the fact."
+  },
+  "models": [
+    {"id": "raw_breadth", "predictors": ["raw_function_breadth"], "role": "benchmark_count"},
+    {"id": "active_bundle_count", "predictors": ["active_bundle_count"], "role": "bundle_count"},
+    {"id": "bundle_monetary_store", "predictors": ["bundle_monetary_store"], "role": "single_bundle"},
+    {"id": "bundle_transaction_service_demand", "predictors": ["bundle_transaction_service_demand"], "role": "single_bundle"},
+    {"id": "bundle_security_commitment", "predictors": ["bundle_security_commitment"], "role": "single_bundle"},
+    {"id": "bundle_supply_absorption", "predictors": ["bundle_supply_absorption"], "role": "single_bundle"},
+    {"id": "bundle_financial_integration", "predictors": ["bundle_financial_integration"], "role": "single_bundle"},
+    {"id": "bundle_control_rights", "predictors": ["bundle_control_rights"], "role": "single_bundle"},
+    {"id": "bundle_holder_capture", "predictors": ["bundle_holder_capture"], "role": "single_bundle"},
+    {"id": "bundle_subsidized_participation", "predictors": ["bundle_subsidized_participation"], "role": "single_bundle"},
+    {"id": "raw_breadth_plus_holder_capture", "predictors": ["raw_function_breadth", "bundle_holder_capture"], "role": "nested_theory_addition"}
+  ],
+  "nested_pair": {"restricted": "raw_breadth", "extended": "raw_breadth_plus_holder_capture", "reason": "Holder capture is the bundle the value-accrual literature singles out, so it is the one pre-declared theory addition to the count model."},
+  "comparison_metric": "leave_one_asset_out_root_mean_squared_prediction_error",
+  "selection_rule": "Every model is listed before estimation; no bundle weights or model choices are selected from outcomes. Models whose predictor has no cross-asset variation are reported as unestimable, not dropped silently.",
+  "interpretation": "Six assets support description and sign checks only. Leave-one-out prediction error and exact 720-permutation rank tests are exploratory; no model comparison here is confirmatory."
+}

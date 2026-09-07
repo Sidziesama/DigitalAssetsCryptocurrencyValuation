@@ -1,0 +1,11 @@
+code,bundle,classification_rule,value_indicators
+VA_MONETARY,monetary_store,"Material money, settlement, reserve, or store-of-value use supported by at least two behavioral tests.",payment_or_settlement_activity|active_addresses|transfer_value|reserve_or_store_of_value_evidence
+VA_GAS,transaction_service_demand,"Token is protocol-required for ordinary transaction, computation, storage, or blockspace fees.",fees_paid_in_native_token|transactions|computational_or_blockspace_demand
+VA_STAKE,security_commitment,"Token is locked, delegated, or economically at risk to secure a network or protocol service.",staked_native_units|staked_supply_ratio|slashing_or_loss_exposure
+VA_BURN,supply_absorption,A live rules-based mechanism irreversibly destroys tokens.,tokens_burned|burn_value_usd|net_issuance
+VA_SCARCITY,monetary_store,A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.,terminal_supply_rule|issuance_schedule|change_authority
+VA_COLLATERAL,financial_integration,Collateral TVL is at least 1% of market cap or $100m for at least 90 days.,collateral_balance_usd|collateral_to_market_cap|materiality_persistence_days
+VA_GOV,control_rights,"Holding or delegating provides live proposal, voting, veto, treasury, or parameter control.",voting_power|delegated_supply|binding_proposals|treasury_or_upgrade_authority
+VA_PROTOCOL,holder_capture,"A live mechanical route sends protocol revenue or surplus to the token or holders through distribution, buyback, burn, or an enforceable holder claim; governance over ecosystem spending alone does not qualify.",holder_distributions|buybacks|usage_linked_burn|enforceable_holder_claim
+VA_UTILITY,transaction_service_demand,Token is required to consume an identifiable non-generic service beyond transfer.,required_service_payments|access_or_consumption_demand|service_usage
+VA_INCENTIVE,subsidized_participation,"A systematic program subsidizes liquidity, usage, development, or participation.",program_emissions|recipient_activity|subsidy_expenditure|program_effective_dates

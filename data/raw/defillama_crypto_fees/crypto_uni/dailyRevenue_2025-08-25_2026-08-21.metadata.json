@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_uni",
+  "scope": "application_protocol",
+  "economic_system": "Uniswap",
+  "provider_metric": "dailyRevenue",
+  "source_url": "https://api.llama.fi/summary/fees/uniswap?dataType=dailyRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-30T23:00:15.476033+00:00",
+  "sha256": "f4180a55d7fbe2a342ec388f8016e39263e7b3e29768a80c2ea8f465d1bd1198"
+}

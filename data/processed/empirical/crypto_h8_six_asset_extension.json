@@ -1,0 +1,50 @@
+{
+  "status": "exploratory_six_asset_h8_extension_complete",
+  "specification_version": "1.0-frozen-six-asset-extension",
+  "freeze_date": "2026-09-06",
+  "assets": 6,
+  "asset_ids": [
+    "crypto_aave",
+    "crypto_arb",
+    "crypto_bnb",
+    "crypto_btc",
+    "crypto_eth",
+    "crypto_uni"
+  ],
+  "outcome": "mean_log_market_cap_usd_over_common_h2_window",
+  "predictor": "verified_raw_ten_code_value_accrual_breadth",
+  "slope": 0.48443072371220147,
+  "exact_permutation_p_two_sided": 0.44166666666666665,
+  "spearman_rank_correlation": 0.2125118592516207,
+  "exact_rank_permutation_p_two_sided": 0.7333333333333333,
+  "permutations": 720,
+  "leave_one_asset_out": [
+    {
+      "excluded_asset": "crypto_aave",
+      "slope": 0.4182502694711656
+    },
+    {
+      "excluded_asset": "crypto_arb",
+      "slope": 0.29884483111987153
+    },
+    {
+      "excluded_asset": "crypto_bnb",
+      "slope": 0.7401016715332025
+    },
+    {
+      "excluded_asset": "crypto_btc",
+      "slope": 0.869951325017871
+    },
+    {
+      "excluded_asset": "crypto_eth",
+      "slope": 0.3458412560718296
+    },
+    {
+      "excluded_asset": "crypto_uni",
+      "slope": 0.3823903442238364
+    }
+  ],
+  "leave_one_asset_out_positive": 6,
+  "comparison_guardrail": "This is a separately versioned exploratory extension, not a replacement for the original five-asset pilot and not a confirmatory test.",
+  "selection_rule": "Add BNB because its final two evidence gaps were resolved under pre-existing rules; no asset or function was selected from H8 outcomes."
+}

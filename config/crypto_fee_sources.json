@@ -7,7 +7,12 @@
     {"asset_id":"crypto_bnb","scope":"chain","endpoint":"overview/fees/bsc","economic_system":"BSC"},
     {"asset_id":"crypto_uni","scope":"application_protocol","endpoint":"summary/fees/uniswap","economic_system":"Uniswap"},
     {"asset_id":"crypto_aave","scope":"application_protocol","endpoint":"summary/fees/aave","economic_system":"Aave"},
-    {"asset_id":"crypto_arb","scope":"chain","endpoint":"overview/fees/arbitrum","economic_system":"Arbitrum"}
+    {"asset_id":"crypto_arb","scope":"chain","endpoint":"overview/fees/arbitrum","economic_system":"Arbitrum"},
+    {"asset_id":"crypto_sol","scope":"chain","endpoint":"overview/fees/solana","economic_system":"Solana"},
+    {"asset_id":"crypto_avax","scope":"chain","endpoint":"overview/fees/avalanche","economic_system":"Avalanche"},
+    {"asset_id":"crypto_trx","scope":"chain","endpoint":"overview/fees/tron","economic_system":"TRON"},
+    {"asset_id":"crypto_xrp","scope":"chain","endpoint":"overview/fees/ripple","economic_system":"XRP Ledger"},
+    {"asset_id":"crypto_ada","scope":"chain","endpoint":"overview/fees/cardano","economic_system":"Cardano"}
   ],
   "metrics": {"dailyFees":"fees_usd","dailyRevenue":"protocol_revenue_usd","dailyHoldersRevenue":"holders_revenue_usd"},
   "interpretation": "USD fields share provider labels but not identical economic scope. Chain-level observations for native-network assets and application-level observations for protocol tokens must be identified in every model; fees, protocol revenue, and holder revenue are not interchangeable."

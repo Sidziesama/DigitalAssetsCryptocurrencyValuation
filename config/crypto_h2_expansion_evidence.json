@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-22",
+  "assets": ["crypto_sol", "crypto_avax", "crypto_trx", "crypto_xrp", "crypto_ada"],
+  "codes": ["VA_BURN", "VA_PROTOCOL"],
+  "review_status": "adjudicated_complete",
+  "preregistration_status": "frozen_post_pilot_for_reproducibility",
+  "adjudication_rule": "Governance over protocol revenue is VA_GOV. VA_PROTOCOL additionally requires a live mechanical route by which value terminates at the token or holders through burn, buyback, distribution, or an equivalent holder-directed mechanism. Ecosystem grants and infrastructure spending alone do not qualify.",
+  "decisions": [
+    {"asset_id": "crypto_sol", "code": "VA_BURN", "recommended_value": 1, "effective_from": "2020-03-16", "source_url": "https://solana.com/docs/core/fees/fee-structure", "rationale": "Solana permanently burns 50% of each transaction base fee."},
+    {"asset_id": "crypto_sol", "code": "VA_PROTOCOL", "recommended_value": 1, "effective_from": "2020-03-16", "source_url": "https://solana.com/docs/core/fees/fee-structure", "rationale": "Usage-linked base-fee burning provides a live automatic value-capture route."},
+    {"asset_id": "crypto_avax", "code": "VA_BURN", "recommended_value": 1, "effective_from": "2020-09-21", "source_url": "https://build.avax.network/docs/primary-network/avax-token", "rationale": "Avalanche transaction fees are permanently burned."},
+    {"asset_id": "crypto_avax", "code": "VA_PROTOCOL", "recommended_value": 1, "effective_from": "2020-09-21", "source_url": "https://build.avax.network/docs/primary-network/avax-token", "rationale": "Usage-linked transaction-fee burning provides a live automatic value-capture route."},
+    {"asset_id": "crypto_trx", "code": "VA_BURN", "recommended_value": 1, "effective_from": "2025-08-26", "source_url": "https://developers.tron.network/docs/tron-economic-model", "rationale": "The official economic model documents ongoing transaction-fee burning and a sustained deflationary trend predating the analysis window; the study conservatively dates verification from window start."},
+    {"asset_id": "crypto_trx", "code": "VA_PROTOCOL", "recommended_value": 1, "effective_from": "2025-08-26", "source_url": "https://developers.tron.network/docs/tron-economic-model", "rationale": "Resource shortfalls automatically burn TRX at governed fixed rates, linking network usage to token destruction."},
+    {"asset_id": "crypto_xrp", "code": "VA_BURN", "recommended_value": 1, "effective_from": "2012-06-02", "source_url": "https://xrpl.org/docs/concepts/transactions/transaction-cost", "rationale": "Every applied XRP Ledger transaction irrevocably destroys its XRP transaction cost."},
+    {"asset_id": "crypto_xrp", "code": "VA_PROTOCOL", "recommended_value": 1, "effective_from": "2012-06-02", "source_url": "https://xrpl.org/docs/concepts/transactions/transaction-cost", "rationale": "Usage-linked transaction-cost destruction provides a live automatic value-capture route."},
+    {"asset_id": "crypto_ada", "code": "VA_BURN", "recommended_value": 0, "effective_from": "2020-07-29", "source_url": "https://docs.cardano.org/about-cardano/explore-more/monetary-policy", "rationale": "Cardano transaction fees enter the epoch reward pot rather than being destroyed."},
+    {"asset_id": "crypto_ada", "code": "VA_PROTOCOL", "recommended_value": 0, "effective_from": "2020-07-29", "source_url": "https://docs.cardano.org/about-cardano/explore-more/monetary-policy", "secondary_source_url": "https://developers.cardano.org/docs/community/funding/", "rationale": "Ordinary proof-of-stake rewards are service compensation, while the governance treasury funds third-party projects and protocol infrastructure rather than mechanically burning, buying back, or distributing value to ADA holders. Governance authority remains VA_GOV, not VA_PROTOCOL."}
+  ]
+}

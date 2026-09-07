@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-08-22",
-  "checkpoint": "point_in_time_design_evidence_pilot",
-  "status": "commit_ready_methodology_checkpoint_not_model_ready",
+  "as_of": "2026-08-31",
+  "checkpoint": "frozen_exploratory_crypto_h2",
+  "status": "commit_ready_frozen_exploratory_h2_checkpoint",
   "checks": {
     "crypto_grid_complete": true,
     "crypto_verified_counts_reconcile": true,
@@ -10,42 +10,43 @@
     "missing_activity_not_classified_negative": true,
     "mechanism_state_passes": true,
     "historical_collateral_state_available": true,
-    "stablecoin_temporal_overlap_ready": true,
     "h2_pilot_design_ready": true,
-    "h8_five_asset_design_ready": true,
+    "h8_six_asset_design_ready": true,
     "verified_negative_collateral_reconciles": true,
-    "h2_candidate_panel_guarded": true,
+    "h2_frozen_exploratory_panel_guarded": true,
+    "h2_extended_window_reconciles": true,
+    "h2_expansion_rule_passes": true,
+    "h2_expansion_evidence_reconciles": true,
+    "active_crypto_scope_is_explicit": true,
+    "crypto_review_and_adjudication_complete": true,
     "h2_estimator_diagnostics_pass": true,
     "h2_exploratory_estimates_guarded": true,
-    "bnb_blockers_documented": true,
+    "crypto_evidence_blockers_resolved": true,
     "h2_small_cluster_inference_guarded": true,
+    "h2_nonoverlap_sensitivity_complete": true,
     "h8_extension_plan_complete": true,
-    "free_fee_layer_complete": true
+    "h8_breadth_pilot_complete": true,
+    "h8_six_asset_extension_complete": true,
+    "h1_activity_pilot_complete": true,
+    "h3_supply_proxy_limit_documented": true,
+    "h4_source_blocker_documented": true,
+    "h4_aave_component_complete_but_nonreleasing": true,
+    "h4_bnb_consensus_history_complete": true,
+    "h4_eth_exact_collector_ready": true,
+    "phase1_taxonomy_complete": true,
+    "free_fee_layer_expansion_reconciles": true
   },
   "crypto_evidence": {
     "assets": 6,
     "targeted_decisions": 24,
-    "verified_decisions": 22,
-    "pending_decisions": 2,
-    "coverage_ratio": 0.9166666666666666,
-    "unresolved": [
-      {
-        "asset_id": "crypto_bnb",
-        "code": "VA_MONETARY",
-        "status": "pending_quantitative_behavior"
-      },
-      {
-        "asset_id": "crypto_bnb",
-        "code": "VA_COLLATERAL",
-        "status": "pending_quantitative_threshold"
-      }
-    ]
+    "verified_decisions": 24,
+    "pending_decisions": 0,
+    "coverage_ratio": 1.0,
+    "unresolved": []
   },
   "source_coverage": {
     "free_fundamentals_assets_with_behavioral_coverage": 4,
-    "monetary_unresolved_assets": [
-      "crypto_bnb"
-    ],
+    "monetary_unresolved_assets": [],
     "collateral_proxy_pass_assets": [
       "crypto_btc",
       "crypto_eth",
@@ -53,7 +54,7 @@
       "crypto_aave"
     ],
     "historical_collateral_state_assets": 3,
-    "effective_dated_mechanism_states": 12,
+    "effective_dated_mechanism_states": 22,
     "verified_below_collateral_threshold_assets": [
       "crypto_uni",
       "crypto_arb"
@@ -62,18 +63,22 @@
   "stablecoin_evidence": {
     "temporally_eligible_assets": 8,
     "post_score_outcome_rows": 1016,
-    "status": "temporal_overlap_ready"
+    "status": "preserved_deferred_not_an_active_gate"
   },
   "model_readiness": {
-    "h2": "exact wild-cluster pilot inference available; no specification rejects zero at 10%, and overlapping-return inference remains incomplete",
-    "h8": "five-asset complete-case design ready; BNB withheld under documented monetary and collateral evidence blockers",
-    "h5_h6": "temporal_overlap_ready_but_targeted_component_review_required_before_estimation"
+    "h2": "eleven-asset panel has exploratory 10%-level evidence of a positive valuation interaction after Cardano adjudication; post-pilot freeze and small-cluster limits prohibit confirmatory interpretation; no robust forward-return relationship",
+    "h8": "the separately frozen six-asset extension remains positive in all leave-one-out samples, but exact permutation inference does not reject zero; breadth is more sign-stable but still not statistically established",
+    "h1": "four-asset activity pilot has positive coefficients but exact inference does not reject zero; transaction association is leave-one-out sign-stable but not generalizable",
+    "h3": "four-asset circulating-supply proxy diagnostic is complete, but only BTC and ETH vary; the positive, non-rejecting coefficient does not support H3 and is not identification-ready",
+    "h4": "the six-asset universe is fixed; BNB history is complete, the exact ETH effective-balance collector is ready but needs an archival consensus endpoint, and legacy stkAAVE excludes Umbrella components, so estimation is blocked",
+    "h5_h6_h7": "preserved for a deferred stablecoin phase and not an active gate"
   },
   "guardrails": [
     "Unknown or unsupported provider coverage remains null and is never encoded as zero.",
     "DeFiLlama supplied balances are a screen, not collateral-eligibility proof.",
     "Point-in-time design evidence cannot be backfilled into earlier outcome dates.",
-    "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results."
+    "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results.",
+    "Cardano VA_PROTOCOL is adjudicated zero under the holder-directed mechanical-capture rule; the reviewed H2 specification is frozen post-pilot for reproducibility."
   ],
-  "next_checkpoint": "Freeze the documented H2/H8 pilot, add horizon-robust forward-return inference, and extend the time window before confirmatory testing."
+  "next_checkpoint": "Phase 1 classification and the six-asset H8 extension are complete. Resume H4 by configuring an archival Ethereum consensus endpoint and completing Aave Umbrella coverage."
 }

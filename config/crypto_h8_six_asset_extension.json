@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-six-asset-extension",
+  "status": "frozen_before_extension_estimation",
+  "freeze_date": "2026-09-06",
+  "hypothesis": "H8",
+  "assets": ["crypto_btc", "crypto_eth", "crypto_bnb", "crypto_uni", "crypto_aave", "crypto_arb"],
+  "outcome": "mean_log_market_cap_usd_over_common_h2_window",
+  "predictor": "verified_raw_ten_code_value_accrual_breadth",
+  "comparison": "original_frozen_five_asset_h8_pilot",
+  "selection_rule": "Add BNB because its final two evidence gaps were resolved under pre-existing rules; no asset or function was selected from H8 outcomes.",
+  "interpretation": "This is a separately versioned exploratory extension, not a replacement for the original five-asset pilot and not a confirmatory test."
+}

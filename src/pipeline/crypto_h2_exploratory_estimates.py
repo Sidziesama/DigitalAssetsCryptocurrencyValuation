@@ -118,7 +118,7 @@ def build(rows: list[dict[str, str]]) -> dict[str, Any]:
         "estimates": estimates,
         "leave_one_asset_out": leave_one_out,
         "guardrails": [
-            "No standard errors or p-values are reported at the six-cluster pilot stage.",
+            f"No standard errors or p-values are reported in this point-estimate artifact; inference is produced separately for the {len({row['asset_id'] for row in rows})}-cluster pilot.",
             "Coefficients are descriptive associations, not causal effects or valuation recommendations.",
             "Chain and application fee scopes are not interchangeable; pooled models retain the predeclared scope interaction.",
             "Overlapping seven-day returns require horizon-robust inference before confirmatory interpretation.",

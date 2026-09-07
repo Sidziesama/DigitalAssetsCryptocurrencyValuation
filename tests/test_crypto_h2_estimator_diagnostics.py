@@ -1,9 +1,12 @@
 import unittest
 
-from src.pipeline.crypto_h2_estimator_diagnostics import matrix_rank, two_way_demean
+from src.pipeline.crypto_h2_estimator_diagnostics import POOLED_COLUMNS, matrix_rank, two_way_demean
 
 
 class CryptoH2EstimatorDiagnosticsTests(unittest.TestCase):
+    def test_pooled_model_includes_time_varying_capture_main_effect(self):
+        self.assertIn("h2_active_capture", POOLED_COLUMNS)
+
     def test_matrix_rank_detects_collinearity(self):
         self.assertEqual(matrix_rank([[1,2],[2,4],[3,6]]),1)
         self.assertEqual(matrix_rank([[1,0],[0,1]]),2)

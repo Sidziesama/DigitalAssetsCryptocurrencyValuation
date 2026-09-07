@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_avax",
+  "scope": "chain",
+  "economic_system": "Avalanche",
+  "provider_metric": "dailyHoldersRevenue",
+  "source_url": "https://api.llama.fi/overview/fees/avalanche?dataType=dailyHoldersRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-31T01:19:16.574890+00:00",
+  "sha256": "0da66affdcb8172e32eeee18f16062f45790d12d67059c035c679e67efcfa704"
+}

@@ -18,7 +18,7 @@ BASE_URL="https://api.llama.fi"
 def validate(spec:dict[str,Any])->None:
     if spec.get("schema_version")!=1 or spec.get("provider")!="defillama_free_fees_api": raise ValueError("unsupported fee-source config")
     assets=spec.get("assets",[]); ids=[row.get("asset_id") for row in assets]
-    if len(assets)!=6 or len(ids)!=len(set(ids)): raise ValueError("fee source requires six unique pilot assets")
+    if len(assets)<6 or len(ids)!=len(set(ids)): raise ValueError("fee source requires at least six unique pilot assets")
     if any(row.get("scope") not in {"chain","application_protocol"} or not row.get("endpoint") or not row.get("economic_system") for row in assets): raise ValueError("invalid fee source scope")
     if spec.get("metrics")!={"dailyFees":"fees_usd","dailyRevenue":"protocol_revenue_usd","dailyHoldersRevenue":"holders_revenue_usd"}: raise ValueError("fee metric mapping drift")
     if not spec.get("interpretation"): raise ValueError("fee scope interpretation required")

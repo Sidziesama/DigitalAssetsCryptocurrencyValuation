@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-mechanism-event-study",
+  "status": "frozen_before_event_estimation",
+  "freeze_date": "2026-09-07",
+  "experiment_id": "P1_H5",
+  "hypothesis": "Activation or suspension of a live token-linked capture mechanism changes valuation relative to unaffected control assets.",
+  "panel": "data/processed/empirical/crypto_h2_exploratory_daily.csv",
+  "ledger": "config/crypto_mechanism_events.json",
+  "selection_rule": "Events are every effective-dated burn or protocol-capture state change recorded in the mechanism ledger whose full pre and post window lies inside the frozen H2 panel. No event was chosen or dropped from outcomes.",
+  "pre_window_days": 30,
+  "post_window_days": 30,
+  "minimum_days_per_window": 20,
+  "date_placebo_step_days": 7,
+  "outcomes": [
+    "log_market_cap_usd",
+    "log1p_fees_usd_lag1"
+  ],
+  "events": [
+    {
+      "event_id": "uni_unification_fee_to_burn_activation",
+      "asset_id": "crypto_uni",
+      "codes": [
+        "VA_BURN",
+        "VA_PROTOCOL"
+      ],
+      "effective_from": "2025-12-27",
+      "transition": "activation",
+      "expected_sign": "positive",
+      "announcement_caveat": "The UNIfication proposal and vote preceded execution, so the execution-date window can understate an effect that markets priced at proposal or vote time."
+    },
+    {
+      "event_id": "aave_buyback_pause",
+      "asset_id": "crypto_aave",
+      "codes": [
+        "VA_PROTOCOL"
+      ],
+      "effective_from": "2026-04-19",
+      "transition": "suspension",
+      "expected_sign": "negative",
+      "announcement_caveat": "Pause discussion may have preceded the effective date recorded in the ledger."
+    }
+  ],
+  "interpretation": "Two events with thirty-day windows and eleven-asset placebo pools are exploratory sensitivity evidence about mechanism timing, not causal estimates, price targets, or investment recommendations. Fee co-movement is reported so that a valuation shift is not attributed to capture when usage moved at the same time.",
+  "excluded_ledger_changes": [
+    {
+      "asset_id": "crypto_trx",
+      "codes": [
+        "VA_BURN",
+        "VA_PROTOCOL"
+      ],
+      "effective_from": "2025-08-26",
+      "reason": "Recorded on the first panel day, so no pre-event window exists inside the frozen panel; excluded by the window rule, not by outcome."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "phase1_taxonomy_complete",
+  "as_of": "2026-08-22",
+  "core_assets": 6,
+  "complete_verified_assets": 6,
+  "partial_assets": 0,
+  "verified_decisions": 60,
+  "target_decisions": 60,
+  "unresolved_decisions": [],
+  "function_positive_counts": {
+    "VA_MONETARY": 3,
+    "VA_GAS": 2,
+    "VA_STAKE": 3,
+    "VA_BURN": 3,
+    "VA_SCARCITY": 1,
+    "VA_COLLATERAL": 4,
+    "VA_GOV": 4,
+    "VA_PROTOCOL": 3,
+    "VA_UTILITY": 2,
+    "VA_INCENTIVE": 3
+  },
+  "consistency_cases_open": 0,
+  "adjudicated_decisions": 1,
+  "descriptive_ready": true,
+  "confirmatory_ready": false,
+  "next_gate": "Freeze the completed classification dataset and estimate only separately versioned extensions without changing rules from outcomes."
+}

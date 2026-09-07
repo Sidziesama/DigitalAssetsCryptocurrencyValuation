@@ -1,0 +1,14 @@
+{
+  "status": "bnb_consensus_stake_window_complete",
+  "asset_id": "crypto_bnb",
+  "measurement_role": "consensus_stake_all_validator_pools",
+  "start_date": "2026-05-25",
+  "end_date": "2026-08-22",
+  "expected_days": 90,
+  "observed_days": 90,
+  "failures": [],
+  "minimum_staked_native_units": 25505172.909837116,
+  "maximum_staked_native_units": 25781764.36302555,
+  "unblocks_h4": true,
+  "limitation": "Measures BNB in validator credit pools returned by StakeHub at each historical block; it excludes BNB already moved into unbonding queues."
+}

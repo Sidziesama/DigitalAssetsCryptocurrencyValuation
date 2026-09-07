@@ -10,7 +10,12 @@ from pathlib import Path
 from typing import Any
 
 
-POOLED_COLUMNS = ("log1p_fees_usd_lag1", "fees_x_capture", "fees_x_application_scope")
+POOLED_COLUMNS = (
+    "log1p_fees_usd_lag1",
+    "h2_active_capture",
+    "fees_x_capture",
+    "fees_x_application_scope",
+)
 CHAIN_COLUMNS = ("log1p_fees_usd_lag1", "fees_x_capture")
 
 
@@ -109,7 +114,7 @@ def build(rows:list[dict[str,str]])->tuple[list[dict[str,Any]],dict[str,Any]]:
         "rows":len(rows),"assets":len(coverage),"scope_counts":{"chain":sum(row["fee_scope"]=="chain" for row in coverage),"application_protocol":sum(row["fee_scope"]=="application_protocol" for row in coverage)},
         "diagnostics":diagnostics,"leave_one_asset_out":leave_one_out,
         "application_scope":{"assets":len({row["asset_id"] for row in application_level}),"rows":len(application_level),"inference":"descriptive_only"},
-        "guardrails":["Rank checks use asset-and-date-demeaned regressors and do not estimate hypothesis coefficients.","Two application assets cannot support reliable clustered inference.","Six total asset clusters require wild-cluster-bootstrap inference and exploratory interpretation."]
+        "guardrails":["Rank checks use asset-and-date-demeaned regressors and do not estimate hypothesis coefficients.","Two application assets cannot support reliable clustered inference.",f"{len(coverage)} total asset clusters still require wild-cluster-bootstrap inference and exploratory interpretation."]
     }
     return coverage,summary
 

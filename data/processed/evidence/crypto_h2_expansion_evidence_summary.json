@@ -1,0 +1,11 @@
+{
+  "status": "evidence_ready_review_complete",
+  "assets": 5,
+  "targeted_decisions": 10,
+  "event_matches": 10,
+  "event_mismatches": 0,
+  "independent_review_rows": 10,
+  "independent_review_complete": true,
+  "preregistration_frozen": true,
+  "adjudication_rule": "Governance over protocol revenue is VA_GOV. VA_PROTOCOL additionally requires a live mechanical route by which value terminates at the token or holders through burn, buyback, distribution, or an equivalent holder-directed mechanism. Ecosystem grants and infrastructure spending alone do not qualify."
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-return-panel",
+  "status": "frozen_before_return_estimation",
+  "freeze_date": "2026-09-07",
+  "purpose": "Build the first daily return panel for the crypto research universe from archived Binance USDT spot closes, with predeclared return, momentum, volatility, and market-factor fields, before any return model is estimated.",
+  "source": "data/processed/historical/ohlcv_daily_binance_spot.csv",
+  "quote_asset": "USDT",
+  "start_date": "2019-01-01",
+  "end_date": "2026-08-22",
+  "minimum_asset_days": 365,
+  "fields": {
+    "log_return": "Natural log of close over previous available close; gaps longer than max_gap_days break the return.",
+    "forward_log_return_7d": "Sum of the next seven calendar-day log returns; missing when any day is absent.",
+    "forward_log_return_30d": "Sum of the next thirty calendar-day log returns; missing when any day is absent.",
+    "momentum_30d_skip7": "Cumulative log return over days t-37 through t-8, requiring every day present.",
+    "realized_volatility_30d_annualized": "Standard deviation of the trailing 30 daily log returns times sqrt(365), requiring all 30.",
+    "log_dollar_volume": "Log of quote-asset volume for the day.",
+    "market_ew_log_return": "Equal-weighted mean of the same-day log returns across every asset with a return that day (the asset itself included).",
+    "btc_log_return": "Same-day BTC log return.",
+    "market_beta_180d_lag1": "Slope of the asset's log return on the equal-weighted market return over the trailing 180 days ending the prior day, requiring at least 120 paired observations."
+  },
+  "max_gap_days": 3,
+  "risk_free_rate": "Zero; excess returns are raw returns, a declared simplification common to daily crypto studies.",
+  "exclusions_rule": "Assets are included exactly when the archived Binance file holds at least minimum_asset_days of USDT closes; delisted or short-history assets are reported, not silently dropped.",
+  "interpretation": "This panel supports description and factor baselines. Daily crypto returns are close to unpredictable; the intended findings concern risk exposure and behaviour conditional on economic function, not forecasting."
+}

@@ -25,5 +25,9 @@ class CryptoMechanismStateTests(unittest.TestCase):
         spec={"schema_version":1,"as_of":"2026-01-02","events":[{"asset_id":"crypto_x","code":"VA_PROTOCOL","effective_from":"2026-01-01","value":1,"source_url":"https://example.org","rationale":"on"}]}
         _,summary=resolve(spec,design(0)); self.assertEqual(summary["status"],"blocked_design_state_mismatch")
 
+    def test_optional_secondary_source_is_preserved(self):
+        spec={"schema_version":1,"as_of":"2026-01-02","events":[{"asset_id":"crypto_x","code":"VA_PROTOCOL","effective_from":"2026-01-01","value":0,"source_url":"https://example.org","secondary_source_url":"https://example.org/secondary","rationale":"off"}]}
+        rows,summary=resolve(spec,design(0)); self.assertEqual(rows[0]["secondary_source_url"],"https://example.org/secondary"); self.assertEqual(summary["status"],"pass")
+
 
 if __name__=="__main__": unittest.main()

@@ -1,0 +1,7 @@
+asset_id,symbol,architecture_context,va_monetary,va_gas,va_stake,va_burn,va_scarcity,va_collateral,va_gov,va_protocol,va_utility,va_incentive,verified_code_count,unresolved_code_count,raw_function_breadth,active_bundle_count,bundle_monetary_store,bundle_transaction_service_demand,bundle_security_commitment,bundle_supply_absorption,bundle_financial_integration,bundle_control_rights,bundle_holder_capture,bundle_subsidized_participation,classification_status,adjudicated_code_count
+crypto_btc,BTC,proof_of_work_base_layer,1,0,0,0,1,1,0,0,0,0,10,0,3,2,1,0,0,0,1,0,0,0,complete_verified,0
+crypto_eth,ETH,proof_of_stake_base_layer,1,1,1,1,0,1,0,1,1,0,10,0,7,6,1,1,1,1,1,0,1,0,complete_verified,0
+crypto_bnb,BNB,proof_of_stake_family_base_layer,1,1,1,1,0,1,1,1,1,1,10,0,9,8,1,1,1,1,1,1,1,1,complete_verified,0
+crypto_uni,UNI,application_token,0,0,0,1,0,0,1,1,0,0,10,0,3,3,0,0,0,1,0,1,1,0,complete_verified,0
+crypto_aave,AAVE,application_token_with_protocol_risk_staking,0,0,1,0,0,1,1,0,0,1,10,0,4,4,0,0,1,0,1,1,0,1,complete_verified,0
+crypto_arb,ARB,rollup_governance_token,0,0,0,0,0,0,1,0,0,1,10,0,2,2,0,0,0,0,0,1,0,1,complete_verified,1

@@ -1,7 +1,12 @@
-asset_id,scope,economic_system,expected_days,observed_days,protocol_revenue_usd_days,holders_revenue_usd_days,fees_usd_days
-crypto_btc,chain,Bitcoin,89,89,89,61,89
-crypto_eth,chain,Ethereum,89,89,89,89,89
-crypto_bnb,chain,BSC,89,89,89,89,89
-crypto_uni,application_protocol,Uniswap,89,89,89,89,89
-crypto_aave,application_protocol,Aave,89,89,89,89,89
-crypto_arb,chain,Arbitrum,89,89,89,89,89
+asset_id,scope,economic_system,expected_days,observed_days,holders_revenue_usd_days,fees_usd_days,protocol_revenue_usd_days
+crypto_btc,chain,Bitcoin,362,362,325,362,362
+crypto_eth,chain,Ethereum,362,362,362,362,362
+crypto_bnb,chain,BSC,362,362,362,362,362
+crypto_uni,application_protocol,Uniswap,362,362,362,362,362
+crypto_aave,application_protocol,Aave,362,362,362,362,362
+crypto_arb,chain,Arbitrum,362,362,362,362,362
+crypto_sol,chain,Solana,362,362,362,362,362
+crypto_avax,chain,Avalanche,362,362,362,362,362
+crypto_trx,chain,TRON,362,362,362,362,362
+crypto_xrp,chain,XRP Ledger,362,362,324,362,361
+crypto_ada,chain,Cardano,362,362,362,362,362

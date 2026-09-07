@@ -1,0 +1,31 @@
+{
+  "status": "active_crypto_review_complete",
+  "crypto_h2_expansion": {
+    "review_id": "crypto_h2_expansion",
+    "status": "complete_no_disagreements",
+    "targeted_decisions": 10,
+    "completed_decisions": 10,
+    "pending_decisions": 0,
+    "agreements": 10,
+    "disagreements": 0,
+    "raw_agreement": 1.0,
+    "cohen_kappa": 1.0,
+    "freeze_eligible": true
+  },
+  "stablecoin_h5_h6": {
+    "review_id": "stablecoin_h5_h6",
+    "status": "complete_adjudication_pending",
+    "targeted_decisions": 40,
+    "completed_decisions": 40,
+    "pending_decisions": 0,
+    "agreements": 27,
+    "disagreements": 13,
+    "raw_agreement": 0.675,
+    "cohen_kappa": 0.5390070921985816,
+    "freeze_eligible": false,
+    "phase_status": "preserved_deferred_not_an_active_gate",
+    "active_gate": false
+  },
+  "freeze_guardrail": "The active crypto specification may freeze only after its complete independent review has no unresolved disagreements; deferred stablecoin review does not gate the crypto phase.",
+  "input_policy": "Completed worksheets belong in the Git-ignored review_inputs directory; generated blank templates remain reproducible pipeline outputs."
+}

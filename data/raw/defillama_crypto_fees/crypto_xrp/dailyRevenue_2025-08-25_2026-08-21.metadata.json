@@ -1,0 +1,9 @@
+{
+  "asset_id": "crypto_xrp",
+  "scope": "chain",
+  "economic_system": "XRP Ledger",
+  "provider_metric": "dailyRevenue",
+  "source_url": "https://api.llama.fi/overview/fees/ripple?dataType=dailyRevenue&excludeTotalDataChartBreakdown=true",
+  "retrieved_at_utc": "2026-08-31T01:19:16.973743+00:00",
+  "sha256": "df53b229c3976a9090c55f416274a8091be598237272bd0d97d3729efc025e36"
+}

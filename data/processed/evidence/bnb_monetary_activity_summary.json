@@ -1,0 +1,13 @@
+{
+  "status": "complete_validated_activity",
+  "asset_id": "crypto_bnb",
+  "provider": "dune",
+  "start_date": "2026-05-25",
+  "end_date": "2026-08-22",
+  "expected_days": 90,
+  "classification_effect": "none_until_complete_validated_activity_is_collected",
+  "observed_days": 90,
+  "execution_id": "01M1WYRC6S10Q7MP4J4JNN01K6",
+  "output_path": "data/processed/historical/bnb_monetary_activity_dune.csv",
+  "raw_sha256": "c88da8d79b16b8e8b54daa7332f801af2a76e4277e62f75436afa11e65c17e56"
+}

@@ -17,7 +17,7 @@ RULES = {
     "VA_SCARCITY": "A credible hard cap or deterministic terminal bound exists and is exceptionally difficult to change.",
     "VA_COLLATERAL": "Collateral TVL is at least 1% of market cap or $100m for at least 90 days.",
     "VA_GOV": "Holding or delegating provides live proposal, voting, veto, treasury, or parameter control.",
-    "VA_PROTOCOL": "A live route sends protocol revenue or surplus to holders through distribution, buyback, burn, or enforceable treasury rights.",
+    "VA_PROTOCOL": "A live mechanical route sends protocol revenue or surplus to the token or holders through distribution, buyback, burn, or an enforceable holder claim; governance over ecosystem spending alone does not qualify.",
     "VA_UTILITY": "Token is required to consume an identifiable non-generic service beyond transfer.",
     "VA_INCENTIVE": "A systematic program subsidizes liquidity, usage, development, or participation.",
 }

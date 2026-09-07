@@ -1,10 +1,10 @@
 {
-  "status": "tranche_complete_pending_remaining_evidence",
+  "status": "tranche_evidence_complete",
   "assets": 6,
   "targeted_decisions": 24,
-  "verified_decisions": 22,
-  "pending_decisions": 2,
+  "verified_decisions": 24,
+  "pending_decisions": 0,
   "verified_mismatches": 0,
-  "coverage_ratio": 0.9166666666666666,
-  "next_requirement": "Resolve the remaining monetary and positive collateral-eligibility tests; then extend the same evidence schema to the remaining 19 assets."
+  "coverage_ratio": 1.0,
+  "next_requirement": "Freeze this completed evidence tranche; any extension must be separately versioned and must not tune rules from outcomes."
 }

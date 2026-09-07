@@ -14,27 +14,29 @@ from src.pipeline.historical import write_rows
 
 
 def validate_spec(spec: dict[str, Any]) -> None:
-    if spec.get("schema_version") != 1 or spec.get("status") != "draft_not_frozen":
+    valid_statuses = {"draft_not_frozen", "frozen_post_pilot_for_reproducibility"}
+    if spec.get("schema_version") != 1 or spec.get("status") not in valid_statuses:
         raise ValueError("unsupported H2/H8 pilot preregistration")
     start=date.fromisoformat(spec["analysis_window"]["start"]); end=date.fromisoformat(spec["analysis_window"]["end"])
     if end < start or end > date.fromisoformat(spec["as_of"]):
         raise ValueError("invalid or forward-looking analysis window")
     market=spec.get("sample",{}).get("market_assets",[]); activity=spec.get("sample",{}).get("activity_assets",[])
-    if len(market)!=6 or len(market)!=len(set(market)) or not set(activity)<=set(market):
+    if len(market)<6 or len(market)!=len(set(market)) or not set(activity)<=set(market):
         raise ValueError("invalid frozen pilot samples")
     if spec["sample"].get("no_outcome_based_replacement") is not True:
         raise ValueError("outcome-based asset replacement must be prohibited")
-    if spec.get("H2",{}).get("primary_status") != "candidate_fee_layer_ready_preregistration_freeze_pending":
-        raise ValueError("primary H2 must remain blocked pending preregistration freeze")
+    expected_primary = "frozen_exploratory_fee_layer" if spec["status"] == "frozen_post_pilot_for_reproducibility" else "candidate_fee_layer_ready_preregistration_freeze_pending"
+    if spec.get("H2",{}).get("primary_status") != expected_primary:
+        raise ValueError("primary H2 status must match the preregistration freeze state")
     h2=spec["H2"]; scope=h2.get("scope_design",{}); models=h2.get("models",{}); errors=h2.get("standard_errors",{})
     if scope.get("scope_indicator")!="application_protocol_scope" or len(scope.get("sensitivities",[]))!=4 or not scope.get("pooling_guardrail"):
         raise ValueError("H2 fee-scope design must predeclare the indicator, four sensitivities, and pooling guardrail")
     if set(models)!={"market_cap","forward_return","secondary"}:
         raise ValueError("H2 models must predeclare market-cap, forward-return, and secondary specifications")
-    if "wild-cluster-bootstrap" not in errors.get("primary","") or "six assets" not in errors.get("small_sample_guardrail",""):
-        raise ValueError("H2 standard errors must address six-cluster pilot inference")
-    if spec.get("H8",{}).get("status") != "blocked_until_all_ten_codes_are_evidence_backed":
-        raise ValueError("H8 must remain blocked until all ten codes are evidenced")
+    if "wild-cluster-bootstrap" not in errors.get("primary","") or "only" not in errors.get("small_sample_guardrail",""):
+        raise ValueError("H2 standard errors must address limited-cluster pilot inference")
+    if spec.get("H8",{}).get("status") != "five_asset_complete_case_ready_bnb_withheld":
+        raise ValueError("H8 must retain the documented five-asset complete-case policy")
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -106,8 +108,9 @@ def build(spec: dict[str, Any], market_rows: list[dict[str, str]], activity_rows
     per_asset=defaultdict(lambda:{"rows":0,"activity_rows":0,"forward_return_rows":0,"fee_rows":0,"fee_forward_return_rows":0})
     for row in output:
         item=per_asset[row["asset_id"]]; item["rows"]+=1; item["activity_rows"]+=row["h2_exploratory_level_eligible"]; item["forward_return_rows"]+=row["h2_exploratory_forward_return_eligible"]; item["fee_rows"]+=row["h2_fee_level_eligible"]; item["fee_forward_return_rows"]+=row["h2_fee_forward_return_eligible"]
+    frozen = spec["status"] == "frozen_post_pilot_for_reproducibility"
     summary={
-        "status":"candidate_h2_fee_panel_ready_preregistration_freeze_pending",
+        "status":"frozen_exploratory_h2_fee_panel_ready" if frozen else "candidate_h2_fee_panel_ready_preregistration_freeze_pending",
         "market_assets":len(market_assets),"activity_assets":len(activity_assets),"rows":len(output),
         "level_eligible_rows":sum(row["h2_exploratory_level_eligible"] for row in output),
         "forward_return_eligible_rows":sum(row["h2_exploratory_forward_return_eligible"] for row in output),
@@ -115,7 +118,8 @@ def build(spec: dict[str, Any], market_rows: list[dict[str, str]], activity_rows
         "fee_forward_return_eligible_rows":sum(row["h2_fee_forward_return_eligible"] for row in output),
         "per_asset":dict(sorted(per_asset.items())),
         "scope_design_predeclared":True,
-        "primary_h2_blocker":"Scope design and estimator diagnostics are complete, but the draft must remain exploratory until the preregistration is frozen.",
+        "primary_h2_blocker":"The specification was frozen only after initial pilot estimates were observed, so results remain exploratory rather than confirmatory." if frozen else "Scope design and estimator diagnostics are complete, but the draft must remain exploratory until the preregistration is frozen.",
+        "preregistration_frozen":frozen,
         "guardrail":"Do not pool chain and application observations without the predeclared scope indicator and interactions; fees, protocol revenue, and holder revenue remain separate variables."
     }
     return output,summary

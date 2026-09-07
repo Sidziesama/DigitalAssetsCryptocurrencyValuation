@@ -1,0 +1,81 @@
+{
+  "status": "phase1_experiment_registry_frozen_before_new_tests",
+  "as_of": "2026-08-22",
+  "experiments": [
+    {
+      "id": "P1_H1",
+      "hypothesis": "Economically material usage is positively associated with network value.",
+      "predictors": [
+        "active_addresses",
+        "transaction_count",
+        "fees_usd"
+      ],
+      "outcomes": [
+        "log_market_cap_usd",
+        "network_value_to_activity"
+      ],
+      "design": "asset_and_date_fixed_effect_panel"
+    },
+    {
+      "id": "P1_H2",
+      "hypothesis": "Usage has a stronger valuation association when a live token-linked capture route is active.",
+      "predictors": [
+        "fees_usd",
+        "active_capture",
+        "fees_x_active_capture"
+      ],
+      "outcomes": [
+        "log_market_cap_usd",
+        "forward_return_7d"
+      ],
+      "design": "effective_dated_interaction_panel"
+    },
+    {
+      "id": "P1_H3",
+      "hypothesis": "Theory-defined function bundles explain valuation multiples better than an unweighted count of functions.",
+      "predictors": [
+        "bundle_indicators",
+        "raw_function_breadth"
+      ],
+      "outcomes": [
+        "market_cap_to_fees",
+        "market_cap_to_activity"
+      ],
+      "design": "nested_out_of_sample_model_comparison"
+    },
+    {
+      "id": "P1_H4",
+      "hypothesis": "Greater staking participation reduces liquid float and is associated with lower turnover or greater trading frictions.",
+      "predictors": [
+        "staked_supply_ratio"
+      ],
+      "outcomes": [
+        "turnover",
+        "spread",
+        "market_depth",
+        "volatility"
+      ],
+      "design": "consensus_stake_panel_with_protocol_risk_stake_separate"
+    },
+    {
+      "id": "P1_H5",
+      "hypothesis": "Activation or suspension of a value-accrual mechanism changes valuation or valuation multiples relative to unaffected controls.",
+      "predictors": [
+        "effective_dated_mechanism_event"
+      ],
+      "outcomes": [
+        "abnormal_return",
+        "valuation_multiple",
+        "volume"
+      ],
+      "design": "event_study_or_difference_in_differences"
+    }
+  ],
+  "guardrails": [
+    "Raw breadth and theory-defined bundles must be reported separately.",
+    "No function weights may be selected from the outcome being tested.",
+    "Mechanism states must be effective-dated and cannot be backfilled.",
+    "Architecture labels are controls or strata, not value-accrual outcomes.",
+    "The frozen exploratory H2 result used the older broad treasury-capture rule and is not relabeled as evidence under the strict Phase 1 rule."
+  ]
+}

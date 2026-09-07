@@ -1,0 +1,13 @@
+{
+  "status": "eth_collector_ready_archive_endpoint_required",
+  "asset_id": "crypto_eth",
+  "measurement_role": "consensus_active_effective_balance",
+  "archive_endpoint_configured": false,
+  "provider": null,
+  "public_probe_url": "https://ethereum-beacon-api.publicnode.com",
+  "public_probe_limitation": "The tested no-key public endpoint serves head data but rejected historical validator states; it cannot supply the study window.",
+  "exact_measure": "Sum effective_balance for active_ongoing, active_exiting, and active_slashed validators at the daily UTC snapshot slot.",
+  "approximation_rejected": "Active validator count multiplied by 32 ETH is not used because EIP-7251 permits larger effective balances.",
+  "unblocks_h4": false,
+  "limitation": "Requires a consensus archive endpoint that serves historical validator states. Effective balance measures consensus weight and excludes excess validator balance that is not active stake."
+}

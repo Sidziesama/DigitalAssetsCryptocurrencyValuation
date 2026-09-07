@@ -1,0 +1,184 @@
+{
+  "status": "return_panel_complete",
+  "specification_version": "1.0-frozen-return-panel",
+  "freeze_date": "2026-09-07",
+  "assets_included": 24,
+  "assets_excluded": 0,
+  "coverage": [
+    {
+      "asset_id": "crypto_aave",
+      "first_date": "2020-10-15",
+      "last_date": "2026-08-22",
+      "close_days": 2138,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_ada",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_arb",
+      "first_date": "2023-03-23",
+      "last_date": "2026-08-22",
+      "close_days": 1249,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_avax",
+      "first_date": "2020-09-22",
+      "last_date": "2026-08-22",
+      "close_days": 2161,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_bch",
+      "first_date": "2019-11-28",
+      "last_date": "2026-08-22",
+      "close_days": 2460,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_btc",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_doge",
+      "first_date": "2019-07-05",
+      "last_date": "2026-08-22",
+      "close_days": 2606,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_eth",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "first_date": "2019-09-29",
+      "last_date": "2026-08-22",
+      "close_days": 2520,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_link",
+      "first_date": "2019-01-16",
+      "last_date": "2026-08-22",
+      "close_days": 2776,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_op",
+      "first_date": "2022-06-01",
+      "last_date": "2026-08-22",
+      "close_days": 1544,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_pol",
+      "first_date": "2024-09-13",
+      "last_date": "2026-08-22",
+      "close_days": 709,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_sol",
+      "first_date": "2020-08-11",
+      "last_date": "2026-08-22",
+      "close_days": 2203,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_sui",
+      "first_date": "2023-05-03",
+      "last_date": "2026-08-22",
+      "close_days": 1208,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_tao",
+      "first_date": "2024-04-11",
+      "last_date": "2026-08-22",
+      "close_days": 864,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_ton",
+      "first_date": "2024-08-08",
+      "last_date": "2026-06-30",
+      "close_days": 692,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_trx",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_uni",
+      "first_date": "2020-09-17",
+      "last_date": "2026-08-22",
+      "close_days": 2166,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_xmr",
+      "first_date": "2019-03-15",
+      "last_date": "2024-02-20",
+      "close_days": 1804,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "first_date": "2019-01-01",
+      "last_date": "2026-08-22",
+      "close_days": 2791,
+      "status": "included"
+    },
+    {
+      "asset_id": "crypto_zec",
+      "first_date": "2019-03-21",
+      "last_date": "2026-08-22",
+      "close_days": 2712,
+      "status": "included"
+    }
+  ],
+  "rows": 52116,
+  "first_date": "2019-01-02",
+  "last_date": "2026-08-22",
+  "rows_with_rolling_beta": 49236,
+  "rows_with_forward_30d": 51396,
+  "risk_free_rate": "Zero; excess returns are raw returns, a declared simplification common to daily crypto studies.",
+  "interpretation": "This panel supports description and factor baselines. Daily crypto returns are close to unpredictable; the intended findings concern risk exposure and behaviour conditional on economic function, not forecasting."
+}

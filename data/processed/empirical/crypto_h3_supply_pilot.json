@@ -1,0 +1,97 @@
+{
+  "status": "h3_supply_proxy_diagnostic_complete_not_identification_ready",
+  "sample_rule": "Source-defined common Coin Metrics SplyCur coverage fixed to BTC, ETH, UNI, and AAVE.",
+  "measure": "log change in reported circulating supply from t-8 through t-1",
+  "outcome": "forward_log_return_7d from t through t+7",
+  "rows": 296,
+  "assets": [
+    "crypto_aave",
+    "crypto_btc",
+    "crypto_eth",
+    "crypto_uni"
+  ],
+  "dates": 74,
+  "coefficients": {
+    "circulating_supply_growth_7d_lag1": 1130.6496492090846,
+    "log1p_active_addresses_lag1": -0.04691545021932933,
+    "log1p_transaction_count_lag1": -0.055677157647274246
+  },
+  "supply_growth_effect_per_basis_point": 0.11306496492090846,
+  "expected_h3_sign": "negative",
+  "observed_supply_growth_sign": "positive",
+  "within_r_squared": 0.1580594488931839,
+  "inference": {
+    "coefficient": 1130.6496492090846,
+    "cluster_robust_standard_error_cr1": 1114.709092149138,
+    "observed_t": 1.0143001947074939,
+    "wild_cluster_bootstrap_p_two_sided": 0.25,
+    "bootstrap_assignments": 16,
+    "clusters": 4,
+    "minimum_two_sided_p_resolution": 0.125
+  },
+  "variation_audit": [
+    {
+      "asset_id": "crypto_aave",
+      "observations": 74,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "nonzero_observations": 0,
+      "unique_values": 1,
+      "has_within_asset_variation": false
+    },
+    {
+      "asset_id": "crypto_btc",
+      "observations": 74,
+      "minimum": 0.00013427012020260465,
+      "maximum": 0.00017318389101052948,
+      "nonzero_observations": 74,
+      "unique_values": 74,
+      "has_within_asset_variation": true
+    },
+    {
+      "asset_id": "crypto_eth",
+      "observations": 74,
+      "minimum": 0.0001556923968599587,
+      "maximum": 0.0001657309477643259,
+      "nonzero_observations": 74,
+      "unique_values": 74,
+      "has_within_asset_variation": true
+    },
+    {
+      "asset_id": "crypto_uni",
+      "observations": 74,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "nonzero_observations": 0,
+      "unique_values": 1,
+      "has_within_asset_variation": false
+    }
+  ],
+  "assets_with_within_supply_variation": 2,
+  "leave_one_asset_out": [
+    {
+      "excluded_asset": "crypto_aave",
+      "supply_growth_coefficient": 1574.8348463815637
+    },
+    {
+      "excluded_asset": "crypto_btc",
+      "supply_growth_coefficient": 14206.528266970854
+    },
+    {
+      "excluded_asset": "crypto_eth",
+      "supply_growth_coefficient": 734.9180923115837
+    },
+    {
+      "excluded_asset": "crypto_uni",
+      "supply_growth_coefficient": 209.6024120174261
+    }
+  ],
+  "guardrails": [
+    "SplyCur is a reported circulating-supply measure; changes can reflect issuance, unlocks, burns, migrations, or provider methodology revisions.",
+    "This pilot is not a clean scheduled-unlock event study and cannot identify which supply mechanism caused a change.",
+    "The seven-day forward outcomes overlap, and four clusters provide only 16 exact sign assignments.",
+    "Only BTC and ETH vary within the window; AAVE and UNI are flat under the provider measure, so the effective identifying support is two assets.",
+    "Asset and date fixed effects plus lagged activity controls reduce confounding but do not establish causality.",
+    "The source-defined four-asset sample cannot be expanded or selected based on coefficient results."
+  ]
+}

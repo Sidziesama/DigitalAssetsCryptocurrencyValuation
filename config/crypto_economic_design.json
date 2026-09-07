@@ -2,32 +2,418 @@
   "schema_version": 1,
   "as_of": "2026-08-22",
   "status": "provisional_pending_targeted_review",
-  "value_accrual_codes": ["VA_MONETARY", "VA_GAS", "VA_STAKE", "VA_BURN", "VA_SCARCITY", "VA_COLLATERAL", "VA_GOV", "VA_PROTOCOL", "VA_UTILITY", "VA_INCENTIVE"],
+  "value_accrual_codes": [
+    "VA_MONETARY",
+    "VA_GAS",
+    "VA_STAKE",
+    "VA_BURN",
+    "VA_SCARCITY",
+    "VA_COLLATERAL",
+    "VA_GOV",
+    "VA_PROTOCOL",
+    "VA_UTILITY",
+    "VA_INCENTIVE"
+  ],
   "assets": [
-    {"asset_id":"crypto_btc","consensus":"PoW","codes":[1,0,0,0,1,1,0,0,0,0]},
-    {"asset_id":"crypto_eth","consensus":"PoS","codes":[1,1,1,1,0,1,0,1,1,0]},
-    {"asset_id":"crypto_bnb","consensus":"PoS family","codes":[0,1,1,1,0,1,1,1,1,1]},
-    {"asset_id":"crypto_xrp","consensus":"federated consensus","codes":[1,1,0,1,1,0,0,1,1,0]},
-    {"asset_id":"crypto_sol","consensus":"PoS family","codes":[0,1,1,1,0,1,0,1,1,0]},
-    {"asset_id":"crypto_trx","consensus":"DPoS","codes":[1,1,1,1,0,1,1,1,1,1]},
-    {"asset_id":"crypto_hype","consensus":"PoS family","codes":[0,1,1,1,0,0,1,1,1,1]},
-    {"asset_id":"crypto_doge","consensus":"PoW","codes":[1,1,0,0,0,0,0,0,0,0]},
-    {"asset_id":"crypto_zec","consensus":"PoW","codes":[1,1,0,0,1,0,0,0,0,0]},
-    {"asset_id":"crypto_link","consensus":"service staking","codes":[0,0,1,0,0,0,0,1,1,1]},
-    {"asset_id":"crypto_ada","consensus":"PoS","codes":[0,1,1,0,1,1,1,1,1,0]},
-    {"asset_id":"crypto_xmr","consensus":"PoW","codes":[1,1,0,0,0,0,0,0,0,0]},
-    {"asset_id":"crypto_xlm","consensus":"federated consensus","codes":[1,1,0,1,1,0,1,1,1,0]},
-    {"asset_id":"crypto_bch","consensus":"PoW","codes":[1,1,0,0,1,0,0,0,0,0]},
-    {"asset_id":"crypto_ltc","consensus":"PoW","codes":[1,1,0,0,1,0,0,0,0,0]},
-    {"asset_id":"crypto_hbar","consensus":"hashgraph PoS","codes":[0,1,1,0,1,0,1,1,1,1]},
-    {"asset_id":"crypto_sui","consensus":"PoS","codes":[0,1,1,0,1,1,1,1,1,1]},
-    {"asset_id":"crypto_avax","consensus":"PoS","codes":[0,1,1,1,1,1,1,1,1,1]},
-    {"asset_id":"crypto_ton","consensus":"PoS","codes":[0,1,1,0,0,1,1,1,1,1]},
-    {"asset_id":"crypto_tao","consensus":"PoS family","codes":[0,1,1,0,1,0,1,1,1,1]},
-    {"asset_id":"crypto_uni","consensus":"NA","codes":[0,0,0,1,0,0,1,1,0,0]},
-    {"asset_id":"crypto_aave","consensus":"NA","codes":[0,0,1,0,0,1,1,0,0,1]},
-    {"asset_id":"crypto_arb","consensus":"rollup","codes":[0,0,0,0,0,0,1,1,0,1]},
-    {"asset_id":"crypto_op","consensus":"rollup","codes":[0,0,0,0,0,0,1,1,0,1]},
-    {"asset_id":"crypto_pol","consensus":"PoS","codes":[0,1,1,0,0,0,1,1,1,1]}
+    {
+      "asset_id": "crypto_btc",
+      "consensus": "PoW",
+      "codes": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_eth",
+      "consensus": "PoS",
+      "codes": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "consensus": "PoS family",
+      "codes": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "consensus": "federated consensus",
+      "codes": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_sol",
+      "consensus": "PoS family",
+      "codes": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_trx",
+      "consensus": "DPoS",
+      "codes": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_hype",
+      "consensus": "PoS family",
+      "codes": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_doge",
+      "consensus": "PoW",
+      "codes": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_zec",
+      "consensus": "PoW",
+      "codes": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_link",
+      "consensus": "service staking",
+      "codes": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_ada",
+      "consensus": "PoS",
+      "codes": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_xmr",
+      "consensus": "PoW",
+      "codes": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "consensus": "federated consensus",
+      "codes": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_bch",
+      "consensus": "PoW",
+      "codes": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "consensus": "PoW",
+      "codes": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "consensus": "hashgraph PoS",
+      "codes": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_sui",
+      "consensus": "PoS",
+      "codes": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_avax",
+      "consensus": "PoS",
+      "codes": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_ton",
+      "consensus": "PoS",
+      "codes": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_tao",
+      "consensus": "PoS family",
+      "codes": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_uni",
+      "consensus": "NA",
+      "codes": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "asset_id": "crypto_aave",
+      "consensus": "NA",
+      "codes": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_arb",
+      "consensus": "rollup",
+      "codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_op",
+      "consensus": "rollup",
+      "codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "asset_id": "crypto_pol",
+      "consensus": "PoS",
+      "codes": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "status": "exploratory_bundle_comparison_complete",
+  "experiment_id": "P1_H3",
+  "specification_version": "1.0-frozen-bundle-comparison",
+  "freeze_date": "2026-09-07",
+  "assets": [
+    "crypto_aave",
+    "crypto_arb",
+    "crypto_bnb",
+    "crypto_btc",
+    "crypto_eth",
+    "crypto_uni"
+  ],
+  "outcomes": [
+    "mean_log_market_cap_usd",
+    "mean_log_market_cap_to_daily_fees"
+  ],
+  "withheld_outcomes": {
+    "market_cap_to_activity": "Free activity data covers only four of the six assets; withheld rather than estimated on a subset chosen after the fact."
+  },
+  "models": 11,
+  "unestimable_models": [],
+  "raw_breadth_by_asset": {
+    "crypto_aave": 4,
+    "crypto_arb": 2,
+    "crypto_bnb": 9,
+    "crypto_btc": 3,
+    "crypto_eth": 7,
+    "crypto_uni": 3
+  },
+  "active_bundle_count_by_asset": {
+    "crypto_aave": 4,
+    "crypto_arb": 2,
+    "crypto_bnb": 8,
+    "crypto_btc": 2,
+    "crypto_eth": 6,
+    "crypto_uni": 3
+  },
+  "breadth_bundle_rank_correlation": 0.9558823529411765,
+  "comparison": [
+    {
+      "outcome": "mean_log_market_cap_usd",
+      "raw_breadth_loo_rmse": 3.486644884584888,
+      "active_bundle_count_loo_rmse": 3.8580032416791195,
+      "bundle_count_beats_raw_breadth": false,
+      "nested_restricted_loo_rmse": 3.486644884584888,
+      "nested_extended_loo_rmse": 4.353010497359403,
+      "theory_addition_improves_out_of_sample": false,
+      "best_model_by_loo_rmse": "bundle_monetary_store"
+    },
+    {
+      "outcome": "mean_log_market_cap_to_daily_fees",
+      "raw_breadth_loo_rmse": 5.664267560182859,
+      "active_bundle_count_loo_rmse": 6.356133986507882,
+      "bundle_count_beats_raw_breadth": false,
+      "nested_restricted_loo_rmse": 5.664267560182859,
+      "nested_extended_loo_rmse": 6.307146639010515,
+      "theory_addition_improves_out_of_sample": false,
+      "best_model_by_loo_rmse": "bundle_monetary_store"
+    }
+  ],
+  "comparison_metric": "leave_one_asset_out_root_mean_squared_prediction_error",
+  "selection_rule": "Every model is listed before estimation; no bundle weights or model choices are selected from outcomes. Models whose predictor has no cross-asset variation are reported as unestimable, not dropped silently.",
+  "interpretation": "Six assets support description and sign checks only. Leave-one-out prediction error and exact 720-permutation rank tests are exploratory; no model comparison here is confirmatory."
+}

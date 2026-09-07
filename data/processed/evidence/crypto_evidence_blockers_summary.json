@@ -1,12 +1,7 @@
 {
-  "status": "documented_open_blockers",
-  "open_blockers": 2,
-  "assets_affected": [
-    "crypto_bnb"
-  ],
-  "codes_affected": [
-    "VA_COLLATERAL",
-    "VA_MONETARY"
-  ],
-  "h8_policy": "retain null and estimate H8 on the five complete-case assets unless new evidence resolves BNB"
+  "status": "evidence_complete_no_open_blockers",
+  "open_blockers": 0,
+  "assets_affected": [],
+  "codes_affected": [],
+  "h8_policy": "all six core assets are eligible for evidence-backed H8 breadth estimation"
 }

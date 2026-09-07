@@ -2,17 +2,214 @@
   "schema_version": 1,
   "as_of": "2026-08-22",
   "events": [
-    {"asset_id":"crypto_btc","code":"VA_BURN","effective_from":"2009-01-03","value":0,"source_url":"https://developer.bitcoin.org/devguide/transactions.html","rationale":"Fees are transferred to miners, not burned."},
-    {"asset_id":"crypto_btc","code":"VA_PROTOCOL","effective_from":"2009-01-03","value":0,"source_url":"https://developer.bitcoin.org/devguide/transactions.html","rationale":"Mining revenue is compensation to block producers, not a holder route."},
-    {"asset_id":"crypto_eth","code":"VA_BURN","effective_from":"2021-08-05","value":1,"source_url":"https://eips.ethereum.org/EIPS/eip-1559","rationale":"The base fee is burned."},
-    {"asset_id":"crypto_eth","code":"VA_PROTOCOL","effective_from":"2021-08-05","value":1,"source_url":"https://eips.ethereum.org/EIPS/eip-1559","rationale":"Usage-linked base-fee burning satisfies the capture rule."},
-    {"asset_id":"crypto_bnb","code":"VA_BURN","effective_from":"2023-01-17","value":1,"source_url":"https://www.bnbchain.org/en/blog/22nd-bnb-burn","rationale":"Completed Auto-Burn and live gas-fee burn documented."},
-    {"asset_id":"crypto_bnb","code":"VA_PROTOCOL","effective_from":"2023-01-17","value":1,"source_url":"https://www.bnbchain.org/en/blog/22nd-bnb-burn","rationale":"Network activity is linked to BNB burning."},
-    {"asset_id":"crypto_uni","code":"VA_BURN","effective_from":"2026-02-18","value":1,"source_url":"https://gov.uniswap.org/t/temp-check-protocol-fee-expansion-eight-more-chains-and-remaining-mainnet-v3-pools/26035","rationale":"The live fee system converts collected fees to UNI burns."},
-    {"asset_id":"crypto_uni","code":"VA_PROTOCOL","effective_from":"2026-02-18","value":1,"source_url":"https://gov.uniswap.org/t/temp-check-protocol-fee-expansion-eight-more-chains-and-remaining-mainnet-v3-pools/26035","rationale":"Live protocol revenue is routed to UNI burns."},
-    {"asset_id":"crypto_aave","code":"VA_BURN","effective_from":"2026-04-19","value":0,"source_url":"https://governance.aave.com/t/arfc-pause-aave-buybacks/24686","rationale":"Buybacks are not burn and were paused."},
-    {"asset_id":"crypto_aave","code":"VA_PROTOCOL","effective_from":"2026-04-19","value":0,"source_url":"https://governance.aave.com/t/arfc-pause-aave-buybacks/24686","rationale":"The active buyback route was paused; retain as an option, not active capture."},
-    {"asset_id":"crypto_arb","code":"VA_BURN","effective_from":"2023-03-23","value":0,"source_url":"https://github.com/ArbitrumFoundation/governance","rationale":"The reviewed ARB governance-token implementation and allocation workflow contain no live automatic rules-based burn mechanism."},
-    {"asset_id":"crypto_arb","code":"VA_PROTOCOL","effective_from":"2023-12-31","value":1,"source_url":"https://docs.arbitrum.foundation/assets/files/ArbitrumFoundationTransparencyReport2023-75b1b491667ad2fa1d9d574a2108f28b.pdf","rationale":"Network revenue enters the DAO treasury governed by ARB tokenholders."}
+    {
+      "asset_id": "crypto_btc",
+      "code": "VA_BURN",
+      "effective_from": "2009-01-03",
+      "value": 0,
+      "source_url": "https://developer.bitcoin.org/devguide/transactions.html",
+      "rationale": "Fees are transferred to miners, not burned."
+    },
+    {
+      "asset_id": "crypto_btc",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2009-01-03",
+      "value": 0,
+      "source_url": "https://developer.bitcoin.org/devguide/transactions.html",
+      "rationale": "Mining revenue is compensation to block producers, not a holder route."
+    },
+    {
+      "asset_id": "crypto_eth",
+      "code": "VA_BURN",
+      "effective_from": "2021-08-05",
+      "value": 1,
+      "source_url": "https://eips.ethereum.org/EIPS/eip-1559",
+      "rationale": "The base fee is burned."
+    },
+    {
+      "asset_id": "crypto_eth",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2021-08-05",
+      "value": 1,
+      "source_url": "https://eips.ethereum.org/EIPS/eip-1559",
+      "rationale": "Usage-linked base-fee burning satisfies the capture rule."
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "code": "VA_BURN",
+      "effective_from": "2023-01-17",
+      "value": 1,
+      "source_url": "https://www.bnbchain.org/en/blog/22nd-bnb-burn",
+      "rationale": "Completed Auto-Burn and live gas-fee burn documented."
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2023-01-17",
+      "value": 1,
+      "source_url": "https://www.bnbchain.org/en/blog/22nd-bnb-burn",
+      "rationale": "Network activity is linked to BNB burning."
+    },
+    {
+      "asset_id": "crypto_uni",
+      "code": "VA_BURN",
+      "effective_from": "2020-09-16",
+      "value": 0,
+      "source_url": "https://gov.uniswap.org/t/unification-proposal/25881",
+      "rationale": "UNIfication describes the protocol fee switch as previously off and its retroactive treasury burn as a counterfactual for burns that had not occurred since token launch."
+    },
+    {
+      "asset_id": "crypto_uni",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2020-09-16",
+      "value": 0,
+      "source_url": "https://gov.uniswap.org/t/unification-proposal/25881",
+      "rationale": "Before UNIfication execution, protocol usage did not route fees into the UNI burn mechanism."
+    },
+    {
+      "asset_id": "crypto_uni",
+      "code": "VA_BURN",
+      "effective_from": "2025-12-27",
+      "value": 1,
+      "source_url": "https://vote.uniswapfoundation.org/forum-article/7/duni-q4-and-year-end-2025-financial-statements-and-tax-update",
+      "rationale": "DUNI reports execution of UNIfication and the 100 million UNI burn on December 27, 2025; the approved architecture routes protocol fees to UNI burn."
+    },
+    {
+      "asset_id": "crypto_uni",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2025-12-27",
+      "value": 1,
+      "source_url": "https://vote.uniswapfoundation.org/forum-article/7/duni-q4-and-year-end-2025-financial-statements-and-tax-update",
+      "rationale": "UNIfication execution activated the governance-approved fee-to-burn value-capture architecture."
+    },
+    {
+      "asset_id": "crypto_aave",
+      "code": "VA_BURN",
+      "effective_from": "2025-04-09",
+      "value": 0,
+      "source_url": "https://governance.aave.com/t/aave-dao-funding-insights/24192",
+      "rationale": "The program acquired AAVE into DAO holdings rather than destroying tokens, so it does not satisfy the burn definition."
+    },
+    {
+      "asset_id": "crypto_aave",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2025-04-09",
+      "value": 1,
+      "source_url": "https://governance.aave.com/t/aave-dao-funding-insights/24192",
+      "rationale": "Aave DAO reports that its protocol-funded AAVE buyback program launched on April 9, 2025 and remained active during the historical window."
+    },
+    {
+      "asset_id": "crypto_aave",
+      "code": "VA_BURN",
+      "effective_from": "2026-04-19",
+      "value": 0,
+      "source_url": "https://governance.aave.com/t/arfc-pause-aave-buybacks/24686",
+      "rationale": "Buybacks are not burn and were paused."
+    },
+    {
+      "asset_id": "crypto_aave",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2026-04-19",
+      "value": 0,
+      "source_url": "https://governance.aave.com/t/arfc-pause-aave-buybacks/24686",
+      "rationale": "The active buyback route was paused; retain as an option, not active capture."
+    },
+    {
+      "asset_id": "crypto_arb",
+      "code": "VA_BURN",
+      "effective_from": "2023-03-23",
+      "value": 0,
+      "source_url": "https://github.com/ArbitrumFoundation/governance",
+      "rationale": "The reviewed ARB governance-token implementation and allocation workflow contain no live automatic rules-based burn mechanism."
+    },
+    {
+      "asset_id": "crypto_arb",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2023-12-31",
+      "value": 1,
+      "source_url": "https://docs.arbitrum.foundation/assets/files/ArbitrumFoundationTransparencyReport2023-75b1b491667ad2fa1d9d574a2108f28b.pdf",
+      "rationale": "Network revenue enters the DAO treasury governed by ARB tokenholders."
+    },
+    {
+      "asset_id": "crypto_sol",
+      "code": "VA_BURN",
+      "effective_from": "2020-03-16",
+      "value": 1,
+      "source_url": "https://solana.com/docs/core/fees/fee-structure",
+      "rationale": "Solana permanently burns 50% of each transaction base fee."
+    },
+    {
+      "asset_id": "crypto_sol",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2020-03-16",
+      "value": 1,
+      "source_url": "https://solana.com/docs/core/fees/fee-structure",
+      "rationale": "Usage-linked base-fee burning provides a live automatic value-capture route."
+    },
+    {
+      "asset_id": "crypto_avax",
+      "code": "VA_BURN",
+      "effective_from": "2020-09-21",
+      "value": 1,
+      "source_url": "https://build.avax.network/docs/primary-network/avax-token",
+      "rationale": "Avalanche transaction fees are permanently burned."
+    },
+    {
+      "asset_id": "crypto_avax",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2020-09-21",
+      "value": 1,
+      "source_url": "https://build.avax.network/docs/primary-network/avax-token",
+      "rationale": "Usage-linked transaction-fee burning provides a live automatic value-capture route."
+    },
+    {
+      "asset_id": "crypto_trx",
+      "code": "VA_BURN",
+      "effective_from": "2025-08-26",
+      "value": 1,
+      "source_url": "https://developers.tron.network/docs/tron-economic-model",
+      "rationale": "The official economic model documents ongoing transaction-fee burning and a sustained deflationary trend predating the analysis window; the study conservatively dates verification from window start."
+    },
+    {
+      "asset_id": "crypto_trx",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2025-08-26",
+      "value": 1,
+      "source_url": "https://developers.tron.network/docs/tron-economic-model",
+      "rationale": "Resource shortfalls automatically burn TRX at governed fixed rates, linking network usage to token destruction."
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "code": "VA_BURN",
+      "effective_from": "2012-06-02",
+      "value": 1,
+      "source_url": "https://xrpl.org/docs/concepts/transactions/transaction-cost",
+      "rationale": "Every applied XRP Ledger transaction irrevocably destroys its XRP transaction cost."
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2012-06-02",
+      "value": 1,
+      "source_url": "https://xrpl.org/docs/concepts/transactions/transaction-cost",
+      "rationale": "Usage-linked transaction-cost destruction provides a live automatic value-capture route."
+    },
+    {
+      "asset_id": "crypto_ada",
+      "code": "VA_BURN",
+      "effective_from": "2020-07-29",
+      "value": 0,
+      "source_url": "https://docs.cardano.org/about-cardano/explore-more/monetary-policy",
+      "rationale": "Cardano transaction fees enter the epoch reward pot rather than being destroyed."
+    },
+    {
+      "asset_id": "crypto_ada",
+      "code": "VA_PROTOCOL",
+      "effective_from": "2020-07-29",
+      "value": 0,
+      "source_url": "https://docs.cardano.org/about-cardano/explore-more/monetary-policy",
+      "secondary_source_url": "https://developers.cardano.org/docs/community/funding/",
+      "rationale": "Ordinary proof-of-stake rewards are service compensation, while the governance treasury funds third-party projects and protocol infrastructure rather than mechanically burning, buying back, or distributing value to ADA holders. Governance authority remains VA_GOV, not VA_PROTOCOL."
+    }
   ]
 }

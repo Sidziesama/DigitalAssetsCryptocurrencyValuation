@@ -1,0 +1,525 @@
+{
+  "status": "return_factor_baseline_complete",
+  "specification_version": "1.0-frozen-return-factor-baseline",
+  "freeze_date": "2026-09-07",
+  "market_model": {
+    "factor": "market_ew_log_return",
+    "assets_estimated": 24,
+    "median_market_beta": 1.030348023725252,
+    "median_r_squared": 0.6024320235068448,
+    "per_asset": [
+      {
+        "asset_id": "crypto_aave",
+        "days": 2137,
+        "status": "estimated",
+        "market_beta": 1.1356399693837465,
+        "alpha_daily": -1.6947063909534361e-06,
+        "alpha_annualized": -0.0006185678326980042,
+        "r_squared": 0.628713392638182,
+        "mean_log_return_annualized": 0.18422354942651042,
+        "volatility_annualized": 1.089727765712402
+      },
+      {
+        "asset_id": "crypto_ada",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 1.0665954603266403,
+        "alpha_daily": -1.9547636489715718e-05,
+        "alpha_annualized": -0.007134887318746237,
+        "r_squared": 0.7243599562096992,
+        "mean_log_return_annualized": 0.22022212006491992,
+        "volatility_annualized": 0.974695598979122
+      },
+      {
+        "asset_id": "crypto_arb",
+        "days": 1248,
+        "status": "estimated",
+        "market_beta": 1.2699808849651606,
+        "alpha_daily": -0.002095128099515652,
+        "alpha_annualized": -0.764721756323213,
+        "r_squared": 0.7227760353731219,
+        "mean_log_return_annualized": -0.7579465454364163,
+        "volatility_annualized": 0.9280965344218443
+      },
+      {
+        "asset_id": "crypto_avax",
+        "days": 2160,
+        "status": "estimated",
+        "market_beta": 1.1769695249004903,
+        "alpha_daily": -0.0003999492176242687,
+        "alpha_annualized": -0.14598146443285806,
+        "r_squared": 0.6210464190556584,
+        "mean_log_return_annualized": 0.057920258975575435,
+        "volatility_annualized": 1.1340548453263106
+      },
+      {
+        "asset_id": "crypto_bch",
+        "days": 2459,
+        "status": "estimated",
+        "market_beta": 0.9849846308166987,
+        "alpha_daily": -0.0004898027887581557,
+        "alpha_annualized": -0.17877801789672684,
+        "r_squared": 0.6498186936346935,
+        "mean_log_return_annualized": 0.03574112172269029,
+        "volatility_annualized": 0.9603186449388472
+      },
+      {
+        "asset_id": "crypto_bnb",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 0.8250600510808475,
+        "alpha_daily": 0.001222124542012717,
+        "alpha_annualized": 0.4460754578346417,
+        "r_squared": 0.60160566722814,
+        "mean_log_return_annualized": 0.6219464333853072,
+        "volatility_annualized": 0.8273248916318005
+      },
+      {
+        "asset_id": "crypto_btc",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 0.6727712744834615,
+        "alpha_daily": 0.0006861419304271801,
+        "alpha_annualized": 0.25044180460592075,
+        "r_squared": 0.7026350643952559,
+        "mean_log_return_annualized": 0.3938506876452438,
+        "volatility_annualized": 0.6242363026026948
+      },
+      {
+        "asset_id": "crypto_doge",
+        "days": 2605,
+        "status": "estimated",
+        "market_beta": 1.011097262381081,
+        "alpha_daily": 0.000912408049962694,
+        "alpha_annualized": 0.3330289382363833,
+        "r_squared": 0.3927694038413524,
+        "mean_log_return_annualized": 0.4437731694555524,
+        "volatility_annualized": 1.2608514126536265
+      },
+      {
+        "asset_id": "crypto_eth",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 0.9513760636084398,
+        "alpha_daily": 0.00046855163567572234,
+        "alpha_annualized": 0.17102134702163865,
+        "r_squared": 0.8099117154063129,
+        "mean_log_return_annualized": 0.3738180237037476,
+        "volatility_annualized": 0.8222045410072014
+      },
+      {
+        "asset_id": "crypto_hbar",
+        "days": 2519,
+        "status": "estimated",
+        "market_beta": 1.0425535945266284,
+        "alpha_daily": -0.0002825494882494342,
+        "alpha_annualized": -0.10313056321104348,
+        "r_squared": 0.49564514456345754,
+        "mean_log_return_annualized": 0.11273468165696085,
+        "volatility_annualized": 1.1574740700121517
+      },
+      {
+        "asset_id": "crypto_link",
+        "days": 2775,
+        "status": "estimated",
+        "market_beta": 1.1287499084036559,
+        "alpha_daily": 0.0004766982469049918,
+        "alpha_annualized": 0.173994860120322,
+        "r_squared": 0.6678600764509288,
+        "mean_log_return_annualized": 0.4168898874198385,
+        "volatility_annualized": 1.072589102784687
+      },
+      {
+        "asset_id": "crypto_ltc",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 0.9767717567310766,
+        "alpha_daily": -0.00038746077126896857,
+        "alpha_annualized": -0.14142318151317354,
+        "r_squared": 0.7333618321728967,
+        "mean_log_return_annualized": 0.06678687728386533,
+        "volatility_annualized": 0.8871160423514604
+      },
+      {
+        "asset_id": "crypto_op",
+        "days": 1543,
+        "status": "estimated",
+        "market_beta": 1.3989282356870336,
+        "alpha_daily": -0.0014647340096869555,
+        "alpha_annualized": -0.5346279135357388,
+        "r_squared": 0.6032583797855495,
+        "mean_log_return_annualized": -0.5736499582504716,
+        "volatility_annualized": 1.163988830475548
+      },
+      {
+        "asset_id": "crypto_pol",
+        "days": 708,
+        "status": "estimated",
+        "market_beta": 1.0181424529238758,
+        "alpha_daily": -0.0016529195781412789,
+        "alpha_annualized": -0.6033156460215667,
+        "r_squared": 0.7220668072879157,
+        "mean_log_return_annualized": -0.6922888415852575,
+        "volatility_annualized": 0.8059214694295479
+      },
+      {
+        "asset_id": "crypto_sol",
+        "days": 2202,
+        "status": "estimated",
+        "market_beta": 1.1059193535548775,
+        "alpha_daily": 0.0010969297622513555,
+        "alpha_annualized": 0.4003793632217448,
+        "r_squared": 0.5418754829885339,
+        "mean_log_return_annualized": 0.5549442484673596,
+        "volatility_annualized": 1.142956094669087
+      },
+      {
+        "asset_id": "crypto_sui",
+        "days": 1207,
+        "status": "estimated",
+        "market_beta": 1.2161360331365134,
+        "alpha_daily": -0.0004873625815487772,
+        "alpha_annualized": -0.17788734226530367,
+        "r_squared": 0.5694271001356184,
+        "mean_log_return_annualized": -0.16425413811212597,
+        "volatility_annualized": 1.0096982287173897
+      },
+      {
+        "asset_id": "crypto_tao",
+        "days": 863,
+        "status": "estimated",
+        "market_beta": 1.1647248063226017,
+        "alpha_daily": -0.0004890051313449139,
+        "alpha_annualized": -0.17848687294089358,
+        "r_squared": 0.5629837778630082,
+        "mean_log_return_annualized": -0.4359321480987666,
+        "volatility_annualized": 1.0360614052675354
+      },
+      {
+        "asset_id": "crypto_ton",
+        "days": 691,
+        "status": "estimated",
+        "market_beta": 0.7843681195841259,
+        "alpha_daily": -0.0014701549654497627,
+        "alpha_annualized": -0.5366065623891634,
+        "r_squared": 0.4713990632430217,
+        "mean_log_return_annualized": -0.7170293908432007,
+        "volatility_annualized": 0.7736022003624807
+      },
+      {
+        "asset_id": "crypto_trx",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 0.7459816710551888,
+        "alpha_daily": 0.0005973741139588897,
+        "alpha_annualized": 0.21804155159499472,
+        "r_squared": 0.490368826010811,
+        "mean_log_return_annualized": 0.3770560670348349,
+        "volatility_annualized": 0.8285395066705427
+      },
+      {
+        "asset_id": "crypto_uni",
+        "days": 2165,
+        "status": "estimated",
+        "market_beta": 1.132559881130856,
+        "alpha_daily": -0.00039586055010453,
+        "alpha_annualized": -0.14448910078815344,
+        "r_squared": 0.5687582470107848,
+        "mean_log_return_annualized": 0.036442224951864804,
+        "volatility_annualized": 1.1407630515994103
+      },
+      {
+        "asset_id": "crypto_xlm",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 0.9864294087575071,
+        "alpha_daily": -0.00038103173524855967,
+        "alpha_annualized": -0.1390765833657243,
+        "r_squared": 0.6227080839783616,
+        "mean_log_return_annualized": 0.07119211429183367,
+        "volatility_annualized": 0.9722327599456759
+      },
+      {
+        "asset_id": "crypto_xmr",
+        "days": 1803,
+        "status": "estimated",
+        "market_beta": 0.8574623384302965,
+        "alpha_daily": -0.0004044557479926378,
+        "alpha_annualized": -0.14762634801731278,
+        "r_squared": 0.5945309340156709,
+        "mean_log_return_annualized": 0.16669636094983425,
+        "volatility_annualized": 0.9239846155951326
+      },
+      {
+        "asset_id": "crypto_xrp",
+        "days": 2790,
+        "status": "estimated",
+        "market_beta": 0.9615113980787342,
+        "alpha_daily": -6.003234003561448e-05,
+        "alpha_annualized": -0.021911804112999284,
+        "r_squared": 0.5960320842138966,
+        "mean_log_return_annualized": 0.18304533489968577,
+        "volatility_annualized": 0.968648273765293
+      },
+      {
+        "asset_id": "crypto_zec",
+        "days": 2711,
+        "status": "estimated",
+        "market_beta": 1.0568128109643105,
+        "alpha_daily": 0.00042082258916676903,
+        "alpha_annualized": 0.1536002450458707,
+        "r_squared": 0.5443227055699067,
+        "mean_log_return_annualized": 0.3604722160605371,
+        "volatility_annualized": 1.117669671857887
+      }
+    ]
+  },
+  "fama_macbeth": {
+    "cross_sections": 2596,
+    "predictors": [
+      "market_beta_180d_lag1",
+      "momentum_30d_skip7",
+      "realized_volatility_30d_annualized"
+    ],
+    "results": {
+      "intercept": {
+        "mean_daily_premium": 0.001134986987945354,
+        "newey_west_se": 0.0009873950362367806,
+        "t_statistic": 1.149476092437212,
+        "share_positive_days": 0.5281201848998459
+      },
+      "market_beta_180d_lag1": {
+        "mean_daily_premium": -0.0030002906069556247,
+        "newey_west_se": 0.0014160470362547365,
+        "t_statistic": -2.118778917747683,
+        "share_positive_days": 0.4549306625577812
+      },
+      "momentum_30d_skip7": {
+        "mean_daily_premium": -0.001980987974294856,
+        "newey_west_se": 0.0017597443114375434,
+        "t_statistic": -1.1257248916330225,
+        "share_positive_days": 0.5088597842835131
+      },
+      "realized_volatility_30d_annualized": {
+        "mean_daily_premium": 0.0018597679130706423,
+        "newey_west_se": 0.0015606014956185386,
+        "t_statistic": 1.1916994301825465,
+        "share_positive_days": 0.4699537750385208
+      }
+    }
+  },
+  "function_sorts": {
+    "common_window_start": "2023-03-24",
+    "common_window_end": "2026-08-22",
+    "common_days": 1248,
+    "sorts": [
+      {
+        "bundle": "bundle_monetary_store",
+        "status": "descriptive",
+        "positive_assets": [
+          "crypto_btc",
+          "crypto_eth",
+          "crypto_bnb"
+        ],
+        "negative_assets": [
+          "crypto_uni",
+          "crypto_aave",
+          "crypto_arb"
+        ],
+        "positive_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.19873616847256587,
+          "volatility_annualized": 0.48142137530639406,
+          "sharpe_annualized": 0.4128112681870075,
+          "market_beta": 0.6961099988223939,
+          "max_drawdown_log": -0.891053074547502,
+          "newey_west_t_of_mean": 0.7770793571649255
+        },
+        "negative_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": -0.24076274696019867,
+          "volatility_annualized": 0.8230412033546279,
+          "sharpe_annualized": -0.29252818203860925,
+          "market_beta": 1.2068272742578139,
+          "max_drawdown_log": -2.1319460174671843,
+          "newey_west_t_of_mean": -0.5757415551851753
+        },
+        "long_minus_short": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.43949891543276454,
+          "volatility_annualized": 0.5119070728354296,
+          "sharpe_annualized": 0.8585521450180407,
+          "market_beta": -0.5107172754354194,
+          "max_drawdown_log": -0.6082045266921349,
+          "newey_west_t_of_mean": 1.751624131364084
+        }
+      },
+      {
+        "bundle": "bundle_holder_capture",
+        "status": "descriptive",
+        "positive_assets": [
+          "crypto_eth",
+          "crypto_bnb",
+          "crypto_uni"
+        ],
+        "negative_assets": [
+          "crypto_btc",
+          "crypto_aave",
+          "crypto_arb"
+        ],
+        "positive_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.06470581134895688,
+          "volatility_annualized": 0.614866170162003,
+          "sharpe_annualized": 0.10523560164630359,
+          "market_beta": 0.895742189108142,
+          "max_drawdown_log": -1.070956013849179,
+          "newey_west_t_of_mean": 0.20222291938708606
+        },
+        "negative_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": -0.10673238983658971,
+          "volatility_annualized": 0.6710481155792668,
+          "sharpe_annualized": -0.1590532591607912,
+          "market_beta": 1.007195083972063,
+          "max_drawdown_log": -1.6421413903650626,
+          "newey_west_t_of_mean": -0.30611310686607407
+        },
+        "long_minus_short": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.17143820118554656,
+          "volatility_annualized": 0.3169449265102987,
+          "sharpe_annualized": 0.540908488654971,
+          "market_beta": -0.11145289486392043,
+          "max_drawdown_log": -0.5706977537743376,
+          "newey_west_t_of_mean": 0.9848607296144849
+        }
+      },
+      {
+        "bundle": "bundle_control_rights",
+        "status": "descriptive",
+        "positive_assets": [
+          "crypto_bnb",
+          "crypto_uni",
+          "crypto_aave",
+          "crypto_arb"
+        ],
+        "negative_assets": [
+          "crypto_btc",
+          "crypto_eth"
+        ],
+        "positive_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": -0.12595061272400157,
+          "volatility_annualized": 0.7057790057909821,
+          "sharpe_annualized": -0.1784561621847138,
+          "market_beta": 1.0537756157502316,
+          "max_drawdown_log": -1.6521946250557527,
+          "newey_west_t_of_mean": -0.3493612376494801
+        },
+        "negative_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.18886135771655396,
+          "volatility_annualized": 0.5202913578880746,
+          "sharpe_annualized": 0.3629915332116317,
+          "market_beta": 0.7468546781198458,
+          "max_drawdown_log": -0.9245792307183769,
+          "newey_west_t_of_mean": 0.6811667828575259
+        },
+        "long_minus_short": {
+          "days": 1248,
+          "mean_log_return_annualized": -0.31481197044055553,
+          "volatility_annualized": 0.38679975634525676,
+          "sharpe_annualized": -0.8138887506422184,
+          "market_beta": 0.30692093763038497,
+          "max_drawdown_log": -1.212213239980401,
+          "newey_west_t_of_mean": -1.6726661361034547
+        }
+      },
+      {
+        "bundle": "bundle_security_commitment",
+        "status": "descriptive",
+        "positive_assets": [
+          "crypto_eth",
+          "crypto_bnb",
+          "crypto_aave"
+        ],
+        "negative_assets": [
+          "crypto_btc",
+          "crypto_uni",
+          "crypto_arb"
+        ],
+        "positive_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.14926873839553045,
+          "volatility_annualized": 0.6015362375610137,
+          "sharpe_annualized": 0.24814587895943696,
+          "market_beta": 0.8790922810115666,
+          "max_drawdown_log": -1.1443202491723736,
+          "newey_west_t_of_mean": 0.4762289160561473
+        },
+        "negative_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": -0.19129531688316329,
+          "volatility_annualized": 0.6876493339849834,
+          "sharpe_annualized": -0.2781873077293502,
+          "market_beta": 1.0238449920686399,
+          "max_drawdown_log": -1.7529710397268565,
+          "newey_west_t_of_mean": -0.5383689059468072
+        },
+        "long_minus_short": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.34056405527869377,
+          "volatility_annualized": 0.33635848203125934,
+          "sharpe_annualized": 1.0125032471963753,
+          "market_beta": -0.14475271105707493,
+          "max_drawdown_log": -0.364450014663108,
+          "newey_west_t_of_mean": 1.92211349166189
+        }
+      },
+      {
+        "bundle": "bundle_financial_integration",
+        "status": "descriptive",
+        "positive_assets": [
+          "crypto_btc",
+          "crypto_eth",
+          "crypto_bnb",
+          "crypto_aave"
+        ],
+        "negative_assets": [
+          "crypto_uni",
+          "crypto_arb"
+        ],
+        "positive_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.18522051206636703,
+          "volatility_annualized": 0.5455734999690129,
+          "sharpe_annualized": 0.339496900191976,
+          "market_beta": 0.8096514008066146,
+          "max_drawdown_log": -1.0373896173270085,
+          "newey_west_t_of_mean": 0.6496910244210882
+        },
+        "negative_portfolio": {
+          "days": 1248,
+          "mean_log_return_annualized": -0.4334808918641833,
+          "volatility_annualized": 0.8635573632138412,
+          "sharpe_annualized": -0.5019711606081704,
+          "market_beta": 1.2351031080070825,
+          "max_drawdown_log": -2.577129255435677,
+          "newey_west_t_of_mean": -0.9802433072483637
+        },
+        "long_minus_short": {
+          "days": 1248,
+          "mean_log_return_annualized": 0.6187014039305503,
+          "volatility_annualized": 0.5106228566857174,
+          "sharpe_annualized": 1.211660222079236,
+          "market_beta": -0.42545170720046976,
+          "max_drawdown_log": -0.4634327092898197,
+          "newey_west_t_of_mean": 2.3838810699517374
+        }
+      }
+    ]
+  },
+  "selection_rule": "Predictors and sort variables are listed before estimation; no factor or bundle was chosen from return outcomes.",
+  "interpretation": "Baseline exposures and descriptive sorts. Six-asset sorts cannot support inference about economic functions; they show what the classification would be tested on once the remaining universe is verified."
+}

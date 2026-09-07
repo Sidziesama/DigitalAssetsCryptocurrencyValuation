@@ -7,8 +7,8 @@ SPEC={
     "schema_version":1,"status":"draft_not_frozen","as_of":"2026-01-08",
     "analysis_window":{"start":"2026-01-01","end":"2026-01-08"},
     "sample":{"market_assets":["crypto_x","crypto_a","crypto_b","crypto_c","crypto_d","crypto_e"],"activity_assets":["crypto_x"],"no_outcome_based_replacement":True},
-    "H2":{"primary_status":"candidate_fee_layer_ready_preregistration_freeze_pending","scope_design":{"scope_indicator":"application_protocol_scope","sensitivities":["a","b","c","d"],"pooling_guardrail":"required"},"models":{"market_cap":"x","forward_return":"x","secondary":"x"},"standard_errors":{"primary":"wild-cluster-bootstrap","small_sample_guardrail":"exploratory with six assets"}},
-    "H8":{"status":"blocked_until_all_ten_codes_are_evidence_backed"},
+    "H2":{"primary_status":"candidate_fee_layer_ready_preregistration_freeze_pending","scope_design":{"scope_indicator":"application_protocol_scope","sensitivities":["a","b","c","d"],"pooling_guardrail":"required"},"models":{"market_cap":"x","forward_return":"x","secondary":"x"},"standard_errors":{"primary":"wild-cluster-bootstrap","small_sample_guardrail":"exploratory with only six assets"}},
+    "H8":{"status":"five_asset_complete_case_ready_bnb_withheld"},
 }
 
 
@@ -29,6 +29,15 @@ class CryptoH2PilotPanelTests(unittest.TestCase):
         events=[{"asset_id":"crypto_x","code":"VA_BURN","effective_from":"2026-01-02","value":1}]
         self.assertIsNone(mechanism_state(events,"crypto_x","VA_BURN",__import__("datetime").date(2026,1,1)))
         self.assertEqual(mechanism_state(events,"crypto_x","VA_BURN",__import__("datetime").date(2026,1,2)),1)
+
+    def test_latest_historical_state_applies_after_transition(self):
+        events = [
+            {"asset_id": "crypto_x", "code": "VA_PROTOCOL", "effective_from": "2025-04-09", "value": 1},
+            {"asset_id": "crypto_x", "code": "VA_PROTOCOL", "effective_from": "2026-04-19", "value": 0},
+        ]
+        date_type = __import__("datetime").date
+        self.assertEqual(mechanism_state(events, "crypto_x", "VA_PROTOCOL", date_type(2026, 4, 18)), 1)
+        self.assertEqual(mechanism_state(events, "crypto_x", "VA_PROTOCOL", date_type(2026, 4, 19)), 0)
 
     def test_exact_lag_and_forward_return(self):
         market=[

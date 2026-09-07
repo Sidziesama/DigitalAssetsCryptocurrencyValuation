@@ -2,16 +2,15 @@
   "assets": 6,
   "verified_positive_assets": [
     "crypto_btc",
-    "crypto_eth"
+    "crypto_eth",
+    "crypto_bnb"
   ],
   "verified_negative_assets": [
     "crypto_uni",
     "crypto_aave",
     "crypto_arb"
   ],
-  "unresolved_assets": [
-    "crypto_bnb"
-  ],
+  "unresolved_assets": [],
   "activity_rule": {
     "start": "2026-05-25",
     "end": "2026-08-22",
