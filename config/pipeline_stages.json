@@ -203,6 +203,10 @@
           "args": []
         },
         {
+          "module": "crypto_evidence_tranche_a",
+          "args": []
+        },
+        {
           "module": "crypto_h8_evidence_plan",
           "args": []
         },

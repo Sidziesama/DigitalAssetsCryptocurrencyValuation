@@ -1,0 +1,129 @@
+{
+  "status": "tranche_a_drafted_awaiting_review",
+  "specification_version": "1.0-tranche-a-rule-mechanical-codes",
+  "as_of": "2026-09-07",
+  "assets": 14,
+  "codes": 5,
+  "decisions": 70,
+  "verified_decisions": 59,
+  "pending_decisions": 11,
+  "coverage_ratio": 0.8428571428571429,
+  "provisional_matrix_mismatches": 5,
+  "mismatch_detail": [
+    {
+      "asset_id": "crypto_hbar",
+      "code": "VA_PROTOCOL",
+      "provisional_value": 1,
+      "recommended_value": 0
+    },
+    {
+      "asset_id": "crypto_link",
+      "code": "VA_SCARCITY",
+      "provisional_value": 0,
+      "recommended_value": 1
+    },
+    {
+      "asset_id": "crypto_sui",
+      "code": "VA_PROTOCOL",
+      "provisional_value": 1,
+      "recommended_value": 0
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "code": "VA_BURN",
+      "provisional_value": 1,
+      "recommended_value": 0
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "code": "VA_PROTOCOL",
+      "provisional_value": 1,
+      "recommended_value": 0
+    }
+  ],
+  "pending_detail": [
+    {
+      "asset_id": "crypto_bch",
+      "code": "VA_GAS",
+      "rationale": "Held pending the relay-policy versus consensus-rule boundary. A zero-fee BCH transaction is consensus-valid and fee minimums are node relay policy, matching the reasoning behind the existing verified BTC VA_GAS=0 decision. Adjudication required before this cell is scored."
+    },
+    {
+      "asset_id": "crypto_doge",
+      "code": "VA_GAS",
+      "rationale": "Held pending the same relay-policy versus consensus-rule boundary as BTC and the other UTXO proof-of-work chains."
+    },
+    {
+      "asset_id": "crypto_doge",
+      "code": "VA_BURN",
+      "rationale": "Held pending. The cited monetary-policy page does not describe fee destination or any burn mechanism, so absence cannot be established from it. A canonical fee-flow source is required."
+    },
+    {
+      "asset_id": "crypto_doge",
+      "code": "VA_PROTOCOL",
+      "rationale": "Held pending for the same reason: the cited page does not establish where transaction fees go, so a negative cannot be evidenced from it."
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "code": "VA_BURN",
+      "rationale": "Held pending. The canonical mainnet fee page was refetched and describes only fee calculation, not fee destination, so neither a burn nor its absence can be evidenced from it."
+    },
+    {
+      "asset_id": "crypto_link",
+      "code": "VA_PROTOCOL",
+      "rationale": "Held pending adjudication. Staking rewards are currently emissions-funded, which is service compensation, but the same page describes a Reserve and Smart Value Recapture whose relationship to the strict holder-capture rule has not been assessed from primary sources. This is the LINK analogue of the governed-treasury boundary question."
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "code": "VA_GAS",
+      "rationale": "Held pending the relay-policy versus consensus-rule boundary shared with BTC, BCH, DOGE, and ZEC."
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "code": "VA_BURN",
+      "rationale": "Held pending. The cited page contains no statement about burning, and litecoin.org returned no fetchable content, so absence cannot yet be evidenced from a canonical protocol source."
+    },
+    {
+      "asset_id": "crypto_op",
+      "code": "VA_BURN",
+      "rationale": "Held pending. The governance-token specification describes a mint-capable token and an optional holder-initiated burn function, which does not settle whether a live rules-based protocol burn operates."
+    },
+    {
+      "asset_id": "crypto_op",
+      "code": "VA_PROTOCOL",
+      "rationale": "Held pending. Governance approved routing a share of Superchain revenue to OP buybacks, but the official thread does not confirm that execution is currently live, and a paused mechanism scores zero only after review."
+    },
+    {
+      "asset_id": "crypto_zec",
+      "code": "VA_GAS",
+      "rationale": "Held pending the relay-policy versus consensus-rule boundary shared with the other UTXO proof-of-work chains."
+    }
+  ],
+  "open_consistency_cases": [
+    {
+      "case_id": "relay_policy_versus_consensus_fee_boundary",
+      "assets": [
+        "crypto_bch",
+        "crypto_ltc",
+        "crypto_doge",
+        "crypto_zec"
+      ],
+      "code": "VA_GAS",
+      "recommendation": "Apply the BTC precedent and score all four 0, or revise the VA_GAS rule to admit economically required fees and re-review BTC. Do not resolve the two chains differently."
+    },
+    {
+      "case_id": "oracle_service_revenue_capture_boundary",
+      "assets": [
+        "crypto_link"
+      ],
+      "code": "VA_PROTOCOL",
+      "recommendation": "Obtain primary documentation of the Reserve's disposition before scoring."
+    }
+  ],
+  "independent_replication": {
+    "scope": "The ten burn and protocol decisions for SOL, AVAX, TRX, XRP, and ADA already carry reviewed evidence in config/crypto_h2_expansion_evidence.json and the effective-dated ledger.",
+    "result": "All ten drafted decisions match the existing reviewed values, an independent replication of the previously adjudicated set including the Cardano governed-treasury call."
+  },
+  "url_confirmed_decisions": 23,
+  "tranche_order_rule": "Tranches are ordered by evidence difficulty, fixed before estimation: A rule-mechanical codes (gas, stake, scarcity, burn, protocol), B ninety-day data-pull codes (collateral, monetary), C judgment codes (governance, utility, incentive). Codes were NOT selected by which bundle showed signal in P1_H6; selecting codes by outcome would compromise that frozen test.",
+  "next_requirement": "An independent reviewer scores the blind worksheet, review-adjudication computes agreement, and only then may verified values be written into the design matrix. Pending cells stay null until adjudicated and never default to zero."
+}
