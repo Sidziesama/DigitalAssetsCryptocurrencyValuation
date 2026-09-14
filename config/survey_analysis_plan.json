@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-survey-analysis-plan",
+  "status": "frozen_before_response_access",
+  "freeze_date": "2026-09-14",
+  "experiment_id": "P1_PANEL",
+  "purpose": "Pre-register how the Phase 1 expert panel will be analysed, before anyone on the research side has seen a response. Several answers change classifications that determine the project's strongest association, so the analysis must be fixed first.",
+
+  "freeze_provenance": {
+    "claim": "Frozen before access to responses.",
+    "not_claimed": "Frozen before collection. The form was live at freeze time and the response store was not inspected, so a zero-response state cannot be asserted.",
+    "verification_at_freeze": "A Drive search for a linked responses spreadsheet returned none. No response content has been read by the researcher or the assistant.",
+    "form_id": "1pCr07Xg83t89aZHuRMVIOxx-8jo2Uk_ZcVYIoVSSfzU",
+    "prior_prediction_commit": "ff15698 — the ranking prediction in research/survey_instrument.md predates this plan and is not to be edited."
+  },
+
+  "recruitment_record": {
+    "required_before_reporting": true,
+    "fields": ["invitation_count", "recruitment_frame", "channels_used", "invitation_date", "reminder_dates", "close_date"],
+    "reason": "Without a denominator there is no response rate and non-response cannot be characterised. A divided panel is a likely outcome and its interpretation depends on who was asked.",
+    "scope_rule": "Every reported result is a statement about the respondents obtained, never about 'the field', 'practitioners' or 'the industry'. Language asserting a population is prohibited."
+  },
+
+  "inclusion_and_exclusion": {
+    "unit": "One submitted response.",
+    "partial_responses": "Sections are analysed independently. A section contributes when every required item in it is answered. A response that completes sections 0-4 but not the optional block contributes fully to those sections.",
+    "duplicates": "If two submissions share a respondent identity, the later is kept and the fact is reported.",
+    "exclusions_permitted": ["duplicate submission"],
+    "exclusions_prohibited": [
+      "Any exclusion based on the substantive content of an answer.",
+      "Any exclusion based on disagreement with the project's own classification."
+    ],
+    "calibration_item_status": {
+      "item": "The fee-destruction scenario in section 2.",
+      "decision": "NOT used as a calibration or attention check, and never grounds for exclusion.",
+      "reason": "It does not unambiguously test attention. A respondent may coherently hold that a pro-rata supply reduction is not a claim on revenue and therefore not capture. Excluding that answer would bias the panel toward the project's own definition on the question the panel exists to settle.",
+      "handling": "Reported as a distribution alongside the other scenarios. Any 'No' answer has its free-text reasoning read as a substantive position and quoted in the write-up if it raises a distinct argument."
+    },
+    "speed_screen": "If submission timestamps are available, responses below a completion-time floor are flagged in the report but retained in every statistic. Flagging is descriptive, not exclusionary."
+  },
+
+  "minimum_counts": {
+    "item_reportable": 8,
+    "consensus_assessable": 8,
+    "reliability_alpha": 3,
+    "reliability_pairwise": 2,
+    "below_minimum_rule": "Report the raw distribution and state that the item is under-powered. Do not compute a threshold verdict, a kappa, or an alpha below its minimum."
+  },
+
+  "consensus": {
+    "denominator": "Respondents who answered that item. 'Depends' is a substantive category and is never merged, dropped, or redistributed.",
+    "levels": [
+      {"label": "consensus", "rule": "One option is chosen by at least 70 percent of the denominator, with n at or above consensus_assessable."},
+      {"label": "leaning", "rule": "One option reaches at least 50 percent but under 70 percent."},
+      {"label": "no_consensus", "rule": "No option reaches 50 percent."}
+    ],
+    "effect_on_codebook": {
+      "consensus": "The rule is revised to match, and the change is recorded with the distribution that produced it.",
+      "leaning": "The existing rule stands. The split is recorded as a documented minority position.",
+      "no_consensus": "The existing rule stands and the boundary is recorded as CONTESTED. A contested boundary is reported as a finding about the concept, not as a failure of the survey, and it is never resolved by defaulting to the project's current rule."
+    },
+    "prohibited": "No threshold, denominator or level definition may be altered after any response has been read."
+  },
+
+  "governed_treasury_specific": {
+    "item": "Section 2, the treasury scenario.",
+    "why_singled_out": "This boundary moves the project's headline H2 result between p=0.082 and p=0.478. Its handling is fixed here so the outcome cannot influence the reporting rule.",
+    "reporting": "Full distribution over the three options plus every free-text reason, grouped by the argument offered rather than by the option chosen.",
+    "if_contested": "Both the broad-rule and strict-rule H2 estimates are reported side by side as a definitional sensitivity, with the panel split stated as evidence that the definition is genuinely disputed among the respondents obtained.",
+    "if_consensus_against_the_current_rule": "The strict rule is revised, the codebook version increments, and every affected cell is re-scored before any downstream re-estimation."
+  },
+
+  "ranking_prediction": {
+    "prediction_source": "research/survey_instrument.md, committed ff15698 before fielding.",
+    "prediction": "Revenue capture and monetary use rank in the top three; incentives and governance rank in the bottom three.",
+    "scoring": {
+      "statistic": "Mean rating per function across respondents who completed the grid.",
+      "ranking": "Functions ordered by mean rating, descending.",
+      "ties": "Tied means receive the average of the ranks they span. A function whose averaged rank straddles a boundary counts as satisfying the condition only if its entire tie group falls inside the named band.",
+      "verdict": "All four conditions must hold for the prediction to be recorded as supported. Partial satisfaction is reported condition by condition and never summarised as a hit.",
+      "reported_regardless": true
+    },
+    "contrast_statistic": {
+      "description": "Spearman rank correlation between the panel's mean ranking of the ten functions and the project's own estimated association ranking from the risk and valuation tests.",
+      "purpose": "If the panel ranks revenue capture highly where the estimates place it last, that gap is itself a reportable finding.",
+      "caveat": "A rank correlation between eight to ten paired items is descriptive. No inference is drawn from its p-value."
+    }
+  },
+
+  "reliability": {
+    "principle": "Agreement between independent coders and agreement with the project's classification are different quantities and are never combined, nor reported under a single heading.",
+    "inter_rater_reliability": {
+      "description": "The genuine reliability statistic for the instrument. Computed across external scorers only.",
+      "project_values_included_as_a_rater": false,
+      "primary": {
+        "statistic": "Krippendorff's alpha, nominal",
+        "reason": "Opt-outs and Unknown answers make the scorer-by-cell matrix incomplete. Fleiss' kappa requires complete blocks and is not applicable.",
+        "minimum_scorers": 3
+      },
+      "secondary": {
+        "statistic": "Mean pairwise Cohen's kappa across all scorer pairs, with the number of pairs and the per-pair overlap reported.",
+        "minimum_scorers": 2
+      },
+      "below_minimum": "Report raw pairwise agreement counts and state that no reliability coefficient is estimable."
+    },
+    "agreement_with_project_classification": {
+      "description": "Per respondent, the share of determinate cells matching the project's value, plus a two-rater Cohen's kappa for that respondent against the project.",
+      "label_required": "Agreement with the project classification.",
+      "label_prohibited": "Inter-rater reliability, reliability, or any phrasing implying the instrument has been validated by this number.",
+      "reason": "A high value may reflect that the project's values are defensible rather than that the instrument is reproducible."
+    },
+    "unknown_handling": {
+      "in_agreement_and_alpha": "excluded",
+      "reported_separately": "Coverage, defined per cell as the share of scorers giving a determinate answer, and per scorer as the share of attempted cells answered determinately.",
+      "reason": "An Unknown is an honest gap. Counting it as disagreement understates reliability; counting it as agreement inflates it."
+    },
+    "cell_level_output": "Per cell: the distribution of Yes, No and Unknown, the project's value, and whether the cell is currently sourced, reviewed, pending or provisional."
+  },
+
+  "materiality_thresholds": {
+    "items": ["collateral materiality", "monetary use evidence", "persistence window", "binary versus graded", "unknown handling"],
+    "rule": "A threshold is adopted only at consensus level. At leaning or no_consensus the existing threshold stands and the distribution is published beside it.",
+    "downstream": "Any adopted threshold triggers re-scoring of the affected cells before tranche B proceeds, and the re-scoring is a separate commit from the adoption."
+  },
+
+  "reporting_commitments": [
+    "Every item is reported, including those that contradict the project's position or its prediction.",
+    "No item is dropped, merged or re-bucketed after responses are read.",
+    "Free-text reasoning is reported for every scenario item, grouped by argument.",
+    "The recruitment frame, invitation count and response rate appear wherever a panel result is cited.",
+    "Results are described as pertaining to the respondents obtained."
+  ],
+
+  "prohibited_after_access": [
+    "Changing consensus thresholds, denominators or minimum counts.",
+    "Adding, removing or re-bucketing response options.",
+    "Introducing an exclusion rule.",
+    "Altering the ranking prediction or its scoring.",
+    "Switching the primary reliability statistic.",
+    "Any revision of this document that is not a new document_version with a new freeze_date and a recorded reason."
+  ]
+}
