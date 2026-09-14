@@ -411,6 +411,10 @@
           "args": []
         },
         {
+          "module": "research_universe_workbook",
+          "args": []
+        },
+        {
           "module": "checkpoint_readiness",
           "args": []
         }

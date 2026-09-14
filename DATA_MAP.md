@@ -70,13 +70,13 @@ Evidence, mechanism states, review reconciliation and the ten-function taxonomy.
 | `crypto_collateral_screen_summary.csv` | `crypto_collateral` | via `crypto_phase1_research_map.json` |
 | `crypto_collateral_screen_summary.json` | `crypto_collateral` | `checkpoint_readiness` |
 | `crypto_design_evidence_focused_review.csv` | `crypto_design_evidence` | terminal output |
-| `crypto_design_evidence_tranche_1.csv` | `crypto_design_evidence` | `checkpoint_readiness`, `crypto_evidence_blockers` |
+| `crypto_design_evidence_tranche_1.csv` | `crypto_design_evidence`, `research_universe_workbook` | `checkpoint_readiness`, `crypto_evidence_blockers` |
 | `crypto_design_evidence_tranche_1_summary.json` | `crypto_design_evidence` | `checkpoint_readiness` |
 | `crypto_economic_design_profiles.csv` | `crypto_economic_design` | terminal output |
 | `crypto_economic_design_summary.json` | `crypto_economic_design` | terminal output |
 | `crypto_economic_design_targeted_review.csv` | `crypto_economic_design` | terminal output |
 | `crypto_evidence_blockers_summary.json` | `crypto_evidence_blockers` | `checkpoint_readiness` |
-| `crypto_evidence_tranche_a.csv` | `crypto_evidence_tranche_a` | via `pipeline_stages.json` |
+| `crypto_evidence_tranche_a.csv` | `crypto_evidence_tranche_a`, `research_universe_workbook` | via `pipeline_stages.json` |
 | `crypto_evidence_tranche_a_blind_review.csv` | `crypto_evidence_tranche_a` | terminal output |
 | `crypto_evidence_tranche_a_summary.json` | `crypto_evidence_tranche_a` | terminal output |
 | `crypto_h2_expansion_blind_review.csv` | `crypto_h2_expansion_evidence` | `review_adjudication` |
@@ -101,12 +101,12 @@ Evidence, mechanism states, review reconciliation and the ten-function taxonomy.
 | `crypto_monetary_assessment.json` | `crypto_monetary` | `checkpoint_readiness` |
 | `crypto_phase1_consistency_audit.csv` | `crypto_phase1_taxonomy` | terminal output |
 | `crypto_phase1_experiment_registry.json` | `crypto_phase1_taxonomy` | `crypto_phase1_research_map` |
-| `crypto_phase1_function_codebook.csv` | `crypto_phase1_taxonomy` | `crypto_phase1_research_map` |
+| `crypto_phase1_function_codebook.csv` | `crypto_phase1_taxonomy` | `crypto_phase1_research_map`, `research_universe_workbook` |
 | `crypto_phase1_function_prevalence.csv` | `crypto_phase1_taxonomy` | `crypto_phase1_research_map` |
 | `crypto_phase1_indicator_observability.csv` | `crypto_phase1_research_map` | terminal output |
 | `crypto_phase1_research_map.csv` | `crypto_phase1_research_map` | via `pipeline_stages.json` |
 | `crypto_phase1_research_map.json` | `crypto_phase1_research_map` | via `pipeline_stages.json` |
-| `crypto_phase1_taxonomy_profiles.csv` | `crypto_phase1_research_map`, `crypto_phase1_taxonomy` | via `crypto_function_risk_exposure.json`, `crypto_phase1_bundle_comparison.json`, `crypto_return_factor_baseline.json` |
+| `crypto_phase1_taxonomy_profiles.csv` | `crypto_phase1_research_map`, `crypto_phase1_taxonomy` | `research_universe_workbook` · via `crypto_function_risk_exposure.json`, `crypto_phase1_bundle_comparison.json`, `crypto_return_factor_baseline.json` |
 | `crypto_phase1_taxonomy_summary.json` | `crypto_phase1_taxonomy` | `checkpoint_readiness` |
 | `crypto_research_scope.json` | `crypto_research_scope` | `checkpoint_readiness`, `crypto_findings_summary` · via `pipeline_stages.json` |
 | `independent_review_summary.json` | `review_adjudication` | `checkpoint_readiness`, `crypto_findings_summary` |

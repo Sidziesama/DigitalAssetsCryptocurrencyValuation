@@ -529,7 +529,8 @@
       "kind": "table",
       "bytes": 6933,
       "written_by": [
-        "crypto_design_evidence"
+        "crypto_design_evidence",
+        "research_universe_workbook"
       ],
       "read_by": [
         "checkpoint_readiness",
@@ -608,7 +609,8 @@
       "kind": "table",
       "bytes": 20719,
       "written_by": [
-        "crypto_evidence_tranche_a"
+        "crypto_evidence_tranche_a",
+        "research_universe_workbook"
       ],
       "read_by": [],
       "named_in_config": [
@@ -951,7 +953,8 @@
         "crypto_phase1_taxonomy"
       ],
       "read_by": [
-        "crypto_phase1_research_map"
+        "crypto_phase1_research_map",
+        "research_universe_workbook"
       ],
       "named_in_config": [],
       "orphan": false
@@ -1019,7 +1022,9 @@
         "crypto_phase1_research_map",
         "crypto_phase1_taxonomy"
       ],
-      "read_by": [],
+      "read_by": [
+        "research_universe_workbook"
+      ],
       "named_in_config": [
         "crypto_function_risk_exposure.json",
         "crypto_phase1_bundle_comparison.json",
