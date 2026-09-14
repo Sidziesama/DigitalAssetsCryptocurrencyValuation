@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "document_version": "1.0-tranche-a-rule-mechanical-codes",
-  "as_of": "2026-09-07",
+  "document_version": "1.1-tranche-a-documentation-completion",
+  "as_of": "2026-09-14",
   "tranche": "A",
   "purpose": "First evidence tranche for the fourteen return-panel assets that are not yet classification-verified, covering the five rule-mechanical codes whose determination is a fact check against protocol documentation.",
   "tranche_order_rule": "Tranches are ordered by evidence difficulty, fixed before estimation: A rule-mechanical codes (gas, stake, scarcity, burn, protocol), B ninety-day data-pull codes (collateral, monetary), C judgment codes (governance, utility, incentive). Codes were NOT selected by which bundle showed signal in P1_H6; selecting codes by outcome would compromise that frozen test.",
@@ -264,24 +264,30 @@
     {
       "asset_id": "crypto_doge",
       "code": "VA_BURN",
-      "status": "pending",
-      "recommended_value": null,
-      "source_url": "https://dogecoin.com/dogepedia/faq/putting-a-cap-on-dogecoin/",
-      "source_date": "2026-09-07",
+      "status": "verified",
+      "recommended_value": 0,
+      "source_url": "https://dogecoin.com/dogepedia/articles/what-is-a-miner/",
+      "source_date": "2026-09-14",
       "date_basis": "retrieved_as_of",
-      "rationale": "Held pending. The cited monetary-policy page does not describe fee destination or any burn mechanism, so absence cannot be established from it. A canonical fee-flow source is required.",
-      "verification": "url_confirmed_by_coder"
+      "rationale": "Dogecoin documents transaction fees as miner compensation in addition to the block subsidy. Under the existing usage-linked burn rule, this is redistribution, not a protocol fee burn. Voluntary destruction or lost keys do not establish a usage-linked mechanism.",
+      "verification": "url_confirmed_by_coder",
+      "retrieved_on": "2026-09-14",
+      "classification_date": "2026-09-07",
+      "evidence_archive": "data/raw/classification_sources/2026-09-14/dogecoin_mining.html"
     },
     {
       "asset_id": "crypto_doge",
       "code": "VA_PROTOCOL",
-      "status": "pending",
-      "recommended_value": null,
-      "source_url": "https://dogecoin.com/dogepedia/faq/putting-a-cap-on-dogecoin/",
-      "source_date": "2026-09-07",
+      "status": "verified",
+      "recommended_value": 0,
+      "source_url": "https://dogecoin.com/dogepedia/articles/what-is-a-miner/",
+      "source_date": "2026-09-14",
       "date_basis": "retrieved_as_of",
-      "rationale": "Held pending for the same reason: the cited page does not establish where transaction fees go, so a negative cannot be evidenced from it.",
-      "verification": "url_confirmed_by_coder"
+      "rationale": "Transaction fees and the block subsidy compensate miners for securing and producing blocks. This service payment does not route protocol revenue mechanically to DOGE holders under the strict capture rule.",
+      "verification": "url_confirmed_by_coder",
+      "retrieved_on": "2026-09-14",
+      "classification_date": "2026-09-07",
+      "evidence_archive": "data/raw/classification_sources/2026-09-14/dogecoin_mining.html"
     },
     {
       "asset_id": "crypto_hbar",
@@ -319,13 +325,16 @@
     {
       "asset_id": "crypto_hbar",
       "code": "VA_BURN",
-      "status": "pending",
-      "recommended_value": null,
-      "source_url": "https://docs.hedera.com/hedera/networks/mainnet/fees",
-      "source_date": "2026-09-07",
-      "date_basis": "retrieved_as_of",
-      "rationale": "Held pending. The canonical mainnet fee page was refetched and describes only fee calculation, not fee destination, so neither a burn nor its absence can be evidenced from it.",
-      "verification": "url_confirmed_by_coder"
+      "status": "verified",
+      "recommended_value": 0,
+      "source_url": "https://hedera.com/terms/",
+      "source_date": "2025-11-24",
+      "date_basis": "published",
+      "rationale": "Schedule A sections 3.1-3.2 allocate native network transaction fees to nodes and Hedera, with subsequent node payments funded by transaction fees. The documented fee route is payment and redistribution, not HBAR destruction. This concerns native HBAR, not burn operations on tokens issued through Hedera Token Service.",
+      "verification": "url_confirmed_by_coder",
+      "retrieved_on": "2026-09-14",
+      "classification_date": "2026-09-07",
+      "evidence_archive": "data/raw/classification_sources/2026-09-14/hedera_terms.evidence.json"
     },
     {
       "asset_id": "crypto_hbar",
@@ -429,13 +438,16 @@
     {
       "asset_id": "crypto_ltc",
       "code": "VA_BURN",
-      "status": "pending",
-      "recommended_value": null,
+      "status": "verified",
+      "recommended_value": 0,
       "source_url": "https://litecoin.com/what-is-litecoin",
-      "source_date": "2026-09-07",
+      "source_date": "2026-09-14",
       "date_basis": "retrieved_as_of",
-      "rationale": "Held pending. The cited page contains no statement about burning, and litecoin.org returned no fetchable content, so absence cannot yet be evidenced from a canonical protocol source.",
-      "verification": "url_confirmed_by_coder"
+      "rationale": "The official FAQ explicitly allocates all fees from included transactions to miners alongside the block reward. Ordinary usage therefore pays miners rather than triggering a rules-based LTC burn.",
+      "verification": "url_confirmed_by_coder",
+      "retrieved_on": "2026-09-14",
+      "classification_date": "2026-09-07",
+      "evidence_archive": "data/raw/classification_sources/2026-09-14/litecoin_faq.evidence.json"
     },
     {
       "asset_id": "crypto_ltc",
@@ -484,13 +496,20 @@
     {
       "asset_id": "crypto_op",
       "code": "VA_BURN",
-      "status": "pending",
-      "recommended_value": null,
-      "source_url": "https://specs.optimism.io/experimental/gov-token.html",
-      "source_date": "2026-09-07",
-      "date_basis": "retrieved_as_of",
-      "rationale": "Held pending. The governance-token specification describes a mint-capable token and an optional holder-initiated burn function, which does not settle whether a live rules-based protocol burn operates.",
-      "verification": "agent_reported_not_independently_refetched"
+      "status": "verified",
+      "recommended_value": 0,
+      "source_url": "https://optimism.io/blog/op-token-buybacks",
+      "source_date": "2026-01-08",
+      "date_basis": "published",
+      "rationale": "The buyback design sends purchased OP to the token treasury; burning is described as a possible future use, not an executed rules-based burn. Execution reports confirm treasury settlement. The optional holder burn functions in the token specification do not establish a usage-linked protocol burn. Score 0 under the existing burn rule.",
+      "verification": "url_confirmed_by_coder",
+      "retrieved_on": "2026-09-14",
+      "classification_date": "2026-09-07",
+      "evidence_archive": "data/raw/classification_sources/2026-09-14/op_buybacks.html",
+      "supporting_source_urls": [
+        "https://gov.optimism.io/t/buyback-communication-thread/10588",
+        "https://specs.optimism.io/experimental/gov-token.html"
+      ]
     },
     {
       "asset_id": "crypto_op",
@@ -498,10 +517,12 @@
       "status": "pending",
       "recommended_value": null,
       "source_url": "https://gov.optimism.io/t/buyback-communication-thread/10588",
-      "source_date": "2026-09-07",
-      "date_basis": "retrieved_as_of",
-      "rationale": "Held pending. Governance approved routing a share of Superchain revenue to OP buybacks, but the official thread does not confirm that execution is currently live, and a paused mechanism scores zero only after review.",
-      "verification": "agent_reported_not_independently_refetched"
+      "source_date": "2026-08-07",
+      "date_basis": "published",
+      "rationale": "Execution is established: official reports on March 5 and August 7 confirm three revenue-funded buybacks totalling 9,451,924 OP. The former statement that execution was unconfirmed is corrected. The latest report covers January-March revenue, and an August 25 question about subsequent execution is unanswered in the retrieved thread. Current active versus paused status at September 7 remains unestablished, so the live-capture value stays null; completed historical buybacks are not treated as proof of continuous operation.",
+      "verification": "url_confirmed_by_coder",
+      "retrieved_on": "2026-09-14",
+      "evidence_archive": "data/raw/classification_sources/2026-09-14/op_execution.html"
     },
     {
       "asset_id": "crypto_sol",
@@ -833,5 +854,7 @@
       "rationale": "The development fund routes newly issued subsidy to development organizations rather than mechanically to the token or its holders, which is the same boundary applied to governed treasuries.",
       "verification": "agent_reported_not_independently_refetched"
     }
-  ]
+  ],
+  "classification_date": "2026-09-07",
+  "revision_note": "Evidence review on 2026-09-14 for the existing 2026-09-07 classification. Retrieval dates are not mechanism activation dates. Five documentation gaps resolved; no historical panel or frozen experiment input changed."
 }

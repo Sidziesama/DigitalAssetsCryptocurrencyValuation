@@ -1,0 +1,44 @@
+[
+  {
+    "id": "dogecoin_mining",
+    "url": "https://dogecoin.com/dogepedia/articles/what-is-a-miner/",
+    "retrieved_on": "2026-09-14",
+    "path": "data/raw/classification_sources/2026-09-14/dogecoin_mining.html",
+    "sha256": "1530220c87f0d26f3b85e6c3fae646b35e991ba41f9a2ed90a36cc7356310af4",
+    "bytes": 23394
+  },
+  {
+    "id": "litecoin_faq",
+    "url": "https://litecoin.com/what-is-litecoin",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "hedera_terms",
+    "url": "https://hedera.com/terms/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "op_buybacks",
+    "url": "https://optimism.io/blog/op-token-buybacks",
+    "retrieved_on": "2026-09-14",
+    "path": "data/raw/classification_sources/2026-09-14/op_buybacks.html",
+    "sha256": "cb87d15047ff5981b7b46e7741121948b8700f8138c32696abc467813ffafb66",
+    "bytes": 108657
+  },
+  {
+    "id": "op_execution",
+    "url": "https://gov.optimism.io/t/buyback-communication-thread/10588",
+    "retrieved_on": "2026-09-14",
+    "path": "data/raw/classification_sources/2026-09-14/op_execution.html",
+    "sha256": "5e5867fcc4ef2734d106e9f994631f734dd24e6629c6c0e78d7094f3e940c8f2",
+    "bytes": 35027
+  },
+  {
+    "id": "op_token_spec",
+    "url": "https://specs.optimism.io/experimental/gov-token.html",
+    "retrieved_on": "2026-09-14",
+    "path": "data/raw/classification_sources/2026-09-14/op_token_spec.html",
+    "sha256": "aca07303cf4b93f7ccff767c7dae78372f31febcdfbd506c53b84d9f1fa83f2f",
+    "bytes": 18713
+  }
+]

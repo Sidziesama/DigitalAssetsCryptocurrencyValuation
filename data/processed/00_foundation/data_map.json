@@ -456,7 +456,7 @@
       "phase": "01_classification",
       "file": "classification_status.json",
       "kind": "summary",
-      "bytes": 1373,
+      "bytes": 1372,
       "written_by": [
         "classification_status",
         "crypto_collateral",
@@ -630,7 +630,7 @@
       "phase": "01_classification",
       "file": "crypto_evidence_tranche_a.csv",
       "kind": "table",
-      "bytes": 20719,
+      "bytes": 22339,
       "written_by": [
         "classification_status",
         "crypto_evidence_tranche_a",
@@ -659,7 +659,7 @@
       "phase": "01_classification",
       "file": "crypto_evidence_tranche_a_summary.json",
       "kind": "summary",
-      "bytes": 5874,
+      "bytes": 4842,
       "written_by": [
         "crypto_evidence_tranche_a"
       ],

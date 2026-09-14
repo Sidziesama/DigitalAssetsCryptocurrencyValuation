@@ -1,0 +1,8 @@
+{
+  "url": "https://hedera.com/terms/",
+  "retrieved_on": "2026-09-14",
+  "capture_method": "web tool text; direct HTTP archive returned 403",
+  "excerpt": "Node Payments will be funded solely from the Transaction Fees received by Hedera.",
+  "coder_summary": "Terms dated November 24, 2025. Schedule A 3.1-3.2: node fees paid to nodes; network and service fees paid to Hedera; subsequent node payments redistribute fees.",
+  "not_a_full_page_snapshot": true
+}

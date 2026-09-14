@@ -1,0 +1,8 @@
+{
+  "url": "https://litecoin.com/what-is-litecoin",
+  "retrieved_on": "2026-09-14",
+  "capture_method": "web tool text; direct HTTP archive returned 403",
+  "excerpt": "as well as all fees sent with the transactions that were confirmed and included in the block.",
+  "coder_summary": "Official FAQ, What are transaction fees?: miners receive the block reward and transaction fees.",
+  "not_a_full_page_snapshot": true
+}
