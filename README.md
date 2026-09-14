@@ -4,7 +4,9 @@
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 238 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 248 tests check the code that does it.
+
+> **Working on this project?** Read [`CLAUDE.md`](CLAUDE.md) first. It carries the research rules that must not be broken, how to add a module or an experiment, and the traps that have already cost us once.
 
 ---
 
@@ -144,7 +146,7 @@ The remaining classification work is split by **how the evidence is obtained**, 
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 238 tests
+python -m unittest discover -s tests                           # 248 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -213,6 +215,7 @@ Every file in there is catalogued in [`DATA_MAP.md`](DATA_MAP.md) with the modul
 | [`research/findings/2026-09-07-the-math-explained.md`](research/findings/2026-09-07-the-math-explained.md) | Every statistical technique and why it was chosen |
 | [`research/findings/2026-09-07-checkpoint-function-and-risk.md`](research/findings/2026-09-07-checkpoint-function-and-risk.md) | The most recent results |
 | [`research/manuscript/main.tex`](research/manuscript/main.tex) | The paper |
+| [`CLAUDE.md`](CLAUDE.md) | How to work on this without breaking it — rules, conventions, traps |
 | [`PROJECT_PLAN.md`](PROJECT_PLAN.md) | Phases, gates, and the Phase 1 workflow |
 | [`DATA_MAP.md`](DATA_MAP.md) | Every data file, its phase, producer and consumers |
 | [`research/open_decisions.md`](research/open_decisions.md) | What still needs human judgment |
