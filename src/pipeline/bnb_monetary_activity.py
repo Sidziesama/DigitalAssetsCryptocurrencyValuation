@@ -72,7 +72,7 @@ def readiness(repo: Path, spec: dict[str, Any], status: str, **extra: Any) -> di
     result = {"status":status, "asset_id":"crypto_bnb", "provider":"dune", "start_date":spec["start_date"],
               "end_date":spec["end_date"], "expected_days":spec["expected_days"],
               "classification_effect":"none_until_complete_validated_activity_is_collected", **extra}
-    output = repo / "data/processed/evidence/bnb_monetary_activity_summary.json"
+    output = repo / "data/processed/01_classification/bnb_monetary_activity_summary.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
@@ -109,7 +109,7 @@ def collect(repo: Path) -> dict[str, Any]:
     raw.with_suffix(".metadata.json").write_text(json.dumps({"provider":"dune", "execution_id":execution_id,
         "retrieved_at_utc":datetime.now(timezone.utc).isoformat(), "query_source":spec["query_source"],
         "methodology_source":spec["methodology_source"], "sha256":sha256(raw)}, indent=2) + "\n", encoding="utf-8")
-    output = repo / "data/processed/historical/bnb_monetary_activity_dune.csv"
+    output = repo / "data/processed/00_foundation/bnb_monetary_activity_dune.csv"
     write_rows(output, rows, list(rows[0]))
     return readiness(repo, spec, "complete_validated_activity", observed_days=len(rows), execution_id=execution_id,
                      output_path=str(output.relative_to(repo)), raw_sha256=sha256(raw))

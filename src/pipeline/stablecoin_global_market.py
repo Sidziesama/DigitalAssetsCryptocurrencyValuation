@@ -67,7 +67,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False) -> dict[str
     if not isinstance(payload, list):
         raise ValueError("expected a list from DeFiLlama stablecoincharts/all")
     rows = normalize(payload, start, end)
-    out = repo / "data" / "processed" / "historical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     write_rows(out / "stablecoin_global_market_daily.csv", rows, ["date", "global_peggedusd_circulating_usd", "provider", "source_field"])
     audit = coverage(rows, start, end)
     (out / "stablecoin_global_market_coverage.json").write_text(json.dumps(audit, indent=2, sort_keys=True) + "\n", encoding="utf-8")

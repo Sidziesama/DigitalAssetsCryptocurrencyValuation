@@ -49,9 +49,9 @@ def read_decisions(path: Path) -> list[dict[str, str]]:
 
 def run(repo: Path) -> dict[str, Any]:
     config = json.loads((repo / "config/crypto_evidence_blockers.json").read_text(encoding="utf-8"))
-    decisions = read_decisions(repo / "data/processed/evidence/crypto_design_evidence_tranche_1.csv")
+    decisions = read_decisions(repo / "data/processed/01_classification/crypto_design_evidence_tranche_1.csv")
     result = build(config, decisions)
-    output = repo / "data/processed/evidence/crypto_evidence_blockers_summary.json"
+    output = repo / "data/processed/01_classification/crypto_evidence_blockers_summary.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 

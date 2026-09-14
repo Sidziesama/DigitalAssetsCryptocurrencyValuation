@@ -86,8 +86,8 @@ def build(rows: list[dict[str, str]]) -> dict[str, Any]:
 
 
 def run(repo: Path) -> dict[str, Any]:
-    result = build(read_rows(repo / "data/processed/empirical/crypto_h2_exploratory_daily.csv"))
-    output = repo / "data/processed/empirical/crypto_h2_nonoverlap_sensitivity.json"
+    result = build(read_rows(repo / "data/processed/02_valuation/crypto_h2_exploratory_daily.csv"))
+    output = repo / "data/processed/02_valuation/crypto_h2_nonoverlap_sensitivity.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 

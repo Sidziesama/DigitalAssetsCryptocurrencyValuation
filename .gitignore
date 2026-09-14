@@ -18,7 +18,7 @@ outputs/generated/
 # methods and preregistration are part of what a reviewer must be able to check.
 docs/
 review_inputs/
-data/processed/evidence/stablecoin_score_review_audit.csv
+data/processed/04_stablecoin_deferred/stablecoin_score_review_audit.csv
 NEXT_STEPS.md
 *.docx
 *.doc

@@ -44,7 +44,7 @@ def day_timestamp(day: date) -> int:
 
 
 def materiality_days(repo: Path, start: date, end: date) -> dict[str, int]:
-    path = repo / "data/processed/evidence/crypto_collateral_daily_proxy.csv"
+    path = repo / "data/processed/01_classification/crypto_collateral_daily_proxy.csv"
     with path.open(newline="", encoding="utf-8") as handle:
         rows = [row for row in csv.DictReader(handle) if row["asset_id"] == "crypto_bnb" and start.isoformat() <= row["date"] <= end.isoformat()]
     return {row["date"]: int(row["material_proxy"]) for row in rows}
@@ -85,7 +85,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False) -> dict[str
     expected = (end - start).days + 1
     complete = len(rows) == expected and not failures and len(materiality) == expected
     pass_days = sum(row["classification_day_pass"] for row in rows)
-    out = repo / "data/processed/evidence"
+    out = repo / "data/processed/01_classification"
     write_rows(out / "venus_bnb_collateral_state_daily.csv", rows, list(rows[0]) if rows else ["asset_id"])
     result = {"status":"venus_bnb_collateral_verified_positive" if complete and pass_days == expected else "venus_bnb_collateral_incomplete",
               "asset_id":"crypto_bnb","start_date":start.isoformat(),"end_date":end.isoformat(),"expected_days":expected,

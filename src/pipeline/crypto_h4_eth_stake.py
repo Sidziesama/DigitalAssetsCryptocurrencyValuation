@@ -94,7 +94,7 @@ def probe(repo: Path, endpoint: str | None = None) -> dict[str, Any]:
         "approximation_rejected": "Active validator count multiplied by 32 ETH is not used because EIP-7251 permits larger effective balances.",
         "unblocks_h4": False, "limitation": source["limitation"],
     }
-    path = repo / "data/processed/evidence/crypto_h4_eth_stake_summary.json"
+    path = repo / "data/processed/01_classification/crypto_h4_eth_stake_summary.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
@@ -127,7 +127,7 @@ def collect(repo: Path, start: date, end: date, endpoint: str | None = None, for
         except Exception as exc:
             failures.append({"date": day.isoformat(), "beacon_slot": slot, "error": str(exc)})
         day += timedelta(days=1)
-    expected = (end - start).days + 1; out = repo / "data/processed/historical"
+    expected = (end - start).days + 1; out = repo / "data/processed/01_classification"
     write_rows(out / "crypto_h4_eth_stake_daily.csv", rows, [
         "asset_id", "date", "beacon_slot", "active_validators", "total_staked_native_units", "measurement_role", "provider"])
     complete = len(rows) == expected and not failures
@@ -140,7 +140,7 @@ def collect(repo: Path, start: date, end: date, endpoint: str | None = None, for
         "maximum_staked_native_units": max((row["total_staked_native_units"] for row in rows), default=None),
         "unblocks_h4": complete, "limitation": source["limitation"],
     }
-    path = repo / "data/processed/evidence/crypto_h4_eth_stake_summary.json"
+    path = repo / "data/processed/01_classification/crypto_h4_eth_stake_summary.json"
     path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 

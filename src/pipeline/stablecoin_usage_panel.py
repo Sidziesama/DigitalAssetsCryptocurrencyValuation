@@ -68,10 +68,10 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def run(repo: Path) -> dict[str, Any]:
-    adoption = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_adoption_daily.csv")
-    usage = read_csv(repo / "data" / "processed" / "historical" / "stablecoin_usage_daily_coinmetrics.csv")
+    adoption = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_adoption_daily.csv")
+    usage = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_usage_daily_coinmetrics.csv")
     rows = build_panel(adoption, usage)
-    out = repo / "data" / "processed" / "empirical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     fields = ["asset_id", "date", "usage_date_lag1", "log_circulating_peg_usd", "global_peggedusd_supply_share", "supply_growth_30d", "absolute_peg_error_bps", "breach_50bps", *[name for field in USAGE_FIELDS for name in (f"{field}_lag1", f"log1p_{field}_lag1")], "complete_usage_row", "provider", "analysis_role"]
     write_rows(out / "stablecoin_h7_usage_exploratory_daily.csv", rows, fields)
     summary = summarize(rows)

@@ -102,13 +102,13 @@ def build(readiness: list[dict[str, str]], market: list[dict[str, str]]) -> tupl
 def run(repo: Path) -> dict[str, Any]:
     preregistration = json.loads((repo / "config/preregistration_h2_h8_pilot.json").read_text(encoding="utf-8"))
     frozen_assets = set(preregistration["H8"]["complete_case_assets"])
-    readiness = [row for row in read_csv(repo / "data/processed/evidence/crypto_h2_h8_pilot_readiness.csv")
+    readiness = [row for row in read_csv(repo / "data/processed/01_classification/crypto_h2_h8_pilot_readiness.csv")
                  if row["asset_id"] in frozen_assets]
     rows, summary = build(
         readiness,
-        read_csv(repo / "data/processed/empirical/crypto_h2_exploratory_daily.csv"),
+        read_csv(repo / "data/processed/02_valuation/crypto_h2_exploratory_daily.csv"),
     )
-    output = repo / "data/processed/empirical"
+    output = repo / "data/processed/02_valuation"
     with (output / "crypto_h8_breadth_pilot.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader(); writer.writerows(rows)

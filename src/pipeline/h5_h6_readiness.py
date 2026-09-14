@@ -105,13 +105,13 @@ def join_temporally_valid(score_rows: list[dict[str, Any]], outcome_rows: list[d
 def run(repo: Path) -> dict[str, Any]:
     config = load_json(repo / "config" / "stablecoin_scorecard.json")
     extractions = load_json(repo / "config" / "stablecoin_evidence_extractions.json")
-    interval_path = repo / "data" / "processed" / "evidence" / "stablecoin_score_intervals.csv"
-    scores = read_csv(interval_path) if interval_path.exists() else read_csv(repo / "data" / "processed" / "evidence" / "stablecoin_point_in_time_scorecard.csv")
-    outcomes = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_daily.csv")
+    interval_path = repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_score_intervals.csv"
+    scores = read_csv(interval_path) if interval_path.exists() else read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_point_in_time_scorecard.csv")
+    outcomes = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_daily.csv")
     review = build_blind_review(config, extractions)
     summary = temporal_readiness(scores, outcomes)
     joined = join_temporally_valid(scores, outcomes)
-    out = repo / "data" / "processed" / "evidence"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     review_fields = list(review[0])
     write_rows(out / "stablecoin_score_targeted_review.csv", review, review_fields)
     write_rows(out / "stablecoin_h5_h6_temporally_valid_panel.csv", joined, list(joined[0]) if joined else ["asset_id", "date"])

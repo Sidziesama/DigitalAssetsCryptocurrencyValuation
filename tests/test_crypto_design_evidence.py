@@ -41,7 +41,7 @@ class CryptoDesignEvidenceTests(unittest.TestCase):
     def test_repository_run_writes_blind_focused_review(self):
         repo=Path(__file__).resolve().parents[1]
         run(repo)
-        with (repo/"data/processed/evidence/crypto_design_evidence_focused_review.csv").open(newline="") as handle:
+        with (repo/"data/processed/01_classification/crypto_design_evidence_focused_review.csv").open(newline="") as handle:
             reader=csv.DictReader(handle); rows=list(reader); fields=reader.fieldnames
         self.assertEqual(rows, [])
         self.assertNotIn("provisional_value", fields)

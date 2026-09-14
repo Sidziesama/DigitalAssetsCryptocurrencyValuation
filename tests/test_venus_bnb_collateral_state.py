@@ -19,7 +19,7 @@ class VenusBnbCollateralStateTests(unittest.TestCase):
 
     def test_materiality_preserves_daily_threshold(self):
         with tempfile.TemporaryDirectory() as folder:
-            repo=Path(folder); path=repo/"data/processed/evidence/crypto_collateral_daily_proxy.csv"
+            repo=Path(folder); path=repo/"data/processed/01_classification/crypto_collateral_daily_proxy.csv"
             path.parent.mkdir(parents=True); path.write_text("asset_id,date,material_proxy\ncrypto_bnb,2026-01-01,1\ncrypto_eth,2026-01-01,1\n")
             self.assertEqual(materiality_days(repo,date(2026,1,1),date(2026,1,1)),{"2026-01-01":1})
 

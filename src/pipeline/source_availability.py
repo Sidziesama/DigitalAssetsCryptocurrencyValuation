@@ -23,12 +23,12 @@ def build_rows(assets: list[dict[str,str]], coinpaprika_assets: set[str] | None 
 
 
 def build(repo: Path)->list[dict[str,str]]:
-    audit=repo/"data"/"processed"/"historical"/"coinpaprika_identifier_audit.csv"
+    audit=repo/"data"/"processed"/"00_foundation"/"coinpaprika_identifier_audit.csv"
     resolved:set[str]=set()
     if audit.exists():
         with audit.open(newline="",encoding="utf-8") as f:
             resolved={row["asset_id"] for row in csv.DictReader(f) if row["status"]=="resolved"}
-    binance_audit=repo/"data"/"processed"/"historical"/"binance_pair_audit.csv"
+    binance_audit=repo/"data"/"processed"/"00_foundation"/"binance_pair_audit.csv"
     binance_resolved:set[str]=set()
     if binance_audit.exists():
         with binance_audit.open(newline="",encoding="utf-8") as f:
@@ -55,12 +55,12 @@ def render_findings(rows:list[dict[str,str]])->str:
 - Daily circulating supply: {count('circulating_supply_daily','blocked')} assets.
 - Venue-specific daily OHLCV: {count('venue_ohlcv_daily','blocked')} assets.
 
-The recent CoinPaprika fields do not satisfy the full 2019–2026 research window. Remaining blocked fields require a defensible alternate source; none are reconstructed from price alone. The machine-readable asset-by-metric matrix is stored at `data/processed/source_availability.csv`.
+The recent CoinPaprika fields do not satisfy the full 2019–2026 research window. Remaining blocked fields require a defensible alternate source; none are reconstructed from price alone. The machine-readable asset-by-metric matrix is stored at `data/processed/00_foundation/source_availability.csv`.
 """
 
 
 def main()->None:
-    p=argparse.ArgumentParser();p.add_argument("--repo",type=Path,default=Path.cwd());a=p.parse_args();rows=build(a.repo.resolve());out=a.repo.resolve()/"data"/"processed"/"source_availability.csv";out.parent.mkdir(parents=True,exist_ok=True)
+    p=argparse.ArgumentParser();p.add_argument("--repo",type=Path,default=Path.cwd());a=p.parse_args();rows=build(a.repo.resolve());out=a.repo.resolve()/"data"/"processed"/"00_foundation"/"source_availability.csv";out.parent.mkdir(parents=True,exist_ok=True)
     with out.open("w",newline="",encoding="utf-8") as f:w=csv.DictWriter(f,fieldnames=["asset_id","metric","source","availability","constraint"]);w.writeheader();w.writerows(rows)
     counts={};
     for r in rows:counts[(r["metric"],r["availability"])]=counts.get((r["metric"],r["availability"]),0)+1

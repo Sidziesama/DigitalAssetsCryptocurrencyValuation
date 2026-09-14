@@ -124,8 +124,8 @@ def read_rows(path:Path)->list[dict[str,str]]:
 
 
 def run(repo:Path)->dict[str,Any]:
-    coverage,summary=build(read_rows(repo/"data/processed/empirical/crypto_h2_exploratory_daily.csv"))
-    out=repo/"data/processed/empirical"; out.mkdir(parents=True,exist_ok=True)
+    coverage,summary=build(read_rows(repo/"data/processed/02_valuation/crypto_h2_exploratory_daily.csv"))
+    out=repo/"data/processed/02_valuation"; out.mkdir(parents=True,exist_ok=True)
     with (out/"crypto_h2_estimator_diagnostics.csv").open("w",newline="",encoding="utf-8") as handle:
         writer=csv.DictWriter(handle,fieldnames=list(coverage[0]),lineterminator="\n"); writer.writeheader(); writer.writerows(coverage)
     (out/"crypto_h2_estimator_diagnostics.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")

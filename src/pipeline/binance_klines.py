@@ -108,7 +108,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False, base_url: s
         record = coverage_record(asset["asset_id"], [{"date": row["date"], "price_usd": row["close_quote"]} for row in rows], start, end)
         record.update({"provider": "binance_spot", "pair": pair["symbol"], "quote_asset": pair["quote_asset"], "volume_days": len(rows)})
         coverage.append(record)
-    out = repo / "data" / "processed" / "historical"
+    out = repo / "data" / "processed" / "00_foundation"
     daily = out / "ohlcv_daily_binance_spot.csv"
     cover = out / "ohlcv_coverage_binance_spot.csv"
     fields = ["asset_id", "date", "pair", "quote_asset", "open_quote", "high_quote", "low_quote", "close_quote", "volume_base", "volume_quote", "trade_count", "taker_buy_base", "taker_buy_quote"]

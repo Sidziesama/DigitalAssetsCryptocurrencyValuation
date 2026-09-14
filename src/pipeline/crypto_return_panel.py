@@ -118,7 +118,7 @@ def build(spec: dict[str, Any], rows: list[dict[str, str]]) -> tuple[list[dict[s
 def run(repo: Path) -> dict[str, Any]:
     spec = json.loads((repo / "config/crypto_return_panel.json").read_text(encoding="utf-8"))
     panel, summary = build(spec, read_csv(repo / spec["source"]))
-    out = repo / "data/processed/empirical"
+    out = repo / "data/processed/03_risk"
     out.mkdir(parents=True, exist_ok=True)
     with (out / "crypto_return_panel_daily.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(panel[0]), lineterminator="\n")

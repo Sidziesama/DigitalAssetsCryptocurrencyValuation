@@ -62,7 +62,7 @@ def collect(repo:Path,start:date,end:date,force:bool=False,base_url:str=BASE_URL
     for asset in spec["assets"]:
         selected=[row for row in daily if row["asset_id"]==asset["asset_id"]]
         coverage.append({"asset_id":asset["asset_id"],"scope":asset["scope"],"economic_system":asset["economic_system"],"expected_days":expected,"observed_days":len(selected),**{f"{field}_days":sum(row[field] is not None for row in selected) for field in keys}})
-    out=repo/"data/processed/empirical"; write_rows(out/"crypto_fee_fundamentals_daily.csv",daily,["asset_id","date","scope","economic_system","fees_usd","protocol_revenue_usd","holders_revenue_usd"]); write_rows(out/"crypto_fee_fundamentals_coverage.csv",coverage,list(coverage[0]))
+    out=repo/"data/processed/00_foundation"; write_rows(out/"crypto_fee_fundamentals_daily.csv",daily,["asset_id","date","scope","economic_system","fees_usd","protocol_revenue_usd","holders_revenue_usd"]); write_rows(out/"crypto_fee_fundamentals_coverage.csv",coverage,list(coverage[0]))
     result={"status":"free_fee_layer_ready_scope_comparability_review_pending","assets":len(spec["assets"]),"daily_rows":len(daily),"start_date":start.isoformat(),"end_date":end.isoformat(),"complete_fee_assets":sum(row["fees_usd_days"]==expected for row in coverage),"complete_revenue_assets":sum(row["protocol_revenue_usd_days"]==expected for row in coverage),"complete_holders_revenue_assets":sum(row["holders_revenue_usd_days"]==expected for row in coverage),"interpretation":spec["interpretation"]}
     (out/"crypto_fee_fundamentals_summary.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8"); return result
 

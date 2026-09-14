@@ -193,7 +193,7 @@ def build(spec: dict[str, Any], rows: list[dict[str, str]], profiles: list[dict[
 def run(repo: Path) -> dict[str, Any]:
     spec = json.loads((repo / "config/crypto_return_factor_baseline.json").read_text(encoding="utf-8"))
     summary = build(spec, read_csv(repo / spec["panel"]), read_csv(repo / spec["profiles"]))
-    out = repo / "data/processed/empirical"
+    out = repo / "data/processed/03_risk"
     (out / "crypto_return_factor_baseline.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     with (out / "crypto_return_market_models.csv").open("w", newline="", encoding="utf-8") as handle:
         rows = summary["market_model"]["per_asset"]

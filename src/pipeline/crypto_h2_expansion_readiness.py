@@ -77,11 +77,11 @@ def run(repo: Path) -> dict[str, Any]:
     events = json.loads((repo / "config/crypto_mechanism_events.json").read_text(encoding="utf-8"))["events"]
     rows, summary = build(
         config,
-        read_csv(repo / "data/processed/historical/market_coverage_coinpaprika.csv"),
-        read_csv(repo / "data/processed/empirical/crypto_fee_fundamentals_coverage.csv"),
+        read_csv(repo / "data/processed/00_foundation/market_coverage_coinpaprika.csv"),
+        read_csv(repo / "data/processed/00_foundation/crypto_fee_fundamentals_coverage.csv"),
         events,
     )
-    output = repo / "data/processed/evidence"
+    output = repo / "data/processed/01_classification"
     write_rows(output / "crypto_h2_expansion_readiness.csv", rows, list(rows[0]))
     (output / "crypto_h2_expansion_readiness.json").write_text(
         json.dumps(summary, indent=2) + "\n", encoding="utf-8"

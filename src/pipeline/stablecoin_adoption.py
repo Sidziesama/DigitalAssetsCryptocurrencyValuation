@@ -85,9 +85,9 @@ def summarize(rows: list[dict[str, Any]], market: list[dict[str, Any]]) -> dict[
 
 
 def run(repo: Path) -> dict[str, Any]:
-    panel = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_daily.csv")
-    global_market = read_csv(repo / "data" / "processed" / "historical" / "stablecoin_global_market_daily.csv")
-    rows, market = build_adoption_panel(panel, global_market); out = repo / "data" / "processed" / "empirical"
+    panel = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_daily.csv")
+    global_market = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_global_market_daily.csv")
+    rows, market = build_adoption_panel(panel, global_market); out = repo / "data" / "processed" / "04_stablecoin_deferred"
     fields = ["asset_id", "date", "sample_tier", "circulating_peg_usd", "log_circulating_peg_usd", "pilot_total_circulating_peg_usd", "assets_with_supply", "pilot_supply_hhi", "pilot_observed_supply_share", "global_peggedusd_circulating_usd", "global_peggedusd_supply_share", *[name for lag in LAGS for name in (f"supply_lag_{lag}d", f"supply_growth_{lag}d")], "absolute_peg_error_bps", "breach_50bps"]
     market_fields = ["date", "pilot_total_circulating_peg_usd", "assets_with_supply", "pilot_supply_hhi", "global_peggedusd_circulating_usd", "pilot_coverage_of_global_peggedusd", *[f"pilot_total_supply_growth_{lag}d" for lag in LAGS]]
     write_rows(out / "stablecoin_adoption_daily.csv", rows, fields); write_rows(out / "stablecoin_pilot_market_daily.csv", market, market_fields)

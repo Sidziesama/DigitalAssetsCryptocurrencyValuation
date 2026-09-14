@@ -121,10 +121,10 @@ def bar_svg(rows: list[dict[str, Any]], output: Path) -> None:
 
 
 def run(repo: Path) -> dict[str, Any]:
-    panel = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_daily.csv")
-    episodes = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_depeg_episodes.csv")
+    panel = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_daily.csv")
+    episodes = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_depeg_episodes.csv")
     stats = asset_statistics(panel, episodes); monthly = monthly_stress(panel); reviews = review_queue(episodes)
-    out = repo / "data" / "processed" / "empirical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     stats_fields = list(stats[0]); monthly_fields = list(monthly[0]); review_fields = list(reviews[0]) if reviews else ["episode_id", "asset_id", "onset_date", "last_episode_date", "maximum_absolute_deviation_bps", "review_class", "proposed_primary_treatment", "review_status", "reviewer_notes"]
     write_rows(out / "stablecoin_asset_statistics.csv", stats, stats_fields)
     write_rows(out / "stablecoin_monthly_stress.csv", monthly, monthly_fields)

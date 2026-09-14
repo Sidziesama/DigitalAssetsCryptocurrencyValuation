@@ -103,7 +103,8 @@ def write_audit(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def run(repo: Path) -> dict[str, Any]:
-    evidence_dir = repo / "data/processed/evidence"
+    crypto_dir = repo / "data/processed/01_classification"
+    stable_dir = repo / "data/processed/04_stablecoin_deferred"
     private_dir = repo / "review_inputs"
     crypto_evidence = json.loads((repo / "config/crypto_h2_expansion_evidence.json").read_text(encoding="utf-8"))
     scorecard = json.loads((repo / "config/stablecoin_scorecard.json").read_text(encoding="utf-8"))
@@ -111,15 +112,15 @@ def run(repo: Path) -> dict[str, Any]:
     crypto_input = private_dir / "crypto_h2_expansion_blind_review.csv"
     stable_input = private_dir / "stablecoin_score_targeted_review.csv"
     crypto_rows, crypto_summary = audit_crypto(
-        read_csv(crypto_input if crypto_input.exists() else evidence_dir / "crypto_h2_expansion_blind_review.csv"), crypto_evidence
+        read_csv(crypto_input if crypto_input.exists() else crypto_dir / "crypto_h2_expansion_blind_review.csv"), crypto_evidence
     )
     stable_rows, stable_summary = audit_stablecoin(
-        read_csv(stable_input if stable_input.exists() else evidence_dir / "stablecoin_score_targeted_review.csv"), scorecard
+        read_csv(stable_input if stable_input.exists() else stable_dir / "stablecoin_score_targeted_review.csv"), scorecard
     )
     stable_summary["phase_status"] = scope["deferred_phase"]["status"]
     stable_summary["active_gate"] = False
-    write_audit(evidence_dir / "crypto_h2_expansion_review_audit.csv", crypto_rows)
-    write_audit(evidence_dir / "stablecoin_score_review_audit.csv", stable_rows)
+    write_audit(crypto_dir / "crypto_h2_expansion_review_audit.csv", crypto_rows)
+    write_audit(stable_dir / "stablecoin_score_review_audit.csv", stable_rows)
     result = {
         "status": "active_crypto_review_complete" if crypto_summary["freeze_eligible"] else crypto_summary["status"],
         "crypto_h2_expansion": crypto_summary,
@@ -127,7 +128,7 @@ def run(repo: Path) -> dict[str, Any]:
         "freeze_guardrail": "The active crypto specification may freeze only after its complete independent review has no unresolved disagreements; deferred stablecoin review does not gate the crypto phase.",
         "input_policy": "Completed worksheets belong in the Git-ignored review_inputs directory; generated blank templates remain reproducible pipeline outputs.",
     }
-    (evidence_dir / "independent_review_summary.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    (crypto_dir / "independent_review_summary.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 
 

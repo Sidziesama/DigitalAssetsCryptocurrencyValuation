@@ -47,7 +47,7 @@ def distribution_metrics(asset_id: str, by_date: dict[str, dict[str, float]], to
 
 
 def run(repo: Path) -> dict[str, Any]:
-    adoption = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_adoption_daily.csv")
+    adoption = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_adoption_daily.csv")
     supply_index = {(row["asset_id"], row["date"]): float(row["circulating_peg_usd"]) if row.get("circulating_peg_usd") not in (None, "") else None for row in adoption}
     asset_ids = sorted({row["asset_id"] for row in adoption}); rows: list[dict[str, Any]] = []; unsupported = []
     for asset_id in asset_ids:
@@ -57,7 +57,7 @@ def run(repo: Path) -> dict[str, Any]:
         if not by_date: unsupported.append(asset_id); continue
         rows.extend(distribution_metrics(asset_id, by_date, supply_index))
     rows.sort(key=lambda row: (row["asset_id"], row["date"]))
-    out = repo / "data" / "processed" / "empirical"; fields = ["asset_id", "date", "chain_supply_sum_usd", "reported_circulating_peg_usd", "chain_to_reported_supply_ratio", "active_chain_count", "material_chain_count_1m_usd", "chain_hhi", "effective_chain_count", "top_chain", "top_chain_share"]
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"; fields = ["asset_id", "date", "chain_supply_sum_usd", "reported_circulating_peg_usd", "chain_to_reported_supply_ratio", "active_chain_count", "material_chain_count_1m_usd", "chain_hhi", "effective_chain_count", "top_chain", "top_chain_share"]
     write_rows(out / "stablecoin_chain_distribution_daily.csv", rows, fields)
     reconciled = [row for row in rows if row["chain_to_reported_supply_ratio"] is not None]
     within_tolerance = sum(.95 <= row["chain_to_reported_supply_ratio"] <= 1.05 for row in reconciled)

@@ -4,7 +4,7 @@
   "status": "frozen_before_return_estimation",
   "freeze_date": "2026-09-07",
   "purpose": "Build the first daily return panel for the crypto research universe from archived Binance USDT spot closes, with predeclared return, momentum, volatility, and market-factor fields, before any return model is estimated.",
-  "source": "data/processed/historical/ohlcv_daily_binance_spot.csv",
+  "source": "data/processed/00_foundation/ohlcv_daily_binance_spot.csv",
   "quote_asset": "USDT",
   "start_date": "2019-01-01",
   "end_date": "2026-08-22",

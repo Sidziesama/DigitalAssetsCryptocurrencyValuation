@@ -5,7 +5,7 @@
   "freeze_date": "2026-09-07",
   "experiment_id": "P1_H5",
   "hypothesis": "Activation or suspension of a live token-linked capture mechanism changes valuation relative to unaffected control assets.",
-  "panel": "data/processed/empirical/crypto_h2_exploratory_daily.csv",
+  "panel": "data/processed/02_valuation/crypto_h2_exploratory_daily.csv",
   "ledger": "config/crypto_mechanism_events.json",
   "selection_rule": "Events are every effective-dated burn or protocol-capture state change recorded in the mechanism ledger whose full pre and post window lies inside the frozen H2 panel. No event was chosen or dropped from outcomes.",
   "pre_window_days": 30,

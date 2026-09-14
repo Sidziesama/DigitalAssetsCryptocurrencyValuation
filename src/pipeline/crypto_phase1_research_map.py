@@ -105,7 +105,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def run(repo: Path) -> dict[str, Any]:
     spec = json.loads((repo / "config/crypto_phase1_research_map.json").read_text(encoding="utf-8"))
-    evidence = repo / "data/processed/evidence"
+    evidence = repo / "data/processed/01_classification"
     registry = json.loads((evidence / "crypto_phase1_experiment_registry.json").read_text(encoding="utf-8"))
     code_rows, indicator_rows, summary = build(repo, spec, read_csv(evidence / "crypto_phase1_function_codebook.csv"),
                                                read_csv(evidence / "crypto_phase1_function_prevalence.csv"),

@@ -147,12 +147,12 @@ def summarize(panel: list[dict[str, Any]], episodes: list[dict[str, Any]]) -> di
 
 def run(repo: Path, breach_bps: float = 50, recovery_bps: float = 25) -> dict[str, Any]:
     assets = validate_asset_config(load_json(repo / "config" / "assets.json"))
-    prices = read_csv(repo / "data" / "processed" / "historical" / "price_daily_defillama.csv")
-    supplies = read_csv(repo / "data" / "processed" / "historical" / "stablecoin_supply_daily.csv")
-    scores = read_csv(repo / "data" / "processed" / "stablecoin_risk_scores.csv")
+    prices = read_csv(repo / "data" / "processed" / "00_foundation" / "price_daily_defillama.csv")
+    supplies = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_supply_daily.csv")
+    scores = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_risk_scores.csv")
     panel = build_panel(assets, prices, supplies, scores)
     episodes = detect_episodes(panel, breach_bps, recovery_bps)
-    out = repo / "data" / "processed" / "empirical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     panel_fields = ["asset_id", "date", "sample_tier", "failure_control", "target_usd", "price_usd", "signed_deviation", "signed_deviation_bps", "absolute_peg_error", "absolute_peg_error_bps", "downside_squared_deviation", *[f"breach_{band}bps" for band in BANDS_BPS], "circulating_peg_usd", "price_provider", "supply_provider", "reserve_quality_score", "transparency_score", "redemption_friction_score", "risk_methodology_version", "risk_score_evidence_date"]
     episode_fields = ["episode_id", "asset_id", "failure_control", "breach_bps", "recovery_bps", "onset_date", "last_episode_date", "recovery_date", "elapsed_days_to_recovery_or_censor", "observed_episode_days", "maximum_absolute_deviation_bps", "maximum_discount_bps", "maximum_premium_bps", "area_under_deviation_bps_days", "recovered", "right_censored", "censor_reason", "data_review_flag"]
     write_rows(out / "stablecoin_daily.csv", panel, panel_fields)

@@ -49,7 +49,7 @@ def collect(repo: Path,start: date,end: date,force: bool=False) -> list[dict[str
             raw_path.write_text(json.dumps(payload,separators=(",",":"))+"\n",encoding="utf-8")
             meta_path.write_text(json.dumps({"asset_id":asset["asset_id"],"provider_id":provider_id,"retrieved_at_utc":datetime.now(timezone.utc).isoformat(),"http_status":200,"sha256":sha256(raw_path)},indent=2,sort_keys=True)+"\n",encoding="utf-8");time.sleep(.3)
         new_rows.extend(normalize(asset["asset_id"],payload,start,end))
-    out=repo/"data"/"processed"/"historical";daily_path=out/"stablecoin_supply_daily.csv"
+    out=repo/"data"/"processed"/"04_stablecoin_deferred";daily_path=out/"stablecoin_supply_daily.csv"
     ids={a["asset_id"] for a in assets};existing=[]
     for row in read_csv(daily_path):
         d=date.fromisoformat(row["date"])

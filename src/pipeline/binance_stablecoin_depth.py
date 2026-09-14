@@ -133,7 +133,7 @@ def collect(repo: Path, force_exchange_info: bool = False, base_url: str = BASE_
         }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         rows.append({"asset_id": asset["asset_id"], "timestamp_utc": retrieved.isoformat(), **pair, **analyze(payload, pair["target_is_base"]), "provider": "binance_spot"})
     fields = ["asset_id", "timestamp_utc", "pair", "target_is_base", "anchor_asset", "best_bid_anchor_per_target", "best_ask_anchor_per_target", "mid_anchor_per_target", "quoted_spread_bps", *[f"{side}_depth_{band}bps_anchor" for band in BANDS_BPS for side in ("bid", "ask")], *[f"{metric}_{size // 1000}k{unit}" for size in TRADE_SIZES for metric, unit in (("buy_impact", "_bps"), ("sell_impact", "_bps"), ("buy_fill", ""), ("sell_fill", ""))], "provider"]
-    out = repo / "data" / "processed" / "empirical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     path = out / "stablecoin_market_depth_snapshots.csv"
     merged = merge_rows(read_csv(path), rows, ("asset_id", "timestamp_utc"))
     write_rows(path, merged, fields)

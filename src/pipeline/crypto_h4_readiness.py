@@ -84,11 +84,11 @@ def run(repo: Path) -> dict[str, Any]:
     load = lambda path: json.loads((repo / path).read_text(encoding="utf-8"))
     verified = evidence_values(load("config/crypto_h8_evidence_tranche_1.json"), load("config/crypto_h8_evidence_tranche_2.json"))
     result = build(load("config/crypto_h4_source_plan.json"), verified,
-                   read_csv(repo / "data/processed/historical/market_daily_coinpaprika.csv"),
-                   [load("data/processed/evidence/crypto_h4_aave_legacy_stake_summary.json"),
-                    load("data/processed/evidence/crypto_h4_bnb_stake_summary.json"),
-                    load("data/processed/evidence/crypto_h4_eth_stake_summary.json")])
-    output = repo / "data/processed/evidence/crypto_h4_source_readiness.json"
+                   read_csv(repo / "data/processed/00_foundation/market_daily_coinpaprika.csv"),
+                   [load("data/processed/01_classification/crypto_h4_aave_legacy_stake_summary.json"),
+                    load("data/processed/01_classification/crypto_h4_bnb_stake_summary.json"),
+                    load("data/processed/01_classification/crypto_h4_eth_stake_summary.json")])
+    output = repo / "data/processed/01_classification/crypto_h4_source_readiness.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     with (output.parent / "crypto_h4_source_readiness.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(result["audit"][0]), lineterminator="\n")

@@ -111,19 +111,19 @@ def run(repo: Path) -> dict[str, Any]:
     def load(relative: str) -> dict[str, Any]:
         return json.loads((repo / relative).read_text(encoding="utf-8"))
     result = build(
-        load("data/processed/evidence/crypto_research_scope.json"),
-        load("data/processed/empirical/crypto_h2_exploratory_estimates.json"),
-        load("data/processed/empirical/crypto_h2_small_cluster_inference.json"),
-        load("data/processed/empirical/crypto_h2_nonoverlap_sensitivity.json"),
-        load("data/processed/evidence/crypto_h2_h8_pilot_readiness.json"),
-        load("data/processed/evidence/independent_review_summary.json"),
-        load("data/processed/empirical/crypto_h8_breadth_pilot.json"),
-        load("data/processed/empirical/crypto_h1_activity_pilot.json"),
-        load("data/processed/empirical/crypto_h3_supply_pilot.json"),
-        load("data/processed/evidence/crypto_h4_source_readiness.json"),
-        load("data/processed/empirical/crypto_h8_six_asset_extension.json"),
+        load("data/processed/01_classification/crypto_research_scope.json"),
+        load("data/processed/02_valuation/crypto_h2_exploratory_estimates.json"),
+        load("data/processed/02_valuation/crypto_h2_small_cluster_inference.json"),
+        load("data/processed/02_valuation/crypto_h2_nonoverlap_sensitivity.json"),
+        load("data/processed/01_classification/crypto_h2_h8_pilot_readiness.json"),
+        load("data/processed/01_classification/independent_review_summary.json"),
+        load("data/processed/02_valuation/crypto_h8_breadth_pilot.json"),
+        load("data/processed/02_valuation/crypto_h1_activity_pilot.json"),
+        load("data/processed/02_valuation/crypto_h3_supply_pilot.json"),
+        load("data/processed/01_classification/crypto_h4_source_readiness.json"),
+        load("data/processed/02_valuation/crypto_h8_six_asset_extension.json"),
     )
-    output = repo / "data/processed/empirical/crypto_findings_summary.json"
+    output = repo / "data/processed/02_valuation/crypto_findings_summary.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     findings = repo / "research/findings/crypto-current-findings.md"
     findings.parent.mkdir(parents=True, exist_ok=True)

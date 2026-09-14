@@ -28,33 +28,33 @@
   "experiment_status": {
     "P1_H1": {
       "status": "exploratory_pilot_complete",
-      "artifact": "data/processed/empirical/crypto_h1_activity_pilot.json",
+      "artifact": "data/processed/02_valuation/crypto_h1_activity_pilot.json",
       "summary": "Four-asset activity panel; positive coefficients, exact four-cluster inference does not reject zero."
     },
     "P1_H2": {
       "status": "frozen_exploratory_checkpoint",
-      "artifact": "data/processed/empirical/crypto_h2_small_cluster_inference.json",
+      "artifact": "data/processed/02_valuation/crypto_h2_small_cluster_inference.json",
       "summary": "Eleven-asset fee-capture interaction; pooled p=0.082 under the older broad treasury rule, not confirmatory.",
-      "strict_rule_sensitivity": "data/processed/empirical/crypto_h2_strict_capture_sensitivity.json"
+      "strict_rule_sensitivity": "data/processed/02_valuation/crypto_h2_strict_capture_sensitivity.json"
     },
     "P1_H3": {
       "status": "frozen_exploratory_comparison_complete",
-      "artifact": "data/processed/empirical/crypto_phase1_bundle_comparison.json",
+      "artifact": "data/processed/02_valuation/crypto_phase1_bundle_comparison.json",
       "summary": "Six-asset leave-one-out comparison; bundle count does not beat raw breadth, and the monetary-store bundle is the only predictor that lowers prediction error."
     },
     "P1_H4": {
       "status": "source_readiness_complete_estimation_blocked",
-      "artifact": "data/processed/evidence/crypto_h4_source_readiness.json",
+      "artifact": "data/processed/01_classification/crypto_h4_source_readiness.json",
       "summary": "Needs an archival Ethereum consensus endpoint and Aave Umbrella coverage."
     },
     "P1_H5": {
       "status": "frozen_exploratory_event_study_two_panels",
-      "artifact": "data/processed/empirical/crypto_mechanism_event_study_long.json",
+      "artifact": "data/processed/02_valuation/crypto_mechanism_event_study_long.json",
       "summary": "Two events on the one-year market-cap panel and three on the 2019-2026 return panel; one of three carries the expected sign and none reject at 10 percent."
     },
     "P1_H6": {
       "status": "frozen_exploratory_risk_exposure_complete",
-      "artifact": "data/processed/empirical/crypto_function_risk_exposure.json",
+      "artifact": "data/processed/03_risk/crypto_function_risk_exposure.json",
       "summary": "Function versus market beta, volatility, and drawdown on a common 2023-2026 window with a size control; three of 27 provisional-universe tests reach p<=0.05 against 1.35 expected by chance and none survive a 10 percent false-discovery rate."
     }
   },

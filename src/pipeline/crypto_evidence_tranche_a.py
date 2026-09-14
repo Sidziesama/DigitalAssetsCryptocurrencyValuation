@@ -71,7 +71,7 @@ def run(repo: Path) -> dict[str, Any]:
     evidence = load_json(repo / "config" / "crypto_evidence_tranche_a.json")
     rows, worksheet, summary = audit(evidence, load_json(repo / "config" / "crypto_economic_design.json"),
                                      load_json(repo / "config" / "assets.json"))
-    out = repo / "data/processed/evidence"
+    out = repo / "data/processed/01_classification"
     out.mkdir(parents=True, exist_ok=True)
     write_csv(out / "crypto_evidence_tranche_a.csv", rows)
     write_csv(out / "crypto_evidence_tranche_a_blind_review.csv", worksheet)

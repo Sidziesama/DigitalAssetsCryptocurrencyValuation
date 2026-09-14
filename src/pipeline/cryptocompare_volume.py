@@ -156,7 +156,7 @@ def collect(repo: Path, start: date, end: date, asset_ids: set[str] | None = Non
             "direct_conversion_days": sum(row.get("conversion_type") == "direct" for row in rows),
         })
         coverage.append(record)
-    out = repo / "data" / "processed" / "historical"
+    out = repo / "data" / "processed" / "00_foundation"
     daily_path = out / "ohlcv_daily_cryptocompare.csv"
     coverage_path = out / "ohlcv_coverage_cryptocompare.csv"
     fields = ["asset_id", "date", "open_usd", "high_usd", "low_usd", "close_usd", "volume_base", "volume_quote_usd", "conversion_type", "conversion_symbol"]

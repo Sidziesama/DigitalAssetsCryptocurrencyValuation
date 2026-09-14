@@ -71,7 +71,7 @@ def run(repo: Path) -> dict[str, Any]:
     scorecard = load_json(repo / "config" / "stablecoin_scorecard.json")
     history = load_json(repo / "config" / "stablecoin_historical_score_intervals.json")
     rows = validate_and_build(scorecard, history)
-    out = repo / "data" / "processed" / "evidence" / "stablecoin_score_intervals.csv"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_score_intervals.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0])); writer.writeheader(); writer.writerows(rows)

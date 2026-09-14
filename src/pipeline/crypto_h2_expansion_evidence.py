@@ -83,7 +83,7 @@ def run(repo: Path) -> dict[str, Any]:
     expansion = json.loads((repo / "config/crypto_h2_expansion.json").read_text(encoding="utf-8"))
     events = json.loads((repo / "config/crypto_mechanism_events.json").read_text(encoding="utf-8"))["events"]
     rows, review_rows, summary = audit(evidence, expansion, events)
-    output = repo / "data/processed/evidence"
+    output = repo / "data/processed/01_classification"
     output.mkdir(parents=True, exist_ok=True)
     with (output / "crypto_h2_expansion_evidence_audit.csv").open("w", newline="", encoding="utf-8") as handle:
         fields = list(dict.fromkeys(key for row in rows for key in row))

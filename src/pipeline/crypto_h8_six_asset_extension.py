@@ -55,9 +55,9 @@ def build(spec: dict[str, Any], readiness: list[dict[str, str]], market: list[di
 
 def run(repo: Path) -> dict[str, Any]:
     spec=json.loads((repo/"config/crypto_h8_six_asset_extension.json").read_text(encoding="utf-8"))
-    rows,summary=build(spec,read_csv(repo/"data/processed/evidence/crypto_h2_h8_pilot_readiness.csv"),
-                       read_csv(repo/"data/processed/empirical/crypto_h2_exploratory_daily.csv"))
-    out=repo/"data/processed/empirical"; out.mkdir(parents=True,exist_ok=True)
+    rows,summary=build(spec,read_csv(repo/"data/processed/01_classification/crypto_h2_h8_pilot_readiness.csv"),
+                       read_csv(repo/"data/processed/02_valuation/crypto_h2_exploratory_daily.csv"))
+    out=repo/"data/processed/02_valuation"; out.mkdir(parents=True,exist_ok=True)
     with (out/"crypto_h8_six_asset_extension.csv").open("w",newline="",encoding="utf-8") as handle:
         writer=csv.DictWriter(handle,fieldnames=list(rows[0]),lineterminator="\n"); writer.writeheader(); writer.writerows(rows)
     (out/"crypto_h8_six_asset_extension.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")

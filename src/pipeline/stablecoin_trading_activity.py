@@ -38,9 +38,9 @@ def build_rows(adoption: list[dict[str, Any]], market: list[dict[str, Any]]) -> 
 
 
 def run(repo: Path) -> dict[str, Any]:
-    adoption = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_adoption_daily.csv")
-    market = read_csv(repo / "data" / "processed" / "historical" / "market_daily_coinpaprika.csv")
-    rows = build_rows(adoption, market); out = repo / "data" / "processed" / "empirical"
+    adoption = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_adoption_daily.csv")
+    market = read_csv(repo / "data" / "processed" / "00_foundation" / "market_daily_coinpaprika.csv")
+    rows = build_rows(adoption, market); out = repo / "data" / "processed" / "04_stablecoin_deferred"
     fields = ["asset_id", "date", "volume_24h_usd_reported", "log1p_volume_24h_usd", "reported_market_cap_usd", "circulating_peg_usd", "volume_to_reported_market_cap", "cross_provider_volume_to_supply", "market_cap_to_supply_ratio", "pilot_observed_supply_share", "absolute_peg_error_bps", "breach_50bps", "provider"]
     write_rows(out / "stablecoin_trading_activity_daily.csv", rows, fields)
     ratios = [row["market_cap_to_supply_ratio"] for row in rows if row["market_cap_to_supply_ratio"] is not None]

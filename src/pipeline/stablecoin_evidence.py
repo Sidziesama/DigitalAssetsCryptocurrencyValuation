@@ -104,7 +104,7 @@ def run(repo: Path) -> dict[str, Any]:
     assets = load_json(repo / "config" / "assets.json")
     validate(plan, assets, extractions)
     matrix, asset_summary = build_audit(plan, extractions)
-    out = repo / "data" / "processed" / "evidence"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     write_rows(out / "stablecoin_evidence_class_matrix.csv", matrix, ["asset_id", "design_type", "evidence_class", "candidate_source_count", "verified_dated_source_count", "candidate_coverage", "verified_coverage", "status"])
     write_rows(out / "stablecoin_evidence_asset_readiness.csv", asset_summary, ["asset_id", "design_type", "source_count", "required_classes", "classes_with_candidates", "classes_verified_dated", "point_in_time_score_ready", "status"])
     result = {

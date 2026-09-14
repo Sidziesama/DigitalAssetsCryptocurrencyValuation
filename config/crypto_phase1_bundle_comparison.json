@@ -6,8 +6,8 @@
   "experiment_id": "P1_H3",
   "hypothesis": "Theory-defined function bundles explain valuation multiples better than an unweighted count of functions.",
   "assets": ["crypto_btc", "crypto_eth", "crypto_bnb", "crypto_uni", "crypto_aave", "crypto_arb"],
-  "profiles": "data/processed/evidence/crypto_phase1_taxonomy_profiles.csv",
-  "panel": "data/processed/empirical/crypto_h2_exploratory_daily.csv",
+  "profiles": "data/processed/01_classification/crypto_phase1_taxonomy_profiles.csv",
+  "panel": "data/processed/02_valuation/crypto_h2_exploratory_daily.csv",
   "outcomes": {
     "mean_log_market_cap_usd": "Mean daily log market capitalization over the common frozen H2 window.",
     "mean_log_market_cap_to_daily_fees": "Mean daily log of market capitalization divided by lagged daily fees, a fee multiple; chain-scope and application-scope fees are pooled and this scope mix is a declared limit."

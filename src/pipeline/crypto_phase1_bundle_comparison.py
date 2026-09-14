@@ -145,7 +145,7 @@ def build(spec: dict[str, Any], profiles: list[dict[str, str]], panel: list[dict
 def run(repo: Path) -> dict[str, Any]:
     spec = json.loads((repo / "config/crypto_phase1_bundle_comparison.json").read_text(encoding="utf-8"))
     rows, summary = build(spec, read_csv(repo / spec["profiles"]), read_csv(repo / spec["panel"]))
-    out = repo / "data/processed/empirical"
+    out = repo / "data/processed/02_valuation"
     out.mkdir(parents=True, exist_ok=True)
     fieldnames = sorted({k for r in rows for k in r}, key=lambda k: (k not in ("outcome", "model_id", "role", "predictors", "estimable"), k))
     with (out / "crypto_phase1_bundle_comparison.csv").open("w", newline="", encoding="utf-8") as handle:

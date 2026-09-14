@@ -75,7 +75,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False) -> dict[str
         else: rows.append(row)
         day += timedelta(days=1)
     expected = (end - start).days + 1
-    out = repo / "data/processed/historical"
+    out = repo / "data/processed/00_foundation"
     write_rows(out / "crypto_h4_aave_legacy_stake_daily.csv", rows,
                ["asset_id","date","ethereum_block","staking_component","staked_native_units","measurement_role","provider"])
     result = {
@@ -88,7 +88,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False) -> dict[str
         "maximum_staked_native_units": max((row["staked_native_units"] for row in rows), default=None),
         "limitation": component["limitation"],
     }
-    empirical = repo / "data/processed/evidence/crypto_h4_aave_legacy_stake_summary.json"
+    empirical = repo / "data/processed/01_classification/crypto_h4_aave_legacy_stake_summary.json"
     empirical.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 

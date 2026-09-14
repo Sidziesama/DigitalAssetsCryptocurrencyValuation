@@ -112,7 +112,7 @@ def run(repo: Path) -> dict[str, Any]:
     symbols = {row["asset_id"]: row["symbol"] for row in registry["assets"]}
     result = build(spec, load_evidence(repo), symbols)
     profiles, prevalence = result["profiles"], result["prevalence"]
-    out = repo / "data/processed/evidence"
+    out = repo / "data/processed/01_classification"
     write_csv(out / "crypto_phase1_taxonomy_profiles.csv", profiles)
     write_csv(out / "crypto_phase1_function_prevalence.csv", prevalence)
     codebook = [{

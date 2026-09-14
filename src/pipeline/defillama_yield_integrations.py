@@ -73,7 +73,7 @@ def collect(repo: Path) -> dict[str, Any]:
         "match_rule": "exact alphanumeric component of provider pool symbol",
     }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     matches, summary_rows = match_pools(assets, payload["data"], snapshot_utc)
-    out = repo / "data" / "processed" / "empirical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     write_rows(out / "stablecoin_yield_pool_matches_latest.csv", matches, ["asset_id", "snapshot_utc", "pool_id", "project", "chain", "pool_symbol", "pool_tvl_usd", "pool_stablecoin_flag", "match_rule", "provider"])
     write_rows(out / "stablecoin_yield_integration_snapshot.csv", summary_rows, ["asset_id", "snapshot_utc", "yield_pool_count", "yield_project_count", "yield_chain_count", "gross_matched_pool_tvl_usd", "pools_with_tvl", "provider", "interpretation"])
     represented = sum(row["yield_project_count"] > 0 for row in summary_rows)

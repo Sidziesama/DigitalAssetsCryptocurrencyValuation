@@ -68,7 +68,7 @@ def run(repo: Path) -> dict[str, Any]:
     design = load_json(repo / "config" / "crypto_economic_design.json")
     registry = load_json(repo / "config" / "assets.json")
     rows, summary = audit(evidence, design, registry)
-    out = repo / "data" / "processed" / "evidence"; out.mkdir(parents=True, exist_ok=True)
+    out = repo / "data" / "processed" / "01_classification"; out.mkdir(parents=True, exist_ok=True)
     with (out / "crypto_design_evidence_tranche_1.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n"); writer.writeheader(); writer.writerows(rows)
     pending = [{"asset_id": row["asset_id"], "code": row["code"], "reviewer_value": "", "reviewer_source_url": "", "reviewer_rationale": ""} for row in rows if row["status"] != "verified"]

@@ -89,7 +89,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False) -> dict[str
                          "validator_pools":len(values),"total_staked_native_units":sum(values)/1e18,
                          "measurement_role":source["measurement_role"],"provider":"bsc_json_rpc"})
         day += timedelta(days=1)
-    expected=(end-start).days+1; out=repo/"data/processed/historical"
+    expected=(end-start).days+1; out=repo/"data/processed/00_foundation"
     write_rows(out/"crypto_h4_bnb_stake_daily.csv",rows,["asset_id","date","bsc_block","validator_pools","total_staked_native_units","measurement_role","provider"])
     result={"status":"bnb_consensus_stake_window_complete" if len(rows)==expected else "bnb_consensus_stake_window_partial",
             "asset_id":"crypto_bnb","measurement_role":source["measurement_role"],"start_date":start.isoformat(),"end_date":end.isoformat(),
@@ -97,7 +97,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False) -> dict[str
             "minimum_staked_native_units":min((row["total_staked_native_units"] for row in rows),default=None),
             "maximum_staked_native_units":max((row["total_staked_native_units"] for row in rows),default=None),
             "unblocks_h4":len(rows)==expected,"limitation":source["limitation"]}
-    path=repo/"data/processed/evidence/crypto_h4_bnb_stake_summary.json"; path.write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
+    path=repo/"data/processed/01_classification/crypto_h4_bnb_stake_summary.json"; path.write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
     return result
 
 

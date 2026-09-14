@@ -238,7 +238,7 @@ def run(repo: Path) -> dict[str, Any]:
         spec, read_csv(repo / spec["panel"]), read_csv(repo / spec["verified_profiles"]),
         json.loads((repo / spec["provisional_design"]).read_text(encoding="utf-8")),
         json.loads((repo / spec["bundle_map"]).read_text(encoding="utf-8")))
-    out = repo / "data/processed/empirical"
+    out = repo / "data/processed/03_risk"
     out.mkdir(parents=True, exist_ok=True)
     write_csv(out / "crypto_function_risk_assets.csv", asset_rows)
     write_csv(out / "crypto_function_risk_tests.csv", result_rows)

@@ -60,7 +60,7 @@ def run(repo: Path) -> dict[str, Any]:
         for row in json.loads(path.read_text(encoding="utf-8"))["decisions"]
     ]
     panel, summary = build(config["decisions"] + h8_decisions, config["assets"])
-    out = repo / "data/processed/evidence"
+    out = repo / "data/processed/01_classification"
     out.mkdir(parents=True, exist_ok=True)
     with (out / "crypto_h2_h8_pilot_readiness.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(panel[0]), lineterminator="\n")

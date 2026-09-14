@@ -51,7 +51,7 @@ def render_findings(rows:list[dict[str,Any]])->str:
 
 
 def main()->None:
-    p=argparse.ArgumentParser();p.add_argument("--repo",type=Path,default=Path.cwd());a=p.parse_args();repo=a.repo.resolve();rows=evaluate(load_json(repo/"config"/"stablecoin_risk_inputs.json"));out=repo/"data"/"processed"/"stablecoin_risk_scores.csv";out.parent.mkdir(parents=True,exist_ok=True)
+    p=argparse.ArgumentParser();p.add_argument("--repo",type=Path,default=Path.cwd());a=p.parse_args();repo=a.repo.resolve();rows=evaluate(load_json(repo/"config"/"stablecoin_risk_inputs.json"));out=repo/"data"/"processed"/"04_stablecoin_deferred"/"stablecoin_risk_scores.csv";out.parent.mkdir(parents=True,exist_ok=True)
     fields=list(rows[0]);
     with out.open("w",newline="",encoding="utf-8") as f:w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
     (repo/"research"/"findings"/"preliminary-stablecoin-risk-scores.md").write_text(render_findings(rows),encoding="utf-8");print(json.dumps(rows,indent=2))

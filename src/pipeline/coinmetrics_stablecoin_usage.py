@@ -91,7 +91,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False, base_url: s
             rows = normalize(asset["asset_id"], provider_id, payload, start, end)
             all_rows.extend(rows)
         audits.append(coverage(asset["asset_id"], provider_id, rows, start, end))
-    out = repo / "data" / "processed" / "historical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     write_rows(out / "stablecoin_usage_daily_coinmetrics.csv", all_rows, ["asset_id", "date", "coinmetrics_asset", "active_addresses", "ledger_transaction_count", "token_transfer_count", "provider"])
     audit_fields = ["asset_id", "coinmetrics_asset", "supported", "start_date", "end_date", "first_observed_date", "last_observed_date", "active_window_expected_days", "observed_days", *[name for field in FIELD_MAP.values() for name in (f"{field}_days", f"{field}_coverage_ratio")], "status"]
     write_rows(out / "stablecoin_usage_coverage_coinmetrics.csv", audits, audit_fields)
@@ -103,7 +103,7 @@ def collect(repo: Path, start: date, end: date, force: bool = False, base_url: s
         "readiness": "partial_asset_coverage_not_full_h7_sample_ready",
         "interpretation": "Coin Metrics asset-level active-address, ledger-transaction, and token-transfer metrics; active addresses are addresses, not identified users",
     }
-    empirical = repo / "data" / "processed" / "empirical"
+    empirical = repo / "data" / "processed" / "04_stablecoin_deferred"
     empirical.mkdir(parents=True, exist_ok=True)
     (empirical / "stablecoin_usage_summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     findings = repo / "research" / "findings" / "stablecoin-transaction-activity.md"

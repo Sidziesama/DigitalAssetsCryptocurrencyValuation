@@ -83,12 +83,12 @@ def collect(repo: Path, start: date, end: date, force: bool=False, base_url: str
             raw_path.write_text(json.dumps(payload,separators=(",",":"))+"\n",encoding="utf-8")
             raw_path.with_suffix(".metadata.json").write_text(json.dumps({"asset_id":asset_id,"coinmetrics_asset":provider_id,"provider":"coinmetrics_community","metrics":list(METRICS),"frequency":"1d","start":start.isoformat(),"end":end.isoformat(),"retrieved_at_utc":datetime.now(timezone.utc).isoformat(),"sha256":sha256(raw_path),"license_note":"Coin Metrics Community Data; verify current terms before redistribution"},indent=2,sort_keys=True)+"\n",encoding="utf-8")
         rows=normalize(asset_id,provider_id,payload,start,end); all_rows.extend(rows); audits.append(coverage(asset_id,provider_id,rows,start,end))
-    out=repo/"data"/"processed"/"historical"
+    out=repo/"data"/"processed"/"00_foundation"
     row_fields=["asset_id","date","coinmetrics_asset",*FIELD_MAP.values(),"provider"]
     audit_fields=list(audits[0])
     write_rows(out/"crypto_fundamentals_daily_coinmetrics.csv",all_rows,row_fields); write_rows(out/"crypto_fundamentals_coverage_coinmetrics.csv",audits,audit_fields)
     summary={"assets":len(mappings),"daily_rows":len(all_rows),"monetary_behavior_coverage_pass":sum(a["monetary_behavior_status"]=="pass" for a in audits),"free_market_baseline_coverage_pass":sum(a["free_market_baseline_status"]=="pass" for a in audits),"unavailable_on_free_tier":["adjusted_transfer_value_usd","fees_usd","continuous_issuance_native"],"start_date":start.isoformat(),"end_date":end.isoformat(),"interpretation":"Address, transaction, and transfer counts can support one monetary-use behavioral test; they cannot alone establish VA_MONETARY. Collateral classification requires a separate protocol-level source."}
-    empirical=repo/"data"/"processed"/"empirical"; empirical.mkdir(parents=True,exist_ok=True); (empirical/"crypto_fundamentals_summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
+    empirical=repo/"data"/"processed"/"00_foundation"; empirical.mkdir(parents=True,exist_ok=True); (empirical/"crypto_fundamentals_summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     return summary
 
 

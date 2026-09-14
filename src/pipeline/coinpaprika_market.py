@@ -125,7 +125,7 @@ def collect(repo: Path, start: date, end: date, asset_ids: set[str] | None = Non
         })
         coverage.append(record)
 
-    out = repo / "data" / "processed" / "historical"
+    out = repo / "data" / "processed" / "00_foundation"
     daily_path = out / "market_daily_coinpaprika.csv"
     coverage_path = out / "market_coverage_coinpaprika.csv"
     all_rows = merge_rows(read_csv(daily_path), all_rows, ("asset_id", "date"))

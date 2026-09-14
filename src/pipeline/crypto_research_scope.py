@@ -36,7 +36,7 @@ def validate(scope: dict[str, Any]) -> dict[str, Any]:
 def run(repo: Path) -> dict[str, Any]:
     scope = json.loads((repo / "config/research_scope.json").read_text(encoding="utf-8"))
     result = validate(scope)
-    output = repo / "data/processed/evidence/crypto_research_scope.json"
+    output = repo / "data/processed/01_classification/crypto_research_scope.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result

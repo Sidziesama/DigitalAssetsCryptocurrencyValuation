@@ -92,15 +92,15 @@ def readiness(rows: list[dict[str, Any]], matrix: list[dict[str, Any]], integrat
 
 
 def run(repo: Path) -> dict[str, Any]:
-    adoption = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_adoption_daily.csv")
-    chains = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_chain_distribution_daily.csv")
-    trading = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_trading_activity_daily.csv")
-    review = read_csv(repo / "data" / "processed" / "empirical" / "stablecoin_episode_review_queue.csv")
+    adoption = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_adoption_daily.csv")
+    chains = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_chain_distribution_daily.csv")
+    trading = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_trading_activity_daily.csv")
+    review = read_csv(repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_episode_review_queue.csv")
     rows = join_recent(adoption, chains, trading, review); matrix = coverage_matrix(rows)
-    integration_snapshot = repo / "data" / "processed" / "empirical" / "stablecoin_yield_integration_summary.json"
-    usage_summary = repo / "data" / "processed" / "empirical" / "stablecoin_usage_summary.json"
+    integration_snapshot = repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_yield_integration_summary.json"
+    usage_summary = repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_usage_summary.json"
     summary = readiness(rows, matrix, integration_snapshot.exists(), usage_summary.exists())
-    out = repo / "data" / "processed" / "empirical"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred"
     fields = ["asset_id", "date", "sample_tier", "log_circulating_peg_usd", "pilot_observed_supply_share", "global_peggedusd_supply_share", "supply_growth_30d", "absolute_peg_error_bps", "breach_50bps", "material_chain_count_1m_usd_lag1", "effective_chain_count_lag1", "top_chain_share_lag1", "volume_to_reported_market_cap_lag1", "log1p_volume_24h_usd_lag1", "chain_reconciliation_pass_lag1", "source_review_withheld", "complete_recent_h7_row"]
     write_rows(out / "stablecoin_h7_recent_joined.csv", rows, fields)
     write_rows(out / "stablecoin_h7_coverage_matrix.csv", matrix, ["asset_id", "metric", "expected_rows", "observed_rows", "coverage_ratio", "gate"])

@@ -94,7 +94,7 @@ def run(repo:Path)->dict[str,Any]:
     tranches=[json.loads(path.read_text()) for path in sorted((repo/"config").glob("crypto_h8_evidence_tranche_*.json"))]
     evidence=merge_evidence(spec,tranches)
     design=json.loads((repo/"config/crypto_economic_design.json").read_text())
-    audit,rows,summary=build(spec,evidence,design); out=repo/"data/processed/evidence"; out.mkdir(parents=True,exist_ok=True)
+    audit,rows,summary=build(spec,evidence,design); out=repo/"data/processed/01_classification"; out.mkdir(parents=True,exist_ok=True)
     with (out/"crypto_h8_evidence_audit.csv").open("w",newline="",encoding="utf-8") as handle:
         writer=csv.DictWriter(handle,fieldnames=list(audit[0]),lineterminator="\n"); writer.writeheader(); writer.writerows(audit)
     with (out/"crypto_h8_evidence_review.csv").open("w",newline="",encoding="utf-8") as handle:

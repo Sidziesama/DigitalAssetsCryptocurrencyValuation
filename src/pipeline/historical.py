@@ -153,7 +153,7 @@ def collect(repo: Path, start: date, end: date, asset_ids: set[str] | None, forc
         rows.sort(key=lambda row:row["date"])
         for row in rows: all_rows.append({"asset_id":asset["asset_id"],**row})
         coverage.append(coverage_record(asset["asset_id"],rows,start,end))
-    out=repo/"data"/"processed"/"historical"
+    out=repo/"data"/"processed"/"00_foundation"
     daily_path=out/"market_daily.csv"; coverage_path=out/"market_coverage.csv"
     all_rows=merge_rows(read_csv(daily_path),all_rows,("asset_id","date"))
     coverage=merge_rows(read_csv(coverage_path),coverage,("asset_id","start_date","end_date"))

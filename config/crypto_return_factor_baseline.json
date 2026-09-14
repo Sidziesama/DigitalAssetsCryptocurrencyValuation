@@ -4,8 +4,8 @@
   "status": "frozen_before_baseline_estimation",
   "freeze_date": "2026-09-07",
   "purpose": "Establish what is already known about daily crypto returns before any economic-function test: the market factor, momentum, and volatility. Function sorts on the six verified assets are a descriptive preview, not a test.",
-  "panel": "data/processed/empirical/crypto_return_panel_daily.csv",
-  "profiles": "data/processed/evidence/crypto_phase1_taxonomy_profiles.csv",
+  "panel": "data/processed/03_risk/crypto_return_panel_daily.csv",
+  "profiles": "data/processed/01_classification/crypto_phase1_taxonomy_profiles.csv",
   "market_model": {"factor": "market_ew_log_return", "minimum_days": 365},
   "fama_macbeth": {
     "outcome": "log_return",

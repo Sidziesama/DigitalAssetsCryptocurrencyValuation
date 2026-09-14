@@ -66,7 +66,7 @@ def collect(repo:Path,start:date,end:date,force:bool=False)->dict[str,Any]:
         selected=[r for r in rows if r["asset_id"]==asset["asset_id"]]
         enabled=sum(r["collateral_enabled"] for r in selected)
         summaries.append({"asset_id":asset["asset_id"],"expected_days":expected,"observed_days":len(selected),"collateral_enabled_days":enabled,"minimum_ltv_bps":min((r["ltv_bps"] for r in selected),default=None),"maximum_ltv_bps":max((r["ltv_bps"] for r in selected),default=None),"eligibility_pass":int(len(selected)==expected and enabled==expected)})
-    out=repo/"data"/"processed"/"evidence"; write_rows(out/"aave_collateral_state_daily.csv",rows,list(rows[0]) if rows else ["asset_id"]); write_rows(out/"aave_collateral_state_summary.csv",summaries,list(summaries[0]))
+    out=repo/"data"/"processed"/"01_classification"; write_rows(out/"aave_collateral_state_daily.csv",rows,list(rows[0]) if rows else ["asset_id"]); write_rows(out/"aave_collateral_state_summary.csv",summaries,list(summaries[0]))
     result={"assets":len(spec["assets"]),"expected_days_per_asset":expected,"daily_state_rows":len(rows),"eligibility_pass_assets":[s["asset_id"] for s in summaries if s["eligibility_pass"]],"start_date":start.isoformat(),"end_date":end.isoformat(),"rule":"Positive LTV, active reserve, and not paused on every daily historical block in the materiality window."}; (out/"aave_collateral_state_summary.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8"); return result
 
 

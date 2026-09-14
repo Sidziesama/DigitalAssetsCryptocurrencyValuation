@@ -89,7 +89,7 @@ def run(repo: Path) -> dict[str, Any]:
     spec = json.loads((repo / "config/crypto_h2_strict_capture_sensitivity.json").read_text(encoding="utf-8"))
     baseline = json.loads((repo / spec["baseline"]).read_text(encoding="utf-8"))
     summary = build(spec, read_rows(repo / spec["panel"]), baseline)
-    output = repo / "data/processed/empirical/crypto_h2_strict_capture_sensitivity.json"
+    output = repo / "data/processed/02_valuation/crypto_h2_strict_capture_sensitivity.json"
     output.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     return summary
 

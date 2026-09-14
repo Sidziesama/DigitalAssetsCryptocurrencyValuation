@@ -155,7 +155,7 @@ def run(repo: Path, spec_path: str = "config/crypto_mechanism_event_study.json")
     spec = json.loads((repo / spec_path).read_text(encoding="utf-8"))
     ledger = json.loads((repo / spec["ledger"]).read_text(encoding="utf-8"))
     results, summary = build(spec, ledger, read_csv(repo / spec["panel"]))
-    out = repo / "data/processed/empirical"
+    out = repo / "data/processed/02_valuation"
     out.mkdir(parents=True, exist_ok=True)
     stem = spec.get("output_stem", "crypto_mechanism_event_study")
     with (out / f"{stem}.csv").open("w", newline="", encoding="utf-8") as handle:

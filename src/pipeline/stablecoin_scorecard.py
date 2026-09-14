@@ -110,7 +110,7 @@ def run(repo: Path) -> dict[str, Any]:
     config = load_json(repo / "config" / "stablecoin_scorecard.json")
     extractions = load_json(repo / "config" / "stablecoin_evidence_extractions.json")
     rows = evaluate(config, extractions)
-    out = repo / "data" / "processed" / "evidence" / "stablecoin_point_in_time_scorecard.csv"
+    out = repo / "data" / "processed" / "04_stablecoin_deferred" / "stablecoin_point_in_time_scorecard.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))

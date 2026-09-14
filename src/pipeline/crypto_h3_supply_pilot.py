@@ -122,11 +122,11 @@ def build(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def run(repo: Path) -> dict[str, Any]:
     panel = build_panel(
-        read_csv(repo / "data/processed/historical/crypto_fundamentals_daily_coinmetrics.csv"),
-        read_csv(repo / "data/processed/empirical/crypto_h2_exploratory_daily.csv"),
+        read_csv(repo / "data/processed/00_foundation/crypto_fundamentals_daily_coinmetrics.csv"),
+        read_csv(repo / "data/processed/02_valuation/crypto_h2_exploratory_daily.csv"),
     )
     result = build(panel)
-    output = repo / "data/processed/empirical/crypto_h3_supply_pilot.json"
+    output = repo / "data/processed/02_valuation/crypto_h3_supply_pilot.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     with (output.parent / "crypto_h3_supply_pilot.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(panel[0]), lineterminator="\n")

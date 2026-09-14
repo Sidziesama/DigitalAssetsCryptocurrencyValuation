@@ -128,8 +128,8 @@ def build(spec: dict[str, Any], market_rows: list[dict[str, str]], activity_rows
 def run(repo: Path) -> dict[str, Any]:
     spec=json.loads((repo/"config/preregistration_h2_h8_pilot.json").read_text())
     events=json.loads((repo/"config/crypto_mechanism_events.json").read_text())["events"]
-    rows,summary=build(spec,read_csv(repo/"data/processed/historical/market_daily_coinpaprika.csv"),read_csv(repo/"data/processed/historical/crypto_fundamentals_daily_coinmetrics.csv"),events,read_csv(repo/"data/processed/empirical/crypto_fee_fundamentals_daily.csv"))
-    out=repo/"data/processed/empirical"; out.mkdir(parents=True,exist_ok=True)
+    rows,summary=build(spec,read_csv(repo/"data/processed/00_foundation/market_daily_coinpaprika.csv"),read_csv(repo/"data/processed/00_foundation/crypto_fundamentals_daily_coinmetrics.csv"),events,read_csv(repo/"data/processed/00_foundation/crypto_fee_fundamentals_daily.csv"))
+    out=repo/"data/processed/02_valuation"; out.mkdir(parents=True,exist_ok=True)
     write_rows(out/"crypto_h2_exploratory_daily.csv",rows,list(rows[0]))
     (out/"crypto_h2_exploratory_summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     return summary

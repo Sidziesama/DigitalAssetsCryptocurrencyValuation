@@ -91,7 +91,7 @@ def run(repo: Path) -> dict[str, Any]:
     spec = load_json(repo / "config" / "crypto_economic_design.json")
     registry = load_json(repo / "config" / "assets.json")
     profiles, review = build_profiles(spec, registry), build_review(spec, registry)
-    out = repo / "data" / "processed" / "evidence"
+    out = repo / "data" / "processed" / "01_classification"
     write_csv(out / "crypto_economic_design_profiles.csv", profiles)
     write_csv(out / "crypto_economic_design_targeted_review.csv", review)
     counts = Counter(p["consensus"] for p in profiles)

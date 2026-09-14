@@ -105,7 +105,7 @@ def collect(repo: Path,start: date,end: date,asset_ids: set[str] | None=None,chu
                 meta_path.write_text(json.dumps(meta,indent=2,sort_keys=True)+"\n",encoding="utf-8")
                 time.sleep(.15)
             all_new.extend(normalize(payload,batch))
-    out=repo/"data"/"processed"/"historical"; daily_path=out/"price_daily_defillama.csv"
+    out=repo/"data"/"processed"/"00_foundation"; daily_path=out/"price_daily_defillama.csv"
     requested_ids={asset["asset_id"] for asset in assets}
     existing=[]
     for row in read_csv(daily_path):
