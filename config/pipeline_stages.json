@@ -245,6 +245,10 @@
         {
           "module": "crypto_phase1_research_map",
           "args": []
+        },
+        {
+          "module": "classification_status",
+          "args": []
         }
       ]
     },

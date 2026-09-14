@@ -48,8 +48,8 @@ flowchart TB
 | Gate | Test | Now |
 |---|---|---|
 | G1 Rules validated | Boundary rules confirmed by an external panel, not only internally adjudicated | Panel not yet run |
-| G2 Coverage | Every asset in the working universe has all ten cells resolved, or explicitly null with a reason | 119 / 250 cells |
-| G3 Reliability | Cohen's kappa reported against an external blind reviewer | κ = 1.00 on 10 internal decisions only |
+| G2 Coverage | Every asset in the working universe has all ten cells resolved, or explicitly null with a reason | 119 / 250 evidence-backed |
+| G3 Reliability | Cohen's kappa reported against an external blind reviewer | κ = 1.00, but on **10 cells only** (5 assets, 2 codes). The six-asset core has never been independently reviewed. |
 | G4 Consistency | Zero open consistency cases; every adjudicated rule applied everywhere it bites | 2 open cases |
 
 ### The Phase 1 workflow
@@ -86,9 +86,11 @@ flowchart TB
 
 ### Where Phase 1 actually stands
 
-**Done.** The ten-function codebook with written rules and evidence requirements. The effective-dating machinery, so a mechanism that switched on in December 2025 can never explain 2024 prices. Six assets fully verified at 60 of 60 cells. Tranche A drafted for 14 more assets: 59 of 70 decisions verified against dated primary sources, 11 held pending. Two adjudicated rules on record, the governed-treasury capture boundary and the relay-policy fee boundary.
+**Done.** The ten-function codebook with written rules and evidence requirements. The effective-dating machinery, so a mechanism that switched on in December 2025 can never explain 2024 prices. Six core assets sourced at 60 of 60 cells against dated primary evidence. Tranche A drafted for 14 more assets: 59 of 70 sourced, 11 held pending. Two adjudicated rules on record, the governed-treasury capture boundary and the relay-policy fee boundary.
 
-**Open.** 81 decisions to finish the 20 assets in the working universe: 11 tranche A adjudications, 28 tranche B, 42 tranche C. Two consistency cases. No external reliability statistic. And the single most consequential unsettled item, what counts as *material monetary use* — the provisional matrix calls 14 of 20 assets money, which is too generous, and monetary use is the strongest predictor in every cross-sectional test run so far.
+**Be precise about what "verified" means here.** 119 cells are *evidence-backed*, meaning a coder assigned a value from a dated primary source. Only **10** have been *independently blind-reviewed*, and those 10 are SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. The published κ = 1.00 applies to that set and nothing else. The six-asset core is sourced, not reviewed. Gate G3 is therefore much further away than a headline count of 119 suggests, and closing it is the main thing the expert panel exists to do.
+
+**Open.** No external reliability statistic for any cell outside those 10. 81 decisions to finish the 20 assets in the working universe: 11 tranche A adjudications, 28 tranche B, 42 tranche C. Two consistency cases. And the single most consequential unsettled item, what counts as *material monetary use* — the provisional matrix calls 14 of 20 assets money, which is too generous, and monetary use is the strongest predictor in every cross-sectional test run so far.
 
 ### Phase 1 step order
 

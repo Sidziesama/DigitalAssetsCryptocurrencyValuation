@@ -17,8 +17,8 @@ FONT = "Arial"
 INK, GOLD, CLAY, SLATE = "132238", "E0A33E", "C25A46", "40566E"
 # classification status -> (fill, meaning)
 STATUS = {
-    "verified":    ("C8E6C9", "Evidence plus independent blind review complete"),
-    "drafted":     ("FFF0C2", "Sourced by the coder, awaiting blind review"),
+    "reviewed":    ("C8E6C9", "Sourced AND independently blind-reviewed. Only this state supports a reliability claim."),
+    "sourced":     ("FFF0C2", "Dated primary source, audited — but NOT independently reviewed"),
     "pending":     ("F8D7CF", "Held for adjudication; never defaults to zero"),
     "provisional": ("ECEFF3", "From the design matrix only, no evidence yet"),
 }
@@ -52,13 +52,26 @@ def collect(repo: Path) -> dict[str, Any]:
         if row.get("classification_status") != "complete_verified":
             continue
         for code in CODES:
-            cells[(row["asset_id"], code)] = (int(row[code.lower()]), "verified", "", "")
+            cells[(row["asset_id"], code)] = (int(row[code.lower()]), "sourced", "", "")
     for dec in tranche_a["decisions"]:
         key = (dec["asset_id"], dec["code"])
-        if key in cells and cells[key][1] == "verified":
+        if key in cells and cells[key][1] == "reviewed":
             continue
-        status = "drafted" if dec["status"] == "verified" else "pending"
+        status = "sourced" if dec["status"] == "verified" else "pending"
         cells[key] = (dec["recommended_value"], status, dec.get("source_url", ""), dec.get("source_date", ""))
+
+    # cells covered by a COMPLETED independent blind review outrank everything above
+    review_path = repo / "data/processed/01_classification/independent_review_summary.json"
+    expansion = cfg / "crypto_h2_expansion_evidence.json"
+    worksheet = repo / "review_inputs/crypto_h2_expansion_blind_review.csv"
+    if review_path.exists() and expansion.exists() and worksheet.exists():
+        review = load_json(review_path).get("crypto_h2_expansion", {})
+        if str(review.get("status", "")).startswith("complete"):
+            for dec in load_json(expansion)["decisions"]:
+                key = (dec["asset_id"], dec["code"])
+                if key in cells:
+                    value = cells[key][0]
+                    cells[key] = (value, "reviewed", cells[key][2], cells[key][3])
 
     # evidence sources for the verified core
     sources: list[dict[str, str]] = []
@@ -125,13 +138,13 @@ def build(repo: Path) -> tuple[Workbook, dict[str, Any]]:
         ("Crypto assets in registry", len(crypto)),
         ("Stable-value assets (deferred)", sum(a["universe"] == "stablecoin" for a in data["registry"]["assets"])),
         ("Classification cells", f"{len(crypto) * len(CODES)} total"),
-        ("  verified", f"{counts['verified']} — evidence plus independent blind review"),
-        ("  drafted", f"{counts['drafted']} — sourced, awaiting blind review"),
+        ("  reviewed", f"{counts['reviewed']} — sourced AND independently blind-reviewed"),
+        ("  sourced", f"{counts['sourced']} — dated primary source, NOT independently reviewed"),
         ("  pending", f"{counts['pending']} — held for adjudication"),
         ("  provisional", f"{counts['provisional']} — design matrix only, no evidence"),
         ("Design matrix as of", data["design_as_of"]),
         ("Selection logic", "Market dominance first; liquidity and reproducible data access second; a limited growth sleeve third."),
-        ("Reading the colours", "Green verified · amber drafted · red pending · grey provisional. A pending cell never defaults to zero."),
+        ("Reading the colours", "Green reviewed · amber sourced but not reviewed · red pending · grey provisional. Only green supports a reliability claim."),
         ("Important", "Selection and design codes are research classifications, not investment recommendations or legal conclusions."),
         ("Maintenance", "Regenerate with: python -m src.pipeline.research_universe_workbook --repo ."),
     ]
@@ -147,7 +160,7 @@ def build(repo: Path) -> tuple[Workbook, dict[str, Any]]:
     style_title(ws, "Universe Selection",
                 "Frozen market snapshot with selection rationale, plus live classification progress per asset.")
     head = ["asset_id", "symbol", "name", "universe", "market_cap_rank", "market_cap_usd", "volume_24h_usd",
-            "volume_to_mcap", "selection_tier", "inclusion_rationale", "codes_verified", "codes_drafted",
+            "volume_to_mcap", "selection_tier", "inclusion_rationale", "codes_reviewed", "codes_sourced",
             "codes_pending", "codes_provisional", "classification_state"]
     header_row(ws, 4, head)
     carried = {}
@@ -165,13 +178,13 @@ def build(repo: Path) -> tuple[Workbook, dict[str, Any]]:
             if asset["universe"] == "crypto" else []
         tally = {s: per.count(s) for s in STATUS}
         state = ("deferred phase" if asset["universe"] != "crypto" else
-                 "complete verified" if tally["verified"] == len(CODES) else
-                 "in tranche review" if tally["drafted"] or tally["pending"] else "provisional only")
+                 "fully evidenced" if tally["sourced"] + tally["reviewed"] == len(CODES) else
+                 "in tranche" if tally["sourced"] or tally["reviewed"] or tally["pending"] else "provisional only")
         values = [asset["asset_id"], asset["symbol"], asset["name"], asset["universe"],
                   prior.get("market_cap_rank"), prior.get("market_cap_usd"), prior.get("volume_24h_usd"),
                   f"=IFERROR(G{line}/F{line},0)", prior.get("selection_tier") or asset.get("tier"),
                   prior.get("inclusion_rationale"),
-                  tally["verified"] or None, tally["drafted"] or None, tally["pending"] or None,
+                  tally["reviewed"] or None, tally["sourced"] or None, tally["pending"] or None,
                   tally["provisional"] or None, state]
         for column, value in enumerate(values, start=1):
             cell = ws.cell(row=line, column=column, value=value)
@@ -181,7 +194,7 @@ def build(repo: Path) -> tuple[Workbook, dict[str, Any]]:
             if column == 8:
                 cell.number_format = '0.000'
             if column == 15 and asset["universe"] == "crypto":
-                key = {"complete verified": "verified", "in tranche review": "drafted",
+                key = {"fully evidenced": "reviewed", "in tranche": "sourced",
                        "provisional only": "provisional"}[state]
                 cell.fill = PatternFill("solid", fgColor=STATUS[key][0])
         line += 1
@@ -209,8 +222,8 @@ def build(repo: Path) -> tuple[Workbook, dict[str, Any]]:
         ws.cell(row=line, column=14).alignment = Alignment(horizontal="center")
         pending = sum(1 for _, s, _, _ in states if s == "pending")
         ws.cell(row=line, column=15,
-                value="complete verified" if all(s == "verified" for _, s, _, _ in states)
-                else f"{pending} pending" if pending else "provisional/drafted").font = Font(name=FONT, size=9)
+                value="fully evidenced" if all(s in ("sourced", "reviewed") for _, s, _, _ in states)
+                else f"{pending} pending" if pending else "mixed").font = Font(name=FONT, size=9)
         line += 1
     legend = line + 1
     ws.cell(row=legend, column=1, value="Legend").font = Font(name=FONT, size=10, bold=True)

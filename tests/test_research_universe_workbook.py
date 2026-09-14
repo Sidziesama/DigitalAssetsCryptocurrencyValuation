@@ -18,7 +18,8 @@ class ResearchUniverseWorkbookTests(unittest.TestCase):
         _, summary = build(REPO)
         self.assertEqual(sum(summary["cell_status"].values()), summary["cells"])
         self.assertEqual(summary["cells"], summary["crypto_assets"] * len(CODES))
-        self.assertGreater(summary["cell_status"]["verified"], 0)
+        self.assertGreater(summary["cell_status"]["sourced"], 0)
+        self.assertGreater(summary["cell_status"]["reviewed"], 0)
 
     def test_pending_cells_carry_no_value(self):
         """Unknown must never become zero; a held cell stays null."""
@@ -28,11 +29,24 @@ class ResearchUniverseWorkbookTests(unittest.TestCase):
         for key, (value, _status, _url, _date) in pending:
             self.assertIsNone(value, f"{key} is pending but carries a value")
 
-    def test_verified_cells_outrank_provisional_ones(self):
-        """A verified decision must override the provisional design matrix."""
+    def test_evidence_outranks_the_provisional_matrix(self):
+        """A sourced or reviewed decision must override the provisional design matrix."""
         data = collect(REPO)
-        verified = {k for k, v in data["cells"].items() if v[1] == "verified"}
-        self.assertEqual(len(verified), 60)
+        backed = {k for k, v in data["cells"].items() if v[1] in ("sourced", "reviewed")}
+        self.assertEqual(len(backed), 119)
+
+    def test_workbook_agrees_with_the_canonical_status_module(self):
+        """The workbook must not invent its own counts."""
+        from src.pipeline.classification_status import build as status_build
+        _, summary = build(REPO)
+        canonical = status_build(REPO)
+        self.assertEqual(summary["cell_status"], canonical["counts"])
+
+    def test_reviewed_cells_are_only_the_blind_reviewed_set(self):
+        data = collect(REPO)
+        reviewed = {a for (a, _c), v in data["cells"].items() if v[1] == "reviewed"}
+        self.assertEqual(reviewed, {"crypto_sol", "crypto_avax", "crypto_trx", "crypto_xrp", "crypto_ada"})
+        self.assertNotIn("crypto_btc", reviewed)
 
     def test_workbook_has_the_expected_sheets(self):
         _, summary = build(REPO)

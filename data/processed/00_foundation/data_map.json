@@ -1,10 +1,10 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 151,
+    "files": 152,
     "by_phase": {
       "00_foundation": 24,
-      "01_classification": 52,
+      "01_classification": 53,
       "02_valuation": 24,
       "03_risk": 7,
       "04_stablecoin_deferred": 44
@@ -241,7 +241,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 51720,
+      "bytes": 51878,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -455,6 +455,26 @@
     },
     {
       "phase": "01_classification",
+      "file": "classification_status.json",
+      "kind": "summary",
+      "bytes": 1373,
+      "written_by": [
+        "classification_status",
+        "crypto_collateral",
+        "crypto_economic_design",
+        "crypto_function_risk_exposure",
+        "crypto_phase1_bundle_comparison",
+        "crypto_phase1_taxonomy",
+        "research_universe_workbook"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
       "file": "crypto_collateral_daily_proxy.csv",
       "kind": "table",
       "bytes": 42598,
@@ -529,6 +549,7 @@
       "kind": "table",
       "bytes": 6933,
       "written_by": [
+        "classification_status",
         "crypto_design_evidence",
         "research_universe_workbook"
       ],
@@ -609,6 +630,7 @@
       "kind": "table",
       "bytes": 20719,
       "written_by": [
+        "classification_status",
         "crypto_evidence_tranche_a",
         "research_universe_workbook"
       ],
@@ -651,6 +673,8 @@
         "crypto_h2_expansion_evidence"
       ],
       "read_by": [
+        "classification_status",
+        "research_universe_workbook",
         "review_adjudication"
       ],
       "named_in_config": [],
@@ -1073,7 +1097,9 @@
       ],
       "read_by": [
         "checkpoint_readiness",
-        "crypto_findings_summary"
+        "classification_status",
+        "crypto_findings_summary",
+        "research_universe_workbook"
       ],
       "named_in_config": [],
       "orphan": false

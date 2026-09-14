@@ -1,0 +1,38 @@
+{
+  "status": "classification_status_complete",
+  "total_cells": 250,
+  "assets": 25,
+  "codes": 10,
+  "counts": {
+    "sourced": 109,
+    "reviewed": 10,
+    "pending": 11,
+    "provisional": 120
+  },
+  "definitions": {
+    "sourced": "A coder assigned a binary value backed by a dated primary source, audited against the design matrix. NOT independently reviewed.",
+    "reviewed": "Sourced AND scored blind by a second reviewer, with agreement and Cohen's kappa computed. This is the only state that supports a reliability claim.",
+    "pending": "Held for adjudication. Carries no value; never defaults to zero.",
+    "provisional": "Present in the design matrix only. No evidence, no source, no review."
+  },
+  "evidence_backed": 119,
+  "independently_reviewed": 10,
+  "review_coverage_of_evidence_backed": 0.084,
+  "reviewed_scope": {
+    "assets": [
+      "crypto_ada",
+      "crypto_avax",
+      "crypto_sol",
+      "crypto_trx",
+      "crypto_xrp"
+    ],
+    "codes": [
+      "VA_BURN",
+      "VA_PROTOCOL"
+    ],
+    "cohen_kappa": 1.0,
+    "note": "Cohen's kappa applies ONLY to these cells. It is not a reliability statistic for the six-asset core, which has not been independently reviewed."
+  },
+  "core_cells_sourced_not_reviewed": 60,
+  "headline": "119 of 250 cells are evidence-backed (10 of those independently reviewed); 11 pending, 120 provisional."
+}

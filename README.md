@@ -94,7 +94,7 @@ This one rule is the difference between a headline result and no result (see §6
 
 Fee coverage is chain-level for nine assets and application-level for two. That distinction is carried through every model as a measurement attribute, never quietly collapsed.
 
-**Classification coverage:** 119 of the 250 registry cells (25 assets × 10 functions) are evidence-verified — 60 on the fully verified six-asset core, 59 in the first tranche covering fourteen more assets.
+**Classification coverage:** 119 of the 250 registry cells (25 assets × 10 functions) are evidence-backed, each with a dated primary source — 60 on the six-asset core and 59 in the first tranche. Of those, **only 10 have been independently blind-reviewed** (SOL, AVAX, TRX, XRP and ADA on burn and protocol capture). Evidence-backed and independently reviewed are different claims and the repository keeps them separate.
 
 ## 5. Process and approach
 

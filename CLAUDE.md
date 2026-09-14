@@ -124,7 +124,18 @@ If a result improves because a rule was loosened, that is a finding about the ru
 
 As of 14 September 2026: 70 pipeline modules, 248 tests, 151 processed files, 21 commits.
 
-Classification: 250 cells total — **60 verified**, 59 drafted awaiting blind review, 11 held pending adjudication, 120 still provisional.
+Classification: 250 cells total — **119 evidence-backed** (each with a dated primary source), of which **only 10 have been independently blind-reviewed**. 11 held pending adjudication, 120 still provisional.
+
+The three states are not interchangeable and the vocabulary matters:
+
+| State | Cells | Means |
+|---|---|---|
+| reviewed | 10 | Sourced *and* blind-scored by a second reviewer. **Only this state supports a reliability claim.** |
+| sourced | 109 | Dated primary source, audited against the design matrix, but no independent review |
+| pending | 11 | Held for adjudication; carries no value |
+| provisional | 120 | Design matrix only, no evidence |
+
+The κ = 1.00 covers those 10 cells only — SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. It is **not** a reliability statistic for the six-asset core, which is sourced but has never been independently reviewed. Do not write otherwise.
 
 Phase 1 has four gates and **none passes yet**: rules validated externally, full coverage, an external reliability statistic, and zero open consistency cases. The immediate next step is fielding the expert panel, because its answers set the materiality thresholds that tranche B needs.
 
