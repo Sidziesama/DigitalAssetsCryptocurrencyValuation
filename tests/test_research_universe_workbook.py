@@ -30,10 +30,16 @@ class ResearchUniverseWorkbookTests(unittest.TestCase):
             self.assertIsNone(value, f"{key} is pending but carries a value")
 
     def test_evidence_outranks_the_provisional_matrix(self):
-        """A sourced or reviewed decision must override the provisional design matrix."""
+        """A sourced or reviewed decision must override the provisional design matrix.
+
+        The expected count comes from the canonical status module, not a literal, so
+        closing a documentation gap does not break an unrelated test.
+        """
+        from src.pipeline.classification_status import build as status_build
         data = collect(REPO)
         backed = {k for k, v in data["cells"].items() if v[1] in ("sourced", "reviewed")}
-        self.assertEqual(len(backed), 119)
+        self.assertEqual(len(backed), status_build(REPO)["evidence_backed"])
+        self.assertGreater(len(backed), 0)
 
     def test_workbook_agrees_with_the_canonical_status_module(self):
         """The workbook must not invent its own counts."""

@@ -4,7 +4,9 @@
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 248 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 312 tests check the code that does it.
+
+**One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
 > **Working on this project?** Read [`CLAUDE.md`](CLAUDE.md) first. It carries the research rules that must not be broken, how to add a module or an experiment, and the traps that have already cost us once.
 
@@ -94,7 +96,11 @@ This one rule is the difference between a headline result and no result (see §6
 
 Fee coverage is chain-level for nine assets and application-level for two. That distinction is carried through every model as a measurement attribute, never quietly collapsed.
 
-**Classification coverage:** 119 of the 250 registry cells (25 assets × 10 functions) are evidence-backed, each with a dated primary source — 60 on the six-asset core and 59 in the first tranche. Of those, **only 10 have been independently blind-reviewed** (SOL, AVAX, TRX, XRP and ADA on burn and protocol capture). Evidence-backed and independently reviewed are different claims and the repository keeps them separate.
+**Classification coverage:** 124 of the 250 registry cells (25 assets × 10 functions) are evidence-backed, each with a dated primary source — 60 on the six-asset core and 64 in the first tranche. 6 cells are pending and 120 remain provisional.
+
+The full asset-by-function matrix is in [`docs/crypto_economic_classification_phase_summary.md`](docs/crypto_economic_classification_phase_summary.md); the canonical counts are regenerated into `data/processed/01_classification/classification_status.json` and nothing else is authoritative.
+
+Of the 124, **10 carry a blind second review** (SOL, AVAX, TRX, XRP and ADA on burn and protocol capture). The other 114 were coded once. Evidence-backed and independently reviewed are different claims and the repository never merges them.
 
 ## 5. Process and approach
 
@@ -111,12 +117,15 @@ Fee coverage is chain-level for nine assets and application-level for two. That 
 ### How a classification becomes evidence
 
 ```
-written rule  ->  coder drafts from dated primary source  ->  blind second reviewer scores
-      ->  agreement + Cohen's kappa  ->  disagreements adjudicated by a written rule
+written rule  ->  one coder applies it to a dated primary source
+      ->  decision, source URL and read date are committed
+      ->  cells the evidence does not settle stay pending
       ->  verified value enters the design matrix
 ```
 
-Reviewer worksheets carry no coder value, source or rationale, and a test enforces that. Completed worksheets live outside version control so regenerating a blank template can never overwrite a reviewer's work.
+**This is a single-coder project, and that is the most serious limitation in it.** Ten cells carry a blind second review from an earlier pass; the other 114 evidence-backed cells do not. So the matrix is *auditable* — every cell names its rule, its source and the date that source was read, and anyone can check a cell against the document behind it — but it is not *shown to be reproducible*. Whether a second coder working from the same rules would produce the same matrix is untested, and no reliability coefficient is claimed for the classification.
+
+An expert survey collects practitioner judgment on the boundary rules and includes an optional blind scoring exercise. That is external feedback on whether the rules are sensible and applicable. It is not a second coder and does not close this gap.
 
 ### Coding tranches
 
@@ -124,13 +133,13 @@ The remaining classification work is split by **how the evidence is obtained**, 
 
 | Tranche | Codes | Why grouped | Status |
 |---|---|---|---|
-| **A** | gas, stake, scarcity, burn, protocol | Fact check against protocol documentation | Drafted: 59 of 70 verified, 11 pending |
+| **A** | gas, stake, scarcity, burn, protocol | Fact check against protocol documentation | 64 of 70 verified, 6 pending |
 | **B** | collateral, monetary | Need a 90-day quantitative window and a materiality threshold | 28 decisions outstanding |
-| **C** | governance, utility, incentive | Boundary calls needing blind review most | 42 decisions outstanding |
+| **C** | governance, utility, incentive | Boundary calls, the most judgment-dependent | 42 decisions outstanding |
 
 ### The pipeline
 
-67 modules in seven ordered stages. A test fails if any module is missing from the stage map.
+72 modules in seven ordered stages. A test fails if any module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -146,7 +155,7 @@ The remaining classification work is split by **how the evidence is obtained**, 
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 248 tests
+python -m unittest discover -s tests                           # 312 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -169,14 +178,16 @@ Full walkthrough in [`research/findings/2026-09-07-the-math-explained.md`](resea
 - **A single market factor dominates.** Median beta 1.03, median R² 0.60 across 24 assets. Lagged beta is negatively priced (t = −2.12).
 - **Function and risk move together but do not survive correction.** Monetary assets average beta 0.93 and worst drawdown −1.44 against 1.19 and −2.37. Three of 27 tests reach p ≤ 0.05 against 1.35 expected by chance; none survives a 10% false-discovery rate.
 
-Not defensible, and stated as such: any claim that economic function predicts returns, and any market-wide claim about function and risk while nineteen assets remain unverified.
+Not defensible, and stated as such: any claim that economic function predicts returns; any market-wide claim about function and risk while most of the universe is unverified; and any claim that the classification is reproducible by an independent coder, which has not been tested.
 
-### Immediate workstream
+### What happens next
 
-1. Complete tranches B and C and adjudicate the 11 pending cells, then re-estimate the already-frozen P1_H6 on verified codes. The specification must not be revised.
-2. Collect point-in-time unlock and issuance events so H3 becomes identification-ready.
-3. Resume H4 once an archival Ethereum consensus endpoint is available.
-4. Extend the frozen H2 panel only under a separately versioned future specification.
+1. **Send the survey, with a closing date.** It collects external feedback on the six boundary rules and the materiality thresholds. The analysis plan is frozen at `config/survey_analysis_plan.json` before any response is read.
+2. **Close the six pending cells** from primary sources. If the evidence does not settle a cell, it stays pending — insufficient evidence is a result, not a failure.
+3. **Summarise the responses**: agreement with each proposed rule, the function ranking, and the reasons given for disagreement. The optional blind scoring exercise is reported only if enough people complete it.
+4. **Revise and document the framework**: which rules stayed, which changed, which remain uncertain. A rule the panel did not settle continues as a working convention and is labelled as one.
+
+Then the thresholds the survey settles determine how tranche B is coded, and tranche C follows.
 
 Every decision that needs human judgment is registered in [`research/open_decisions.md`](research/open_decisions.md), with what changes if it flips and which result it blocks.
 
@@ -205,7 +216,7 @@ Every file in there is catalogued in [`DATA_MAP.md`](DATA_MAP.md) with the modul
 - `tests/` — unit tests for every module, including one that fails if the stage map misses a module and one that fails if any data file has no producer.
 - `research/` — the human-readable layer: manuscript, findings notes, methods, preregistration, the open-decisions register and the survey instrument. Start at [`research/README.md`](research/README.md).
 - `review_inputs/` (Git-ignored) — completed reviewer worksheets, kept out of version control on purpose.
-- `docs/` (Git-ignored) — private working notebook and meeting notes.
+- `docs/` (Git-ignored) — private working notebook and the phase summary, including the full asset matrix.
 
 ## 8. Further reading
 
@@ -219,7 +230,7 @@ Every file in there is catalogued in [`DATA_MAP.md`](DATA_MAP.md) with the modul
 | [`PROJECT_PLAN.md`](PROJECT_PLAN.md) | Phases, gates, and the Phase 1 workflow |
 | [`DATA_MAP.md`](DATA_MAP.md) | Every data file, its phase, producer and consumers |
 | [`research/open_decisions.md`](research/open_decisions.md) | What still needs human judgment |
-| [`research/survey_instrument.md`](research/survey_instrument.md) | The expert panel that unblocks Phase 1 |
+| [`research/survey_instrument.md`](research/survey_instrument.md) | The expert survey: external feedback on the boundary rules |
 
 ---
 
@@ -227,136 +238,17 @@ Every file in there is catalogued in [`DATA_MAP.md`](DATA_MAP.md) with the modul
 
 ## Command reference
 
-Every command accepts `--repo .` and can be run individually with `python -m src.pipeline.<module>`; `config/pipeline_stages.json` records the arguments used for the frozen snapshots. Commands that reach the network are listed under the `ingestion` stage. The descriptions below follow the stage order.
-
-The registry command validates the asset configuration and frozen raw snapshots, records SHA-256 hashes, and writes the identifier registry and cross-sectional coverage audit to `data/processed/2026-08-22/`. It also writes a readable audit note to `research/findings/`.
-
-The historical command performs a bounded example pull. The collector chunks long requests, caches immutable raw responses and retrieval metadata, normalizes data to UTC dates, merges incremental runs without discarding earlier assets, and writes daily data plus a missingness report to `data/processed/historical/`. Set `COINGECKO_API_KEY` when the selected CoinGecko plan requires authenticated historical access.
-
-For local authenticated APIs, copy `.env.example` to `.env` and add keys there. The CoinGecko historical collector loads the repository `.env` automatically; existing shell environment variables take precedence. `.env` is excluded from Git and must never contain credentials intended for sharing.
-
-The DeFiLlama fallback command builds the long daily-price history when early CoinGecko access is unavailable. It uses one asset per provider request, yearly cache partitions, nearest-UTC-day normalization, and active-window coverage diagnostics. It supplies price only; historical market capitalization, volume, and circulating supply remain separate data workstreams.
-
-The stablecoin-supply command collects DeFiLlama `circulating.peggedUSD` histories for supported assets. The source-availability command produces the explicit metric-by-asset matrix showing which histories are implemented or still blocked.
-
-The stablecoin-risk command validates evidence-linked component inputs and calculates strict reserve-quality, transparency, and redemption-friction scores. Strict composites are withheld when any required component is unknown.
-
-The stablecoin-evidence command enforces the focused eight-asset H5/H6 evidence plan and separates source discovery from verified point-in-time extraction. Verified, dated summaries and reconstructible locators live in `config/stablecoin_evidence_extractions.json`; the command audits five required evidence classes per asset and prohibits treating an undated or merely discovered source as score-ready evidence.
-
-The stablecoin-scorecard command applies a versioned 0--4 ordinal rubric to the five verified evidence classes and produces an eight-asset point-in-time scorecard. It validates that every component has matching dated evidence, reports confidence, and keeps developmental design scores distinct from estimated H5/H6 results.
-
-The stablecoin-score-intervals command combines current scores with independently evidenced historical intervals, validates source availability and non-overlap, and prohibits gaps between explicitly consecutive regimes for the same asset.
-
-The H5-H6 readiness command generates a blind, 40-row targeted component-review worksheet and audits temporal overlap between score dates and peg outcomes. It explicitly blocks retrospective use of later design scores, preventing look-ahead bias before model estimation.
-
-The crypto-economic-design command validates the provisional ten-code value-accrual matrix against the frozen 25-asset non-stable universe. It creates an asset-level H2/H8 profile and a blind 250-decision review worksheet; provisional classifications cannot be treated as frozen research inputs until evidence-backed review is complete.
-
-The crypto-Phase-1-taxonomy command consolidates the evidence-backed six-asset core into a three-state classification matrix: verified positive, verified negative, or unresolved. It keeps technical architecture separate from economic function, maps all ten functions into eight theory-defined bundles, publishes value indicators and prevalence, and freezes five falsifiable Phase 1 experiments before new estimation. Raw function breadth is withheld for incomplete assets. Under the adjudicated strict holder-capture rule, governed ecosystem spending alone is `VA_GOV`, not `VA_PROTOCOL`; therefore Phase 1 records ARB `VA_PROTOCOL=0`. The frozen exploratory H2 pilot retains its older broad treasury definition as historical output and is not relabeled as a strict-rule result.
-
-The crypto-Phase-1-research-map command joins the frozen ten-code taxonomy to what the repository can actually measure. For every code it records the bundle, rule, six-asset prevalence, each value indicator's observability state (observed series, partial or proxy series, documentary only, or not collected, with the dataset and column that back any series claim), and the registered Phase 1 experiments that use it. Monetary, gas, and collateral functions are measured; staking, burn, and protocol capture are proxied; scarcity, governance, utility, and incentive remain documentary. Documentary indicators support classification only and never enter valuation tests unlabeled.
-
-The crypto-mechanism-event-study command estimates the frozen Phase 1 P1_H5 experiment: every effective-dated burn or protocol-capture state change in the mechanism ledger whose full thirty-day pre and post window lies inside the frozen H2 panel. That rule admits the UNIfication fee-to-burn activation (2025-12-27) and the Aave buyback pause (2026-04-19); the TRON entry on the first panel day has no pre-window and is excluded by rule. Each event reports a difference in mean log market value against uncontaminated control assets, an exact asset-placebo p-value from reassigning treatment to each control, a calendar-placebo p-value from non-overlapping shifted windows, and the same statistic for lagged fees so a valuation move is not attributed to capture when usage moved too. Two events are exploratory sensitivity evidence, not causal estimates.
-
-The crypto-Phase-1-bundle-comparison command estimates the frozen P1_H3 experiment on the six verified assets. Eleven pre-listed models (raw breadth, active bundle count, each of the eight bundles alone, and raw breadth plus holder capture as the one pre-declared theory addition) are compared by leave-one-asset-out prediction error for mean log market value and a market-cap-to-daily-fees multiple; single predictors also get exact 720-permutation rank tests. The activity multiple is withheld because free activity data covers only four assets. Raw breadth and bundle count are nearly collinear on this core (rank correlation 0.96), bundle count does not beat breadth, and only the monetary-store bundle lowers prediction error. Six assets support description, not confirmation.
-
-The crypto-H2-strict-capture-sensitivity command re-estimates the two frozen H2 valuation specifications after relabeling capture states under the Phase 1 strict holder-capture rule, using only a pre-listed override (ARB `VA_PROTOCOL=0`) applied to a copy of the panel. The frozen pilot, its evidence files, and its event ledger are untouched. Under the strict rule the pooled interaction falls from 0.132 ($p=0.082$) to 0.061 ($p=0.478$) and the chain estimate from 0.141 to 0.060; the frozen headline does not survive the stricter capture definition and is reported beside it as a robustness result.
-
-The crypto-return-panel command builds the first daily return panel for the research universe from archived Binance USDT closes: 24 assets, 2019 through August 2026, about 52,000 asset-days. Fields are predeclared (daily log return with a three-day gap rule, seven- and thirty-day forward returns, thirty-day momentum skipping the last week, thirty-day realized volatility, log dollar volume, an equal-weighted market return, the BTC return, and a lagged 180-day rolling market beta). The risk-free rate is set to zero and declared as such. The panel supports description and factor baselines; daily crypto returns are close to unpredictable, so the intended findings concern risk exposure and behaviour conditional on economic function.
-
-The crypto-return-factor-baseline command establishes what is already known before any economic-function return test. Per-asset market models give a median beta near one and a median R-squared of 0.60, so the common factor explains most daily variation. Daily Fama-MacBeth cross-sections with Newey-West standard errors show a negative lagged-beta premium, flat momentum, and no volatility premium. Equal-weighted sorts of the six verified assets by bundle are descriptive previews on the 2023-2026 common window: monetary-store and financial-integration positives carry lower beta and shallower drawdowns than negatives, control-rights positives the reverse. Three-versus-three portfolios cannot support inference; the sorts show what the classification will be tested on once the remaining universe is verified.
-
-The crypto-function-risk-exposure command estimates the frozen P1_H6 experiment: whether economic function predicts market beta, realized volatility, and maximum drawdown. All assets are measured on one common window (24 March 2023 to 22 August 2026, set by the ARB listing) so the three risk measures are comparable, and every regression carries mean log dollar volume as a size control. Two samples are reported separately: the six evidence-verified assets with exact 720-assignment permutation inference, and twenty provisional-matrix assets with fixed-seed Monte Carlo permutation. Benjamini-Hochberg q-values cover all 27 predictor-by-outcome tests within each sample, and predictors without cross-asset variation are reported as unestimable rather than dropped. In the provisional universe three tests reach $p \le 0.05$ against 1.35 expected by chance and none survive a 10 percent false-discovery rate.
-
-The long-panel variant of the mechanism event study (`--spec config/crypto_mechanism_event_study_long.json`) applies the same design to the 2019-2026 daily return panel. A stated transition rule admits only ledger events that differ from the preceding recorded state, which adds the April 2025 Aave buyback activation that falls outside the one-year H2 window, and expands each event's placebo pool to twenty-two control assets and roughly 280 non-overlapping calendar placebos. One of three events carries its expected sign and none reject at 10 percent.
-
-The crypto-evidence-tranche-A command audits the first evidence tranche for the fourteen return-panel assets that are not yet classification-verified, covering the five rule-mechanical codes (gas, stake, scarcity, burn, protocol capture) whose determination is a fact check against protocol documentation. Tranche order is fixed by evidence difficulty before estimation and explicitly not by which bundle showed signal in P1_H6, because selecting codes by outcome would compromise that frozen test. Of 70 drafted decisions 59 are verified against dated primary sources and 11 are held pending; a pending cell never defaults to zero. The command reports disagreements with the provisional design matrix, emits a blind worksheet that carries no coder value or rationale, and refuses any consistency case that does not name a genuinely pending cell. Verified values may be written into the design matrix only after independent review and adjudication.
-
-The crypto-design-evidence command audits the first prioritized H2/H8 evidence tranche. It requires a complete asset-code grid, dated HTTPS sources, binary values only for verified decisions, and explicit nulls for unresolved quantitative or mechanism tests.
-
-The crypto-fundamentals command collects the Coin Metrics Community fields confirmed to be free: daily addresses, transactions, transfer count, market capitalization, and supply for the first evidence tranche. Coverage is audited per metric; activity supplies at most one `VA_MONETARY` behavioral test and never substitutes for separate acceptance or holding evidence. Adjusted transfer value, fees, and issuance are explicitly reported as unavailable on this free tier.
-
-The crypto-collateral command screens exact token balances across a named eight-protocol, chain-relevant lending sample against the preregistered 1%-of-market-cap or $100m-for-90-days rule. Every selected protocol must cover the full window before a below-threshold result can support zero. DeFiLlama supplied-token TVL remains a screening proxy: a passing asset still requires effective-dated proof that the balance was collateral-enabled before `VA_COLLATERAL=1` can be frozen.
-
-The Aave collateral-state command resolves daily Ethereum blocks and performs historical read-only `Pool.getConfiguration` calls for WBTC and WETH. Eligibility passes only when LTV is positive, the reserve is active, and it is not paused on every day of the 90-day materiality window; raw RPC responses and hashes are archived.
-
-The Venus-BNB-collateral-state command resolves daily BNB Chain blocks and reads the official Venus Core Pool `markets(vBNB)` state. BNB is classified as material collateral only when vBNB is listed with a positive collateral factor on every date and the separately collected supplied-balance proxy passes the preregistered threshold throughout the same 90-day window.
-
-The crypto-monetary command implements the two-test `VA_MONETARY` rule: 90 days of material address/transaction activity plus independent, dated primary evidence of monetary or payment design. Missing provider data and failure of this pilot screen remain unresolved rather than being converted into negative classifications.
-
-The crypto-mechanism-state command resolves burn and protocol-capture classifications from effective-dated activation, pause, and deactivation events. The latest event known by the observation date must match the design matrix; promised, paused, or inactive mechanisms remain zero.
-
-The crypto-H2/H8-readiness command creates a six-asset pilot design panel without filling unevidenced fields from the provisional matrix. H2 capture is released only when burn and protocol capture are verified; H8 breadth stays null until all ten value-accrual codes are verified.
-
-The crypto-fee-fundamentals command archives DeFiLlama's free daily fees, protocol revenue, and holder revenue for eleven associated economic systems. Primary fee coverage is complete for nine chains and two application protocols; secondary protocol-revenue and holder-revenue coverage is incomplete and must use observed-sample models. Scope and accounting concepts are retained explicitly and never treated as interchangeable.
-
-The crypto-H2-pilot-panel command joins eleven-asset CoinPaprika market outcomes, four-asset Coin Metrics activity, free fee/revenue histories, and effective-dated capture events without backfilling later classifications. Exact one-day explanatory lags and exact seven-day forward returns preserve gaps. The candidate H2 panel carries an application-scope indicator and predeclared pooled, chain-only, application-only, and leave-one-asset-out sensitivities. Eleven clusters improve resolution but remain too few for unguarded conventional asymptotics.
-
-The crypto-H2-expansion-readiness command proves that SOL, AVAX, TRX, XRP, and ADA independently pass the predeclared market-coverage, complete-fee-history, and effective-dated mechanism-evidence gates. It explicitly prohibits selecting expansion assets from model outcomes.
-
-The crypto-H2-expansion-evidence command reconciles the five added assets' ten burn/protocol decisions exactly to the effective-dated event ledger and official source URLs. The completed focused review and Cardano adjudication now reconcile 10 of 10 decisions; the eleven-asset specification is frozen post-pilot for reproducibility while remaining exploratory.
-
-The crypto-research-scope command makes H1, H2, H3, H4, and H8 the active research program and preserves H5-H7 as a deferred stablecoin phase. This prevents unfinished stablecoin review or coverage work from blocking crypto classification, discovery, and reporting.
-
-The crypto-findings-summary command produces the single plain-language status artifact for the active phase. It reports the H1, frozen exploratory H2, H3 diagnostic, and H8 evidence, distinguishes the H3 data limitation and unestimated H4 from completed pilots, records the resolved Cardano rule, and keeps stablecoin work visibly deferred.
-
-The crypto-H8-breadth-pilot command tests the verified raw ten-function breadth count against average log market value for the five complete-case assets. It enumerates all 120 assignments, reports rank association and leave-one-asset-out slopes, and prohibits outcome-tuned weights or claims of reliable inference from the tiny cross-section.
-
-The crypto-H1-activity-pilot command estimates a two-way fixed-effect association between market value, active addresses, and transaction count for the fixed BTC/ETH/UNI/AAVE common-coverage sample. It exhaustively enumerates all 16 four-cluster sign assignments and treats active addresses as ledger addresses rather than users. The source-defined pilot cannot be generalized to the broader universe.
-
-The crypto-H3-supply-pilot command tests lagged seven-day Coin Metrics circulating-supply growth against the next seven-day return for the same fixed four-asset sample, controlling for lagged activity with asset and date effects. It reports the effect per basis point, exact four-cluster inference, leave-one-out estimates, and a variation audit. Because only BTC and ETH vary under the free provider measure, the output is explicitly not an identification-ready issuance or unlock event study.
-
-The crypto-H4-readiness command reconciles the six verified `VA_STAKE` decisions to an official-source plan and recent market-turnover coverage. It blocks estimation until historical staking participation exists for at least three positive-staking assets, and it prohibits pooling consensus staking with protocol-risk staking without a predeclared comparability design. Turnover is retained as a proxy rather than mislabeled as spread, depth, price impact, or liquid float.
-
-The crypto-H4-Aave-legacy-stake command reads ERC20 `totalSupply()` for the official legacy stkAAVE contract at archived daily Ethereum blocks. The 90-day series is labeled `legacy_component_only` and is prohibited from releasing H4 because current Aave Umbrella security also includes aToken and GHO stake.
-
-The crypto-H4-BNB-stake command resolves the historical StakeHub validator set and sums `totalPooledBNB()` across every returned validator credit contract at each daily archival BSC block. Its 90-day output is a complete consensus-staking component; BNB already moved into unbonding queues is excluded.
-
-The crypto-H4-ETH-stake command maps each UTC study date to a Beacon slot and sums `effective_balance` across all active validator statuses. It caches raw responses and redacts credential-bearing endpoint paths from provenance. A no-key public endpoint is retained only as a connectivity probe because it rejects historical validator state; an archival endpoint must be supplied locally through `ETH_BEACON_ARCHIVE_API_URL`. Validator count multiplied by 32 ETH is deliberately rejected after EIP-7251.
-
-The review-adjudication command validates the exact crypto review grid, rejects incomplete metadata and out-of-range judgments, calculates raw agreement and Cohen's kappa only for a complete review, and emits disagreement fields. The preserved stablecoin review is reported as deferred and cannot gate the active crypto phase.
-
-Completed reviewer worksheets are private inputs and must not be committed. Copy the generated templates to `review_inputs/crypto_h2_expansion_blind_review.csv` and `review_inputs/stablecoin_score_targeted_review.csv`, have the independent reviewer fill those copies, and rerun the command. The directory is Git-ignored, so regenerating pipeline templates cannot overwrite completed reviews.
-
-The crypto-H2-estimator-diagnostics command audits usable observations, within-asset fee variation, two-way fixed-effect design rank, scope representation, and every leave-one-asset-out sample without estimating hypothesis coefficients. A pass establishes computational feasibility only; the two-asset application scope remains descriptive and the eleven-cluster pilot remains exploratory.
-
-The crypto-H2-exploratory-estimates command produces guarded two-way fixed-effect point estimates for the predeclared pooled and chain-only market-cap and forward-return specifications. It reports within-fit and eleven leave-one-asset-out sensitivities; inference remains in a separate audited artifact.
-
-The crypto-H2-small-cluster-inference command adds CR1 asset-clustered statistics and exhaustively enumerates every Rademacher wild-cluster assignment under the zero-interaction null. Pooled tests enumerate 2,048 assignments across eleven clusters and chain tests enumerate 512 across nine; overlapping forward-return results remain exploratory pending horizon-robust interpretation.
-
-The crypto-H2-nonoverlap-sensitivity command partitions seven-day forward returns into all seven calendar offsets. Dates within each offset are spaced seven days apart, eliminating overlapping return intervals without choosing a favorable starting day. Offset results are sensitivity evidence, not independent tests, and expose sign instability hidden by the full overlapping panel.
-
-The crypto-evidence-blockers command reconciles a machine-readable blocker manifest to the unresolved evidence grid. BNB collateral is now verified from 90 daily Venus Core Pool state reads; the remaining blocker documents the exact evidence required to resolve BNB monetary use and enforces a five-asset complete-case H8 policy while that field remains null.
-
-The crypto-H8-evidence-plan command formalizes positive, negative, and source requirements for gas, staking, scarcity, governance, utility, and incentive classifications. Two independently validated evidence tranches verify all 36 decisions, correct BNB governance, UNI incentive, and AAVE utility classifications, reject duplicate tranche decisions, and audit agreement with the design matrix. Full H8 breadth remains unavailable for BNB until its monetary-use field is resolved.
-
-The checkpoint-readiness command reconciles the stablecoin and crypto evidence outputs, lists every unresolved pilot decision, enforces missingness and temporal guardrails, and writes a single machine-readable checkpoint. A passing checkpoint means the methodology increment is safe to commit; it does not mean H2/H8 or H5/H6 are ready for final estimation.
-
-The CoinPaprika command builds a no-key, rolling recent-market panel containing daily price, reported market capitalization, and 24-hour volume. CoinPaprika's free tier exposes only the latest year of daily history, so this source is a recent-period and cross-source-validation layer rather than a substitute for the full 2019–2026 market-cap panel. Identifier ambiguity is surfaced in a separate audit and never resolved by symbol alone when multiple active candidates exist.
-
-The CryptoCompare command builds a paginated 2019–2026 daily OHLCV panel for verified non-stable crypto symbols. Its `volume_quote_usd` field is CCCAGG pair volume converted to USD, not total global spot volume and not directly interchangeable with CoinPaprika's reported 24-hour volume. Provider zero-padding before an asset's observed history is discarded.
-
-The Binance command uses the official keyless market-data host and records venue-specific daily candles, quote volume, trade counts, and taker volume for active USDT/USDC/FDUSD spot pairs. Quote-stablecoin units are retained as such and are not silently relabeled as exact USD.
-
-The stablecoin-panel command joins the long daily price panel to supported circulation histories and strict design scores, calculates peg-error and threshold variables, and produces a daily depeg-event table. PAXG is excluded because a gold benchmark is required. Missing calendar days censor open episodes instead of being bridged.
-
-The stablecoin-atlas command produces asset-level peg statistics, band-robustness rates, episode rankings, monthly stress concentration, an explicit extreme-observation review queue, and a reproducible SVG summary chart. USTC remains visible as a failure control but is excluded from primary-sample rankings.
-
-The preregistration command validates and renders the machine-readable H5-H7 draft and records checksums for its current analytical inputs. The draft contains explicit readiness gates and remains labeled `draft_not_frozen` until point-in-time design evidence, second-coder review, and remaining H7 inputs are complete.
-
-The stablecoin-global-market command archives and normalizes DeFiLlama's free aggregate `totalCirculatingUSD.peggedUSD` history without interpolation. The stablecoin-adoption command then constructs exact-date supply growth, pilot concentration, within-pilot share, and DeFiLlama global pegged-USD share. This denominator does not represent non-USD-pegged stable-value assets.
-
-The stablecoin-chain-distribution command extracts daily chain balances already preserved in DeFiLlama raw histories and calculates chain breadth, concentration, effective chain count, and top-chain share. These are cross-chain distribution proxies, not transaction usage or protocol-integration counts.
-
-The stablecoin-trading-activity command joins the recent CoinPaprika volume panel to supply and peg outcomes and calculates volume-to-supply turnover. It is a recent reported trading-activity proxy, not order-book liquidity or settlement usage.
-
-The Binance stablecoin-depth command archives keyless spot order-book snapshots and measures quoted spread, executable bid/ask depth within 10/25/50 bps, and simulated price impact for 100,000 and 1,000,000 anchor-unit trades. Quote-oriented pairs are algebraically inverted into the target stablecoin's perspective. These are venue-specific point-in-time observations; repeated snapshots are required before they can enter H7 panel estimation.
-
-The DeFiLlama yield-integrations command archives the current free yield-pool universe and constructs conservative exact-symbol-component counts of pools, projects, and chains for each primary stablecoin. It is a cross-sectional yield-integration proxy—not an exhaustive or historical protocol-integration measure—and gross matched-pool TVL is not token-specific TVL.
-
-The Coin Metrics stablecoin-usage command collects free daily active-address, ledger-transaction, and token-transfer metrics for explicitly supported provider assets and emits a full 14-asset coverage audit. Active addresses are not unique users, and unsupported assets remain null rather than being inferred from chain-level totals.
-
-The stablecoin usage-panel command applies the fixed two-tier H7 design: all 14 coverage-qualified assets remain in the primary supply/share specification, while USDT, USDC, DAI, and TUSD enter a separate exploratory usage panel with exact one-day lags. The usage subsample cannot replace or determine the primary sample.
-
-The H7-readiness command constructs the lagged recent joined panel, variable-by-asset coverage matrix, objective sample gate, and pass/fail readiness report. It does not declare H7 ready while market depth, integrations, and usage remain unsourced.
-
-This repository is for academic research. Classifications are not legal conclusions or investment recommendations.
+Every module runs as `python -m src.pipeline.<module> --repo .`, and
+`config/pipeline_stages.json` records the exact arguments used for the frozen snapshots — it is the
+authoritative list, not this file. `python -m src.pipeline.run_stages --repo . --list` prints the
+stages and their commands in order. What each module reads and writes is in
+[`DATA_MAP.md`](DATA_MAP.md), which the pipeline generates, so it cannot drift from the code.
+
+Commands that reach the network are all in the `ingestion` stage and need keys in `.env`
+(copy `.env.example`). Every other stage rebuilds from archived raw snapshots and needs no
+credentials.
+
+---
+
+This repository is for academic research. Classifications are not legal conclusions or investment
+recommendations.

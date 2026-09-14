@@ -124,15 +124,17 @@ If a result improves because a rule was loosened, that is a finding about the ru
 
 As of 14 September 2026: 70 pipeline modules, 248 tests, 151 processed files, 21 commits.
 
-Classification: 250 cells total — **119 evidence-backed** (each with a dated primary source), of which **only 10 have been independently blind-reviewed**. 11 held pending adjudication, 120 still provisional.
+Classification: 250 cells total — **124 evidence-backed** (each with a dated primary source), of which **only 10 carry a blind second review**. 6 held pending adjudication, 120 still provisional.
+
+**One coder does the classification.** Never write a reliability claim about the matrix, and never cite the 10-cell κ = 1.00 as one. Independent reproducibility is untested and is stated as a limitation in the README, the phase summary and the manuscript.
 
 The three states are not interchangeable and the vocabulary matters:
 
 | State | Cells | Means |
 |---|---|---|
-| reviewed | 10 | Sourced *and* blind-scored by a second reviewer. **Only this state supports a reliability claim.** |
-| sourced | 109 | Dated primary source, audited against the design matrix, but no independent review |
-| pending | 11 | Held for adjudication; carries no value |
+| reviewed | 10 | Sourced *and* blind-scored by a second reviewer in an earlier pass. **No further cells will reach this state: this is a single-coder project.** |
+| sourced | 114 | Dated primary source, audited against the design matrix, but no independent review |
+| pending | 6 | Held for adjudication; carries no value |
 | provisional | 120 | Design matrix only, no evidence |
 
 The κ = 1.00 covers those 10 cells only — SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. It is **not** a reliability statistic for the six-asset core, which is sourced but has never been independently reviewed. Do not write otherwise.

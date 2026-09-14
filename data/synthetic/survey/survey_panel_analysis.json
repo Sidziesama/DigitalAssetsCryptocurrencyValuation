@@ -1480,29 +1480,29 @@
     "definition": "Per respondent, the share of determinate cells matching the project's value, plus a two-rater Cohen's kappa for that respondent against the project.",
     "caution": "Inter-rater reliability, reliability, accuracy, correctness, validation, or any phrasing implying the project's answers are a ground truth against which scorers are assessed.",
     "respondents_scored": 12,
-    "mean_agreement_across_respondents": 0.4563,
-    "mean_kappa_across_respondents": -0.0248,
+    "mean_agreement_across_respondents": 0.4384,
+    "mean_kappa_across_respondents": -0.048,
     "respondents_with_undefined_kappa": 0,
     "by_respondent": [
       {
         "respondent": "R000",
-        "comparable_cells": 6,
-        "agreement": 0.3333,
-        "kappa": -0.5,
+        "comparable_cells": 7,
+        "agreement": 0.2857,
+        "kappa": -0.5217,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R001",
-        "comparable_cells": 7,
-        "agreement": 0.7143,
-        "kappa": 0.4615,
+        "comparable_cells": 9,
+        "agreement": 0.6667,
+        "kappa": 0.3721,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R002",
-        "comparable_cells": 6,
-        "agreement": 0.3333,
-        "kappa": -0.2,
+        "comparable_cells": 7,
+        "agreement": 0.2857,
+        "kappa": -0.2069,
         "kappa_status": "estimated"
       },
       {
@@ -1514,30 +1514,30 @@
       },
       {
         "respondent": "R004",
-        "comparable_cells": 5,
-        "agreement": 0.6,
-        "kappa": 0.2857,
+        "comparable_cells": 6,
+        "agreement": 0.5,
+        "kappa": 0.1818,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R005",
-        "comparable_cells": 6,
-        "agreement": 0.5,
-        "kappa": -0.2857,
+        "comparable_cells": 8,
+        "agreement": 0.625,
+        "kappa": -0.2,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R006",
-        "comparable_cells": 6,
-        "agreement": 0.6667,
-        "kappa": 0.25,
+        "comparable_cells": 8,
+        "agreement": 0.5,
+        "kappa": 0.0,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R007",
-        "comparable_cells": 5,
-        "agreement": 0.4,
-        "kappa": -0.3636,
+        "comparable_cells": 6,
+        "agreement": 0.5,
+        "kappa": -0.2857,
         "kappa_status": "estimated"
       },
       {
@@ -1549,23 +1549,23 @@
       },
       {
         "respondent": "R009",
-        "comparable_cells": 7,
-        "agreement": 0.4286,
-        "kappa": -0.0769,
+        "comparable_cells": 9,
+        "agreement": 0.3333,
+        "kappa": -0.125,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R010",
-        "comparable_cells": 4,
-        "agreement": 0.25,
+        "comparable_cells": 5,
+        "agreement": 0.2,
         "kappa": 0.0,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R011",
-        "comparable_cells": 5,
-        "agreement": 0.6,
-        "kappa": 0.2857,
+        "comparable_cells": 7,
+        "agreement": 0.7143,
+        "kappa": 0.3636,
         "kappa_status": "estimated"
       }
     ]
@@ -1591,8 +1591,8 @@
         "No": 3,
         "Unknown": 5
       },
-      "project_value": null,
-      "project_state": "pending",
+      "project_value": "No",
+      "project_state": "verified",
       "coverage": 0.5833
     },
     {
@@ -1603,8 +1603,8 @@
         "No": 3,
         "Unknown": 4
       },
-      "project_value": null,
-      "project_state": "pending",
+      "project_value": "No",
+      "project_state": "verified",
       "coverage": 0.6667
     },
     {
@@ -1717,9 +1717,9 @@
     }
   ],
   "classification_status_at_analysis": {
-    "sourced": 109,
+    "sourced": 114,
     "reviewed": 10,
-    "pending": 11,
+    "pending": 6,
     "provisional": 120
   },
   "warning": "Produced from synthetic responses. No figure here is a finding."

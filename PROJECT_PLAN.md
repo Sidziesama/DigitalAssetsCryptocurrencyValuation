@@ -35,21 +35,21 @@ flowchart TB
 | 3 · Risk and market structure | Does economic function explain risk exposure? | Exploratory results, on hold | `data/processed/03_risk/` |
 | 4 · Stablecoin risk | What drives depegs and redemption failure? | Deferred | `data/processed/04_stablecoin_deferred/` |
 
-**Why Phase 1 gates the rest.** Phases 2 and 3 both take the classification as an input variable. Every result they have produced so far is only as good as that input, and right now 119 of 250 classification cells are verified while the rest come from a provisional matrix that the first evidence tranche has already shown to be wrong in five places. Finishing and validating the instrument is not preparatory work; it is the work that makes everything downstream mean something.
+**Why Phase 1 gates the rest.** Phases 2 and 3 both take the classification as an input variable. Every result they have produced so far is only as good as that input, and right now 124 of 250 classification cells are verified while the rest come from a provisional matrix that the first evidence tranche has already shown to be wrong in five places. Finishing and validating the instrument is not preparatory work; it is the work that makes everything downstream mean something.
 
 ---
 
 ## Phase 1 — Economic classification
 
-**Deliverable.** A dataset that states, for all 25 assets across ten economic functions, whether the token performs that function, backed by a dated primary source, reconciled with an independent reviewer, with a published reliability statistic. Plus the codebook and adjudication rules that let someone else reproduce it.
+**Deliverable.** A dataset that states, for all 25 assets across ten economic functions, whether the token performs that function, backed by a dated primary source. Plus the codebook and adjudication rules that would let someone else reproduce it. Reproducibility is *enabled*, not *demonstrated*: this is a single-coder project and no reliability statistic is claimed for the matrix.
 
 **Done when.** All four gates pass:
 
 | Gate | Test | Now |
 |---|---|---|
 | G1 Rules validated | Boundary rules confirmed by an external panel, not only internally adjudicated | Panel not yet run |
-| G2 Coverage | Every asset in the working universe has all ten cells resolved, or explicitly null with a reason | 119 / 250 evidence-backed |
-| G3 Reliability | Cohen's kappa reported against an external blind reviewer | κ = 1.00, but on **10 cells only** (5 assets, 2 codes). The six-asset core has never been independently reviewed. |
+| G2 Coverage | Every asset in the working universe has all ten cells resolved, or explicitly null with a reason | 124 / 250 evidence-backed |
+| G3 Reliability | **Withdrawn as a gate.** One coder does the classification, so independent reproducibility is untested and is reported as a limitation. | κ = 1.00 exists for **10 cells only** (5 assets, 2 codes) from an earlier blind pass. It is not a reliability statistic for the matrix and is never cited as one. |
 | G4 Consistency | Zero open consistency cases; every adjudicated rule applied everywhere it bites | 2 open cases |
 
 ### The Phase 1 workflow
@@ -86,20 +86,20 @@ flowchart TB
 
 ### Where Phase 1 actually stands
 
-**Done.** The ten-function codebook with written rules and evidence requirements. The effective-dating machinery, so a mechanism that switched on in December 2025 can never explain 2024 prices. Six core assets sourced at 60 of 60 cells against dated primary evidence. Tranche A drafted for 14 more assets: 59 of 70 sourced, 11 held pending. Two adjudicated rules on record, the governed-treasury capture boundary and the relay-policy fee boundary.
+**Done.** The ten-function codebook with written rules and evidence requirements. The effective-dating machinery, so a mechanism that switched on in December 2025 can never explain 2024 prices. Six core assets sourced at 60 of 60 cells against dated primary evidence. Tranche A drafted for 14 more assets: 64 of 70 sourced, 6 held pending. Two adjudicated rules on record, the governed-treasury capture boundary and the relay-policy fee boundary.
 
-**Be precise about what "verified" means here.** 119 cells are *evidence-backed*, meaning a coder assigned a value from a dated primary source. Only **10** have been *independently blind-reviewed*, and those 10 are SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. The published κ = 1.00 applies to that set and nothing else. The six-asset core is sourced, not reviewed. Gate G3 is therefore much further away than a headline count of 119 suggests, and closing it is the main thing the expert panel exists to do.
+**Be precise about what "verified" means here.** 124 cells are *evidence-backed*, meaning a coder assigned a value from a dated primary source. Only **10** have been *independently blind-reviewed*, and those 10 are SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. The published κ = 1.00 applies to that set and nothing else. The six-asset core is sourced, not reviewed. Gate G3 has been withdrawn rather than left standing and unmet: with one coder, independent reproducibility cannot be demonstrated, so it is reported as a limitation instead of pursued as a gate.
 
-**Open.** No external reliability statistic for any cell outside those 10. 81 decisions to finish the 20 assets in the working universe: 11 tranche A adjudications, 28 tranche B, 42 tranche C. Two consistency cases. And the single most consequential unsettled item, what counts as *material monetary use* — the provisional matrix calls 14 of 20 assets money, which is too generous, and monetary use is the strongest predictor in every cross-sectional test run so far.
+**Open.** No external reliability statistic for any cell outside those 10. 76 decisions to finish the 20 assets in the working universe: 6 tranche A pending decisions, 28 tranche B, 42 tranche C. Two consistency cases. And the single most consequential unsettled item, what counts as *material monetary use* — the provisional matrix calls 14 of 20 assets money, which is too generous, and monetary use is the strongest predictor in every cross-sectional test run so far.
 
 ### Phase 1 step order
 
-1. **Run the expert panel survey.** Settles the boundary rules and the materiality thresholds, and produces the external blind-scoring sample. Everything else waits on it, because the thresholds determine how tranche B is coded.
+1. **Run the expert survey.** Collects external feedback on the boundary rules and the materiality thresholds. Tranche B waits on it, because the thresholds determine how those cells are coded. The survey is feedback on the rules, not a second coder.
 2. **Freeze the codebook at v1.0** with the panel's answers folded in, and record what changed and why.
 3. **Tranche B**, collateral and monetary, under the newly settled thresholds.
-4. **Tranche C**, governance, utility and incentive, with the heaviest blind review.
-5. **Adjudicate** the 11 pending cells and the 2 open consistency cases.
-6. **Report reliability** — agreement and kappa against the external reviewer.
+4. **Tranche C**, governance, utility and incentive, the most judgment-dependent cells.
+5. **Adjudicate** the 6 pending cells and the 2 open consistency cases.
+6. **Report the limitation** — state plainly that one coder produced the matrix and that independent reproducibility is untested.
 7. **Gate review.** If all four gates pass, re-estimate Phases 2 and 3 on verified codes without touching their frozen specifications.
 
 **Sequencing rule that must not be broken.** The survey is fielded and closed before any re-estimation. Several answers change classifications that determine the project's strongest association, so collecting them after seeing which answer helps would invalidate the result.
