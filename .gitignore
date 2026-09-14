@@ -19,7 +19,6 @@ outputs/generated/
 docs/
 review_inputs/
 data/processed/04_stablecoin_deferred/stablecoin_score_review_audit.csv
-NEXT_STEPS.md
 *.docx
 *.doc
 *.pages

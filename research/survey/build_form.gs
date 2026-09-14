@@ -9,17 +9,35 @@
  *  4. The execution log prints the edit URL and the public link.
  *
  * Re-running creates a SECOND form. To edit instead, open the one you made.
+ *
+ * Optional form settings are applied through safeSet() so that a method
+ * Google has renamed or deprecated logs a warning instead of killing the
+ * whole build. The form itself is never left half-created.
  */
 
+/** Applies an optional setter; logs and continues if the method is unavailable. */
+function safeSet(form, method, value) {
+  try {
+    if (typeof form[method] === 'function') { form[method](value); return true; }
+    Logger.log('Skipped %s — not available in this Forms version.', method);
+  } catch (err) {
+    Logger.log('Skipped %s — %s', method, err.message);
+  }
+  return false;
+}
+
 function buildSurvey() {
-  var form = FormApp.create('Cryptoasset Economic Function — Expert Panel')
-    .setDescription(
-      'An academic research panel on how cryptoassets should be classified by economic function.\n\n' +
-      'About 12 minutes. There are no right answers to most of this — we are trying to establish where informed practitioners actually draw the lines, because those lines change what a study concludes.\n\n' +
-      'Responses inform a working paper on cryptoasset economic classification. We will send you the findings. Individual responses are reported only in aggregate.')
-    .setCollectEmail(false)
-    .setProgressBar(true)
-    .setShowLinkToRespondToAgain(false);
+  var form = FormApp.create('Cryptoasset Economic Function — Expert Panel');
+
+  form.setDescription(
+    'An academic research panel on how cryptoassets should be classified by economic function.\n\n' +
+    'About 12 minutes. There are no right answers to most of this — we are trying to establish where informed practitioners actually draw the lines, because those lines change what a study concludes.\n\n' +
+    'Responses inform a working paper on cryptoasset economic classification. We will send you the findings. Individual responses are reported only in aggregate.');
+
+  safeSet(form, 'setCollectEmail', false);
+  safeSet(form, 'setProgressBar', true);
+  safeSet(form, 'setShowLinkToRespondAgain', false);
+  safeSet(form, 'setAllowResponseEdits', true);
 
   var scale5 = function (item, low, high) { return item.setBounds(1, 5).setLabels(low, high); };
 
@@ -44,27 +62,27 @@ function buildSurvey() {
   form.addPageBreakItem().setTitle('How you frame a cryptoasset')
     .setHelpText('We are testing whether economic function is a useful organising axis at all.');
 
-  var frames = ['Technical architecture (Layer 1, Layer 2, rollup)',
-    'Sector label (DeFi, infrastructure, gaming, payments)',
-    'Economic function (what the token is used for and what accrues to it)',
-    'Market capitalisation tier', 'Regulatory or legal status'];
   form.addGridItem().setTitle('How useful is each frame for organising your thinking about a cryptoasset?')
-    .setRequired(true).setRows(frames)
+    .setRequired(true)
+    .setRows(['Technical architecture (Layer 1, Layer 2, rollup)',
+      'Sector label (DeFi, infrastructure, gaming, payments)',
+      'Economic function (what the token is used for and what accrues to it)',
+      'Market capitalisation tier', 'Regulatory or legal status'])
     .setColumns(['1 Not useful', '2', '3', '4', '5 Essential']);
 
-  var functions = ['Monetary use — used as money, settlement or a store of value',
-    'Fee requirement — you must spend it to use the network',
-    'Staking — locked or at risk to secure something',
-    'Burn — usage permanently destroys supply',
-    'Hard cap — a terminal supply limit that is very hard to change',
-    'Collateral — accepted as material collateral elsewhere',
-    'Governance — holding it gives real control',
-    'Revenue capture — protocol revenue mechanically reaches the token',
-    'Service utility — required to buy an identifiable service',
-    'Incentives — a programme subsidises usage or participation'];
   form.addGridItem().setTitle('How much SHOULD each economic function matter to what a token is worth?')
     .setHelpText('Your view, not what the market currently prices.')
-    .setRequired(true).setRows(functions)
+    .setRequired(true)
+    .setRows(['Monetary use — used as money, settlement or a store of value',
+      'Fee requirement — you must spend it to use the network',
+      'Staking — locked or at risk to secure something',
+      'Burn — usage permanently destroys supply',
+      'Hard cap — a terminal supply limit that is very hard to change',
+      'Collateral — accepted as material collateral elsewhere',
+      'Governance — holding it gives real control',
+      'Revenue capture — protocol revenue mechanically reaches the token',
+      'Service utility — required to buy an identifiable service',
+      'Incentives — a programme subsidises usage or participation'])
     .setColumns(['1 Irrelevant', '2', '3', '4', '5 Decisive']);
 
   form.addParagraphTextItem()
@@ -140,7 +158,7 @@ function buildSurvey() {
 
   // ---------------------------------------------------------------- Section 4
   form.addPageBreakItem().setTitle('What would actually be useful')
-    .setHelpText('Three questions on the output, then you are done.');
+    .setHelpText('A few questions on the output, then you are done.');
 
   form.addMultipleChoiceItem().setTitle('Which would be most useful in your work?')
     .setRequired(true).setChoiceValues([
@@ -162,28 +180,32 @@ function buildSurvey() {
   form.addParagraphTextItem()
     .setTitle('Anything you would want this research to answer that it currently does not?');
 
-  // ---------------------------------------------------------------- Section 5
-  var blind = form.addPageBreakItem().setTitle('Optional: blind classification exercise')
-    .setHelpText('About 20 minutes, and only worth doing if you read protocol documentation regularly.\n\n' +
-      'Score each cell using only the rule text and your own knowledge. Please do not look up our answers. ' +
-      'If you do not know, choose Unknown — a guess is worse than a gap here, because we are measuring agreement.');
+  // The routing question lives at the end of this page so its answer can skip
+  // the optional section entirely. Its choices are set after the target pages
+  // exist, further down.
+  var routing = form.addMultipleChoiceItem()
+    .setTitle('There is an optional 20-minute scoring exercise. Would you like to do it?')
+    .setHelpText('Only worth doing if you read protocol documentation regularly. Choosing no submits your answers as they are.')
+    .setRequired(true);
 
-  form.addMultipleChoiceItem().setTitle('Would you like to do the optional blind scoring exercise?')
-    .setRequired(true).setChoiceValues(['Yes, continue', 'No, submit now']);
+  // ---------------------------------------------------------------- Section 5
+  var blindPage = form.addPageBreakItem().setTitle('Optional: blind classification exercise')
+    .setHelpText('Score each cell using only the rule text and your own knowledge. Please do not look up our answers.\n\n' +
+      'If you do not know, choose Unknown — a guess is worse than a gap here, because we are measuring agreement, and a guess that happens to match us overstates it.');
 
   var cells = [
     ['Litecoin', 'FEE REQUIREMENT: the token is protocol-required to pay ordinary transaction fees. Relay policy and optional discounts do not qualify.'],
     ['Dogecoin', 'BURN: a live rules-based mechanism irreversibly destroys tokens.'],
     ['Hedera (HBAR)', 'BURN: a live rules-based mechanism irreversibly destroys tokens.'],
     ['Chainlink (LINK)', 'REVENUE CAPTURE: a live mechanical route sends protocol revenue to the token or holders through distribution, buyback, burn or an enforceable claim. Governance over ecosystem spending alone does not qualify.'],
-    ['Optimism (OP)', 'REVENUE CAPTURE: as above.'],
-    ['Stellar (XLM)', 'BURN: as above.'],
-    ['Cardano (ADA)', 'REVENUE CAPTURE: as above.'],
-    ['Solana (SOL)', 'BURN: as above.'],
+    ['Optimism (OP)', 'REVENUE CAPTURE: a live mechanical route sends protocol revenue to the token or holders. Governance over ecosystem spending alone does not qualify.'],
+    ['Stellar (XLM)', 'BURN: a live rules-based mechanism irreversibly destroys tokens.'],
+    ['Cardano (ADA)', 'REVENUE CAPTURE: a live mechanical route sends protocol revenue to the token or holders. Governance over ecosystem spending alone does not qualify.'],
+    ['Solana (SOL)', 'BURN: a live rules-based mechanism irreversibly destroys tokens.'],
     ['Avalanche (AVAX)', 'HARD CAP: a credible terminal supply bound exists and is exceptionally difficult to change. A burn alone does not qualify.'],
-    ['TRON (TRX)', 'HARD CAP: as above.'],
+    ['TRON (TRX)', 'HARD CAP: a credible terminal supply bound exists and is exceptionally difficult to change. A burn alone does not qualify.'],
     ['XRP', 'STAKING: the token is locked, delegated or economically at risk to secure a network or protocol service.'],
-    ['Zcash (ZEC)', 'STAKING: as above.']
+    ['Zcash (ZEC)', 'STAKING: the token is locked, delegated or economically at risk to secure a network or protocol service.']
   ];
   for (var i = 0; i < cells.length; i++) {
     form.addMultipleChoiceItem()
@@ -191,10 +213,17 @@ function buildSurvey() {
       .setHelpText(cells[i][1])
       .setChoiceValues(['Yes', 'No', 'Unknown']);
   }
-  form.addParagraphTextItem().setTitle('Any cell where the rule felt wrong, ambiguous, or impossible to apply? Tell us which and why.');
+  form.addParagraphTextItem()
+    .setTitle('Any cell where the rule felt wrong, ambiguous, or impossible to apply? Tell us which and why.');
 
-  form.addPageBreakItem().setTitle('Thank you')
+  var thanksPage = form.addPageBreakItem().setTitle('Thank you')
     .setHelpText('That is everything. If you would like the findings, email the researcher and we will send the working paper when it is ready.');
+
+  // Wire the routing now that both destinations exist.
+  routing.setChoices([
+    routing.createChoice('Yes, continue to the exercise', blindPage),
+    routing.createChoice('No, submit my answers now', FormApp.PageNavigationType.SUBMIT)
+  ]);
 
   Logger.log('EDIT THIS FORM:  %s', form.getEditUrl());
   Logger.log('SHARE THIS LINK: %s', form.getPublishedUrl());
