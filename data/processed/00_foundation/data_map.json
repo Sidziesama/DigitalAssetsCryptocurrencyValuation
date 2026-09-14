@@ -1,0 +1,2168 @@
+{
+  "summary": {
+    "status": "data_map_complete",
+    "files": 151,
+    "by_phase": {
+      "00_foundation": 24,
+      "01_classification": 52,
+      "02_valuation": 24,
+      "03_risk": 7,
+      "04_stablecoin_deferred": 44
+    },
+    "orphans": [],
+    "terminal_outputs": [
+      "coverage_summary.json",
+      "crypto_fee_fundamentals_coverage.csv",
+      "crypto_fundamentals_coverage_coinmetrics.csv",
+      "crypto_h4_aave_legacy_stake_daily.csv",
+      "identifier_registry.csv",
+      "market_coverage.csv",
+      "ohlcv_coverage_binance_spot.csv",
+      "price_coverage_defillama.csv",
+      "snapshot_coverage.csv",
+      "aave_collateral_state_daily.csv",
+      "aave_collateral_state_summary.csv",
+      "bnb_monetary_activity_summary.json",
+      "crypto_design_evidence_focused_review.csv",
+      "crypto_economic_design_profiles.csv",
+      "crypto_economic_design_summary.json",
+      "crypto_economic_design_targeted_review.csv",
+      "crypto_evidence_tranche_a_blind_review.csv",
+      "crypto_evidence_tranche_a_summary.json",
+      "crypto_h2_expansion_evidence_audit.csv",
+      "crypto_h2_expansion_review_audit.csv",
+      "crypto_h4_source_readiness.csv",
+      "crypto_h8_evidence_audit.csv",
+      "crypto_h8_evidence_review.csv",
+      "crypto_mechanism_state_asof.csv",
+      "crypto_monetary_assessment.csv",
+      "crypto_phase1_consistency_audit.csv",
+      "crypto_phase1_indicator_observability.csv",
+      "point_in_time_design_checkpoint.json",
+      "venus_bnb_collateral_state_daily.csv",
+      "venus_bnb_collateral_state_summary.json",
+      "crypto_function_risk_assets.csv",
+      "crypto_function_risk_tests.csv",
+      "crypto_return_market_models.csv",
+      "crypto_return_panel_summary.json",
+      "stablecoin_adoption_summary.json",
+      "stablecoin_asset_statistics.csv",
+      "stablecoin_atlas_summary.json",
+      "stablecoin_chain_distribution_summary.json",
+      "stablecoin_episode_rankings.csv",
+      "stablecoin_evidence_asset_readiness.csv",
+      "stablecoin_evidence_class_matrix.csv",
+      "stablecoin_global_market_coverage.json",
+      "stablecoin_h7_coverage_matrix.csv",
+      "stablecoin_h7_recent_joined.csv",
+      "stablecoin_h7_usage_exploratory_summary.json",
+      "stablecoin_market_depth_pair_audit.csv",
+      "stablecoin_market_depth_summary.json",
+      "stablecoin_monthly_stress.csv",
+      "stablecoin_panel_summary.json",
+      "stablecoin_pilot_market_daily.csv",
+      "stablecoin_score_review_audit.csv",
+      "stablecoin_supply_coverage.csv",
+      "stablecoin_trading_activity_reconciliation.csv",
+      "stablecoin_trading_activity_summary.json",
+      "stablecoin_usage_coverage_coinmetrics.csv",
+      "stablecoin_yield_pool_matches_latest.csv"
+    ]
+  },
+  "files": [
+    {
+      "phase": "00_foundation",
+      "file": "binance_pair_audit.csv",
+      "kind": "table",
+      "bytes": 904,
+      "written_by": [
+        "binance_klines"
+      ],
+      "read_by": [
+        "source_availability"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "bnb_monetary_activity_dune.csv",
+      "kind": "table",
+      "bytes": 8727,
+      "written_by": [
+        "bnb_monetary_activity"
+      ],
+      "read_by": [
+        "crypto_monetary"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "coinpaprika_identifier_audit.csv",
+      "kind": "table",
+      "bytes": 66,
+      "written_by": [
+        "coinpaprika_market"
+      ],
+      "read_by": [
+        "source_availability"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "coverage_summary.json",
+      "kind": "summary",
+      "bytes": 888,
+      "written_by": [
+        "registry"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_fee_fundamentals_coverage.csv",
+      "kind": "table",
+      "bytes": 647,
+      "written_by": [
+        "crypto_fee_fundamentals",
+        "crypto_h2_expansion_readiness"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_fee_fundamentals_daily.csv",
+      "kind": "table",
+      "bytes": 266123,
+      "written_by": [
+        "crypto_fee_fundamentals",
+        "crypto_h2_pilot_panel"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_fee_fundamentals_summary.json",
+      "kind": "summary",
+      "bytes": 571,
+      "written_by": [
+        "crypto_fee_fundamentals"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_fundamentals_coverage_coinmetrics.csv",
+      "kind": "table",
+      "bytes": 941,
+      "written_by": [
+        "crypto_fundamentals"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_fundamentals_daily_coinmetrics.csv",
+      "kind": "table",
+      "bytes": 38869,
+      "written_by": [
+        "crypto_fundamentals"
+      ],
+      "read_by": [
+        "crypto_collateral",
+        "crypto_h2_pilot_panel",
+        "crypto_h3_supply_pilot",
+        "crypto_monetary"
+      ],
+      "named_in_config": [
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_fundamentals_summary.json",
+      "kind": "summary",
+      "bytes": 522,
+      "written_by": [
+        "crypto_fundamentals"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_h4_aave_legacy_stake_daily.csv",
+      "kind": "table",
+      "bytes": 9586,
+      "written_by": [
+        "crypto_h4_aave_legacy_stake"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "crypto_h4_bnb_stake_daily.csv",
+      "kind": "table",
+      "bytes": 9323,
+      "written_by": [
+        "crypto_h4_bnb_stake"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "data_map.json",
+      "kind": "summary",
+      "bytes": 51720,
+      "written_by": [],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "identifier_registry.csv",
+      "kind": "table",
+      "bytes": 2603,
+      "written_by": [
+        "registry"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "market_coverage.csv",
+      "kind": "table",
+      "bytes": 195,
+      "written_by": [
+        "coinpaprika_market",
+        "crypto_h2_expansion_readiness",
+        "historical"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "market_coverage_coinpaprika.csv",
+      "kind": "table",
+      "bytes": 5232,
+      "written_by": [
+        "coinpaprika_market"
+      ],
+      "read_by": [
+        "crypto_h2_expansion_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "market_daily.csv",
+      "kind": "table",
+      "bytes": 2409,
+      "written_by": [
+        "coinpaprika_market",
+        "crypto_collateral",
+        "historical",
+        "stablecoin_adoption",
+        "stablecoin_global_market",
+        "stablecoin_trading_activity"
+      ],
+      "read_by": [
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "market_daily_coinpaprika.csv",
+      "kind": "table",
+      "bytes": 746229,
+      "written_by": [
+        "coinpaprika_market"
+      ],
+      "read_by": [
+        "crypto_collateral",
+        "crypto_h2_pilot_panel",
+        "crypto_h4_readiness",
+        "stablecoin_trading_activity"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "ohlcv_coverage_binance_spot.csv",
+      "kind": "table",
+      "bytes": 3002,
+      "written_by": [
+        "binance_klines"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "ohlcv_daily_binance_spot.csv",
+      "kind": "table",
+      "bytes": 6431104,
+      "written_by": [
+        "binance_klines"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_return_panel.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "price_coverage_defillama.csv",
+      "kind": "table",
+      "bytes": 5303,
+      "written_by": [
+        "llama_history"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "price_daily_defillama.csv",
+      "kind": "table",
+      "bytes": 3915486,
+      "written_by": [
+        "llama_history"
+      ],
+      "read_by": [
+        "stablecoin_panel"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "snapshot_coverage.csv",
+      "kind": "table",
+      "bytes": 4906,
+      "written_by": [
+        "registry"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "source_availability.csv",
+      "kind": "table",
+      "bytes": 18878,
+      "written_by": [
+        "source_availability"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "aave_collateral_state_daily.csv",
+      "kind": "table",
+      "bytes": 17159,
+      "written_by": [
+        "aave_collateral_state"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "aave_collateral_state_summary.csv",
+      "kind": "table",
+      "bytes": 207,
+      "written_by": [
+        "aave_collateral_state"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "aave_collateral_state_summary.json",
+      "kind": "summary",
+      "bytes": 343,
+      "written_by": [
+        "aave_collateral_state"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "bnb_monetary_activity_summary.json",
+      "kind": "summary",
+      "bytes": 491,
+      "written_by": [
+        "bnb_monetary_activity"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_collateral_daily_proxy.csv",
+      "kind": "table",
+      "bytes": 42598,
+      "written_by": [
+        "crypto_collateral"
+      ],
+      "read_by": [
+        "venus_bnb_collateral_state"
+      ],
+      "named_in_config": [
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_collateral_protocol_detail.csv",
+      "kind": "table",
+      "bytes": 245161,
+      "written_by": [
+        "crypto_collateral"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_collateral_screen_summary.csv",
+      "kind": "table",
+      "bytes": 632,
+      "written_by": [
+        "crypto_collateral"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_collateral_screen_summary.json",
+      "kind": "summary",
+      "bytes": 946,
+      "written_by": [
+        "crypto_collateral"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_design_evidence_focused_review.csv",
+      "kind": "table",
+      "bytes": 68,
+      "written_by": [
+        "crypto_design_evidence"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_design_evidence_tranche_1.csv",
+      "kind": "table",
+      "bytes": 6933,
+      "written_by": [
+        "crypto_design_evidence"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_evidence_blockers"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_design_evidence_tranche_1_summary.json",
+      "kind": "summary",
+      "bytes": 341,
+      "written_by": [
+        "crypto_design_evidence"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_economic_design_profiles.csv",
+      "kind": "table",
+      "bytes": 3353,
+      "written_by": [
+        "crypto_economic_design"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_economic_design_summary.json",
+      "kind": "summary",
+      "bytes": 463,
+      "written_by": [
+        "crypto_economic_design"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_economic_design_targeted_review.csv",
+      "kind": "table",
+      "bytes": 37559,
+      "written_by": [
+        "crypto_economic_design"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_evidence_blockers_summary.json",
+      "kind": "summary",
+      "bytes": 217,
+      "written_by": [
+        "crypto_evidence_blockers"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_evidence_tranche_a.csv",
+      "kind": "table",
+      "bytes": 20719,
+      "written_by": [
+        "crypto_evidence_tranche_a"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_evidence_tranche_a_blind_review.csv",
+      "kind": "table",
+      "bytes": 7277,
+      "written_by": [
+        "crypto_evidence_tranche_a"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_evidence_tranche_a_summary.json",
+      "kind": "summary",
+      "bytes": 5874,
+      "written_by": [
+        "crypto_evidence_tranche_a"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_expansion_blind_review.csv",
+      "kind": "table",
+      "bytes": 310,
+      "written_by": [
+        "crypto_h2_expansion_evidence"
+      ],
+      "read_by": [
+        "review_adjudication"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_expansion_evidence_audit.csv",
+      "kind": "table",
+      "bytes": 2235,
+      "written_by": [
+        "crypto_h2_expansion_evidence"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_expansion_evidence_summary.json",
+      "kind": "summary",
+      "bytes": 572,
+      "written_by": [
+        "crypto_h2_expansion_evidence"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_expansion_readiness.csv",
+      "kind": "table",
+      "bytes": 185,
+      "written_by": [
+        "crypto_h2_expansion_readiness"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_expansion_readiness.json",
+      "kind": "summary",
+      "bytes": 213,
+      "written_by": [
+        "crypto_h2_expansion_readiness"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_expansion_review_audit.csv",
+      "kind": "table",
+      "bytes": 4884,
+      "written_by": [
+        "review_adjudication"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_h8_pilot_readiness.csv",
+      "kind": "table",
+      "bytes": 237,
+      "written_by": [
+        "crypto_h2_h8_readiness"
+      ],
+      "read_by": [
+        "crypto_h8_breadth_pilot",
+        "crypto_h8_six_asset_extension"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h2_h8_pilot_readiness.json",
+      "kind": "summary",
+      "bytes": 289,
+      "written_by": [
+        "crypto_h2_h8_readiness"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h4_aave_legacy_stake_summary.json",
+      "kind": "summary",
+      "bytes": 573,
+      "written_by": [
+        "crypto_h4_aave_legacy_stake"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_h4_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h4_bnb_stake_summary.json",
+      "kind": "summary",
+      "bytes": 551,
+      "written_by": [
+        "crypto_h4_bnb_stake"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_h4_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h4_eth_stake_summary.json",
+      "kind": "summary",
+      "bytes": 951,
+      "written_by": [
+        "crypto_h4_eth_stake",
+        "crypto_h4_readiness"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h4_source_readiness.csv",
+      "kind": "table",
+      "bytes": 1204,
+      "written_by": [
+        "crypto_h4_readiness"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h4_source_readiness.json",
+      "kind": "summary",
+      "bytes": 4036,
+      "written_by": [
+        "crypto_h4_readiness"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h8_evidence_audit.csv",
+      "kind": "table",
+      "bytes": 10740,
+      "written_by": [
+        "crypto_h8_evidence_plan"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h8_evidence_plan_summary.json",
+      "kind": "summary",
+      "bytes": 350,
+      "written_by": [
+        "crypto_h8_evidence_plan"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_h8_evidence_review.csv",
+      "kind": "table",
+      "bytes": 128,
+      "written_by": [
+        "crypto_h8_evidence_plan"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_mechanism_state_asof.csv",
+      "kind": "table",
+      "bytes": 4647,
+      "written_by": [
+        "crypto_mechanism_state"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_mechanism_state_summary.json",
+      "kind": "summary",
+      "bytes": 264,
+      "written_by": [
+        "crypto_mechanism_state"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_monetary_assessment.csv",
+      "kind": "table",
+      "bytes": 909,
+      "written_by": [
+        "crypto_monetary"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_monetary_assessment.json",
+      "kind": "summary",
+      "bytes": 711,
+      "written_by": [
+        "crypto_monetary"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_consistency_audit.csv",
+      "kind": "table",
+      "bytes": 313,
+      "written_by": [
+        "crypto_phase1_taxonomy"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_experiment_registry.json",
+      "kind": "summary",
+      "bytes": 3386,
+      "written_by": [
+        "crypto_phase1_taxonomy"
+      ],
+      "read_by": [
+        "crypto_phase1_research_map"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_function_codebook.csv",
+      "kind": "table",
+      "bytes": 2070,
+      "written_by": [
+        "crypto_phase1_taxonomy"
+      ],
+      "read_by": [
+        "crypto_phase1_research_map"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_function_prevalence.csv",
+      "kind": "table",
+      "bytes": 399,
+      "written_by": [
+        "crypto_phase1_taxonomy"
+      ],
+      "read_by": [
+        "crypto_phase1_research_map"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_indicator_observability.csv",
+      "kind": "table",
+      "bytes": 6324,
+      "written_by": [
+        "crypto_phase1_research_map"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_research_map.csv",
+      "kind": "table",
+      "bytes": 2254,
+      "written_by": [
+        "crypto_phase1_research_map"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_research_map.json",
+      "kind": "summary",
+      "bytes": 2712,
+      "written_by": [
+        "crypto_phase1_research_map"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_taxonomy_profiles.csv",
+      "kind": "table",
+      "bytes": 1136,
+      "written_by": [
+        "crypto_phase1_research_map",
+        "crypto_phase1_taxonomy"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_function_risk_exposure.json",
+        "crypto_phase1_bundle_comparison.json",
+        "crypto_return_factor_baseline.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_phase1_taxonomy_summary.json",
+      "kind": "summary",
+      "bytes": 740,
+      "written_by": [
+        "crypto_phase1_taxonomy"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_research_scope.json",
+      "kind": "summary",
+      "bytes": 1010,
+      "written_by": [
+        "crypto_research_scope"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "independent_review_summary.json",
+      "kind": "summary",
+      "bytes": 1168,
+      "written_by": [
+        "review_adjudication"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "point_in_time_design_checkpoint.json",
+      "kind": "summary",
+      "bytes": 4311,
+      "written_by": [
+        "checkpoint_readiness"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "venus_bnb_collateral_state_daily.csv",
+      "kind": "table",
+      "bytes": 5806,
+      "written_by": [
+        "venus_bnb_collateral_state"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "venus_bnb_collateral_state_summary.json",
+      "kind": "summary",
+      "bytes": 520,
+      "written_by": [
+        "venus_bnb_collateral_state"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_findings_summary.json",
+      "kind": "summary",
+      "bytes": 5090,
+      "written_by": [
+        "crypto_findings_summary"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h1_activity_pilot.csv",
+      "kind": "table",
+      "bytes": 152,
+      "written_by": [
+        "crypto_h1_activity_pilot"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h1_activity_pilot.json",
+      "kind": "summary",
+      "bytes": 2416,
+      "written_by": [
+        "crypto_h1_activity_pilot"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "crypto_phase1_research_map.json",
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_estimator_diagnostics.csv",
+      "kind": "table",
+      "bytes": 815,
+      "written_by": [
+        "crypto_h2_estimator_diagnostics"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_estimator_diagnostics.json",
+      "kind": "summary",
+      "bytes": 6551,
+      "written_by": [
+        "crypto_h2_estimator_diagnostics"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_exploratory_daily.csv",
+      "kind": "table",
+      "bytes": 1068629,
+      "written_by": [
+        "crypto_h1_activity_pilot",
+        "crypto_h2_estimator_diagnostics",
+        "crypto_h2_exploratory_estimates",
+        "crypto_h2_nonoverlap_sensitivity",
+        "crypto_h2_pilot_panel",
+        "crypto_h2_small_cluster_inference",
+        "crypto_h8_breadth_pilot",
+        "crypto_h8_six_asset_extension"
+      ],
+      "read_by": [
+        "crypto_h3_supply_pilot"
+      ],
+      "named_in_config": [
+        "crypto_h2_strict_capture_sensitivity.json",
+        "crypto_mechanism_event_study.json",
+        "crypto_phase1_bundle_comparison.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_exploratory_estimates.csv",
+      "kind": "table",
+      "bytes": 1371,
+      "written_by": [
+        "crypto_h2_exploratory_estimates"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_exploratory_estimates.json",
+      "kind": "summary",
+      "bytes": 4568,
+      "written_by": [
+        "crypto_h2_exploratory_estimates"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_exploratory_summary.json",
+      "kind": "summary",
+      "bytes": 2527,
+      "written_by": [
+        "crypto_h2_pilot_panel"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_nonoverlap_sensitivity.json",
+      "kind": "summary",
+      "bytes": 8279,
+      "written_by": [
+        "crypto_h2_nonoverlap_sensitivity"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_small_cluster_inference.json",
+      "kind": "summary",
+      "bytes": 2513,
+      "written_by": [
+        "crypto_h2_small_cluster_inference"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "crypto_h2_strict_capture_sensitivity.json",
+        "crypto_phase1_research_map.json",
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h2_strict_capture_sensitivity.json",
+      "kind": "summary",
+      "bytes": 1896,
+      "written_by": [
+        "crypto_h2_strict_capture_sensitivity"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_phase1_research_map.json",
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h3_supply_pilot.csv",
+      "kind": "table",
+      "bytes": 27635,
+      "written_by": [
+        "crypto_h3_supply_pilot"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h3_supply_pilot.json",
+      "kind": "summary",
+      "bytes": 3363,
+      "written_by": [
+        "crypto_h3_supply_pilot"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h8_breadth_pilot.csv",
+      "kind": "table",
+      "bytes": 252,
+      "written_by": [
+        "crypto_h8_breadth_pilot"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h8_breadth_pilot.json",
+      "kind": "summary",
+      "bytes": 1358,
+      "written_by": [
+        "crypto_h8_breadth_pilot"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "crypto_findings_summary"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h8_six_asset_extension.csv",
+      "kind": "table",
+      "bytes": 287,
+      "written_by": [
+        "crypto_h8_six_asset_extension"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h8_six_asset_extension.json",
+      "kind": "summary",
+      "bytes": 1547,
+      "written_by": [
+        "crypto_findings_summary",
+        "crypto_h8_six_asset_extension"
+      ],
+      "read_by": [
+        "checkpoint_readiness"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_mechanism_event_study.csv",
+      "kind": "table",
+      "bytes": 1666,
+      "written_by": [
+        "crypto_mechanism_event_study"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_mechanism_event_study.json",
+      "kind": "summary",
+      "bytes": 2859,
+      "written_by": [],
+      "read_by": [
+        "crypto_mechanism_event_study"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_mechanism_event_study_long.csv",
+      "kind": "table",
+      "bytes": 1735,
+      "written_by": [],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_mechanism_event_study_long.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_mechanism_event_study_long.json",
+      "kind": "summary",
+      "bytes": 3211,
+      "written_by": [],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_mechanism_event_study_long.json",
+        "crypto_phase1_research_map.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_phase1_bundle_comparison.csv",
+      "kind": "table",
+      "bytes": 3954,
+      "written_by": [
+        "crypto_phase1_bundle_comparison"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_phase1_bundle_comparison.json",
+      "kind": "summary",
+      "bytes": 2409,
+      "written_by": [
+        "crypto_phase1_bundle_comparison"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_phase1_research_map.json",
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_function_risk_assets.csv",
+      "kind": "table",
+      "bytes": 5016,
+      "written_by": [
+        "crypto_function_risk_exposure"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_function_risk_exposure.json",
+      "kind": "summary",
+      "bytes": 6247,
+      "written_by": [
+        "crypto_function_risk_exposure"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_phase1_research_map.json",
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_function_risk_tests.csv",
+      "kind": "table",
+      "bytes": 10570,
+      "written_by": [
+        "crypto_function_risk_exposure"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_return_factor_baseline.json",
+      "kind": "summary",
+      "bytes": 18814,
+      "written_by": [
+        "crypto_return_factor_baseline"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_return_market_models.csv",
+      "kind": "table",
+      "bytes": 3610,
+      "written_by": [
+        "crypto_return_factor_baseline"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_return_panel_daily.csv",
+      "kind": "table",
+      "bytes": 11012473,
+      "written_by": [
+        "crypto_return_panel"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "crypto_function_risk_exposure.json",
+        "crypto_mechanism_event_study_long.json",
+        "crypto_return_factor_baseline.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_return_panel_summary.json",
+      "kind": "summary",
+      "bytes": 4654,
+      "written_by": [
+        "crypto_return_panel"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_adoption_daily.csv",
+      "kind": "table",
+      "bytes": 5776324,
+      "written_by": [
+        "stablecoin_adoption"
+      ],
+      "read_by": [
+        "h7_readiness",
+        "preregistration",
+        "stablecoin_chain_distribution",
+        "stablecoin_trading_activity",
+        "stablecoin_usage_panel"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_adoption_summary.json",
+      "kind": "summary",
+      "bytes": 529,
+      "written_by": [
+        "stablecoin_adoption"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_asset_statistics.csv",
+      "kind": "table",
+      "bytes": 5158,
+      "written_by": [
+        "stablecoin_atlas"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_atlas_summary.json",
+      "kind": "summary",
+      "bytes": 293,
+      "written_by": [
+        "stablecoin_atlas"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_chain_distribution_daily.csv",
+      "kind": "table",
+      "bytes": 2613602,
+      "written_by": [
+        "stablecoin_chain_distribution"
+      ],
+      "read_by": [
+        "h7_readiness",
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_chain_distribution_summary.json",
+      "kind": "summary",
+      "bytes": 317,
+      "written_by": [
+        "stablecoin_chain_distribution"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_daily.csv",
+      "kind": "table",
+      "bytes": 4560277,
+      "written_by": [
+        "stablecoin_atlas",
+        "stablecoin_panel"
+      ],
+      "read_by": [
+        "h5_h6_readiness",
+        "preregistration",
+        "stablecoin_adoption"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_depeg_episodes.csv",
+      "kind": "table",
+      "bytes": 81404,
+      "written_by": [
+        "stablecoin_panel"
+      ],
+      "read_by": [
+        "preregistration",
+        "stablecoin_atlas"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_episode_rankings.csv",
+      "kind": "table",
+      "bytes": 81404,
+      "written_by": [
+        "stablecoin_atlas"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_episode_review_queue.csv",
+      "kind": "table",
+      "bytes": 1580,
+      "written_by": [
+        "stablecoin_atlas"
+      ],
+      "read_by": [
+        "h7_readiness",
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_evidence_asset_readiness.csv",
+      "kind": "table",
+      "bytes": 536,
+      "written_by": [
+        "stablecoin_evidence"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_evidence_class_matrix.csv",
+      "kind": "table",
+      "bytes": 3540,
+      "written_by": [
+        "stablecoin_evidence"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_evidence_summary.json",
+      "kind": "summary",
+      "bytes": 293,
+      "written_by": [
+        "stablecoin_evidence"
+      ],
+      "read_by": [
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_global_market_coverage.json",
+      "kind": "summary",
+      "bytes": 233,
+      "written_by": [
+        "stablecoin_global_market"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_global_market_daily.csv",
+      "kind": "table",
+      "bytes": 185570,
+      "written_by": [
+        "stablecoin_global_market"
+      ],
+      "read_by": [
+        "preregistration",
+        "stablecoin_adoption"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_h5_h6_temporal_readiness.json",
+      "kind": "summary",
+      "bytes": 803,
+      "written_by": [
+        "h5_h6_readiness"
+      ],
+      "read_by": [
+        "checkpoint_readiness",
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_h5_h6_temporally_valid_panel.csv",
+      "kind": "table",
+      "bytes": 207651,
+      "written_by": [
+        "h5_h6_readiness"
+      ],
+      "read_by": [
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_h7_coverage_matrix.csv",
+      "kind": "table",
+      "bytes": 6040,
+      "written_by": [
+        "h7_readiness"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_h7_readiness.json",
+      "kind": "summary",
+      "bytes": 1023,
+      "written_by": [
+        "h7_readiness"
+      ],
+      "read_by": [
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_h7_recent_joined.csv",
+      "kind": "table",
+      "bytes": 1109359,
+      "written_by": [
+        "h7_readiness"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_h7_usage_exploratory_daily.csv",
+      "kind": "table",
+      "bytes": 2541993,
+      "written_by": [
+        "stablecoin_usage_panel"
+      ],
+      "read_by": [
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_h7_usage_exploratory_summary.json",
+      "kind": "summary",
+      "bytes": 925,
+      "written_by": [
+        "stablecoin_usage_panel"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_market_depth_pair_audit.csv",
+      "kind": "table",
+      "bytes": 753,
+      "written_by": [
+        "binance_stablecoin_depth"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_market_depth_snapshots.csv",
+      "kind": "table",
+      "bytes": 5005,
+      "written_by": [
+        "binance_stablecoin_depth"
+      ],
+      "read_by": [
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_market_depth_summary.json",
+      "kind": "summary",
+      "bytes": 549,
+      "written_by": [
+        "binance_stablecoin_depth"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_monthly_stress.csv",
+      "kind": "table",
+      "bytes": 5256,
+      "written_by": [
+        "stablecoin_atlas"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_panel_summary.json",
+      "kind": "summary",
+      "bytes": 760,
+      "written_by": [
+        "stablecoin_panel"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_pilot_market_daily.csv",
+      "kind": "table",
+      "bytes": 395915,
+      "written_by": [
+        "stablecoin_adoption"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_point_in_time_scorecard.csv",
+      "kind": "table",
+      "bytes": 3946,
+      "written_by": [
+        "stablecoin_scorecard"
+      ],
+      "read_by": [
+        "h5_h6_readiness",
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_risk_scores.csv",
+      "kind": "table",
+      "bytes": 2910,
+      "written_by": [
+        "stablecoin_risk"
+      ],
+      "read_by": [
+        "stablecoin_panel"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_score_intervals.csv",
+      "kind": "table",
+      "bytes": 4299,
+      "written_by": [
+        "stablecoin_score_intervals"
+      ],
+      "read_by": [
+        "h5_h6_readiness",
+        "preregistration"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_score_review_audit.csv",
+      "kind": "table",
+      "bytes": 53402,
+      "written_by": [
+        "review_adjudication"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_score_targeted_review.csv",
+      "kind": "table",
+      "bytes": 42310,
+      "written_by": [
+        "h5_h6_readiness"
+      ],
+      "read_by": [
+        "review_adjudication"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_supply_coverage.csv",
+      "kind": "table",
+      "bytes": 1665,
+      "written_by": [
+        "stablecoin_supply"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_supply_daily.csv",
+      "kind": "table",
+      "bytes": 970120,
+      "written_by": [
+        "stablecoin_supply"
+      ],
+      "read_by": [
+        "stablecoin_panel"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_trading_activity_daily.csv",
+      "kind": "table",
+      "bytes": 966968,
+      "written_by": [
+        "stablecoin_trading_activity"
+      ],
+      "read_by": [
+        "h7_readiness",
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_trading_activity_reconciliation.csv",
+      "kind": "table",
+      "bytes": 1095,
+      "written_by": [
+        "stablecoin_trading_activity"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_trading_activity_summary.json",
+      "kind": "summary",
+      "bytes": 429,
+      "written_by": [
+        "stablecoin_trading_activity"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_usage_coverage_coinmetrics.csv",
+      "kind": "table",
+      "bytes": 1436,
+      "written_by": [
+        "coinmetrics_stablecoin_usage"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_usage_daily_coinmetrics.csv",
+      "kind": "table",
+      "bytes": 808556,
+      "written_by": [
+        "coinmetrics_stablecoin_usage"
+      ],
+      "read_by": [
+        "preregistration",
+        "stablecoin_usage_panel"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_usage_summary.json",
+      "kind": "summary",
+      "bytes": 403,
+      "written_by": [
+        "coinmetrics_stablecoin_usage"
+      ],
+      "read_by": [
+        "h7_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_yield_integration_snapshot.csv",
+      "kind": "table",
+      "bytes": 2328,
+      "written_by": [
+        "defillama_yield_integrations"
+      ],
+      "read_by": [
+        "preregistration"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_yield_integration_summary.json",
+      "kind": "summary",
+      "bytes": 428,
+      "written_by": [
+        "defillama_yield_integrations"
+      ],
+      "read_by": [
+        "h7_readiness"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "04_stablecoin_deferred",
+      "file": "stablecoin_yield_pool_matches_latest.csv",
+      "kind": "table",
+      "bytes": 890213,
+      "written_by": [
+        "defillama_yield_integrations"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    }
+  ]
+}

@@ -407,6 +407,10 @@
           "args": []
         },
         {
+          "module": "data_map",
+          "args": []
+        },
+        {
           "module": "checkpoint_readiness",
           "args": []
         }
