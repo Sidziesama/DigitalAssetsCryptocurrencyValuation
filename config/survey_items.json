@@ -41,7 +41,8 @@
         "No, this is a governance right only",
         "Depends"
       ],
-      "condition_dependent_option": "Depends"
+      "condition_dependent_option": "Depends",
+      "other_option_allowed": false
     },
     {
       "item_id": "B2_fee_burn",
@@ -53,7 +54,8 @@
         "No",
         "Depends"
       ],
-      "condition_dependent_option": "Depends"
+      "condition_dependent_option": "Depends",
+      "other_option_allowed": false
     },
     {
       "item_id": "B3_paused_mechanism",
@@ -65,7 +67,8 @@
         "Not active",
         "Partially active"
       ],
-      "condition_dependent_option": "Partially active"
+      "condition_dependent_option": "Partially active",
+      "other_option_allowed": false
     },
     {
       "item_id": "B4_zero_fee_valid",
@@ -77,7 +80,8 @@
         "No, required only by convention",
         "Depends"
       ],
-      "condition_dependent_option": "Depends"
+      "condition_dependent_option": "Depends",
+      "other_option_allowed": false
     },
     {
       "item_id": "B5_issuance_reward",
@@ -89,7 +93,8 @@
         "Payment for a service rendered",
         "Depends"
       ],
-      "condition_dependent_option": "Depends"
+      "condition_dependent_option": "Depends",
+      "other_option_allowed": false
     },
     {
       "item_id": "B6_immobilised_fees",
@@ -101,25 +106,56 @@
         "Not equivalent",
         "Depends"
       ],
-      "condition_dependent_option": "Depends"
+      "condition_dependent_option": "Depends",
+      "other_option_allowed": false
     }
   ],
   "materiality_items": [
     {
       "item_id": "M1_collateral",
-      "title": "At what point would you say an asset is materially used as collateral?"
+      "title": "At what point would you say an asset is materially used as collateral?",
+      "options": [
+        "Any observable use",
+        "Above USD 100m outstanding",
+        "Above 1% of its own market cap",
+        "Above 5% of its own market cap",
+        "Both a dollar floor and a percentage floor"
+      ],
+      "other_option_allowed": true
     },
     {
       "item_id": "M2_mechanism_age",
-      "title": "How long must a mechanism be live before you would count it in a classification?"
+      "title": "How long must a mechanism be live before you would count it in a classification?",
+      "options": [
+        "No minimum, count it from activation",
+        "30 days",
+        "90 days",
+        "180 days",
+        "A full year"
+      ],
+      "other_option_allowed": false
     },
     {
       "item_id": "M3_binary_or_scale",
-      "title": "Should these functions be recorded as yes or no, or on a scale?"
+      "title": "Should these functions be recorded as yes or no, or on a scale?",
+      "options": [
+        "Binary yes or no",
+        "Three levels: none, partial, material",
+        "A continuous intensity score",
+        "It depends by function"
+      ],
+      "other_option_allowed": false,
+      "condition_dependent_option": "It depends by function"
     },
     {
       "item_id": "M4_missing_evidence",
-      "title": "If evidence for a function is unavailable or ambiguous, what should the classification record?"
+      "title": "If evidence for a function is unavailable or ambiguous, what should the classification record?",
+      "options": [
+        "Record it as absent",
+        "Record it as unknown and exclude the asset from tests using it",
+        "Record a best estimate with a confidence flag"
+      ],
+      "other_option_allowed": true
     }
   ],
   "blind_cells": [
@@ -190,5 +226,99 @@
     "No",
     "Unknown"
   ],
-  "condition_dependent_note": "An option is condition-dependent when adopting it would not yield a binary rule. 'Partially active' is condition-dependent for the same reason 'Depends' is: neither tells the codebook what to record."
+  "condition_dependent_note": "An option is condition-dependent when adopting it would not yield a binary rule. 'Partially active' is condition-dependent for the same reason 'Depends' is: neither tells the codebook what to record.",
+  "duplicate_header_rule": "Six scenario items are each followed by an identically titled 'Why? One line.' free-text item, so the Forms export contains six columns with the same header. The ingestion reads by column INDEX, not by name, and binds each free-text column to the scenario item immediately preceding it. csv.DictReader collapses duplicate headers and must not be used.",
+  "boundary_free_text_title": "Why? One line.",
+  "checkbox_items": [
+    {
+      "item_id": "C1_money_evidence",
+      "title": "What evidence would convince you a cryptoasset is genuinely used as money rather than merely traded?",
+      "other_option_allowed": true,
+      "separator": ", ",
+      "options": [
+        "Merchant or payment acceptance at scale",
+        "On-chain transfer value large relative to market cap",
+        "Held as a reserve asset by institutions or treasuries",
+        "Used as a unit of account for pricing",
+        "Material remittance or cross-border corridor volume",
+        "Sustained non-speculative transaction counts",
+        "None of these are sufficient on their own"
+      ],
+      "maps_to": "monetary use evidence (materiality_thresholds item 2)"
+    },
+    {
+      "item_id": "C2_trust",
+      "title": "What would make you trust a classification produced by researchers rather than a data vendor?",
+      "other_option_allowed": true,
+      "separator": ", ",
+      "options": [
+        "Published rules",
+        "Primary sources cited for every decision",
+        "A second independent reviewer and a published agreement statistic",
+        "Open code that regenerates every number",
+        "Named authors and institution",
+        "A track record of predictions",
+        "Nothing would, I would use a vendor"
+      ],
+      "maps_to": "reporting and verification design"
+    }
+  ],
+  "checkbox_analysis_rule": "Checkbox items are multi-select. They are reported as selection rate per option over respondents who answered the item, never as a consensus level, because the options are not mutually exclusive and no plurality rule applies. Co-selection counts for the pairs that matter are reported alongside. Splitting on the comma separator is ambiguous when an 'Other' answer contains a comma, so any answer that does not parse cleanly into listed options is carried verbatim and counted under an explicit unparsed category rather than silently dropped.",
+  "single_choice_items": [
+    {
+      "item_id": "S1_architecture_placement",
+      "title": "Should technical architecture be treated as part of a token\u2019s economic profile, or kept separate as context?",
+      "options": [
+        "Part of the economic profile",
+        "Kept separate as context",
+        "Depends"
+      ],
+      "condition_dependent_option": "Depends",
+      "other_option_allowed": false
+    },
+    {
+      "item_id": "S2_most_useful",
+      "title": "Which would be most useful in your work?",
+      "options": [
+        "A model estimating fair value from a token\u2019s functions",
+        "A model estimating risk profile \u2014 market sensitivity, drawdown, volatility \u2014 from its functions",
+        "The classification itself, applied by me",
+        "A screening tool that flags mismatches between price and function",
+        "None of these"
+      ],
+      "other_option_allowed": false
+    }
+  ],
+  "free_text_items": [
+    {
+      "item_id": "F1_missing_functions",
+      "title": "Is anything missing from that list of ten, or is anything on it redundant?"
+    },
+    {
+      "item_id": "F2_what_would_change",
+      "title": "Suppose a classification told you an asset is monetary, collateral-eligible and supply-capped, with no revenue capture. What, if anything, would you do differently?"
+    },
+    {
+      "item_id": "F3_unanswered",
+      "title": "Anything you would want this research to answer that it currently does not?"
+    },
+    {
+      "item_id": "F4_blind_exercise_problems",
+      "title": "Any cell where the rule felt wrong, ambiguous, or impossible to apply? Tell us which and why."
+    }
+  ],
+  "free_text_rule": "Grouping free text by argument is a human coding step and is not automated. The module emits every free-text answer verbatim into a coding worksheet with a stable response id and an empty argument_group column, and reports response counts and coverage only. No free-text summary statistic is produced by code.",
+  "frozen_prediction": {
+    "source": "research/survey_instrument.md at commit ff15698",
+    "statement": "Revenue capture and monetary use rank in the top three; incentives and governance rank in the bottom three.",
+    "top_three": [
+      "VA_PROTOCOL",
+      "VA_MONETARY"
+    ],
+    "bottom_three": [
+      "VA_INCENTIVE",
+      "VA_GOV"
+    ],
+    "band_size": 3
+  }
 }

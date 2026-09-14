@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "document_version": "1.1-frozen-survey-analysis-plan",
+  "document_version": "1.2-frozen-survey-analysis-plan",
   "status": "frozen_before_response_access",
   "freeze_date": "2026-09-14",
   "experiment_id": "P1_PANEL",
@@ -24,12 +24,13 @@
       "close_date"
     ],
     "reason": "Without a denominator there is no response rate and non-response cannot be characterised. A divided panel is a likely outcome and its interpretation depends on who was asked.",
-    "scope_rule": "Every reported result is a statement about the respondents obtained, never about 'the field', 'practitioners' or 'the industry'. Language asserting a population is prohibited."
+    "scope_rule": "Every reported result is a statement about the respondents obtained, never about 'the field', 'practitioners' or 'the industry'. Language asserting a population is prohibited.",
+    "gate": "A panel-scope run requires config/survey_recruitment.json with every listed field populated. Without it the run stops. This enforces the existing commitment that the frame, invitation count and response rate appear wherever a panel result is cited."
   },
   "inclusion_and_exclusion": {
     "unit": "One submitted response.",
     "partial_responses": "All inference uses item-level denominators: every item is analysed over the respondents who answered that item. Section completeness is reported descriptively and never used to include or exclude a respondent from an item they answered. Because denominators differ by item, every reported figure carries its own n.",
-    "duplicates": "If two submissions share a respondent identity, the later is kept and the fact is reported.",
+    "duplicates": "If two submissions share a respondent identity, the LATER is kept, identified by the Forms submission timestamp, and the fact is reported with both timestamps. If the timestamps are equal or unparseable, the later ROW in the export is kept and the ambiguity is reported.",
     "exclusions_permitted": [
       "duplicate submission"
     ],
@@ -87,7 +88,13 @@
       "unresolved": "Any of consensus_condition_dependent, leaning, divided or under_powered.",
       "gate_rule": "Gate G1 (rules validated externally) passes only when every boundary rule listed in the instrument reaches externally_validated. An unresolved rule continues as the project's working convention and MUST be labelled as such wherever it is used. A working convention that survived an unresolved panel has not been externally validated and may never be described as though it were."
     },
-    "prohibited": "No threshold, denominator, plurality requirement or level definition may be altered after any response has been read."
+    "prohibited": "No threshold, denominator, plurality requirement or level definition may be altered after any response has been read.",
+    "thresholds": {
+      "adopt": 0.7,
+      "leaning": 0.5,
+      "note": "Numeric mirror of the prose in 'levels'. Values unchanged from v1.0. The implementation reads these fields; it must not restate them."
+    },
+    "other_option_handling": "Several items allow a free-text 'Other'. An Other answer counts in the item's denominator as its own distinct category and is reported verbatim. It is never merged into a listed option, because merging after responses are read is re-bucketing, which the reporting commitments prohibit. Other answers therefore lower the share of every listed option and can by themselves prevent a plurality. That is a real result about the option set, not noise to be cleaned."
   },
   "governed_treasury_specific": {
     "item": "Section 2, the treasury scenario.",
@@ -130,7 +137,14 @@
       "statistic": "Spearman rank correlation between the panel bundle ranking and the project bundle ranking, reported once per outcome with n = 8 paired bundles.",
       "interpretation": "Descriptive only. With eight pairs and estimates that predate this plan, no p-value is reported and no inference is drawn. The purpose is to show whether the panel's priorities and the project's estimates point the same way.",
       "not_computable_condition": "If fewer than 8 bundles have an estimable project-side row for an outcome, or fewer than 8 have a panel score, the contrast is reported as not computable for that outcome and the available per-bundle values are published instead. No partial correlation is computed.",
-      "excluded_predictor": "raw_function_breadth is a count, not a bundle, and is excluded from the contrast."
+      "excluded_predictor": "raw_function_breadth is a count, not a bundle, and is excluded from the contrast.",
+      "status": "secondary",
+      "what_it_actually_compares": "The panel side is perceived importance: what respondents say SHOULD drive value. The project side is the strength of statistical evidence in risk tests, ranked by permutation p. It is NOT an economic effect magnitude, and p-value rank confounds effect size with sample size and variance. So this statistic compares a normative ranking against an evidential ranking. It is reported as a secondary descriptive exhibit with that mismatch stated, and never as evidence that the panel is right or wrong.",
+      "prohibited_claims": [
+        "That a low or negative rho shows practitioners are mistaken.",
+        "That a high rho validates either the panel or the project.",
+        "Any description of the project side as an effect magnitude."
+      ]
     }
   },
   "reliability": {
@@ -196,13 +210,24 @@
     "Switching the primary reliability statistic.",
     "Any revision of this document that is not a new document_version with a new freeze_date and a recorded reason.",
     "Changing the plurality requirement, the level definitions, or the mapping from level to validation status.",
-    "Selecting a single outcome for the contrast statistic."
+    "Selecting a single outcome for the contrast statistic.",
+    "Merging an Other answer into a listed option.",
+    "Changing the output scope rule or the reference snapshot rule.",
+    "Reporting a free-text theme not backed by a committed coding worksheet."
   ],
   "supersedes": {
-    "document_version": "1.0-frozen-survey-analysis-plan",
-    "commit": "dd081ac",
-    "note": "v1.0 is preserved immutably in git at that commit. This version clarifies choices v1.0 left unresolved. No response data had been accessed when either version was written.",
-    "reason": "Independent review of v1.0 found several consequential choices unresolved or internally inconsistent. They are fixed here rather than discovered during analysis."
+    "document_versions": [
+      {
+        "version": "1.0-frozen-survey-analysis-plan",
+        "commit": "dd081ac"
+      },
+      {
+        "version": "1.1-frozen-survey-analysis-plan",
+        "commit": "29bf01e"
+      }
+    ],
+    "note": "Both earlier versions are preserved immutably in git at those commits. ff15698, which records the frozen prediction, is untouched.",
+    "reason": "A specification-to-code audit found that v1.1 was under-specified in places the implementation then had to guess. Those gaps are closed here. No decision rule changes value."
   },
   "changelog": [
     "C1 A consensus for 'Depends' had no operational meaning. It is now defined as a distinct outcome that flags the binary rule as mis-specified and adopts no value.",
@@ -213,6 +238,46 @@
     "C6 Section-complete inclusion and item-level denominators could select different respondents. All inference now uses item-level denominators; completeness is descriptive only. Reliability edge cases are specified.",
     "C7 'Agreement with the project classification' is renamed reference agreement, to avoid implying the project's answers establish accuracy.",
     "C8 The freeze attestation is stated as an attestation rather than a verified fact.",
-    "C9 The condition-dependent option is now named per item rather than assumed to be the literal string 'Depends'. The paused-mechanism item's third option is 'Partially active', which is condition-dependent for the same reason."
-  ]
+    "C9 The condition-dependent option is now named per item rather than assumed to be the literal string 'Depends'. The paused-mechanism item's third option is 'Partially active', which is condition-dependent for the same reason.",
+    "C10 Consensus thresholds are now numeric fields. Values unchanged; the implementation had been restating them, so plan and code could drift.",
+    "C11 'Other' free-text answers are specified: counted as distinct categories, reported verbatim, never merged.",
+    "C12 The contrast statistic is demoted to secondary and now states what it actually compares. The panel side is perceived importance; the project side is evidential strength ranked by permutation p, not an effect magnitude. Making it computable did not remove that mismatch.",
+    "C13 Every panel-scope run archives a hashed snapshot of the reference values it used, so agreement figures cannot change silently as documentation gaps close.",
+    "C14 Duplicate handling corrected to keep the LATER submission by timestamp, as v1.0 always said. The first implementation kept the first.",
+    "C15 Input validation specified: missing columns fail loudly, out-of-range values are counted as invalid rather than dropped, free-text columns are read by index because six share a header.",
+    "C16 Output scope is declared by the caller. It was previously inferred from whether the path contained the word 'synthetic', so renaming a fixture could publish it as a finding.",
+    "C17 The frozen prediction's scoring is specified against named codes: top three must contain VA_PROTOCOL and VA_MONETARY, bottom three VA_INCENTIVE and VA_GOV, ties by average rank with the whole tie group required inside the band.",
+    "C18 Checkbox, free-text, recruitment and coverage reporting are specified, closing four commitments that v1.1 made but did not define."
+  ],
+  "input_validation": {
+    "purpose": "An analysis that silently treats a missing column as an unanswered question is not reproducible.",
+    "expected_columns": "Every column named in config/survey_items.json must be present in the export. A missing column is a hard failure naming the column, never an empty item.",
+    "read_by_index": "The export contains six identically titled free-text columns. Ingestion reads by column index and binds each free-text column to the scenario item before it. Reading by header name is prohibited.",
+    "unrecognised_values": "A grid answer outside the declared scale, or a blind answer outside Yes/No/Unknown, is counted and reported under an explicit invalid category. It never enters a mean, a coefficient, or a consensus denominator, and is never silently discarded.",
+    "unexpected_columns": "Reported, not dropped. An unexpected column usually means the form was edited after this plan was frozen, which is itself reportable."
+  },
+  "output_scope": {
+    "rule": "The caller declares the scope explicitly. There is no inference from the file path or file name.",
+    "values": {
+      "synthetic": "Writes only under data/synthetic/. Stamps data_source: synthetic_fixture.",
+      "panel": "Writes under data/processed/01_classification/. Permitted only when a recruitment record exists and the responses file is not under data/synthetic/."
+    },
+    "reason": "Deriving the scope from a filename means renaming a fixture can publish a fixture result as a finding."
+  },
+  "reference_snapshot": {
+    "rule": "Every panel-scope run archives the exact reference values it used, with a SHA-256 over the sorted cell-value pairs, beside its output.",
+    "reason": "Reference values change as documentation gaps close. Without an archived snapshot, rerunning the same responses can silently change reference agreement.",
+    "corrections": "A later correction to a reference value is documented as its own entry and never applied retroactively to a published agreement figure."
+  },
+  "free_text": {
+    "rule": "Grouping by argument is a human coding step. The module emits a coding worksheet with one row per free-text answer, a stable response id and an empty argument_group column, and reports counts and coverage only. No automated summary of free text is produced.",
+    "commitment_satisfied_by": "The worksheet plus the completed argument_group column, committed before the write-up cites any free-text theme."
+  },
+  "checkbox_items_rule": "Checkbox items are reported as selection rate per option over respondents who answered the item, with co-selection counts. No consensus level applies, because the options are not mutually exclusive.",
+  "coverage_reporting": {
+    "per_cell": "Share of scorers giving a determinate answer.",
+    "per_scorer": "Share of attempted cells answered determinately.",
+    "per_item": "Respondents answering the item, over respondents analysed.",
+    "rule": "Coverage is reported beside every reliability and agreement figure, never instead of one."
+  }
 }

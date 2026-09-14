@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "purpose": "Required before any panel-scope analysis runs. Without a denominator there is no response rate and non-response cannot be characterised. Fill every field; the analysis stops and names any field left blank.",
+  "scope_rule": "Every reported result is a statement about the respondents obtained, never about 'the field', 'practitioners' or 'the industry'.",
+  "invitation_count": null,
+  "recruitment_frame": "",
+  "channels_used": [],
+  "invitation_date": "",
+  "reminder_dates": [],
+  "close_date": ""
+}

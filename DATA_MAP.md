@@ -158,7 +158,7 @@ Return panel, factor baseline, and the P1_H6 function-versus-risk test.
 |---|---|---|
 | `crypto_function_risk_assets.csv` | `crypto_function_risk_exposure` | terminal output |
 | `crypto_function_risk_exposure.json` | `crypto_function_risk_exposure` | via `crypto_phase1_research_map.json`, `pipeline_stages.json` |
-| `crypto_function_risk_tests.csv` | `crypto_function_risk_exposure` | `survey_panel_analysis` · via `survey_analysis_plan.json` |
+| `crypto_function_risk_tests.csv` | `crypto_function_risk_exposure` | via `survey_analysis_plan.json` |
 | `crypto_return_factor_baseline.json` | `crypto_return_factor_baseline` | via `pipeline_stages.json` |
 | `crypto_return_market_models.csv` | `crypto_return_factor_baseline` | terminal output |
 | `crypto_return_panel_daily.csv` | `crypto_return_panel` | via `crypto_function_risk_exposure.json`, `crypto_mechanism_event_study_long.json`, `crypto_return_factor_baseline.json` |

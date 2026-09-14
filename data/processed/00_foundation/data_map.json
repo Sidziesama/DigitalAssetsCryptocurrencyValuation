@@ -240,7 +240,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 52764,
+      "bytes": 52725,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1550,9 +1550,7 @@
       "written_by": [
         "crypto_function_risk_exposure"
       ],
-      "read_by": [
-        "survey_panel_analysis"
-      ],
+      "read_by": [],
       "named_in_config": [
         "survey_analysis_plan.json"
       ],

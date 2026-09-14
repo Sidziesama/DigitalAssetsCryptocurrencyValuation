@@ -264,9 +264,11 @@
           "module": "survey_panel_analysis",
           "args": [
             "--responses",
-            "data/synthetic/survey/synthetic_responses_consensus_n12_seed20260914.csv"
+            "data/synthetic/survey/synthetic_responses_consensus_n12_seed20260914.csv",
+            "--scope",
+            "synthetic"
           ],
-          "note": "Runs on synthetic responses until real responses are released. Swap --responses for the Forms export when the panel closes."
+          "note": "Runs at synthetic scope in the pipeline. Analysing real responses requires --scope panel, which in turn requires a complete config/survey_recruitment.json and refuses any file under data/synthetic/."
         }
       ]
     },
