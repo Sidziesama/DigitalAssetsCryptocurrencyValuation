@@ -42,7 +42,6 @@
       "venus_bnb_collateral_state_daily.csv",
       "venus_bnb_collateral_state_summary.json",
       "crypto_function_risk_assets.csv",
-      "crypto_function_risk_tests.csv",
       "crypto_return_market_models.csv",
       "crypto_return_panel_summary.json",
       "stablecoin_adoption_summary.json",
@@ -241,7 +240,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 51878,
+      "bytes": 52764,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -467,7 +466,9 @@
         "crypto_phase1_taxonomy",
         "research_universe_workbook"
       ],
-      "read_by": [],
+      "read_by": [
+        "survey_panel_analysis"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -551,7 +552,8 @@
       "written_by": [
         "classification_status",
         "crypto_design_evidence",
-        "research_universe_workbook"
+        "research_universe_workbook",
+        "survey_panel_analysis"
       ],
       "read_by": [
         "checkpoint_readiness",
@@ -632,7 +634,8 @@
       "written_by": [
         "classification_status",
         "crypto_evidence_tranche_a",
-        "research_universe_workbook"
+        "research_universe_workbook",
+        "survey_panel_analysis"
       ],
       "read_by": [],
       "named_in_config": [
@@ -1547,8 +1550,12 @@
       "written_by": [
         "crypto_function_risk_exposure"
       ],
-      "read_by": [],
-      "named_in_config": [],
+      "read_by": [
+        "survey_panel_analysis"
+      ],
+      "named_in_config": [
+        "survey_analysis_plan.json"
+      ],
       "orphan": false
     },
     {

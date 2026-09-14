@@ -58,12 +58,12 @@
     "levels": [
       {
         "label": "consensus_adopt",
-        "rule": "A substantive option other than 'Depends' holds a unique plurality of at least 70 percent, with n at or above consensus_assessable.",
+        "rule": "A substantive option that is NOT the item's condition-dependent option holds a unique plurality of at least 70 percent, with n at or above consensus_assessable.",
         "effect": "The rule is revised to match. The change is recorded with the distribution that produced it and the codebook version increments."
       },
       {
         "label": "consensus_condition_dependent",
-        "rule": "'Depends' holds a unique plurality of at least 70 percent, with n at or above consensus_assessable.",
+        "rule": "The item's condition-dependent option holds a unique plurality of at least 70 percent, with n at or above consensus_assessable. The condition-dependent option is named per item in config/survey_items.json ('Depends' for five boundary items, 'Partially active' for the paused-mechanism item), because adopting either would not yield a binary rule.",
         "effect": "No value is adopted. The panel is treated as saying the binary rule is mis-specified for this boundary. The free-text reasoning is coded to identify what the answer is held to depend on, and that becomes a documented candidate conditioning variable. The existing rule continues as a working convention and the boundary is recorded as UNRESOLVED."
       },
       {
@@ -212,6 +212,7 @@
     "C5 The contrast statistic named no source and assumed a ten-function ranking the project does not produce. It is now defined at bundle level against a named artifact and field, computed for all three outcomes rather than one chosen after the fact, and declared descriptive.",
     "C6 Section-complete inclusion and item-level denominators could select different respondents. All inference now uses item-level denominators; completeness is descriptive only. Reliability edge cases are specified.",
     "C7 'Agreement with the project classification' is renamed reference agreement, to avoid implying the project's answers establish accuracy.",
-    "C8 The freeze attestation is stated as an attestation rather than a verified fact."
+    "C8 The freeze attestation is stated as an attestation rather than a verified fact.",
+    "C9 The condition-dependent option is now named per item rather than assumed to be the literal string 'Depends'. The paused-mechanism item's third option is 'Partially active', which is condition-dependent for the same reason."
   ]
 }

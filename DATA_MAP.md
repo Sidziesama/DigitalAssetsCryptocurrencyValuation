@@ -65,19 +65,19 @@ Evidence, mechanism states, review reconciliation and the ten-function taxonomy.
 | `aave_collateral_state_summary.csv` | `aave_collateral_state` | terminal output |
 | `aave_collateral_state_summary.json` | `aave_collateral_state` | `checkpoint_readiness` |
 | `bnb_monetary_activity_summary.json` | `bnb_monetary_activity` | terminal output |
-| `classification_status.json` | `classification_status`, `crypto_collateral`, `crypto_economic_design`, `crypto_function_risk_exposure`, `crypto_phase1_bundle_comparison`, `crypto_phase1_taxonomy`, `research_universe_workbook` | via `pipeline_stages.json` |
+| `classification_status.json` | `classification_status`, `crypto_collateral`, `crypto_economic_design`, `crypto_function_risk_exposure`, `crypto_phase1_bundle_comparison`, `crypto_phase1_taxonomy`, `research_universe_workbook` | `survey_panel_analysis` · via `pipeline_stages.json` |
 | `crypto_collateral_daily_proxy.csv` | `crypto_collateral` | `venus_bnb_collateral_state` · via `crypto_phase1_research_map.json` |
 | `crypto_collateral_protocol_detail.csv` | `crypto_collateral` | via `crypto_phase1_research_map.json` |
 | `crypto_collateral_screen_summary.csv` | `crypto_collateral` | via `crypto_phase1_research_map.json` |
 | `crypto_collateral_screen_summary.json` | `crypto_collateral` | `checkpoint_readiness` |
 | `crypto_design_evidence_focused_review.csv` | `crypto_design_evidence` | terminal output |
-| `crypto_design_evidence_tranche_1.csv` | `classification_status`, `crypto_design_evidence`, `research_universe_workbook` | `checkpoint_readiness`, `crypto_evidence_blockers` |
+| `crypto_design_evidence_tranche_1.csv` | `classification_status`, `crypto_design_evidence`, `research_universe_workbook`, `survey_panel_analysis` | `checkpoint_readiness`, `crypto_evidence_blockers` |
 | `crypto_design_evidence_tranche_1_summary.json` | `crypto_design_evidence` | `checkpoint_readiness` |
 | `crypto_economic_design_profiles.csv` | `crypto_economic_design` | terminal output |
 | `crypto_economic_design_summary.json` | `crypto_economic_design` | terminal output |
 | `crypto_economic_design_targeted_review.csv` | `crypto_economic_design` | terminal output |
 | `crypto_evidence_blockers_summary.json` | `crypto_evidence_blockers` | `checkpoint_readiness` |
-| `crypto_evidence_tranche_a.csv` | `classification_status`, `crypto_evidence_tranche_a`, `research_universe_workbook` | via `pipeline_stages.json` |
+| `crypto_evidence_tranche_a.csv` | `classification_status`, `crypto_evidence_tranche_a`, `research_universe_workbook`, `survey_panel_analysis` | via `pipeline_stages.json` |
 | `crypto_evidence_tranche_a_blind_review.csv` | `crypto_evidence_tranche_a` | terminal output |
 | `crypto_evidence_tranche_a_summary.json` | `crypto_evidence_tranche_a` | terminal output |
 | `crypto_h2_expansion_blind_review.csv` | `crypto_h2_expansion_evidence` | `classification_status`, `research_universe_workbook`, `review_adjudication` |
@@ -158,7 +158,7 @@ Return panel, factor baseline, and the P1_H6 function-versus-risk test.
 |---|---|---|
 | `crypto_function_risk_assets.csv` | `crypto_function_risk_exposure` | terminal output |
 | `crypto_function_risk_exposure.json` | `crypto_function_risk_exposure` | via `crypto_phase1_research_map.json`, `pipeline_stages.json` |
-| `crypto_function_risk_tests.csv` | `crypto_function_risk_exposure` | terminal output |
+| `crypto_function_risk_tests.csv` | `crypto_function_risk_exposure` | `survey_panel_analysis` · via `survey_analysis_plan.json` |
 | `crypto_return_factor_baseline.json` | `crypto_return_factor_baseline` | via `pipeline_stages.json` |
 | `crypto_return_market_models.csv` | `crypto_return_factor_baseline` | terminal output |
 | `crypto_return_panel_daily.csv` | `crypto_return_panel` | via `crypto_function_risk_exposure.json`, `crypto_mechanism_event_study_long.json`, `crypto_return_factor_baseline.json` |

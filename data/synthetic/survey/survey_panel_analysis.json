@@ -1,0 +1,1238 @@
+{
+  "plan_version": "1.1-frozen-survey-analysis-plan",
+  "plan_freeze_date": "2026-09-14",
+  "responses_file": "synthetic_responses_consensus_n12_seed20260914.csv",
+  "submissions": 13,
+  "analysed": 12,
+  "excluded": [
+    {
+      "row": 12,
+      "reason": "duplicate_email"
+    }
+  ],
+  "exclusion_rule": "All inference uses item-level denominators: every item is analysed over the respondents who answered that item. Section completeness is reported descriptively and never used to include or exclude a respondent from an item they answered. Because denominators differ by item, every reported figure carries its own n.",
+  "function_importance": {
+    "VA_MONETARY": {
+      "n": 12,
+      "mean": 2.75
+    },
+    "VA_GAS": {
+      "n": 12,
+      "mean": 3.0833
+    },
+    "VA_STAKE": {
+      "n": 12,
+      "mean": 3.0
+    },
+    "VA_BURN": {
+      "n": 12,
+      "mean": 3.0833
+    },
+    "VA_SCARCITY": {
+      "n": 12,
+      "mean": 3.75
+    },
+    "VA_COLLATERAL": {
+      "n": 12,
+      "mean": 3.0833
+    },
+    "VA_GOV": {
+      "n": 12,
+      "mean": 3.25
+    },
+    "VA_PROTOCOL": {
+      "n": 12,
+      "mean": 2.75
+    },
+    "VA_UTILITY": {
+      "n": 12,
+      "mean": 3.5
+    },
+    "VA_INCENTIVE": {
+      "n": 12,
+      "mean": 3.25
+    }
+  },
+  "bundle_scores": {
+    "monetary_store": 3.25,
+    "transaction_service_demand": 3.2916,
+    "security_commitment": 3.0,
+    "supply_absorption": 3.0833,
+    "financial_integration": 3.0833,
+    "control_rights": 3.25,
+    "holder_capture": 2.75,
+    "subsidized_participation": 3.25
+  },
+  "rules": {
+    "B1_governed_treasury": {
+      "n": 12,
+      "counts": {
+        "No, this is a governance right only": 10,
+        "Yes, this is value capture": 2
+      },
+      "shares": {
+        "No, this is a governance right only": 0.8333,
+        "Yes, this is value capture": 0.1667
+      },
+      "level": "consensus_adopt",
+      "leader": "No, this is a governance right only",
+      "leader_share": 0.8333,
+      "validation_status": "externally_validated",
+      "item_id": "B1_governed_treasury",
+      "question": "Does the token capture value from that revenue?",
+      "project_working_convention": "No, this is a governance right only",
+      "rule_name": "governed_treasury_capture_boundary",
+      "panel_agrees_with_working_convention": true,
+      "effect": "The rule is revised to match. The change is recorded with the distribution that produced it and the codebook version increments."
+    },
+    "B2_fee_burn": {
+      "n": 12,
+      "counts": {
+        "No": 2,
+        "Yes, this is value capture": 10
+      },
+      "shares": {
+        "No": 0.1667,
+        "Yes, this is value capture": 0.8333
+      },
+      "level": "consensus_adopt",
+      "leader": "Yes, this is value capture",
+      "leader_share": 0.8333,
+      "validation_status": "externally_validated",
+      "item_id": "B2_fee_burn",
+      "question": "Does the token capture value from usage?",
+      "project_working_convention": "Yes, this is value capture",
+      "rule_name": "fee_burn_is_capture",
+      "panel_agrees_with_working_convention": true,
+      "effect": "The rule is revised to match. The change is recorded with the distribution that produced it and the codebook version increments."
+    },
+    "B3_paused_mechanism": {
+      "n": 12,
+      "counts": {
+        "Active": 2,
+        "Not active": 10
+      },
+      "shares": {
+        "Active": 0.1667,
+        "Not active": 0.8333
+      },
+      "level": "consensus_adopt",
+      "leader": "Not active",
+      "leader_share": 0.8333,
+      "validation_status": "externally_validated",
+      "item_id": "B3_paused_mechanism",
+      "question": "For a classification made today, is the mechanism active?",
+      "project_working_convention": "Not active",
+      "rule_name": "paused_mechanism_not_active",
+      "panel_agrees_with_working_convention": true,
+      "effect": "The rule is revised to match. The change is recorded with the distribution that produced it and the codebook version increments."
+    },
+    "B4_zero_fee_valid": {
+      "n": 12,
+      "counts": {
+        "No, required only by convention": 2,
+        "Yes, required in substance": 10
+      },
+      "shares": {
+        "No, required only by convention": 0.1667,
+        "Yes, required in substance": 0.8333
+      },
+      "level": "consensus_adopt",
+      "leader": "Yes, required in substance",
+      "leader_share": 0.8333,
+      "validation_status": "externally_validated",
+      "item_id": "B4_zero_fee_valid",
+      "question": "Is the native token required in order to transact?",
+      "project_working_convention": "Yes, required in substance",
+      "rule_name": "fee_requirement_in_substance",
+      "panel_agrees_with_working_convention": true,
+      "effect": "The rule is revised to match. The change is recorded with the distribution that produced it and the codebook version increments."
+    },
+    "B5_issuance_reward": {
+      "n": 12,
+      "counts": {
+        "Payment for a service rendered": 10,
+        "Value accruing to the token": 2
+      },
+      "shares": {
+        "Payment for a service rendered": 0.8333,
+        "Value accruing to the token": 0.1667
+      },
+      "level": "consensus_adopt",
+      "leader": "Payment for a service rendered",
+      "leader_share": 0.8333,
+      "validation_status": "externally_validated",
+      "item_id": "B5_issuance_reward",
+      "question": "Is that value accruing to the token, or payment for a service?",
+      "project_working_convention": "Payment for a service rendered",
+      "rule_name": "issuance_is_not_capture",
+      "panel_agrees_with_working_convention": true,
+      "effect": "The rule is revised to match. The change is recorded with the distribution that produced it and the codebook version increments."
+    },
+    "B6_immobilised_fees": {
+      "n": 12,
+      "counts": {
+        "Equivalent to destruction": 10,
+        "Not equivalent": 2
+      },
+      "shares": {
+        "Equivalent to destruction": 0.8333,
+        "Not equivalent": 0.1667
+      },
+      "level": "consensus_adopt",
+      "leader": "Equivalent to destruction",
+      "leader_share": 0.8333,
+      "validation_status": "externally_validated",
+      "item_id": "B6_immobilised_fees",
+      "question": "Is that economically equivalent to destroying them?",
+      "project_working_convention": "Equivalent to destruction",
+      "rule_name": "immobilisation_equals_burn",
+      "panel_agrees_with_working_convention": true,
+      "effect": "The rule is revised to match. The change is recorded with the distribution that produced it and the codebook version increments."
+    },
+    "M1_collateral": {
+      "n": 12,
+      "counts": {
+        "Above USD 100m outstanding": 5,
+        "Any observable use": 3,
+        "Depends": 4
+      },
+      "shares": {
+        "Above USD 100m outstanding": 0.4167,
+        "Any observable use": 0.25,
+        "Depends": 0.3333
+      },
+      "level": "divided",
+      "leader": "Above USD 100m outstanding",
+      "leader_share": 0.4167,
+      "validation_status": "unresolved",
+      "item_id": "M1_collateral",
+      "question": "At what point would you say an asset is materially used as collateral?",
+      "effect": "The existing rule stands as a working convention. The boundary is recorded as UNRESOLVED and CONTESTED.",
+      "contested": true
+    },
+    "M2_mechanism_age": {
+      "n": 12,
+      "counts": {
+        "Above 1 percent of supply": 4,
+        "Above USD 100m outstanding": 2,
+        "Any observable use": 4,
+        "Depends": 2
+      },
+      "shares": {
+        "Above 1 percent of supply": 0.3333,
+        "Above USD 100m outstanding": 0.1667,
+        "Any observable use": 0.3333,
+        "Depends": 0.1667
+      },
+      "level": "divided",
+      "leader": null,
+      "leader_share": 0.3333,
+      "tied_options": [
+        "Above 1 percent of supply",
+        "Any observable use"
+      ],
+      "validation_status": "unresolved",
+      "item_id": "M2_mechanism_age",
+      "question": "How long must a mechanism be live before you would count it in a classification?",
+      "effect": "The existing rule stands as a working convention. The boundary is recorded as UNRESOLVED and CONTESTED.",
+      "contested": true
+    },
+    "M3_binary_or_scale": {
+      "n": 12,
+      "counts": {
+        "Above 1 percent of supply": 4,
+        "Above USD 100m outstanding": 1,
+        "Any observable use": 5,
+        "Depends": 2
+      },
+      "shares": {
+        "Above 1 percent of supply": 0.3333,
+        "Above USD 100m outstanding": 0.0833,
+        "Any observable use": 0.4167,
+        "Depends": 0.1667
+      },
+      "level": "divided",
+      "leader": "Any observable use",
+      "leader_share": 0.4167,
+      "validation_status": "unresolved",
+      "item_id": "M3_binary_or_scale",
+      "question": "Should these functions be recorded as yes or no, or on a scale?",
+      "effect": "The existing rule stands as a working convention. The boundary is recorded as UNRESOLVED and CONTESTED.",
+      "contested": true
+    },
+    "M4_missing_evidence": {
+      "n": 12,
+      "counts": {
+        "Above 1 percent of supply": 5,
+        "Above USD 100m outstanding": 4,
+        "Any observable use": 2,
+        "Depends": 1
+      },
+      "shares": {
+        "Above 1 percent of supply": 0.4167,
+        "Above USD 100m outstanding": 0.3333,
+        "Any observable use": 0.1667,
+        "Depends": 0.0833
+      },
+      "level": "divided",
+      "leader": "Above 1 percent of supply",
+      "leader_share": 0.4167,
+      "validation_status": "unresolved",
+      "item_id": "M4_missing_evidence",
+      "question": "If evidence for a function is unavailable or ambiguous, what should the classification record?",
+      "effect": "The existing rule stands as a working convention. The boundary is recorded as UNRESOLVED and CONTESTED.",
+      "contested": true
+    }
+  },
+  "gate_g1": {
+    "gate": "G1 boundary rules validated externally",
+    "requirement": "Gate G1 (rules validated externally) passes only when every boundary rule listed in the instrument reaches externally_validated. An unresolved rule continues as the project's working convention and MUST be labelled as such wherever it is used. A working convention that survived an unresolved panel has not been externally validated and may never be described as though it were.",
+    "boundary_rules_total": 6,
+    "externally_validated": 6,
+    "unresolved": [],
+    "passes": true,
+    "note": "An unresolved rule continues as the project's working convention and is not externally validated."
+  },
+  "contrast_statistic": {
+    "artifact": "data/processed/03_risk/crypto_function_risk_tests.csv",
+    "interpretation": "Descriptive only. With eight pairs and estimates that predate this plan, no p-value is reported and no inference is drawn. The purpose is to show whether the panel's priorities and the project's estimates point the same way.",
+    "outcomes": {
+      "market_beta": {
+        "status": "computed",
+        "n_pairs": 8,
+        "spearman_rho": 0.0982,
+        "p_value": null,
+        "per_bundle": [
+          {
+            "bundle": "monetary_store",
+            "panel_score": 3.25,
+            "permutation_p": 0.04495
+          },
+          {
+            "bundle": "transaction_service_demand",
+            "panel_score": 3.2916,
+            "permutation_p": 0.3644
+          },
+          {
+            "bundle": "security_commitment",
+            "panel_score": 3.0,
+            "permutation_p": 0.95885
+          },
+          {
+            "bundle": "supply_absorption",
+            "panel_score": 3.0833,
+            "permutation_p": 0.2533
+          },
+          {
+            "bundle": "financial_integration",
+            "panel_score": 3.0833,
+            "permutation_p": 0.42925
+          },
+          {
+            "bundle": "control_rights",
+            "panel_score": 3.25,
+            "permutation_p": 0.9777
+          },
+          {
+            "bundle": "holder_capture",
+            "panel_score": 2.75,
+            "permutation_p": 0.71965
+          },
+          {
+            "bundle": "subsidized_participation",
+            "panel_score": 3.25,
+            "permutation_p": 0.97305
+          }
+        ]
+      },
+      "realized_volatility_annualized": {
+        "status": "computed",
+        "n_pairs": 8,
+        "spearman_rho": 0.1596,
+        "p_value": null,
+        "per_bundle": [
+          {
+            "bundle": "monetary_store",
+            "panel_score": 3.25,
+            "permutation_p": 0.2195
+          },
+          {
+            "bundle": "transaction_service_demand",
+            "panel_score": 3.2916,
+            "permutation_p": 0.69625
+          },
+          {
+            "bundle": "security_commitment",
+            "panel_score": 3.0,
+            "permutation_p": 0.78755
+          },
+          {
+            "bundle": "supply_absorption",
+            "panel_score": 3.0833,
+            "permutation_p": 0.34545
+          },
+          {
+            "bundle": "financial_integration",
+            "panel_score": 3.0833,
+            "permutation_p": 0.39045
+          },
+          {
+            "bundle": "control_rights",
+            "panel_score": 3.25,
+            "permutation_p": 0.5763
+          },
+          {
+            "bundle": "holder_capture",
+            "panel_score": 2.75,
+            "permutation_p": 0.68205
+          },
+          {
+            "bundle": "subsidized_participation",
+            "panel_score": 3.25,
+            "permutation_p": 0.6222
+          }
+        ]
+      },
+      "max_drawdown_log": {
+        "status": "computed",
+        "n_pairs": 8,
+        "spearman_rho": 0.847,
+        "p_value": null,
+        "per_bundle": [
+          {
+            "bundle": "monetary_store",
+            "panel_score": 3.25,
+            "permutation_p": 0.03215
+          },
+          {
+            "bundle": "transaction_service_demand",
+            "panel_score": 3.2916,
+            "permutation_p": 0.02675
+          },
+          {
+            "bundle": "security_commitment",
+            "panel_score": 3.0,
+            "permutation_p": 0.631
+          },
+          {
+            "bundle": "supply_absorption",
+            "panel_score": 3.0833,
+            "permutation_p": 0.3218
+          },
+          {
+            "bundle": "financial_integration",
+            "panel_score": 3.0833,
+            "permutation_p": 0.698
+          },
+          {
+            "bundle": "control_rights",
+            "panel_score": 3.25,
+            "permutation_p": 0.10405
+          },
+          {
+            "bundle": "holder_capture",
+            "panel_score": 2.75,
+            "permutation_p": 0.35065
+          },
+          {
+            "bundle": "subsidized_participation",
+            "panel_score": 3.25,
+            "permutation_p": 0.20955
+          }
+        ]
+      }
+    }
+  },
+  "reliability": {
+    "scorers": 12,
+    "minimum_scorers_for_alpha": 3,
+    "minimum_scorers_for_pairwise": 2,
+    "unknown_rate_by_cell": {
+      "crypto_ltc|VA_GAS": 0.1667,
+      "crypto_doge|VA_BURN": 0.0,
+      "crypto_hbar|VA_BURN": 0.0833,
+      "crypto_link|VA_PROTOCOL": 0.25,
+      "crypto_op|VA_PROTOCOL": 0.25,
+      "crypto_xlm|VA_BURN": 0.1667,
+      "crypto_ada|VA_PROTOCOL": 0.1667,
+      "crypto_sol|VA_BURN": 0.4167,
+      "crypto_avax|VA_SCARCITY": 0.0833,
+      "crypto_trx|VA_SCARCITY": 0.3333,
+      "crypto_xrp|VA_STAKE": 0.3333,
+      "crypto_zec|VA_STAKE": 0.1667
+    },
+    "unknown_handling": {
+      "in_agreement_and_alpha": "excluded",
+      "reported_separately": "Coverage, defined per cell as the share of scorers giving a determinate answer, and per scorer as the share of attempted cells answered determinately.",
+      "reason": "An Unknown is an honest gap. Counting it as disagreement understates reliability; counting it as agreement inflates it.",
+      "applies_to": "Both inter-rater reliability and reference agreement, identically."
+    },
+    "krippendorff_alpha": {
+      "alpha": -0.01,
+      "alpha_status": "estimated",
+      "units_used": 12,
+      "pairable_values": 115,
+      "observed_disagreement": 0.50849,
+      "expected_disagreement": 0.503432
+    },
+    "pairwise_cohen_kappa": {
+      "pairs_estimated": 65,
+      "pairs_excluded_for_low_overlap": 1,
+      "pairs_undefined": 0,
+      "excluded": [
+        {
+          "pair": [
+            "S003",
+            "S011"
+          ],
+          "overlap": 4
+        }
+      ],
+      "mean_kappa": -0.0119,
+      "pairs": [
+        {
+          "n": 9,
+          "observed_agreement": 0.4444,
+          "kappa": -0.0465,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S001"
+          ]
+        },
+        {
+          "n": 11,
+          "observed_agreement": 0.6364,
+          "kappa": 0.2903,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S002"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.5,
+          "kappa": -0.0667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S003"
+          ]
+        },
+        {
+          "n": 11,
+          "observed_agreement": 0.6364,
+          "kappa": 0.2143,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S004"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.5556,
+          "kappa": 0.1,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S005"
+          ]
+        },
+        {
+          "n": 10,
+          "observed_agreement": 0.4,
+          "kappa": -0.2,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S006"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.6667,
+          "kappa": 0.3415,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S007"
+          ]
+        },
+        {
+          "n": 10,
+          "observed_agreement": 0.4,
+          "kappa": -0.2,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S008"
+          ]
+        },
+        {
+          "n": 10,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S009"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.5556,
+          "kappa": 0.1,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S010"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.1429,
+          "kappa": -0.6154,
+          "kappa_status": "estimated",
+          "pair": [
+            "S000",
+            "S011"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S002"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S003"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S004"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.5714,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S005"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.625,
+          "kappa": 0.3333,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S006"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S007"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.4286,
+          "kappa": 0.125,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S008"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.375,
+          "kappa": -0.4286,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S009"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.4286,
+          "kappa": -0.2727,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S010"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.5,
+          "kappa": 0.1818,
+          "kappa_status": "estimated",
+          "pair": [
+            "S001",
+            "S011"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.625,
+          "kappa": 0.25,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S003"
+          ]
+        },
+        {
+          "n": 10,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S004"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.5,
+          "kappa": 0.0588,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S005"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.4444,
+          "kappa": -0.0465,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S006"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.25,
+          "kappa": -0.4118,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S007"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.7778,
+          "kappa": 0.5263,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S008"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.5556,
+          "kappa": 0.1429,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S009"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.875,
+          "kappa": 0.75,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S010"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S002",
+            "S011"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.75,
+          "kappa": 0.4667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S003",
+            "S004"
+          ]
+        },
+        {
+          "n": 5,
+          "observed_agreement": 0.4,
+          "kappa": -0.1538,
+          "kappa_status": "estimated",
+          "pair": [
+            "S003",
+            "S005"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.2857,
+          "kappa": -0.2069,
+          "kappa_status": "estimated",
+          "pair": [
+            "S003",
+            "S006"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.0,
+          "kappa": -1.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S003",
+            "S007"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.6667,
+          "kappa": 0.4,
+          "kappa_status": "estimated",
+          "pair": [
+            "S003",
+            "S008"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.4286,
+          "kappa": -0.1667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S003",
+            "S009"
+          ]
+        },
+        {
+          "n": 5,
+          "observed_agreement": 0.8,
+          "kappa": 0.5455,
+          "kappa_status": "estimated",
+          "pair": [
+            "S003",
+            "S010"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.125,
+          "kappa": -0.75,
+          "kappa_status": "estimated",
+          "pair": [
+            "S004",
+            "S005"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.3333,
+          "kappa": -0.2857,
+          "kappa_status": "estimated",
+          "pair": [
+            "S004",
+            "S006"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.375,
+          "kappa": -0.25,
+          "kappa_status": "estimated",
+          "pair": [
+            "S004",
+            "S007"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.7778,
+          "kappa": 0.5714,
+          "kappa_status": "estimated",
+          "pair": [
+            "S004",
+            "S008"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.4444,
+          "kappa": -0.1538,
+          "kappa_status": "estimated",
+          "pair": [
+            "S004",
+            "S009"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S004",
+            "S010"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.3333,
+          "kappa": 0.0769,
+          "kappa_status": "estimated",
+          "pair": [
+            "S004",
+            "S011"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.5714,
+          "kappa": 0.16,
+          "kappa_status": "estimated",
+          "pair": [
+            "S005",
+            "S006"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.7143,
+          "kappa": 0.4167,
+          "kappa_status": "estimated",
+          "pair": [
+            "S005",
+            "S007"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.125,
+          "kappa": -0.5556,
+          "kappa_status": "estimated",
+          "pair": [
+            "S005",
+            "S008"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S005",
+            "S009"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.5714,
+          "kappa": 0.16,
+          "kappa_status": "estimated",
+          "pair": [
+            "S005",
+            "S010"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.5,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S005",
+            "S011"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.4286,
+          "kappa": -0.1667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S006",
+            "S007"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.5556,
+          "kappa": 0.0,
+          "kappa_status": "estimated",
+          "pair": [
+            "S006",
+            "S008"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.375,
+          "kappa": -0.1111,
+          "kappa_status": "estimated",
+          "pair": [
+            "S006",
+            "S009"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.0,
+          "kappa": -0.6897,
+          "kappa_status": "estimated",
+          "pair": [
+            "S006",
+            "S010"
+          ]
+        },
+        {
+          "n": 5,
+          "observed_agreement": 0.2,
+          "kappa": -0.6667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S006",
+            "S011"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.1429,
+          "kappa": -0.6154,
+          "kappa_status": "estimated",
+          "pair": [
+            "S007",
+            "S008"
+          ]
+        },
+        {
+          "n": 9,
+          "observed_agreement": 0.5556,
+          "kappa": 0.1,
+          "kappa_status": "estimated",
+          "pair": [
+            "S007",
+            "S009"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.4286,
+          "kappa": -0.1667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S007",
+            "S010"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.4286,
+          "kappa": -0.0769,
+          "kappa_status": "estimated",
+          "pair": [
+            "S007",
+            "S011"
+          ]
+        },
+        {
+          "n": 8,
+          "observed_agreement": 0.375,
+          "kappa": -0.1111,
+          "kappa_status": "estimated",
+          "pair": [
+            "S008",
+            "S009"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.5714,
+          "kappa": 0.16,
+          "kappa_status": "estimated",
+          "pair": [
+            "S008",
+            "S010"
+          ]
+        },
+        {
+          "n": 5,
+          "observed_agreement": 0.6,
+          "kappa": 0.1667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S008",
+            "S011"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.7143,
+          "kappa": 0.4167,
+          "kappa_status": "estimated",
+          "pair": [
+            "S009",
+            "S010"
+          ]
+        },
+        {
+          "n": 7,
+          "observed_agreement": 0.4286,
+          "kappa": -0.0769,
+          "kappa_status": "estimated",
+          "pair": [
+            "S009",
+            "S011"
+          ]
+        },
+        {
+          "n": 6,
+          "observed_agreement": 0.8333,
+          "kappa": 0.6667,
+          "kappa_status": "estimated",
+          "pair": [
+            "S010",
+            "S011"
+          ]
+        }
+      ]
+    }
+  },
+  "reference_agreement": {
+    "label": "Reference agreement.",
+    "caution": "Inter-rater reliability, reliability, accuracy, correctness, validation, or any phrasing implying the project's answers are a ground truth against which scorers are assessed.",
+    "cells_with_a_reference_value": 7,
+    "cells_without_a_reference_value": 5,
+    "mean_agreement": 0.5241,
+    "by_cell": [
+      {
+        "cell": "crypto_ltc|VA_GAS",
+        "status": "no_reference_value",
+        "project_state": "pending"
+      },
+      {
+        "cell": "crypto_doge|VA_BURN",
+        "status": "no_reference_value",
+        "project_state": "pending"
+      },
+      {
+        "cell": "crypto_hbar|VA_BURN",
+        "status": "no_reference_value",
+        "project_state": "pending"
+      },
+      {
+        "cell": "crypto_link|VA_PROTOCOL",
+        "status": "no_reference_value",
+        "project_state": "pending"
+      },
+      {
+        "cell": "crypto_op|VA_PROTOCOL",
+        "status": "no_reference_value",
+        "project_state": "pending"
+      },
+      {
+        "cell": "crypto_xlm|VA_BURN",
+        "reference": "No",
+        "scorers": 10,
+        "agreeing": 4,
+        "agreement": 0.4
+      },
+      {
+        "cell": "crypto_ada|VA_PROTOCOL",
+        "reference": "No",
+        "scorers": 10,
+        "agreeing": 4,
+        "agreement": 0.4
+      },
+      {
+        "cell": "crypto_sol|VA_BURN",
+        "reference": "Yes",
+        "scorers": 7,
+        "agreeing": 6,
+        "agreement": 0.8571
+      },
+      {
+        "cell": "crypto_avax|VA_SCARCITY",
+        "reference": "Yes",
+        "scorers": 11,
+        "agreeing": 7,
+        "agreement": 0.6364
+      },
+      {
+        "cell": "crypto_trx|VA_SCARCITY",
+        "reference": "No",
+        "scorers": 8,
+        "agreeing": 4,
+        "agreement": 0.5
+      },
+      {
+        "cell": "crypto_xrp|VA_STAKE",
+        "reference": "No",
+        "scorers": 8,
+        "agreeing": 3,
+        "agreement": 0.375
+      },
+      {
+        "cell": "crypto_zec|VA_STAKE",
+        "reference": "No",
+        "scorers": 10,
+        "agreeing": 5,
+        "agreement": 0.5
+      }
+    ]
+  },
+  "classification_status_at_analysis": {
+    "sourced": 109,
+    "reviewed": 10,
+    "pending": 11,
+    "provisional": 120
+  },
+  "data_source": "synthetic_fixture",
+  "warning": "Produced from synthetic responses. No figure here is a finding."
+}

@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "purpose": "Maps Google Forms question titles to stable item ids, and maps the blind exercise cells to (asset_id, code). Written before any response was accessed. The Forms export uses question titles as column headers; this file is the only place those strings appear, so a title edit is a one-line fix here.",
+  "source_of_truth": "research/survey/build_form.gs",
+  "screening": {
+    "role": "Which best describes your role?",
+    "years": "Years working with digital assets professionally",
+    "familiarity": "How familiar are you with protocol-level mechanics such as fee burns, staking design and issuance schedules?",
+    "allocator": "Do you make or advise on allocation decisions in digital assets?"
+  },
+  "importance_grid": {
+    "title": "How much SHOULD each economic function matter to what a token is worth?",
+    "scale": {
+      "1 Irrelevant": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5 Decisive": 5
+    },
+    "rows": {
+      "Monetary use \u2014 used as money, settlement or a store of value": "VA_MONETARY",
+      "Fee requirement \u2014 you must spend it to use the network": "VA_GAS",
+      "Staking \u2014 locked or at risk to secure something": "VA_STAKE",
+      "Burn \u2014 usage permanently destroys supply": "VA_BURN",
+      "Hard cap \u2014 a terminal supply limit that is very hard to change": "VA_SCARCITY",
+      "Collateral \u2014 accepted as material collateral elsewhere": "VA_COLLATERAL",
+      "Governance \u2014 holding it gives real control": "VA_GOV",
+      "Revenue capture \u2014 protocol revenue mechanically reaches the token": "VA_PROTOCOL",
+      "Service utility \u2014 required to buy an identifiable service": "VA_UTILITY",
+      "Incentives \u2014 a programme subsidises usage or participation": "VA_INCENTIVE"
+    }
+  },
+  "boundary_items": [
+    {
+      "item_id": "B1_governed_treasury",
+      "title": "Does the token capture value from that revenue?",
+      "project_rule": "No, this is a governance right only",
+      "rule_name": "governed_treasury_capture_boundary",
+      "options": [
+        "Yes, this is value capture",
+        "No, this is a governance right only",
+        "Depends"
+      ],
+      "condition_dependent_option": "Depends"
+    },
+    {
+      "item_id": "B2_fee_burn",
+      "title": "Does the token capture value from usage?",
+      "project_rule": "Yes, this is value capture",
+      "rule_name": "fee_burn_is_capture",
+      "options": [
+        "Yes, this is value capture",
+        "No",
+        "Depends"
+      ],
+      "condition_dependent_option": "Depends"
+    },
+    {
+      "item_id": "B3_paused_mechanism",
+      "title": "For a classification made today, is the mechanism active?",
+      "project_rule": "Not active",
+      "rule_name": "paused_mechanism_not_active",
+      "options": [
+        "Active",
+        "Not active",
+        "Partially active"
+      ],
+      "condition_dependent_option": "Partially active"
+    },
+    {
+      "item_id": "B4_zero_fee_valid",
+      "title": "Is the native token required in order to transact?",
+      "project_rule": "Yes, required in substance",
+      "rule_name": "fee_requirement_in_substance",
+      "options": [
+        "Yes, required in substance",
+        "No, required only by convention",
+        "Depends"
+      ],
+      "condition_dependent_option": "Depends"
+    },
+    {
+      "item_id": "B5_issuance_reward",
+      "title": "Is that value accruing to the token, or payment for a service?",
+      "project_rule": "Payment for a service rendered",
+      "rule_name": "issuance_is_not_capture",
+      "options": [
+        "Value accruing to the token",
+        "Payment for a service rendered",
+        "Depends"
+      ],
+      "condition_dependent_option": "Depends"
+    },
+    {
+      "item_id": "B6_immobilised_fees",
+      "title": "Is that economically equivalent to destroying them?",
+      "project_rule": "Equivalent to destruction",
+      "rule_name": "immobilisation_equals_burn",
+      "options": [
+        "Equivalent to destruction",
+        "Not equivalent",
+        "Depends"
+      ],
+      "condition_dependent_option": "Depends"
+    }
+  ],
+  "materiality_items": [
+    {
+      "item_id": "M1_collateral",
+      "title": "At what point would you say an asset is materially used as collateral?"
+    },
+    {
+      "item_id": "M2_mechanism_age",
+      "title": "How long must a mechanism be live before you would count it in a classification?"
+    },
+    {
+      "item_id": "M3_binary_or_scale",
+      "title": "Should these functions be recorded as yes or no, or on a scale?"
+    },
+    {
+      "item_id": "M4_missing_evidence",
+      "title": "If evidence for a function is unavailable or ambiguous, what should the classification record?"
+    }
+  ],
+  "blind_cells": [
+    {
+      "label": "Litecoin",
+      "asset_id": "crypto_ltc",
+      "code": "VA_GAS"
+    },
+    {
+      "label": "Dogecoin",
+      "asset_id": "crypto_doge",
+      "code": "VA_BURN"
+    },
+    {
+      "label": "Hedera (HBAR)",
+      "asset_id": "crypto_hbar",
+      "code": "VA_BURN"
+    },
+    {
+      "label": "Chainlink (LINK)",
+      "asset_id": "crypto_link",
+      "code": "VA_PROTOCOL"
+    },
+    {
+      "label": "Optimism (OP)",
+      "asset_id": "crypto_op",
+      "code": "VA_PROTOCOL"
+    },
+    {
+      "label": "Stellar (XLM)",
+      "asset_id": "crypto_xlm",
+      "code": "VA_BURN"
+    },
+    {
+      "label": "Cardano (ADA)",
+      "asset_id": "crypto_ada",
+      "code": "VA_PROTOCOL"
+    },
+    {
+      "label": "Solana (SOL)",
+      "asset_id": "crypto_sol",
+      "code": "VA_BURN"
+    },
+    {
+      "label": "Avalanche (AVAX)",
+      "asset_id": "crypto_avax",
+      "code": "VA_SCARCITY"
+    },
+    {
+      "label": "TRON (TRX)",
+      "asset_id": "crypto_trx",
+      "code": "VA_SCARCITY"
+    },
+    {
+      "label": "XRP",
+      "asset_id": "crypto_xrp",
+      "code": "VA_STAKE"
+    },
+    {
+      "label": "Zcash (ZEC)",
+      "asset_id": "crypto_zec",
+      "code": "VA_STAKE"
+    }
+  ],
+  "blind_cell_suffix": " \u2014 does it perform this function?",
+  "blind_options": [
+    "Yes",
+    "No",
+    "Unknown"
+  ],
+  "condition_dependent_note": "An option is condition-dependent when adopting it would not yield a binary rule. 'Partially active' is condition-dependent for the same reason 'Depends' is: neither tells the codebook what to record."
+}
