@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 173,
+    "files": 174,
     "by_phase": {
       "00_foundation": 24,
       "01_classification": 64,
-      "02_valuation": 34,
+      "02_valuation": 35,
       "03_risk": 7,
       "04_stablecoin_deferred": 44
     },
@@ -248,7 +248,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 60392,
+      "bytes": 60805,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1237,6 +1237,7 @@
       "read_by": [],
       "named_in_config": [
         "crypto_h3_supply_event_study.json",
+        "crypto_h8_out_of_sample_validation.json",
         "crypto_h8_verified_universe.json"
       ],
       "orphan": false
@@ -1328,7 +1329,7 @@
       "phase": "02_valuation",
       "file": "crypto_h1_activity_pilot.csv",
       "kind": "table",
-      "bytes": 152,
+      "bytes": 153,
       "written_by": [
         "crypto_h1_activity_pilot"
       ],
@@ -1342,7 +1343,7 @@
       "phase": "02_valuation",
       "file": "crypto_h1_activity_pilot.json",
       "kind": "summary",
-      "bytes": 2416,
+      "bytes": 2419,
       "written_by": [
         "crypto_h1_activity_pilot"
       ],
@@ -1596,7 +1597,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_pilot.json",
       "kind": "summary",
-      "bytes": 3363,
+      "bytes": 3366,
       "written_by": [
         "crypto_h3_supply_pilot"
       ],
@@ -1613,7 +1614,7 @@
       "phase": "02_valuation",
       "file": "crypto_h8_breadth_pilot.csv",
       "kind": "table",
-      "bytes": 252,
+      "bytes": 253,
       "written_by": [
         "crypto_h8_breadth_pilot"
       ],
@@ -1627,7 +1628,7 @@
       "phase": "02_valuation",
       "file": "crypto_h8_breadth_pilot.json",
       "kind": "summary",
-      "bytes": 1358,
+      "bytes": 1359,
       "written_by": [
         "crypto_h8_breadth_pilot"
       ],
@@ -1642,9 +1643,23 @@
     },
     {
       "phase": "02_valuation",
+      "file": "crypto_h8_oos_readiness.json",
+      "kind": "summary",
+      "bytes": 3447,
+      "written_by": [
+        "crypto_h8_oos_readiness"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
       "file": "crypto_h8_six_asset_extension.csv",
       "kind": "table",
-      "bytes": 287,
+      "bytes": 289,
       "written_by": [
         "crypto_h8_six_asset_extension"
       ],
@@ -1658,7 +1673,7 @@
       "phase": "02_valuation",
       "file": "crypto_h8_six_asset_extension.json",
       "kind": "summary",
-      "bytes": 1547,
+      "bytes": 1548,
       "written_by": [
         "crypto_h8_six_asset_extension"
       ],
@@ -1794,7 +1809,7 @@
       "phase": "02_valuation",
       "file": "crypto_phase1_bundle_comparison.csv",
       "kind": "table",
-      "bytes": 3954,
+      "bytes": 3950,
       "written_by": [
         "crypto_phase1_bundle_comparison"
       ],
@@ -1898,6 +1913,7 @@
       "named_in_config": [
         "crypto_function_risk_exposure.json",
         "crypto_h3_supply_event_study.json",
+        "crypto_h8_out_of_sample_validation.json",
         "crypto_h8_verified_universe.json",
         "crypto_mechanism_event_study_long.json",
         "crypto_return_factor_baseline.json"

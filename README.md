@@ -1,16 +1,14 @@
 # Digital Assets Valuation
 
-Latest empirical checkpoint: the frozen 23-asset H8 extension finds that financial integration is the strongest single economic-function valuation indicator and modestly improves leave-one-asset-out prediction relative to raw function breadth. See `research/findings/2026-10-08-h8-verified-universe.md` for the full exploratory, non-causal result and limitations.
+**Current checkpoint (8 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. H1, H2, H3 and H8 have exploratory estimates. H4 now has complete 365-day BNB consensus-stake and legacy stkAAVE histories, but pooled estimation still requires archival ETH consensus data.
 
-Visual summary: `research/findings/crypto-visual-analysis.md` shows the classification-to-hypothesis flow, group coverage, and H8 prediction comparison.
-
-Latest H3 checkpoint: 12 material ARB monthly unlocks have been estimated descriptively, but the mean three-day abnormal return has the opposite sign from H3 and a second qualifying asset is still required before pooled inference.
+The clearest result so far is H8: theory-defined function groups contain more valuation information than a raw count of functions in this sample. Financial integration is the strongest single group and modestly lowers leave-one-asset-out prediction error. This is exploratory and non-causal, not an investment rule. See [`research/findings/crypto-current-findings.md`](research/findings/crypto-current-findings.md) and the [visual analysis](research/findings/crypto-visual-analysis.md).
 
 **Can the economic jobs a cryptoasset performs explain what it is worth and how risky it is?**
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 312 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 346 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -40,17 +38,15 @@ So this project asks a different question. Not what technology is it, but **what
 4. Do assets doing several economic jobs at once command a premium over single-purpose assets?
 5. Does economic function explain how **risky** an asset is, even where it fails to explain returns?
 
-These become six registered experiments. Each has a specification file committed with a freeze date **before** its estimate is produced, so the test cannot be changed after seeing the answer.
+These become five active hypotheses. Each empirical design is frozen before its estimate is produced, so the test cannot be changed after seeing the answer.
 
 | ID | Hypothesis | Status |
 |---|---|---|
-| P1_H1 | Usage is associated with higher network value | Estimated; positive, not significant |
-| P1_H2 | Usage matters more when value capture is live | Estimated; **definition-dependent** |
-| H3 | Greater circulating-supply growth predicts weaker returns | Diagnostic only; insufficient within-asset variation |
-| H4 | Staking reduces liquid float and affects liquidity | Source-ready; estimation blocked |
+| H1 | Usage is associated with higher network value | Estimated; positive, not significant (p = 0.250) |
+| H2 | Usage matters more when value capture is live | Estimated; **definition-dependent** (broad p = 0.082; strict p = 0.478) |
+| H3 | Greater circulating-supply growth predicts weaker returns | 12 ARB events estimated descriptively; second asset required |
+| H4 | Staking reduces liquid float and affects liquidity or risk | BNB and legacy stkAAVE histories complete; ETH archive blocks pooled test |
 | H8 | Theory groups outperform a raw count of functions | 23-asset extension favors groups; exploratory |
-| P1_H5 | Turning a capture mechanism on or off moves value | Estimated; no effect detected |
-| P1_H6 | Function predicts risk exposure, not return | Estimated; **not supported after correction** |
 
 ## 3. Architecture
 
@@ -89,7 +85,7 @@ This one rule is the difference between a headline result and no result (see §6
 
 ## 4. Data universe
 
-25 non-stable cryptoassets, selected on market capitalisation, volume, economic relevance and reproducible free-data access, plus 16 stable-value assets preserved for a deferred phase.
+23 active non-stable cryptoassets, selected on market capitalisation, volume, economic relevance and reproducible free-data access. DOGE and XMR are excluded from the active analysis. Stablecoin work is preserved for a later phase.
 
 | Dataset | Coverage | Used for |
 |---|---|---|
@@ -97,7 +93,7 @@ This one rule is the difference between a headline result and no result (see §6
 | Chain and protocol fees | 11 economic systems, 362 days | The usage variable in H2 |
 | Network activity | 4–5 assets on free provider tiers | H1, H3 |
 | Collateral balances | Daily protocol state reads, 90-day windows | `VA_COLLATERAL` evidence |
-| Staking series | BNB validator pools, legacy stkAAVE, 90 days | H4 (blocked) |
+| Staking series | BNB consensus stake and legacy stkAAVE, 365 days each; ETH 0/365 | H4 measurement audit |
 | Classification evidence | Dated primary-source URL per decision | All ten codes |
 | Mechanism ledger | Effective-dated burn and capture events, 11 assets | H2 treatment, event study |
 
@@ -134,23 +130,15 @@ written rule  ->  one coder applies it to a dated primary source
 
 An expert survey collects practitioner judgment on the boundary rules and includes an optional blind scoring exercise. That is external feedback on whether the rules are sensible and applicable. It is not a second coder and does not close this gap.
 
-### Coding tranches
+### Classification completion and review boundary
 
-The remaining classification work is split by **how the evidence is obtained**, using the existing grouping:
+The source-review tranches are complete. The canonical status is **220 sourced cells + 10 sourced and independently blind-reviewed cells = 230 evidence-backed cells**. No cell is pending or provisional. The earlier blind review covers only burn and protocol-capture decisions for ADA, AVAX, SOL, TRX and XRP; its kappa of 1.00 must not be generalized to the whole matrix.
 
-| Tranche | Codes | Why grouped | Status |
-|---|---|---|---|
-| **A** | gas, stake, scarcity, burn, protocol | Fact check against protocol documentation | 68 of 70 verified, 2 pending |
-| **B** | collateral, monetary | Need a 90-day quantitative window and a materiality threshold | 28 decisions outstanding |
-| **C** | governance, utility, incentive | Boundary calls, the most judgment-dependent | 26 sourced, 16 pending after source review |
-
-Tranche C was advanced while awaiting survey responses at the researcher’s request. Its September 14 snapshot applies the existing rules; it does not change historical experiment inputs. The 16 unresolved cells carry specific evidence gaps in the workbook.
-
-The five previously untouched assets (HYPE, XMR, TON, TAO and POL) now have a first pass across all 50 cells: 28 supported values and 22 explicit gaps. See the [source-review results](research/findings/2026-09-14-five-asset-classification.md).
+The remaining classification limitation is external reproducibility, not coverage. An expert survey may test whether practitioners accept the boundary rules and materiality conventions, but downstream exploratory work does not silently treat that survey as completed.
 
 ### The pipeline
 
-72 modules in seven ordered stages. A test fails if any module is missing from the stage map.
+81 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -166,7 +154,7 @@ The five previously untouched assets (HYPE, XMR, TON, TAO and POL) now have a fi
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 312 tests
+python -m unittest discover -s tests                           # 346 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -180,31 +168,32 @@ Full walkthrough in [`research/findings/2026-09-07-the-math-explained.md`](resea
 
 ## 6. Where the project stands
 
-**The instrument works and the results are mostly null.** That is the honest state of this literature at this sample size.
+**The classification instrument is complete; the empirical evidence is exploratory and mixed.**
 
 - **Architecture does not predict economics.** Two PoS base layers in the verified core differ on two of ten functions; two application tokens share one.
 - **The central capture result is definition-dependent.** Fee activity is more strongly associated with market value when a capture route is live: pooled interaction 0.132, exact p = 0.082, positive in all eleven leave-one-out samples. Apply the strict holder-capture rule and it halves to 0.061 with p = 0.478. **Whether a governed treasury counts as capture is the difference between a result and no result.**
-- **Counting functions explains nothing.** Breadth slope 0.484, permutation p = 0.442. Bundle count does not improve on it.
+- **Which functions are present is more informative than how many.** In the verified 23-asset H8 extension, raw breadth has leave-one-asset-out RMSE 1.8109; the best single group, financial integration, improves it modestly to 1.7594. Monetary/store, supply absorption and financial integration survive 10% false-discovery control in this sample.
+- **The H3 event evidence does not yet support dilution timing.** Across 12 material ARB unlocks, mean three-day abnormal log return is +0.0155 and only 5 of 12 events have the predicted negative sign. This is a one-asset descriptive result, not pooled inference.
+- **H4 measurement is partly complete.** BNB has 365/365 days of native consensus stake; legacy stkAAVE has 365/365 days as a separate case study. ETH has 0/365 because a historical consensus endpoint is not configured, so pooled estimation is blocked.
 - **Mechanism activations are not visibly priced.** Three events, 22 controls, ~280 calendar placebos each. One carries its expected sign; none rejects at 10%.
 - **A single market factor dominates.** Median beta 1.03, median R² 0.60 across 24 assets. Lagged beta is negatively priced (t = −2.12).
 - **Function and risk move together but do not survive correction.** Monetary assets average beta 0.93 and worst drawdown −1.44 against 1.19 and −2.37. Three of 27 tests reach p ≤ 0.05 against 1.35 expected by chance; none survives a 10% false-discovery rate.
 
-Not defensible, and stated as such: any claim that economic function predicts returns; any market-wide claim about function and risk while most of the universe is unverified; and any claim that the classification is reproducible by an independent coder, which has not been tested.
+Not defensible, and stated as such: any claim that economic function causes valuation or predicts returns out of sample; any confirmatory interpretation of H8 before its fixed validation window closes; and any claim that the classification is reproducible by an independent coder, which has not been tested.
 
 ### What happens next
 
-1. **Send the survey, with a closing date.** It collects external feedback on the six boundary rules and the materiality thresholds. The analysis plan is frozen at `config/survey_analysis_plan.json` before any response is read.
-2. **Resolve the remaining source gaps**: two pending cells in tranche A, sixteen in tranche C and twenty-two across the five additional assets. If the evidence does not settle a cell, it stays pending — insufficient evidence is a result, not a failure.
-3. **Summarise the responses**: agreement with each proposed rule, the function ranking, and the reasons given for disagreement. The optional blind scoring exercise is reported only if enough people complete it.
-4. **Revise and document the framework**: which rules stayed, which changed, which remain uncertain. A rule the panel did not settle continues as a working convention and is labelled as one.
-
-The thresholds the survey settles determine how tranche B is coded. Tranche C already has a source-review pass; its unresolved evidence and rule questions remain explicit.
+1. **Unblock H4 measurement.** Configure `ETH_BEACON_ARCHIVE_API_URL` with a provider that serves historical beacon states, then collect 365 days of active effective balance and run the frozen H4 analysis.
+2. **Broaden H3 without outcome selection.** Add a second asset with official, exact-date, material supply events. Preserve the ARB result unchanged and prohibit pooled inference until the preregistered minimum is met.
+3. **Accumulate the frozen H8 validation window.** The design is now fixed at 23 August 2026–22 August 2027, with financial integration compared against raw breadth using the same leave-one-asset-out RMSE. The readiness audit prevents estimation before the window closes and requires at least 292 daily observations per asset.
+4. **Refresh the risk analysis on verified codes.** Keep the frozen specification and replace only its former provisional classification input.
+5. **Collect external rule feedback.** Use the frozen survey analysis plan to document agreement and disagreement with the classification boundaries. This strengthens interpretation but is not represented as independent recoding.
 
 Every decision that needs human judgment is registered in [`research/open_decisions.md`](research/open_decisions.md), with what changes if it flips and which result it blocks.
 
 ## 7. Repository layout
 
-The project runs in phases. **Phase 1, economic classification, is the active phase**; see [`PROJECT_PLAN.md`](PROJECT_PLAN.md) for the phase breakdown, the gates between phases, and flowcharts of the programme and the Phase 1 workflow.
+The project runs in phases. **Phase 1 classification is complete for the active universe; Phase 2 hypothesis testing is now the active build.** See [`PROJECT_PLAN.md`](PROJECT_PLAN.md) for the phase breakdown and gates.
 
 Processed data is grouped by the phase that owns it, so you can tell from the path which question a file belongs to:
 
@@ -213,8 +202,8 @@ data/
   raw/                              immutable dated snapshots, by source, never edited
   processed/
     00_foundation/                  shared market, price and activity series
-    01_classification/   ← active   Phase 1 evidence, mechanism states, taxonomy
-    02_valuation/                   H1 H2 H3 H8 and the event studies
+    01_classification/              Phase 1 evidence, mechanism states, taxonomy
+    02_valuation/        ← active   H1 H2 H3 H8 and the event studies
     03_risk/                        return panel, factor baseline, P1_H6
     04_stablecoin_deferred/         H5-H7, preserved and parked
 ```

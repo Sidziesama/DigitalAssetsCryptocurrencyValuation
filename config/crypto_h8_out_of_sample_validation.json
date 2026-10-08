@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-temporal-validation",
+  "status": "frozen_before_validation_outcomes",
+  "freeze_date": "2026-10-08",
+  "hypothesis": "H8",
+  "discovery_specification": "config/crypto_h8_verified_universe.json",
+  "classification_input": "data/processed/01_classification/crypto_verified_universe_profiles.csv",
+  "market_input": "data/processed/03_risk/crypto_return_panel_daily.csv",
+  "validation_window": {
+    "start": "2026-08-23",
+    "end": "2027-08-22",
+    "minimum_coverage_share": 0.8
+  },
+  "expected_assets": 23,
+  "primary_outcome": "mean_log_market_cap_usd",
+  "benchmark_model": {
+    "id": "raw_function_breadth",
+    "predictors": ["raw_function_breadth"]
+  },
+  "candidate_model": {
+    "id": "bundle_financial_integration",
+    "predictors": ["bundle_financial_integration"],
+    "selection_reason": "Best single theory group in the frozen discovery sample; fixed before validation outcomes exist."
+  },
+  "primary_metric": "leave_one_asset_out_root_mean_squared_prediction_error",
+  "direction_check": "The financial-integration coefficient must remain positive.",
+  "decision_rule": "Temporal validation supports H8 only if financial integration has lower leave-one-asset-out RMSE than raw breadth and retains a positive coefficient in the fixed validation window.",
+  "guardrails": [
+    "The validation window begins the day after the discovery window ends.",
+    "Do not move the dates, replace the candidate group, redefine any group, or change the loss metric after validation outcomes are available.",
+    "Use the same 23-asset classification universe; report missing outcome coverage rather than replacing assets.",
+    "Do not run the validation estimate before the window closes and the minimum coverage requirement can be evaluated.",
+    "Other groups and outcomes may be reported only as explicitly labelled exploratory diagnostics."
+  ]
+}

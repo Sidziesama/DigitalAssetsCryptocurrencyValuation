@@ -367,6 +367,11 @@
           "module": "crypto_h8_verified_universe",
           "args": [],
           "note": "Runs the separately frozen 23-asset post-pilot H8 comparison and sensitivity analysis."
+        },
+        {
+          "module": "crypto_h8_oos_readiness",
+          "args": [],
+          "note": "Audits readiness for the frozen, non-overlapping H8 temporal validation window without estimating it early."
         }
       ]
     },
