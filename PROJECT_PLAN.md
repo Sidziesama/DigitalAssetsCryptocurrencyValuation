@@ -1,8 +1,8 @@
 # Project plan
 
-How this research is broken into phases, what each one delivers, and what has to be true before the next one starts. Updated 14 September 2026.
+How this research is broken into phases, what each one delivers, and what has to be true before the next one starts. Updated 8 October 2026.
 
-**Current focus: Phase 1 only.** Phases 2 and 3 have exploratory results already, but they are on hold until the classification they depend on is finished and validated. Phase 4 is parked.
+**Current focus: classification-to-valuation synthesis.** The 23-asset classification matrix is complete and H8 has been re-estimated on verified codes. External rule validation remains a limitation rather than being silently treated as complete. H4 data collection and out-of-sample validation are the next empirical builds. Phase 4 is parked.
 
 ---
 
@@ -30,9 +30,9 @@ flowchart TB
 | Phase | Question it answers | Status | Data |
 |---|---|---|---|
 | 0 · Foundation | What can we measure, from sources that never change under us? | Complete and stable | `data/processed/00_foundation/` |
-| **1 · Economic classification** | **What economic job does each token do, provably, on each date?** | **Active** | `data/processed/01_classification/` |
-| 2 · Valuation tests | Does economic function explain market value? | Exploratory results, on hold | `data/processed/02_valuation/` |
-| 3 · Risk and market structure | Does economic function explain risk exposure? | Exploratory results, on hold | `data/processed/03_risk/` |
+| **1 · Economic classification** | **What economic job does each token do, provably, on each date?** | **23-asset matrix complete; external rule validation outstanding** | `data/processed/01_classification/` |
+| **2 · Valuation tests** | **Does economic function explain market value?** | **H8 verified-universe extension complete; synthesis active** | `data/processed/02_valuation/` |
+| 3 · Risk and market structure | Does economic function explain risk exposure? | Exploratory results; verified-code refresh pending | `data/processed/03_risk/` |
 | 4 · Stablecoin risk | What drives depegs and redemption failure? | Deferred | `data/processed/04_stablecoin_deferred/` |
 
 **Why Phase 1 gates the rest.** Phases 2 and 3 both take the classification as an input variable. The active 23-asset universe now has all 230 classification cells verified; DOGE and XMR are explicitly excluded. Freezing and propagating this instrument is what makes every downstream estimate interpretable.
@@ -146,13 +146,13 @@ Source: the same classification records used by the [color-coded workbook](data/
 
 ---
 
-## Phase 2 — Valuation tests (on hold)
+## Phase 2 — Valuation tests (active synthesis)
 
 Does economic function explain market value? Four registered experiments have exploratory results: H1 usage, H2 fee-and-capture, H3 supply, H8 breadth and bundles, plus two mechanism event studies.
 
-The headline so far is that the H2 fee-and-capture interaction is 0.132 with an exact p of 0.082 under a loose definition of capture, and 0.061 with p of 0.478 under the strict one. The result depends on a definition, which is exactly the definition Phase 1 is settling. Breadth commands no premium and mechanism activations are not visibly priced.
+The H2 fee-and-capture interaction is 0.132 with an exact p of 0.082 under a loose definition of capture, and 0.061 with p of 0.478 under the strict one. The result is therefore definition-sensitive. The newer 23-asset H8 extension finds that financial integration modestly outpredicts raw function breadth; monetary/store use and supply absorption also survive 10% false-discovery control. These results remain exploratory and non-causal.
 
-**Resumes when** Phase 1 gates pass. Then every experiment re-runs on verified codes with its specification unchanged.
+**Next checkpoint:** preserve the integrated H1–H4/H8 evidence register, complete H4 historical staking coverage, and design a genuinely out-of-sample H8 validation without changing the observed specification.
 
 ## Phase 3 — Risk and market structure (on hold)
 

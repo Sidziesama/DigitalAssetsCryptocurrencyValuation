@@ -7,7 +7,7 @@
     "H4",
     "H8"
   ],
-  "headline": "Fee activity has a persistent positive association with valuation when active capture exists, but the evidence is exploratory and does not predict seven-day returns.",
+  "headline": "In the verified 23-asset classification universe, financial integration is the strongest single valuation indicator and modestly outpredicts raw function breadth; H2 fee-and-capture evidence remains definition-sensitive.",
   "findings": {
     "H1": {
       "status": "exploratory_positive_association_not_confirmed",
@@ -56,7 +56,7 @@
       "plain_finding": "H4 is not yet estimable. A complete 90-day BNB consensus-staking series ranges from about 25.51m to 25.78m BNB. The exact ETH active-effective-balance collector is implemented but needs an archival consensus endpoint, while the legacy stkAAVE series excludes current Umbrella aToken/GHO stake. One complete positive-staking series remains insufficient to identify liquid-float effects."
     },
     "H8": {
-      "status": "exploratory_no_robust_breadth_premium_evidence",
+      "status": "verified_universe_theory_groups_favored_exploratory",
       "design_ready_assets": 6,
       "raw_breadth_slope": 0.7401016715332025,
       "exact_permutation_p_two_sided": 0.7,
@@ -68,7 +68,17 @@
       "six_asset_extension_rank_correlation": 0.2125118592516207,
       "six_asset_extension_rank_exact_p": 0.7333333333333333,
       "six_asset_extension_leave_one_out_positive": 6,
-      "plain_finding": "The frozen five-asset breadth result was positive but unstable. In the separately frozen six-asset extension, the slope remains positive and is positive in all six leave-one-out samples, but exact permutation inference does not reject zero. Breadth is more sign-stable after adding BNB, yet there is still no statistically robust valuation-premium evidence."
+      "verified_universe_assets": 23,
+      "verified_universe_best_group": "bundle_financial_integration",
+      "verified_universe_best_group_loo_rmse": 1.7593503101418813,
+      "verified_universe_raw_breadth_loo_rmse": 1.8109056787314675,
+      "verified_universe_fdr_rejections": [
+        "bundle_monetary_store",
+        "bundle_supply_absorption",
+        "bundle_financial_integration"
+      ],
+      "verified_universe_decision": "theory_groups_favored",
+      "plain_finding": "The 23-asset verified-universe extension favors theory-defined groups over raw function breadth. Financial integration is the best single predictor and modestly lowers leave-one-asset-out error; financial integration, monetary/store use, and supply absorption survive 10% false-discovery control. The result is exploratory, cross-sectional, and non-causal."
     }
   },
   "classification_review": {

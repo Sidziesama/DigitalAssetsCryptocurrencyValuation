@@ -451,6 +451,10 @@
           "args": []
         },
         {
+          "module": "crypto_hypothesis_register",
+          "args": []
+        },
+        {
           "module": "data_map",
           "args": []
         },

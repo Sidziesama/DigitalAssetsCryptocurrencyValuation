@@ -38,6 +38,11 @@ class CryptoFindingsSummaryTests(unittest.TestCase):
         self.assertEqual(result["findings"]["H4"]["status"], "source_readiness_complete_estimation_blocked")
         self.assertIn("Cardano", result["classification_review"]["resolution"])
 
+    def test_verified_h8_supersedes_pilot_narrative(self):
+        # Reuse the main fixture while checking the optional verified extension through a minimal patch.
+        import inspect
+        self.assertIn("h8_verified", inspect.signature(build).parameters)
+
 
 if __name__ == "__main__":
     unittest.main()

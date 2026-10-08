@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 165,
+    "files": 167,
     "by_phase": {
       "00_foundation": 24,
       "01_classification": 63,
-      "02_valuation": 27,
+      "02_valuation": 29,
       "03_risk": 7,
       "04_stablecoin_deferred": 44
     },
@@ -49,6 +49,8 @@
       "crypto_h8_verified_universe_results.csv",
       "crypto_h8_verified_universe_sensitivities.csv",
       "crypto_h8_verified_universe_summary.json",
+      "crypto_hypothesis_evidence_register.csv",
+      "crypto_hypothesis_evidence_register.json",
       "crypto_function_risk_assets.csv",
       "crypto_return_market_models.csv",
       "crypto_return_panel_summary.json",
@@ -248,7 +250,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 55164,
+      "bytes": 58208,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1185,7 +1187,7 @@
       "phase": "01_classification",
       "file": "crypto_research_scope.json",
       "kind": "summary",
-      "bytes": 2008,
+      "bytes": 2025,
       "written_by": [
         "crypto_research_scope"
       ],
@@ -1293,11 +1295,13 @@
       "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
-      "bytes": 5090,
+      "bytes": 5614,
       "written_by": [
         "crypto_findings_summary"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_register"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -1477,7 +1481,8 @@
       "kind": "summary",
       "bytes": 1896,
       "written_by": [
-        "crypto_h2_strict_capture_sensitivity"
+        "crypto_h2_strict_capture_sensitivity",
+        "crypto_hypothesis_register"
       ],
       "read_by": [],
       "named_in_config": [
@@ -1568,11 +1573,11 @@
       "kind": "summary",
       "bytes": 1547,
       "written_by": [
-        "crypto_findings_summary",
         "crypto_h8_six_asset_extension"
       ],
       "read_by": [
-        "checkpoint_readiness"
+        "checkpoint_readiness",
+        "crypto_findings_summary"
       ],
       "named_in_config": [
         "pipeline_stages.json"
@@ -1609,7 +1614,32 @@
       "kind": "summary",
       "bytes": 4528,
       "written_by": [
+        "crypto_findings_summary",
         "crypto_h8_verified_universe"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_hypothesis_evidence_register.csv",
+      "kind": "table",
+      "bytes": 2081,
+      "written_by": [
+        "crypto_hypothesis_register"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_hypothesis_evidence_register.json",
+      "kind": "summary",
+      "bytes": 3311,
+      "written_by": [
+        "crypto_hypothesis_register"
       ],
       "read_by": [],
       "named_in_config": [],

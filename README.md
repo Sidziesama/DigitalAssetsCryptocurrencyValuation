@@ -42,8 +42,9 @@ These become six registered experiments. Each has a specification file committed
 |---|---|---|
 | P1_H1 | Usage is associated with higher network value | Estimated; positive, not significant |
 | P1_H2 | Usage matters more when value capture is live | Estimated; **definition-dependent** |
-| P1_H3 | Theory bundles beat a raw count of functions | Estimated; bundles do not improve on the count |
-| P1_H4 | Staking reduces liquid float and affects liquidity | Source-ready; estimation blocked |
+| H3 | Greater circulating-supply growth predicts weaker returns | Diagnostic only; insufficient within-asset variation |
+| H4 | Staking reduces liquid float and affects liquidity | Source-ready; estimation blocked |
+| H8 | Theory groups outperform a raw count of functions | 23-asset extension favors groups; exploratory |
 | P1_H5 | Turning a capture mechanism on or off moves value | Estimated; no effect detected |
 | P1_H6 | Function predicts risk exposure, not return | Estimated; **not supported after correction** |
 

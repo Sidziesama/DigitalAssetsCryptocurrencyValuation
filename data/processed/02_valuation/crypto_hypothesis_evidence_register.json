@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "status": "crypto_hypothesis_evidence_register_complete",
+    "hypotheses": 5,
+    "estimated": 3,
+    "blocked": [
+      "H4"
+    ],
+    "guardrail": "Exploratory associations are not causal findings or investment recommendations."
+  },
+  "hypotheses": [
+    {
+      "hypothesis": "H1",
+      "sample": "4 assets",
+      "test_state": "estimated_exploratory",
+      "result": "suggestive_not_confirmed",
+      "key_statistic": "transactions coefficient=0.1122; p=0.2500",
+      "advisory_interpretation": "Usage is economically relevant to monitor, but the present sample cannot establish a general valuation relationship.",
+      "next_action": "Expand primary-source activity coverage without selecting assets from observed returns.",
+      "research_question": "Is greater network usage associated with higher network value?"
+    },
+    {
+      "hypothesis": "H2",
+      "sample": "11 assets",
+      "test_state": "estimated_exploratory_definition_sensitive",
+      "result": "not_robust_to_strict_capture_rule",
+      "key_statistic": "broad interaction=0.1322, p=0.0820; strict interaction=0.0612, p=0.4775",
+      "advisory_interpretation": "Fee activity alone is insufficient; the definition and path of holder capture materially change the result.",
+      "next_action": "Retain both specifications and seek an out-of-sample period rather than redefining capture again.",
+      "research_question": "Is usage more valuable when fees reach the token or its holders?"
+    },
+    {
+      "hypothesis": "H3",
+      "sample": "4 assets; 2 vary",
+      "test_state": "diagnostic_not_identification_ready",
+      "result": "not_supported",
+      "key_statistic": "supply-growth coefficient=1130.6496; p=0.2500",
+      "advisory_interpretation": "Current daily supply data do not identify a dilution effect.",
+      "next_action": "Build a dated unlock, issuance, and burn-event panel before re-estimation.",
+      "research_question": "Is greater circulating-supply growth associated with weaker returns?"
+    },
+    {
+      "hypothesis": "H4",
+      "sample": "6 planned assets",
+      "test_state": "blocked_on_historical_staking_coverage",
+      "result": "not_yet_tested",
+      "key_statistic": "complete positive-staking histories=1",
+      "advisory_interpretation": "Staking classification is usable descriptively, but its liquidity effect cannot yet be estimated.",
+      "next_action": "Complete archival ETH consensus and current Aave Umbrella staking histories.",
+      "research_question": "Does staking reduce liquid float and affect liquidity or risk?"
+    },
+    {
+      "hypothesis": "H8",
+      "sample": "23 classified assets; 22 primary-outcome eligible",
+      "test_state": "estimated_post_pilot_exploratory",
+      "result": "theory_groups_favored",
+      "key_statistic": "best=bundle_financial_integration; RMSE=1.7594 vs breadth=1.8109",
+      "advisory_interpretation": "Which functions an asset performs appears more informative than simply counting functions; financial integration is strongest in this sample.",
+      "next_action": "Treat as hypothesis-generating and validate on a later fixed universe or time window.",
+      "research_question": "Do theory-defined economic-function groups explain valuation better than raw function breadth?"
+    }
+  ]
+}

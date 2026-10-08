@@ -9,7 +9,8 @@ from typing import Any
 def build(
     scope: dict[str, Any], estimates: dict[str, Any], inference: dict[str, Any],
     nonoverlap: dict[str, Any], readiness: dict[str, Any], reviews: dict[str, Any], h8: dict[str, Any],
-    h1: dict[str, Any], h3: dict[str, Any], h4: dict[str, Any], h8_extension: dict[str, Any] | None = None
+    h1: dict[str, Any], h3: dict[str, Any], h4: dict[str, Any], h8_extension: dict[str, Any] | None = None,
+    h8_verified: dict[str, Any] | None = None
 ) -> dict[str, Any]:
     if scope["active_hypotheses"] != ["H1", "H2", "H3", "H4", "H8"]:
         raise ValueError("findings summary requires the active crypto-only scope")
@@ -31,7 +32,8 @@ def build(
     return {
         "status": "crypto_findings_frozen_exploratory" if review_complete else "crypto_findings_current_adjudication_pending",
         "active_hypotheses": scope["active_hypotheses"],
-        "headline": "Fee activity has a persistent positive association with valuation when active capture exists, but the evidence is exploratory and does not predict seven-day returns.",
+        "headline": ("In the verified 23-asset classification universe, financial integration is the strongest single valuation indicator and modestly outpredicts raw function breadth; H2 fee-and-capture evidence remains definition-sensitive."
+                     if h8_verified else "Fee activity has a persistent positive association with valuation when active capture exists, but the evidence is exploratory and does not predict seven-day returns."),
         "findings": {
             "H1": {
                 "status": "exploratory_positive_association_not_confirmed",
@@ -79,7 +81,7 @@ def build(
                 "plain_finding": "H4 is not yet estimable. A complete 90-day BNB consensus-staking series ranges from about 25.51m to 25.78m BNB. The exact ETH active-effective-balance collector is implemented but needs an archival consensus endpoint, while the legacy stkAAVE series excludes current Umbrella aToken/GHO stake. One complete positive-staking series remains insufficient to identify liquid-float effects.",
             },
             "H8": {
-                "status": "exploratory_no_robust_breadth_premium_evidence",
+                "status": "verified_universe_theory_groups_favored_exploratory" if h8_verified else "exploratory_no_robust_breadth_premium_evidence",
                 "design_ready_assets": readiness["h8_design_ready_assets"],
                 "raw_breadth_slope": h8["slope"],
                 "exact_permutation_p_two_sided": h8["exact_permutation_p_two_sided"],
@@ -91,7 +93,14 @@ def build(
                 "six_asset_extension_rank_correlation": h8_extension["spearman_rank_correlation"] if h8_extension else None,
                 "six_asset_extension_rank_exact_p": h8_extension["exact_rank_permutation_p_two_sided"] if h8_extension else None,
                 "six_asset_extension_leave_one_out_positive": h8_extension["leave_one_asset_out_positive"] if h8_extension else None,
-                "plain_finding": "The frozen five-asset breadth result was positive but unstable. In the separately frozen six-asset extension, the slope remains positive and is positive in all six leave-one-out samples, but exact permutation inference does not reject zero. Breadth is more sign-stable after adding BNB, yet there is still no statistically robust valuation-premium evidence.",
+                "verified_universe_assets": h8_verified["assets_in_classification_universe"] if h8_verified else None,
+                "verified_universe_best_group": h8_verified["best_single_group_model"] if h8_verified else None,
+                "verified_universe_best_group_loo_rmse": h8_verified["best_single_group_loo_rmse"] if h8_verified else None,
+                "verified_universe_raw_breadth_loo_rmse": h8_verified["raw_breadth_loo_rmse"] if h8_verified else None,
+                "verified_universe_fdr_rejections": h8_verified["fdr_10pct_rejections"] if h8_verified else [],
+                "verified_universe_decision": h8_verified["decision_rule_result"] if h8_verified else None,
+                "plain_finding": ("The 23-asset verified-universe extension favors theory-defined groups over raw function breadth. Financial integration is the best single predictor and modestly lowers leave-one-asset-out error; financial integration, monetary/store use, and supply absorption survive 10% false-discovery control. The result is exploratory, cross-sectional, and non-causal."
+                                  if h8_verified else "The frozen five-asset breadth result was positive but unstable. In the separately frozen six-asset extension, the slope remains positive and is positive in all six leave-one-out samples, but exact permutation inference does not reject zero. Breadth is more sign-stable after adding BNB, yet there is still no statistically robust valuation-premium evidence."),
             },
         },
         "classification_review": {
@@ -122,6 +131,7 @@ def run(repo: Path) -> dict[str, Any]:
         load("data/processed/02_valuation/crypto_h3_supply_pilot.json"),
         load("data/processed/01_classification/crypto_h4_source_readiness.json"),
         load("data/processed/02_valuation/crypto_h8_six_asset_extension.json"),
+        load("data/processed/02_valuation/crypto_h8_verified_universe_summary.json"),
     )
     output = repo / "data/processed/02_valuation/crypto_findings_summary.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
