@@ -44,7 +44,13 @@
       "effect_per_basis_point": 0.11306496492090846,
       "exact_p": 0.25,
       "observed_sign": "positive",
-      "plain_finding": "The free circulating-supply diagnostic does not support H3: its coefficient is positive rather than the predicted negative and exact inference does not reject zero. More importantly, only BTC and ETH vary within the window, so a point-in-time unlock and issuance event panel is still required for an identification-ready test."
+      "supply_events_estimated": 12,
+      "supply_event_assets": [
+        "crypto_arb"
+      ],
+      "supply_event_mean_primary_car": 0.015454530380095616,
+      "supply_events_matching_negative_sign": 5,
+      "plain_finding": "The daily supply diagnostic does not support H3. A separately frozen event study estimates 12 material ARB monthly unlocks: the mean three-day abnormal log return is 0.015, and only 5 events have the predicted negative sign. Because all events belong to one asset, they are dependent descriptive observations and pooled inference remains prohibited."
     },
     "H4": {
       "status": "source_readiness_complete_estimation_blocked",

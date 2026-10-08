@@ -4,6 +4,8 @@ Latest empirical checkpoint: the frozen 23-asset H8 extension finds that financi
 
 Visual summary: `research/findings/crypto-visual-analysis.md` shows the classification-to-hypothesis flow, group coverage, and H8 prediction comparison.
 
+Latest H3 checkpoint: 12 material ARB monthly unlocks have been estimated descriptively, but the mean three-day abnormal return has the opposite sign from H3 and a second qualifying asset is still required before pooled inference.
+
 **Can the economic jobs a cryptoasset performs explain what it is worth and how risky it is?**
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.

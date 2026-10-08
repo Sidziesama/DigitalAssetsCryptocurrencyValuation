@@ -1,0 +1,11 @@
+{
+  "status": "h3_supply_event_ledger_ready",
+  "candidate_rows": 30,
+  "eligible_events": 12,
+  "eligible_assets": [
+    "crypto_arb"
+  ],
+  "excluded_candidates": 18,
+  "event_dates_observed_before_outcomes": true,
+  "next_gate": "At least two assets with eligible, uncontaminated events are required for pooled H3 inference; single-asset estimates remain descriptive."
+}

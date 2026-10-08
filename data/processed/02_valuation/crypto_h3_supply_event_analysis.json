@@ -1,0 +1,16 @@
+{
+  "status": "h3_single_asset_descriptive_event_analysis_complete",
+  "events_estimated": 12,
+  "assets": [
+    "crypto_arb"
+  ],
+  "pooled_inference_permitted": false,
+  "mean_primary_car": 0.015454530380095616,
+  "median_primary_car": 0.006327798349187587,
+  "events_matching_negative_h3_sign": 5,
+  "primary_window": [
+    -1,
+    1
+  ],
+  "interpretation": "Repeated events from one asset are dependent observations. Until a second asset qualifies, estimates are descriptive and no pooled p-value is reported."
+}

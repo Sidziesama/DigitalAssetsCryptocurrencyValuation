@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-08",
+  "sources": [
+    {
+      "asset_id": "crypto_arb",
+      "source_type": "official_unlock_formula",
+      "source_url": "https://docs.arbitrum.foundation/token-supply",
+      "event_type": "scheduled_unlock",
+      "first_monthly_post_cliff_date": "2024-04-16",
+      "last_monthly_date": "2027-03-16",
+      "locked_allocation_tokens": 4447000000,
+      "initial_cliff_share": 0.25,
+      "remaining_monthly_periods": 36,
+      "date_rule": "The official documentation states that team, contributor, and investor tokens unlock monthly after the first 16 March 2024 unlock; subsequent events are dated on the 16th.",
+      "candidate_status": "exact_date_and_quantity_formula_available"
+    },
+    {
+      "asset_id": "crypto_sui",
+      "source_type": "official_month_end_circulation_api",
+      "source_url": "https://sui-circulation.suiexplorer.com/api/sui_circulation",
+      "documentation_url": "https://www.sui.io/blog/token-release-schedule",
+      "event_type": "vesting_release",
+      "date_rule": "The official API reports circulation at each month end but does not identify exact intra-month effective dates.",
+      "candidate_status": "excluded_exact_event_date_unavailable"
+    }
+  ]
+}

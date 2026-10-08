@@ -31,12 +31,12 @@
     },
     {
       "hypothesis": "H3",
-      "sample": "4 assets; 2 vary",
-      "test_state": "diagnostic_not_identification_ready",
+      "sample": "12 events from one asset",
+      "test_state": "descriptive_event_result_not_identification_ready",
       "result": "not_supported",
-      "key_statistic": "supply-growth coefficient=1130.6496; p=0.2500",
+      "key_statistic": "mean [-1,+1] abnormal return=0.0155; predicted-negative events=5/12",
       "advisory_interpretation": "Current daily supply data do not identify a dilution effect.",
-      "next_action": "Build a dated unlock, issuance, and burn-event panel before re-estimation.",
+      "next_action": "Add a second qualifying asset before pooled inference; preserve the single-asset ARB result as descriptive.",
       "research_question": "Is greater circulating-supply growth associated with weaker returns?"
     },
     {

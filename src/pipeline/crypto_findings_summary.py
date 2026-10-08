@@ -10,7 +10,7 @@ def build(
     scope: dict[str, Any], estimates: dict[str, Any], inference: dict[str, Any],
     nonoverlap: dict[str, Any], readiness: dict[str, Any], reviews: dict[str, Any], h8: dict[str, Any],
     h1: dict[str, Any], h3: dict[str, Any], h4: dict[str, Any], h8_extension: dict[str, Any] | None = None,
-    h8_verified: dict[str, Any] | None = None
+    h8_verified: dict[str, Any] | None = None, h3_events: dict[str, Any] | None = None
 ) -> dict[str, Any]:
     if scope["active_hypotheses"] != ["H1", "H2", "H3", "H4", "H8"]:
         raise ValueError("findings summary requires the active crypto-only scope")
@@ -69,7 +69,12 @@ def build(
                 "effect_per_basis_point": h3["supply_growth_effect_per_basis_point"],
                 "exact_p": h3["inference"]["wild_cluster_bootstrap_p_two_sided"],
                 "observed_sign": h3["observed_supply_growth_sign"],
-                "plain_finding": "The free circulating-supply diagnostic does not support H3: its coefficient is positive rather than the predicted negative and exact inference does not reject zero. More importantly, only BTC and ETH vary within the window, so a point-in-time unlock and issuance event panel is still required for an identification-ready test.",
+                "supply_events_estimated": h3_events["events_estimated"] if h3_events else 0,
+                "supply_event_assets": h3_events["assets"] if h3_events else [],
+                "supply_event_mean_primary_car": h3_events["mean_primary_car"] if h3_events else None,
+                "supply_events_matching_negative_sign": h3_events["events_matching_negative_h3_sign"] if h3_events else None,
+                "plain_finding": (f"The daily supply diagnostic does not support H3. A separately frozen event study estimates {h3_events['events_estimated']} material ARB monthly unlocks: the mean three-day abnormal log return is {h3_events['mean_primary_car']:.3f}, and only {h3_events['events_matching_negative_h3_sign']} events have the predicted negative sign. Because all events belong to one asset, they are dependent descriptive observations and pooled inference remains prohibited."
+                                  if h3_events else "The free circulating-supply diagnostic does not support H3: its coefficient is positive rather than the predicted negative and exact inference does not reject zero. More importantly, only BTC and ETH vary within the window, so a point-in-time unlock and issuance event panel is still required for an identification-ready test."),
             },
             "H4": {
                 "status": "source_readiness_complete_estimation_blocked",
@@ -132,6 +137,7 @@ def run(repo: Path) -> dict[str, Any]:
         load("data/processed/01_classification/crypto_h4_source_readiness.json"),
         load("data/processed/02_valuation/crypto_h8_six_asset_extension.json"),
         load("data/processed/02_valuation/crypto_h8_verified_universe_summary.json"),
+        load("data/processed/02_valuation/crypto_h3_supply_event_analysis.json"),
     )
     output = repo / "data/processed/02_valuation/crypto_findings_summary.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

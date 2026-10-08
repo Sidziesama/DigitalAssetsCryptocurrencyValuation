@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 167,
+    "files": 172,
     "by_phase": {
       "00_foundation": 24,
       "01_classification": 63,
-      "02_valuation": 29,
+      "02_valuation": 34,
       "03_risk": 7,
       "04_stablecoin_deferred": 44
     },
@@ -45,8 +45,9 @@
       "point_in_time_design_checkpoint.json",
       "venus_bnb_collateral_state_daily.csv",
       "venus_bnb_collateral_state_summary.json",
+      "crypto_h3_supply_event_curve.csv",
+      "crypto_h3_supply_event_estimates.csv",
       "crypto_h8_verified_universe_sensitivities.csv",
-      "crypto_h8_verified_universe_summary.json",
       "crypto_hypothesis_evidence_register.json",
       "crypto_function_risk_assets.csv",
       "crypto_return_market_models.csv",
@@ -247,7 +248,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 58208,
+      "bytes": 60027,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -326,6 +327,7 @@
         "crypto_collateral",
         "crypto_expansion_inputs",
         "crypto_h2_pilot_panel",
+        "crypto_h3_supply_event_ledger",
         "crypto_h4_readiness",
         "crypto_h8_verified_universe",
         "stablecoin_trading_activity"
@@ -1219,6 +1221,7 @@
       ],
       "read_by": [],
       "named_in_config": [
+        "crypto_h3_supply_event_study.json",
         "crypto_h8_verified_universe.json"
       ],
       "orphan": false
@@ -1294,7 +1297,7 @@
       "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
-      "bytes": 5614,
+      "bytes": 5845,
       "written_by": [
         "crypto_findings_summary"
       ],
@@ -1492,6 +1495,76 @@
     },
     {
       "phase": "02_valuation",
+      "file": "crypto_h3_supply_event_analysis.json",
+      "kind": "summary",
+      "bytes": 518,
+      "written_by": [
+        "crypto_findings_summary",
+        "crypto_h3_supply_event_analysis"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h3_supply_event_curve.csv",
+      "kind": "table",
+      "bytes": 866,
+      "written_by": [
+        "crypto_h3_supply_event_analysis"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h3_supply_event_estimates.csv",
+      "kind": "table",
+      "bytes": 2249,
+      "written_by": [
+        "crypto_h3_supply_event_analysis"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h3_supply_event_ledger.csv",
+      "kind": "table",
+      "bytes": 6643,
+      "written_by": [
+        "crypto_h3_supply_event_ledger"
+      ],
+      "read_by": [
+        "crypto_h3_supply_event_analysis"
+      ],
+      "named_in_config": [
+        "crypto_h3_supply_event_study.json",
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h3_supply_event_ledger.json",
+      "kind": "summary",
+      "bytes": 374,
+      "written_by": [
+        "crypto_h3_supply_event_ledger"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
       "file": "crypto_h3_supply_pilot.csv",
       "kind": "table",
       "bytes": 27635,
@@ -1615,10 +1688,11 @@
       "kind": "summary",
       "bytes": 4528,
       "written_by": [
-        "crypto_findings_summary",
         "crypto_h8_verified_universe"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_findings_summary"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -1626,7 +1700,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.csv",
       "kind": "table",
-      "bytes": 2081,
+      "bytes": 2158,
       "written_by": [
         "crypto_hypothesis_register"
       ],
@@ -1640,7 +1714,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.json",
       "kind": "summary",
-      "bytes": 3311,
+      "bytes": 3388,
       "written_by": [
         "crypto_hypothesis_register"
       ],
@@ -1808,6 +1882,7 @@
       "read_by": [],
       "named_in_config": [
         "crypto_function_risk_exposure.json",
+        "crypto_h3_supply_event_study.json",
         "crypto_h8_verified_universe.json",
         "crypto_mechanism_event_study_long.json",
         "crypto_return_factor_baseline.json"

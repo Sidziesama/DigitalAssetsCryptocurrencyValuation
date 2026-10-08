@@ -54,7 +54,7 @@ def run(repo: Path) -> dict[str,Any]:
     out=repo/"research/figures"; out.mkdir(parents=True,exist_ok=True)
     for name,content in visuals.items(): (out/name).write_text(content,encoding="utf-8")
     report=repo/"research/findings/crypto-visual-analysis.md"
-    report.write_text("# Crypto economic-function analysis — visual summary\n\n![Research flow](../figures/crypto-hypothesis-flow.svg)\n\n![Function-group coverage](../figures/crypto-function-group-coverage.svg)\n\n![H8 prediction error](../figures/crypto-h8-prediction-error.svg)\n\nGreen H8 bars identify groups that survive the pre-specified 10% false-discovery threshold. Lower prediction error is better. These are exploratory cross-sectional associations, not causal estimates.\n",encoding="utf-8")
+    report.write_text("# Crypto economic-function analysis — visual summary\n\n![Research flow](../figures/crypto-hypothesis-flow.svg)\n\n![Function-group coverage](../figures/crypto-function-group-coverage.svg)\n\n![H8 prediction error](../figures/crypto-h8-prediction-error.svg)\n\n![H3 ARB supply-event path](../figures/crypto-h3-supply-event-path.svg)\n\nGreen H8 bars identify groups that survive the pre-specified 10% false-discovery threshold. Lower prediction error is better. The H3 path is descriptive because every qualifying event belongs to ARB. These are exploratory associations, not causal estimates.\n",encoding="utf-8")
     return {"status":"crypto_research_visuals_complete","figures":sorted(visuals),"report":str(report.relative_to(repo))}
 
 

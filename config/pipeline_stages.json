@@ -336,6 +336,14 @@
           "args": []
         },
         {
+          "module": "crypto_h3_supply_event_ledger",
+          "args": []
+        },
+        {
+          "module": "crypto_h3_supply_event_analysis",
+          "args": []
+        },
+        {
           "module": "crypto_h4_readiness",
           "args": []
         },
