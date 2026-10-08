@@ -42,14 +42,11 @@
       "crypto_phase1_consistency_audit.csv",
       "crypto_phase1_indicator_observability.csv",
       "crypto_verified_function_groups.csv",
-      "crypto_verified_universe_summary.json",
       "point_in_time_design_checkpoint.json",
       "venus_bnb_collateral_state_daily.csv",
       "venus_bnb_collateral_state_summary.json",
-      "crypto_h8_verified_universe_results.csv",
       "crypto_h8_verified_universe_sensitivities.csv",
       "crypto_h8_verified_universe_summary.json",
-      "crypto_hypothesis_evidence_register.csv",
       "crypto_hypothesis_evidence_register.json",
       "crypto_function_risk_assets.csv",
       "crypto_return_market_models.csv",
@@ -1234,7 +1231,9 @@
       "written_by": [
         "crypto_verified_universe"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_research_visuals"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -1592,7 +1591,9 @@
       "written_by": [
         "crypto_h8_verified_universe"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_research_visuals"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -1629,7 +1630,9 @@
       "written_by": [
         "crypto_hypothesis_register"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_research_visuals"
+      ],
       "named_in_config": [],
       "orphan": false
     },

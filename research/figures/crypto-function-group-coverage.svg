@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="486" viewBox="0 0 900 486" role="img" aria-label="Economic-function groups in the verified universe">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="32" text-anchor="start" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#17212b">Economic-function groups in the verified universe</text>
+<text x="24" y="57" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#647383">Assets may belong to several groups; n = 23.</text>
+<text x="248" y="110" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Monetary Store</text>
+<rect x="260" y="92" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="92" width="509.26" height="22" rx="3" fill="#3478b8"/>
+<text x="777.2592592592592" y="109" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">16 assets</text>
+<text x="248" y="152" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Transaction Service Demand</text>
+<rect x="260" y="134" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="134" width="509.26" height="22" rx="3" fill="#3478b8"/>
+<text x="777.2592592592592" y="151" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">16 assets</text>
+<text x="248" y="194" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Security Commitment</text>
+<rect x="260" y="176" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="176" width="445.60" height="22" rx="3" fill="#3478b8"/>
+<text x="713.6018518518518" y="193" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">14 assets</text>
+<text x="248" y="236" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Subsidized Participation</text>
+<rect x="260" y="218" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="218" width="445.60" height="22" rx="3" fill="#3478b8"/>
+<text x="713.6018518518518" y="235" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">14 assets</text>
+<text x="248" y="278" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Control Rights</text>
+<rect x="260" y="260" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="260" width="350.12" height="22" rx="3" fill="#3478b8"/>
+<text x="618.1157407407406" y="277" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">11 assets</text>
+<text x="248" y="320" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Holder Capture</text>
+<rect x="260" y="302" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="302" width="350.12" height="22" rx="3" fill="#3478b8"/>
+<text x="618.1157407407406" y="319" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">11 assets</text>
+<text x="248" y="362" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Supply Absorption</text>
+<rect x="260" y="344" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="344" width="286.46" height="22" rx="3" fill="#3478b8"/>
+<text x="554.4583333333333" y="361" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">9 assets</text>
+<text x="248" y="404" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#17212b">Financial Integration</text>
+<rect x="260" y="386" width="550" height="22" rx="3" fill="#d7dde3" opacity="0.38"/>
+<rect x="260" y="386" width="159.14" height="22" rx="3" fill="#3478b8"/>
+<text x="427.1435185185185" y="403" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">5 assets</text>
+</svg>

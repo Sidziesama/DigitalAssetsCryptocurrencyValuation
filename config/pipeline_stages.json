@@ -455,6 +455,10 @@
           "args": []
         },
         {
+          "module": "crypto_research_visuals",
+          "args": []
+        },
+        {
           "module": "data_map",
           "args": []
         },

@@ -119,7 +119,7 @@ Evidence, mechanism states, review reconciliation and the ten-function taxonomy.
 | `crypto_research_scope.json` | `crypto_research_scope` | `checkpoint_readiness`, `crypto_findings_summary` · via `pipeline_stages.json` |
 | `crypto_verified_function_groups.csv` | `crypto_verified_universe` | terminal output |
 | `crypto_verified_universe_profiles.csv` | `crypto_verified_universe` | via `crypto_h8_verified_universe.json` |
-| `crypto_verified_universe_summary.json` | `crypto_verified_universe` | terminal output |
+| `crypto_verified_universe_summary.json` | `crypto_verified_universe` | `crypto_research_visuals` |
 | `independent_review_summary.json` | `review_adjudication` | `checkpoint_readiness`, `classification_status`, `crypto_findings_summary`, `research_universe_workbook` |
 | `point_in_time_design_checkpoint.json` | `checkpoint_readiness` | terminal output |
 | `venus_bnb_collateral_state_daily.csv` | `venus_bnb_collateral_state` | terminal output |
@@ -151,10 +151,10 @@ H1 usage, H2 fee-and-capture, H3 supply, H8 breadth, and the mechanism event stu
 | `crypto_h8_breadth_pilot.json` | `crypto_h8_breadth_pilot` | `checkpoint_readiness`, `crypto_findings_summary` · via `pipeline_stages.json` |
 | `crypto_h8_six_asset_extension.csv` | `crypto_h8_six_asset_extension` | via `pipeline_stages.json` |
 | `crypto_h8_six_asset_extension.json` | `crypto_h8_six_asset_extension` | `checkpoint_readiness`, `crypto_findings_summary` · via `pipeline_stages.json` |
-| `crypto_h8_verified_universe_results.csv` | `crypto_h8_verified_universe` | terminal output |
+| `crypto_h8_verified_universe_results.csv` | `crypto_h8_verified_universe` | `crypto_research_visuals` |
 | `crypto_h8_verified_universe_sensitivities.csv` | `crypto_h8_verified_universe` | terminal output |
 | `crypto_h8_verified_universe_summary.json` | `crypto_findings_summary`, `crypto_h8_verified_universe` | terminal output |
-| `crypto_hypothesis_evidence_register.csv` | `crypto_hypothesis_register` | terminal output |
+| `crypto_hypothesis_evidence_register.csv` | `crypto_hypothesis_register` | `crypto_research_visuals` |
 | `crypto_hypothesis_evidence_register.json` | `crypto_hypothesis_register` | terminal output |
 | `crypto_mechanism_event_study.csv` | `crypto_mechanism_event_study` | via `pipeline_stages.json` |
 | `crypto_mechanism_event_study.json` | — | `crypto_mechanism_event_study` · via `pipeline_stages.json` |

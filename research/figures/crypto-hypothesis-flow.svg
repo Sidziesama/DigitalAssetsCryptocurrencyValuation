@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-label="Research flow from classification to five hypothesis results">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="32" text-anchor="start" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#17212b">From classification to empirical evidence</text>
+<text x="24" y="57" text-anchor="start" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#647383">One verified matrix feeds five distinct tests; evidence strength differs by question.</text>
+<rect x="350" y="82" width="300" height="54" rx="8" fill="#17324d"/>
+<text x="500" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff">23 assets × 10 economic functions</text>
+<text x="500" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#ffffff">230 human-verified decisions</text>
+<line x1="500" y1="136" x2="120" y2="198" stroke="#647383" stroke-width="1.5"/>
+<rect x="55" y="198" width="130" height="94" rx="8" fill="#d99a2b" opacity="0.9"/>
+<text x="120" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">H1</text>
+<text x="120" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">Suggestive</text>
+<text x="120" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#ffffff">4 assets</text>
+<line x1="500" y1="136" x2="310" y2="198" stroke="#647383" stroke-width="1.5"/>
+<rect x="245" y="198" width="130" height="94" rx="8" fill="#d99a2b" opacity="0.9"/>
+<text x="310" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">H2</text>
+<text x="310" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">Definition-sensitive</text>
+<text x="310" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#ffffff">11 assets</text>
+<line x1="500" y1="136" x2="500" y2="198" stroke="#647383" stroke-width="1.5"/>
+<rect x="435" y="198" width="130" height="94" rx="8" fill="#b6534c" opacity="0.9"/>
+<text x="500" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">H3</text>
+<text x="500" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">Not identified</text>
+<text x="500" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#ffffff">4 assets; 2 vary</text>
+<line x1="500" y1="136" x2="690" y2="198" stroke="#647383" stroke-width="1.5"/>
+<rect x="625" y="198" width="130" height="94" rx="8" fill="#d7dde3" opacity="0.9"/>
+<text x="690" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#17212b">H4</text>
+<text x="690" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#17212b">Data-blocked</text>
+<text x="690" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#17212b">6 planned assets</text>
+<line x1="500" y1="136" x2="880" y2="198" stroke="#647383" stroke-width="1.5"/>
+<rect x="815" y="198" width="130" height="94" rx="8" fill="#3b8c6e" opacity="0.9"/>
+<text x="880" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">H8</text>
+<text x="880" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">Groups favored</text>
+<text x="880" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#ffffff">23 classified assets; 22 primary-outcome eligible</text>
+<text x="500" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#647383">Exploratory association ≠ causation or investment recommendation</text>
+</svg>
