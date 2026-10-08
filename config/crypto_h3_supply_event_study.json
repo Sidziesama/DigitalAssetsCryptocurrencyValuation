@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-before-event-collection",
+  "status": "frozen_before_supply_event_collection_and_estimation",
+  "freeze_date": "2026-10-08",
+  "hypothesis": "H3",
+  "research_question": "Do material, dated increases or decreases in economically available token supply produce directionally consistent market-adjusted returns?",
+  "active_universe_input": "data/processed/01_classification/crypto_verified_universe_profiles.csv",
+  "market_input": "data/processed/03_risk/crypto_return_panel_daily.csv",
+  "event_ledger": "data/processed/02_valuation/crypto_h3_supply_event_ledger.csv",
+  "event_selection": {
+    "included_types": ["scheduled_unlock", "vesting_release", "issuance_policy_change", "burn_policy_change", "one_time_burn"],
+    "primary_source_required": true,
+    "exact_effective_date_required": true,
+    "minimum_absolute_supply_impact_tokens": 1,
+    "minimum_impact_share_of_pre_event_circulating_supply": 0.005,
+    "materiality_rule": "An event is eligible when its evidenced gross supply impact is at least 0.5% of circulating supply measured immediately before the event.",
+    "excluded_types": ["routine_block_rewards", "routine_staking_rewards", "unverified_aggregator_estimate", "event_inferred_from_price", "undated_policy_statement"],
+    "direction_rule": "Unlocks, vesting releases, and issuance increases are positive supply shocks with an expected negative return sign. Burns and issuance reductions are negative supply shocks with an expected positive return sign."
+  },
+  "market_window": {"start": "2020-01-01", "end": "2026-08-22"},
+  "estimation": {
+    "estimation_window_trading_days": [-120, -31],
+    "primary_event_window_trading_days": [-1, 1],
+    "secondary_event_windows_trading_days": [[-3, 3], [-7, 7], [-14, 14]],
+    "expected_return_model": "asset_return_on_equal_weight_active_crypto_market_return",
+    "minimum_estimation_observations": 60,
+    "primary_outcome": "cumulative_abnormal_log_return",
+    "event_level_inference": "calendar_date_placebo_distribution",
+    "pooled_inference": "sign_flip_randomization_of_direction_adjusted_event_returns",
+    "random_seed": 20261008,
+    "monte_carlo_draws": 100000
+  },
+  "contamination": {
+    "window_calendar_days": 7,
+    "exclude_when_same_asset_has_another_supply_event": true,
+    "record_known_non_supply_token_events": true,
+    "policy": "Contaminated events remain in the audit ledger but are excluded from the primary pooled estimate and included only in a labeled sensitivity."
+  },
+  "reporting": [
+    "Report every sourced candidate and every exclusion reason.",
+    "Report individual-event and pooled estimates, including sign-reversed and null outcomes.",
+    "Show event-time cumulative abnormal return charts with sample counts.",
+    "Do not interpret announcement-date anticipation as an effective-date treatment effect.",
+    "Do not make causal, price-target, or investment-recommendation claims."
+  ]
+}
