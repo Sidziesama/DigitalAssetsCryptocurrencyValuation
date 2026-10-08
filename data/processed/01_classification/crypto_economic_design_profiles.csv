@@ -1,26 +1,26 @@
 asset_id,symbol,selection_tier,valid_from,consensus,va_monetary,va_gas,va_stake,va_burn,va_scarcity,va_collateral,va_gov,va_protocol,va_utility,va_incentive,va_breadth_count,direct_capture_active,h2_capture_group,classification_status
-crypto_btc,BTC,market_core,2026-08-22,PoW,1,0,0,0,1,1,0,0,0,0,3,0,no_active_capture,provisional_pending_targeted_review
-crypto_eth,ETH,market_core,2026-08-22,PoS,1,1,1,1,0,1,0,1,1,0,7,1,active_capture,provisional_pending_targeted_review
-crypto_bnb,BNB,market_core,2026-08-22,PoS family,1,1,1,1,0,1,1,1,1,1,9,1,active_capture,provisional_pending_targeted_review
-crypto_xrp,XRP,market_core,2026-08-22,federated consensus,1,1,0,1,1,0,0,1,1,0,6,1,active_capture,provisional_pending_targeted_review
-crypto_sol,SOL,market_core,2026-08-22,PoS family,0,1,1,1,0,1,0,1,1,0,6,1,active_capture,provisional_pending_targeted_review
-crypto_trx,TRX,market_core,2026-08-22,DPoS,1,1,1,1,0,1,1,1,1,1,9,1,active_capture,provisional_pending_targeted_review
-crypto_hype,HYPE,growth_sleeve,2026-08-22,PoS family,0,1,1,1,0,0,1,1,1,1,7,1,active_capture,provisional_pending_targeted_review
+crypto_btc,BTC,market_core,2026-08-22,PoW,1,0,0,0,1,1,0,0,0,0,3,0,no_active_capture,complete_human_verified
+crypto_eth,ETH,market_core,2026-08-22,PoS,1,1,1,1,0,1,0,1,1,0,7,1,active_capture,complete_human_verified
+crypto_bnb,BNB,market_core,2026-08-22,PoS family,1,1,1,1,0,1,1,1,1,1,9,1,active_capture,complete_human_verified
+crypto_xrp,XRP,market_core,2026-08-22,federated consensus,1,1,0,1,1,0,0,1,1,1,7,1,active_capture,complete_human_verified
+crypto_sol,SOL,market_core,2026-08-22,PoS family,0,1,1,1,0,1,0,1,1,1,7,1,active_capture,complete_human_verified
+crypto_trx,TRX,market_core,2026-08-22,DPoS,1,1,1,1,0,0,1,1,1,1,8,1,active_capture,complete_human_verified
+crypto_hype,HYPE,growth_sleeve,2026-08-22,PoS family,0,1,1,1,1,0,1,1,1,1,8,1,active_capture,complete_human_verified
 crypto_doge,DOGE,market_core,2026-08-22,PoW,1,1,0,0,0,0,0,0,0,0,2,0,no_active_capture,provisional_pending_targeted_review
-crypto_zec,ZEC,market_core,2026-08-22,PoW,1,1,0,0,1,0,0,0,0,0,3,0,no_active_capture,provisional_pending_targeted_review
-crypto_link,LINK,market_core,2026-08-22,service staking,0,0,1,0,0,0,0,1,1,1,4,1,active_capture,provisional_pending_targeted_review
-crypto_ada,ADA,market_core,2026-08-22,PoS,0,1,1,0,1,1,1,0,1,0,6,0,no_active_capture,provisional_pending_targeted_review
+crypto_zec,ZEC,market_core,2026-08-22,PoW,0,0,0,0,1,0,1,0,0,1,3,0,no_active_capture,complete_human_verified
+crypto_link,LINK,market_core,2026-08-22,service staking,0,0,1,0,1,0,0,1,1,1,5,1,active_capture,complete_human_verified
+crypto_ada,ADA,market_core,2026-08-22,PoS,1,1,1,0,1,0,1,0,1,1,7,0,no_active_capture,complete_human_verified
 crypto_xmr,XMR,market_core,2026-08-22,PoW,1,1,0,0,0,0,0,0,0,0,2,0,no_active_capture,provisional_pending_targeted_review
-crypto_xlm,XLM,economic_coverage,2026-08-22,federated consensus,1,1,0,1,1,0,1,1,1,0,7,1,active_capture,provisional_pending_targeted_review
-crypto_bch,BCH,economic_coverage,2026-08-22,PoW,1,1,0,0,1,0,0,0,0,0,3,0,no_active_capture,provisional_pending_targeted_review
-crypto_ltc,LTC,economic_coverage,2026-08-22,PoW,1,1,0,0,1,0,0,0,0,0,3,0,no_active_capture,provisional_pending_targeted_review
-crypto_hbar,HBAR,economic_coverage,2026-08-22,hashgraph PoS,0,1,1,0,1,0,1,1,1,1,7,1,active_capture,provisional_pending_targeted_review
-crypto_sui,SUI,growth_sleeve,2026-08-22,PoS,0,1,1,0,1,1,1,1,1,1,8,1,active_capture,provisional_pending_targeted_review
-crypto_avax,AVAX,economic_coverage,2026-08-22,PoS,0,1,1,1,1,1,1,1,1,1,9,1,active_capture,provisional_pending_targeted_review
-crypto_ton,TON,economic_coverage,2026-08-22,PoS,0,1,1,0,0,1,1,1,1,1,7,1,active_capture,provisional_pending_targeted_review
-crypto_tao,TAO,growth_sleeve,2026-08-22,PoS family,0,1,1,0,1,0,1,1,1,1,7,1,active_capture,provisional_pending_targeted_review
-crypto_uni,UNI,economic_coverage,2026-08-22,NA,0,0,0,1,0,0,1,1,0,0,3,1,active_capture,provisional_pending_targeted_review
-crypto_aave,AAVE,economic_coverage,2026-08-22,NA,0,0,1,0,0,1,1,0,0,1,4,0,no_active_capture,provisional_pending_targeted_review
-crypto_arb,ARB,economic_coverage,2026-08-22,rollup,0,0,0,0,0,0,1,1,0,1,3,1,active_capture,provisional_pending_targeted_review
-crypto_op,OP,economic_coverage,2026-08-22,rollup,0,0,0,0,0,0,1,1,0,1,3,1,active_capture,provisional_pending_targeted_review
-crypto_pol,POL,economic_coverage,2026-08-22,PoS,0,1,1,0,0,0,1,1,1,1,6,1,active_capture,provisional_pending_targeted_review
+crypto_xlm,XLM,economic_coverage,2026-08-22,federated consensus,1,1,0,0,1,0,0,0,1,1,5,0,no_active_capture,complete_human_verified
+crypto_bch,BCH,economic_coverage,2026-08-22,PoW,1,0,0,0,1,0,0,0,1,1,4,0,no_active_capture,complete_human_verified
+crypto_ltc,LTC,economic_coverage,2026-08-22,PoW,1,0,0,0,1,0,0,0,0,1,3,0,no_active_capture,complete_human_verified
+crypto_hbar,HBAR,economic_coverage,2026-08-22,hashgraph PoS,0,1,1,0,1,0,0,0,1,0,4,0,no_active_capture,complete_human_verified
+crypto_sui,SUI,growth_sleeve,2026-08-22,PoS,0,1,1,0,1,0,1,0,1,0,5,0,no_active_capture,complete_human_verified
+crypto_avax,AVAX,economic_coverage,2026-08-22,PoS,0,1,1,1,1,0,0,1,1,0,6,1,active_capture,complete_human_verified
+crypto_ton,TON,economic_coverage,2026-08-22,PoS,0,1,1,1,0,0,1,1,1,0,6,1,active_capture,complete_human_verified
+crypto_tao,TAO,growth_sleeve,2026-08-22,PoS family,0,1,1,0,1,0,0,0,1,0,4,0,no_active_capture,complete_human_verified
+crypto_uni,UNI,economic_coverage,2026-08-22,NA,0,0,0,1,0,0,1,1,0,0,3,1,active_capture,complete_human_verified
+crypto_aave,AAVE,economic_coverage,2026-08-22,NA,0,0,1,0,0,1,1,0,0,1,4,0,no_active_capture,complete_human_verified
+crypto_arb,ARB,economic_coverage,2026-08-22,rollup,0,0,0,0,0,0,1,0,0,1,2,0,no_active_capture,complete_human_verified
+crypto_op,OP,economic_coverage,2026-08-22,rollup,0,0,0,0,0,0,1,1,0,1,3,1,active_capture,complete_human_verified
+crypto_pol,POL,economic_coverage,2026-08-22,PoS,0,1,1,0,0,0,0,0,1,0,3,0,no_active_capture,complete_human_verified

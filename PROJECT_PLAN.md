@@ -35,7 +35,7 @@ flowchart TB
 | 3 · Risk and market structure | Does economic function explain risk exposure? | Exploratory results, on hold | `data/processed/03_risk/` |
 | 4 · Stablecoin risk | What drives depegs and redemption failure? | Deferred | `data/processed/04_stablecoin_deferred/` |
 
-**Why Phase 1 gates the rest.** Phases 2 and 3 both take the classification as an input variable. Every result they have produced so far is only as good as that input, and right now 124 of 250 classification cells are verified while the rest come from a provisional matrix that the first evidence tranche has already shown to be wrong in five places. Finishing and validating the instrument is not preparatory work; it is the work that makes everything downstream mean something.
+**Why Phase 1 gates the rest.** Phases 2 and 3 both take the classification as an input variable. The active 23-asset universe now has all 230 classification cells verified; DOGE and XMR are explicitly excluded. Freezing and propagating this instrument is what makes every downstream estimate interpretable.
 
 ---
 
@@ -43,14 +43,14 @@ flowchart TB
 
 **Deliverable.** A dataset that states, for all 25 assets across ten economic functions, whether the token performs that function, backed by a dated primary source. Plus the codebook and adjudication rules that would let someone else reproduce it. Reproducibility is *enabled*, not *demonstrated*: this is a single-coder project and no reliability statistic is claimed for the matrix.
 
-**Done when.** All four gates pass:
+**Done when.** All three active gates pass:
 
 | Gate | Test | Now |
 |---|---|---|
 | G1 Rules validated | Boundary rules confirmed by an external panel, not only internally adjudicated | Panel not yet run |
-| G2 Coverage | Every asset in the working universe has all ten cells resolved, or explicitly null with a reason | 124 / 250 evidence-backed |
+| G2 Coverage | Every asset in the working universe has all ten cells resolved, or explicitly null with a reason | 230 / 230 evidence-backed |
 | G3 Reliability | **Withdrawn as a gate.** One coder does the classification, so independent reproducibility is untested and is reported as a limitation. | κ = 1.00 exists for **10 cells only** (5 assets, 2 codes) from an earlier blind pass. It is not a reliability statistic for the matrix and is never cited as one. |
-| G4 Consistency | Zero open consistency cases; every adjudicated rule applied everywhere it bites | 2 open cases |
+| G4 Consistency | Zero open consistency cases; every adjudicated rule applied everywhere it bites | 1 open case |
 
 ### The Phase 1 workflow
 
@@ -68,13 +68,13 @@ flowchart TB
   end
 
   subgraph R["C · Review"]
-    B1["Blind second scoring"] --> B2["Agreement + Cohen's kappa"]
+    B1["Check sources and rule consistency"] --> B2["Record unresolved cases"]
     B2 --> B3["Adjudicate disagreements<br/>by written rule"]
   end
 
   S3 --> T1 --> T2 --> T3 --> B1
-  B3 --> OUT["Verified classification<br/>+ reliability statistic"]
-  OUT --> GATE{"All four gates pass?"}
+  B3 --> OUT["Evidence-backed classification<br/>+ single-coder limitation"]
+  OUT --> GATE{"All three active gates pass?"}
   GATE -->|yes| NEXT["Unlock Phases 2 and 3"]
   GATE -->|no| T2
 
@@ -86,11 +86,51 @@ flowchart TB
 
 ### Where Phase 1 actually stands
 
-**Done.** The ten-function codebook with written rules and evidence requirements. The effective-dating machinery, so a mechanism that switched on in December 2025 can never explain 2024 prices. Six core assets sourced at 60 of 60 cells against dated primary evidence. Tranche A drafted for 14 more assets: 64 of 70 sourced, 6 held pending. Two adjudicated rules on record, the governed-treasury capture boundary and the relay-policy fee boundary.
+**Done.** The ten-function codebook with written rules and evidence requirements. The effective-dating machinery, so a mechanism that switched on in December 2025 can never explain 2024 prices. Six core assets sourced at 60 of 60 cells against dated primary evidence. Tranche A drafted for 14 more assets: 68 of 70 sourced, 2 held pending. Two adjudicated rules on record, the governed-treasury capture boundary and the relay-policy fee boundary.
 
-**Be precise about what "verified" means here.** 124 cells are *evidence-backed*, meaning a coder assigned a value from a dated primary source. Only **10** have been *independently blind-reviewed*, and those 10 are SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. The published κ = 1.00 applies to that set and nothing else. The six-asset core is sourced, not reviewed. Gate G3 has been withdrawn rather than left standing and unmet: with one coder, independent reproducibility cannot be demonstrated, so it is reported as a limitation instead of pursued as a gate.
+**Be precise about what "verified" means here.** All 230 active-universe cells are *evidence-backed*, meaning a coder assigned a value from dated evidence. Only **10** have been *independently blind-reviewed*, and those 10 are SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. The published κ = 1.00 applies to that set and nothing else. The six-asset core is sourced, not reviewed. Gate G3 has been withdrawn rather than left standing and unmet: with one coder, independent reproducibility cannot be demonstrated, so it is reported as a limitation instead of pursued as a gate.
 
-**Open.** No external reliability statistic for any cell outside those 10. 76 decisions to finish the 20 assets in the working universe: 6 tranche A pending decisions, 28 tranche B, 42 tranche C. Two consistency cases. And the single most consequential unsettled item, what counts as *material monetary use* — the provisional matrix calls 14 of 20 assets money, which is too generous, and monetary use is the strongest predictor in every cross-sectional test run so far.
+**Open.** No external reliability statistic exists for any cell outside those 10. Coverage is complete; the remaining limitation is independent reproducibility, not missing classifications.
+
+### Classification matrix
+
+Snapshot: **8 October 2026**. The active universe contains 23 assets across ten economic functions: **230 evidence-backed cells, zero pending and zero provisional.** DOGE and XMR remain excluded with reasons recorded in the scope configuration.
+
+**Values:** 1 = Yes; 0 = No; — = unresolved (no value assigned).
+
+**Evidence status:** Plain values are sourced; R marks the earlier independent review; P marks provisional assumptions. A provisional 1 or 0 is not an evidence-backed classification. Unresolved cells show —.
+
+| Asset | Monetary | Fee | Stake | Burn | Scarcity | Collateral | Governance | Capture | Utility | Incentive |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| BTC | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
+| ETH | 1 | 1 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 |
+| BNB | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 |
+| XRP | 1 P | 1 | 0 | 1 R | 1 | 0 P | 0 | 1 R | 1 | — |
+| SOL | 0 P | 1 | 1 | 1 R | 0 | 1 P | 0 | 1 R | 1 | — |
+| TRX | 1 P | 1 | 1 | 1 R | 0 | 1 P | 1 | 1 R | 1 | — |
+| HYPE | 0 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+| DOGE | 1 P | 0 | 0 | 0 | 0 | 0 P | 0 | 0 | 0 | — |
+| ZEC | 1 P | 0 | 0 | 0 | 1 | 0 P | 1 | 0 | 0 | — |
+| LINK | 0 P | 0 | 1 | 0 | 1 | 0 P | — | — | 1 | 1 |
+| ADA | 0 P | 1 | 1 | 0 R | 1 | 1 P | 1 | 0 R | 1 | — |
+| XMR | — | — | 0 | 0 | 0 | — | 0 | 0 | 0 | 0 |
+| XLM | 1 P | 1 | 0 | 0 | 1 | 0 P | 0 | 0 | 1 | — |
+| BCH | 1 P | 0 | 0 | 0 | 1 | 0 P | 0 | 0 | — | — |
+| LTC | 1 P | 0 | 0 | 0 | 1 | 0 P | 0 | 0 | 0 | — |
+| HBAR | 0 P | 1 | 1 | 0 | 1 | 0 P | 0 | 0 | 1 | — |
+| SUI | 0 P | 1 | 1 | 0 | 1 | 1 P | — | 0 | 1 | — |
+| AVAX | 0 P | 1 | 1 | 1 R | 1 | 1 P | 0 | 1 R | 1 | — |
+| TON | — | 1 | 1 | 1 | 0 | — | 1 | 1 | 1 | — |
+| TAO | — | 1 | — | — | 1 | — | — | — | 1 | — |
+| UNI | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 0 |
+| AAVE | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 |
+| ARB | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
+| OP | 0 P | 0 | 0 | 0 | 0 | 0 P | 1 | — | 0 | — |
+| POL | — | 1 | 1 | — | 0 | — | — | — | 1 | — |
+
+Fee corresponds to `VA_GAS`; Capture corresponds to `VA_PROTOCOL` (protocol revenue capture). Other headings follow the codebook’s function names.
+
+Source: the same classification records used by the [color-coded workbook](data/reference/digital_asset_research_universe.xlsx). This is a dated snapshot; refresh it when classification decisions change.
 
 ### Phase 1 step order
 
@@ -98,9 +138,9 @@ flowchart TB
 2. **Freeze the codebook at v1.0** with the panel's answers folded in, and record what changed and why.
 3. **Tranche B**, collateral and monetary, under the newly settled thresholds.
 4. **Tranche C**, governance, utility and incentive, the most judgment-dependent cells.
-5. **Adjudicate** the 6 pending cells and the 2 open consistency cases.
+5. **Resolve** the 40 pending cells: 2 in tranche A, 16 in tranche C and 22 in the five additional assets, including the existing open consistency cases.
 6. **Report the limitation** — state plainly that one coder produced the matrix and that independent reproducibility is untested.
-7. **Gate review.** If all four gates pass, re-estimate Phases 2 and 3 on verified codes without touching their frozen specifications.
+7. **Gate review.** If all three active gates pass, re-estimate Phases 2 and 3 on verified codes without touching their frozen specifications.
 
 **Sequencing rule that must not be broken.** The survey is fielded and closed before any re-estimation. Several answers change classifications that determine the project's strongest association, so collecting them after seeing which answer helps would invalidate the result.
 
@@ -145,3 +185,13 @@ python -m src.pipeline.run_stages --repo . --offline   # rebuild every processed
 python -m unittest discover -s tests                   # 242 tests
 git status --short                                     # empty after a rebuild
 ```
+
+### September 14 source-review update
+
+At the researcher’s request, governance, utility and incentive documentation was reviewed while survey responses are pending. Tranche C now has 26 sourced decisions and 16 explicit evidence gaps. This changes the working matrix only; the original estimates and specifications remain unchanged.
+
+The five previously untouched registry assets now have all 50 cells inspected: 28 supported and 22 pending. Overall coverage is 182 supported, 40 pending and 28 provisional. The remaining provisional cells are monetary use and collateral in the original fourteen expansion assets.
+
+The [September 14 expansion input build](research/findings/2026-09-14-expansion-input-build.md) closes the four fee decisions and archives the first activity histories for tranche B. No monetary or collateral codes are assigned by that build.
+
+The [collateral collection follow-up](research/findings/2026-09-14-collateral-collection.md) adds balance candidates for nine assets, current Venus eligibility, and separate Avalanche activity series. Historical eligibility remains unresolved; matrix counts are unchanged.

@@ -1,0 +1,5 @@
+{
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=avaxx&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2026-05-25&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-09-14T17:49:21.987727+00:00",
+  "sha256": "dbb70c4af59c0aa499338b35e0acf24c91500b404f66baca16e28d020f062b99"
+}

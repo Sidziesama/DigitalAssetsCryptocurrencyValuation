@@ -1,0 +1,142 @@
+[
+  {
+    "url": "https://docs.projectcatalyst.io/open-funding/funding-basics/proof-of-adoption-and-standard",
+    "retrieved_at": "2026-09-14T17:32:34.799523+00:00",
+    "final_url": "https://docs.projectcatalyst.io/open-funding/funding-basics/proof-of-adoption-and-standard",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "01.html",
+    "sha256": "44f5df41ad25e91f45a6809a03129b218ce98db835bd2decd9216f33526360cf",
+    "bytes": 1430062
+  },
+  {
+    "url": "https://forum.polygon.technology/t/bor-v2-6-0-and-erigon-v3-4-0-for-mainnet-and-amoy/21757",
+    "retrieved_at": "2026-09-14T17:32:34.800314+00:00",
+    "final_url": "https://forum.polygon.technology/t/bor-v2-6-0-and-erigon-v3-4-0-for-mainnet-and-amoy/21757",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "02.html",
+    "sha256": "9251d6e31574a63962e2fe37151c1db8a8b83af6473c8178a18011d4d0272401",
+    "bytes": 34721
+  },
+  {
+    "url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+    "retrieved_at": "2026-09-14T17:32:34.800456+00:00",
+    "final_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "03.html",
+    "sha256": "4754481983e9f711a988982bd61d55bd36185d2eff99bff7fca3b0f15452a3cb",
+    "bytes": 32456
+  },
+  {
+    "url": "https://forum.zcashcommunity.com/t/30-day-review-period-coinholder-directed-retroactive-grants-program-q3/57056",
+    "retrieved_at": "2026-09-14T17:32:34.800575+00:00",
+    "final_url": "https://forum.zcashcommunity.com/t/30-day-review-period-coinholder-directed-retroactive-grants-program-q3/57056",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "04.html",
+    "sha256": "9e83c226a02f68c5952b7a80ee03c96a23abd551f19f1336289aae6119932cd1",
+    "bytes": 56933
+  },
+  {
+    "url": "https://forum.zcashcommunity.com/t/retroactive-grant-application-gleyo/56977",
+    "retrieved_at": "2026-09-14T17:32:34.800698+00:00",
+    "final_url": "https://forum.zcashcommunity.com/t/retroactive-grant-application-gleyo/56977",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "05.html",
+    "sha256": "3a80b6bf04fd32cf6fcee95f7bf9c9141734d1e5aedd2cd87f8a05fb05fac449",
+    "bytes": 55017
+  },
+  {
+    "url": "https://forum.zcashcommunity.com/t/statement-on-the-bootstrap-ecc-q4-2025-retroactive-grant/54988",
+    "retrieved_at": "2026-09-14T17:32:34.800792+00:00",
+    "final_url": "https://forum.zcashcommunity.com/t/statement-on-the-bootstrap-ecc-q4-2025-retroactive-grant/54988",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "06.html",
+    "sha256": "b30f13de871beaba61d6f7ecc546d7db839da31a6b190af75d0499e8cdde5c1f",
+    "bytes": 41010
+  },
+  {
+    "url": "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-65.md",
+    "retrieved_at": "2026-09-14T17:32:34.800887+00:00",
+    "final_url": "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-65.md",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "07.html",
+    "sha256": "7a45b461a2d34a60930adeef9d2467bc5555c42a2b8c7a065712e0b42f2b6d17",
+    "bytes": 332660
+  },
+  {
+    "url": "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-82.md",
+    "retrieved_at": "2026-09-14T17:32:34.800974+00:00",
+    "final_url": "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-82.md",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "08.html",
+    "sha256": "0710a4685f7190a09d944b7c64a79864a214d9be8b2b69995856f206eeb8cdc2",
+    "bytes": 275942
+  },
+  {
+    "url": "https://gleyo.app/",
+    "retrieved_at": "2026-09-14T17:32:35.137145+00:00",
+    "final_url": "https://gleyo.app/",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "09.html",
+    "sha256": "47f5133da299e36680a17167725403119a20a5c64a4f95f673ff5e98dbaec3e0",
+    "bytes": 43715
+  },
+  {
+    "url": "https://governance.solana.com/faq",
+    "retrieved_at": "2026-09-14T17:32:35.296363+00:00",
+    "final_url": "https://governance.solana.com/faq",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "10.html",
+    "sha256": "342dfb7d31728ab07de7bb9ba2b1d0dd0e2e3ac780b544ed99f9d1e63b46a678",
+    "bytes": 47578
+  },
+  {
+    "url": "https://projectcatalyst.io/apply",
+    "retrieved_at": "2026-09-14T17:32:35.328464+00:00",
+    "final_url": "https://projectcatalyst.io/apply",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "11.html",
+    "sha256": "f9fe2896a38fbdcb530ec249c5e3be67f3abc9f4d30e767a7d920df9cbaf73f3",
+    "bytes": 201820
+  },
+  {
+    "url": "https://projectcatalyst.io/blog/update-from-the-catalyst-team",
+    "retrieved_at": "2026-09-14T17:32:35.330479+00:00",
+    "final_url": "https://projectcatalyst.io/blog/update-from-the-catalyst-team",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "12.html",
+    "sha256": "0e97fd74b0e7d92b0a567cbe3d3419338c7affa9e71a7eec4cc4287e9e633e2a",
+    "bytes": 198494
+  },
+  {
+    "url": "https://raw.githubusercontent.com/solana-foundation/solana-governance-proposals/main/README.md",
+    "retrieved_at": "2026-09-14T17:32:35.361624+00:00",
+    "final_url": "https://raw.githubusercontent.com/solana-foundation/solana-governance-proposals/main/README.md",
+    "content_type": "text/plain; charset=utf-8",
+    "status": "captured",
+    "file": "13.html",
+    "sha256": "a5bc48d1374b57eec5c0caf6d8caa8771e4c1a6ca0a0cf9d1a64639645b55880",
+    "bytes": 8894
+  },
+  {
+    "url": "https://zips.z.cash/zip-1016",
+    "retrieved_at": "2026-09-14T17:32:35.480826+00:00",
+    "final_url": "https://zips.z.cash/zip-1016",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "14.html",
+    "sha256": "2d14ec0ade9ce2bb03115e6165326f31a5bf3bc84ab3e4822dadaa5612e5efaa",
+    "bytes": 21231
+  }
+]

@@ -1,15 +1,27 @@
 {
-  "status": "tranche_a_drafted_awaiting_review",
-  "specification_version": "1.1-tranche-a-documentation-completion",
+  "status": "tranche_a_single_coder_evidence",
+  "specification_version": "1.2-fee-boundary-adjudication",
   "as_of": "2026-09-14",
   "assets": 14,
   "codes": 5,
   "decisions": 70,
-  "verified_decisions": 64,
-  "pending_decisions": 6,
-  "coverage_ratio": 0.9142857142857143,
-  "provisional_matrix_mismatches": 5,
+  "verified_decisions": 68,
+  "pending_decisions": 2,
+  "coverage_ratio": 0.9714285714285714,
+  "provisional_matrix_mismatches": 9,
   "mismatch_detail": [
+    {
+      "asset_id": "crypto_bch",
+      "code": "VA_GAS",
+      "provisional_value": 1,
+      "recommended_value": 0
+    },
+    {
+      "asset_id": "crypto_doge",
+      "code": "VA_GAS",
+      "provisional_value": 1,
+      "recommended_value": 0
+    },
     {
       "asset_id": "crypto_hbar",
       "code": "VA_PROTOCOL",
@@ -21,6 +33,12 @@
       "code": "VA_SCARCITY",
       "provisional_value": 0,
       "recommended_value": 1
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "code": "VA_GAS",
+      "provisional_value": 1,
+      "recommended_value": 0
     },
     {
       "asset_id": "crypto_sui",
@@ -39,52 +57,27 @@
       "code": "VA_PROTOCOL",
       "provisional_value": 1,
       "recommended_value": 0
+    },
+    {
+      "asset_id": "crypto_zec",
+      "code": "VA_GAS",
+      "provisional_value": 1,
+      "recommended_value": 0
     }
   ],
   "pending_detail": [
-    {
-      "asset_id": "crypto_bch",
-      "code": "VA_GAS",
-      "rationale": "Held pending the relay-policy versus consensus-rule boundary. A zero-fee BCH transaction is consensus-valid and fee minimums are node relay policy, matching the reasoning behind the existing verified BTC VA_GAS=0 decision. Adjudication required before this cell is scored."
-    },
-    {
-      "asset_id": "crypto_doge",
-      "code": "VA_GAS",
-      "rationale": "Held pending the same relay-policy versus consensus-rule boundary as BTC and the other UTXO proof-of-work chains."
-    },
     {
       "asset_id": "crypto_link",
       "code": "VA_PROTOCOL",
       "rationale": "Held pending adjudication. Staking rewards are currently emissions-funded, which is service compensation, but the same page describes a Reserve and Smart Value Recapture whose relationship to the strict holder-capture rule has not been assessed from primary sources. This is the LINK analogue of the governed-treasury boundary question."
     },
     {
-      "asset_id": "crypto_ltc",
-      "code": "VA_GAS",
-      "rationale": "Held pending the relay-policy versus consensus-rule boundary shared with BTC, BCH, DOGE, and ZEC."
-    },
-    {
       "asset_id": "crypto_op",
       "code": "VA_PROTOCOL",
       "rationale": "Execution is established: official reports on March 5 and August 7 confirm three revenue-funded buybacks totalling 9,451,924 OP. The former statement that execution was unconfirmed is corrected. The latest report covers January-March revenue, and an August 25 question about subsequent execution is unanswered in the retrieved thread. Current active versus paused status at September 7 remains unestablished, so the live-capture value stays null; completed historical buybacks are not treated as proof of continuous operation."
-    },
-    {
-      "asset_id": "crypto_zec",
-      "code": "VA_GAS",
-      "rationale": "Held pending the relay-policy versus consensus-rule boundary shared with the other UTXO proof-of-work chains."
     }
   ],
   "open_consistency_cases": [
-    {
-      "case_id": "relay_policy_versus_consensus_fee_boundary",
-      "assets": [
-        "crypto_bch",
-        "crypto_ltc",
-        "crypto_doge",
-        "crypto_zec"
-      ],
-      "code": "VA_GAS",
-      "recommendation": "Apply the BTC precedent and score all four 0, or revise the VA_GAS rule to admit economically required fees and re-review BTC. Do not resolve the two chains differently."
-    },
     {
       "case_id": "oracle_service_revenue_capture_boundary",
       "assets": [
@@ -100,5 +93,5 @@
   },
   "url_confirmed_decisions": 25,
   "tranche_order_rule": "Tranches are ordered by evidence difficulty, fixed before estimation: A rule-mechanical codes (gas, stake, scarcity, burn, protocol), B ninety-day data-pull codes (collateral, monetary), C judgment codes (governance, utility, incentive). Codes were NOT selected by which bundle showed signal in P1_H6; selecting codes by outcome would compromise that frozen test.",
-  "next_requirement": "An independent reviewer scores the blind worksheet, review-adjudication computes agreement, and only then may verified values be written into the design matrix. Pending cells stay null until adjudicated and never default to zero."
+  "next_requirement": "Resolve the remaining evidence gaps and apply the same rules consistently. This is a single-coder project; no further blind reviewer is required. Pending cells stay null until adjudicated and never default to zero."
 }

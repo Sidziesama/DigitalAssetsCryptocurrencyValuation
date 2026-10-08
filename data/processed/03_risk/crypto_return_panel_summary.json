@@ -2,8 +2,12 @@
   "status": "return_panel_complete",
   "specification_version": "1.0-frozen-return-panel",
   "freeze_date": "2026-09-07",
-  "assets_included": 24,
+  "assets_included": 22,
   "assets_excluded": 0,
+  "scope_excluded_assets": [
+    "crypto_doge",
+    "crypto_xmr"
+  ],
   "coverage": [
     {
       "asset_id": "crypto_aave",
@@ -52,13 +56,6 @@
       "first_date": "2019-01-01",
       "last_date": "2026-08-22",
       "close_days": 2791,
-      "status": "included"
-    },
-    {
-      "asset_id": "crypto_doge",
-      "first_date": "2019-07-05",
-      "last_date": "2026-08-22",
-      "close_days": 2606,
       "status": "included"
     },
     {
@@ -153,13 +150,6 @@
       "status": "included"
     },
     {
-      "asset_id": "crypto_xmr",
-      "first_date": "2019-03-15",
-      "last_date": "2024-02-20",
-      "close_days": 1804,
-      "status": "included"
-    },
-    {
       "asset_id": "crypto_xrp",
       "first_date": "2019-01-01",
       "last_date": "2026-08-22",
@@ -174,11 +164,11 @@
       "status": "included"
     }
   ],
-  "rows": 52116,
+  "rows": 47708,
   "first_date": "2019-01-02",
   "last_date": "2026-08-22",
-  "rows_with_rolling_beta": 49236,
-  "rows_with_forward_30d": 51396,
+  "rows_with_rolling_beta": 45068,
+  "rows_with_forward_30d": 47048,
   "risk_free_rate": "Zero; excess returns are raw returns, a declared simplification common to daily crypto studies.",
   "interpretation": "This panel supports description and factor baselines. Daily crypto returns are close to unpredictable; the intended findings concern risk exposure and behaviour conditional on economic function, not forecasting."
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_namespace": "v2_aave_reserve_extension",
+  "snapshot_namespace": "v3_link_reserve_extension",
   "chain": "ethereum",
   "pool_address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
   "block_lookup_base": "https://coins.llama.fi/block/ethereum",
@@ -10,6 +10,7 @@
   "assets": [
     {"asset_id":"crypto_btc","reserve_symbol":"WBTC","reserve_address":"0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"},
     {"asset_id":"crypto_eth","reserve_symbol":"WETH","reserve_address":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"},
-    {"asset_id":"crypto_aave","reserve_symbol":"AAVE","reserve_address":"0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDAE9"}
+    {"asset_id":"crypto_aave","reserve_symbol":"AAVE","reserve_address":"0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDAE9"},
+    {"asset_id":"crypto_link","reserve_symbol":"LINK","reserve_address":"0x514910771AF9Ca656af840dff83E8264EcF986CA"}
   ]
 }

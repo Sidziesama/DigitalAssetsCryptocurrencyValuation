@@ -1,0 +1,309 @@
+[
+  {
+    "url": "https://ccs.getmonero.org/what-is-ccs/",
+    "retrieved_at": "2026-09-14T17:23:21.752350+00:00",
+    "final_url": "https://ccs.getmonero.org/what-is-ccs/",
+    "content_type": "text/html",
+    "status": "captured",
+    "file": "01.html",
+    "sha256": "3f5fc8597d1824a587dedd14441e94833cd05cd86f7c3b9477f603486cb16378",
+    "bytes": 13505
+  },
+  {
+    "url": "https://docs.polygon.technology/pos/architecture/heimdall_v2/governance",
+    "retrieved_at": "2026-09-14T17:23:21.753218+00:00",
+    "final_url": "https://docs.polygon.technology/pos/architecture/heimdall_v2/governance",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "02.html",
+    "sha256": "b52951d4ce67235ecdeb484b510ef521cbd112d74f9af2b380d4e4f63d64abf2",
+    "bytes": 2170090
+  },
+  {
+    "url": "https://docs.polygon.technology/pos/architecture/overview",
+    "retrieved_at": "2026-09-14T17:23:21.753369+00:00",
+    "final_url": "https://docs.polygon.technology/pos/architecture/overview",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "03.html",
+    "sha256": "10131b29896778bb0da50a289fe84f6dc2baa7466960d9beb6bb311095b8c831",
+    "bytes": 315692
+  },
+  {
+    "url": "https://docs.polygon.technology/pos/concepts/tokens/pol",
+    "retrieved_at": "2026-09-14T17:23:21.753487+00:00",
+    "final_url": "https://docs.polygon.technology/pos/concepts/tokens/pol",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "04.html",
+    "sha256": "dafb7c450c9d4d8903b9c8edb47bb18a059ac5891cb2b17bcfef6b2df97dd35a",
+    "bytes": 330883
+  },
+  {
+    "url": "https://docs.ton.org/applications/payments/gram",
+    "retrieved_at": "2026-09-14T17:23:21.753608+00:00",
+    "final_url": "https://docs.ton.org/applications/payments/gram",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "05.html",
+    "sha256": "5ca8c2ba60c310139c0cfa82ec79678b838699b98cd8b98ea0b91f244b6aec53",
+    "bytes": 393534
+  },
+  {
+    "url": "https://docs.ton.org/contracts/techniques/gas",
+    "retrieved_at": "2026-09-14T17:23:21.753686+00:00",
+    "final_url": "https://docs.ton.org/contracts/techniques/gas",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "06.html",
+    "sha256": "c4262192a68e3093cd182a3cccb3bd5d1d1e245e823bec85ebeb1df64597e52a",
+    "bytes": 725963
+  },
+  {
+    "url": "https://docs.ton.org/foundations/config",
+    "retrieved_at": "2026-09-14T17:23:21.753754+00:00",
+    "final_url": "https://docs.ton.org/foundations/config",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "07.html",
+    "sha256": "2873f59959176d11c36a62256f365689aee0e43faeda0b3cef010020a28288c6",
+    "bytes": 760077
+  },
+  {
+    "url": "https://docs.ton.org/foundations/extra-currencies",
+    "retrieved_at": "2026-09-14T17:23:21.754059+00:00",
+    "final_url": "https://docs.ton.org/foundations/extra-currencies",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "08.html",
+    "sha256": "8bccfabffe2b0b7a2cafef57b16bfe2b471dc43ce7ddb10378cce75275fc5703",
+    "bytes": 362684
+  },
+  {
+    "url": "https://docs.ton.org/nodes/staking/overview",
+    "retrieved_at": "2026-09-14T17:23:22.038595+00:00",
+    "final_url": "https://docs.ton.org/nodes/staking/overview",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "09.html",
+    "sha256": "472eaa2b911da9819a1cbe2e6dcac623663863df3dfdbfe32585a910adbc80ea",
+    "bytes": 381799
+  },
+  {
+    "url": "https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974",
+    "retrieved_at": "2026-09-14T17:23:22.062114+00:00",
+    "final_url": "https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "10.html",
+    "sha256": "1d3e05f326490c9732b3a21e7a144d723914701a9d03631974149f2c242c8864",
+    "bytes": 26499
+  },
+  {
+    "url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+    "retrieved_at": "2026-09-14T17:23:22.089907+00:00",
+    "final_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "11.html",
+    "sha256": "4754481983e9f711a988982bd61d55bd36185d2eff99bff7fca3b0f15452a3cb",
+    "bytes": 32456
+  },
+  {
+    "url": "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-65.md",
+    "retrieved_at": "2026-09-14T17:23:22.107910+00:00",
+    "final_url": "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-65.md",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "12.html",
+    "sha256": "9f2904a9c99f406bc1368182e3b3e0b1da762eba02c1b3ec99cc25f631f965fd",
+    "bytes": 332604
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/about-hyperliquid/hyperliquid-101-for-non-crypto-audiences",
+    "retrieved_at": "2026-09-14T17:23:22.116296+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/about-hyperliquid/hyperliquid-101-for-non-crypto-audiences",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "13.html",
+    "sha256": "de14d0d1ecc70f6c5e9e7c640a228a07e73307b1896531b4c5c7cb3390738456",
+    "bytes": 380172
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint/spot",
+    "retrieved_at": "2026-09-14T17:23:22.166289+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint/spot",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "14.html",
+    "sha256": "69fe96d2d6aa16b0a26cfc903bc5b757c6739df4a8a134b2d9cf0a13f2c3c5b6",
+    "bytes": 935550
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/hyperevm",
+    "retrieved_at": "2026-09-14T17:23:22.176893+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/hyperevm",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "15.html",
+    "sha256": "99be96b03d558a500d4cdba7fd86e0bb6eee89e0cb5a90f72c0d3ddd73a7879a",
+    "bytes": 398523
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/hypercore/staking",
+    "retrieved_at": "2026-09-14T17:23:22.235149+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/hypercore/staking",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "16.html",
+    "sha256": "0ad1e43a5e82bd8f111b1aba3ac4be834337321ce322cac3f26eb6152fe6494d",
+    "bytes": 401881
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/hyperliquid-improvement-proposals-hips/hip-1-native-token-standard",
+    "retrieved_at": "2026-09-14T17:23:22.313850+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/hyperliquid-improvement-proposals-hips/hip-1-native-token-standard",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "17.html",
+    "sha256": "44bc18f805806bea0f321e5cfa8531a49efc28ae5fc9bb0c0005a6b160996e37",
+    "bytes": 478340
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/referrals/proposal-staking-referral-program",
+    "retrieved_at": "2026-09-14T17:23:22.328469+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/referrals/proposal-staking-referral-program",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "18.html",
+    "sha256": "f3d5139249bab713fffa9c1e2c5c88bb6efcd3730905ca5dd0d8eab55afec549",
+    "bytes": 418939
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees",
+    "retrieved_at": "2026-09-14T17:23:22.342078+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "19.html",
+    "sha256": "8dcd1680704c4def33c7de20e25cdefbef9d67b090316bbeedda2db7e6960a4c",
+    "bytes": 931877
+  },
+  {
+    "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/portfolio-margin",
+    "retrieved_at": "2026-09-14T17:23:22.370636+00:00",
+    "final_url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/portfolio-margin",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "20.html",
+    "sha256": "dc76712af3f0f842a6022922034c96515d601165e5bce142506de148db2ec9e8",
+    "bytes": 443828
+  },
+  {
+    "url": "https://polygon.technology/spol-terms-of-use-risk-disclosures",
+    "retrieved_at": "2026-09-14T17:23:22.425300+00:00",
+    "final_url": "https://polygon.technology/spol-terms-of-use-risk-disclosures",
+    "content_type": "text/html",
+    "status": "captured",
+    "file": "21.html",
+    "sha256": "d2b42219d050d638d5e135884c21d2633f62e00aea50aed617009df0e9f6a54e",
+    "bytes": 171883
+  },
+  {
+    "url": "https://raw.githubusercontent.com/monero-project/monero/master/src/cryptonote_core/blockchain.cpp",
+    "retrieved_at": "2026-09-14T17:23:22.453430+00:00",
+    "final_url": "https://raw.githubusercontent.com/monero-project/monero/master/src/cryptonote_core/blockchain.cpp",
+    "content_type": "text/plain; charset=utf-8",
+    "status": "captured",
+    "file": "22.html",
+    "sha256": "ad2843c6794a4d41d4cb48982d7f0601f7f12d81d6965aeaba0e7a4789f3af27",
+    "bytes": 215205
+  },
+  {
+    "url": "https://t.me/s/gram/907",
+    "retrieved_at": "2026-09-14T17:23:22.464192+00:00",
+    "final_url": "https://t.me/s/gram/907",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "23.html",
+    "sha256": "db319f30897f9db7d385ec421dc9769bdceb3350189c18efe5271ff2b501875f",
+    "bytes": 164739
+  },
+  {
+    "url": "https://www.bittensor.com/docs/concepts/emissions",
+    "retrieved_at": "2026-09-14T17:23:22.491118+00:00",
+    "final_url": "https://www.bittensor.com/docs/concepts/emissions",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "24.html",
+    "sha256": "29facfda399a58719217ecfa4f254b07d6bd619dd06fd3974070b67f28c76bc6",
+    "bytes": 209727
+  },
+  {
+    "url": "https://www.bittensor.com/docs/concepts/money",
+    "retrieved_at": "2026-09-14T17:23:22.506294+00:00",
+    "final_url": "https://www.bittensor.com/docs/concepts/money",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "25.html",
+    "sha256": "ee681cebf9e3195b9af9f75c43f656ce9e669a26b86f95e29661e71dd8397b33",
+    "bytes": 139630
+  },
+  {
+    "url": "https://www.bittensor.com/docs/concepts/staking-pools",
+    "retrieved_at": "2026-09-14T17:23:22.550154+00:00",
+    "final_url": "https://www.bittensor.com/docs/concepts/staking-pools",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "26.html",
+    "sha256": "3512421d86e0c24f678ff93d1fb8ff2e79e225e8d8c43047372d695d0945cd79",
+    "bytes": 228044
+  },
+  {
+    "url": "https://www.bittensor.com/docs/concepts/transactions",
+    "retrieved_at": "2026-09-14T17:23:22.601383+00:00",
+    "final_url": "https://www.bittensor.com/docs/concepts/transactions",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "27.html",
+    "sha256": "49397f9ea8e6adf5bec4aa05f00a64e0f205b1f2430f2b0c90da5c55fdae14c2",
+    "bytes": 209789
+  },
+  {
+    "url": "https://www.getmonero.org/get-started/mining/",
+    "retrieved_at": "2026-09-14T17:23:22.614605+00:00",
+    "final_url": "https://www.getmonero.org/get-started/mining/",
+    "content_type": "text/html",
+    "status": "captured",
+    "file": "28.html",
+    "sha256": "750d49c41fb2558512b2650ddc2279f2d82661e9d40567ae51971d609d5d0600",
+    "bytes": 31594
+  },
+  {
+    "url": "https://www.getmonero.org/get-started/what-is-monero/",
+    "retrieved_at": "2026-09-14T17:23:22.647117+00:00",
+    "final_url": "https://www.getmonero.org/get-started/what-is-monero/",
+    "content_type": "text/html",
+    "status": "captured",
+    "file": "29.html",
+    "sha256": "52d41eb9f88920fa1b831039f4d2042736e158a5e18fe1c933e5bdcca3ff1df4",
+    "bytes": 31388
+  },
+  {
+    "url": "https://www.getmonero.org/resources/moneropedia/tail-emission.html",
+    "retrieved_at": "2026-09-14T17:23:22.751632+00:00",
+    "final_url": "https://www.getmonero.org/resources/moneropedia/tail-emission.html",
+    "content_type": "text/html",
+    "status": "captured",
+    "file": "30.html",
+    "sha256": "d4e1aaa19de8f6487f63f3f59741e110366463b213a462e2ae0a1c80787b45bf",
+    "bytes": 25955
+  },
+  {
+    "url": "https://www.ton.org/en/whitepaper.pdf",
+    "retrieved_at": "2026-09-14T17:23:22.773815+00:00",
+    "status": "download_failed",
+    "error": "HTTP Error 404: Not Found",
+    "note": "Source was inspected through web retrieval; this is not a full-page capture."
+  }
+]

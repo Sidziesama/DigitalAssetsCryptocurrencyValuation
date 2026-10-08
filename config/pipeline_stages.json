@@ -251,6 +251,11 @@
           "args": []
         },
         {
+          "module": "crypto_verified_universe",
+          "args": [],
+          "note": "Builds the complete 23-asset verified profiles and pre-specified overlapping function groups used by separately versioned hypothesis extensions."
+        },
+        {
           "module": "survey_synthetic_responses",
           "args": [
             "--scenario",
@@ -269,6 +274,16 @@
             "synthetic"
           ],
           "note": "Runs at synthetic scope in the pipeline. Analysing real responses requires --scope panel, which in turn requires a complete config/survey_recruitment.json and refuses any file under data/synthetic/."
+        },
+        {
+          "module": "crypto_expansion_collateral",
+          "args": [],
+          "note": "Descriptive candidate balances and current eligibility; no classification or historical eligibility inference."
+        },
+        {
+          "module": "crypto_expansion_inputs",
+          "args": [],
+          "note": "Rebuilds descriptive expansion input coverage from archived snapshots. Does not classify cells or read survey responses; --collect explicitly fetches public data."
         }
       ]
     },

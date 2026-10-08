@@ -80,6 +80,40 @@ def build_review(spec: dict[str, Any], registry: dict[str, Any]) -> list[dict[st
     } for row in spec["assets"] for code in CODES]
 
 
+def read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
+def validate_completed_review(rows: list[dict[str, str]], spec: dict[str, Any]) -> dict[tuple[str, str], dict[str, str]]:
+    expected = {(row["asset_id"], code) for row in spec["assets"] for code in CODES}
+    indexed = {(row.get("asset_id", ""), row.get("code", "")): row for row in rows}
+    if set(indexed) != expected or len(indexed) != len(rows):
+        raise ValueError("targeted review must contain exactly one row per asset-function cell")
+    for key, row in indexed.items():
+        decision = row.get("decision_0_or_1", "")
+        if decision not in {"", "0", "1"}:
+            raise ValueError(f"invalid targeted-review decision: {key}")
+        if decision and not all(row.get(field) for field in ("evidence_url", "evidence_date", "reviewer_note")):
+            raise ValueError(f"completed targeted-review decision lacks provenance: {key}")
+    return indexed
+
+
+def apply_review(profiles: list[dict[str, Any]], review: list[dict[str, str]], spec: dict[str, Any]) -> list[dict[str, Any]]:
+    indexed = validate_completed_review(review, spec)
+    for profile in profiles:
+        decisions = [indexed[(profile["asset_id"], code)]["decision_0_or_1"] for code in CODES]
+        if all(value in {"0", "1"} for value in decisions):
+            values = [int(value) for value in decisions]
+            for code, value in zip(CODES, values):
+                profile[code.lower()] = value
+            profile["va_breadth_count"] = sum(values)
+            profile["direct_capture_active"] = int(bool(values[CODES.index("VA_BURN")] or values[CODES.index("VA_PROTOCOL")]))
+            profile["h2_capture_group"] = "active_capture" if profile["direct_capture_active"] else "no_active_capture"
+            profile["classification_status"] = "complete_human_verified"
+    return profiles
+
+
 def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
@@ -90,17 +124,22 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 def run(repo: Path) -> dict[str, Any]:
     spec = load_json(repo / "config" / "crypto_economic_design.json")
     registry = load_json(repo / "config" / "assets.json")
-    profiles, review = build_profiles(spec, registry), build_review(spec, registry)
+    profiles = build_profiles(spec, registry)
     out = repo / "data" / "processed" / "01_classification"
+    review_path = out / "crypto_economic_design_targeted_review.csv"
+    review = read_csv(review_path) if review_path.exists() else build_review(spec, registry)
+    profiles = apply_review(profiles, review, spec)
     write_csv(out / "crypto_economic_design_profiles.csv", profiles)
-    write_csv(out / "crypto_economic_design_targeted_review.csv", review)
+    if not review_path.exists():
+        write_csv(review_path, review)
     counts = Counter(p["consensus"] for p in profiles)
     summary = {
         "status": spec["status"], "assets": len(profiles), "review_decisions": len(review),
         "active_capture_assets": sum(p["direct_capture_active"] for p in profiles),
         "mean_va_breadth": sum(p["va_breadth_count"] for p in profiles) / len(profiles),
         "consensus_counts": dict(sorted(counts.items())),
-        "next_requirement": "Complete evidence-backed targeted review before freezing H2/H8 design variables.",
+        "complete_human_verified_assets": sum(p["classification_status"] == "complete_human_verified" for p in profiles),
+        "next_requirement": "Use the completed human-verified matrix in separately versioned downstream analyses; do not revise rules from outcomes.",
     }
     (out / "crypto_economic_design_summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     return summary

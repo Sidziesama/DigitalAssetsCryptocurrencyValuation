@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "document_version": "1.1-tranche-a-documentation-completion",
+  "document_version": "1.2-fee-boundary-adjudication",
   "as_of": "2026-09-14",
   "tranche": "A",
   "purpose": "First evidence tranche for the fourteen return-panel assets that are not yet classification-verified, covering the five rule-mechanical codes whose determination is a fact check against protocol documentation.",
@@ -29,23 +29,9 @@
     "VA_PROTOCOL"
   ],
   "coder": "drafting pass by the research assistant, with source URLs spot-checked by refetching",
-  "review_status": "awaiting_independent_blind_review",
+  "review_status": "single_coder_with_documented_limitations",
   "adjudication_rule": "Decisions held pending require adjudication before they may be scored. A pending cell never becomes a zero by default.",
   "consistency_cases": [
-    {
-      "case_id": "relay_policy_versus_consensus_fee_boundary",
-      "assets": [
-        "crypto_bch",
-        "crypto_ltc",
-        "crypto_doge",
-        "crypto_zec"
-      ],
-      "code": "VA_GAS",
-      "status": "open_requires_adjudication",
-      "precedent": "crypto_btc VA_GAS=0 in config/crypto_design_evidence_tranche_1.json",
-      "question": "On UTXO proof-of-work chains a zero-fee transaction is consensus-valid and fee minimums are node relay policy. The verified BTC decision scores this 0. BCH, LTC, DOGE, and ZEC share that property, so scoring them 1 would contradict the BTC precedent.",
-      "recommendation": "Apply the BTC precedent and score all four 0, or revise the VA_GAS rule to admit economically required fees and re-review BTC. Do not resolve the two chains differently."
-    },
     {
       "case_id": "oracle_service_revenue_capture_boundary",
       "assets": [
@@ -176,13 +162,19 @@
     {
       "asset_id": "crypto_bch",
       "code": "VA_GAS",
-      "status": "pending",
-      "recommended_value": null,
+      "status": "verified",
+      "recommended_value": 0,
       "source_url": "https://upgradespecs.bitcoincashnode.org/block/",
       "source_date": "2026-09-07",
       "date_basis": "retrieved_as_of",
-      "rationale": "Held pending the relay-policy versus consensus-rule boundary. A zero-fee BCH transaction is consensus-valid and fee minimums are node relay policy, matching the reasoning behind the existing verified BTC VA_GAS=0 decision. Adjudication required before this cell is scored.",
-      "verification": "agent_reported_not_independently_refetched"
+      "rationale": "Apply the existing BTC VA_GAS=0 precedent: zero-fee transactions are consensus-valid; node relay fee policy does not meet the working protocol-required fee criterion. Researcher approved applying this same rule to BCH, DOGE, LTC and ZEC on 2026-09-14.",
+      "verification": "agent_reported_not_independently_refetched",
+      "researcher_review": {
+        "date": "2026-09-14",
+        "decision": "Apply the existing BTC precedent: VA_GAS=0 for BCH, DOGE, LTC and ZEC.",
+        "authorization": "User: use your recommended method; go ahead with the next build.",
+        "scope": "Researcher-approved working-rule adjudication; not independent blind review."
+      }
     },
     {
       "asset_id": "crypto_bch",
@@ -231,13 +223,19 @@
     {
       "asset_id": "crypto_doge",
       "code": "VA_GAS",
-      "status": "pending",
-      "recommended_value": null,
+      "status": "verified",
+      "recommended_value": 0,
       "source_url": "https://dogecoin.com/dogepedia/articles/send-and-receive-dogecoin/",
       "source_date": "2026-09-07",
       "date_basis": "retrieved_as_of",
-      "rationale": "Held pending the same relay-policy versus consensus-rule boundary as BTC and the other UTXO proof-of-work chains.",
-      "verification": "agent_reported_not_independently_refetched"
+      "rationale": "Apply the existing BTC VA_GAS=0 precedent: zero-fee transactions are consensus-valid; node relay fee policy does not meet the working protocol-required fee criterion. Researcher approved applying this same rule to BCH, DOGE, LTC and ZEC on 2026-09-14.",
+      "verification": "agent_reported_not_independently_refetched",
+      "researcher_review": {
+        "date": "2026-09-14",
+        "decision": "Apply the existing BTC precedent: VA_GAS=0 for BCH, DOGE, LTC and ZEC.",
+        "authorization": "User: use your recommended method; go ahead with the next build.",
+        "scope": "Researcher-approved working-rule adjudication; not independent blind review."
+      }
     },
     {
       "asset_id": "crypto_doge",
@@ -405,13 +403,19 @@
     {
       "asset_id": "crypto_ltc",
       "code": "VA_GAS",
-      "status": "pending",
-      "recommended_value": null,
+      "status": "verified",
+      "recommended_value": 0,
       "source_url": "https://litecoin.com/what-is-litecoin",
       "source_date": "2026-09-07",
       "date_basis": "retrieved_as_of",
-      "rationale": "Held pending the relay-policy versus consensus-rule boundary shared with BTC, BCH, DOGE, and ZEC.",
-      "verification": "url_confirmed_by_coder"
+      "rationale": "Apply the existing BTC VA_GAS=0 precedent: zero-fee transactions are consensus-valid; node relay fee policy does not meet the working protocol-required fee criterion. Researcher approved applying this same rule to BCH, DOGE, LTC and ZEC on 2026-09-14.",
+      "verification": "url_confirmed_by_coder",
+      "researcher_review": {
+        "date": "2026-09-14",
+        "decision": "Apply the existing BTC precedent: VA_GAS=0 for BCH, DOGE, LTC and ZEC.",
+        "authorization": "User: use your recommended method; go ahead with the next build.",
+        "scope": "Researcher-approved working-rule adjudication; not independent blind review."
+      }
     },
     {
       "asset_id": "crypto_ltc",
@@ -802,13 +806,19 @@
     {
       "asset_id": "crypto_zec",
       "code": "VA_GAS",
-      "status": "pending",
-      "recommended_value": null,
+      "status": "verified",
+      "recommended_value": 0,
       "source_url": "https://z.cash/technology/",
       "source_date": "2026-09-07",
       "date_basis": "retrieved_as_of",
-      "rationale": "Held pending the relay-policy versus consensus-rule boundary shared with the other UTXO proof-of-work chains.",
-      "verification": "url_confirmed_by_coder"
+      "rationale": "Apply the existing BTC VA_GAS=0 precedent: zero-fee transactions are consensus-valid; node relay fee policy does not meet the working protocol-required fee criterion. Researcher approved applying this same rule to BCH, DOGE, LTC and ZEC on 2026-09-14.",
+      "verification": "url_confirmed_by_coder",
+      "researcher_review": {
+        "date": "2026-09-14",
+        "decision": "Apply the existing BTC precedent: VA_GAS=0 for BCH, DOGE, LTC and ZEC.",
+        "authorization": "User: use your recommended method; go ahead with the next build.",
+        "scope": "Researcher-approved working-rule adjudication; not independent blind review."
+      }
     },
     {
       "asset_id": "crypto_zec",
@@ -856,5 +866,27 @@
     }
   ],
   "classification_date": "2026-09-07",
-  "revision_note": "Evidence review on 2026-09-14 for the existing 2026-09-07 classification. Retrieval dates are not mechanism activation dates. Five documentation gaps resolved; no historical panel or frozen experiment input changed."
+  "revision_note": "Evidence review on 2026-09-14 for the existing 2026-09-07 classification. Retrieval dates are not mechanism activation dates. Five documentation gaps resolved; no historical panel or frozen experiment input changed.",
+  "resolved_consistency_cases": [
+    {
+      "case_id": "relay_policy_versus_consensus_fee_boundary",
+      "assets": [
+        "crypto_bch",
+        "crypto_ltc",
+        "crypto_doge",
+        "crypto_zec"
+      ],
+      "code": "VA_GAS",
+      "status": "resolved",
+      "precedent": "crypto_btc VA_GAS=0 in config/crypto_design_evidence_tranche_1.json",
+      "question": "On UTXO proof-of-work chains a zero-fee transaction is consensus-valid and fee minimums are node relay policy. The verified BTC decision scores this 0. BCH, LTC, DOGE, and ZEC share that property, so scoring them 1 would contradict the BTC precedent.",
+      "recommendation": "Apply the BTC precedent and score all four 0, or revise the VA_GAS rule to admit economically required fees and re-review BTC. Do not resolve the two chains differently.",
+      "resolution": {
+        "date": "2026-09-14",
+        "decision": "Apply the existing BTC precedent: VA_GAS=0 for BCH, DOGE, LTC and ZEC.",
+        "authorization": "User: use your recommended method; go ahead with the next build.",
+        "scope": "Researcher-approved working-rule adjudication; not independent blind review."
+      }
+    }
+  ]
 }

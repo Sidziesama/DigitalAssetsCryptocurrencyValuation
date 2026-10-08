@@ -96,11 +96,11 @@ This one rule is the difference between a headline result and no result (see §6
 
 Fee coverage is chain-level for nine assets and application-level for two. That distinction is carried through every model as a measurement attribute, never quietly collapsed.
 
-**Classification coverage:** 124 of the 250 registry cells (25 assets × 10 functions) are evidence-backed, each with a dated primary source — 60 on the six-asset core and 64 in the first tranche. 6 cells are pending and 120 remain provisional.
+**Classification coverage:** all 230 active-universe cells (23 assets × 10 functions) are evidence-backed with a dated source, explicit rule and researcher decision. DOGE and XMR are preserved for auditability but excluded from active-universe counts.
 
 The full asset-by-function matrix is in [`docs/crypto_economic_classification_phase_summary.md`](docs/crypto_economic_classification_phase_summary.md); the canonical counts are regenerated into `data/processed/01_classification/classification_status.json` and nothing else is authoritative.
 
-Of the 124, **10 carry a blind second review** (SOL, AVAX, TRX, XRP and ADA on burn and protocol capture). The other 114 were coded once. Evidence-backed and independently reviewed are different claims and the repository never merges them.
+Of the 230, **10 carry a blind second review** (SOL, AVAX, TRX, XRP and ADA on burn and protocol capture). The other 220 were coded once. Evidence-backed and independently reviewed are different claims and the repository never merges them.
 
 ## 5. Process and approach
 
@@ -123,19 +123,23 @@ written rule  ->  one coder applies it to a dated primary source
       ->  verified value enters the design matrix
 ```
 
-**This is a single-coder project, and that is the most serious limitation in it.** Ten cells carry a blind second review from an earlier pass; the other 114 evidence-backed cells do not. So the matrix is *auditable* — every cell names its rule, its source and the date that source was read, and anyone can check a cell against the document behind it — but it is not *shown to be reproducible*. Whether a second coder working from the same rules would produce the same matrix is untested, and no reliability coefficient is claimed for the classification.
+**This is a single-coder project, and that is the most serious limitation in it.** Ten cells carry a blind second review from an earlier pass; the other 220 evidence-backed cells do not. So the matrix is *auditable* — every cell names its rule, its source and the date that source was read, and anyone can check a cell against the document behind it — but it is not *shown to be reproducible*. Whether a second coder working from the same rules would produce the same matrix is untested, and no reliability coefficient is claimed for the classification.
 
 An expert survey collects practitioner judgment on the boundary rules and includes an optional blind scoring exercise. That is external feedback on whether the rules are sensible and applicable. It is not a second coder and does not close this gap.
 
 ### Coding tranches
 
-The remaining classification work is split by **how the evidence is obtained**, in an order fixed in advance:
+The remaining classification work is split by **how the evidence is obtained**, using the existing grouping:
 
 | Tranche | Codes | Why grouped | Status |
 |---|---|---|---|
-| **A** | gas, stake, scarcity, burn, protocol | Fact check against protocol documentation | 64 of 70 verified, 6 pending |
+| **A** | gas, stake, scarcity, burn, protocol | Fact check against protocol documentation | 68 of 70 verified, 2 pending |
 | **B** | collateral, monetary | Need a 90-day quantitative window and a materiality threshold | 28 decisions outstanding |
-| **C** | governance, utility, incentive | Boundary calls, the most judgment-dependent | 42 decisions outstanding |
+| **C** | governance, utility, incentive | Boundary calls, the most judgment-dependent | 26 sourced, 16 pending after source review |
+
+Tranche C was advanced while awaiting survey responses at the researcher’s request. Its September 14 snapshot applies the existing rules; it does not change historical experiment inputs. The 16 unresolved cells carry specific evidence gaps in the workbook.
+
+The five previously untouched assets (HYPE, XMR, TON, TAO and POL) now have a first pass across all 50 cells: 28 supported values and 22 explicit gaps. See the [source-review results](research/findings/2026-09-14-five-asset-classification.md).
 
 ### The pipeline
 
@@ -183,11 +187,11 @@ Not defensible, and stated as such: any claim that economic function predicts re
 ### What happens next
 
 1. **Send the survey, with a closing date.** It collects external feedback on the six boundary rules and the materiality thresholds. The analysis plan is frozen at `config/survey_analysis_plan.json` before any response is read.
-2. **Close the six pending cells** from primary sources. If the evidence does not settle a cell, it stays pending — insufficient evidence is a result, not a failure.
+2. **Resolve the remaining source gaps**: two pending cells in tranche A, sixteen in tranche C and twenty-two across the five additional assets. If the evidence does not settle a cell, it stays pending — insufficient evidence is a result, not a failure.
 3. **Summarise the responses**: agreement with each proposed rule, the function ranking, and the reasons given for disagreement. The optional blind scoring exercise is reported only if enough people complete it.
 4. **Revise and document the framework**: which rules stayed, which changed, which remain uncertain. A rule the panel did not settle continues as a working convention and is labelled as one.
 
-Then the thresholds the survey settles determine how tranche B is coded, and tranche C follows.
+The thresholds the survey settles determine how tranche B is coded. Tranche C already has a source-review pass; its unresolved evidence and rule questions remain explicit.
 
 Every decision that needs human judgment is registered in [`research/open_decisions.md`](research/open_decisions.md), with what changes if it flips and which result it blocks.
 
@@ -252,3 +256,7 @@ credentials.
 
 This repository is for academic research. Classifications are not legal conclusions or investment
 recommendations.
+
+The [September 14 expansion input build](research/findings/2026-09-14-expansion-input-build.md) closes the four fee decisions and archives the first activity histories for tranche B. No monetary or collateral codes are assigned by that build.
+
+The [collateral collection follow-up](research/findings/2026-09-14-collateral-collection.md) adds balance candidates for nine assets, current Venus eligibility, and separate Avalanche activity series. Historical eligibility remains unresolved; matrix counts are unchanged.

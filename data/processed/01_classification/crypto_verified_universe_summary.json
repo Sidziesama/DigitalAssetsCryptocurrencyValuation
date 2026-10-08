@@ -1,0 +1,21 @@
+{
+  "status": "verified_groups_ready_for_preregistered_hypothesis_extensions",
+  "assets": 23,
+  "classification_cells": 230,
+  "excluded_assets": [
+    "crypto_doge",
+    "crypto_xmr"
+  ],
+  "group_counts": {
+    "monetary_store": 16,
+    "transaction_service_demand": 16,
+    "security_commitment": 14,
+    "supply_absorption": 9,
+    "financial_integration": 5,
+    "control_rights": 11,
+    "holder_capture": 11,
+    "subsidized_participation": 14
+  },
+  "grouping_rule": "A bundle is active when any pre-specified member function equals one; assets may belong to multiple groups.",
+  "testing_guardrail": "Use only separately versioned specifications. Do not alter group definitions after inspecting outcomes."
+}

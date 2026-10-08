@@ -21,6 +21,15 @@ def validate(scope: dict[str, Any]) -> dict[str, Any]:
     statuses = scope.get("hypothesis_status", {})
     if set(statuses) != set(ACTIVE) or any(not value for value in statuses.values()):
         raise ValueError("every active hypothesis requires an explicit readiness status")
+    excluded = scope.get("excluded_assets", [])
+    if not isinstance(excluded, list) or any(
+        not isinstance(row, dict) or not row.get("asset_id") or not row.get("reason") or not row.get("effective_date")
+        for row in excluded
+    ):
+        raise ValueError("every excluded asset requires an asset_id, reason, and effective_date")
+    excluded_ids = [row["asset_id"] for row in excluded]
+    if len(excluded_ids) != len(set(excluded_ids)):
+        raise ValueError("excluded assets must be unique")
     return {
         "status": "active_crypto_scope_valid",
         "active_phase": scope["active_phase"],
@@ -30,6 +39,7 @@ def validate(scope: dict[str, Any]) -> dict[str, Any]:
         "stablecoin_work_is_active_gate": False,
         "hypothesis_status": statuses,
         "communication_priority": scope["communication_priority"],
+        "excluded_assets": excluded,
     }
 
 

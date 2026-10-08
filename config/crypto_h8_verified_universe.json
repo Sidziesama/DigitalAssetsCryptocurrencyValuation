@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-23-asset-verified-extension",
+  "status": "frozen_before_verified_universe_estimation",
+  "freeze_date": "2026-10-08",
+  "hypothesis": "H8",
+  "research_question": "Do pre-specified economic-function groups explain cross-asset valuation better than a raw count of functions?",
+  "classification_input": "data/processed/01_classification/crypto_verified_universe_profiles.csv",
+  "market_input": "data/processed/03_risk/crypto_return_panel_daily.csv",
+  "active_universe_rule": "Use every complete_human_verified cryptoasset not listed in config/research_scope.json excluded_assets. Do not add or remove assets from observed outcomes.",
+  "expected_assets": 23,
+  "excluded_assets": ["crypto_doge", "crypto_xmr"],
+  "measurement_window": {
+    "start": "2025-08-25",
+    "end": "2026-08-22",
+    "minimum_coverage_share": 0.8
+  },
+  "primary_outcome": "mean_log_market_cap_usd",
+  "secondary_outcomes": [
+    "mean_log_dollar_volume",
+    "market_beta",
+    "realized_volatility_annualized",
+    "max_drawdown_log"
+  ],
+  "benchmark_models": [
+    {"id": "raw_function_breadth", "predictors": ["raw_function_breadth"]},
+    {"id": "active_bundle_count", "predictors": ["active_bundle_count"]}
+  ],
+  "group_models": [
+    "bundle_monetary_store",
+    "bundle_transaction_service_demand",
+    "bundle_security_commitment",
+    "bundle_supply_absorption",
+    "bundle_financial_integration",
+    "bundle_control_rights",
+    "bundle_holder_capture",
+    "bundle_subsidized_participation"
+  ],
+  "predeclared_nested_models": [
+    {
+      "id": "breadth_plus_holder_capture",
+      "predictors": ["raw_function_breadth", "bundle_holder_capture"],
+      "reason": "Tests whether direct holder capture adds information beyond the number of functions."
+    },
+    {
+      "id": "service_plus_holder_capture",
+      "predictors": ["bundle_transaction_service_demand", "bundle_holder_capture"],
+      "reason": "Tests whether service demand and token-linked capture are jointly informative."
+    }
+  ],
+  "primary_comparison_metric": "leave_one_asset_out_root_mean_squared_prediction_error",
+  "inference": {
+    "coefficient_test": "exact_or_seeded_permutation_of_asset_outcomes",
+    "monte_carlo_draws_when_exact_enumeration_is_infeasible": 100000,
+    "random_seed": 20261008,
+    "two_sided": true,
+    "multiple_testing": "benjamini_hochberg_false_discovery_rate_10_percent_across_eight_single_group_tests"
+  },
+  "sensitivities": [
+    "rank_based_outcomes",
+    "market_core_only",
+    "exclude_application_tokens",
+    "architecture_indicator_controls",
+    "winsorize_continuous_outcomes_at_5_and_95_percent"
+  ],
+  "decision_rule": "The theory-group approach is favored only if it improves leave-one-asset-out prediction relative to raw breadth and its relevant coefficients remain directionally stable across predeclared sensitivities. Statistical significance alone is insufficient.",
+  "guardrails": [
+    "Assets may belong to multiple groups.",
+    "Do not change bundle definitions, assets, outcomes, or sensitivities after estimation.",
+    "Report every listed group model, including null and sign-reversed results.",
+    "This is a post-pilot exploratory extension, not an independent confirmatory test.",
+    "No causal interpretation is permitted from the cross-sectional design."
+  ]
+}

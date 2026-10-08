@@ -22,5 +22,19 @@
     "H4": "fixed_six_asset_bnb_consensus_history_complete_aave_legacy_component_collected_eth_and_umbrella_pending",
     "H8": "five_asset_exploratory_breadth_pilot_complete_no_robust_premium_evidence"
   },
-  "communication_priority": "Lead with plain-language discoveries and distinguish descriptive associations, exploratory tests, and confirmatory findings."
+  "communication_priority": "Lead with plain-language discoveries and distinguish descriptive associations, exploratory tests, and confirmatory findings.",
+  "excluded_assets": [
+    {
+      "asset_id": "crypto_doge",
+      "reason": "Researcher-directed scope exclusion: meme coin is outside the intended advisory and economic-function analysis universe.",
+      "effective_date": "2026-10-07",
+      "evidence_policy": "Preserve previously collected source data and classification evidence for auditability, but exclude the asset from empirical samples, market factors, controls, and reported active-universe counts."
+    },
+    {
+      "asset_id": "crypto_xmr",
+      "reason": "Researcher-directed scope exclusion: privacy prevents observation of a required monetary-use metric, making the asset structurally incomparable under the frozen transparent-chain measurement rule.",
+      "effective_date": "2026-10-08",
+      "evidence_policy": "Preserve previously collected source data and classification evidence for auditability, but exclude the asset from empirical samples, market factors, controls, and reported active-universe counts."
+    }
+  ]
 }

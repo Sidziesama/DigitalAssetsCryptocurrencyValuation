@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PIP-50: Staked Tokenholder Signalling - Canonical PIPs - Polygon Community Forum</title>
+    <meta name="description" content="PIP-50: Staked Tokenholder Signalling
+Authors: Carlos Gonzalez Juarez, Tanisha Katara, Mateusz Rzeszowski
+Type: Informational
+Abstract
+This proposal introduces an initial decision-making framework for PoS Stakers to part&amp;hellip;">
+    <meta name="generator" content="Discourse 2025.12.0-latest - https://github.com/discourse/discourse version 483080694748a05ca89572187584d1b05cd72aa9">
+<link rel="icon" type="image/png" href="https://forum.polygon.technology/uploads/default/optimized/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78_2_32x32.jpeg">
+<link rel="apple-touch-icon" type="image/png" href="https://forum.polygon.technology/uploads/default/optimized/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78_2_180x180.jpeg">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+
+<meta name="color-scheme" content="light dark">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<link rel="canonical" href="https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974" />
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://forum.polygon.technology/opensearch.xml" title="Polygon Community Forum Search">
+
+    
+    <link href="/stylesheets/color_definitions_polygon-2024_8_6_f39a2e7b2c0190d43d70fc0ec099abfe6b912c3f.css?__ws=forum.polygon.technology" media="(prefers-color-scheme: light)" rel="stylesheet" class="light-scheme" data-scheme-id="8"/><link href="/stylesheets/color_definitions_polygon_7_6_ecc39d31300805046bb8cb0a11ca2c9a49ccde85.css?__ws=forum.polygon.technology" media="(prefers-color-scheme: dark)" rel="stylesheet" class="dark-scheme" data-scheme-id="7"/>
+
+<link href="/stylesheets/common_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common"  />
+
+  <link href="/stylesheets/mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile"  />
+  <link href="/stylesheets/desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop"  />
+
+
+
+    <link href="/stylesheets/checklist_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="checklist"  />
+    <link href="/stylesheets/discourse-adplugin_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-adplugin"  />
+    <link href="/stylesheets/discourse-ai_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-ai"  />
+    <link href="/stylesheets/discourse-akismet_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+    <link href="/stylesheets/discourse-cakeday_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+    <link href="/stylesheets/discourse-chat-integration_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-chat-integration"  />
+    <link href="/stylesheets/discourse-details_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-details"  />
+    <link href="/stylesheets/discourse-lazy-videos_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-lazy-videos"  />
+    <link href="/stylesheets/discourse-local-dates_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+    <link href="/stylesheets/discourse-narrative-bot_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-narrative-bot"  />
+    <link href="/stylesheets/discourse-policy_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-policy"  />
+    <link href="/stylesheets/discourse-post-voting_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-post-voting"  />
+    <link href="/stylesheets/discourse-presence_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-presence"  />
+    <link href="/stylesheets/discourse-solved_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-solved"  />
+    <link href="/stylesheets/discourse-templates_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-templates"  />
+    <link href="/stylesheets/discourse-topic-voting_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-topic-voting"  />
+    <link href="/stylesheets/docker_manager_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="docker_manager"  />
+    <link href="/stylesheets/poll_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="poll"  />
+    <link href="/stylesheets/discourse-ai_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-ai_mobile"  />
+    <link href="/stylesheets/discourse-post-voting_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-post-voting_mobile"  />
+    <link href="/stylesheets/discourse-solved_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-solved_mobile"  />
+    <link href="/stylesheets/discourse-topic-voting_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-topic-voting_mobile"  />
+    <link href="/stylesheets/discourse-ai_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-ai_desktop"  />
+    <link href="/stylesheets/discourse-post-voting_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-post-voting_desktop"  />
+    <link href="/stylesheets/discourse-topic-voting_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-topic-voting_desktop"  />
+    <link href="/stylesheets/poll_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="/stylesheets/common_theme_4_ba8a6d15dfbbe18cdbb13923f94c20603dcb79b1.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="4" data-theme-name="custom header links"/>
+<link href="/stylesheets/common_theme_5_2316320242d1133aab269ae417c5c0c8932ac0bb.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="5" data-theme-name="dropdown header"/>
+<link href="/stylesheets/common_theme_8_2608d7835f7671ae44d86858fde6ffb18731f763.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="8" data-theme-name="versatile banner"/>
+<link href="/stylesheets/common_theme_7_e6d426e38451be0e1aeb40d8d095bef7fb943b22.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="7" data-theme-name="versatile showcase"/>
+<link href="/stylesheets/common_theme_6_bc0776d7649cb1accd204bbc0695908b58ce653f.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="6" data-theme-name="polygon 2024"/>
+    <link href="/stylesheets/mobile_theme_5_24a029b6e332dbab033432835cf75e4204d8314c.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile_theme" data-theme-id="5" data-theme-name="dropdown header"/>
+<link href="/stylesheets/mobile_theme_6_b9e9b446f80d608e9d2e5fb2ecb5216ad94010f7.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile_theme" data-theme-id="6" data-theme-name="polygon 2024"/>
+    <link href="/stylesheets/desktop_theme_5_fb5cede309991c4c84a518478290689ceae25a93.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop_theme" data-theme-id="5" data-theme-name="dropdown header"/>
+<link href="/stylesheets/desktop_theme_6_15dc9d8122044e688f33ae6446a90412c50a9973.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop_theme" data-theme-id="6" data-theme-name="polygon 2024"/>
+
+    
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;PIP-50: Staked Tokenholder Signalling&#39;" href="https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974.rss" />
+    <meta property="og:site_name" content="Polygon Community Forum" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://forum.polygon.technology/uploads/default/original/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78.jpeg" />
+<meta property="og:image" content="https://forum.polygon.technology/uploads/default/original/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78.jpeg" />
+<meta property="og:url" content="https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974" />
+<meta name="twitter:url" content="https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974" />
+<meta property="og:title" content="PIP-50: Staked Tokenholder Signalling" />
+<meta name="twitter:title" content="PIP-50: Staked Tokenholder Signalling" />
+<meta property="og:description" content="PIP-50: Staked Tokenholder Signalling Authors: Carlos Gonzalez Juarez, Tanisha Katara, Mateusz Rzeszowski Type: Informational Abstract This proposal introduces an initial decision-making framework for PoS Stakers to participate in signaling on PIPs related to system smart contract upgrades in Polygon networks. The framework enables a three-stage process for all regular proposals: Firstly, following the regular PIP flow which includes the PPGC, a majority consensus from the Protocol Council is re..." />
+<meta name="twitter:description" content="PIP-50: Staked Tokenholder Signalling Authors: Carlos Gonzalez Juarez, Tanisha Katara, Mateusz Rzeszowski Type: Informational Abstract This proposal introduces an initial decision-making framework for PoS Stakers to participate in signaling on PIPs related to system smart contract upgrades in Polygon networks. The framework enables a three-stage process for all regular proposals: Firstly, following the regular PIP flow which includes the PPGC, a majority consensus from the Protocol Council is re..." />
+<meta property="og:article:section" content="Polygon Improvement Proposals" />
+<meta property="og:article:section:color" content="92278F" />
+<meta property="og:article:section" content="Canonical PIPs" />
+<meta property="og:article:section:color" content="92278F" />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="2 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="1 ❤" />
+<meta property="article:published_time" content="2024-11-08T15:58:06+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    
+  </head>
+  <body class="crawler ">
+    
+    <header>
+  <a href="/">Polygon Community Forum</a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="/t/pip-50-staked-tokenholder-signalling/19974">PIP-50: Staked Tokenholder Signalling</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/polygon-improvement-proposals/80" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #92278F'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Polygon Improvement Proposals</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/polygon-improvement-proposals/pips/81" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #92278F'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Canonical PIPs</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </span>
+      </div>
+
+  </div>
+
+  
+
+    <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+      <meta itemprop='headline' content='PIP-50: Staked Tokenholder Signalling'>
+      <link itemprop='url' href='https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974'>
+      <meta itemprop='datePublished' content='2024-11-08T15:58:06Z'>
+        <meta itemprop='articleSection' content='Canonical PIPs'>
+      <meta itemprop='keywords' content=''>
+      <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop='name' content='Polygon'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url' content='https://forum.polygon.technology/uploads/default/original/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78.jpeg'>
+          </div>
+      </div>
+
+
+          <div id='post_1'  class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.polygon.technology/u/H_Rook'><span itemprop='name'>H_Rook</span></a>
+                
+              </span>
+
+                <link itemprop="mainEntityOfPage" href="https://forum.polygon.technology/t/pip-50-staked-tokenholder-signalling/19974">
+
+
+              <span class="crawler-post-infos">
+                  <time  datetime='2024-11-08T15:58:06Z' class='post-time'>
+                    November 8, 2024,  3:58pm
+                  </time>
+                  <meta itemprop='dateModified' content='2024-11-08T15:58:06Z'>
+              <span itemprop='position'>1</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <h1><a name="p-31955-pip-50-staked-tokenholder-signalling-1" class="anchor" href="#p-31955-pip-50-staked-tokenholder-signalling-1" aria-label="Heading link"></a>PIP-50: Staked Tokenholder Signalling</h1>
+<h2><a name="p-31955-authors-carlos-gonzalez-juarez-tanisha-katara-mateusz-rzeszowski-2" class="anchor" href="#p-31955-authors-carlos-gonzalez-juarez-tanisha-katara-mateusz-rzeszowski-2" aria-label="Heading link"></a>Authors: Carlos Gonzalez Juarez, Tanisha Katara, Mateusz Rzeszowski</h2>
+<h2><a name="p-31955-type-informational-3" class="anchor" href="#p-31955-type-informational-3" aria-label="Heading link"></a>Type: Informational</h2>
+<h2><a name="p-31955-abstract-4" class="anchor" href="#p-31955-abstract-4" aria-label="Heading link"></a>Abstract</h2>
+<p>This proposal introduces an initial decision-making framework for PoS Stakers to participate in signaling on PIPs related to system smart contract upgrades in Polygon networks. The framework enables a three-stage process for all regular proposals: Firstly, following the regular PIP flow which includes the PPGC, a majority consensus from the <a href="https://polygon.technology/blog/meet-the-polygon-protocol-council">Protocol Council</a> is reached. Secondly, the community of PoS stakers and their delegates review the proposal and may signal vote approval or veto. Finally, the Protocol Council must confirm the proposal for on-chain execution or decide not to execute it. This three-stage governance framework, powered by the Governance Hub, lays the foundation for a transparent decision-making process over Polygon networks.</p>
+<h2><a name="p-31955-motivation-5" class="anchor" href="#p-31955-motivation-5" aria-label="Heading link"></a>Motivation</h2>
+<p>The primary motivation behind this proposal is to enhance the decentralization of community governance over L1 smart contract upgrades by enabling staked tokenholders to participate in governance through an off-chain signaling mechanism.</p>
+<h2><a name="p-31955-definitions-6" class="anchor" href="#p-31955-definitions-6" aria-label="Heading link"></a>Definitions</h2>
+<ul>
+<li>
+<p><strong>Delegates</strong>: Individuals or entities to whom staked tokenholders can delegate their voting power.</p>
+</li>
+<li>
+<p><strong>Delegation</strong>: The ability for staked tokenholders to delegate a part or the entirety of their voting power to any number of selected delegates.</p>
+</li>
+<li>
+<p><strong>Adaptive Quorum</strong>: A voting mechanism where the required veto majority adjusts dynamically based on participation levels.</p>
+</li>
+<li>
+<p><strong>Snapshot</strong>: A mechanism that captures the state of staked token holdings at a specific block for calculation of voting power.</p>
+</li>
+</ul>
+<h2><a name="p-31955-specification-7" class="anchor" href="#p-31955-specification-7" aria-label="Heading link"></a>Specification</h2>
+<h3><a name="p-31955-delegations-and-partial-delegations-8" class="anchor" href="#p-31955-delegations-and-partial-delegations-8" aria-label="Heading link"></a>Delegations and Partial Delegations:</h3>
+<p>The delegation system is built using a combination of on-chain contracts and a Snapshot strategy to ensure flexibility and accuracy in voting power (VP) calculations. PoS stakers can choose to delegate part or all of their voting power to multiple delegates. The key components are outlined below:</p>
+<ul>
+<li>
+<p><strong>On-Chain Contracts</strong>:</p>
+<ul>
+<li>Polygon Staking Manager Contract: This contract aggregates the voting power (VP) from all the validators, with whom tokenholders have staked their POL tokens, and returns it so it can be queried over in Snapshot. There’s no execution available in this contract and can only be queried externally. Additionally, even though it’s not upgradeable, since it’s only used for reading off-chain, the Snapshot strategy can be upgraded.</li>
+<li>Split Delegation Contract: This contract allows staked tokenholders to delegate their voting power to multiple delegates in varying proportions, supporting partial delegations. Delegation events are emitted on-chain and indexed off-chain via Subgraph.</li>
+<li>Polygon Delegate Announcer Contract: This contract allows for users to explicitly mark themselves as community delegates. The reasoning behind this is to avoid users receiving delegations without actually wanting them, as has happened before in other organizations. All of the metadata for this contract is stored in IPFS, available to anyone.</li>
+</ul>
+</li>
+<li>
+<p><strong>Subgraph</strong>:</p>
+<ul>
+<li>The Graph plays a critical role in managing and tracking delegation events. It captures all delegation actions from the Split Delegation Contract. It then processes these events via Subgraph, and provides the data necessary for calculating the final voting power of each delegate.</li>
+</ul>
+</li>
+<li>
+<p><strong>Snapshot Strategy</strong>:</p>
+<ul>
+<li>The Snapshot strategy wraps around the existing polygon-self-staked-pol strategy with the added support of the split-delegation strategy. This ensures that delegation ratios and self-staked voting power are both considered when determining the final voting power for each delegate. The Snapshot system takes a point-in-time record of the delegation state, allowing accurate off-chain calculations and signaling.</li>
+</ul>
+</li>
+<li>
+<p><strong>GovHub API and Delegates Webpage</strong>:</p>
+<ul>
+<li>The Polygon GovHub API communicates with the Subgraph to retrieve data about delegators and their respective delegation ratios. This information is then fed into the Delegates Webpage, where delegators can view and manage their delegations. The webpage displays the voting power (VP) for each delegate and ensures transparency throughout the governance process.</li>
+</ul>
+</li>
+</ul>
+<h3><a name="p-31955-adaptive-quorum-9" class="anchor" href="#p-31955-adaptive-quorum-9" aria-label="Heading link"></a>Adaptive Quorum:</h3>
+<p>An adaptive quorum mechanism plays a crucial role in the community signaling stage of the governance process. During this stage, the broader community of PoS stakers and delegates can signal veto or approval on proposals. A dynamic quorum ensures that the veto power can still be exercised even when the number of actively voting tokens is lower than expected, providing an extra layer of security and decentralization, without compromising on efficient decision-making.</p>
+<p>For the proposal to be vetoed, <strong>the ratio of nay votes to PoS-staked tokens</strong> must be <strong>greater than the ratio of yay votes to actively voting tokens</strong>. This adaptive approach ensures that the level of participation—whether high or low—can still lead to a valid decision, as long as the condition is met.</p>
+<p>In the adaptive quorum mechanism, a multiplier will be applied to the "Yay votes”, based on rigorous testing and continuous voting participation data.</p>
+<p>Importantly, while Snapshot strategies do not support this mechanism, the Governance Hub allows for this information to be displayed to the users transparently in the UI. To do so, the voting terminal provides not only messages, but also a graph of the growing number of votes, giving users clarity on how the ongoing vote is going.</p>
+<h2><a name="p-31955-backward-compatibility-10" class="anchor" href="#p-31955-backward-compatibility-10" aria-label="Heading link"></a>Backward Compatibility</h2>
+<p>The Governance Hub is built and will be expanded based on careful iteration. For that reason, all of the existing and proven processes previously built for PIPs still apply and have been included in the Governance Hub. For instance, every proposal created in the PIP repository will appear in the Governance Hub published under the name of the person who wrote it. As a result, all of the contributors Polygon has had in the past, are highlighted. Similar backward-compatible mechanisms have been adopted to cover all parameters of the PIP framework, e.g., PIP flows and statuses.</p>
+<h2><a name="p-31955-security-considerations-11" class="anchor" href="#p-31955-security-considerations-11" aria-label="Heading link"></a>Security Considerations</h2>
+<p>Iteration is one of the key characteristics of this project, taking into account security considerations, as well as steadily iterating on previous standards. For that reason, on-chain components have been reduced to a minimum, and even the existing ones are being used solely for off-chain actions, e.g., Snapshot voting. If an issue were to be identified, all off-chain components can be updated and also may point to a new contract fixing the issue. The goal with this approach is to slowly adapt towards future versions based on past learnings.</p>
+<h2><a name="p-31955-copyright-12" class="anchor" href="#p-31955-copyright-12" aria-label="Heading link"></a>Copyright</h2>
+<p>All copyrights and related rights in this work are waived under CC0 1.0 Universal.</p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="1" />
+              <span class='post-likes'>1 Like</span>
+            </div>
+
+
+            
+          </div>
+    </div>
+
+
+    
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/guidelines' itemprop="url">Guidelines </a>
+        </span>
+      </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/privacy' itemprop="url">Forum Moderation Guidelines </a>
+          </span>
+        </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

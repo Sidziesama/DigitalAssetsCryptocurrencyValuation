@@ -49,7 +49,7 @@
         {
           "outcome": "market_beta",
           "predictor": "bundle_control_rights",
-          "coefficient": -0.7339137833806653,
+          "coefficient": -0.7340135676732333,
           "permutation_p_two_sided": 0.06666666666666667,
           "benjamini_hochberg_q": 0.54,
           "leave_one_out_same_sign": 5,
@@ -58,7 +58,7 @@
         {
           "outcome": "realized_volatility_annualized",
           "predictor": "bundle_control_rights",
-          "coefficient": -0.45738944988568564,
+          "coefficient": -0.4573894498856836,
           "permutation_p_two_sided": 0.06666666666666667,
           "benjamini_hochberg_q": 0.54,
           "leave_one_out_same_sign": 6,
@@ -67,7 +67,7 @@
         {
           "outcome": "market_beta",
           "predictor": "bundle_monetary_store",
-          "coefficient": -0.6870532098073917,
+          "coefficient": -0.6894810831680159,
           "permutation_p_two_sided": 0.1,
           "benjamini_hochberg_q": 0.54,
           "leave_one_out_same_sign": 6,
@@ -85,7 +85,7 @@
         {
           "outcome": "max_drawdown_log",
           "predictor": "bundle_monetary_store",
-          "coefficient": 2.1036375803336926,
+          "coefficient": 2.103637580333726,
           "permutation_p_two_sided": 0.1,
           "benjamini_hochberg_q": 0.54,
           "leave_one_out_same_sign": 6,
@@ -96,7 +96,7 @@
     {
       "sample": "provisional_universe",
       "evidence_status": "provisional_pending_targeted_review",
-      "assets": 20,
+      "assets": 19,
       "asset_ids": [
         "crypto_aave",
         "crypto_ada",
@@ -105,7 +105,6 @@
         "crypto_bch",
         "crypto_bnb",
         "crypto_btc",
-        "crypto_doge",
         "crypto_eth",
         "crypto_hbar",
         "crypto_link",
@@ -129,47 +128,47 @@
         {
           "outcome": "max_drawdown_log",
           "predictor": "bundle_transaction_service_demand",
-          "coefficient": 0.9106390715660275,
-          "permutation_p_two_sided": 0.02675,
-          "benjamini_hochberg_q": 0.40454999999999997,
-          "leave_one_out_same_sign": 20,
-          "leave_one_out_samples": 20
+          "coefficient": 0.9504974337147698,
+          "permutation_p_two_sided": 0.027,
+          "benjamini_hochberg_q": 0.3141,
+          "leave_one_out_same_sign": 19,
+          "leave_one_out_samples": 19
         },
         {
           "outcome": "max_drawdown_log",
           "predictor": "bundle_monetary_store",
-          "coefficient": 0.8356739314490909,
-          "permutation_p_two_sided": 0.03215,
-          "benjamini_hochberg_q": 0.40454999999999997,
-          "leave_one_out_same_sign": 20,
-          "leave_one_out_samples": 20
+          "coefficient": 0.8743884999369629,
+          "permutation_p_two_sided": 0.0302,
+          "benjamini_hochberg_q": 0.3141,
+          "leave_one_out_same_sign": 19,
+          "leave_one_out_samples": 19
         },
         {
           "outcome": "market_beta",
           "predictor": "bundle_monetary_store",
-          "coefficient": -0.22680436653614192,
-          "permutation_p_two_sided": 0.04495,
-          "benjamini_hochberg_q": 0.40454999999999997,
-          "leave_one_out_same_sign": 20,
-          "leave_one_out_samples": 20
+          "coefficient": -0.2444361541706833,
+          "permutation_p_two_sided": 0.0349,
+          "benjamini_hochberg_q": 0.3141,
+          "leave_one_out_same_sign": 19,
+          "leave_one_out_samples": 19
         },
         {
           "outcome": "max_drawdown_log",
           "predictor": "bundle_control_rights",
-          "coefficient": -0.6100679441447376,
-          "permutation_p_two_sided": 0.10405,
-          "benjamini_hochberg_q": 0.7023375000000001,
-          "leave_one_out_same_sign": 20,
-          "leave_one_out_samples": 20
+          "coefficient": -0.6857078683449315,
+          "permutation_p_two_sided": 0.07815,
+          "benjamini_hochberg_q": 0.5275124999999999,
+          "leave_one_out_same_sign": 19,
+          "leave_one_out_samples": 19
         },
         {
           "outcome": "max_drawdown_log",
           "predictor": "bundle_subsidized_participation",
-          "coefficient": -0.4858274858588636,
-          "permutation_p_two_sided": 0.20955,
-          "benjamini_hochberg_q": 0.7027714285714286,
-          "leave_one_out_same_sign": 20,
-          "leave_one_out_samples": 20
+          "coefficient": -0.5351286034450347,
+          "permutation_p_two_sided": 0.1858,
+          "benjamini_hochberg_q": 0.8307321428571429,
+          "leave_one_out_same_sign": 19,
+          "leave_one_out_samples": 19
         }
       ]
     }

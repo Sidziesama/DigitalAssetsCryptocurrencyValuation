@@ -1,6 +1,6 @@
 import unittest
 
-from src.pipeline.crypto_economic_design import CODES, build_profiles, build_review, validate
+from src.pipeline.crypto_economic_design import CODES, apply_review, build_profiles, build_review, validate
 
 
 def registry():
@@ -33,6 +33,16 @@ class CryptoEconomicDesignTests(unittest.TestCase):
         self.assertEqual(len(rows), 10)
         self.assertNotIn("provisional_decision", rows[0])
         self.assertEqual(rows[0]["decision_0_or_1"], "")
+
+    def test_completed_review_overrides_provisional_profile(self):
+        review = build_review(spec([0] * 10), registry())
+        for row in review:
+            row.update(decision_0_or_1="1", confidence_low_medium_high="high",
+                       evidence_url="https://example.com", evidence_date="2026-08-22",
+                       reviewer_note="Human verified against the rule.")
+        profiles = apply_review(build_profiles(spec([0] * 10), registry()), review, spec([0] * 10))
+        self.assertEqual(profiles[0]["va_breadth_count"], 10)
+        self.assertEqual(profiles[0]["classification_status"], "complete_human_verified")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,5 @@
+{
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=bch&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2026-05-25&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-09-14T17:41:13.277737+00:00",
+  "sha256": "4cd84ac00f2c77286a8a8c61ad0f488e72a00158cd1f140198ee3112eeae41dd"
+}

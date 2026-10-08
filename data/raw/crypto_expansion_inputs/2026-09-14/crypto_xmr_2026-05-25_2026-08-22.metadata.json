@@ -1,0 +1,5 @@
+{
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=xmr&metrics=TxCnt&frequency=1d&start_time=2026-05-25&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-09-14T17:41:13.935965+00:00",
+  "sha256": "c405051e0c1a0764d2d0412ddbbe4d34351a6a378be6eadb26056b465b6a24e3"
+}

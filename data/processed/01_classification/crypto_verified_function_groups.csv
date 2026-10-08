@@ -1,0 +1,97 @@
+group_id,asset_id,symbol,architecture_context,group_definition
+monetary_store,crypto_btc,BTC,PoW,VA_MONETARY|VA_SCARCITY
+financial_integration,crypto_btc,BTC,PoW,VA_COLLATERAL
+monetary_store,crypto_eth,ETH,PoS,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_eth,ETH,PoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_eth,ETH,PoS,VA_STAKE
+supply_absorption,crypto_eth,ETH,PoS,VA_BURN
+financial_integration,crypto_eth,ETH,PoS,VA_COLLATERAL
+holder_capture,crypto_eth,ETH,PoS,VA_PROTOCOL
+monetary_store,crypto_bnb,BNB,PoS family,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_bnb,BNB,PoS family,VA_GAS|VA_UTILITY
+security_commitment,crypto_bnb,BNB,PoS family,VA_STAKE
+supply_absorption,crypto_bnb,BNB,PoS family,VA_BURN
+financial_integration,crypto_bnb,BNB,PoS family,VA_COLLATERAL
+control_rights,crypto_bnb,BNB,PoS family,VA_GOV
+holder_capture,crypto_bnb,BNB,PoS family,VA_PROTOCOL
+subsidized_participation,crypto_bnb,BNB,PoS family,VA_INCENTIVE
+monetary_store,crypto_xrp,XRP,federated consensus,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_xrp,XRP,federated consensus,VA_GAS|VA_UTILITY
+supply_absorption,crypto_xrp,XRP,federated consensus,VA_BURN
+holder_capture,crypto_xrp,XRP,federated consensus,VA_PROTOCOL
+subsidized_participation,crypto_xrp,XRP,federated consensus,VA_INCENTIVE
+transaction_service_demand,crypto_sol,SOL,PoS family,VA_GAS|VA_UTILITY
+security_commitment,crypto_sol,SOL,PoS family,VA_STAKE
+supply_absorption,crypto_sol,SOL,PoS family,VA_BURN
+financial_integration,crypto_sol,SOL,PoS family,VA_COLLATERAL
+holder_capture,crypto_sol,SOL,PoS family,VA_PROTOCOL
+subsidized_participation,crypto_sol,SOL,PoS family,VA_INCENTIVE
+monetary_store,crypto_trx,TRX,DPoS,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_trx,TRX,DPoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_trx,TRX,DPoS,VA_STAKE
+supply_absorption,crypto_trx,TRX,DPoS,VA_BURN
+control_rights,crypto_trx,TRX,DPoS,VA_GOV
+holder_capture,crypto_trx,TRX,DPoS,VA_PROTOCOL
+subsidized_participation,crypto_trx,TRX,DPoS,VA_INCENTIVE
+monetary_store,crypto_hype,HYPE,PoS family,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_hype,HYPE,PoS family,VA_GAS|VA_UTILITY
+security_commitment,crypto_hype,HYPE,PoS family,VA_STAKE
+supply_absorption,crypto_hype,HYPE,PoS family,VA_BURN
+control_rights,crypto_hype,HYPE,PoS family,VA_GOV
+holder_capture,crypto_hype,HYPE,PoS family,VA_PROTOCOL
+subsidized_participation,crypto_hype,HYPE,PoS family,VA_INCENTIVE
+monetary_store,crypto_zec,ZEC,PoW,VA_MONETARY|VA_SCARCITY
+control_rights,crypto_zec,ZEC,PoW,VA_GOV
+subsidized_participation,crypto_zec,ZEC,PoW,VA_INCENTIVE
+monetary_store,crypto_link,LINK,service staking,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_link,LINK,service staking,VA_GAS|VA_UTILITY
+security_commitment,crypto_link,LINK,service staking,VA_STAKE
+holder_capture,crypto_link,LINK,service staking,VA_PROTOCOL
+subsidized_participation,crypto_link,LINK,service staking,VA_INCENTIVE
+monetary_store,crypto_ada,ADA,PoS,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_ada,ADA,PoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_ada,ADA,PoS,VA_STAKE
+control_rights,crypto_ada,ADA,PoS,VA_GOV
+subsidized_participation,crypto_ada,ADA,PoS,VA_INCENTIVE
+monetary_store,crypto_xlm,XLM,federated consensus,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_xlm,XLM,federated consensus,VA_GAS|VA_UTILITY
+subsidized_participation,crypto_xlm,XLM,federated consensus,VA_INCENTIVE
+monetary_store,crypto_bch,BCH,PoW,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_bch,BCH,PoW,VA_GAS|VA_UTILITY
+subsidized_participation,crypto_bch,BCH,PoW,VA_INCENTIVE
+monetary_store,crypto_ltc,LTC,PoW,VA_MONETARY|VA_SCARCITY
+subsidized_participation,crypto_ltc,LTC,PoW,VA_INCENTIVE
+monetary_store,crypto_hbar,HBAR,hashgraph PoS,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_hbar,HBAR,hashgraph PoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_hbar,HBAR,hashgraph PoS,VA_STAKE
+monetary_store,crypto_sui,SUI,PoS,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_sui,SUI,PoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_sui,SUI,PoS,VA_STAKE
+control_rights,crypto_sui,SUI,PoS,VA_GOV
+monetary_store,crypto_avax,AVAX,PoS,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_avax,AVAX,PoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_avax,AVAX,PoS,VA_STAKE
+supply_absorption,crypto_avax,AVAX,PoS,VA_BURN
+holder_capture,crypto_avax,AVAX,PoS,VA_PROTOCOL
+transaction_service_demand,crypto_ton,TON,PoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_ton,TON,PoS,VA_STAKE
+supply_absorption,crypto_ton,TON,PoS,VA_BURN
+control_rights,crypto_ton,TON,PoS,VA_GOV
+holder_capture,crypto_ton,TON,PoS,VA_PROTOCOL
+monetary_store,crypto_tao,TAO,PoS family,VA_MONETARY|VA_SCARCITY
+transaction_service_demand,crypto_tao,TAO,PoS family,VA_GAS|VA_UTILITY
+security_commitment,crypto_tao,TAO,PoS family,VA_STAKE
+supply_absorption,crypto_uni,UNI,NA,VA_BURN
+control_rights,crypto_uni,UNI,NA,VA_GOV
+holder_capture,crypto_uni,UNI,NA,VA_PROTOCOL
+security_commitment,crypto_aave,AAVE,NA,VA_STAKE
+financial_integration,crypto_aave,AAVE,NA,VA_COLLATERAL
+control_rights,crypto_aave,AAVE,NA,VA_GOV
+subsidized_participation,crypto_aave,AAVE,NA,VA_INCENTIVE
+control_rights,crypto_arb,ARB,rollup,VA_GOV
+subsidized_participation,crypto_arb,ARB,rollup,VA_INCENTIVE
+control_rights,crypto_op,OP,rollup,VA_GOV
+holder_capture,crypto_op,OP,rollup,VA_PROTOCOL
+subsidized_participation,crypto_op,OP,rollup,VA_INCENTIVE
+transaction_service_demand,crypto_pol,POL,PoS,VA_GAS|VA_UTILITY
+security_commitment,crypto_pol,POL,PoS,VA_STAKE

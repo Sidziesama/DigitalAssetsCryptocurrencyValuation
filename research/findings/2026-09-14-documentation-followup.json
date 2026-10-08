@@ -1,0 +1,254 @@
+{
+  "date": "2026-09-14",
+  "purpose": "Documentation follow-up and researcher review, no independent reliability claim.",
+  "changes": [
+    {
+      "asset_id": "crypto_zec",
+      "code": "VA_GOV",
+      "before": {
+        "asset_id": "crypto_zec",
+        "code": "VA_GOV",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://zips.z.cash/zip-1016",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "ZIP1016 describes coinholder-directed funding and binding keyholder obligations but is labelled Proposed and leaves voting details to another ZIP. NU6.1 funding activation alone is insufficient to verify an operating binding holder process.",
+        "remaining_evidence": "Confirm implemented coinholder voting procedures and operative execution or legal obligations for fund decisions."
+      },
+      "after": {
+        "asset_id": "crypto_zec",
+        "code": "VA_GOV",
+        "status": "verified",
+        "recommended_value": 1,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.zcashcommunity.com/t/statement-on-the-bootstrap-ecc-q4-2025-retroactive-grant/54988",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "Coinholders approve actual grant allocations under an operating funding process. Key-holder organizations retain exceptional veto rights; the March 2026 statement documents their use. The researcher accepted constrained funding authority as qualifying governance on September 14. This establishes treasury decision rights, not protocol-upgrade control or revenue capture. The Proposed label and incomplete references in ZIP1016 are supplemented by administrator records of implementation.",
+        "remaining_evidence": "",
+        "supporting_urls": [
+          "https://zips.z.cash/zip-1016",
+          "https://forum.zcashcommunity.com/t/30-day-review-period-coinholder-directed-retroactive-grants-program-q3/57056"
+        ],
+        "researcher_review": {
+          "date": "2026-09-14",
+          "decision": "Yes\u2014record constrained funding authority as governance",
+          "scope": "Interpretation of constrained funding authority; not independent blind review"
+        }
+      }
+    },
+    {
+      "asset_id": "crypto_sol",
+      "code": "VA_GOV",
+      "before": {
+        "asset_id": "crypto_sol",
+        "code": "VA_GOV",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://governance.solana.com/faq",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "SGPs are described as stake-weighted on-chain signaling, with accepted proposals supplying a mandate to proceed. The inspected material does not establish binding implementation rights rather than advisory coordination.",
+        "remaining_evidence": "Resolve the binding-versus-signaling mechanism from operative governance rules, not vote weighting alone."
+      },
+      "after": {
+        "asset_id": "crypto_sol",
+        "code": "VA_GOV",
+        "status": "verified",
+        "recommended_value": 0,
+        "classification_date": "2026-09-14",
+        "source_url": "https://raw.githubusercontent.com/solana-foundation/solana-governance-proposals/main/README.md",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "The operative SGP policy explicitly defines signaling votes, with default decision-making resting with core developers and the SIMD process. The on-chain programme records tallies rather than executing upgrades. Apply the existing exclusion for informal signaling; stake weighting alone does not confer binding holder authority.",
+        "remaining_evidence": "",
+        "supporting_urls": [
+          "https://governance.solana.com/faq"
+        ]
+      }
+    },
+    {
+      "asset_id": "crypto_ada",
+      "code": "VA_INCENTIVE",
+      "before": {
+        "asset_id": "crypto_ada",
+        "code": "VA_INCENTIVE",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://docs.projectcatalyst.io/current-fund/fund-basics/fund-parameters",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "Catalyst Fund15 specifies ADA rewards for participation and accountability work, but its dated schedule does not establish an active distribution programme on the classification date.",
+        "remaining_evidence": "Confirm ongoing Fund15 rewards or a subsequent active round with ADA payout rules and dates."
+      },
+      "after": {
+        "asset_id": "crypto_ada",
+        "code": "VA_INCENTIVE",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://projectcatalyst.io/apply",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "Fund15 was paused in January, as confirmed by the February operator update. A separate 2026 pilot opened in August with ADA onboarding and performance payments. Its grant selection and staged future rewards require assessment; the old Fund15 timetable is no longer evidence of current activity.",
+        "remaining_evidence": "Verify selected pilot projects and current payments, distinguishing discretionary project selection from any qualifying rules-based usage subsidy. Do not infer inactivity of all Catalyst work from the Fund15 pause.",
+        "supporting_urls": [
+          "https://projectcatalyst.io/blog/update-from-the-catalyst-team",
+          "https://docs.projectcatalyst.io/open-funding/funding-basics/proof-of-adoption-and-standard"
+        ]
+      }
+    },
+    {
+      "asset_id": "crypto_zec",
+      "code": "VA_INCENTIVE",
+      "before": {
+        "asset_id": "crypto_zec",
+        "code": "VA_INCENTIVE",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://z.cash/upgrade/nu6-1/",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "The upgrade directs funding to development structures. Treasury funding itself does not establish a qualifying rules-based participation subsidy, especially where recipients are chosen through discretionary grants.",
+        "remaining_evidence": "Trace current ZEC recipient allocation rules and active distributions; distinguish funding a grants body from rewarding participation under a standing rule."
+      },
+      "after": {
+        "asset_id": "crypto_zec",
+        "code": "VA_INCENTIVE",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.zcashcommunity.com/t/retroactive-grant-application-gleyo/56977",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "Coinholder grants are operating, but discretionary grants are excluded from this function. Separately, Gleyo reports mainnet ZEC quest rewards since July and currently advertises ZEC rewards. A live product is not by itself a fully evidenced standing reward programme.",
+        "remaining_evidence": "Inspect a current funded Gleyo quest and its allocation rules or another active ZEC incentive programme; separate user rewards from a grant to the app developer.",
+        "supporting_urls": [
+          "https://gleyo.app/",
+          "https://forum.zcashcommunity.com/t/30-day-review-period-coinholder-directed-retroactive-grants-program-q3/57056"
+        ]
+      }
+    },
+    {
+      "asset_id": "crypto_pol",
+      "code": "VA_BURN",
+      "before": {
+        "asset_id": "crypto_pol",
+        "code": "VA_BURN",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "Older EIP-1559 documents describe fee burning, but newer proposals redirect base fees through a recycling and distribution arrangement.",
+        "remaining_evidence": "Verify current implementation and actual non-recycled burn execution at the classification date; do not carry forward the old MATIC burn description untested.",
+        "supporting_urls": [
+          "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-65.md"
+        ]
+      },
+      "after": {
+        "asset_id": "crypto_pol",
+        "code": "VA_BURN",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "PIP82 is Final and the Bor v2.6.0 release includes the changed fee recipient, with a March 4 mainnet activation schedule. The rule preserves a burn route for non-recycled fees. This establishes implementation documentation; current disbursement and programme-budget evidence remain missing.",
+        "remaining_evidence": "Verify executed non-recycled POL delivery to the final burn destination. Explorer access failed; a recipient label or release schedule alone is not execution evidence.",
+        "supporting_urls": [
+          "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-65.md",
+          "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-82.md",
+          "https://forum.polygon.technology/t/bor-v2-6-0-and-erigon-v3-4-0-for-mainnet-and-amoy/21757"
+        ]
+      }
+    },
+    {
+      "asset_id": "crypto_pol",
+      "code": "VA_PROTOCOL",
+      "before": {
+        "asset_id": "crypto_pol",
+        "code": "VA_PROTOCOL",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "The proposed route splits fees between usage reimbursements and a burn collector. The inspected material does not establish current executed holder capture.",
+        "remaining_evidence": "Confirm current fee-flow contracts, distributions and final burn destination under the strict capture rule.",
+        "supporting_urls": []
+      },
+      "after": {
+        "asset_id": "crypto_pol",
+        "code": "VA_PROTOCOL",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "PIP82 is Final and the Bor v2.6.0 release includes the changed fee recipient, with a March 4 mainnet activation schedule. The rule preserves a burn route for non-recycled fees. This establishes implementation documentation; current disbursement and programme-budget evidence remain missing.",
+        "remaining_evidence": "Verify current execution of the non-recycled fee-burn route or another enforceable holder-capture route. The documented multisig distribution step requires tracing.",
+        "supporting_urls": [
+          "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-82.md",
+          "https://forum.polygon.technology/t/bor-v2-6-0-and-erigon-v3-4-0-for-mainnet-and-amoy/21757"
+        ]
+      }
+    },
+    {
+      "asset_id": "crypto_pol",
+      "code": "VA_INCENTIVE",
+      "before": {
+        "asset_id": "crypto_pol",
+        "code": "VA_INCENTIVE",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "The agentic-commerce proposal defines a POL gas subsidy with a budget and an end date. Proposal terms alone do not establish activation or unexhausted funds.",
+        "remaining_evidence": "Confirm activation and current remaining budget or payouts before classifying the programme as active.",
+        "supporting_urls": []
+      },
+      "after": {
+        "asset_id": "crypto_pol",
+        "code": "VA_INCENTIVE",
+        "status": "pending",
+        "recommended_value": null,
+        "classification_date": "2026-09-14",
+        "source_url": "https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721",
+        "source_date": "2026-09-14",
+        "date_basis": "retrieved_as_of",
+        "rationale": "PIP82 is Final and the Bor v2.6.0 release includes the changed fee recipient, with a March 4 mainnet activation schedule. The rule preserves a burn route for non-recycled fees. This establishes implementation documentation; current disbursement and programme-budget evidence remain missing.",
+        "remaining_evidence": "Verify current eligible facilitator reimbursements and unexhausted budget; implementation is documented, current reward activity remains unresolved.",
+        "supporting_urls": [
+          "https://github.com/0xPolygon/Polygon-Improvement-Proposals/blob/main/PIPs/PIP-82.md",
+          "https://forum.polygon.technology/t/bor-v2-6-0-and-erigon-v3-4-0-for-mainnet-and-amoy/21757"
+        ]
+      }
+    }
+  ],
+  "pending_user_review": [
+    {
+      "assets": [
+        "crypto_bch",
+        "crypto_doge",
+        "crypto_ltc",
+        "crypto_zec"
+      ],
+      "code": "VA_GAS",
+      "recommendation": 0,
+      "status": "awaiting_researcher_reply",
+      "reason": "Apply recorded BTC relay-policy versus consensus precedent; no change made while reply is pending."
+    }
+  ]
+}

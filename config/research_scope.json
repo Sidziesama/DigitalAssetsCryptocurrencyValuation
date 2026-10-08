@@ -4,6 +4,20 @@
   "active_phase": "cryptoasset_economic_functions_and_valuation",
   "active_hypotheses": ["H1", "H2", "H3", "H4", "H8"],
   "active_objective": "Classify cryptoassets by evidenced economic function and test whether usage, value capture, issuance, staking, and active functional breadth explain valuation, liquidity, risk, or returns.",
+  "excluded_assets": [
+    {
+      "asset_id": "crypto_doge",
+      "reason": "Researcher-directed scope exclusion: meme coin is outside the intended advisory and economic-function analysis universe.",
+      "effective_date": "2026-10-07",
+      "evidence_policy": "Preserve previously collected source data and classification evidence for auditability, but exclude the asset from empirical samples, market factors, controls, and reported active-universe counts."
+    },
+    {
+      "asset_id": "crypto_xmr",
+      "reason": "Researcher-directed scope exclusion: privacy prevents observation of a required monetary-use metric, making the asset structurally incomparable under the frozen transparent-chain measurement rule.",
+      "effective_date": "2026-10-08",
+      "evidence_policy": "Preserve previously collected source data and classification evidence for auditability, but exclude the asset from empirical samples, market factors, controls, and reported active-universe counts."
+    }
+  ],
   "communication_priority": "Lead with plain-language discoveries and distinguish descriptive associations, exploratory tests, and confirmatory findings.",
   "hypothesis_status": {
     "H1": "four_asset_exploratory_activity_pilot_complete_positive_association_not_confirmed",

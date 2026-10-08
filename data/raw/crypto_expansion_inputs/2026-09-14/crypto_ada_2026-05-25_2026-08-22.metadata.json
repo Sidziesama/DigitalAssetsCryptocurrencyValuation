@@ -1,0 +1,5 @@
+{
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=ada&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2026-05-25&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-09-14T17:41:13.201910+00:00",
+  "sha256": "3f5dbe1bc0b0a6f9d95bb6cd670549863d1419c14ab05ebc7f8673bb1ea5cc4b"
+}

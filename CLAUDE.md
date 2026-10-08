@@ -10,7 +10,7 @@ For *what the project is*, read [`README.md`](README.md). For *where it is going
 
 Cryptoassets are sorted by technology or by marketing label, and neither tells you how the asset is supposed to accrue value. This project builds a reproducible classification of cryptoassets by **economic function** — what job the token actually performs, proved from dated primary sources — and tests whether that classification explains valuation and risk.
 
-Two things are being produced. **An instrument**: a classification anyone can reproduce and check, with a published reliability statistic. **A set of honest tests** of whether economic function explains anything, reported whether or not they work.
+Two things are being produced. **An instrument**: a classification anyone can inspect and check, with the single-coder limitation stated. **A set of honest tests** of whether economic function explains anything, reported whether or not they work.
 
 The intended output is a publishable paper. The instrument is the contribution; the empirical results so far are mostly null, and that is reported as the finding rather than buried.
 
@@ -124,7 +124,7 @@ If a result improves because a rule was loosened, that is a finding about the ru
 
 As of 14 September 2026: 70 pipeline modules, 248 tests, 151 processed files, 21 commits.
 
-Classification: 250 cells total — **124 evidence-backed** (each with a dated primary source), of which **only 10 carry a blind second review**. 6 held pending adjudication, 120 still provisional.
+Classification: 230 active-universe cells (23 assets × 10 functions) — **230 evidence-backed**, of which **only 10 carry a blind second review**. DOGE and XMR are preserved for auditability but excluded from active-universe counts.
 
 **One coder does the classification.** Never write a reliability claim about the matrix, and never cite the 10-cell κ = 1.00 as one. Independent reproducibility is untested and is stated as a limitation in the README, the phase summary and the manuscript.
 
@@ -133,13 +133,13 @@ The three states are not interchangeable and the vocabulary matters:
 | State | Cells | Means |
 |---|---|---|
 | reviewed | 10 | Sourced *and* blind-scored by a second reviewer in an earlier pass. **No further cells will reach this state: this is a single-coder project.** |
-| sourced | 114 | Dated primary source, audited against the design matrix, but no independent review |
-| pending | 6 | Held for adjudication; carries no value |
-| provisional | 120 | Design matrix only, no evidence |
+| sourced | 220 | Dated primary source, audited against the design matrix, but no independent review |
+| pending | 0 | Needs evidence or a rule decision; carries no value |
+| provisional | 0 | Design matrix only, no evidence |
 
 The κ = 1.00 covers those 10 cells only — SOL, AVAX, TRX, XRP and ADA on burn and protocol capture. It is **not** a reliability statistic for the six-asset core, which is sourced but has never been independently reviewed. Do not write otherwise.
 
-Phase 1 has four gates and **none passes yet**: rules validated externally, full coverage, an external reliability statistic, and zero open consistency cases. The immediate next step is fielding the expert panel, because its answers set the materiality thresholds that tranche B needs.
+Phase 1 has three active gates: rules validated externally, full coverage, and zero open consistency cases. G3 reliability is withdrawn under the single-coder approach. While the panel is in the field, collect tranche B data without assigning new materiality thresholds.
 
 Headline results, all exploratory and on hold: the H2 fee-and-capture interaction is 0.132 with exact p = 0.082 under the loose capture definition and 0.061 with p = 0.478 under the strict one; function breadth commands no premium; mechanism activations are not visibly priced; and function-versus-risk gives three of 27 tests at p ≤ 0.05 against 1.35 expected by chance, with none surviving a 10 percent false-discovery rate.
 

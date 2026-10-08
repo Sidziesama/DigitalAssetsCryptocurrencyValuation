@@ -1,7 +1,7 @@
 {
-  "assets": 3,
+  "assets": 4,
   "expected_days_per_asset": 90,
-  "daily_state_rows": 270,
+  "daily_state_rows": 360,
   "eligibility_pass_assets": [
     "crypto_btc",
     "crypto_eth",

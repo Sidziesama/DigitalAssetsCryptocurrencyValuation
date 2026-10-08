@@ -1,0 +1,5 @@
+{
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=zec&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2026-05-25&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-09-14T17:41:13.869780+00:00",
+  "sha256": "3529f93a81145bc49c940050a0f367a566df13d5ccf9ffb479f0818e782b0dcb"
+}

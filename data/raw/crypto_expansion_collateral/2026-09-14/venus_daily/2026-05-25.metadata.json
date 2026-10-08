@@ -1,0 +1,6 @@
+{
+  "url": "https://bsc-dataseed.bnbchain.org",
+  "retrieved_at_utc": "2026-09-14T17:47:06.058454+00:00",
+  "sha256": "5b99bd06a4efbcfdcd0a1ecbcb4d5c1e87777c050dec56c58a306dfd51b5f9c9",
+  "deployment_source": "https://api.venus.io/markets?chainId=56&limit=100&page=0"
+}

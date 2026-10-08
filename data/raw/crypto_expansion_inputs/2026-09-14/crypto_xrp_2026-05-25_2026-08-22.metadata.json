@@ -1,0 +1,5 @@
+{
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=xrp&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2026-05-25&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-09-14T17:41:13.797065+00:00",
+  "sha256": "f48c47ad04c22d203536de29788f3eb3d25d92e7376c85239377dd246bb61256"
+}

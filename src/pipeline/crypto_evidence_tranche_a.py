@@ -13,8 +13,8 @@ from .crypto_economic_design import CODES, load_json
 def validate_tranche(evidence: dict[str, Any]) -> None:
     if evidence.get("tranche") != "A" or not evidence.get("tranche_order_rule"):
         raise ValueError("tranche A evidence requires a tranche label and a fixed tranche-order rule")
-    if not evidence.get("adjudication_rule") or evidence.get("review_status") != "awaiting_independent_blind_review":
-        raise ValueError("tranche A evidence must record its adjudication rule and await independent review")
+    if not evidence.get("adjudication_rule") or evidence.get("review_status") not in {"awaiting_independent_blind_review", "single_coder_with_documented_limitations"}:
+        raise ValueError("tranche A evidence must record its adjudication rule and review status")
     for case in evidence.get("consistency_cases", []):
         if case.get("status") != "open_requires_adjudication" or not case.get("precedent") or not case.get("question"):
             raise ValueError(f"consistency case {case.get('case_id')} needs a precedent, a question, and open status")
@@ -41,7 +41,7 @@ def audit(evidence: dict[str, Any], design: dict[str, Any], registry: dict[str, 
                   "reviewer_rationale": "", "review_note": "Score independently. Do not consult the coder's value, source, or rationale."}
                  for row in rows]
     summary = {
-        "status": "tranche_a_drafted_awaiting_review",
+        "status": "tranche_a_single_coder_evidence" if evidence["review_status"] == "single_coder_with_documented_limitations" else "tranche_a_drafted_awaiting_review",
         "specification_version": evidence["document_version"], "as_of": evidence["as_of"],
         "assets": len(evidence["assets"]), "codes": len(evidence["codes"]), "decisions": len(rows),
         "verified_decisions": len(verified), "pending_decisions": len(pending),
@@ -54,7 +54,7 @@ def audit(evidence: dict[str, Any], design: dict[str, Any], registry: dict[str, 
         "independent_replication": evidence.get("independent_replication"),
         "url_confirmed_decisions": sum(row.get("verification", "").startswith("url_confirmed") for row in rows),
         "tranche_order_rule": evidence["tranche_order_rule"],
-        "next_requirement": "An independent reviewer scores the blind worksheet, review-adjudication computes agreement, and only then may verified values be written into the design matrix. Pending cells stay null until adjudicated and never default to zero.",
+        "next_requirement": "Resolve the remaining evidence gaps and apply the same rules consistently. This is a single-coder project; no further blind reviewer is required. Pending cells stay null until adjudicated and never default to zero.",
     }
     return rows, worksheet, summary
 

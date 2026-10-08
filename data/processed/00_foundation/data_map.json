@@ -1,10 +1,10 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 152,
+    "files": 159,
     "by_phase": {
       "00_foundation": 24,
-      "01_classification": 53,
+      "01_classification": 60,
       "02_valuation": 24,
       "03_risk": 7,
       "04_stablecoin_deferred": 44
@@ -29,6 +29,12 @@
       "crypto_economic_design_targeted_review.csv",
       "crypto_evidence_tranche_a_blind_review.csv",
       "crypto_evidence_tranche_a_summary.json",
+      "crypto_expansion_activity_components.csv",
+      "crypto_expansion_activity_daily.csv",
+      "crypto_expansion_collateral_coverage.csv",
+      "crypto_expansion_collateral_detail.csv",
+      "crypto_expansion_input_coverage.csv",
+      "crypto_expansion_venus_current_eligibility.csv",
       "crypto_h2_expansion_evidence_audit.csv",
       "crypto_h2_expansion_review_audit.csv",
       "crypto_h4_source_readiness.csv",
@@ -240,7 +246,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 52725,
+      "bytes": 55164,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -317,6 +323,7 @@
       ],
       "read_by": [
         "crypto_collateral",
+        "crypto_expansion_inputs",
         "crypto_h2_pilot_panel",
         "crypto_h4_readiness",
         "stablecoin_trading_activity"
@@ -456,7 +463,7 @@
       "phase": "01_classification",
       "file": "classification_status.json",
       "kind": "summary",
-      "bytes": 1372,
+      "bytes": 1395,
       "written_by": [
         "classification_status",
         "crypto_collateral",
@@ -498,7 +505,9 @@
       "written_by": [
         "crypto_collateral"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_expansion_inputs"
+      ],
       "named_in_config": [
         "crypto_phase1_research_map.json"
       ],
@@ -630,7 +639,7 @@
       "phase": "01_classification",
       "file": "crypto_evidence_tranche_a.csv",
       "kind": "table",
-      "bytes": 22339,
+      "bytes": 23992,
       "written_by": [
         "classification_status",
         "crypto_evidence_tranche_a",
@@ -659,9 +668,95 @@
       "phase": "01_classification",
       "file": "crypto_evidence_tranche_a_summary.json",
       "kind": "summary",
-      "bytes": 4842,
+      "bytes": 3962,
       "written_by": [
         "crypto_evidence_tranche_a"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_expansion_activity_components.csv",
+      "kind": "table",
+      "bytes": 87596,
+      "written_by": [
+        "crypto_expansion_inputs"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_expansion_activity_daily.csv",
+      "kind": "table",
+      "bytes": 34538,
+      "written_by": [
+        "crypto_expansion_inputs"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_expansion_collateral_coverage.csv",
+      "kind": "table",
+      "bytes": 1616,
+      "written_by": [
+        "crypto_expansion_collateral"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_expansion_collateral_daily.csv",
+      "kind": "table",
+      "bytes": 27822,
+      "written_by": [
+        "crypto_expansion_collateral"
+      ],
+      "read_by": [
+        "crypto_expansion_inputs"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_expansion_collateral_detail.csv",
+      "kind": "table",
+      "bytes": 119475,
+      "written_by": [
+        "crypto_expansion_collateral"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_expansion_input_coverage.csv",
+      "kind": "table",
+      "bytes": 6912,
+      "written_by": [
+        "crypto_expansion_inputs"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
+      "file": "crypto_expansion_venus_current_eligibility.csv",
+      "kind": "table",
+      "bytes": 2712,
+      "written_by": [
+        "crypto_expansion_collateral"
       ],
       "read_by": [],
       "named_in_config": [],

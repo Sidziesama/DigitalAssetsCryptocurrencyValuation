@@ -619,144 +619,144 @@
       "market_beta": {
         "status": "computed",
         "n_pairs": 8,
-        "spearman_rho": -0.6629,
+        "spearman_rho": -0.4788,
         "p_value": null,
         "per_bundle": [
           {
             "bundle": "monetary_store",
             "panel_score": 2.875,
-            "permutation_p": 0.04495
+            "permutation_p": 0.0349
           },
           {
             "bundle": "transaction_service_demand",
             "panel_score": 3.1667,
-            "permutation_p": 0.3644
+            "permutation_p": 0.3128
           },
           {
             "bundle": "security_commitment",
             "panel_score": 3.1667,
-            "permutation_p": 0.95885
+            "permutation_p": 0.9014
           },
           {
             "bundle": "supply_absorption",
             "panel_score": 3.0833,
-            "permutation_p": 0.2533
+            "permutation_p": 0.3317
           },
           {
             "bundle": "financial_integration",
             "panel_score": 3.5833,
-            "permutation_p": 0.42925
+            "permutation_p": 0.55805
           },
           {
             "bundle": "control_rights",
             "panel_score": 3.5833,
-            "permutation_p": 0.9777
+            "permutation_p": 0.88125
           },
           {
             "bundle": "holder_capture",
             "panel_score": 3.3333,
-            "permutation_p": 0.71965
+            "permutation_p": 0.5311
           },
           {
             "bundle": "subsidized_participation",
             "panel_score": 3.1667,
-            "permutation_p": 0.97305
+            "permutation_p": 0.9181
           }
         ]
       },
       "realized_volatility_annualized": {
         "status": "computed",
         "n_pairs": 8,
-        "spearman_rho": -0.2823,
+        "spearman_rho": -0.3928,
         "p_value": null,
         "per_bundle": [
           {
             "bundle": "monetary_store",
             "panel_score": 2.875,
-            "permutation_p": 0.2195
+            "permutation_p": 0.1879
           },
           {
             "bundle": "transaction_service_demand",
             "panel_score": 3.1667,
-            "permutation_p": 0.69625
+            "permutation_p": 0.6366
           },
           {
             "bundle": "security_commitment",
             "panel_score": 3.1667,
-            "permutation_p": 0.78755
+            "permutation_p": 0.92765
           },
           {
             "bundle": "supply_absorption",
             "panel_score": 3.0833,
-            "permutation_p": 0.34545
+            "permutation_p": 0.43075
           },
           {
             "bundle": "financial_integration",
             "panel_score": 3.5833,
-            "permutation_p": 0.39045
+            "permutation_p": 0.5351
           },
           {
             "bundle": "control_rights",
             "panel_score": 3.5833,
-            "permutation_p": 0.5763
+            "permutation_p": 0.6944
           },
           {
             "bundle": "holder_capture",
             "panel_score": 3.3333,
-            "permutation_p": 0.68205
+            "permutation_p": 0.50935
           },
           {
             "bundle": "subsidized_participation",
             "panel_score": 3.1667,
-            "permutation_p": 0.6222
+            "permutation_p": 0.71825
           }
         ]
       },
       "max_drawdown_log": {
         "status": "computed",
         "n_pairs": 8,
-        "spearman_rho": -0.4051,
+        "spearman_rho": -0.3069,
         "p_value": null,
         "per_bundle": [
           {
             "bundle": "monetary_store",
             "panel_score": 2.875,
-            "permutation_p": 0.03215
+            "permutation_p": 0.0302
           },
           {
             "bundle": "transaction_service_demand",
             "panel_score": 3.1667,
-            "permutation_p": 0.02675
+            "permutation_p": 0.027
           },
           {
             "bundle": "security_commitment",
             "panel_score": 3.1667,
-            "permutation_p": 0.631
+            "permutation_p": 0.69865
           },
           {
             "bundle": "supply_absorption",
             "panel_score": 3.0833,
-            "permutation_p": 0.3218
+            "permutation_p": 0.3673
           },
           {
             "bundle": "financial_integration",
             "panel_score": 3.5833,
-            "permutation_p": 0.698
+            "permutation_p": 0.80545
           },
           {
             "bundle": "control_rights",
             "panel_score": 3.5833,
-            "permutation_p": 0.10405
+            "permutation_p": 0.07815
           },
           {
             "bundle": "holder_capture",
             "panel_score": 3.3333,
-            "permutation_p": 0.35065
+            "permutation_p": 0.25335
           },
           {
             "bundle": "subsidized_participation",
             "panel_score": 3.1667,
-            "permutation_p": 0.20955
+            "permutation_p": 0.1858
           }
         ]
       }
@@ -1480,15 +1480,15 @@
     "definition": "Per respondent, the share of determinate cells matching the project's value, plus a two-rater Cohen's kappa for that respondent against the project.",
     "caution": "Inter-rater reliability, reliability, accuracy, correctness, validation, or any phrasing implying the project's answers are a ground truth against which scorers are assessed.",
     "respondents_scored": 12,
-    "mean_agreement_across_respondents": 0.4384,
-    "mean_kappa_across_respondents": -0.048,
+    "mean_agreement_across_respondents": 0.4219,
+    "mean_kappa_across_respondents": -0.0563,
     "respondents_with_undefined_kappa": 0,
     "by_respondent": [
       {
         "respondent": "R000",
-        "comparable_cells": 7,
-        "agreement": 0.2857,
-        "kappa": -0.5217,
+        "comparable_cells": 8,
+        "agreement": 0.25,
+        "kappa": -0.5,
         "kappa_status": "estimated"
       },
       {
@@ -1500,16 +1500,16 @@
       },
       {
         "respondent": "R002",
-        "comparable_cells": 7,
-        "agreement": 0.2857,
-        "kappa": -0.2069,
+        "comparable_cells": 8,
+        "agreement": 0.25,
+        "kappa": -0.2,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R003",
-        "comparable_cells": 5,
-        "agreement": 0.4,
-        "kappa": -0.1538,
+        "comparable_cells": 6,
+        "agreement": 0.3333,
+        "kappa": -0.2,
         "kappa_status": "estimated"
       },
       {
@@ -1521,51 +1521,51 @@
       },
       {
         "respondent": "R005",
-        "comparable_cells": 8,
-        "agreement": 0.625,
-        "kappa": -0.2,
-        "kappa_status": "estimated"
-      },
-      {
-        "respondent": "R006",
-        "comparable_cells": 8,
-        "agreement": 0.5,
-        "kappa": 0.0,
-        "kappa_status": "estimated"
-      },
-      {
-        "respondent": "R007",
-        "comparable_cells": 6,
-        "agreement": 0.5,
+        "comparable_cells": 9,
+        "agreement": 0.5556,
         "kappa": -0.2857,
         "kappa_status": "estimated"
       },
       {
+        "respondent": "R006",
+        "comparable_cells": 9,
+        "agreement": 0.4444,
+        "kappa": -0.0465,
+        "kappa_status": "estimated"
+      },
+      {
+        "respondent": "R007",
+        "comparable_cells": 7,
+        "agreement": 0.5714,
+        "kappa": -0.2353,
+        "kappa_status": "estimated"
+      },
+      {
         "respondent": "R008",
-        "comparable_cells": 4,
-        "agreement": 0.25,
-        "kappa": 0.0,
+        "comparable_cells": 5,
+        "agreement": 0.4,
+        "kappa": 0.1176,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R009",
-        "comparable_cells": 9,
-        "agreement": 0.3333,
-        "kappa": -0.125,
+        "comparable_cells": 10,
+        "agreement": 0.3,
+        "kappa": -0.129,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R010",
-        "comparable_cells": 5,
-        "agreement": 0.2,
+        "comparable_cells": 6,
+        "agreement": 0.1667,
         "kappa": 0.0,
         "kappa_status": "estimated"
       },
       {
         "respondent": "R011",
-        "comparable_cells": 7,
-        "agreement": 0.7143,
-        "kappa": 0.3636,
+        "comparable_cells": 8,
+        "agreement": 0.625,
+        "kappa": 0.25,
         "kappa_status": "estimated"
       }
     ]
@@ -1579,8 +1579,8 @@
         "No": 2,
         "Unknown": 2
       },
-      "project_value": null,
-      "project_state": "pending",
+      "project_value": "No",
+      "project_state": "verified",
       "coverage": 0.8333
     },
     {
@@ -1717,10 +1717,10 @@
     }
   ],
   "classification_status_at_analysis": {
-    "sourced": 114,
+    "sourced": 220,
     "reviewed": 10,
-    "pending": 6,
-    "provisional": 120
+    "pending": 0,
+    "provisional": 0
   },
   "warning": "Produced from synthetic responses. No figure here is a finding."
 }

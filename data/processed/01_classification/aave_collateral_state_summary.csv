@@ -2,3 +2,4 @@ asset_id,expected_days,observed_days,collateral_enabled_days,minimum_ltv_bps,max
 crypto_btc,90,90,90,7300,7300,1
 crypto_eth,90,90,90,8050,8050,1
 crypto_aave,90,90,90,6900,6900,1
+crypto_link,90,90,0,0,0,0

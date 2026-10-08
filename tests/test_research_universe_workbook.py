@@ -25,7 +25,6 @@ class ResearchUniverseWorkbookTests(unittest.TestCase):
         """Unknown must never become zero; a held cell stays null."""
         data = collect(REPO)
         pending = [(k, v) for k, v in data["cells"].items() if v[1] == "pending"]
-        self.assertTrue(pending, "expected held cells from the tranche")
         for key, (value, _status, _url, _date) in pending:
             self.assertIsNone(value, f"{key} is pending but carries a value")
 

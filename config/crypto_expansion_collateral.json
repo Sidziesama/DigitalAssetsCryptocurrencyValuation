@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "purpose": "Descriptive token-balance screen only. Symbols are candidate matches, not verified underlying identities or collateral-use balances.",
+  "window_source": "crypto_monetary_evidence.json activity_window",
+  "protocol_source": "crypto_collateral_sources.json protocols",
+  "assets": [
+    {
+      "asset_id": "crypto_ada",
+      "candidate_token_aliases": [
+        "ADA"
+      ]
+    },
+    {
+      "asset_id": "crypto_avax",
+      "candidate_token_aliases": [
+        "WAVAX"
+      ]
+    },
+    {
+      "asset_id": "crypto_bch",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_doge",
+      "candidate_token_aliases": [
+        "DOGE"
+      ]
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_link",
+      "candidate_token_aliases": [
+        "LINK"
+      ]
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "candidate_token_aliases": [
+        "LTC"
+      ]
+    },
+    {
+      "asset_id": "crypto_op",
+      "candidate_token_aliases": [
+        "OP"
+      ]
+    },
+    {
+      "asset_id": "crypto_sol",
+      "candidate_token_aliases": [
+        "SOL"
+      ]
+    },
+    {
+      "asset_id": "crypto_sui",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_trx",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "candidate_token_aliases": [
+        "XRP"
+      ]
+    },
+    {
+      "asset_id": "crypto_zec",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_hype",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_xmr",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_ton",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_tao",
+      "candidate_token_aliases": []
+    },
+    {
+      "asset_id": "crypto_pol",
+      "candidate_token_aliases": [
+        "POL"
+      ]
+    }
+  ],
+  "excluded_aliases": [
+    "MATIC",
+    "WMATIC",
+    "MATICX",
+    "STMATIC",
+    "SAVAX",
+    "STAVAX",
+    "TAVAX"
+  ],
+  "exclusion_reason": "Legacy migration and staking derivatives require separate underlying-asset and conversion evidence. LP positions and substring matches are excluded.",
+  "interpretation": "Protocol-level tokensInUsd balances are a screening proxy. They are not collateral-enabled balances. Current eligibility is not evidence of historical eligibility. No classification is produced."
+}

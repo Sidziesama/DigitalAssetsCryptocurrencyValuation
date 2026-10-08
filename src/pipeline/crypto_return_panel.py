@@ -18,6 +18,11 @@ def validate(spec: dict[str, Any]) -> None:
         raise ValueError("unsupported return panel specification")
     if spec.get("minimum_asset_days", 0) < 30 or spec.get("max_gap_days", 0) < 1:
         raise ValueError("return panel needs a minimum history and a gap rule")
+    excluded = spec.get("excluded_assets", [])
+    if not isinstance(excluded, list) or any(not isinstance(asset, str) or not asset for asset in excluded):
+        raise ValueError("excluded_assets must be a list of non-empty asset ids")
+    if len(excluded) != len(set(excluded)):
+        raise ValueError("excluded_assets must not contain duplicates")
 
 
 def beta(x: list[float], y: list[float]) -> float | None:
@@ -33,8 +38,11 @@ def beta(x: list[float], y: list[float]) -> float | None:
 def build(spec: dict[str, Any], rows: list[dict[str, str]]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     validate(spec)
     start, end = date.fromisoformat(spec["start_date"]), date.fromisoformat(spec["end_date"])
+    excluded_assets = set(spec.get("excluded_assets", []))
     closes: dict[str, dict[date, tuple[float, float]]] = defaultdict(dict)
     for row in rows:
+        if row.get("asset_id") in excluded_assets:
+            continue
         if row.get("quote_asset") != spec["quote_asset"]:
             continue
         day = date.fromisoformat(row["date"])
@@ -106,7 +114,8 @@ def build(spec: dict[str, Any], rows: list[dict[str, str]]) -> tuple[list[dict[s
             })
     summary = {
         "status": "return_panel_complete", "specification_version": spec["document_version"], "freeze_date": spec["freeze_date"],
-        "assets_included": len(included), "assets_excluded": len(coverage) - len(included), "coverage": coverage,
+        "assets_included": len(included), "assets_excluded": len(coverage) - len(included),
+        "scope_excluded_assets": sorted(excluded_assets), "coverage": coverage,
         "rows": len(panel), "first_date": min(r["date"] for r in panel), "last_date": max(r["date"] for r in panel),
         "rows_with_rolling_beta": sum(r["market_beta_180d_lag1"] is not None for r in panel),
         "rows_with_forward_30d": sum(r["forward_log_return_30d"] is not None for r in panel),

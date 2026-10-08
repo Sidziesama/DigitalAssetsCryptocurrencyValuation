@@ -1,0 +1,5 @@
+{
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=xlm&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2026-05-25&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-09-14T17:41:13.704665+00:00",
+  "sha256": "bee6a49069f5ec8280daa857ef8919b3fce546c6753cf8855c10819ebc9a8fc8"
+}

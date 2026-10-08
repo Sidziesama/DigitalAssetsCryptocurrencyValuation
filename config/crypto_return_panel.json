@@ -9,6 +9,7 @@
   "start_date": "2019-01-01",
   "end_date": "2026-08-22",
   "minimum_asset_days": 365,
+  "excluded_assets": ["crypto_doge", "crypto_xmr"],
   "fields": {
     "log_return": "Natural log of close over previous available close; gaps longer than max_gap_days break the return.",
     "forward_log_return_7d": "Sum of the next seven calendar-day log returns; missing when any day is absent.",
@@ -22,6 +23,6 @@
   },
   "max_gap_days": 3,
   "risk_free_rate": "Zero; excess returns are raw returns, a declared simplification common to daily crypto studies.",
-  "exclusions_rule": "Assets are included exactly when the archived Binance file holds at least minimum_asset_days of USDT closes; delisted or short-history assets are reported, not silently dropped.",
+  "exclusions_rule": "Assets listed in excluded_assets are removed before market-factor construction. All other assets are included exactly when the archived Binance file holds at least minimum_asset_days of USDT closes; scope exclusions, delisted assets, and short histories are reported rather than silently dropped.",
   "interpretation": "This panel supports description and factor baselines. Daily crypto returns are close to unpredictable; the intended findings concern risk exposure and behaviour conditional on economic function, not forecasting."
 }

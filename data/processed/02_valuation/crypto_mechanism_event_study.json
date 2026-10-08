@@ -17,7 +17,7 @@
       "event_id": "uni_unification_fee_to_burn_activation",
       "transition": "activation",
       "expected_sign": "positive",
-      "difference_in_differences": -0.03860128005934094,
+      "difference_in_differences": -0.03860128005933596,
       "sign_matches_expectation": 0,
       "asset_placebo_p_two_sided": 0.36363636363636365,
       "date_placebo_p_two_sided": 0.7407407407407407,
@@ -29,7 +29,7 @@
       "event_id": "aave_buyback_pause",
       "transition": "suspension",
       "expected_sign": "negative",
-      "difference_in_differences": -0.13357495346412626,
+      "difference_in_differences": -0.1335749534641213,
       "sign_matches_expectation": 1,
       "asset_placebo_p_two_sided": 0.18181818181818182,
       "date_placebo_p_two_sided": 0.14814814814814814,
@@ -43,14 +43,14 @@
     {
       "event_id": "uni_unification_fee_to_burn_activation",
       "outcome": "log1p_fees_usd_lag1",
-      "difference_in_differences": -0.3601900386109584,
+      "difference_in_differences": -0.36019003861096055,
       "asset_placebo_p_two_sided": 0.36363636363636365,
       "date_placebo_p_two_sided": 0.2962962962962963
     },
     {
       "event_id": "aave_buyback_pause",
       "outcome": "log1p_fees_usd_lag1",
-      "difference_in_differences": 0.09457630189790737,
+      "difference_in_differences": 0.09457630189790223,
       "asset_placebo_p_two_sided": 0.45454545454545453,
       "date_placebo_p_two_sided": 0.5185185185185185
     }

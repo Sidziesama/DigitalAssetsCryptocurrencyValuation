@@ -42,5 +42,11 @@ class CryptoReturnPanelTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"at least one asset"):
             build(spec(),bad)
 
+    def test_scope_exclusion_removes_asset_before_market_construction(self):
+        scoped = spec() | {"excluded_assets": ["crypto_eth"]}
+        panel, summary = build(scoped, rows())
+        self.assertNotIn("crypto_eth", {row["asset_id"] for row in panel})
+        self.assertEqual(summary["scope_excluded_assets"], ["crypto_eth"])
+
 
 if __name__=="__main__": unittest.main()

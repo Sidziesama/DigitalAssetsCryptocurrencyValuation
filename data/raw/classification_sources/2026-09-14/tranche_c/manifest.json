@@ -1,0 +1,386 @@
+[
+  {
+    "url": "https://ai-bounties.hedera.com/",
+    "retrieved_at": "2026-09-14T17:13:05.541725+00:00",
+    "final_url": "https://ai-bounties.hedera.com/",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "01.html",
+    "sha256": "c9074d11f8b91454f664dd8f56f7c1d3089584e35d98b8d2325ddc758da745d2",
+    "bytes": 90703
+  },
+  {
+    "url": "https://bitcoincash.org/",
+    "retrieved_at": "2026-09-14T17:13:05.542447+00:00",
+    "final_url": "https://bitcoincash.org/",
+    "content_type": "text/html",
+    "status": "captured",
+    "file": "02.html",
+    "sha256": "117adef91c11ff2c77bd4ceb9f160d79930acc1edfc43a2d3894fbd8a1c6a146",
+    "bytes": 62070
+  },
+  {
+    "url": "https://build.avax.network/docs/rpcs/other/guides/txn-fees",
+    "retrieved_at": "2026-09-14T17:13:05.542591+00:00",
+    "final_url": "https://build.avax.network/docs/rpcs/other/guides/txn-fees",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "03.html",
+    "sha256": "a59afe6d235b97fa26848e427c905d1d28851f8b5841c451991963fb1c6ac892",
+    "bytes": 579992
+  },
+  {
+    "url": "https://chain.link/economics/staking",
+    "retrieved_at": "2026-09-14T17:13:05.542669+00:00",
+    "final_url": "https://chain.link/economics/staking",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "04.html",
+    "sha256": "e7b688853a64b70eceaae95c7666f8346435de460a9af3fcc54acaa3218958dc",
+    "bytes": 325852
+  },
+  {
+    "url": "https://developers.cardano.org/docs/learn/core-concepts/fees/",
+    "retrieved_at": "2026-09-14T17:13:05.542737+00:00",
+    "final_url": "https://developers.cardano.org/docs/learn/core-concepts/fees/",
+    "content_type": "text/html; charset=UTF-8",
+    "status": "captured",
+    "file": "05.html",
+    "sha256": "b31a6513e215ad80459596ab18308304a047460127c22c0899b49591d4bb9f5e",
+    "bytes": 445
+  },
+  {
+    "url": "https://developers.stellar.org/docs/learn/fundamentals/fees-resource-limits-metering",
+    "retrieved_at": "2026-09-14T17:13:05.542800+00:00",
+    "final_url": "https://developers.stellar.org/docs/learn/fundamentals/fees-resource-limits-metering",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "06.html",
+    "sha256": "607a2a638fa9e2e57eeaa86c1a0f1dc4cb53a72045e5e48aa963ed1fe92febb1",
+    "bytes": 86604
+  },
+  {
+    "url": "https://developers.stellar.org/docs/learn/fundamentals/lumens",
+    "retrieved_at": "2026-09-14T17:13:05.542860+00:00",
+    "final_url": "https://developers.stellar.org/docs/learn/fundamentals/lumens",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "07.html",
+    "sha256": "09e90b1a96df3d56cdd63e7167124b257be451a3c29132a5e9db43d604c9801b",
+    "bytes": 67202
+  },
+  {
+    "url": "https://developers.stellar.org/docs/learn/fundamentals/stellar-consensus-protocol",
+    "retrieved_at": "2026-09-14T17:13:05.542919+00:00",
+    "final_url": "https://developers.stellar.org/docs/learn/fundamentals/stellar-consensus-protocol",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "08.html",
+    "sha256": "96fe27a4bac95d0beb2ed895f3b0dc5d097d6c06f62231f9a79605a8d39ffd36",
+    "bytes": 56875
+  },
+  {
+    "url": "https://developers.tron.network/docs/committee",
+    "retrieved_at": "2026-09-14T17:13:05.698892+00:00",
+    "final_url": "https://developers.tron.network/docs/committee",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "09.html",
+    "sha256": "c2dd07bdff0ce9711291c1502894c1ada752a0f0b4181630086b03989223752c",
+    "bytes": 348683
+  },
+  {
+    "url": "https://developers.tron.network/docs/resource-model",
+    "retrieved_at": "2026-09-14T17:13:05.714281+00:00",
+    "final_url": "https://developers.tron.network/docs/resource-model",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "10.html",
+    "sha256": "28a7bd8779faec86481593b3b36623f2bbb15a72d4b5614db07338b5cf1730d6",
+    "bytes": 336151
+  },
+  {
+    "url": "https://developers.tron.network/docs/reward-calculation",
+    "retrieved_at": "2026-09-14T17:13:05.728234+00:00",
+    "final_url": "https://developers.tron.network/docs/reward-calculation",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "11.html",
+    "sha256": "e93bb1b70076fbdfed740f81a9ae1dfcaae6f853e1c8b175356b35f44b93a26a",
+    "bytes": 366227
+  },
+  {
+    "url": "https://docs.cardano.org/about-cardano/governance-overview",
+    "retrieved_at": "2026-09-14T17:13:05.779221+00:00",
+    "final_url": "https://docs.cardano.org/about-cardano/governance-overview",
+    "content_type": "text/html; charset=UTF-8",
+    "status": "captured",
+    "file": "12.html",
+    "sha256": "7990650944e4d337fd707ade0d52c9cb57cd579173b70c66dd18a21f1a1255dc",
+    "bytes": 43177
+  },
+  {
+    "url": "https://docs.chain.link/resources/link-token-contracts",
+    "retrieved_at": "2026-09-14T17:13:05.781692+00:00",
+    "final_url": "https://docs.chain.link/resources/link-token-contracts",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "13.html",
+    "sha256": "cb009b040e224b60f313f06a2e160d0c10e5b01a278dbe7d4bfeb886a6e34418",
+    "bytes": 983756
+  },
+  {
+    "url": "https://docs.chain.link/vrf/v2-5/billing",
+    "retrieved_at": "2026-09-14T17:13:05.854937+00:00",
+    "final_url": "https://docs.chain.link/vrf/v2-5/billing",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "14.html",
+    "sha256": "bff4e9927aa04cce8edf5e20eb06d7f059ad92a50339ff426225f44dc866301a",
+    "bytes": 348014
+  },
+  {
+    "url": "https://docs.optimism.io/app-developers/guides/transactions/estimates",
+    "retrieved_at": "2026-09-14T17:13:05.975330+00:00",
+    "final_url": "https://docs.optimism.io/app-developers/guides/transactions/estimates",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "15.html",
+    "sha256": "357b8f521d76923d594c7730c42613538fa2cd2f5009495a932e10f7e63c5def",
+    "bytes": 366717
+  },
+  {
+    "url": "https://docs.optimism.io/governance/gov-faq",
+    "retrieved_at": "2026-09-14T17:13:05.985917+00:00",
+    "final_url": "https://docs.optimism.io/governance/gov-faq",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "16.html",
+    "sha256": "e9508ddebd6284afc24ed49bc3727b1da5500c13be97e43ae6e8af2fca2e66ce",
+    "bytes": 358300
+  },
+  {
+    "url": "https://docs.projectcatalyst.io/current-fund/fund-basics/fund-parameters",
+    "retrieved_at": "2026-09-14T17:13:05.988990+00:00",
+    "final_url": "https://docs.projectcatalyst.io/current-fund/fund-basics/fund-parameters",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "17.html",
+    "sha256": "529d1efb19057b15c633b05fb29a3d8fa3908988fd9cdd4be66b8fae7a83b064",
+    "bytes": 958734
+  },
+  {
+    "url": "https://docs.sui.io/develop/sui-architecture/tokenomics-overview",
+    "retrieved_at": "2026-09-14T17:13:06.041016+00:00",
+    "final_url": "https://docs.sui.io/develop/sui-architecture/tokenomics-overview",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "18.html",
+    "sha256": "69b31fbbb8c6629eccd7023984f22c1e66aed003b590af9721bfa3374824913d",
+    "bytes": 70821
+  },
+  {
+    "url": "https://dogecoin.com/dogepedia/articles/what-is-dogecoin/",
+    "retrieved_at": "2026-09-14T17:13:06.077484+00:00",
+    "final_url": "https://dogecoin.com/dogepedia/articles/what-is-dogecoin/",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "19.html",
+    "sha256": "437d5e0a392035afc60096fbc38c17c6c160f3b762c663e751089b9db2c4285c",
+    "bytes": 15497
+  },
+  {
+    "url": "https://dogecoin.com/dogepedia/articles/who-owns-dogecoin/",
+    "retrieved_at": "2026-09-14T17:13:06.146733+00:00",
+    "final_url": "https://dogecoin.com/dogepedia/articles/who-owns-dogecoin/",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "20.html",
+    "sha256": "fb491d3dda4f3004772981b6ea8191eddbdb6b061d8468be9743cf15531c1134",
+    "bytes": 15403
+  },
+  {
+    "url": "https://foundation.dogecoin.com/announcements/2022-12-31-corefund/",
+    "retrieved_at": "2026-09-14T17:13:06.170158+00:00",
+    "final_url": "https://foundation.dogecoin.com/announcements/2022-12-31-corefund/",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "21.html",
+    "sha256": "1142de2b2c89bd5c43984898dfd357ea7f0accfd622542b8e53557dc6c6ff64a",
+    "bytes": 23404
+  },
+  {
+    "url": "https://github.com/avalanche-foundation/ACPs",
+    "retrieved_at": "2026-09-14T17:13:06.224561+00:00",
+    "final_url": "https://github.com/avalanche-foundation/ACPs",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "22.html",
+    "sha256": "72718489055dea52972045ed433d2deebd7f36a32b7cc89ddc55bd0c0b63fcce",
+    "bytes": 346504
+  },
+  {
+    "url": "https://github.com/bitjson/bch-p2s/blob/master/stakeholders.md",
+    "retrieved_at": "2026-09-14T17:13:06.238143+00:00",
+    "final_url": "https://github.com/bitjson/bch-p2s/blob/master/stakeholders.md",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "23.html",
+    "sha256": "911ea88d4571bd86453ee6c93e4d0ce36340f0c1c9f20101de44c7633c68b1a3",
+    "bytes": 935825
+  },
+  {
+    "url": "https://gov.optimism.io/t/governance-update-12/10697",
+    "retrieved_at": "2026-09-14T17:13:06.271926+00:00",
+    "final_url": "https://gov.optimism.io/t/governance-update-12/10697",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "24.html",
+    "sha256": "e30a4b63148641ab75b58ff84303bb024b4aaf57a4aad19983ee952f1f441f8f",
+    "bytes": 33595
+  },
+  {
+    "url": "https://governance.solana.com/faq",
+    "retrieved_at": "2026-09-14T17:13:06.272396+00:00",
+    "final_url": "https://governance.solana.com/faq",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "25.html",
+    "sha256": "342dfb7d31728ab07de7bb9ba2b1d0dd0e2e3ac780b544ed99f9d1e63b46a678",
+    "bytes": 47578
+  },
+  {
+    "url": "https://hedera.com/terms/",
+    "retrieved_at": "2026-09-14T17:13:06.369193+00:00",
+    "final_url": "https://hedera.com/terms/",
+    "content_type": "text/html; charset=UTF-8",
+    "status": "captured",
+    "file": "26.html",
+    "sha256": "5bbdb1601a0663ebbf4851f07256c8b6302277c7e083a1afe8cccf666f0fbbe5",
+    "bytes": 242411
+  },
+  {
+    "url": "https://litecoin.com/learningcenter",
+    "retrieved_at": "2026-09-14T17:13:06.495516+00:00",
+    "final_url": "https://litecoin.com/learningcenter",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "27.html",
+    "sha256": "78f27c6503e33df662ae2571d8504547526c2e1640c750aa4b791e557db4112d",
+    "bytes": 210087
+  },
+  {
+    "url": "https://litecoin.com/what-is-litecoin",
+    "retrieved_at": "2026-09-14T17:13:06.677805+00:00",
+    "final_url": "https://litecoin.com/what-is-litecoin",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "28.html",
+    "sha256": "66a72a314b3bc1f0fd47439d7878ec7158530fe638a832832e1a552cf07c7289",
+    "bytes": 39748
+  },
+  {
+    "url": "https://retro-9000.avax.network/",
+    "retrieved_at": "2026-09-14T17:13:06.693232+00:00",
+    "final_url": "https://retro-9000.avax.network/",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "29.html",
+    "sha256": "bc918b957a4c5da2eeec78599574ed448103106211d479ef342bea62b0ffc468",
+    "bytes": 29596
+  },
+  {
+    "url": "https://solana.com/docs/core/fees",
+    "retrieved_at": "2026-09-14T17:13:06.753548+00:00",
+    "final_url": "https://solana.com/docs/core/fees",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "30.html",
+    "sha256": "028cd4ca5f1d3bf544971020954f2eea0c605b2e0c170beb628c0cd1c16169d1",
+    "bytes": 867354
+  },
+  {
+    "url": "https://solana.com/staking",
+    "retrieved_at": "2026-09-14T17:13:06.756634+00:00",
+    "final_url": "https://solana.com/staking",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "31.html",
+    "sha256": "dc2958f37f6daf72a5ee9e95c2781110654a41f38d217b37612ecdfb14d86add",
+    "bytes": 841882
+  },
+  {
+    "url": "https://www.hederacouncil.org/faq",
+    "retrieved_at": "2026-09-14T17:13:06.758615+00:00",
+    "final_url": "https://www.hederacouncil.org/faq",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "32.html",
+    "sha256": "47c0438eaac655e90b49c09bb2e399de3f37353d845c8f0cc5ca93a63b8ceb04",
+    "bytes": 58401
+  },
+  {
+    "url": "https://www.sui.io/programs-funding",
+    "retrieved_at": "2026-09-14T17:13:06.788785+00:00",
+    "final_url": "https://www.sui.io/programs-funding",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "33.html",
+    "sha256": "f7746555b0473973f0d10cee54f0dde003ffc6915b6257b2646d2a7590d1677f",
+    "bytes": 343583
+  },
+  {
+    "url": "https://xrpl.org/about/faq",
+    "retrieved_at": "2026-09-14T17:13:06.789292+00:00",
+    "final_url": "https://xrpl.org/about/faq",
+    "content_type": "text/html; charset=UTF-8",
+    "status": "captured",
+    "file": "34.html",
+    "sha256": "ce675a528e0dbf4b9f81490ea3ed947372cbde7a78167cf85a59f10183b40e75",
+    "bytes": 462457
+  },
+  {
+    "url": "https://xrpl.org/docs/concepts/accounts/reserves",
+    "retrieved_at": "2026-09-14T17:13:06.819330+00:00",
+    "final_url": "https://xrpl.org/docs/concepts/accounts/reserves",
+    "content_type": "text/html; charset=UTF-8",
+    "status": "captured",
+    "file": "35.html",
+    "sha256": "45695a7c37dd27f1f266ae3f3e2a080f85b23bc0bd7d6cf2265d21f6f20e5b92",
+    "bytes": 469374
+  },
+  {
+    "url": "https://xrpl.org/docs/concepts/networks-and-servers/amendments",
+    "retrieved_at": "2026-09-14T17:13:06.859535+00:00",
+    "final_url": "https://xrpl.org/docs/concepts/networks-and-servers/amendments",
+    "content_type": "text/html; charset=UTF-8",
+    "status": "captured",
+    "file": "36.html",
+    "sha256": "45fb7babdb011d73636d443e861eb717715b10b0d75fa215dd096b46ec1d89ef",
+    "bytes": 462578
+  },
+  {
+    "url": "https://z.cash/learn/what-is-zcash/",
+    "retrieved_at": "2026-09-14T17:13:06.905670+00:00",
+    "status": "download_failed",
+    "error": "HTTP Error 403: Forbidden",
+    "note": "Source was inspected through web retrieval; this is not a full-page capture."
+  },
+  {
+    "url": "https://z.cash/upgrade/nu6-1/",
+    "retrieved_at": "2026-09-14T17:13:06.908021+00:00",
+    "status": "download_failed",
+    "error": "HTTP Error 403: Forbidden",
+    "note": "Source was inspected through web retrieval; this is not a full-page capture."
+  },
+  {
+    "url": "https://zips.z.cash/zip-1016",
+    "retrieved_at": "2026-09-14T17:13:06.993142+00:00",
+    "final_url": "https://zips.z.cash/zip-1016",
+    "content_type": "text/html; charset=utf-8",
+    "status": "captured",
+    "file": "39.html",
+    "sha256": "f1eb669feaca8ae92d9e3bf2a803dbb8054275076b51c81a09e487e9e8e932ef",
+    "bytes": 21231
+  }
+]

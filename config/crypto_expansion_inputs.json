@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "purpose": "Collect descriptive evidence for monetary and collateral review; produces no classification or materiality decision.",
+  "window_source": "crypto_monetary_evidence.json activity_window",
+  "catalog_url": "https://community-api.coinmetrics.io/v4/catalog/asset-metrics",
+  "snapshot_directory": "data/raw/crypto_expansion_inputs/2026-09-14",
+  "assets": [
+    {
+      "asset_id": "crypto_ada",
+      "provider_id": "ada",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_avax",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Avalanche C/P/X chains require a reconciled asset-level measure."
+    },
+    {
+      "asset_id": "crypto_bch",
+      "provider_id": "bch",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_doge",
+      "provider_id": "doge",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    },
+    {
+      "asset_id": "crypto_link",
+      "provider_id": "link",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Token activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "provider_id": "ltc",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_op",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    },
+    {
+      "asset_id": "crypto_sol",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    },
+    {
+      "asset_id": "crypto_sui",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    },
+    {
+      "asset_id": "crypto_trx",
+      "provider_id": "trx",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "provider_id": "xlm",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "provider_id": "xrp",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_zec",
+      "provider_id": "zec",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": ""
+    },
+    {
+      "asset_id": "crypto_hype",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    },
+    {
+      "asset_id": "crypto_xmr",
+      "provider_id": "xmr",
+      "metrics": [
+        "TxCnt"
+      ],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Active-address metric unavailable for XMR."
+    },
+    {
+      "asset_id": "crypto_ton",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    },
+    {
+      "asset_id": "crypto_tao",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    },
+    {
+      "asset_id": "crypto_pol",
+      "provider_id": null,
+      "metrics": [],
+      "scope_note": "Network activity does not establish payment use.",
+      "collection_note": "Not listed for these metrics in the public daily catalog."
+    }
+  ],
+  "activity_components": [
+    {
+      "asset_id": "crypto_avax",
+      "provider_id": "avaxc",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Avalanche C-chain component only. Do not sum active addresses across chains without a deduplication rule."
+    },
+    {
+      "asset_id": "crypto_avax",
+      "provider_id": "avaxp",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Avalanche P-chain component only. Do not sum active addresses across chains without a deduplication rule."
+    },
+    {
+      "asset_id": "crypto_avax",
+      "provider_id": "avaxx",
+      "metrics": [
+        "AdrActCnt",
+        "TxCnt"
+      ],
+      "scope_note": "Avalanche X-chain component only. Do not sum active addresses across chains without a deduplication rule."
+    }
+  ]
+}

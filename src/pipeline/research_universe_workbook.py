@@ -11,6 +11,8 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
+from src.pipeline.crypto_design_evidence import validate_evidence
+
 CODES = ["VA_MONETARY", "VA_GAS", "VA_STAKE", "VA_BURN", "VA_SCARCITY",
          "VA_COLLATERAL", "VA_GOV", "VA_PROTOCOL", "VA_UTILITY", "VA_INCENTIVE"]
 FONT = "Arial"
@@ -19,7 +21,7 @@ INK, GOLD, CLAY, SLATE = "132238", "E0A33E", "C25A46", "40566E"
 STATUS = {
     "reviewed":    ("C8E6C9", "Sourced AND independently blind-reviewed. Only this state supports a reliability claim."),
     "sourced":     ("FFF0C2", "Dated primary source, audited — but NOT independently reviewed"),
-    "pending":     ("F8D7CF", "Held for adjudication; never defaults to zero"),
+    "pending":     ("F8D7CF", "Needs evidence or a rule decision; never defaults to zero"),
     "provisional": ("ECEFF3", "From the design matrix only, no evidence yet"),
 }
 
@@ -36,9 +38,15 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 def collect(repo: Path) -> dict[str, Any]:
     cfg, proc = repo / "config", repo / "data/processed/01_classification"
     registry = load_json(cfg / "assets.json")
+    scope = load_json(cfg / "research_scope.json")
+    excluded = {row["asset_id"] for row in scope.get("excluded_assets", [])}
     design = load_json(cfg / "crypto_economic_design.json")
     profiles = read_csv(proc / "crypto_phase1_taxonomy_profiles.csv")
     tranche_a = load_json(cfg / "crypto_evidence_tranche_a.json")
+    tranche_c = load_json(cfg / "crypto_evidence_tranche_c.json")
+    remaining = load_json(cfg / "crypto_evidence_remaining_assets.json")
+    validate_evidence(tranche_c, design, registry)
+    validate_evidence(remaining, design, registry)
     taxonomy = load_json(cfg / "crypto_phase1_taxonomy.json")
     codebook = read_csv(proc / "crypto_phase1_function_codebook.csv")
 
@@ -53,12 +61,20 @@ def collect(repo: Path) -> dict[str, Any]:
             continue
         for code in CODES:
             cells[(row["asset_id"], code)] = (int(row[code.lower()]), "sourced", "", "")
-    for dec in tranche_a["decisions"]:
+    for dec in tranche_a["decisions"] + tranche_c["decisions"] + remaining["decisions"]:
         key = (dec["asset_id"], dec["code"])
         if key in cells and cells[key][1] == "reviewed":
             continue
         status = "sourced" if dec["status"] == "verified" else "pending"
         cells[key] = (dec["recommended_value"], status, dec.get("source_url", ""), dec.get("source_date", ""))
+
+    targeted = proc / "crypto_economic_design_targeted_review.csv"
+    if targeted.exists():
+        for row in read_csv(targeted):
+            key = (row.get("asset_id", ""), row.get("code", ""))
+            if key in cells and row.get("decision_0_or_1") in {"0", "1"}:
+                cells[key] = (int(row["decision_0_or_1"]), "sourced",
+                              row.get("evidence_url", ""), row.get("evidence_date", ""))
 
     # cells covered by a COMPLETED independent blind review outrank everything above
     review_path = repo / "data/processed/01_classification/independent_review_summary.json"
@@ -88,8 +104,16 @@ def collect(repo: Path) -> dict[str, Any]:
         sources.append({"asset_id": dec["asset_id"], "code": dec["code"], "value": dec.get("recommended_value"),
                         "source_url": dec.get("source_url", ""), "source_date": dec.get("source_date", ""),
                         "tranche": "crypto_evidence_tranche_a"})
-    return {"registry": registry, "cells": cells, "codebook": codebook, "taxonomy": taxonomy,
-            "tranche_a": tranche_a, "sources": sources,
+    for name, tranche in [("crypto_evidence_tranche_c", tranche_c), ("crypto_evidence_remaining_assets", remaining)]:
+        for dec in tranche["decisions"]:
+            sources.append({"asset_id": dec["asset_id"], "code": dec["code"], "value": dec.get("recommended_value"),
+                            "source_url": dec["source_url"], "source_date": dec["source_date"],
+                            "tranche": name})
+    active_ids = {a["asset_id"] for a in registry["assets"] if a["asset_id"] not in excluded}
+    active_registry = {**registry, "assets": [a for a in registry["assets"] if a["asset_id"] in active_ids]}
+    active_cells = {key: value for key, value in cells.items() if key[0] in active_ids}
+    return {"registry": active_registry, "cells": active_cells, "codebook": codebook, "taxonomy": taxonomy,
+            "tranche_a": tranche_a, "tranche_c": tranche_c, "remaining": remaining, "sources": sources,
             "design_as_of": design.get("as_of"), "profiles": profiles}
 
 
@@ -240,7 +264,8 @@ def build(repo: Path) -> tuple[Workbook, dict[str, Any]]:
     header_row(ws, 4, ["code", "bundle", "classification_rule", "value_indicators"])
     for index, row in enumerate(data["codebook"], start=5):
         for column, key in enumerate(["code", "bundle", "classification_rule", "value_indicators"], start=1):
-            cell = ws.cell(row=index, column=column, value=row.get(key, "").replace("|", ", "))
+            value = row.get(key) or ""
+            cell = ws.cell(row=index, column=column, value=value.replace("|", ", "))
             cell.font = Font(name=FONT, size=9, bold=(column == 1))
             cell.alignment = Alignment(wrap_text=True, vertical="top")
     autosize(ws, {1: 18, 2: 26, 3: 78, 4: 52})
@@ -268,6 +293,16 @@ def build(repo: Path) -> tuple[Workbook, dict[str, Any]]:
             cell.alignment = Alignment(wrap_text=True, vertical="top")
             if column == 4:
                 cell.fill = PatternFill("solid", fgColor=STATUS["pending"][0])
+        line += 1
+    for dec in data["tranche_c"]["decisions"] + data["remaining"]["decisions"]:
+        if dec["status"] == "verified":
+            continue
+        values = [f"evidence_{dec['asset_id']}_{dec['code']}", dec["asset_id"], dec["code"],
+                  "pending", dec["rationale"], dec["remaining_evidence"]]
+        for column, value in enumerate(values, start=1):
+            cell = ws.cell(row=line, column=column, value=value)
+            cell.font = Font(name=FONT, size=9)
+            cell.alignment = Alignment(wrap_text=True, vertical="top")
         line += 1
     autosize(ws, {1: 34, 2: 26, 3: 14, 4: 26, 5: 80, 6: 60})
 

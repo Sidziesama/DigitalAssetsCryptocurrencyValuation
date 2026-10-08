@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PIP-82: Agentic Commerce Gas Program - Canonical PIPs - Polygon Community Forum</title>
+    <meta name="description" content="PIP-82: Agentic Commerce Gas Program
+Authors: David Silverman (@oneski22), John Egan, Akshat Gada, James Lawton
+Type: Core
+Table of Contents:
+
+
+Abstract 
+
+
+Definitions 
+
+
+Motivation 
+
+
+Specification 
+
+
+Backward Compatibi&amp;hellip;">
+    <meta name="generator" content="Discourse 2025.12.0-latest - https://github.com/discourse/discourse version 483080694748a05ca89572187584d1b05cd72aa9">
+<link rel="icon" type="image/png" href="https://forum.polygon.technology/uploads/default/optimized/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78_2_32x32.jpeg">
+<link rel="apple-touch-icon" type="image/png" href="https://forum.polygon.technology/uploads/default/optimized/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78_2_180x180.jpeg">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+
+<meta name="color-scheme" content="light dark">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<link rel="canonical" href="https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721" />
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://forum.polygon.technology/opensearch.xml" title="Polygon Community Forum Search">
+
+    
+    <link href="/stylesheets/color_definitions_polygon-2024_8_6_f39a2e7b2c0190d43d70fc0ec099abfe6b912c3f.css?__ws=forum.polygon.technology" media="(prefers-color-scheme: light)" rel="stylesheet" class="light-scheme" data-scheme-id="8"/><link href="/stylesheets/color_definitions_polygon_7_6_ecc39d31300805046bb8cb0a11ca2c9a49ccde85.css?__ws=forum.polygon.technology" media="(prefers-color-scheme: dark)" rel="stylesheet" class="dark-scheme" data-scheme-id="7"/>
+
+<link href="/stylesheets/common_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common"  />
+
+  <link href="/stylesheets/mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile"  />
+  <link href="/stylesheets/desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop"  />
+
+
+
+    <link href="/stylesheets/checklist_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="checklist"  />
+    <link href="/stylesheets/discourse-adplugin_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-adplugin"  />
+    <link href="/stylesheets/discourse-ai_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-ai"  />
+    <link href="/stylesheets/discourse-akismet_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-akismet"  />
+    <link href="/stylesheets/discourse-cakeday_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-cakeday"  />
+    <link href="/stylesheets/discourse-chat-integration_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-chat-integration"  />
+    <link href="/stylesheets/discourse-details_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-details"  />
+    <link href="/stylesheets/discourse-lazy-videos_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-lazy-videos"  />
+    <link href="/stylesheets/discourse-local-dates_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+    <link href="/stylesheets/discourse-narrative-bot_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-narrative-bot"  />
+    <link href="/stylesheets/discourse-policy_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-policy"  />
+    <link href="/stylesheets/discourse-post-voting_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-post-voting"  />
+    <link href="/stylesheets/discourse-presence_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-presence"  />
+    <link href="/stylesheets/discourse-solved_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-solved"  />
+    <link href="/stylesheets/discourse-templates_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-templates"  />
+    <link href="/stylesheets/discourse-topic-voting_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="discourse-topic-voting"  />
+    <link href="/stylesheets/docker_manager_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="docker_manager"  />
+    <link href="/stylesheets/poll_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="poll"  />
+    <link href="/stylesheets/discourse-ai_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-ai_mobile"  />
+    <link href="/stylesheets/discourse-post-voting_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-post-voting_mobile"  />
+    <link href="/stylesheets/discourse-solved_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-solved_mobile"  />
+    <link href="/stylesheets/discourse-topic-voting_mobile_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-topic-voting_mobile"  />
+    <link href="/stylesheets/discourse-ai_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-ai_desktop"  />
+    <link href="/stylesheets/discourse-post-voting_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-post-voting_desktop"  />
+    <link href="/stylesheets/discourse-topic-voting_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-topic-voting_desktop"  />
+    <link href="/stylesheets/poll_desktop_70d55e35e522dd0893a12e7f3a69f3a27ec5e901.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="/stylesheets/common_theme_4_ba8a6d15dfbbe18cdbb13923f94c20603dcb79b1.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="4" data-theme-name="custom header links"/>
+<link href="/stylesheets/common_theme_5_2316320242d1133aab269ae417c5c0c8932ac0bb.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="5" data-theme-name="dropdown header"/>
+<link href="/stylesheets/common_theme_8_2608d7835f7671ae44d86858fde6ffb18731f763.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="8" data-theme-name="versatile banner"/>
+<link href="/stylesheets/common_theme_7_e6d426e38451be0e1aeb40d8d095bef7fb943b22.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="7" data-theme-name="versatile showcase"/>
+<link href="/stylesheets/common_theme_6_bc0776d7649cb1accd204bbc0695908b58ce653f.css?__ws=forum.polygon.technology" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="6" data-theme-name="polygon 2024"/>
+    <link href="/stylesheets/mobile_theme_5_24a029b6e332dbab033432835cf75e4204d8314c.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile_theme" data-theme-id="5" data-theme-name="dropdown header"/>
+<link href="/stylesheets/mobile_theme_6_b9e9b446f80d608e9d2e5fb2ecb5216ad94010f7.css?__ws=forum.polygon.technology" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile_theme" data-theme-id="6" data-theme-name="polygon 2024"/>
+    <link href="/stylesheets/desktop_theme_5_fb5cede309991c4c84a518478290689ceae25a93.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop_theme" data-theme-id="5" data-theme-name="dropdown header"/>
+<link href="/stylesheets/desktop_theme_6_15dc9d8122044e688f33ae6446a90412c50a9973.css?__ws=forum.polygon.technology" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop_theme" data-theme-id="6" data-theme-name="polygon 2024"/>
+
+    
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;PIP-82: Agentic Commerce Gas Program&#39;" href="https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721.rss" />
+    <meta property="og:site_name" content="Polygon Community Forum" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://forum.polygon.technology/uploads/default/original/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78.jpeg" />
+<meta property="og:image" content="https://forum.polygon.technology/uploads/default/original/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78.jpeg" />
+<meta property="og:url" content="https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721" />
+<meta name="twitter:url" content="https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721" />
+<meta property="og:title" content="PIP-82: Agentic Commerce Gas Program" />
+<meta name="twitter:title" content="PIP-82: Agentic Commerce Gas Program" />
+<meta property="og:description" content="PIP-82: Agentic Commerce Gas Program Authors: David Silverman (@oneski22), John Egan, Akshat Gada, James Lawton Type: Core Table of Contents:   Abstract    Definitions    Motivation    Specification    Backward Compatibility    Abstract Polygon has become one of the leading chains in Agentic Commerce, attracting 20.3% of x402 transactions and 10.4% of total volume from the beginning of this year . This proposal calls for Polygon PoS to invest in this growing segment by contributing up to $1M wor..." />
+<meta name="twitter:description" content="PIP-82: Agentic Commerce Gas Program Authors: David Silverman (@oneski22), John Egan, Akshat Gada, James Lawton Type: Core Table of Contents:   Abstract    Definitions    Motivation    Specification    Backward Compatibility    Abstract Polygon has become one of the leading chains in Agentic Commerce, attracting 20.3% of x402 transactions and 10.4% of total volume from the beginning of this year . This proposal calls for Polygon PoS to invest in this growing segment by contributing up to $1M wor..." />
+<meta property="og:article:section" content="Polygon Improvement Proposals" />
+<meta property="og:article:section:color" content="92278F" />
+<meta property="og:article:section" content="Canonical PIPs" />
+<meta property="og:article:section:color" content="92278F" />
+<meta name="twitter:label1" value="Reading time" />
+<meta name="twitter:data1" value="1 mins 🕑" />
+<meta name="twitter:label2" value="Likes" />
+<meta name="twitter:data2" value="1 ❤" />
+<meta property="article:published_time" content="2026-02-12T16:05:40+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    
+  </head>
+  <body class="crawler ">
+    
+    <header>
+  <a href="/">Polygon Community Forum</a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="/t/pip-82-agentic-commerce-gas-program/21721">PIP-82: Agentic Commerce Gas Program</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/polygon-improvement-proposals/80" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #92278F'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Polygon Improvement Proposals</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/polygon-improvement-proposals/pips/81" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #92278F'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>Canonical PIPs</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </span>
+      </div>
+
+  </div>
+
+  
+
+    <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+      <meta itemprop='headline' content='PIP-82: Agentic Commerce Gas Program'>
+      <link itemprop='url' href='https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721'>
+      <meta itemprop='datePublished' content='2026-02-12T16:05:40Z'>
+        <meta itemprop='articleSection' content='Canonical PIPs'>
+      <meta itemprop='keywords' content=''>
+      <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop='name' content='Polygon'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url' content='https://forum.polygon.technology/uploads/default/original/2X/e/e8a6275557c6497c38ab0a80bb639bfac8178d78.jpeg'>
+          </div>
+      </div>
+
+
+          <div id='post_1'  class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.polygon.technology/u/oneski22'><span itemprop='name'>oneski22</span></a>
+                
+              </span>
+
+                <link itemprop="mainEntityOfPage" href="https://forum.polygon.technology/t/pip-82-agentic-commerce-gas-program/21721">
+
+
+              <span class="crawler-post-infos">
+                  <time  datetime='2026-02-12T16:05:40Z' class='post-time'>
+                    February 12, 2026,  4:05pm
+                  </time>
+                  <meta itemprop='dateModified' content='2026-02-12T16:12:48Z'>
+              <span itemprop='position'>1</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <h1><a name="p-34440-pip-82-agentic-commerce-gas-program-1" class="anchor" href="#p-34440-pip-82-agentic-commerce-gas-program-1" aria-label="Heading link"></a><strong>PIP-82: Agentic Commerce Gas Program</strong></h1>
+<h2><a name="p-34440-authors-david-silverman-oneski22-john-egan-akshat-gada-james-lawton-2" class="anchor" href="#p-34440-authors-david-silverman-oneski22-john-egan-akshat-gada-james-lawton-2" aria-label="Heading link"></a><strong>Authors: David Silverman (<a class="mention" href="/u/oneski22">@oneski22</a>), John Egan, Akshat Gada, James Lawton</strong></h2>
+<h2><a name="p-34440-type-core-3" class="anchor" href="#p-34440-type-core-3" aria-label="Heading link"></a><strong>Type: Core</strong></h2>
+<h2><a name="p-34440-table-of-contents-4" class="anchor" href="#p-34440-table-of-contents-4" aria-label="Heading link"></a><strong>Table of Contents:</strong></h2>
+<ul>
+<li>
+<p>Abstract</p>
+</li>
+<li>
+<p>Definitions</p>
+</li>
+<li>
+<p>Motivation</p>
+</li>
+<li>
+<p>Specification</p>
+</li>
+<li>
+<p>Backward Compatibility</p>
+</li>
+</ul>
+<h2><a name="p-34440-abstract-5" class="anchor" href="#p-34440-abstract-5" aria-label="Heading link"></a><strong>Abstract</strong></h2>
+<p>Polygon has become one of the leading chains in Agentic Commerce, attracting 20.3% of x402 transactions and 10.4% of total volume from the beginning of this year . This proposal calls for Polygon PoS to invest in this growing segment by contributing up to $1M worth of gas base fees spent by Agentic Commerce transactions, attracting continued investment and attention from builders and agents alike to continue choosing Polygon as their home for payments.</p>
+<p>To accomplish this, the EIP-1559 burn recipient will be changed from 0x7A8ed27F4C30512326878652d20fC85727401854 to 0x3ef57def668054dd750bd260526105c4eeef104f. The existing PIP-65 fee distribution system will be used to periodically recycle eligible base fees, while sending the non-recycled POL to the current burn collector address (0x7A8ed27F4C30512326878652d20fC85727401854). Initially the recycle will be applied to public Polygon x402 facilitators (initial list of addresses included below).</p>
+<p>This program will operate until the $1M is fully recycled or December 31, 2026 whichever comes first. This program may also be edited or terminated by this PIP being superseded by another PIP approved by Polygon Governance. POL will be valued at prevailing market rate at time of the recycling transaction and that amount will be subtracted from the $1M allowance.</p>
+<p><strong>Definitions</strong></p>
+<p>EIP-1559: EIP-1559 is a transaction pricing mechanism that includes a fixed-per-block network fee that is burned and dynamically expands/contracts block sizes to deal with transient congestion.</p>
+<p>x402: x402 unlocks the next era of agentic commerce by turning the web into a programmable payments layer. By activating the long-dormant HTTP 402 status code, it enables AI agents and software to seamlessly transact on-chain for real-time access to data, services, and APIs. The result is a frictionless, machine-native economy where agents can discover, pay, and execute autonomously..</p>
+<p>Agentic Commerce: Agentic commerce is a model where AI agents autonomously discover, evaluate, and purchase goods or services on a user’s behalf. Instead of humans manually browsing and checking out, software agents execute transactions based on goals, constraints, and real-time data. It enables a machine-to-machine economy where decisions and payments happen programmatically.</p>
+<p>PIP-65 Fee Distribution System: A process by which Polygon Labs and Regen Financial distribute protocol funds according to formulas passed as PIPs by the Polygon Protocol Governance Process. To date it covers the EIP-1559 Priority Fee System for Polygon PoS and has processed over 7MM POL  in value.</p>
+<h2><a name="p-34440-motivation-6" class="anchor" href="#p-34440-motivation-6" aria-label="Heading link"></a><strong>Motivation</strong></h2>
+<p>The motivation for reducing gas fees on Agentic Commerce and x402 transactions is straightforward: agentic commerce cannot scale in the presence of per-transaction friction. AI agents executing high-frequency, low-value payments require predictable, near-costless execution to function efficiently. Even minimal gas fees introduce pricing distortion, complexity in agent decision logic, and economic drag that undermines the viability of machine-native micropayments.</p>
+<p>By effectively reducing gas/operating costs for x402 flows, Polygon can intentionally position itself as the preferred settlement layer for agent-to-agent commerce. This change would attract builders developing autonomous systems, increase on-chain transaction volume, and strengthen network effects around programmable payments. If we want Polygon to lead in the emerging agent economy, we must remove the structural barriers that prevent it from operating at machine speed and scale.</p>
+<h2><a name="p-34440-specification-7" class="anchor" href="#p-34440-specification-7" aria-label="Heading link"></a><strong>Specification</strong></h2>
+<p>Change the recipient of EIP-1559 Burn by adding a new entry in burntContract with the hardfork block number and the new address in Bor’s Genesis file to 0x3ef57def668054dd750bd260526105c4eeef104f.</p>
+<h2><a name="p-34440-backward-compatibility-8" class="anchor" href="#p-34440-backward-compatibility-8" aria-label="Heading link"></a><strong>Backward Compatibility</strong></h2>
+<p>This change is not backward compatible and will require a hard fork of Bor to redirect burned MATIC. The old EIP-1559 contract will still function and will continue receiving non-recycled POL, per the PIP.</p>
+<h2><a name="p-34440-copyright-9" class="anchor" href="#p-34440-copyright-9" aria-label="Heading link"></a><strong>Copyright</strong></h2>
+<p>All copyrights and related rights in this work are waived under CC0 1.0 Universal.</p>
+<p><strong>Current Public Facilitator Addresses</strong> (will be updated as new facilitators are added)</p>
+<p>Polygon Public Facilitators:</p>
+<ul>
+<li>
+<p>0x29df60c005506AA325d7179F6e09eB4b4875dAde</p>
+</li>
+<li>
+<p>0xF09A94831C18566781f70937f0996B96EfE691C8</p>
+</li>
+<li>
+<p>0x42618f623Ec19beFf78dE9DbBFB653BfEaC05D09</p>
+</li>
+<li>
+<p>0x3202643514D128FF0B4625D2682c0244CF58131c</p>
+</li>
+<li>
+<p>0x11DA3fe5ADA6f5382Ebe972f14C3585DA4E65AeA</p>
+</li>
+<li>
+<p>0x135DfE729F9bbd7F88181E1B708d7506fd499140</p>
+</li>
+<li>
+<p>0xDcb0Ac359025dC0DB1e22e6d33F404e5c92A1564</p>
+</li>
+<li>
+<p>0x99EFc08BB42282716fB59D221792f5207f714C9d</p>
+</li>
+<li>
+<p>0xbE5115800247405f020197BF473eBFd085a2C635</p>
+</li>
+<li>
+<p>0x5eAb3D78264Dab340340d6a37Ff0836464Ae5773</p>
+</li>
+<li>
+<p>0xE5D4197eFd5D03E3f30cBf11C0fF63Eb95a0A656</p>
+</li>
+<li>
+<p>0xfac8Edb989f1ba7F9dBb7A1233542D4e1fD6144F</p>
+</li>
+<li>
+<p>0xaFdbfaCb5ed691bf0bCFA660901f299ce9775489</p>
+</li>
+<li>
+<p>0x1e48Ed59a502D0B324CdAf83362865b3ff49ABa2</p>
+</li>
+<li>
+<p>0xA1dcBDC2C34577ACD4A1152A98807B2f281A112e</p>
+</li>
+<li>
+<p>0x9e281D4e26E1a4e7C27014E2ca8Cee7F2D44fa52</p>
+</li>
+<li>
+<p>0x76FCb8ae3365A487E6EA235386C1cf3AbADeDA60</p>
+</li>
+<li>
+<p>0x9523B120C75640469f1D16490Da0388928229452</p>
+</li>
+<li>
+<p>0x153F3A70e4400c211d9B482b62aD721Bb02F96F6</p>
+</li>
+<li>
+<p>0xd5dD012019C58882Dd507A8b3fCBB7b62e9a24c3</p>
+</li>
+<li>
+<p>0xfff23108338C218F895d75980E14688218D4E92a</p>
+</li>
+<li>
+<p>0xF744e153Ef63f7EEe4a58e0F13761D16C2125EE3</p>
+</li>
+<li>
+<p>0x0a8B10FE8Bd3072351600Adef4796F3F7aF72Ab0</p>
+</li>
+<li>
+<p>0x971b4079A618F72Fa0F1792b07ed5923dfBF3500</p>
+</li>
+</ul>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+                <div class='crawler-linkback-list' itemscope itemtype='http://schema.org/ItemList'>
+                      <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+                        <a itemprop='url' href="https://forum.polygon.technology/t/bor-v2-6-0-and-erigon-v3-4-0-for-mainnet-and-amoy/21757">Bor v2.6.0 and Erigon v3.4.0 for Mainnet and Amoy</a>
+                        <meta itemprop='position' content='1'>
+                      </div>
+                </div>
+
+            
+          </div>
+          <div id='post_2' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.polygon.technology/u/obiquant'><span itemprop='name'>obiquant</span></a>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-02-12T18:15:40Z' class='post-time'>
+                    February 12, 2026,  6:15pm
+                  </time>
+                  <meta itemprop='dateModified' content='2026-02-12T18:15:40Z'>
+              <span itemprop='position'>2</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>this proposal is bad, why do we need to bribe? this proposal if passed will bring pol from disinflation back to inflation based on calculation, this proposal might eliminated pol being burn based on our current chain revenue data</p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+          <div id='post_3' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.polygon.technology/u/pete'><span itemprop='name'>pete</span></a>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-02-12T21:10:56Z' class='post-time'>
+                    February 12, 2026,  9:10pm
+                  </time>
+                  <meta itemprop='dateModified' content='2026-02-12T21:59:09Z'>
+              <span itemprop='position'>3</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p><s>This proposal should be revised so that the base fees go to a smart contract, which will then:</s></p>
+<p><s>send 50% to the burn address</s></p>
+<p><s>send the remaining 50% - up to an aggregate cap of $1 million - to the designated address to fund this program</s></p>
+<p><s>After the $1 million cap is reached, the contract resumes sending 100% of the base fees to the burn recipient. This will allow POL to stay deflationary.</s></p>
+<p><s>Additionally, it would be best to define the cap to be denominated in POL (e.g. 1.11M POL) instead of USD so that it can be hard coded in the said contract.</s></p>
+<p>Edit: I interpreted the proposal incorrectly. This proposal does not halt the burn. Normal transactions will continue to burn base fees, the rebates are given only to public facilitators.</p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="1" />
+              <span class='post-likes'>1 Like</span>
+            </div>
+
+
+            
+          </div>
+          <div id='post_4' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.polygon.technology/u/0xD0A4004d1916C0F93D'><span itemprop='name'>0xD0A4004d1916C0F93D</span></a>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-02-18T05:14:08Z' class='post-time'>
+                    February 18, 2026,  5:14am
+                  </time>
+                  <meta itemprop='dateModified' content='2026-02-18T05:14:08Z'>
+              <span itemprop='position'>4</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>I am in favour of doing this to see if the AI agent commerce market can be attracted to the Polygon chain. Time limiting this allows this to be a good experiment.</p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+          <div id='post_5' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.polygon.technology/u/oneski22'><span itemprop='name'>oneski22</span></a>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-03-30T20:44:03Z' class='post-time'>
+                    March 30, 2026,  8:44pm
+                  </time>
+                  <meta itemprop='dateModified' content='2026-03-30T20:44:03Z'>
+              <span itemprop='position'>5</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>Adding the following public facilitator addresses for Coinbase Developer Platform (CDP) to the PIP-82 rebate list.</p>
+<ul>
+<li>0x022e88961EfFbFD1E5ECDe0fbd89e7006d9B05ef</li>
+<li>0x8F5cB67B49555E614892b7233CFdDEBFB746E531</li>
+<li>0x68A96F41ff1e9F2E7b591A931A4AD224e7C07863</li>
+<li>0xa32cCda98ba7529705a059Bd2d213Da8de10d101</li>
+<li>0x97AcCe27D5069544480BDe0F04D9F47d7422a016</li>
+<li>0x67B9CE703d9ce658d7C4ac3c289cEa112fE662Af</li>
+</ul>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+    </div>
+
+
+    
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/' itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/categories' itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/guidelines' itemprop="url">Guidelines </a>
+        </span>
+      </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/tos' itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+          <span itemprop='name'>
+            <a href='/privacy' itemprop="url">Forum Moderation Guidelines </a>
+          </span>
+        </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>
