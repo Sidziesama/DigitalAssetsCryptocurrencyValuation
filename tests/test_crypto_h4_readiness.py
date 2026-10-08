@@ -50,6 +50,13 @@ class CryptoH4ReadinessTests(unittest.TestCase):
         self.assertEqual(result["positive_assets_with_partial_component_history"], 1)
         self.assertFalse(result["identification_ready"])
 
+    def test_short_unblocking_component_does_not_meet_history_rule(self):
+        decisions={"decisions":[{"asset_id":f"a{i}","code":"VA_STAKE","status":"verified","recommended_value":int(i<3)} for i in range(6)]}
+        plan={"schema_version":1,"hypothesis":"H4","universe_policy":"fixed_existing_six_assets_no_expansion","minimum_history_days":365,"assets":[{"asset_id":f"a{i}","va_stake":int(i<3),"official_source_url":"https://example.org","historical_staked_supply_status":"not_implemented","staking_system":"x","comparability_group":"x"} for i in range(6)]}
+        result=build(plan,evidence_values(decisions),[],[{"asset_id":"a0","observed_days":90,"unblocks_h4":True}])
+        self.assertEqual(result["positive_assets_with_historical_staking"],0)
+        self.assertEqual(result["audit"][0]["staking_history_days"],90)
+
 
 if __name__ == "__main__":
     unittest.main()

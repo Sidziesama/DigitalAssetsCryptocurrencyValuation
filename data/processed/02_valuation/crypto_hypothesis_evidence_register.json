@@ -46,7 +46,7 @@
       "result": "not_yet_tested",
       "key_statistic": "complete positive-staking histories=1",
       "advisory_interpretation": "Staking classification is usable descriptively, but its liquidity effect cannot yet be estimated.",
-      "next_action": "Complete archival ETH consensus and current Aave Umbrella staking histories.",
+      "next_action": "Configure a 365-day archival ETH consensus endpoint; BNB and the separate legacy stkAAVE case study are complete.",
       "research_question": "Does staking reduce liquid float and affect liquidity or risk?"
     },
     {

@@ -348,6 +348,10 @@
           "args": []
         },
         {
+          "module": "crypto_h4_measurement_audit",
+          "args": []
+        },
+        {
           "module": "crypto_h8_breadth_pilot",
           "args": []
         },

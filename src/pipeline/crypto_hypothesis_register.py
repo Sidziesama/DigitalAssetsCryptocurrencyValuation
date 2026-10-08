@@ -33,7 +33,7 @@ def build(findings: dict[str, Any], strict: dict[str, Any]) -> list[dict[str, An
         {"hypothesis":"H4","sample":f"{f['H4']['assets']} planned assets","test_state":"blocked_on_historical_staking_coverage","result":"not_yet_tested",
          "key_statistic":f"complete positive-staking histories={f['H4']['positive_assets_with_historical_staking']}",
          "advisory_interpretation":"Staking classification is usable descriptively, but its liquidity effect cannot yet be estimated.",
-         "next_action":"Complete archival ETH consensus and current Aave Umbrella staking histories."},
+         "next_action":"Configure a 365-day archival ETH consensus endpoint; BNB and the separate legacy stkAAVE case study are complete."},
         {"hypothesis":"H8","sample":f"{f['H8']['verified_universe_assets']} classified assets; 22 primary-outcome eligible","test_state":"estimated_post_pilot_exploratory","result":f['H8']['verified_universe_decision'],
          "key_statistic":f"best={f['H8']['verified_universe_best_group']}; RMSE={f['H8']['verified_universe_best_group_loo_rmse']:.4f} vs breadth={f['H8']['verified_universe_raw_breadth_loo_rmse']:.4f}",
          "advisory_interpretation":"Which functions an asset performs appears more informative than simply counting functions; financial integration is strongest in this sample.",

@@ -1,0 +1,37 @@
+{
+  "status": "h4_measurement_audit_complete",
+  "series": [
+    {
+      "asset_id": "crypto_eth",
+      "measurement_role": "consensus_native_stake",
+      "observed_days": 0,
+      "required_days": 365,
+      "coverage_share": 0.0,
+      "history_complete": false,
+      "ready_for_primary_h4": false
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "measurement_role": "consensus_native_stake",
+      "observed_days": 365,
+      "required_days": 365,
+      "coverage_share": 1.0,
+      "history_complete": true,
+      "ready_for_primary_h4": true
+    },
+    {
+      "asset_id": "crypto_aave",
+      "measurement_role": "legacy_aave_token_risk_stake_case_study",
+      "observed_days": 365,
+      "required_days": 365,
+      "coverage_share": 1.0,
+      "history_complete": true,
+      "ready_for_primary_h4": false
+    }
+  ],
+  "consensus_assets_ready": 1,
+  "case_studies_ready": 1,
+  "pooled_estimation_ready": false,
+  "boundary_decision": "Umbrella USDC, USDT, WETH, and GHO stake is protocol backstop capital but is not AAVE-denominated stake. It is excluded from the AAVE-token staking series.",
+  "next_required": "Configure a 365-day archival ETH active-effective-balance series; BNB is complete for consensus stake and legacy stkAAVE is complete as a separate case study."
+}

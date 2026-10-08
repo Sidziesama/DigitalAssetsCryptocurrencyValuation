@@ -1,0 +1,7 @@
+{
+  "provider": "ethereum_json_rpc",
+  "component": "legacy_stkaave",
+  "retrieved_at_utc": "2026-10-08T20:43:23.336897+00:00",
+  "sha256": "ca067c659bdf66e5c3243f2a34d06f7a0973c8d1ce5396dd3b8a7b240b5a58c0",
+  "measurement_role": "legacy_component_only"
+}

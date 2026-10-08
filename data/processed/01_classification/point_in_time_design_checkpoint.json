@@ -53,7 +53,7 @@
       "crypto_bnb",
       "crypto_aave"
     ],
-    "historical_collateral_state_assets": 3,
+    "historical_collateral_state_assets": 4,
     "effective_dated_mechanism_states": 22,
     "verified_below_collateral_threshold_assets": [
       "crypto_uni",
@@ -67,10 +67,10 @@
   },
   "model_readiness": {
     "h2": "eleven-asset panel has exploratory 10%-level evidence of a positive valuation interaction after Cardano adjudication; post-pilot freeze and small-cluster limits prohibit confirmatory interpretation; no robust forward-return relationship",
-    "h8": "the separately frozen six-asset extension remains positive in all leave-one-out samples, but exact permutation inference does not reject zero; breadth is more sign-stable but still not statistically established",
+    "h8": "the frozen 23-asset extension favors theory groups over raw breadth; financial integration predicts best, but the cross-sectional result remains exploratory and non-causal",
     "h1": "four-asset activity pilot has positive coefficients but exact inference does not reject zero; transaction association is leave-one-out sign-stable but not generalizable",
-    "h3": "four-asset circulating-supply proxy diagnostic is complete, but only BTC and ETH vary; the positive, non-rejecting coefficient does not support H3 and is not identification-ready",
-    "h4": "the six-asset universe is fixed; BNB history is complete, the exact ETH effective-balance collector is ready but needs an archival consensus endpoint, and legacy stkAAVE excludes Umbrella components, so estimation is blocked",
+    "h3": "the daily supply proxy and 12-event ARB unlock study do not support H3; all events belong to one asset, so pooled inference remains prohibited",
+    "h4": "the six-asset universe is fixed; BNB and the separate legacy stkAAVE case study each have 365 days, while the exact ETH effective-balance collector still needs an archival consensus endpoint",
     "h5_h6_h7": "preserved for a deferred stablecoin phase and not an active gate"
   },
   "guardrails": [
@@ -80,5 +80,5 @@
     "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results.",
     "Cardano VA_PROTOCOL is adjudicated zero under the holder-directed mechanical-capture rule; the reviewed H2 specification is frozen post-pilot for reproducibility."
   ],
-  "next_checkpoint": "Phase 1 classification and the six-asset H8 extension are complete. Resume H4 by configuring an archival Ethereum consensus endpoint and completing Aave Umbrella coverage."
+  "next_checkpoint": "Phase 1 classification and the 23-asset H8 extension are complete. Resume H4 by configuring an archival Ethereum consensus endpoint; Umbrella balances are not an AAVE-denominated substitute."
 }

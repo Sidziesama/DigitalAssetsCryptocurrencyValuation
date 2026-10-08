@@ -50,9 +50,14 @@ def build(
             raise ValueError(f"H4 plan lacks official HTTPS evidence for {asset_id}")
         status = row.get("historical_staked_supply_status")
         component = component_index.get(asset_id)
-        positive_ready = row["va_stake"] == 1 and (status == "implemented" or bool(component and component.get("unblocks_h4")))
+        minimum_days = int(plan.get("minimum_history_days", 365))
+        positive_ready = row["va_stake"] == 1 and (
+            status == "implemented" or bool(component and component.get("unblocks_h4") and component.get("observed_days", 0) >= minimum_days)
+        )
         audit.append({**row, "market_proxy_days": market_days.get(asset_id, 0),
                       "partial_component_history": bool(component and component.get("observed_days", 0) > 0),
+                      "staking_history_days": int(component.get("observed_days", 0)) if component else 0,
+                      "minimum_history_days": minimum_days,
                       "positive_staking_history_ready": positive_ready})
     positives = [row for row in audit if row["va_stake"] == 1]
     ready_positives = sum(row["positive_staking_history_ready"] for row in positives)
@@ -69,12 +74,13 @@ def build(
             "effective-dated staked native units and total/circulating supply",
             "staking entry and exit timing or unbonding constraints",
             "same-date volume turnover plus spread/depth where freely reproducible",
-            "separate consensus-stake and protocol-risk-stake specifications",
+            "separate consensus-stake and legacy AAVE-token risk-stake specifications",
         ],
         "guardrails": [
             "A verified VA_STAKE classification establishes mechanism presence, not the fraction staked.",
             "Reported 24-hour volume divided by market cap is a turnover proxy, not executable liquidity or liquid float.",
-            "Consensus staking and Aave-style deficit-risk staking are not pooled without a predeclared comparability specification.",
+            "Consensus staking and legacy AAVE-token deficit-risk staking are not pooled without a predeclared comparability specification.",
+            "Umbrella stakes aTokens and GHO rather than AAVE; its balances cannot fill a missing AAVE-denominated staking series.",
             "Structural zeros may be negative controls but cannot replace time variation among positive-staking assets.",
         ],
     }

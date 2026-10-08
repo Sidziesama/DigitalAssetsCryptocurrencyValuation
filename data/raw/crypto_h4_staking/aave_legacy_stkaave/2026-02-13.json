@@ -1,0 +1,1 @@
+{"date":"2026-02-13","block":24447721,"request":{"jsonrpc":"2.0","id":"2026-02-13","method":"eth_call","params":[{"to":"0x4da27a545c0c5b758a6ba100e3a049001de870f5","data":"0x18160ddd"},"0x1750ae9"]},"response":{"jsonrpc":"2.0","id":"2026-02-13","result":"0x000000000000000000000000000000000000000000021d2a8dd3d5ff0a918696"}}

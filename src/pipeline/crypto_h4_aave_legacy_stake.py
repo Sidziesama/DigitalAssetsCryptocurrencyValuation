@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 from src.pipeline.aave_collateral_state import post_rpc
-from src.pipeline.historical import write_rows
+from src.pipeline.historical import request_json, write_rows
 from src.pipeline.registry import load_json, sha256
 
 
@@ -21,11 +21,15 @@ def validate(spec: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("unexpected Aave staking component")
     if component.get("selector") != "0x18160ddd" or component.get("decimals") != 18:
         raise ValueError("unexpected ERC20 totalSupply encoding")
-    if len(component.get("contract_address", "")) != 42 or not component.get("rpc_url", "").startswith("https://"):
+    if len(component.get("contract_address", "")) != 42 or not component.get("rpc_url", "").startswith("https://") or not component.get("block_lookup_base", "").startswith("https://"):
         raise ValueError("invalid Aave legacy staking source")
     if component.get("measurement_role") != "legacy_component_only" or component.get("unblocks_h4") is not False:
         raise ValueError("legacy stkAAVE must not be treated as complete H4 coverage")
     return component
+
+
+def day_timestamp(day: date) -> int:
+    return int(datetime.combine(day, time(12), timezone.utc).timestamp())
 
 
 def decode_total_supply(value: str, decimals: int) -> float:
@@ -53,9 +57,13 @@ def collect(repo: Path, start: date, end: date, force: bool = False) -> dict[str
     day = start
     while day <= end:
         block_path = block_root / f"{day.isoformat()}.json"
-        if not block_path.exists():
-            missing_blocks.append(day.isoformat()); day += timedelta(days=1); continue
-        block = int(load_json(block_path)["block"])
+        if block_path.exists():
+            block = int(load_json(block_path)["block"])
+        else:
+            try:
+                block = int(request_json(f"{component['block_lookup_base'].rstrip('/')}/{day_timestamp(day)}")["height"])
+            except Exception:
+                missing_blocks.append(day.isoformat()); day += timedelta(days=1); continue
         raw_path = raw_root / f"{day.isoformat()}.json"
         if raw_path.exists() and not force:
             payload = load_json(raw_path)

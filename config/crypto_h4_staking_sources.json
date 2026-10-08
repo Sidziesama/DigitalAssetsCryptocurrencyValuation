@@ -32,6 +32,7 @@
     "decimals": 18,
     "rpc_url": "https://eth-mainnet.public.blastapi.io",
     "block_snapshot_root": "data/raw/aave_collateral_state/v2_aave_reserve_extension",
+    "block_lookup_base": "https://coins.llama.fi/block/ethereum",
     "official_source_url": "https://github.com/aave/aave-stake-v2",
     "measurement_role": "legacy_component_only",
     "unblocks_h4": false,

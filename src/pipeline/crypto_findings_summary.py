@@ -83,7 +83,7 @@ def build(
                 "positive_assets_with_historical_staking": h4["positive_assets_with_historical_staking"],
                 "positive_assets_with_partial_component_history": h4["positive_assets_with_partial_component_history"],
                 "market_proxy_assets": h4["market_proxy_assets"],
-                "plain_finding": "H4 is not yet estimable. A complete 90-day BNB consensus-staking series ranges from about 25.51m to 25.78m BNB. The exact ETH active-effective-balance collector is implemented but needs an archival consensus endpoint, while the legacy stkAAVE series excludes current Umbrella aToken/GHO stake. One complete positive-staking series remains insufficient to identify liquid-float effects.",
+                "plain_finding": "H4 is not yet estimable as a comparative consensus-staking test. BNB now has 365 complete days and legacy stkAAVE has 365 days as a separate protocol-risk-stake case study. ETH has no historical observations because an archival consensus endpoint is still required. Umbrella balances are correctly excluded from the AAVE-token series because Umbrella stakes aTokens and GHO, not AAVE.",
             },
             "H8": {
                 "status": "verified_universe_theory_groups_favored_exploratory" if h8_verified else "exploratory_no_robust_breadth_premium_evidence",

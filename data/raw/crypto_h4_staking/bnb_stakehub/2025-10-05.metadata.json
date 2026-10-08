@@ -1,0 +1,6 @@
+{
+  "provider": "bsc_json_rpc",
+  "measurement_role": "consensus_stake_all_validator_pools",
+  "retrieved_at_utc": "2026-10-08T20:40:15.492773+00:00",
+  "sha256": "72eb3ab5a412529d77f25321c717ebad4adbad75561bbb2e64fe0a972a93d4a1"
+}

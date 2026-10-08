@@ -9,9 +9,9 @@
   "assets": [
     {"asset_id":"crypto_btc","va_stake":0,"staking_system":"none; proof of work","official_source_url":"https://bitcoin.org/en/faq#how-does-bitcoin-mining-work","historical_staked_supply_status":"structural_zero","comparability_group":"negative_control"},
     {"asset_id":"crypto_eth","va_stake":1,"staking_system":"consensus validator stake","official_source_url":"https://ethereum.github.io/beacon-APIs/","historical_staked_supply_status":"collector_ready_requires_archival_consensus_endpoint","comparability_group":"consensus_stake"},
-    {"asset_id":"crypto_bnb","va_stake":1,"staking_system":"consensus validator delegation","official_source_url":"https://docs.bnbchain.org/bnb-smart-chain/staking/overview/","historical_staked_supply_status":"not_implemented_requires_chain_specific_history","comparability_group":"consensus_stake"},
+    {"asset_id":"crypto_bnb","va_stake":1,"staking_system":"consensus validator delegation","official_source_url":"https://docs.bnbchain.org/bnb-smart-chain/staking/overview/","historical_staked_supply_status":"implemented","comparability_group":"consensus_stake"},
     {"asset_id":"crypto_uni","va_stake":0,"staking_system":"none under security-stake rule","official_source_url":"https://developers.uniswap.org/docs/ecosystem/governance/uni","historical_staked_supply_status":"structural_zero","comparability_group":"negative_control"},
-    {"asset_id":"crypto_aave","va_stake":1,"staking_system":"protocol deficit-risk absorption","official_source_url":"https://aave.com/help/umbrella/overview","historical_staked_supply_status":"not_implemented_requires_effective_dated_contract_events","comparability_group":"protocol_risk_stake"},
+    {"asset_id":"crypto_aave","va_stake":1,"staking_system":"legacy AAVE-token protocol deficit-risk absorption","official_source_url":"https://aave.com/help/umbrella/umbrella","historical_staked_supply_status":"implemented_separate_case_study","comparability_group":"protocol_risk_stake"},
     {"asset_id":"crypto_arb","va_stake":0,"staking_system":"governance delegation excluded from security stake","official_source_url":"https://forum.arbitrum.foundation/t/arb-staking-unlock-arb-utility-and-align-governance/25084","historical_staked_supply_status":"structural_zero","comparability_group":"negative_control"}
   ]
 }

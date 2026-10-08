@@ -1,10 +1,10 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 172,
+    "files": 173,
     "by_phase": {
       "00_foundation": 24,
-      "01_classification": 63,
+      "01_classification": 64,
       "02_valuation": 34,
       "03_risk": 7,
       "04_stablecoin_deferred": 44
@@ -222,7 +222,7 @@
       "phase": "00_foundation",
       "file": "crypto_h4_aave_legacy_stake_daily.csv",
       "kind": "table",
-      "bytes": 9586,
+      "bytes": 38586,
       "written_by": [
         "crypto_h4_aave_legacy_stake"
       ],
@@ -234,7 +234,7 @@
       "phase": "00_foundation",
       "file": "crypto_h4_bnb_stake_daily.csv",
       "kind": "table",
-      "bytes": 9323,
+      "bytes": 37269,
       "written_by": [
         "crypto_h4_bnb_stake"
       ],
@@ -248,7 +248,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 60027,
+      "bytes": 60392,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -894,7 +894,7 @@
       "phase": "01_classification",
       "file": "crypto_h4_aave_legacy_stake_summary.json",
       "kind": "summary",
-      "bytes": 573,
+      "bytes": 575,
       "written_by": [
         "crypto_h4_aave_legacy_stake"
       ],
@@ -909,7 +909,7 @@
       "phase": "01_classification",
       "file": "crypto_h4_bnb_stake_summary.json",
       "kind": "summary",
-      "bytes": 551,
+      "bytes": 553,
       "written_by": [
         "crypto_h4_bnb_stake"
       ],
@@ -937,9 +937,23 @@
     },
     {
       "phase": "01_classification",
+      "file": "crypto_h4_measurement_audit.json",
+      "kind": "summary",
+      "bytes": 1289,
+      "written_by": [
+        "crypto_h4_measurement_audit"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "01_classification",
       "file": "crypto_h4_source_readiness.csv",
       "kind": "table",
-      "bytes": 1204,
+      "bytes": 1243,
       "written_by": [
         "crypto_h4_readiness"
       ],
@@ -951,13 +965,14 @@
       "phase": "01_classification",
       "file": "crypto_h4_source_readiness.json",
       "kind": "summary",
-      "bytes": 4036,
+      "bytes": 4546,
       "written_by": [
         "crypto_h4_readiness"
       ],
       "read_by": [
         "checkpoint_readiness",
-        "crypto_findings_summary"
+        "crypto_findings_summary",
+        "crypto_h4_measurement_audit"
       ],
       "named_in_config": [
         "crypto_phase1_research_map.json"
@@ -1261,7 +1276,7 @@
       "phase": "01_classification",
       "file": "point_in_time_design_checkpoint.json",
       "kind": "summary",
-      "bytes": 4311,
+      "bytes": 4221,
       "written_by": [
         "checkpoint_readiness"
       ],
@@ -1297,7 +1312,7 @@
       "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
-      "bytes": 5845,
+      "bytes": 5844,
       "written_by": [
         "crypto_findings_summary"
       ],
@@ -1700,7 +1715,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.csv",
       "kind": "table",
-      "bytes": 2158,
+      "bytes": 2195,
       "written_by": [
         "crypto_hypothesis_register"
       ],
@@ -1714,7 +1729,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.json",
       "kind": "summary",
-      "bytes": 3388,
+      "bytes": 3425,
       "written_by": [
         "crypto_hypothesis_register"
       ],

@@ -16,6 +16,8 @@
       "comparability_group": "negative_control",
       "market_proxy_days": 362,
       "partial_component_history": false,
+      "staking_history_days": 0,
+      "minimum_history_days": 365,
       "positive_staking_history_ready": false
     },
     {
@@ -27,6 +29,8 @@
       "comparability_group": "consensus_stake",
       "market_proxy_days": 362,
       "partial_component_history": false,
+      "staking_history_days": 0,
+      "minimum_history_days": 365,
       "positive_staking_history_ready": false
     },
     {
@@ -34,10 +38,12 @@
       "va_stake": 1,
       "staking_system": "consensus validator delegation",
       "official_source_url": "https://docs.bnbchain.org/bnb-smart-chain/staking/overview/",
-      "historical_staked_supply_status": "not_implemented_requires_chain_specific_history",
+      "historical_staked_supply_status": "implemented",
       "comparability_group": "consensus_stake",
       "market_proxy_days": 362,
       "partial_component_history": true,
+      "staking_history_days": 365,
+      "minimum_history_days": 365,
       "positive_staking_history_ready": true
     },
     {
@@ -49,17 +55,21 @@
       "comparability_group": "negative_control",
       "market_proxy_days": 362,
       "partial_component_history": false,
+      "staking_history_days": 0,
+      "minimum_history_days": 365,
       "positive_staking_history_ready": false
     },
     {
       "asset_id": "crypto_aave",
       "va_stake": 1,
-      "staking_system": "protocol deficit-risk absorption",
-      "official_source_url": "https://aave.com/help/umbrella/overview",
-      "historical_staked_supply_status": "not_implemented_requires_effective_dated_contract_events",
+      "staking_system": "legacy AAVE-token protocol deficit-risk absorption",
+      "official_source_url": "https://aave.com/help/umbrella/umbrella",
+      "historical_staked_supply_status": "implemented_separate_case_study",
       "comparability_group": "protocol_risk_stake",
       "market_proxy_days": 362,
       "partial_component_history": true,
+      "staking_history_days": 365,
+      "minimum_history_days": 365,
       "positive_staking_history_ready": false
     },
     {
@@ -71,6 +81,8 @@
       "comparability_group": "negative_control",
       "market_proxy_days": 363,
       "partial_component_history": false,
+      "staking_history_days": 0,
+      "minimum_history_days": 365,
       "positive_staking_history_ready": false
     }
   ],
@@ -79,12 +91,13 @@
     "effective-dated staked native units and total/circulating supply",
     "staking entry and exit timing or unbonding constraints",
     "same-date volume turnover plus spread/depth where freely reproducible",
-    "separate consensus-stake and protocol-risk-stake specifications"
+    "separate consensus-stake and legacy AAVE-token risk-stake specifications"
   ],
   "guardrails": [
     "A verified VA_STAKE classification establishes mechanism presence, not the fraction staked.",
     "Reported 24-hour volume divided by market cap is a turnover proxy, not executable liquidity or liquid float.",
-    "Consensus staking and Aave-style deficit-risk staking are not pooled without a predeclared comparability specification.",
+    "Consensus staking and legacy AAVE-token deficit-risk staking are not pooled without a predeclared comparability specification.",
+    "Umbrella stakes aTokens and GHO rather than AAVE; its balances cannot fill a missing AAVE-denominated staking series.",
     "Structural zeros may be negative controls but cannot replace time variation among positive-staking assets."
   ]
 }

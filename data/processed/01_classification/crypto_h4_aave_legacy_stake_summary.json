@@ -4,13 +4,13 @@
   "component": "legacy_stkaave",
   "measurement_role": "legacy_component_only",
   "unblocks_h4": false,
-  "start_date": "2026-05-25",
+  "start_date": "2025-08-23",
   "end_date": "2026-08-22",
-  "expected_days": 90,
-  "observed_days": 90,
+  "expected_days": 365,
+  "observed_days": 365,
   "missing_block_days": [],
   "rpc_error_days": [],
-  "minimum_staked_native_units": 2088811.5118399616,
-  "maximum_staked_native_units": 2458021.5992138856,
+  "minimum_staked_native_units": 1899869.6748023715,
+  "maximum_staked_native_units": 3012597.7114761933,
   "limitation": "Umbrella also stakes aTokens and GHO; legacy stkAAVE totalSupply is not total Aave protocol-risk stake."
 }

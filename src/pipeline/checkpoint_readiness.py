@@ -84,8 +84,8 @@ def build_readiness(repo: Path) -> dict[str, Any]:
         "h1_activity_pilot_complete": h1_activity["status"] == "exploratory_four_asset_h1_complete" and h1_activity["rows"] == 352 and len(h1_activity["assets"]) == 4 and all(item["bootstrap_assignments"] == 16 for item in h1_activity["inference"].values()),
         "h3_supply_proxy_limit_documented": h3_supply["status"] == "h3_supply_proxy_diagnostic_complete_not_identification_ready" and h3_supply["rows"] == 296 and len(h3_supply["assets"]) == 4 and h3_supply["assets_with_within_supply_variation"] == 2 and h3_supply["inference"]["bootstrap_assignments"] == 16,
         "h4_source_blocker_documented": h4_readiness["status"] == "h4_source_readiness_complete_estimation_blocked" and h4_readiness["assets"] == 6 and h4_readiness["verified_stake_positive_assets"] == 3 and h4_readiness["positive_assets_with_historical_staking"] == 1 and h4_readiness["positive_assets_with_partial_component_history"] == 2 and h4_readiness["market_proxy_assets"] == 6 and h4_readiness["identification_ready"] is False,
-        "h4_aave_component_complete_but_nonreleasing": h4_aave["status"] == "aave_legacy_stake_component_complete" and h4_aave["observed_days"] == 90 and h4_aave["unblocks_h4"] is False and h4_aave["measurement_role"] == "legacy_component_only",
-        "h4_bnb_consensus_history_complete": h4_bnb["status"] == "bnb_consensus_stake_window_complete" and h4_bnb["observed_days"] == 90 and h4_bnb["unblocks_h4"] is True and not h4_bnb["failures"],
+        "h4_aave_component_complete_but_nonreleasing": h4_aave["status"] == "aave_legacy_stake_component_complete" and h4_aave["observed_days"] == 365 and h4_aave["unblocks_h4"] is False and h4_aave["measurement_role"] == "legacy_component_only",
+        "h4_bnb_consensus_history_complete": h4_bnb["status"] == "bnb_consensus_stake_window_complete" and h4_bnb["observed_days"] == 365 and h4_bnb["unblocks_h4"] is True and not h4_bnb["failures"],
         "h4_eth_exact_collector_ready": h4_eth["status"] in {"eth_collector_ready_archive_endpoint_required", "eth_collector_ready_archive_endpoint_configured"} and h4_eth["measurement_role"] == "consensus_active_effective_balance" and h4_eth["unblocks_h4"] is False,
         "phase1_taxonomy_complete": phase1_taxonomy["status"] == "phase1_taxonomy_complete" and phase1_taxonomy["core_assets"] == 6 and phase1_taxonomy["complete_verified_assets"] == 6 and phase1_taxonomy["verified_decisions"] == 60 and phase1_taxonomy["consistency_cases_open"] == 0 and phase1_taxonomy["adjudicated_decisions"] == 1 and phase1_taxonomy["confirmatory_ready"] is False,
         "free_fee_layer_expansion_reconciles": fee_layer["assets"] == 11 and fee_layer["complete_fee_assets"] == 11 and fee_layer["complete_revenue_assets"] == 10 and fee_layer["complete_holders_revenue_assets"] == 9,
@@ -122,10 +122,10 @@ def build_readiness(repo: Path) -> dict[str, Any]:
         },
         "model_readiness": {
             "h2": "eleven-asset panel has exploratory 10%-level evidence of a positive valuation interaction after Cardano adjudication; post-pilot freeze and small-cluster limits prohibit confirmatory interpretation; no robust forward-return relationship",
-            "h8": "the separately frozen six-asset extension remains positive in all leave-one-out samples, but exact permutation inference does not reject zero; breadth is more sign-stable but still not statistically established",
+            "h8": "the frozen 23-asset extension favors theory groups over raw breadth; financial integration predicts best, but the cross-sectional result remains exploratory and non-causal",
             "h1": "four-asset activity pilot has positive coefficients but exact inference does not reject zero; transaction association is leave-one-out sign-stable but not generalizable",
-            "h3": "four-asset circulating-supply proxy diagnostic is complete, but only BTC and ETH vary; the positive, non-rejecting coefficient does not support H3 and is not identification-ready",
-            "h4": "the six-asset universe is fixed; BNB history is complete, the exact ETH effective-balance collector is ready but needs an archival consensus endpoint, and legacy stkAAVE excludes Umbrella components, so estimation is blocked",
+            "h3": "the daily supply proxy and 12-event ARB unlock study do not support H3; all events belong to one asset, so pooled inference remains prohibited",
+            "h4": "the six-asset universe is fixed; BNB and the separate legacy stkAAVE case study each have 365 days, while the exact ETH effective-balance collector still needs an archival consensus endpoint",
             "h5_h6_h7": "preserved for a deferred stablecoin phase and not an active gate",
         },
         "guardrails": [
@@ -135,7 +135,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "This checkpoint validates methods and evidence provenance; it does not report hypothesis-test results.",
             "Cardano VA_PROTOCOL is adjudicated zero under the holder-directed mechanical-capture rule; the reviewed H2 specification is frozen post-pilot for reproducibility.",
         ],
-        "next_checkpoint": "Phase 1 classification and the six-asset H8 extension are complete. Resume H4 by configuring an archival Ethereum consensus endpoint and completing Aave Umbrella coverage.",
+        "next_checkpoint": "Phase 1 classification and the 23-asset H8 extension are complete. Resume H4 by configuring an archival Ethereum consensus endpoint; Umbrella balances are not an AAVE-denominated substitute.",
     }
 
 

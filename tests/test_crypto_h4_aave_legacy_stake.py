@@ -9,7 +9,7 @@ class CryptoH4AaveLegacyStakeTests(unittest.TestCase):
                 "assets":["a","b","c","d","e","f"], "aave_legacy_component":{
                     "asset_id":"crypto_aave","component_id":"legacy_stkaave","method":"totalSupply()",
                     "selector":"0x18160ddd","decimals":18,"contract_address":"0x"+"1"*40,
-                    "rpc_url":"https://rpc.test","measurement_role":"legacy_component_only",
+                    "rpc_url":"https://rpc.test","block_lookup_base":"https://blocks.test","measurement_role":"legacy_component_only",
                     "unblocks_h4":False,"limitation":"component only"}}
 
     def test_decodes_erc20_supply(self):
