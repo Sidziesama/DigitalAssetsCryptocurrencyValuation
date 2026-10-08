@@ -1,0 +1,178 @@
+{
+  "status": "post_pilot_exploratory_h8_verified_universe_complete",
+  "specification_version": "1.0-frozen-23-asset-verified-extension",
+  "assets_in_classification_universe": 23,
+  "coverage": {
+    "expected_calendar_days": 363,
+    "minimum_observations": 291,
+    "by_outcome": {
+      "mean_log_market_cap_usd": {
+        "eligible_assets": [
+          "crypto_aave",
+          "crypto_ada",
+          "crypto_arb",
+          "crypto_avax",
+          "crypto_bch",
+          "crypto_bnb",
+          "crypto_btc",
+          "crypto_eth",
+          "crypto_hbar",
+          "crypto_hype",
+          "crypto_link",
+          "crypto_ltc",
+          "crypto_op",
+          "crypto_pol",
+          "crypto_sol",
+          "crypto_sui",
+          "crypto_tao",
+          "crypto_trx",
+          "crypto_uni",
+          "crypto_xlm",
+          "crypto_xrp",
+          "crypto_zec"
+        ],
+        "missing_assets": [
+          "crypto_ton"
+        ]
+      },
+      "mean_log_dollar_volume": {
+        "eligible_assets": [
+          "crypto_aave",
+          "crypto_ada",
+          "crypto_arb",
+          "crypto_avax",
+          "crypto_bch",
+          "crypto_bnb",
+          "crypto_btc",
+          "crypto_eth",
+          "crypto_hbar",
+          "crypto_link",
+          "crypto_ltc",
+          "crypto_op",
+          "crypto_pol",
+          "crypto_sol",
+          "crypto_sui",
+          "crypto_tao",
+          "crypto_ton",
+          "crypto_trx",
+          "crypto_uni",
+          "crypto_xlm",
+          "crypto_xrp",
+          "crypto_zec"
+        ],
+        "missing_assets": [
+          "crypto_hype"
+        ]
+      },
+      "market_beta": {
+        "eligible_assets": [
+          "crypto_aave",
+          "crypto_ada",
+          "crypto_arb",
+          "crypto_avax",
+          "crypto_bch",
+          "crypto_bnb",
+          "crypto_btc",
+          "crypto_eth",
+          "crypto_hbar",
+          "crypto_link",
+          "crypto_ltc",
+          "crypto_op",
+          "crypto_pol",
+          "crypto_sol",
+          "crypto_sui",
+          "crypto_tao",
+          "crypto_ton",
+          "crypto_trx",
+          "crypto_uni",
+          "crypto_xlm",
+          "crypto_xrp",
+          "crypto_zec"
+        ],
+        "missing_assets": [
+          "crypto_hype"
+        ]
+      },
+      "realized_volatility_annualized": {
+        "eligible_assets": [
+          "crypto_aave",
+          "crypto_ada",
+          "crypto_arb",
+          "crypto_avax",
+          "crypto_bch",
+          "crypto_bnb",
+          "crypto_btc",
+          "crypto_eth",
+          "crypto_hbar",
+          "crypto_link",
+          "crypto_ltc",
+          "crypto_op",
+          "crypto_pol",
+          "crypto_sol",
+          "crypto_sui",
+          "crypto_tao",
+          "crypto_ton",
+          "crypto_trx",
+          "crypto_uni",
+          "crypto_xlm",
+          "crypto_xrp",
+          "crypto_zec"
+        ],
+        "missing_assets": [
+          "crypto_hype"
+        ]
+      },
+      "max_drawdown_log": {
+        "eligible_assets": [
+          "crypto_aave",
+          "crypto_ada",
+          "crypto_arb",
+          "crypto_avax",
+          "crypto_bch",
+          "crypto_bnb",
+          "crypto_btc",
+          "crypto_eth",
+          "crypto_hbar",
+          "crypto_link",
+          "crypto_ltc",
+          "crypto_op",
+          "crypto_pol",
+          "crypto_sol",
+          "crypto_sui",
+          "crypto_tao",
+          "crypto_ton",
+          "crypto_trx",
+          "crypto_uni",
+          "crypto_xlm",
+          "crypto_xrp",
+          "crypto_zec"
+        ],
+        "missing_assets": [
+          "crypto_hype"
+        ]
+      }
+    }
+  },
+  "primary_outcome": "mean_log_market_cap_usd",
+  "raw_breadth_loo_rmse": 1.8109056787314675,
+  "best_single_group_model": "bundle_financial_integration",
+  "best_single_group_loo_rmse": 1.7593503101418813,
+  "best_group_beats_raw_breadth": true,
+  "fdr_10pct_rejections": [
+    "bundle_monetary_store",
+    "bundle_supply_absorption",
+    "bundle_financial_integration"
+  ],
+  "direction_stability_out_of_five": {
+    "bundle_monetary_store": 4,
+    "bundle_transaction_service_demand": 3,
+    "bundle_security_commitment": 3,
+    "bundle_supply_absorption": 5,
+    "bundle_financial_integration": 5,
+    "bundle_control_rights": 5,
+    "bundle_holder_capture": 5,
+    "bundle_subsidized_participation": 4
+  },
+  "decision_rule_result": "theory_groups_favored",
+  "interpretation": "Exploratory cross-sectional association and prediction only; no causal claim."
+}

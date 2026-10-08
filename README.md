@@ -1,5 +1,7 @@
 # Digital Assets Valuation
 
+Latest empirical checkpoint: the frozen 23-asset H8 extension finds that financial integration is the strongest single economic-function valuation indicator and modestly improves leave-one-asset-out prediction relative to raw function breadth. See `research/findings/2026-10-08-h8-verified-universe.md` for the full exploratory, non-causal result and limitations.
+
 **Can the economic jobs a cryptoasset performs explain what it is worth and how risky it is?**
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.

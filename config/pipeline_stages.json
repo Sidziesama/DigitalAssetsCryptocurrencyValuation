@@ -350,6 +350,11 @@
         {
           "module": "crypto_phase1_bundle_comparison",
           "args": []
+        },
+        {
+          "module": "crypto_h8_verified_universe",
+          "args": [],
+          "note": "Runs the separately frozen 23-asset post-pilot H8 comparison and sensitivity analysis."
         }
       ]
     },
