@@ -23,6 +23,39 @@
       "event_type": "vesting_release",
       "date_rule": "The official API reports circulation at each month end but does not identify exact intra-month effective dates.",
       "candidate_status": "excluded_exact_event_date_unavailable"
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "source_type": "official_completed_quarterly_burn_records",
+      "event_type": "one_time_burn",
+      "date_rule": "Each official BNB Foundation record states the successful completion date, exact quantity permanently burned, transaction link, and remaining supply. Only records inside the available market-data window are entered.",
+      "candidate_status": "exact_date_and_quantity_records_available",
+      "events": [
+        {
+          "event_id": "bnb_33rd_quarterly_burn",
+          "event_date": "2025-10-27",
+          "gross_token_impact": 1441281.413,
+          "source_url": "https://www.bnbchain.org/en/blog/33rd-bnb-burn"
+        },
+        {
+          "event_id": "bnb_34th_quarterly_burn",
+          "event_date": "2026-01-15",
+          "gross_token_impact": 1371803.77,
+          "source_url": "https://www.bnbchain.org/en/blog/34th-bnb-burn"
+        },
+        {
+          "event_id": "bnb_35th_quarterly_burn",
+          "event_date": "2026-04-15",
+          "gross_token_impact": 1569307.34,
+          "source_url": "https://www.bnbchain.org/en/blog/35th-bnb-burn"
+        },
+        {
+          "event_id": "bnb_36th_quarterly_burn",
+          "event_date": "2026-07-15",
+          "gross_token_impact": 1615827.795,
+          "source_url": "https://www.bnbchain.org/en/blog/36th-bnb-burn"
+        }
+      ]
     }
   ]
 }

@@ -1,8 +1,10 @@
 {
   "schema_version": 1,
-  "document_version": "1.0-frozen-before-event-collection",
+  "document_version": "1.1-frozen-before-multiasset-estimation",
   "status": "frozen_before_supply_event_collection_and_estimation",
   "freeze_date": "2026-10-08",
+  "multiasset_inference_amendment_date": "2026-10-09",
+  "multiasset_inference_amendment": "Before estimating the second asset, the pooled randomization unit was fixed as the asset-level mean direction-adjusted event return. This prevents repeated events from one asset from being treated as independent observations.",
   "hypothesis": "H3",
   "research_question": "Do material, dated increases or decreases in economically available token supply produce directionally consistent market-adjusted returns?",
   "active_universe_input": "data/processed/01_classification/crypto_verified_universe_profiles.csv",
@@ -27,7 +29,8 @@
     "minimum_estimation_observations": 60,
     "primary_outcome": "cumulative_abnormal_log_return",
     "event_level_inference": "calendar_date_placebo_distribution",
-    "pooled_inference": "sign_flip_randomization_of_direction_adjusted_event_returns",
+    "pooled_inference": "exact_sign_flip_randomization_of_asset_level_mean_direction_adjusted_event_returns",
+    "pooled_randomization_unit": "asset",
     "random_seed": 20261008,
     "monte_carlo_draws": 100000
   },

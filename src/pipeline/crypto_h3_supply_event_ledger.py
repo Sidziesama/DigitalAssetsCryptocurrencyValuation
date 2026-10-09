@@ -36,6 +36,12 @@ def build(spec: dict[str,Any], sources: dict[str,Any], market: list[dict[str,str
                 day=add_month(day)
         elif source["asset_id"]=="crypto_sui":
             rows.append({"event_id":"sui_month_end_schedule_candidate","asset_id":"crypto_sui","event_date":"","event_type":"vesting_release","supply_shock_direction":"increase","expected_return_sign":"negative","gross_token_impact":"","pre_event_circulating_supply":"","supply_measurement_date":"","impact_share":"","primary_source_url":source["source_url"],"exact_date_verified":0,"quantity_verified":1,"material":"","contaminated":"","primary_eligible":0,"exclusion_reason":"official_api_reports_month_end_totals_but_no_exact_effective_date"})
+        elif source["asset_id"]=="crypto_bnb":
+            for event in source["events"]:
+                day=date.fromisoformat(event["event_date"])
+                if not start<=day<=end: continue
+                amount=float(event["gross_token_impact"]); supply,supply_date=market_supply(market,"crypto_bnb",day); share=amount/supply if supply else None; material=share is not None and share>=threshold
+                rows.append({"event_id":event["event_id"],"asset_id":"crypto_bnb","event_date":day.isoformat(),"event_type":"one_time_burn","supply_shock_direction":"decrease","expected_return_sign":"positive","gross_token_impact":amount,"pre_event_circulating_supply":supply,"supply_measurement_date":supply_date,"impact_share":share,"primary_source_url":event["source_url"],"exact_date_verified":1,"quantity_verified":1,"material":int(material),"contaminated":0,"primary_eligible":int(material),"exclusion_reason":"" if material else "below_materiality_or_missing_supply_denominator"})
     eligible=[r for r in rows if r["primary_eligible"]==1]
     summary={"status":"h3_supply_event_ledger_ready","candidate_rows":len(rows),"eligible_events":len(eligible),"eligible_assets":sorted({r["asset_id"] for r in eligible}),"excluded_candidates":sum(r["primary_eligible"]==0 for r in rows),"event_dates_observed_before_outcomes":True,"next_gate":"At least two assets with eligible, uncontaminated events are required for pooled H3 inference; single-asset estimates remain descriptive."}
     return rows,summary
