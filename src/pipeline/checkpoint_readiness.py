@@ -124,7 +124,7 @@ def build_readiness(repo: Path) -> dict[str, Any]:
             "h2": "eleven-asset panel has exploratory 10%-level evidence of a positive valuation interaction after Cardano adjudication; post-pilot freeze and small-cluster limits prohibit confirmatory interpretation; no robust forward-return relationship",
             "h8": "the frozen 23-asset extension favors theory groups over raw breadth; financial integration predicts best, but the cross-sectional result remains exploratory and non-causal",
             "h1": "four-asset activity pilot has positive coefficients but exact inference does not reject zero; transaction association is leave-one-out sign-stable but not generalizable",
-            "h3": "the daily supply proxy and 12-event ARB unlock study do not support H3; all events belong to one asset, so pooled inference remains prohibited",
+            "h3": "the daily supply proxy and 16-event ARB-plus-BNB study do not support H3; asset-level exact inference is permitted but extremely low-powered with two assets",
             "h4": "the six-asset universe is fixed; BNB and the separate legacy stkAAVE case study each have 365 days, while the exact ETH effective-balance collector still needs an archival consensus endpoint",
             "h5_h6_h7": "preserved for a deferred stablecoin phase and not an active gate",
         },

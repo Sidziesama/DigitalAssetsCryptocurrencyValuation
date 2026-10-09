@@ -19,7 +19,7 @@
 <rect x="435" y="198" width="130" height="94" rx="8" fill="#b6534c" opacity="0.9"/>
 <text x="500" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#ffffff">H3</text>
 <text x="500" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">Not identified</text>
-<text x="500" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#ffffff">12 events from one asset</text>
+<text x="500" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#ffffff">16 events across 2 assets</text>
 <line x1="500" y1="136" x2="690" y2="198" stroke="#647383" stroke-width="1.5"/>
 <rect x="625" y="198" width="130" height="94" rx="8" fill="#d7dde3" opacity="0.9"/>
 <text x="690" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#17212b">H4</text>

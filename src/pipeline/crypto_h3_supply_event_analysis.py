@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import argparse, csv, html, json, math, statistics
+import argparse, csv, html, itertools, json, math, statistics
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -13,6 +13,16 @@ def number(value: Any) -> float|None:
     try: result=float(value)
     except (TypeError,ValueError): return None
     return result if math.isfinite(result) else None
+
+
+def exact_asset_sign_flip_p(values: list[float]) -> tuple[float|None,int]:
+    if len(values)<2: return None,0
+    observed=abs(statistics.fmean(values)); assignments=0; exceed=0
+    for signs in itertools.product((-1,1),repeat=len(values)):
+        assignments+=1
+        null=abs(statistics.fmean(sign*value for sign,value in zip(signs,values)))
+        exceed+=null>=observed-1e-12
+    return exceed/assignments,assignments
 
 
 def build(spec: dict[str,Any], ledger: list[dict[str,str]], panel: list[dict[str,str]]):
@@ -32,31 +42,38 @@ def build(spec: dict[str,Any], ledger: list[dict[str,str]], panel: list[dict[str
         fit=ols([[r[2]] for r in estimation],[r[1] for r in estimation])
         if fit is None: continue
         abnormal={offset:series[position+offset][1]-(fit[0]+fit[1]*series[position+offset][2]) for offset in range(-14,15) if 0<=position+offset<len(series)}
-        paths.append({"event_id":event["event_id"],**abnormal})
-        record={"event_id":event["event_id"],"asset_id":event["asset_id"],"event_date":event["event_date"],"impact_share":event["impact_share"],"estimation_observations":len(estimation),"market_beta":fit[1]}
+        expected_sign=event.get("expected_return_sign","negative"); multiplier=1 if expected_sign=="positive" else -1
+        paths.append({"event_id":event["event_id"],"asset_id":event["asset_id"],"direction_multiplier":multiplier,**abnormal})
+        record={"event_id":event["event_id"],"asset_id":event["asset_id"],"event_date":event["event_date"],"expected_return_sign":expected_sign,"impact_share":event["impact_share"],"estimation_observations":len(estimation),"market_beta":fit[1]}
         for start,end in windows:
             values=[abnormal[i] for i in range(start,end+1) if i in abnormal]; record[f"car_{start}_{end}"]=sum(values) if len(values)==end-start+1 else None
-        record["primary_sign_matches_h3"]=int(record[f"car_{primary[0]}_{primary[1]}"]<0) if record[f"car_{primary[0]}_{primary[1]}"] is not None else ""
+        primary_car=record[f"car_{primary[0]}_{primary[1]}"]
+        record["direction_adjusted_primary_car"]=primary_car*multiplier if primary_car is not None else None
+        record["primary_sign_matches_h3"]=int(record["direction_adjusted_primary_car"]>0) if primary_car is not None else ""
         event_rows.append(record)
     curve=[]
     for offset in range(-14,15):
         values=[]
         for path in paths:
             available=[path[i] for i in range(-14,offset+1) if i in path]
-            if len(available)==offset+15: values.append(sum(available))
-        curve.append({"event_time_trading_day":offset,"mean_cumulative_abnormal_log_return":statistics.fmean(values) if values else None,"events":len(values)})
+            if len(available)==offset+15: values.append(sum(available)*path["direction_multiplier"])
+        curve.append({"event_time_trading_day":offset,"mean_direction_adjusted_cumulative_abnormal_log_return":statistics.fmean(values) if values else None,"events":len(values)})
     assets=sorted({r["asset_id"] for r in event_rows}); primary_key=f"car_{primary[0]}_{primary[1]}"; primary_values=[r[primary_key] for r in event_rows if r[primary_key] is not None]
-    summary={"status":"h3_single_asset_descriptive_event_analysis_complete" if len(assets)<2 else "h3_multi_asset_event_analysis_ready","events_estimated":len(event_rows),"assets":assets,"pooled_inference_permitted":len(assets)>=2,"mean_primary_car":statistics.fmean(primary_values) if primary_values else None,"median_primary_car":statistics.median(primary_values) if primary_values else None,"events_matching_negative_h3_sign":sum(r["primary_sign_matches_h3"]==1 for r in event_rows),"primary_window":list(primary),"interpretation":"Repeated events from one asset are dependent observations. Until a second asset qualifies, estimates are descriptive and no pooled p-value is reported."}
+    adjusted=[r["direction_adjusted_primary_car"] for r in event_rows if r["direction_adjusted_primary_car"] is not None]
+    asset_means={asset:statistics.fmean(r["direction_adjusted_primary_car"] for r in event_rows if r["asset_id"]==asset and r["direction_adjusted_primary_car"] is not None) for asset in assets}
+    pooled_p,assignments=exact_asset_sign_flip_p(list(asset_means.values()))
+    summary={"status":"h3_single_asset_descriptive_event_analysis_complete" if len(assets)<2 else "h3_multi_asset_event_analysis_complete_low_power","events_estimated":len(event_rows),"assets":assets,"events_by_asset":{asset:sum(r["asset_id"]==asset for r in event_rows) for asset in assets},"pooled_inference_permitted":len(assets)>=2,"pooled_randomization_unit":"asset","asset_mean_direction_adjusted_primary_car":asset_means,"mean_primary_car":statistics.fmean(primary_values) if primary_values else None,"median_primary_car":statistics.median(primary_values) if primary_values else None,"mean_direction_adjusted_primary_car":statistics.fmean(adjusted) if adjusted else None,"events_matching_predicted_sign":sum(r["primary_sign_matches_h3"]==1 for r in event_rows),"events_matching_negative_h3_sign":sum(r["primary_sign_matches_h3"]==1 for r in event_rows if r["expected_return_sign"]=="negative"),"asset_sign_flip_p_two_sided":pooled_p,"asset_sign_flip_assignments":assignments,"primary_window":list(primary),"interpretation":("Pooled inference uses asset-level mean direction-adjusted returns so repeated events are not treated as independent. With two assets there are only four sign assignments, so inference is valid but extremely low-powered." if len(assets)>=2 else "Repeated events from one asset are dependent observations. Until a second asset qualifies, estimates are descriptive and no pooled p-value is reported.")}
     return event_rows,curve,summary
 
 
 def chart(curve: list[dict[str,Any]], summary: dict[str,Any]) -> str:
-    width,height=900,460; left,right,top,bottom=85,35,70,65; values=[r["mean_cumulative_abnormal_log_return"] for r in curve if r["mean_cumulative_abnormal_log_return"] is not None]; ymin,ymax=min(values+[0]),max(values+[0]); pad=max((ymax-ymin)*.12,.005); ymin-=pad; ymax+=pad
+    width,height=900,460; left,right,top,bottom=85,35,70,65; values=[r["mean_direction_adjusted_cumulative_abnormal_log_return"] for r in curve if r["mean_direction_adjusted_cumulative_abnormal_log_return"] is not None]; ymin,ymax=min(values+[0]),max(values+[0]); pad=max((ymax-ymin)*.12,.005); ymin-=pad; ymax+=pad
     x=lambda v:left+(v+14)/28*(width-left-right); y=lambda v:top+(ymax-v)/(ymax-ymin)*(height-top-bottom)
-    points=" ".join(f"{x(r['event_time_trading_day']):.1f},{y(r['mean_cumulative_abnormal_log_return']):.1f}" for r in curve if r["mean_cumulative_abnormal_log_return"] is not None)
-    parts=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Mean cumulative abnormal return around Arbitrum monthly unlocks">','<rect width="100%" height="100%" fill="#ffffff"/>',f'<text x="24" y="30" font-family="Arial" font-size="20" font-weight="600" fill="#17212b">H3 descriptive event path: ARB monthly unlocks</text>',f'<text x="24" y="53" font-family="Arial" font-size="12" fill="#647383">{summary["events_estimated"]} repeated events from one asset; descriptive, not independent pooled evidence.</text>',f'<rect x="{left}" y="{top}" width="{width-left-right}" height="{height-top-bottom}" fill="none" stroke="#d7dde3"/>',f'<line x1="{left}" y1="{y(0):.1f}" x2="{width-right}" y2="{y(0):.1f}" stroke="#647383"/>',f'<line x1="{x(0):.1f}" y1="{top}" x2="{x(0):.1f}" y2="{height-bottom}" stroke="#d99a2b" stroke-width="2"/>',f'<polyline points="{points}" fill="none" stroke="#3478b8" stroke-width="3"/>']
+    points=" ".join(f"{x(r['event_time_trading_day']):.1f},{y(r['mean_direction_adjusted_cumulative_abnormal_log_return']):.1f}" for r in curve if r["mean_direction_adjusted_cumulative_abnormal_log_return"] is not None)
+    subtitle=(f'{summary["events_estimated"]} events across {len(summary.get("assets",[]))} assets; positive values match the hypothesized direction.')
+    parts=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Mean direction-adjusted cumulative abnormal return around supply events">','<rect width="100%" height="100%" fill="#ffffff"/>',f'<text x="24" y="30" font-family="Arial" font-size="20" font-weight="600" fill="#17212b">H3 supply-event path</text>',f'<text x="24" y="53" font-family="Arial" font-size="12" fill="#647383">{html.escape(subtitle)}</text>',f'<rect x="{left}" y="{top}" width="{width-left-right}" height="{height-top-bottom}" fill="none" stroke="#d7dde3"/>',f'<line x1="{left}" y1="{y(0):.1f}" x2="{width-right}" y2="{y(0):.1f}" stroke="#647383"/>',f'<line x1="{x(0):.1f}" y1="{top}" x2="{x(0):.1f}" y2="{height-bottom}" stroke="#d99a2b" stroke-width="2"/>',f'<polyline points="{points}" fill="none" stroke="#3478b8" stroke-width="3"/>']
     for tick in (-14,-7,0,7,14): parts.append(f'<text x="{x(tick):.1f}" y="{height-bottom+25}" text-anchor="middle" font-family="Arial" font-size="12" fill="#17212b">{tick}</text>')
-    parts += [f'<text x="{(left+width-right)/2}" y="{height-15}" text-anchor="middle" font-family="Arial" font-size="12" fill="#647383">Trading days from unlock</text>',f'<text x="18" y="{(top+height-bottom)/2}" transform="rotate(-90 18 {(top+height-bottom)/2})" text-anchor="middle" font-family="Arial" font-size="12" fill="#647383">Mean cumulative abnormal log return</text>','</svg>']
+    parts += [f'<text x="{(left+width-right)/2}" y="{height-15}" text-anchor="middle" font-family="Arial" font-size="12" fill="#647383">Trading days from supply event</text>',f'<text x="18" y="{(top+height-bottom)/2}" transform="rotate(-90 18 {(top+height-bottom)/2})" text-anchor="middle" font-family="Arial" font-size="12" fill="#647383">Direction-adjusted cumulative abnormal log return</text>','</svg>']
     return "\n".join(parts)+"\n"
 
 

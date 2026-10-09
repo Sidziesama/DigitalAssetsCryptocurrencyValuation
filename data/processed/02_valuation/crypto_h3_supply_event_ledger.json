@@ -1,11 +1,12 @@
 {
   "status": "h3_supply_event_ledger_ready",
-  "candidate_rows": 30,
-  "eligible_events": 12,
+  "candidate_rows": 34,
+  "eligible_events": 16,
   "eligible_assets": [
-    "crypto_arb"
+    "crypto_arb",
+    "crypto_bnb"
   ],
   "excluded_candidates": 18,
   "event_dates_observed_before_outcomes": true,
-  "next_gate": "At least two assets with eligible, uncontaminated events are required for pooled H3 inference; single-asset estimates remain descriptive."
+  "next_gate": "Multiasset gate passed; estimate with asset-level randomization so repeated events are not treated as independent."
 }

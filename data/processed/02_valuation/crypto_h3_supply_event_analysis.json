@@ -1,16 +1,30 @@
 {
-  "status": "h3_single_asset_descriptive_event_analysis_complete",
-  "events_estimated": 12,
+  "status": "h3_multi_asset_event_analysis_complete_low_power",
+  "events_estimated": 16,
   "assets": [
-    "crypto_arb"
+    "crypto_arb",
+    "crypto_bnb"
   ],
-  "pooled_inference_permitted": false,
-  "mean_primary_car": 0.015454530380095616,
-  "median_primary_car": 0.006327798349187587,
+  "events_by_asset": {
+    "crypto_arb": 12,
+    "crypto_bnb": 4
+  },
+  "pooled_inference_permitted": true,
+  "pooled_randomization_unit": "asset",
+  "asset_mean_direction_adjusted_primary_car": {
+    "crypto_arb": -0.015454530380095616,
+    "crypto_bnb": -0.0017234282958814586
+  },
+  "mean_primary_car": 0.011160040711101346,
+  "median_primary_car": 0.005313717568384363,
+  "mean_direction_adjusted_primary_car": -0.012021754859042076,
+  "events_matching_predicted_sign": 8,
   "events_matching_negative_h3_sign": 5,
+  "asset_sign_flip_p_two_sided": 0.5,
+  "asset_sign_flip_assignments": 4,
   "primary_window": [
     -1,
     1
   ],
-  "interpretation": "Repeated events from one asset are dependent observations. Until a second asset qualifies, estimates are descriptive and no pooled p-value is reported."
+  "interpretation": "Pooled inference uses asset-level mean direction-adjusted returns so repeated events are not treated as independent. With two assets there are only four sign assignments, so inference is valid but extremely low-powered."
 }

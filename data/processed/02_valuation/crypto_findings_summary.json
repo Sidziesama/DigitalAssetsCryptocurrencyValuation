@@ -36,7 +36,7 @@
       "plain_finding": "Higher fees are more strongly associated with market value when active capture exists. The result is persistent across asset exclusions and crosses the 10% exploratory reference threshold, but the post-pilot freeze and small sample prevent confirmatory interpretation; there is no robust short-horizon return signal."
     },
     "H3": {
-      "status": "supply_proxy_diagnostic_not_identification_ready",
+      "status": "multiasset_supply_event_result_not_supported_low_power",
       "assets": 4,
       "rows": 296,
       "assets_with_within_supply_variation": 2,
@@ -44,13 +44,17 @@
       "effect_per_basis_point": 0.11306496492090846,
       "exact_p": 0.25,
       "observed_sign": "positive",
-      "supply_events_estimated": 12,
+      "supply_events_estimated": 16,
       "supply_event_assets": [
-        "crypto_arb"
+        "crypto_arb",
+        "crypto_bnb"
       ],
-      "supply_event_mean_primary_car": 0.015454530380095616,
+      "supply_event_mean_primary_car": 0.011160040711101346,
       "supply_events_matching_negative_sign": 5,
-      "plain_finding": "The daily supply diagnostic does not support H3. A separately frozen event study estimates 12 material ARB monthly unlocks: the mean three-day abnormal log return is 0.015, and only 5 events have the predicted negative sign. Because all events belong to one asset, they are dependent descriptive observations and pooled inference remains prohibited."
+      "supply_event_mean_direction_adjusted_car": -0.012021754859042076,
+      "supply_events_matching_predicted_sign": 8,
+      "supply_event_asset_sign_flip_p": 0.5,
+      "plain_finding": "The multiasset supply-event study does not support H3. It estimates 16 material events across 2 assets. Both asset-level average direction-adjusted returns oppose the hypothesis; 8 of 16 events match the predicted sign, and the exact asset-level sign-flip p-value is 0.500. With only two independent asset units, inference is valid but extremely low-powered."
     },
     "H4": {
       "status": "source_readiness_complete_estimation_blocked",

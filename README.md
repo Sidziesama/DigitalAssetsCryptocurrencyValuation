@@ -1,6 +1,6 @@
 # Digital Assets Valuation
 
-**Current checkpoint (8 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. H1, H2, H3 and H8 have exploratory estimates. H4 now has complete 365-day BNB consensus-stake and legacy stkAAVE histories, but pooled estimation still requires archival ETH consensus data.
+**Current checkpoint (9 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. H1, H2, H3 and H8 have exploratory estimates. H3 now includes ARB unlocks and BNB burns; H4 has complete 365-day BNB consensus-stake and legacy stkAAVE histories, but pooled estimation still requires archival ETH consensus data.
 
 The clearest result so far is H8: theory-defined function groups contain more valuation information than a raw count of functions in this sample. Financial integration is the strongest single group and modestly lowers leave-one-asset-out prediction error. This is exploratory and non-causal, not an investment rule. See [`research/findings/crypto-current-findings.md`](research/findings/crypto-current-findings.md) and the [visual analysis](research/findings/crypto-visual-analysis.md).
 
@@ -8,7 +8,7 @@ The clearest result so far is H8: theory-defined function groups contain more va
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 350 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 352 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -44,7 +44,7 @@ These become five active hypotheses. Each empirical design is frozen before its 
 |---|---|---|
 | H1 | Usage is associated with higher network value | Estimated; positive, not significant (p = 0.250) |
 | H2 | Usage matters more when value capture is live | Estimated; **definition-dependent** (broad p = 0.082; strict p = 0.478) |
-| H3 | Greater circulating-supply growth predicts weaker returns | 12 ARB events estimated descriptively; second asset required |
+| H3 | Greater circulating-supply growth predicts weaker returns | 16 events across ARB and BNB; not supported, very low power |
 | H4 | Staking reduces liquid float and affects liquidity or risk | BNB and legacy stkAAVE histories complete; ETH archive blocks pooled test |
 | H8 | Theory groups outperform a raw count of functions | 23-asset extension favors groups; exploratory |
 
@@ -154,7 +154,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 350 tests
+python -m unittest discover -s tests                           # 352 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -173,7 +173,7 @@ Full walkthrough in [`research/findings/2026-09-07-the-math-explained.md`](resea
 - **Architecture does not predict economics.** Two PoS base layers in the verified core differ on two of ten functions; two application tokens share one.
 - **The central capture result is definition-dependent.** Fee activity is more strongly associated with market value when a capture route is live: pooled interaction 0.132, exact p = 0.082, positive in all eleven leave-one-out samples. Apply the strict holder-capture rule and it halves to 0.061 with p = 0.478. **Whether a governed treasury counts as capture is the difference between a result and no result.**
 - **Which functions are present is more informative than how many.** In the verified 23-asset H8 extension, raw breadth has leave-one-asset-out RMSE 1.8109; the best single group, financial integration, improves it modestly to 1.7594. Monetary/store, supply absorption and financial integration survive 10% false-discovery control in this sample.
-- **The H3 event evidence does not yet support dilution timing.** Across 12 material ARB unlocks, mean three-day abnormal log return is +0.0155 and only 5 of 12 events have the predicted negative sign. This is a one-asset descriptive result, not pooled inference.
+- **The H3 event evidence does not support the predicted supply-shock direction.** Across 12 material ARB unlocks and four BNB burns, both asset-level mean direction-adjusted returns oppose H3. Eight of 16 events match their predicted sign; the exact asset-level sign-flip p-value is 0.50. With only two independent assets, this is valid but extremely low-powered evidence.
 - **H4 measurement is partly complete.** BNB has 365/365 days of native consensus stake; legacy stkAAVE has 365/365 days as a separate case study. ETH has 0/365 because a historical consensus endpoint is not configured, so pooled estimation is blocked.
 - **Mechanism activations are not visibly priced.** Three events, 22 controls, ~280 calendar placebos each. One carries its expected sign; none rejects at 10%.
 - **A single market factor dominates.** Median beta 1.03, median R² 0.60 across 24 assets. Lagged beta is negatively priced (t = −2.12).
@@ -184,7 +184,7 @@ Not defensible, and stated as such: any claim that economic function causes valu
 ### What happens next
 
 1. **Unblock H4 measurement.** Configure `ETH_BEACON_ARCHIVE_API_URL` with a provider that serves historical beacon states, then collect 365 days of active effective balance and run the frozen H4 analysis.
-2. **Broaden H3 without outcome selection.** Add a second asset with official, exact-date, material supply events. Preserve the ARB result unchanged and prohibit pooled inference until the preregistered minimum is met.
+2. **Broaden H3 without outcome selection.** The two-asset gate is now passed with ARB and BNB. Add independently sourced assets to improve power while preserving the current definitions, materiality rule, event window, and asset-level randomization.
 3. **Accumulate the frozen H8 validation window.** The design is now fixed at 23 August 2026–22 August 2027, with financial integration compared against raw breadth using the same leave-one-asset-out RMSE. The readiness audit prevents estimation before the window closes and requires at least 292 daily observations per asset.
 4. **Treat the verified risk refresh as exploratory.** The classification-only refresh is complete; preserve its null false-discovery-controlled result and seek a genuinely later risk window before calling it validation.
 5. **Collect external rule feedback.** Use the frozen survey analysis plan to document agreement and disagreement with the classification boundaries. This strengthens interpretation but is not represented as independent recoding.

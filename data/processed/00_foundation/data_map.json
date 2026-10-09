@@ -249,7 +249,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 60805,
+      "bytes": 62074,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1280,7 +1280,7 @@
       "phase": "01_classification",
       "file": "point_in_time_design_checkpoint.json",
       "kind": "summary",
-      "bytes": 4221,
+      "bytes": 4235,
       "written_by": [
         "checkpoint_readiness"
       ],
@@ -1316,7 +1316,7 @@
       "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
-      "bytes": 5844,
+      "bytes": 6043,
       "written_by": [
         "crypto_findings_summary"
       ],
@@ -1516,7 +1516,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_analysis.json",
       "kind": "summary",
-      "bytes": 518,
+      "bytes": 1023,
       "written_by": [
         "crypto_findings_summary",
         "crypto_h3_supply_event_analysis"
@@ -1531,7 +1531,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_curve.csv",
       "kind": "table",
-      "bytes": 866,
+      "bytes": 883,
       "written_by": [
         "crypto_h3_supply_event_analysis"
       ],
@@ -1543,7 +1543,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_estimates.csv",
       "kind": "table",
-      "bytes": 2249,
+      "bytes": 3481,
       "written_by": [
         "crypto_h3_supply_event_analysis"
       ],
@@ -1555,7 +1555,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_ledger.csv",
       "kind": "table",
-      "bytes": 6643,
+      "bytes": 7437,
       "written_by": [
         "crypto_h3_supply_event_ledger"
       ],
@@ -1572,7 +1572,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_ledger.json",
       "kind": "summary",
-      "bytes": 374,
+      "bytes": 369,
       "written_by": [
         "crypto_h3_supply_event_ledger"
       ],
@@ -1733,7 +1733,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.csv",
       "kind": "table",
-      "bytes": 2195,
+      "bytes": 2204,
       "written_by": [
         "crypto_hypothesis_register"
       ],
@@ -1747,7 +1747,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.json",
       "kind": "summary",
-      "bytes": 3425,
+      "bytes": 3436,
       "written_by": [
         "crypto_hypothesis_register"
       ],

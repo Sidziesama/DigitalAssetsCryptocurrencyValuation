@@ -2,7 +2,7 @@
   "summary": {
     "status": "crypto_hypothesis_evidence_register_complete",
     "hypotheses": 5,
-    "estimated": 3,
+    "estimated": 4,
     "blocked": [
       "H4"
     ],
@@ -31,12 +31,12 @@
     },
     {
       "hypothesis": "H3",
-      "sample": "12 events from one asset",
-      "test_state": "descriptive_event_result_not_identification_ready",
+      "sample": "16 events across 2 assets",
+      "test_state": "estimated_multiasset_low_power",
       "result": "not_supported",
-      "key_statistic": "mean [-1,+1] abnormal return=0.0155; predicted-negative events=5/12",
-      "advisory_interpretation": "Current daily supply data do not identify a dilution effect.",
-      "next_action": "Add a second qualifying asset before pooled inference; preserve the single-asset ARB result as descriptive.",
+      "key_statistic": "direction-adjusted mean=-0.0120; predicted-sign events=8/16; asset sign-flip p=0.5000",
+      "advisory_interpretation": "The ARB unlock and BNB burn sample does not support the predicted supply-shock return direction; two assets leave the test extremely low-powered.",
+      "next_action": "Preserve the two-asset null result and add independently sourced assets to improve power without selecting on returns.",
       "research_question": "Is greater circulating-supply growth associated with weaker returns?"
     },
     {

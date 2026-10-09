@@ -29,3 +29,7 @@ arb_monthly_unlock_2026-06-16,crypto_arb,2026-06-16,scheduled_unlock,increase,ne
 arb_monthly_unlock_2026-07-16,crypto_arb,2026-07-16,scheduled_unlock,increase,negative,92645833.33333333,6362816647.125115,2026-07-16,0.014560506529006003,https://docs.arbitrum.foundation/token-supply,1,1,1,0,1,
 arb_monthly_unlock_2026-08-16,crypto_arb,2026-08-16,scheduled_unlock,increase,negative,92645833.33333333,6614064769.901765,2026-08-16,0.014007397350405648,https://docs.arbitrum.foundation/token-supply,1,1,1,0,1,
 sui_month_end_schedule_candidate,crypto_sui,,vesting_release,increase,negative,,,,,https://sui-circulation.suiexplorer.com/api/sui_circulation,0,1,,,0,official_api_reports_month_end_totals_but_no_exact_effective_date
+bnb_33rd_quarterly_burn,crypto_bnb,2025-10-27,one_time_burn,decrease,positive,1441281.413,139184656.26054293,2025-10-27,0.010355174569688432,https://www.bnbchain.org/en/blog/33rd-bnb-burn,1,1,1,0,1,
+bnb_34th_quarterly_burn,crypto_bnb,2026-01-15,one_time_burn,decrease,positive,1371803.77,139183771.47633442,2026-01-15,0.009856061202029214,https://www.bnbchain.org/en/blog/34th-bnb-burn,1,1,1,0,1,
+bnb_35th_quarterly_burn,crypto_bnb,2026-04-15,one_time_burn,decrease,positive,1569307.34,139183887.91738048,2026-04-15,0.011275064689467077,https://www.bnbchain.org/en/blog/35th-bnb-burn,1,1,1,0,1,
+bnb_36th_quarterly_burn,crypto_bnb,2026-07-15,one_time_burn,decrease,positive,1615827.795,134783399.95169997,2026-07-15,0.011988329390555785,https://www.bnbchain.org/en/blog/36th-bnb-burn,1,1,1,0,1,

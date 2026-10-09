@@ -62,7 +62,7 @@ def build(
                 "plain_finding": "Higher fees are more strongly associated with market value when active capture exists. The result is persistent across asset exclusions and crosses the 10% exploratory reference threshold, but the post-pilot freeze and small sample prevent confirmatory interpretation; there is no robust short-horizon return signal.",
             },
             "H3": {
-                "status": "supply_proxy_diagnostic_not_identification_ready",
+                "status": "multiasset_supply_event_result_not_supported_low_power" if h3_events and len(h3_events.get("assets", [])) >= 2 else "supply_proxy_diagnostic_not_identification_ready",
                 "assets": len(h3["assets"]), "rows": h3["rows"],
                 "assets_with_within_supply_variation": h3["assets_with_within_supply_variation"],
                 "supply_growth_coefficient": h3["coefficients"]["circulating_supply_growth_7d_lag1"],
@@ -73,7 +73,10 @@ def build(
                 "supply_event_assets": h3_events["assets"] if h3_events else [],
                 "supply_event_mean_primary_car": h3_events["mean_primary_car"] if h3_events else None,
                 "supply_events_matching_negative_sign": h3_events["events_matching_negative_h3_sign"] if h3_events else None,
-                "plain_finding": (f"The daily supply diagnostic does not support H3. A separately frozen event study estimates {h3_events['events_estimated']} material ARB monthly unlocks: the mean three-day abnormal log return is {h3_events['mean_primary_car']:.3f}, and only {h3_events['events_matching_negative_h3_sign']} events have the predicted negative sign. Because all events belong to one asset, they are dependent descriptive observations and pooled inference remains prohibited."
+                "supply_event_mean_direction_adjusted_car": h3_events.get("mean_direction_adjusted_primary_car") if h3_events else None,
+                "supply_events_matching_predicted_sign": h3_events.get("events_matching_predicted_sign") if h3_events else None,
+                "supply_event_asset_sign_flip_p": h3_events.get("asset_sign_flip_p_two_sided") if h3_events else None,
+                "plain_finding": (f"The multiasset supply-event study does not support H3. It estimates {h3_events['events_estimated']} material events across {len(h3_events['assets'])} assets. Both asset-level average direction-adjusted returns oppose the hypothesis; {h3_events['events_matching_predicted_sign']} of {h3_events['events_estimated']} events match the predicted sign, and the exact asset-level sign-flip p-value is {h3_events['asset_sign_flip_p_two_sided']:.3f}. With only two independent asset units, inference is valid but extremely low-powered."
                                   if h3_events else "The free circulating-supply diagnostic does not support H3: its coefficient is positive rather than the predicted negative and exact inference does not reject zero. More importantly, only BTC and ETH vary within the window, so a point-in-time unlock and issuance event panel is still required for an identification-ready test."),
             },
             "H4": {
