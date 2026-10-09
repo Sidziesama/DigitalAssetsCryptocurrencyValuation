@@ -32,7 +32,7 @@ flowchart TB
 | 0 · Foundation | What can we measure, from sources that never change under us? | Complete and stable | `data/processed/00_foundation/` |
 | **1 · Economic classification** | **What economic job does each token do, provably, on each date?** | **23-asset matrix complete; external rule validation outstanding** | `data/processed/01_classification/` |
 | **2 · Valuation tests** | **Does economic function explain market value?** | **H8 verified-universe extension complete; synthesis active** | `data/processed/02_valuation/` |
-| 3 · Risk and market structure | Does economic function explain risk exposure? | Exploratory results; verified-code refresh pending | `data/processed/03_risk/` |
+| 3 · Risk and market structure | Does economic function explain risk exposure? | Verified-input refresh complete; no result survives FDR correction | `data/processed/03_risk/` |
 | 4 · Stablecoin risk | What drives depegs and redemption failure? | Deferred | `data/processed/04_stablecoin_deferred/` |
 
 **Why Phase 1 gates the rest.** Phases 2 and 3 both take the classification as an input variable. The active 23-asset universe now has all 230 classification cells verified; DOGE and XMR are explicitly excluded. Freezing and propagating this instrument is what makes every downstream estimate interpretable.
@@ -154,13 +154,13 @@ The H2 fee-and-capture interaction is 0.132 with an exact p of 0.082 under a loo
 
 **Next checkpoint:** expand the frozen H3 supply-event ledger beyond the 12 descriptive ARB events and configure an archival ETH Beacon endpoint (BNB and legacy stkAAVE now have 365 days). The H8 out-of-sample design is frozen; its 365-day window ends 22 August 2027 and requires at least 292 observations per asset before estimation.
 
-## Phase 3 — Risk and market structure (on hold)
+## Phase 3 — Risk and market structure (exploratory refresh complete)
 
 Does economic function explain risk rather than return? A 24-asset daily return panel from 2019 to 2026, a market-momentum-volatility factor baseline, and the frozen P1_H6 test of function against market beta, realized volatility and drawdown.
 
-Current result: the direction is consistent and economically large, monetary assets averaging beta 0.93 and worst drawdown −1.44 against 1.19 and −2.37, but three of 27 tests reach p ≤ 0.05 against 1.35 expected by chance and none survives a 10 percent false-discovery rate. That test runs on provisional classifications, which is precisely why it cannot be reported as evidence yet.
+Current verified-input result: 19 assets meet the unchanged return-history rule. Monetary/store membership has the strongest association with shallower drawdowns (coefficient 1.071; permutation p = 0.0128), but only one of 27 tests reaches p ≤ 0.05 against 1.35 expected by chance, and none survives a 10 percent false-discovery rate. The classification limitation is removed; the analysis remains exploratory because the outcomes were already observed before this refresh.
 
-**Resumes when** Phase 1 gates pass. The specification is already frozen and must not be revised; only the classification input changes.
+**Next gate:** repeat the locked model on a genuinely later, non-overlapping risk window. Do not revise predictors or outcomes in response to the refresh result.
 
 ## Phase 4 — Stablecoin risk (deferred)
 

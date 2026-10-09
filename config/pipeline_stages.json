@@ -391,6 +391,11 @@
         {
           "module": "crypto_function_risk_exposure",
           "args": []
+        },
+        {
+          "module": "crypto_function_risk_verified_refresh",
+          "args": [],
+          "note": "Re-estimates the frozen risk specification using the completed 23-asset classification input without changing the model."
         }
       ]
     },
@@ -474,6 +479,11 @@
         {
           "module": "crypto_research_visuals",
           "args": []
+        },
+        {
+          "module": "crypto_risk_verified_visual",
+          "args": [],
+          "note": "Builds the verified classification-to-risk result figure and finding note."
         },
         {
           "module": "data_map",

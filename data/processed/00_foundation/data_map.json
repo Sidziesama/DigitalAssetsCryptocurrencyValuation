@@ -1,12 +1,12 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 174,
+    "files": 177,
     "by_phase": {
       "00_foundation": 24,
       "01_classification": 64,
       "02_valuation": 35,
-      "03_risk": 7,
+      "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
     "orphans": [],
@@ -50,6 +50,7 @@
       "crypto_h8_verified_universe_sensitivities.csv",
       "crypto_hypothesis_evidence_register.json",
       "crypto_function_risk_assets.csv",
+      "crypto_function_risk_verified_assets.csv",
       "crypto_return_market_models.csv",
       "crypto_return_panel_summary.json",
       "stablecoin_adoption_summary.json",
@@ -473,6 +474,7 @@
         "crypto_collateral",
         "crypto_economic_design",
         "crypto_function_risk_exposure",
+        "crypto_function_risk_verified_refresh",
         "crypto_h8_verified_universe",
         "crypto_phase1_bundle_comparison",
         "crypto_phase1_taxonomy",
@@ -1236,6 +1238,7 @@
       ],
       "read_by": [],
       "named_in_config": [
+        "crypto_function_risk_verified_refresh.json",
         "crypto_h3_supply_event_study.json",
         "crypto_h8_out_of_sample_validation.json",
         "crypto_h8_verified_universe.json"
@@ -1329,7 +1332,7 @@
       "phase": "02_valuation",
       "file": "crypto_h1_activity_pilot.csv",
       "kind": "table",
-      "bytes": 153,
+      "bytes": 152,
       "written_by": [
         "crypto_h1_activity_pilot"
       ],
@@ -1343,7 +1346,7 @@
       "phase": "02_valuation",
       "file": "crypto_h1_activity_pilot.json",
       "kind": "summary",
-      "bytes": 2419,
+      "bytes": 2416,
       "written_by": [
         "crypto_h1_activity_pilot"
       ],
@@ -1597,7 +1600,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_pilot.json",
       "kind": "summary",
-      "bytes": 3366,
+      "bytes": 3363,
       "written_by": [
         "crypto_h3_supply_pilot"
       ],
@@ -1614,7 +1617,7 @@
       "phase": "02_valuation",
       "file": "crypto_h8_breadth_pilot.csv",
       "kind": "table",
-      "bytes": 253,
+      "bytes": 252,
       "written_by": [
         "crypto_h8_breadth_pilot"
       ],
@@ -1628,7 +1631,7 @@
       "phase": "02_valuation",
       "file": "crypto_h8_breadth_pilot.json",
       "kind": "summary",
-      "bytes": 1359,
+      "bytes": 1358,
       "written_by": [
         "crypto_h8_breadth_pilot"
       ],
@@ -1659,7 +1662,7 @@
       "phase": "02_valuation",
       "file": "crypto_h8_six_asset_extension.csv",
       "kind": "table",
-      "bytes": 289,
+      "bytes": 287,
       "written_by": [
         "crypto_h8_six_asset_extension"
       ],
@@ -1673,7 +1676,7 @@
       "phase": "02_valuation",
       "file": "crypto_h8_six_asset_extension.json",
       "kind": "summary",
-      "bytes": 1548,
+      "bytes": 1547,
       "written_by": [
         "crypto_h8_six_asset_extension"
       ],
@@ -1809,7 +1812,7 @@
       "phase": "02_valuation",
       "file": "crypto_phase1_bundle_comparison.csv",
       "kind": "table",
-      "bytes": 3950,
+      "bytes": 3954,
       "written_by": [
         "crypto_phase1_bundle_comparison"
       ],
@@ -1856,6 +1859,7 @@
       ],
       "read_by": [],
       "named_in_config": [
+        "crypto_function_risk_verified_refresh.json",
         "crypto_phase1_research_map.json",
         "pipeline_stages.json"
       ],
@@ -1873,6 +1877,48 @@
       "named_in_config": [
         "survey_analysis_plan.json"
       ],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_function_risk_verified_assets.csv",
+      "kind": "table",
+      "bytes": 3740,
+      "written_by": [
+        "crypto_function_risk_verified_refresh"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_function_risk_verified_refresh.json",
+      "kind": "summary",
+      "bytes": 4067,
+      "written_by": [
+        "crypto_function_risk_verified_refresh"
+      ],
+      "read_by": [
+        "crypto_risk_verified_visual"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_function_risk_verified_tests.csv",
+      "kind": "table",
+      "bytes": 5632,
+      "written_by": [
+        "crypto_function_risk_verified_refresh"
+      ],
+      "read_by": [
+        "crypto_risk_verified_visual"
+      ],
+      "named_in_config": [],
       "orphan": false
     },
     {
@@ -1912,6 +1958,7 @@
       "read_by": [],
       "named_in_config": [
         "crypto_function_risk_exposure.json",
+        "crypto_function_risk_verified_refresh.json",
         "crypto_h3_supply_event_study.json",
         "crypto_h8_out_of_sample_validation.json",
         "crypto_h8_verified_universe.json",

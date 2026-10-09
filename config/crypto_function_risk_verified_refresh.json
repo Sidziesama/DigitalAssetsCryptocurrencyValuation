@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "document_version": "1.1-verified-input-refresh",
+  "status": "frozen_before_verified_input_refresh",
+  "freeze_date": "2026-10-09",
+  "experiment_id": "P1_H6_VERIFIED_REFRESH",
+  "parent_specification": "config/crypto_function_risk_exposure.json",
+  "panel": "data/processed/03_risk/crypto_return_panel_daily.csv",
+  "verified_profiles": "data/processed/01_classification/crypto_verified_universe_profiles.csv",
+  "expected_classification_assets": 23,
+  "expected_classification_status": "complete_human_verified",
+  "sample": {
+    "id": "verified_universe",
+    "source": "verified_profiles",
+    "evidence_status": "evidence_backed_complete_matrix",
+    "rule": "Use every active-universe asset with a complete evidence-backed classification that also meets the unchanged return-window coverage rule.",
+    "inference": "monte_carlo_permutation"
+  },
+  "allowed_changes_from_parent": [
+    "Replace the provisional classification source with the completed 23-asset verified profile table.",
+    "Use one verified-universe sample because the former verified-core/provisional split is obsolete."
+  ],
+  "locked_from_parent": [
+    "window",
+    "outcomes",
+    "predictors",
+    "control",
+    "model",
+    "inference"
+  ],
+  "interpretation": "This refresh removes provisional classification inputs but is not an independent confirmatory test because the risk outcomes were already observed. It estimates association, not causation or return predictability."
+}

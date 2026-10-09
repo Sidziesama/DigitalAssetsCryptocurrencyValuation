@@ -83,14 +83,14 @@ The reported kappa of 1.00 rests on ten decisions reviewed inside the project. A
 ### C1. Archival Ethereum consensus endpoint — **BLOCKING, all of H4**
 The exact effective-balance collector is implemented and correctly rejects the post-EIP-7251 validator-count shortcut, but public beacon endpoints reject historical validator state. An archive-tier provider is required. Small recurring cost; only the principal investigator can approve it.
 
-### C2. Aave Umbrella component coverage — **BLOCKING for H4**
-The ninety-day stkAAVE series is explicitly a legacy component and excludes current aToken and GHO stake, so it cannot release H4 on its own.
+### C2. Aave staking boundary — **RESOLVED**
+Legacy stkAAVE now has a complete 365-day series and remains a separate protocol-risk-stake case study. Umbrella stakes aTokens and GHO rather than AAVE, so it is correctly excluded from the AAVE-token staking series and cannot substitute for consensus stake.
 
-### C3. Point-in-time unlock and issuance events — **BLOCKING for H3**
-H3 currently uses a lagged supply-growth proxy with within-window variation for only two of four assets. An identification-ready test needs dated unlock and issuance events.
+### C3. Point-in-time unlock and issuance events — **PARTIALLY RESOLVED, still blocking pooled H3**
+Twelve exact-date material ARB unlocks are estimated descriptively. A second qualifying asset is still required before pooled inference.
 
-### C4. Reviewer time
-Completing the twenty panel assets requires eighty-one further coding decisions plus a blind second pass over them.
+### C4. Independent reproducibility
+All 230 active-universe cells are evidence-backed, but only 10 have an independent blind review. This is reported as a limitation rather than an unfinished coverage task.
 
 ---
 
@@ -98,9 +98,9 @@ Completing the twenty panel assets requires eighty-one further coding decisions 
 
 | Blocked result | Blocking decisions |
 |---|---|
-| Re-estimating P1_H6 on verified codes | A1, A5, A6, plus tranches B and C |
-| Reporting a market-wide function-and-risk claim | all of the above, plus C4 |
-| H4 estimation | C1, C2 |
+| Re-estimating P1_H6 on verified codes | **Resolved 2026-10-09**; verified-input refresh complete |
+| Reporting a confirmatory market-wide function-and-risk claim | A genuinely later, non-overlapping outcome window; C4 remains a classification limitation |
+| H4 pooled estimation | C1 |
 | H3 identification | C3 |
-| Tranche A completion (11 cells) | A1, A3, A4, plus fee-flow sources for DOGE, LTC, HBAR |
+| Classification coverage | **Resolved**; 230/230 active-universe cells evidence-backed |
 | Choosing the primary H2 specification | A2, then B1 |

@@ -92,7 +92,7 @@ def risk_metrics(rows: list[dict[str, str]], window: dict[str, Any]) -> dict[str
 def verified_features(profiles: list[dict[str, str]], predictors: list[str]) -> dict[str, dict[str, float]]:
     features = {}
     for row in profiles:
-        if row.get("classification_status") != "complete_verified":
+        if row.get("classification_status") not in {"complete_verified", "complete_human_verified"}:
             continue
         features[row["asset_id"]] = {name: float(row[name]) for name in predictors}
     return features

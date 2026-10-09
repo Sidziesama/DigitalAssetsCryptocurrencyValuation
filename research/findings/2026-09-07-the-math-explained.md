@@ -127,7 +127,7 @@ With six assets, $6! = 720$. Every one is computed. With twenty assets, $20!$ is
 
 For each asset, drop it, refit, record the coefficient. Two uses:
 
-**Sign stability.** If the slope stays positive in all 20 subsamples, one asset is not driving the result. This is reported everywhere and is a different question from significance. The P1_H6 associations are 20-for-20 sign stable *and* fail the significance test. Both facts matter.
+**Sign stability.** If the slope keeps the same sign in every leave-one-out subsample, one asset is not driving the result. This is reported everywhere and is a different question from significance. In the verified 19-asset risk refresh, the strongest monetary/store associations are 19-for-19 sign stable and still fail the multiple-testing threshold. Both facts matter.
 
 **Honest prediction error.** For model comparison we use leave-one-out RMSE:
 
@@ -139,7 +139,7 @@ where $\hat{y}_i^{(-i)}$ is the prediction for asset $i$ from a model that never
 
 ## 9. Benjamini–Hochberg: the correction that killed our result
 
-We ran 27 tests in P1_H6 (9 predictors × 3 outcomes). If nothing is real, each has a 5% chance of looking significant, so you expect $27 \times 0.05 = 1.35$ false positives. We got three. That is barely more than noise.
+We ran 27 tests in P1_H6 (9 predictors × 3 outcomes). If nothing is real, each has a 5% chance of looking significant, so you expect $27 \times 0.05 = 1.35$ false positives. The original provisional run produced three. The completed-classification refresh produces only one, fewer than the number expected by chance.
 
 Bonferroni would demand $p < 0.05/27 = 0.0019$, which is far too conservative. Benjamini–Hochberg instead controls the **false discovery rate**: among the tests you call significant, what fraction are wrong?
 
@@ -149,7 +149,7 @@ $$q_{(j)} = \min_{\ell \ge j}\ \min\Big\{1,\ \frac{m\,p_{(\ell)}}{\ell}\Big\}$$
 
 Read it this way: for the $j$-th smallest p-value out of $m$, scale it up by $m/j$. The smallest p-value gets multiplied by 27; the tenth by 2.7; the last by 1. The outer running minimum enforces monotonicity so a later q-value never falls below an earlier one.
 
-Our best result: $p = 0.0267$, rank 1 of 27, so $q = 27 \times 0.0267 = 0.72$, pulled down to 0.405 by the monotonicity step. Interpretation: if we treated this as a discovery, roughly 40% of such discoveries would be false. That is not a finding.
+In the verified refresh, the best result is monetary/store membership against maximum drawdown: $p = 0.0128$ but $q = 0.3443$. It is economically interpretable and sign-stable, but it is not a false-discovery-controlled finding.
 
 **This is the correction that turned P1_H6 from a positive result into a null**, and it was written into the specification before the test ran, precisely so we could not decide afterwards to skip it.
 

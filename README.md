@@ -8,7 +8,7 @@ The clearest result so far is H8: theory-defined function groups contain more va
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 346 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 350 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -138,7 +138,7 @@ The remaining classification limitation is external reproducibility, not coverag
 
 ### The pipeline
 
-81 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
+83 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -154,7 +154,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 346 tests
+python -m unittest discover -s tests                           # 350 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -177,7 +177,7 @@ Full walkthrough in [`research/findings/2026-09-07-the-math-explained.md`](resea
 - **H4 measurement is partly complete.** BNB has 365/365 days of native consensus stake; legacy stkAAVE has 365/365 days as a separate case study. ETH has 0/365 because a historical consensus endpoint is not configured, so pooled estimation is blocked.
 - **Mechanism activations are not visibly priced.** Three events, 22 controls, ~280 calendar placebos each. One carries its expected sign; none rejects at 10%.
 - **A single market factor dominates.** Median beta 1.03, median R² 0.60 across 24 assets. Lagged beta is negatively priced (t = −2.12).
-- **Function and risk move together but do not survive correction.** Monetary assets average beta 0.93 and worst drawdown −1.44 against 1.19 and −2.37. Three of 27 tests reach p ≤ 0.05 against 1.35 expected by chance; none survives a 10% false-discovery rate.
+- **Verified function and risk associations do not survive correction.** Re-estimating the unchanged frozen design with the completed matrix leaves 19 assets meeting the original history rule. Monetary/store membership has the strongest drawdown association (coefficient 1.071, permutation p = 0.0128), but only one of 27 tests reaches p ≤ 0.05 against 1.35 expected by chance, and none survives a 10% false-discovery rate.
 
 Not defensible, and stated as such: any claim that economic function causes valuation or predicts returns out of sample; any confirmatory interpretation of H8 before its fixed validation window closes; and any claim that the classification is reproducible by an independent coder, which has not been tested.
 
@@ -186,7 +186,7 @@ Not defensible, and stated as such: any claim that economic function causes valu
 1. **Unblock H4 measurement.** Configure `ETH_BEACON_ARCHIVE_API_URL` with a provider that serves historical beacon states, then collect 365 days of active effective balance and run the frozen H4 analysis.
 2. **Broaden H3 without outcome selection.** Add a second asset with official, exact-date, material supply events. Preserve the ARB result unchanged and prohibit pooled inference until the preregistered minimum is met.
 3. **Accumulate the frozen H8 validation window.** The design is now fixed at 23 August 2026–22 August 2027, with financial integration compared against raw breadth using the same leave-one-asset-out RMSE. The readiness audit prevents estimation before the window closes and requires at least 292 daily observations per asset.
-4. **Refresh the risk analysis on verified codes.** Keep the frozen specification and replace only its former provisional classification input.
+4. **Treat the verified risk refresh as exploratory.** The classification-only refresh is complete; preserve its null false-discovery-controlled result and seek a genuinely later risk window before calling it validation.
 5. **Collect external rule feedback.** Use the frozen survey analysis plan to document agreement and disagreement with the classification boundaries. This strengthens interpretation but is not represented as independent recoding.
 
 Every decision that needs human judgment is registered in [`research/open_decisions.md`](research/open_decisions.md), with what changes if it flips and which result it blocks.
@@ -225,6 +225,7 @@ Every file in there is catalogued in [`DATA_MAP.md`](DATA_MAP.md) with the modul
 | [`research/findings/2026-09-07-research-program-explained.md`](research/findings/2026-09-07-research-program-explained.md) | The whole programme in plain language |
 | [`research/findings/2026-09-07-the-math-explained.md`](research/findings/2026-09-07-the-math-explained.md) | Every statistical technique and why it was chosen |
 | [`research/findings/2026-09-07-checkpoint-function-and-risk.md`](research/findings/2026-09-07-checkpoint-function-and-risk.md) | The most recent results |
+| [`research/findings/2026-10-09-verified-function-risk-refresh.md`](research/findings/2026-10-09-verified-function-risk-refresh.md) | Verified classification-to-risk refresh |
 | [`research/manuscript/main.tex`](research/manuscript/main.tex) | The paper |
 | [`CLAUDE.md`](CLAUDE.md) | How to work on this without breaking it — rules, conventions, traps |
 | [`PROJECT_PLAN.md`](PROJECT_PLAN.md) | Phases, gates, and the Phase 1 workflow |
