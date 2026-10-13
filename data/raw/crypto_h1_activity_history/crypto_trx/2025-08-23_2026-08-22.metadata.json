@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_trx",
+  "provider_id": "trx",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=trx&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:04.639419+00:00",
+  "sha256": "0bdd2b4edc54ec0660d76294d8df90a63e03997746aec0c2afcb60422bd2a3c6"
+}

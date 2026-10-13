@@ -1,0 +1,10 @@
+asset_id,provider_id,expected_days,observed_days,active_address_days,transaction_days,complete
+crypto_btc,btc,365,365,365,365,1
+crypto_eth,eth,365,365,365,365,1
+crypto_ada,ada,365,365,365,365,1
+crypto_bch,bch,365,365,365,365,1
+crypto_ltc,ltc,365,365,365,365,1
+crypto_trx,trx,365,365,365,365,1
+crypto_xlm,xlm,365,365,365,365,1
+crypto_xrp,xrp,365,365,365,365,1
+crypto_zec,zec,365,365,365,365,1

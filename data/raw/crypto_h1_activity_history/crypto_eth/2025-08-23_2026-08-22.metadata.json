@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_eth",
+  "provider_id": "eth",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=eth&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:04.203704+00:00",
+  "sha256": "57511ba1f2b95934a0fb5dcd88c1bb2e4d00c38f7a509b5645b07f23daf4f2dd"
+}

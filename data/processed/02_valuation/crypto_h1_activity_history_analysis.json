@@ -1,0 +1,99 @@
+{
+  "status": "h1_one_year_robustness_complete",
+  "interpretation": "Retrospective one-year robustness extension of the already-estimated 90-day H1 design; not independent validation.",
+  "primary": {
+    "sample": "one_year_native_network_robustness",
+    "rows": 3258,
+    "assets": [
+      "crypto_ada",
+      "crypto_bch",
+      "crypto_btc",
+      "crypto_eth",
+      "crypto_ltc",
+      "crypto_trx",
+      "crypto_xlm",
+      "crypto_xrp",
+      "crypto_zec"
+    ],
+    "dates": 362,
+    "coefficients": {
+      "log1p_active_addresses_lag1": 0.17478416979965272,
+      "log1p_transaction_count_lag1": 0.32081923337406076
+    },
+    "within_r_squared": 0.16661789626832568,
+    "inference": {
+      "log1p_active_addresses_lag1": {
+        "coefficient": 0.17478416979965272,
+        "cluster_robust_standard_error_cr1": 0.1073662608561631,
+        "observed_t": 1.6279245305357921,
+        "wild_cluster_bootstrap_p_two_sided": 0.18359375,
+        "bootstrap_assignments": 512,
+        "clusters": 9,
+        "minimum_two_sided_p_resolution": 0.00390625
+      },
+      "log1p_transaction_count_lag1": {
+        "coefficient": 0.32081923337406076,
+        "cluster_robust_standard_error_cr1": 0.13569922415715596,
+        "observed_t": 2.364193571235998,
+        "wild_cluster_bootstrap_p_two_sided": 0.078125,
+        "bootstrap_assignments": 512,
+        "clusters": 9,
+        "minimum_two_sided_p_resolution": 0.00390625
+      }
+    },
+    "leave_one_asset_out": [
+      {
+        "excluded_asset": "crypto_ada",
+        "log1p_active_addresses_lag1": 0.1684042836954587,
+        "log1p_transaction_count_lag1": 0.289683713094888
+      },
+      {
+        "excluded_asset": "crypto_bch",
+        "log1p_active_addresses_lag1": 0.15363191169199097,
+        "log1p_transaction_count_lag1": 0.4251460949923883
+      },
+      {
+        "excluded_asset": "crypto_btc",
+        "log1p_active_addresses_lag1": 0.1717542272962388,
+        "log1p_transaction_count_lag1": 0.3499004492924562
+      },
+      {
+        "excluded_asset": "crypto_eth",
+        "log1p_active_addresses_lag1": 0.19505682569625893,
+        "log1p_transaction_count_lag1": 0.3616456942992523
+      },
+      {
+        "excluded_asset": "crypto_ltc",
+        "log1p_active_addresses_lag1": 0.17940009278410424,
+        "log1p_transaction_count_lag1": 0.3132123006498075
+      },
+      {
+        "excluded_asset": "crypto_trx",
+        "log1p_active_addresses_lag1": 0.14986303370171217,
+        "log1p_transaction_count_lag1": 0.3182491047345324
+      },
+      {
+        "excluded_asset": "crypto_xlm",
+        "log1p_active_addresses_lag1": 0.8358008395669079,
+        "log1p_transaction_count_lag1": -0.01535244696155681
+      },
+      {
+        "excluded_asset": "crypto_xrp",
+        "log1p_active_addresses_lag1": 0.1758946667794245,
+        "log1p_transaction_count_lag1": 0.35453460938273057
+      },
+      {
+        "excluded_asset": "crypto_zec",
+        "log1p_active_addresses_lag1": 0.09641757503735422,
+        "log1p_transaction_count_lag1": 0.13186890020040126
+      }
+    ]
+  },
+  "common_window_start": "2025-08-25",
+  "common_window_end": "2026-08-21",
+  "guardrails": [
+    "This backward extension was specified after the 90-day result and is not independent validation.",
+    "The nine-asset set and model are unchanged.",
+    "Active addresses are addresses, not users; transaction definitions differ by network."
+  ]
+}

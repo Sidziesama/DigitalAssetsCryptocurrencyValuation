@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_xlm",
+  "provider_id": "xlm",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=xlm&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:04.729799+00:00",
+  "sha256": "c51df75e983b6c4e5f4569f2038a4c82d2da8674e18d6bbab0f000cbc67b0bec"
+}

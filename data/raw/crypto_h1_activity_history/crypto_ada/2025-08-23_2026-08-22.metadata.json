@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_ada",
+  "provider_id": "ada",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=ada&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:04.297538+00:00",
+  "sha256": "6d87b0228ae28e032aad3f3e2cd745c7a1e49bb39ca5945a8f17c67ad126ce2c"
+}

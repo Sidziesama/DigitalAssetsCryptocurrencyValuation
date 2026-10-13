@@ -12,7 +12,7 @@ This file is generated from the active research scope and empirical outputs. It 
 
 ## H1 — Is greater network usage associated with higher network value?
 
-**Sample.** 9 native networks; 792 observations across 88 common dates
+**Sample.** 9 native networks; frozen 90-day primary plus a 3,258-observation retrospective one-year robustness panel
 
 **Outcome.** log market capitalization
 
@@ -24,15 +24,15 @@ This file is generated from the active research scope and empirical outputs. It 
 
 **Inference.** Exact wild-cluster sign enumeration across 9 asset clusters, plus leave-one-asset-out sign stability.
 
-**Exact inputs.** `data/processed/00_foundation/crypto_fundamentals_daily_coinmetrics.csv`, `data/processed/01_classification/crypto_expansion_activity_daily.csv`, `data/processed/00_foundation/market_daily_coinpaprika.csv`
+**Exact inputs.** `data/processed/00_foundation/crypto_h1_activity_history_coinmetrics.csv`, `data/processed/00_foundation/market_daily_coinpaprika.csv`
 
-**Exact outputs.** `data/processed/02_valuation/crypto_h1_activity_expansion.json`, `data/processed/02_valuation/crypto_h1_activity_expansion_panel.csv`
+**Exact outputs.** `data/processed/02_valuation/crypto_h1_activity_expansion.json`, `data/processed/02_valuation/crypto_h1_activity_history_analysis.json`
 
-**Current result.** Active-address coefficient 0.0378, exact p=0.3438; transaction coefficient -0.0420, exact p=0.1367; neither confirmed.
+**Current result.** Frozen 90-day transactions -0.0420, p=0.1367; retrospective one-year transactions 0.3208, p=0.0781; the latter is positive but not leave-one-out sign-stable.
 
-**Main limitation.** Provider activity definitions differ across networks, addresses are not users, and active-address sign stability fails when XLM is omitted.
+**Main limitation.** The one-year extension is retrospective rather than independent validation; provider definitions differ, addresses are not users, and the transaction sign reverses without XLM.
 
-**Next gate.** Collect a longer fixed common window and preserve native-network versus token-contract scope separation.
+**Next gate.** Preserve the specification and test it on a genuinely later fixed window.
 
 ## H2 — Is usage more valuable when fees mechanically reach the token or holders?
 

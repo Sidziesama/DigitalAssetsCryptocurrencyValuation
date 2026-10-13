@@ -1,0 +1,11 @@
+{
+  "status": "h1_activity_history_collected",
+  "window": {
+    "start": "2025-08-23",
+    "end": "2026-08-22"
+  },
+  "assets": 9,
+  "rows": 3285,
+  "complete_assets": 9,
+  "expected_days_per_asset": 365
+}

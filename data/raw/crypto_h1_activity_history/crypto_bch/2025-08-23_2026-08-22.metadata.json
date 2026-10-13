@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_bch",
+  "provider_id": "bch",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=bch&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:04.439284+00:00",
+  "sha256": "360f387578eba8d864571155871b6ceb46db9cba6974f8a6631339ec8609fbeb"
+}

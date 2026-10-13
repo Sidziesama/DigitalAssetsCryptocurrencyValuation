@@ -14,9 +14,9 @@
       "sample": "9 native networks; 792 asset-days",
       "test_state": "estimated_expanded_exploratory",
       "result": "mixed_not_confirmed",
-      "key_statistic": "addresses=0.0378, p=0.3438; transactions=-0.0420, p=0.1367",
-      "advisory_interpretation": "The expanded native-network sample gives mixed usage signs and no confirmed relationship; pooling token-contract activity changes the result and is not the primary test.",
-      "next_action": "Extend the fixed common window while preserving native-network and token-contract measurement scopes.",
+      "key_statistic": "90-day transactions=-0.0420, p=0.1367; one-year transactions=0.3208, p=0.0781",
+      "advisory_interpretation": "The one-year native-network robustness window is positive and suggestive, but it is retrospective and its transaction sign depends on XLM.",
+      "next_action": "Preserve the model and seek a genuinely later fixed window rather than retuning the activity definition.",
       "research_question": "Is greater network usage associated with higher network value?"
     },
     {

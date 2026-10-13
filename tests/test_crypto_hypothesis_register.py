@@ -4,7 +4,8 @@ from src.pipeline.crypto_hypothesis_register import QUESTIONS, build
 class Tests(unittest.TestCase):
     def test_register_covers_active_hypotheses(self):
         findings={"findings":{
-            "H1":{"assets":9,"rows":792,"active_addresses_coefficient":.04,"active_addresses_exact_p":.3,"transaction_count_coefficient":-.04,"transaction_count_exact_p":.2},
+            "H1":{"assets":9,"rows":792,"active_addresses_coefficient":.04,"active_addresses_exact_p":.3,"transaction_count_coefficient":-.04,"transaction_count_exact_p":.2,
+                  "one_year_transaction_count_coefficient":.3,"one_year_transaction_count_exact_p":.08},
             "H2":{"pooled_market_cap_interaction":.1,"pooled_market_cap_exact_p":.08},
             "H3":{"assets":4,"assets_with_within_supply_variation":2,"supply_growth_coefficient":1,"exact_p":.5,
                   "supply_events_estimated":17,"supply_event_assets":["a","b","c"],"supply_event_mean_direction_adjusted_car":-.01,

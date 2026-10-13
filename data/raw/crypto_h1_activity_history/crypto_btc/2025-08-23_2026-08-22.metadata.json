@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_btc",
+  "provider_id": "btc",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:03.978965+00:00",
+  "sha256": "f9addc066afc2e548f24f7ca1c251543512356f97acda684c113a9336037032a"
+}

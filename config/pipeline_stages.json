@@ -72,6 +72,10 @@
           ]
         },
         {
+          "module": "crypto_h1_activity_history",
+          "args": []
+        },
+        {
           "module": "crypto_fee_fundamentals",
           "args": [
             "--start",
@@ -333,6 +337,10 @@
         },
         {
           "module": "crypto_h1_activity_expansion",
+          "args": []
+        },
+        {
+          "module": "crypto_h1_activity_history_analysis",
           "args": []
         },
         {

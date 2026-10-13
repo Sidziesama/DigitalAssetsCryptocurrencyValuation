@@ -10,7 +10,7 @@
   "headline": "In the verified 23-asset classification universe, financial integration is the strongest single valuation indicator and modestly outpredicts raw function breadth; H2 fee-and-capture evidence remains definition-sensitive.",
   "findings": {
     "H1": {
-      "status": "expanded_native_network_associations_mixed_not_confirmed",
+      "status": "one_year_retrospective_positive_suggestive_not_confirmed",
       "assets": 9,
       "rows": 792,
       "dates": 88,
@@ -20,7 +20,11 @@
       "transaction_count_exact_p": 0.13671875,
       "pilot_transaction_count_coefficient": 0.11223930210248013,
       "pilot_transaction_count_exact_p": 0.25,
-      "plain_finding": "The frozen nine-native-network expansion gives a positive active-address coefficient (0.0378, exact p=0.344) and a negative transaction-count coefficient (-0.0420, exact p=0.137). Neither is confirmed, and the active-address sign reverses when XLM is omitted. A twelve-asset sensitivity that mixes native-network and token-contract activity makes both coefficients positive, demonstrating measurement-scope sensitivity rather than stronger evidence for H1."
+      "one_year_active_addresses_coefficient": 0.17478416979965272,
+      "one_year_active_addresses_exact_p": 0.18359375,
+      "one_year_transaction_count_coefficient": 0.32081923337406076,
+      "one_year_transaction_count_exact_p": 0.078125,
+      "plain_finding": "The frozen nine-native-network 90-day expansion gives a positive active-address coefficient (0.0378, exact p=0.344) and a negative transaction-count coefficient (-0.0420, exact p=0.137). A retrospective one-year robustness extension makes both positive: active addresses 0.1748 (p=0.184) and transactions 0.3208 (p=0.078). The transaction sign turns negative without XLM, and the extension was specified after the short-window result, so H1 remains suggestive rather than confirmed."
     },
     "H2": {
       "status": "exploratory_evidence_at_10pct_not_confirmatory",

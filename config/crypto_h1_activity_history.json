@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-before-history-collection-and-estimation",
+  "status": "frozen_before_history_collection_and_estimation",
+  "freeze_date": "2026-10-12",
+  "hypothesis": "H1",
+  "interpretation": "Retrospective one-year robustness extension of the already-estimated 90-day H1 design; not independent validation.",
+  "window": {"start": "2025-08-23", "end": "2026-08-22"},
+  "provider": "coinmetrics_community",
+  "base_url": "https://community-api.coinmetrics.io/v4",
+  "metrics": ["AdrActCnt", "TxCnt"],
+  "raw_directory": "data/raw/crypto_h1_activity_history",
+  "market_input": "data/processed/00_foundation/market_daily_coinpaprika.csv",
+  "assets": [
+    {"asset_id": "crypto_btc", "provider_id": "btc"},
+    {"asset_id": "crypto_eth", "provider_id": "eth"},
+    {"asset_id": "crypto_ada", "provider_id": "ada"},
+    {"asset_id": "crypto_bch", "provider_id": "bch"},
+    {"asset_id": "crypto_ltc", "provider_id": "ltc"},
+    {"asset_id": "crypto_trx", "provider_id": "trx"},
+    {"asset_id": "crypto_xlm", "provider_id": "xlm"},
+    {"asset_id": "crypto_xrp", "provider_id": "xrp"},
+    {"asset_id": "crypto_zec", "provider_id": "zec"}
+  ],
+  "asset_selection_rule": "Use the same nine native networks fixed in the 90-day expansion. Do not add, remove, or reclassify assets based on the earlier coefficients.",
+  "analysis": {
+    "outcome": "log_market_cap_usd",
+    "predictors": ["log1p_active_addresses_lag1", "log1p_transaction_count_lag1"],
+    "fixed_effects": ["asset", "date"],
+    "inference": "exhaustive Rademacher wild-cluster bootstrap by asset",
+    "panel_rule": "largest balanced common-date panel available from the fixed provider and market windows"
+  }
+}

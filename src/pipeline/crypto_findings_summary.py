@@ -11,7 +11,7 @@ def build(
     nonoverlap: dict[str, Any], readiness: dict[str, Any], reviews: dict[str, Any], h8: dict[str, Any],
     h1: dict[str, Any], h3: dict[str, Any], h4: dict[str, Any], h8_extension: dict[str, Any] | None = None,
     h8_verified: dict[str, Any] | None = None, h3_events: dict[str, Any] | None = None,
-    h1_expansion: dict[str, Any] | None = None
+    h1_expansion: dict[str, Any] | None = None, h1_history: dict[str, Any] | None = None
 ) -> dict[str, Any]:
     if scope["active_hypotheses"] != ["H1", "H2", "H3", "H4", "H8"]:
         raise ValueError("findings summary requires the active crypto-only scope")
@@ -43,7 +43,7 @@ def build(
                      if h8_verified else "Fee activity has a persistent positive association with valuation when active capture exists, but the evidence is exploratory and does not predict seven-day returns."),
         "findings": {
             "H1": {
-                "status": "expanded_native_network_associations_mixed_not_confirmed" if h1_expansion else "exploratory_positive_association_not_confirmed",
+                "status": "one_year_retrospective_positive_suggestive_not_confirmed" if h1_history else "expanded_native_network_associations_mixed_not_confirmed" if h1_expansion else "exploratory_positive_association_not_confirmed",
                 "assets": h1_assets,
                 "rows": h1_main["rows"],
                 "dates": h1_main.get("dates"),
@@ -53,7 +53,12 @@ def build(
                 "transaction_count_exact_p": h1_transactions_p,
                 "pilot_transaction_count_coefficient": h1["coefficients"]["log1p_transaction_count_lag1"],
                 "pilot_transaction_count_exact_p": h1["inference"]["log1p_transaction_count_lag1"]["wild_cluster_bootstrap_p_two_sided"],
-                "plain_finding": (f"The frozen nine-native-network expansion gives a positive active-address coefficient ({h1_address:.4f}, exact p={h1_address_p:.3f}) and a negative transaction-count coefficient ({h1_transactions:.4f}, exact p={h1_transactions_p:.3f}). Neither is confirmed, and the active-address sign reverses when XLM is omitted. A twelve-asset sensitivity that mixes native-network and token-contract activity makes both coefficients positive, demonstrating measurement-scope sensitivity rather than stronger evidence for H1."
+                "one_year_active_addresses_coefficient": h1_history["primary"]["coefficients"]["log1p_active_addresses_lag1"] if h1_history else None,
+                "one_year_active_addresses_exact_p": h1_history["primary"]["inference"]["log1p_active_addresses_lag1"]["wild_cluster_bootstrap_p_two_sided"] if h1_history else None,
+                "one_year_transaction_count_coefficient": h1_history["primary"]["coefficients"]["log1p_transaction_count_lag1"] if h1_history else None,
+                "one_year_transaction_count_exact_p": h1_history["primary"]["inference"]["log1p_transaction_count_lag1"]["wild_cluster_bootstrap_p_two_sided"] if h1_history else None,
+                "plain_finding": (f"The frozen nine-native-network 90-day expansion gives a positive active-address coefficient ({h1_address:.4f}, exact p={h1_address_p:.3f}) and a negative transaction-count coefficient ({h1_transactions:.4f}, exact p={h1_transactions_p:.3f}). A retrospective one-year robustness extension makes both positive: active addresses {h1_history['primary']['coefficients']['log1p_active_addresses_lag1']:.4f} (p={h1_history['primary']['inference']['log1p_active_addresses_lag1']['wild_cluster_bootstrap_p_two_sided']:.3f}) and transactions {h1_history['primary']['coefficients']['log1p_transaction_count_lag1']:.4f} (p={h1_history['primary']['inference']['log1p_transaction_count_lag1']['wild_cluster_bootstrap_p_two_sided']:.3f}). The transaction sign turns negative without XLM, and the extension was specified after the short-window result, so H1 remains suggestive rather than confirmed."
+                                  if h1_history else f"The frozen nine-native-network expansion gives a positive active-address coefficient ({h1_address:.4f}, exact p={h1_address_p:.3f}) and a negative transaction-count coefficient ({h1_transactions:.4f}, exact p={h1_transactions_p:.3f}). Neither is confirmed, and the active-address sign reverses when XLM is omitted. A twelve-asset sensitivity that mixes native-network and token-contract activity makes both coefficients positive, demonstrating measurement-scope sensitivity rather than stronger evidence for H1."
                                   if h1_expansion else "Active-address and transaction-count coefficients are positive in the four-asset panel, and transaction count remains positive in every leave-one-out sample. Exact four-cluster inference does not reject zero, so H1 remains suggestive and cannot be generalized beyond BTC, ETH, UNI, and AAVE."),
             },
             "H2": {
@@ -153,6 +158,7 @@ def run(repo: Path) -> dict[str, Any]:
         load("data/processed/02_valuation/crypto_h8_verified_universe_summary.json"),
         load("data/processed/02_valuation/crypto_h3_supply_event_analysis.json"),
         load("data/processed/02_valuation/crypto_h1_activity_expansion.json"),
+        load("data/processed/02_valuation/crypto_h1_activity_history_analysis.json"),
     )
     output = repo / "data/processed/02_valuation/crypto_findings_summary.json"
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

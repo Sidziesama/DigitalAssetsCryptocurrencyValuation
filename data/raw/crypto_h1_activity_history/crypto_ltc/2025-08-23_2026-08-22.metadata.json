@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_ltc",
+  "provider_id": "ltc",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=ltc&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:04.528076+00:00",
+  "sha256": "b7793bcfd036329d7208fdbe62372a23f9ab157b4cc358e555a8aa0fdae26851"
+}

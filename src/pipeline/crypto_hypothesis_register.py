@@ -19,9 +19,9 @@ def build(findings: dict[str, Any], strict: dict[str, Any]) -> list[dict[str, An
     strict_pooled=next(row for row in strict["results"] if row["specification"]=="pooled_market_cap")
     rows=[
         {"hypothesis":"H1","sample":f"{f['H1']['assets']} native networks; {f['H1']['rows']} asset-days","test_state":"estimated_expanded_exploratory","result":"mixed_not_confirmed",
-         "key_statistic":f"addresses={f['H1']['active_addresses_coefficient']:.4f}, p={f['H1']['active_addresses_exact_p']:.4f}; transactions={f['H1']['transaction_count_coefficient']:.4f}, p={f['H1']['transaction_count_exact_p']:.4f}",
-         "advisory_interpretation":"The expanded native-network sample gives mixed usage signs and no confirmed relationship; pooling token-contract activity changes the result and is not the primary test.",
-         "next_action":"Extend the fixed common window while preserving native-network and token-contract measurement scopes."},
+         "key_statistic":f"90-day transactions={f['H1']['transaction_count_coefficient']:.4f}, p={f['H1']['transaction_count_exact_p']:.4f}; one-year transactions={f['H1']['one_year_transaction_count_coefficient']:.4f}, p={f['H1']['one_year_transaction_count_exact_p']:.4f}",
+         "advisory_interpretation":"The one-year native-network robustness window is positive and suggestive, but it is retrospective and its transaction sign depends on XLM.",
+         "next_action":"Preserve the model and seek a genuinely later fixed window rather than retuning the activity definition."},
         {"hypothesis":"H2","sample":"11 assets","test_state":"estimated_exploratory_definition_sensitive","result":"not_robust_to_strict_capture_rule",
          "key_statistic":f"broad interaction={f['H2']['pooled_market_cap_interaction']:.4f}, p={f['H2']['pooled_market_cap_exact_p']:.4f}; strict interaction={strict_pooled['strict_coefficient']:.4f}, p={strict_pooled['strict_p']:.4f}",
          "advisory_interpretation":"Fee activity alone is insufficient; the definition and path of holder capture materially change the result.",

@@ -1,0 +1,7 @@
+{
+  "asset_id": "crypto_xrp",
+  "provider_id": "xrp",
+  "url": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=xrp&metrics=AdrActCnt%2CTxCnt&frequency=1d&start_time=2025-08-23&end_time=2026-08-22&page_size=10000",
+  "retrieved_at_utc": "2026-10-13T00:23:04.825215+00:00",
+  "sha256": "8d8585ee67bcbc69e78fb677d386ee78a02dd42394e8ad783e5c09fbf7d2b669"
+}
