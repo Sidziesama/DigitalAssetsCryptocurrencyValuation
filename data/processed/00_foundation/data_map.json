@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 187,
+    "files": 188,
     "by_phase": {
       "00_foundation": 27,
       "01_classification": 64,
-      "02_valuation": 42,
+      "02_valuation": 43,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -295,7 +295,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 66706,
+      "bytes": 67092,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -523,6 +523,7 @@
       "bytes": 1455,
       "written_by": [
         "classification_status",
+        "crypto_advisory_profiles",
         "crypto_collateral",
         "crypto_economic_design",
         "crypto_function_risk_exposure",
@@ -1292,6 +1293,7 @@
       "kind": "table",
       "bytes": 4703,
       "written_by": [
+        "crypto_advisory_profiles",
         "crypto_verified_universe"
       ],
       "read_by": [
@@ -1370,6 +1372,20 @@
       ],
       "read_by": [],
       "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_advisory_profiles.json",
+      "kind": "summary",
+      "bytes": 43091,
+      "written_by": [
+        "crypto_advisory_profiles"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
       "orphan": false
     },
     {

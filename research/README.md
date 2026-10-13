@@ -15,7 +15,7 @@ This directory is the human-readable layer of the project. It is deliberately tr
 
 ## Where to start
 
-Start with `findings/crypto-executive-decision-summary.md`: it states what was done, the insight, and the defensible action in plain language. For the exact data, equation, matrix role, inference and current result of every active hypothesis, read `methods/crypto_hypothesis_test_catalog.md`. For statistical background, read `findings/2026-09-07-the-math-explained.md`; then read the manuscript.
+Start with `findings/crypto-executive-decision-summary.md`: it states what was done, the insight, and the defensible action in plain language. Then use `findings/crypto-advisory-profiles.md` for the economic identity, potential value channels, cautions, and closest economic comparables of all 23 assets. For the exact data, equation, matrix role, inference and current result of every active hypothesis, read `methods/crypto_hypothesis_test_catalog.md`; then read the manuscript.
 
 ## How to verify a claim
 
@@ -23,7 +23,7 @@ Every number in the manuscript comes from a file in `data/processed/`. To check 
 
 ```bash
 python -m src.pipeline.run_stages --repo . --offline   # rebuild all processed artifacts
-python -m unittest discover -s tests                   # 362 tests
+python -m unittest discover -s tests                   # 363 tests
 git status --short                                     # should be empty
 ```
 

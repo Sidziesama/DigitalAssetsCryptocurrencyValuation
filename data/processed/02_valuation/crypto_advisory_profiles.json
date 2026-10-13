@@ -1,0 +1,1242 @@
+{
+  "status": "crypto_advisory_profiles_complete",
+  "assets": 23,
+  "purpose": "Economic due diligence and comparable selection; not investment recommendations or rankings.",
+  "profiles": [
+    {
+      "asset_id": "crypto_btc",
+      "symbol": "BTC",
+      "architecture_context": "PoW",
+      "economic_identity": [
+        "money or store-of-value use",
+        "collateral and financial integration"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "collateral and financial integration"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "collateral and financial integration",
+            "money or store-of-value use"
+          ],
+          "similarity": 0.333
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use"
+          ],
+          "similarity": 0.333
+        },
+        {
+          "symbol": "BCH",
+          "shared_functions": [
+            "money or store-of-value use"
+          ],
+          "similarity": 0.25
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_eth",
+      "symbol": "ETH",
+      "architecture_context": "PoS",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "collateral and financial integration",
+        "direct holder or token capture"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "collateral and financial integration",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "No verified hard cap or deterministic terminal supply bound.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "AVAX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.833
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "SOL",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "symbol": "BNB",
+      "architecture_context": "PoS family",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "collateral and financial integration",
+        "governance and control rights",
+        "direct holder or token capture",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "collateral and financial integration",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "No verified hard cap or deterministic terminal supply bound.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "symbol": "XRP",
+      "architecture_context": "federated consensus",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "supply reduction or absorption",
+        "direct holder or token capture",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "supply reduction or absorption",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Some participation is subsidized; persistence without incentives requires separate testing."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "AVAX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_sol",
+      "symbol": "SOL",
+      "architecture_context": "PoS family",
+      "economic_identity": [
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "collateral and financial integration",
+        "direct holder or token capture",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "collateral and financial integration",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "No verified hard cap or deterministic terminal supply bound.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.625
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_trx",
+      "symbol": "TRX",
+      "architecture_context": "DPoS",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "governance and control rights",
+        "direct holder or token capture",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "No verified hard cap or deterministic terminal supply bound.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_hype",
+      "symbol": "HYPE",
+      "architecture_context": "PoS family",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "governance and control rights",
+        "direct holder or token capture",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_zec",
+      "symbol": "ZEC",
+      "architecture_context": "PoW",
+      "economic_identity": [
+        "money or store-of-value use",
+        "governance and control rights",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Governance authority must not be described as holder value capture.",
+        "Some participation is subsidized; persistence without incentives requires separate testing."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "ARB",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.6
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_link",
+      "symbol": "LINK",
+      "architecture_context": "service staking",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "direct holder or token capture",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_ada",
+      "symbol": "ADA",
+      "architecture_context": "PoS",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "governance and control rights",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Governance authority must not be described as holder value capture.",
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.8
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "symbol": "XLM",
+      "architecture_context": "federated consensus",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Some participation is subsidized; persistence without incentives requires separate testing."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "BCH",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.6
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_bch",
+      "symbol": "BCH",
+      "architecture_context": "PoW",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Some participation is subsidized; persistence without incentives requires separate testing."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "XLM",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.6
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "symbol": "LTC",
+      "architecture_context": "PoW",
+      "economic_identity": [
+        "money or store-of-value use",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Some participation is subsidized; persistence without incentives requires separate testing."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "BCH",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "XLM",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ZEC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "symbol": "HBAR",
+      "architecture_context": "hashgraph PoS",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "TAO",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "POL",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_sui",
+      "symbol": "SUI",
+      "architecture_context": "PoS",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "governance and control rights"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Governance authority must not be described as holder value capture.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.8
+        },
+        {
+          "symbol": "HBAR",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "TAO",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_avax",
+      "symbol": "AVAX",
+      "architecture_context": "PoS",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "direct holder or token capture"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.833
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_ton",
+      "symbol": "TON",
+      "architecture_context": "PoS",
+      "economic_identity": [
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "governance and control rights",
+        "direct holder or token capture"
+      ],
+      "potential_value_channels": [
+        "transaction and service demand",
+        "staked security commitment",
+        "supply reduction or absorption",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "No verified hard cap or deterministic terminal supply bound.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "AVAX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_tao",
+      "symbol": "TAO",
+      "architecture_context": "PoS family",
+      "economic_identity": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "potential_value_channels": [
+        "money or store-of-value use",
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "HBAR",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "POL",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_uni",
+      "symbol": "UNI",
+      "architecture_context": "NA",
+      "economic_identity": [
+        "supply reduction or absorption",
+        "governance and control rights",
+        "direct holder or token capture"
+      ],
+      "potential_value_channels": [
+        "supply reduction or absorption",
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "No verified hard cap or deterministic terminal supply bound."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "TON",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "supply reduction or absorption"
+          ],
+          "similarity": 0.6
+        },
+        {
+          "symbol": "OP",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "supply reduction or absorption"
+          ],
+          "similarity": 0.429
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_aave",
+      "symbol": "AAVE",
+      "architecture_context": "NA",
+      "economic_identity": [
+        "staked security commitment",
+        "collateral and financial integration",
+        "governance and control rights",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "staked security commitment",
+        "collateral and financial integration"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Governance authority must not be described as holder value capture.",
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "No verified hard cap or deterministic terminal supply bound.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "staked security commitment",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "ARB",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "governance and control rights",
+            "collateral and financial integration",
+            "staked security commitment",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_arb",
+      "symbol": "ARB",
+      "architecture_context": "rollup",
+      "economic_identity": [
+        "governance and control rights",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "Governance authority must not be described as holder value capture.",
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "No verified hard cap or deterministic terminal supply bound."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "OP",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ZEC",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "AAVE",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_op",
+      "symbol": "OP",
+      "architecture_context": "rollup",
+      "economic_identity": [
+        "governance and control rights",
+        "direct holder or token capture",
+        "subsidized participation"
+      ],
+      "potential_value_channels": [
+        "direct holder or token capture"
+      ],
+      "key_cautions": [
+        "Some participation is subsidized; persistence without incentives requires separate testing.",
+        "No verified hard cap or deterministic terminal supply bound."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "ARB",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "UNI",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "ZEC",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_pol",
+      "symbol": "POL",
+      "architecture_context": "PoS",
+      "economic_identity": [
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "potential_value_channels": [
+        "transaction and service demand",
+        "staked security commitment"
+      ],
+      "key_cautions": [
+        "No verified direct route from protocol value to the token or holder.",
+        "No verified hard cap or deterministic terminal supply bound.",
+        "Staking introduces lock-up, exit, validator, or protocol-risk considerations."
+      ],
+      "closest_economic_comparables": [
+        {
+          "symbol": "HBAR",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "TAO",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "advisory_action": "Compare the asset with its economic peers, verify that each mechanism is live on the decision date, and assess market, custody, liquidity, legal, and concentration risks separately.",
+      "investment_score": null
+    }
+  ]
+}

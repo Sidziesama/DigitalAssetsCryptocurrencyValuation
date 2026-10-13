@@ -495,6 +495,11 @@
           "note": "Translates the empirical outputs into what was done, the insight, and the defensible advisory action."
         },
         {
+          "module": "crypto_advisory_profiles",
+          "args": [],
+          "note": "Converts the verified matrix into asset-level economic identity, value channels, cautions, and economic comparables without investment scores."
+        },
+        {
           "module": "crypto_hypothesis_register",
           "args": []
         },
