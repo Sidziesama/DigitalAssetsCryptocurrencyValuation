@@ -477,6 +477,11 @@
           "args": []
         },
         {
+          "module": "crypto_hypothesis_test_catalog",
+          "args": [],
+          "note": "Generates the exact data, equation, inference, matrix role, result, and limitation for every active hypothesis."
+        },
+        {
           "module": "crypto_research_visuals",
           "args": []
         },

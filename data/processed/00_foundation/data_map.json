@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 177,
+    "files": 178,
     "by_phase": {
       "00_foundation": 24,
       "01_classification": 64,
-      "02_valuation": 35,
+      "02_valuation": 36,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -14,7 +14,6 @@
       "coverage_summary.json",
       "crypto_fee_fundamentals_coverage.csv",
       "crypto_fundamentals_coverage_coinmetrics.csv",
-      "crypto_h4_aave_legacy_stake_daily.csv",
       "identifier_registry.csv",
       "market_coverage.csv",
       "ohlcv_coverage_binance_spot.csv",
@@ -37,7 +36,6 @@
       "crypto_h4_source_readiness.csv",
       "crypto_h8_evidence_audit.csv",
       "crypto_h8_evidence_review.csv",
-      "crypto_mechanism_state_asof.csv",
       "crypto_monetary_assessment.csv",
       "crypto_phase1_consistency_audit.csv",
       "crypto_phase1_indicator_observability.csv",
@@ -46,7 +44,6 @@
       "venus_bnb_collateral_state_daily.csv",
       "venus_bnb_collateral_state_summary.json",
       "crypto_h3_supply_event_curve.csv",
-      "crypto_h3_supply_event_estimates.csv",
       "crypto_h8_verified_universe_sensitivities.csv",
       "crypto_hypothesis_evidence_register.json",
       "crypto_function_risk_assets.csv",
@@ -227,7 +224,9 @@
       "written_by": [
         "crypto_h4_aave_legacy_stake"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -239,7 +238,9 @@
       "written_by": [
         "crypto_h4_bnb_stake"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "crypto_phase1_research_map.json"
       ],
@@ -249,7 +250,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 62074,
+      "bytes": 62075,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -331,6 +332,7 @@
         "crypto_h3_supply_event_ledger",
         "crypto_h4_readiness",
         "crypto_h8_verified_universe",
+        "crypto_hypothesis_test_catalog",
         "stablecoin_trading_activity"
       ],
       "named_in_config": [],
@@ -945,7 +947,9 @@
       "written_by": [
         "crypto_h4_measurement_audit"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -1027,7 +1031,9 @@
       "written_by": [
         "crypto_mechanism_state"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -1236,7 +1242,9 @@
       "written_by": [
         "crypto_verified_universe"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "crypto_function_risk_verified_refresh.json",
         "crypto_h3_supply_event_study.json",
@@ -1316,12 +1324,13 @@
       "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
-      "bytes": 6043,
+      "bytes": 6049,
       "written_by": [
         "crypto_findings_summary"
       ],
       "read_by": [
-        "crypto_hypothesis_register"
+        "crypto_hypothesis_register",
+        "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
         "pipeline_stages.json"
@@ -1336,7 +1345,9 @@
       "written_by": [
         "crypto_h1_activity_pilot"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -1352,7 +1363,8 @@
       ],
       "read_by": [
         "checkpoint_readiness",
-        "crypto_findings_summary"
+        "crypto_findings_summary",
+        "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
         "crypto_phase1_research_map.json",
@@ -1406,7 +1418,8 @@
         "crypto_h8_six_asset_extension"
       ],
       "read_by": [
-        "crypto_h3_supply_pilot"
+        "crypto_h3_supply_pilot",
+        "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
         "crypto_h2_strict_capture_sensitivity.json",
@@ -1439,7 +1452,8 @@
       ],
       "read_by": [
         "checkpoint_readiness",
-        "crypto_findings_summary"
+        "crypto_findings_summary",
+        "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
         "pipeline_stages.json"
@@ -1487,7 +1501,8 @@
       ],
       "read_by": [
         "checkpoint_readiness",
-        "crypto_findings_summary"
+        "crypto_findings_summary",
+        "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
         "crypto_h2_strict_capture_sensitivity.json",
@@ -1505,7 +1520,9 @@
         "crypto_h2_strict_capture_sensitivity",
         "crypto_hypothesis_register"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "crypto_phase1_research_map.json",
         "pipeline_stages.json"
@@ -1521,7 +1538,9 @@
         "crypto_findings_summary",
         "crypto_h3_supply_event_analysis"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -1547,7 +1566,9 @@
       "written_by": [
         "crypto_h3_supply_event_analysis"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -1560,7 +1581,8 @@
         "crypto_h3_supply_event_ledger"
       ],
       "read_by": [
-        "crypto_h3_supply_event_analysis"
+        "crypto_h3_supply_event_analysis",
+        "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
         "crypto_h3_supply_event_study.json",
@@ -1652,7 +1674,9 @@
       "written_by": [
         "crypto_h8_oos_readiness"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -1698,6 +1722,7 @@
         "crypto_h8_verified_universe"
       ],
       "read_by": [
+        "crypto_hypothesis_test_catalog",
         "crypto_research_visuals"
       ],
       "named_in_config": [],
@@ -1721,7 +1746,8 @@
       "kind": "summary",
       "bytes": 4528,
       "written_by": [
-        "crypto_h8_verified_universe"
+        "crypto_h8_verified_universe",
+        "crypto_hypothesis_test_catalog"
       ],
       "read_by": [
         "crypto_findings_summary"
@@ -1733,7 +1759,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.csv",
       "kind": "table",
-      "bytes": 2204,
+      "bytes": 2289,
       "written_by": [
         "crypto_hypothesis_register"
       ],
@@ -1747,12 +1773,26 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.json",
       "kind": "summary",
-      "bytes": 3436,
+      "bytes": 3521,
       "written_by": [
         "crypto_hypothesis_register"
       ],
       "read_by": [],
       "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_hypothesis_test_catalog.json",
+      "kind": "summary",
+      "bytes": 9366,
+      "written_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
       "orphan": false
     },
     {
@@ -1955,7 +1995,9 @@
       "written_by": [
         "crypto_return_panel"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
       "named_in_config": [
         "crypto_function_risk_exposure.json",
         "crypto_function_risk_verified_refresh.json",

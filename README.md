@@ -8,7 +8,7 @@ The clearest result so far is H8: theory-defined function groups contain more va
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 352 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 354 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -138,7 +138,7 @@ The remaining classification limitation is external reproducibility, not coverag
 
 ### The pipeline
 
-83 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
+84 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -154,7 +154,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 352 tests
+python -m unittest discover -s tests                           # 354 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -224,6 +224,7 @@ Every file in there is catalogued in [`DATA_MAP.md`](DATA_MAP.md) with the modul
 |---|---|
 | [`research/findings/2026-09-07-research-program-explained.md`](research/findings/2026-09-07-research-program-explained.md) | The whole programme in plain language |
 | [`research/findings/2026-09-07-the-math-explained.md`](research/findings/2026-09-07-the-math-explained.md) | Every statistical technique and why it was chosen |
+| [`research/methods/crypto_hypothesis_test_catalog.md`](research/methods/crypto_hypothesis_test_catalog.md) | Exact matrix role, data, equation, inference and result for H1/H2/H3/H4/H8 |
 | [`research/findings/2026-09-07-checkpoint-function-and-risk.md`](research/findings/2026-09-07-checkpoint-function-and-risk.md) | The most recent results |
 | [`research/findings/2026-10-09-verified-function-risk-refresh.md`](research/findings/2026-10-09-verified-function-risk-refresh.md) | Verified classification-to-risk refresh |
 | [`research/manuscript/main.tex`](research/manuscript/main.tex) | The paper |
