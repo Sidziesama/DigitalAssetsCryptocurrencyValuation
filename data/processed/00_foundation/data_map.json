@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 186,
+    "files": 187,
     "by_phase": {
       "00_foundation": 27,
       "01_classification": 64,
-      "02_valuation": 41,
+      "02_valuation": 42,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -295,7 +295,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 66357,
+      "bytes": 66706,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1374,6 +1374,20 @@
     },
     {
       "phase": "02_valuation",
+      "file": "crypto_executive_summary.json",
+      "kind": "summary",
+      "bytes": 3147,
+      "written_by": [
+        "crypto_executive_summary"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
       "bytes": 6645,
@@ -1381,6 +1395,7 @@
         "crypto_findings_summary"
       ],
       "read_by": [
+        "crypto_executive_summary",
         "crypto_hypothesis_register",
         "crypto_hypothesis_test_catalog"
       ],

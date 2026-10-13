@@ -2,13 +2,13 @@
 
 **Current checkpoint (12 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. H1 now has a complete one-year robustness panel for the same nine native networks: both activity coefficients are positive and transaction count reaches exploratory p = 0.078, but the extension is retrospective and the transaction sign depends on XLM. H3 includes ARB unlocks, BNB burns, and the completed 100 million UNI burn. H4 still requires archival ETH consensus data.
 
-The clearest result so far is H8: theory-defined function groups contain more valuation information than a raw count of functions in this sample. Financial integration is the strongest single group and modestly lowers leave-one-asset-out prediction error. This is exploratory and non-causal, not an investment rule. See [`research/findings/crypto-current-findings.md`](research/findings/crypto-current-findings.md) and the [visual analysis](research/findings/crypto-visual-analysis.md).
+**Plain-English conclusion:** the classification matrix is useful today as an advisory due-diligence tool, but the empirical results are not yet a pricing or trading model. Start with the [`what we did → insight → action` summary](research/findings/crypto-executive-decision-summary.md). The clearest exploratory result is that financial integration modestly outpredicts simply counting functions; the clearest negative result is that unlocks and burns did not work as standalone trading signals.
 
 **Can the economic jobs a cryptoasset performs explain what it is worth and how risky it is?**
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 361 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 362 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -138,7 +138,7 @@ The remaining classification limitation is external reproducibility, not coverag
 
 ### The pipeline
 
-88 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
+89 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -154,7 +154,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 361 tests
+python -m unittest discover -s tests                           # 362 tests
 git status --short                                             # should be empty after a rebuild
 ```
 

@@ -490,6 +490,11 @@
           "args": []
         },
         {
+          "module": "crypto_executive_summary",
+          "args": [],
+          "note": "Translates the empirical outputs into what was done, the insight, and the defensible advisory action."
+        },
+        {
           "module": "crypto_hypothesis_register",
           "args": []
         },

@@ -1,0 +1,53 @@
+{
+  "status": "crypto_executive_summary_complete",
+  "headline": "Economic function is useful as a due-diligence framework; it is not yet a standalone pricing or trading model.",
+  "rows": [
+    {
+      "topic": "Classify the asset",
+      "done": "Verified 230 function decisions across 23 cryptoassets using ten consistent economic-function rules.",
+      "insight": "Assets cannot be understood by one label. What a token does matters more than whether it is called an L1, governance token, or utility token.",
+      "action": "Use the matrix as the first advisory screen: identify monetary use, network demand, supply effects, financial integration, control rights, and holder capture.",
+      "strength": "usable_now"
+    },
+    {
+      "topic": "Explain valuation differences",
+      "done": "Compared raw function count with theory-defined groups across 23 classified assets; 22 had sufficient market-cap data.",
+      "insight": "Financial integration produced 2.8% lower leave-one-asset-out error than simply counting functions. The improvement is modest and exploratory.",
+      "action": "Describe which functions an asset has, not how many. Treat collateral and financial integration as a research lead, not a price target.",
+      "strength": "promising_not_proven"
+    },
+    {
+      "topic": "Test activity and value capture",
+      "done": "Tested network activity across nine chains and fee/capture interaction across eleven assets.",
+      "insight": "Activity alone is unstable. Fee activity looks more informative when value reaches the token or holder, but the result disappears under the strict capture definition.",
+      "action": "Ask where economic value actually ends. Do not count governance, treasury spending, or validator compensation as holder capture without a direct route.",
+      "strength": "promising_not_proven"
+    },
+    {
+      "topic": "Test supply-event trading stories",
+      "done": "Measured 17 unlock or burn events across 3 assets.",
+      "insight": "Only 8 of 17 events moved in the predicted direction, and every asset-level average opposed the hypothesis.",
+      "action": "Do not use an unlock or burn announcement by itself as a trading signal. Add valuation, anticipation, liquidity, and market conditions.",
+      "strength": "not_supported"
+    },
+    {
+      "topic": "Test staking and liquidity",
+      "done": "Built the BNB stake history, market controls, and an ETH collector; froze the analysis before estimation.",
+      "insight": "There is no H4 finding yet because the required historical ETH stake series is missing.",
+      "action": "Do not present a staking/liquidity conclusion. Obtain the ETH archive series first, then run the locked test.",
+      "strength": "not_tested"
+    }
+  ],
+  "advisory_use_now": [
+    "Explain a token's economic jobs consistently.",
+    "Separate usage from value capture.",
+    "Compare assets with similar functions rather than similar marketing labels.",
+    "Flag unsupported narratives and missing evidence."
+  ],
+  "not_ready": [
+    "price targets",
+    "causal claims",
+    "automatic buy/sell signals",
+    "portfolio weights"
+  ]
+}
