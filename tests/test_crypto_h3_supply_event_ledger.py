@@ -19,4 +19,14 @@ class Tests(unittest.TestCase):
         self.assertEqual(rows[0]["expected_return_sign"],"positive")
         self.assertAlmostEqual(rows[0]["impact_share"],.01)
 
+    def test_completed_event_records_are_asset_agnostic(self):
+        spec={"status":"frozen_before_supply_event_collection_and_estimation","market_window":{"start":"2025-01-01","end":"2025-12-31"},"event_selection":{"minimum_impact_share_of_pre_event_circulating_supply":.005}}
+        sources={"sources":[{"asset_id":"crypto_uni","source_type":"official_completed_event_records","event_type":"one_time_burn","supply_shock_direction":"decrease","events":[{"event_id":"uni_burn","event_date":"2025-12-27","gross_token_impact":100,"source_url":"https://official"}]}]}
+        market=[{"asset_id":"crypto_uni","date":"2025-12-26","price_usd":"2","market_cap_usd":"20000"}]
+        rows,summary=build(spec,sources,market)
+        self.assertEqual(summary["eligible_assets"],["crypto_uni"])
+        self.assertEqual(rows[0]["asset_id"],"crypto_uni")
+        self.assertEqual(rows[0]["expected_return_sign"],"positive")
+        self.assertAlmostEqual(rows[0]["impact_share"],.01)
+
 if __name__=="__main__": unittest.main()

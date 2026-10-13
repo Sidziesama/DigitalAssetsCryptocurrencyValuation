@@ -86,8 +86,8 @@ The exact effective-balance collector is implemented and correctly rejects the p
 ### C2. Aave staking boundary — **RESOLVED**
 Legacy stkAAVE now has a complete 365-day series and remains a separate protocol-risk-stake case study. Umbrella stakes aTokens and GHO rather than AAVE, so it is correctly excluded from the AAVE-token staking series and cannot substitute for consensus stake.
 
-### C3. Point-in-time unlock and issuance events — **TWO-ASSET GATE RESOLVED; power remains limited**
-Twelve exact-date material ARB unlocks and four official BNB burns are estimated. Pooled randomization uses the asset—not the event—as its unit, leaving only four possible sign assignments with two assets. Additional assets improve power but no longer block estimation.
+### C3. Point-in-time unlock and issuance events — **THREE-ASSET GATE RESOLVED; power remains limited**
+Twelve exact-date material ARB unlocks, four official BNB burns, and one completed 100 million UNI burn are estimated. Pooled randomization uses the asset—not the event—as its unit, leaving eight possible sign assignments with three assets. The UNI proposal and vote preceded execution, so anticipation is recorded explicitly. A fourth independently sourced asset would improve power but does not block estimation.
 
 ### C4. Independent reproducibility
 All 230 active-universe cells are evidence-backed, but only 10 have an independent blind review. This is reported as a limitation rather than an unfinished coverage task.

@@ -2,7 +2,7 @@
 
 How this research is broken into phases, what each one delivers, and what has to be true before the next one starts. Updated 8 October 2026.
 
-**Current focus: classification-to-valuation synthesis.** The 23-asset classification matrix is complete and H8 has been re-estimated on verified codes. Its temporal validation is frozen for 23 August 2026–22 August 2027 and cannot be estimated early. H3 now covers 16 material events across ARB and BNB; its two-asset result does not support the predicted direction and remains low-powered. External rule validation remains a limitation. H4 ETH data collection is the next blocked empirical build. Phase 4 is parked.
+**Current focus: classification-to-valuation synthesis.** The 23-asset classification matrix is complete and H8 has been re-estimated on verified codes. Its temporal validation is frozen for 23 August 2026–22 August 2027 and cannot be estimated early. H3 now covers 17 material events across ARB, BNB, and UNI; its three-asset result does not support the predicted direction and remains low-powered. External rule validation remains a limitation. H4 ETH data collection is the next blocked empirical build. Phase 4 is parked.
 
 The generated test catalog at `research/methods/crypto_hypothesis_test_catalog.md` is the authoritative plain-language map from each active hypothesis to its matrix role, exact data, equation, inference, output and next gate.
 
@@ -154,7 +154,7 @@ Does economic function explain market value? Four registered experiments have ex
 
 The H2 fee-and-capture interaction is 0.132 with an exact p of 0.082 under a loose definition of capture, and 0.061 with p of 0.478 under the strict one. The result is therefore definition-sensitive. The newer 23-asset H8 extension finds that financial integration modestly outpredicts raw function breadth; monetary/store use and supply absorption also survive 10% false-discovery control. These results remain exploratory and non-causal.
 
-**Next checkpoint:** configure an archival ETH Beacon endpoint (BNB and legacy stkAAVE now have 365 days) and continue adding H3 assets from official exact-date events without selecting on returns. The H8 out-of-sample design is frozen; its 365-day window ends 22 August 2027 and requires at least 292 observations per asset before estimation.
+**Next checkpoint:** add a fourth H3 asset only from official exact-date events under the unchanged 0.5% materiality rule, and configure an archival ETH Beacon endpoint (BNB and legacy stkAAVE now have 365 days). The H8 out-of-sample design is frozen; its 365-day window ends 22 August 2027 and requires at least 292 observations per asset before estimation.
 
 ## Phase 3 — Risk and market structure (exploratory refresh complete)
 

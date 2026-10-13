@@ -70,7 +70,7 @@
       "state": "estimated_multiasset_low_power",
       "matrix_role": "VA_BURN and VA_SCARCITY motivate the supply mechanism, but exact event quantities and dates\u2014not binary codes\u2014enter the test.",
       "observation_unit": "asset-level mean of repeated supply events",
-      "sample": "16 events: 12 ARB unlocks and 4 BNB burns",
+      "sample": "17 events: 12 ARB unlocks, 4 BNB burns, and 1 UNI burn",
       "outcome": "three-trading-day cumulative abnormal log return, direction-adjusted so positive supports H3",
       "predictors": [
         "event direction",
@@ -81,7 +81,7 @@
         "asset return model estimated on the equal-weight crypto market over trading days -120 to -31"
       ],
       "formula": "CAR_e[-1,+1] = sum(actual return - market-model expected return); unlock CAR is multiplied by -1 and burn CAR by +1",
-      "inference": "Exact sign-flip randomization of asset-level mean direction-adjusted CARs; four assignments for two assets.",
+      "inference": "Exact sign-flip randomization of asset-level mean direction-adjusted CARs; 8 assignments for 3 assets.",
       "input_files": [
         "data/processed/02_valuation/crypto_h3_supply_event_ledger.csv",
         "data/processed/03_risk/crypto_return_panel_daily.csv"
@@ -90,8 +90,8 @@
         "data/processed/02_valuation/crypto_h3_supply_event_estimates.csv",
         "data/processed/02_valuation/crypto_h3_supply_event_analysis.json"
       ],
-      "current_result": "Mean direction-adjusted CAR -0.0120; 8/16 events match; exact asset-level p=0.5000.",
-      "main_limitation": "Two independent asset units yield valid but extremely low-powered inference; scheduled events may be anticipated.",
+      "current_result": "Mean direction-adjusted CAR -0.0113; 8/17 events match; exact asset-level p=0.2500.",
+      "main_limitation": "3 independent asset units yield valid but low-powered inference; scheduled and pre-announced events may be anticipated.",
       "next_gate": "Add official exact-date events from additional assets without selecting them from returns."
     },
     {

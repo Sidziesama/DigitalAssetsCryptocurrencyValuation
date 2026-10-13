@@ -14,6 +14,7 @@ def build(findings: dict[str, Any], strict: dict[str, Any], h3: dict[str, Any], 
         raise ValueError("hypothesis catalog requires the frozen active crypto scope")
     f = findings["findings"]
     strict_pooled = next(row for row in strict["results"] if row["specification"] == "pooled_market_cap")
+    h3_asset_count = len(h3.get("assets", h3.get("events_by_asset", {})))
     rows = [
         {
             "hypothesis": "H1",
@@ -57,16 +58,16 @@ def build(findings: dict[str, Any], strict: dict[str, Any], h3: dict[str, Any], 
             "state": "estimated_multiasset_low_power",
             "matrix_role": "VA_BURN and VA_SCARCITY motivate the supply mechanism, but exact event quantities and dates—not binary codes—enter the test.",
             "observation_unit": "asset-level mean of repeated supply events",
-            "sample": f"{h3['events_estimated']} events: {h3['events_by_asset'].get('crypto_arb', 0)} ARB unlocks and {h3['events_by_asset'].get('crypto_bnb', 0)} BNB burns",
+            "sample": f"{h3['events_estimated']} events: {h3['events_by_asset'].get('crypto_arb', 0)} ARB unlocks, {h3['events_by_asset'].get('crypto_bnb', 0)} BNB burns, and {h3['events_by_asset'].get('crypto_uni', 0)} UNI burn",
             "outcome": "three-trading-day cumulative abnormal log return, direction-adjusted so positive supports H3",
             "predictors": ["event direction", "gross token impact", "impact share of pre-event circulating supply"],
             "controls": ["asset return model estimated on the equal-weight crypto market over trading days -120 to -31"],
             "formula": "CAR_e[-1,+1] = sum(actual return - market-model expected return); unlock CAR is multiplied by -1 and burn CAR by +1",
-            "inference": "Exact sign-flip randomization of asset-level mean direction-adjusted CARs; four assignments for two assets.",
+            "inference": f"Exact sign-flip randomization of asset-level mean direction-adjusted CARs; {h3.get('asset_sign_flip_assignments', 2 ** h3_asset_count)} assignments for {h3_asset_count} assets.",
             "input_files": ["data/processed/02_valuation/crypto_h3_supply_event_ledger.csv", "data/processed/03_risk/crypto_return_panel_daily.csv"],
             "output_files": ["data/processed/02_valuation/crypto_h3_supply_event_estimates.csv", "data/processed/02_valuation/crypto_h3_supply_event_analysis.json"],
             "current_result": f"Mean direction-adjusted CAR {h3['mean_direction_adjusted_primary_car']:.4f}; {h3['events_matching_predicted_sign']}/{h3['events_estimated']} events match; exact asset-level p={h3['asset_sign_flip_p_two_sided']:.4f}.",
-            "main_limitation": "Two independent asset units yield valid but extremely low-powered inference; scheduled events may be anticipated.",
+            "main_limitation": f"{h3_asset_count} independent asset units yield valid but low-powered inference; scheduled and pre-announced events may be anticipated.",
             "next_gate": "Add official exact-date events from additional assets without selecting them from returns."
         },
         {

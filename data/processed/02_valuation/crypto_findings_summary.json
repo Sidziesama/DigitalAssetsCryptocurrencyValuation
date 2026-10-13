@@ -44,17 +44,18 @@
       "effect_per_basis_point": 0.11306496492090846,
       "exact_p": 0.25,
       "observed_sign": "positive",
-      "supply_events_estimated": 16,
+      "supply_events_estimated": 17,
       "supply_event_assets": [
         "crypto_arb",
-        "crypto_bnb"
+        "crypto_bnb",
+        "crypto_uni"
       ],
-      "supply_event_mean_primary_car": 0.011160040711101346,
+      "supply_event_mean_primary_car": 0.010498907869056814,
       "supply_events_matching_negative_sign": 5,
-      "supply_event_mean_direction_adjusted_car": -0.012021754859042076,
+      "supply_event_mean_direction_adjusted_car": -0.011319252667548758,
       "supply_events_matching_predicted_sign": 8,
-      "supply_event_asset_sign_flip_p": 0.5,
-      "plain_finding": "The multiasset supply-event study does not support H3. It estimates 16 material events across 2 assets. Both asset-level average direction-adjusted returns oppose the hypothesis; 8 of 16 events match the predicted sign, and the exact asset-level sign-flip p-value is 0.500. With only two independent asset units, inference is valid but extremely low-powered."
+      "supply_event_asset_sign_flip_p": 0.25,
+      "plain_finding": "The multiasset supply-event study does not support H3. It estimates 17 material events across 3 assets. All asset-level average direction-adjusted returns oppose the hypothesis; 8 of 17 events match the predicted sign, and the exact asset-level sign-flip p-value is 0.250. With only 3 independent asset units, inference remains low-powered."
     },
     "H4": {
       "status": "source_readiness_complete_estimation_blocked",

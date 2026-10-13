@@ -60,7 +60,7 @@ This file is generated from the active research scope and empirical outputs. It 
 
 ## H3 — Do material supply increases weaken returns and material burns strengthen returns?
 
-**Sample.** 16 events: 12 ARB unlocks and 4 BNB burns
+**Sample.** 17 events: 12 ARB unlocks, 4 BNB burns, and 1 UNI burn
 
 **Outcome.** three-trading-day cumulative abnormal log return, direction-adjusted so positive supports H3
 
@@ -70,15 +70,15 @@ This file is generated from the active research scope and empirical outputs. It 
 
 **Model.** `CAR_e[-1,+1] = sum(actual return - market-model expected return); unlock CAR is multiplied by -1 and burn CAR by +1`
 
-**Inference.** Exact sign-flip randomization of asset-level mean direction-adjusted CARs; four assignments for two assets.
+**Inference.** Exact sign-flip randomization of asset-level mean direction-adjusted CARs; 8 assignments for 3 assets.
 
 **Exact inputs.** `data/processed/02_valuation/crypto_h3_supply_event_ledger.csv`, `data/processed/03_risk/crypto_return_panel_daily.csv`
 
 **Exact outputs.** `data/processed/02_valuation/crypto_h3_supply_event_estimates.csv`, `data/processed/02_valuation/crypto_h3_supply_event_analysis.json`
 
-**Current result.** Mean direction-adjusted CAR -0.0120; 8/16 events match; exact asset-level p=0.5000.
+**Current result.** Mean direction-adjusted CAR -0.0113; 8/17 events match; exact asset-level p=0.2500.
 
-**Main limitation.** Two independent asset units yield valid but extremely low-powered inference; scheduled events may be anticipated.
+**Main limitation.** 3 independent asset units yield valid but low-powered inference; scheduled and pre-announced events may be anticipated.
 
 **Next gate.** Add official exact-date events from additional assets without selecting them from returns.
 

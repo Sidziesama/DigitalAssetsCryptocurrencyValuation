@@ -250,7 +250,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 62075,
+      "bytes": 63172,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1324,7 +1324,7 @@
       "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
-      "bytes": 6049,
+      "bytes": 6054,
       "written_by": [
         "crypto_findings_summary"
       ],
@@ -1533,7 +1533,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_analysis.json",
       "kind": "summary",
-      "bytes": 1023,
+      "bytes": 1080,
       "written_by": [
         "crypto_findings_summary",
         "crypto_h3_supply_event_analysis"
@@ -1550,7 +1550,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_curve.csv",
       "kind": "table",
-      "bytes": 883,
+      "bytes": 892,
       "written_by": [
         "crypto_h3_supply_event_analysis"
       ],
@@ -1562,7 +1562,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_estimates.csv",
       "kind": "table",
-      "bytes": 3481,
+      "bytes": 3690,
       "written_by": [
         "crypto_h3_supply_event_analysis"
       ],
@@ -1576,7 +1576,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_ledger.csv",
       "kind": "table",
-      "bytes": 7437,
+      "bytes": 7681,
       "written_by": [
         "crypto_h3_supply_event_ledger"
       ],
@@ -1594,7 +1594,7 @@
       "phase": "02_valuation",
       "file": "crypto_h3_supply_event_ledger.json",
       "kind": "summary",
-      "bytes": 369,
+      "bytes": 387,
       "written_by": [
         "crypto_h3_supply_event_ledger"
       ],
@@ -1785,7 +1785,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_test_catalog.json",
       "kind": "summary",
-      "bytes": 9366,
+      "bytes": 9380,
       "written_by": [
         "crypto_hypothesis_test_catalog"
       ],

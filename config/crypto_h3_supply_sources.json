@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-08",
+  "as_of": "2026-10-12",
   "sources": [
     {
       "asset_id": "crypto_arb",
@@ -26,7 +26,7 @@
     },
     {
       "asset_id": "crypto_bnb",
-      "source_type": "official_completed_quarterly_burn_records",
+      "source_type": "official_completed_event_records",
       "event_type": "one_time_burn",
       "date_rule": "Each official BNB Foundation record states the successful completion date, exact quantity permanently burned, transaction link, and remaining supply. Only records inside the available market-data window are entered.",
       "candidate_status": "exact_date_and_quantity_records_available",
@@ -54,6 +54,23 @@
           "event_date": "2026-07-15",
           "gross_token_impact": 1615827.795,
           "source_url": "https://www.bnbchain.org/en/blog/36th-bnb-burn"
+        }
+      ]
+    },
+    {
+      "asset_id": "crypto_uni",
+      "source_type": "official_completed_event_records",
+      "event_type": "one_time_burn",
+      "supply_shock_direction": "decrease",
+      "expected_return_sign": "positive",
+      "date_rule": "The DUNI year-end statement records that the approved UNIfication proposal was executed on 27 December 2025 and that 100 million UNI was burned. The execution date and completed quantity are used; the earlier proposal and vote create an explicit anticipation caveat but do not invalidate the completed supply event.",
+      "candidate_status": "exact_date_and_quantity_record_available",
+      "events": [
+        {
+          "event_id": "uni_unification_100m_burn",
+          "event_date": "2025-12-27",
+          "gross_token_impact": 100000000,
+          "source_url": "https://vote.uniswapfoundation.org/forum-article/7/duni-q4-and-year-end-2025-financial-statements-and-tax-update"
         }
       ]
     }

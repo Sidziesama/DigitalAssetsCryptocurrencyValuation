@@ -1,30 +1,33 @@
 {
   "status": "h3_multi_asset_event_analysis_complete_low_power",
-  "events_estimated": 16,
+  "events_estimated": 17,
   "assets": [
     "crypto_arb",
-    "crypto_bnb"
+    "crypto_bnb",
+    "crypto_uni"
   ],
   "events_by_asset": {
     "crypto_arb": 12,
-    "crypto_bnb": 4
+    "crypto_bnb": 4,
+    "crypto_uni": 1
   },
   "pooled_inference_permitted": true,
   "pooled_randomization_unit": "asset",
   "asset_mean_direction_adjusted_primary_car": {
     "crypto_arb": -0.015454530380095616,
-    "crypto_bnb": -0.0017234282958814586
+    "crypto_bnb": -0.0017234282958814586,
+    "crypto_uni": -7.921760365567007e-05
   },
-  "mean_primary_car": 0.011160040711101346,
-  "median_primary_car": 0.005313717568384363,
-  "mean_direction_adjusted_primary_car": -0.012021754859042076,
+  "mean_primary_car": 0.010498907869056814,
+  "median_primary_car": 0.003485746561985522,
+  "mean_direction_adjusted_primary_car": -0.011319252667548758,
   "events_matching_predicted_sign": 8,
   "events_matching_negative_h3_sign": 5,
-  "asset_sign_flip_p_two_sided": 0.5,
-  "asset_sign_flip_assignments": 4,
+  "asset_sign_flip_p_two_sided": 0.25,
+  "asset_sign_flip_assignments": 8,
   "primary_window": [
     -1,
     1
   ],
-  "interpretation": "Pooled inference uses asset-level mean direction-adjusted returns so repeated events are not treated as independent. With two assets there are only four sign assignments, so inference is valid but extremely low-powered."
+  "interpretation": "Pooled inference uses asset-level mean direction-adjusted returns so repeated events are not treated as independent. With 3 assets there are 8 sign assignments, so inference remains low-powered."
 }

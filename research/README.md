@@ -23,7 +23,7 @@ Every number in the manuscript comes from a file in `data/processed/`. To check 
 
 ```bash
 python -m src.pipeline.run_stages --repo . --offline   # rebuild all processed artifacts
-python -m unittest discover -s tests                   # 354 tests
+python -m unittest discover -s tests                   # 355 tests
 git status --short                                     # should be empty
 ```
 

@@ -1,10 +1,11 @@
 {
   "status": "h3_supply_event_ledger_ready",
-  "candidate_rows": 34,
-  "eligible_events": 16,
+  "candidate_rows": 35,
+  "eligible_events": 17,
   "eligible_assets": [
     "crypto_arb",
-    "crypto_bnb"
+    "crypto_bnb",
+    "crypto_uni"
   ],
   "excluded_candidates": 18,
   "event_dates_observed_before_outcomes": true,
