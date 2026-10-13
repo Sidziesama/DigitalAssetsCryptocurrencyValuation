@@ -1,0 +1,254 @@
+asset_id_a,symbol_a,architecture_a,asset_id_b,symbol_b,architecture_b,same_architecture,similarity
+crypto_aave,AAVE,NA,crypto_ada,ADA,PoS,False,0.375
+crypto_aave,AAVE,NA,crypto_arb,ARB,rollup,False,0.5
+crypto_aave,AAVE,NA,crypto_avax,AVAX,PoS,False,0.1111111111111111
+crypto_aave,AAVE,NA,crypto_bch,BCH,PoW,False,0.14285714285714285
+crypto_aave,AAVE,NA,crypto_bnb,BNB,PoS family,False,0.4444444444444444
+crypto_aave,AAVE,NA,crypto_btc,BTC,PoW,False,0.16666666666666666
+crypto_aave,AAVE,NA,crypto_eth,ETH,PoS,False,0.2222222222222222
+crypto_aave,AAVE,NA,crypto_hbar,HBAR,hashgraph PoS,False,0.14285714285714285
+crypto_aave,AAVE,NA,crypto_hype,HYPE,PoS family,False,0.3333333333333333
+crypto_aave,AAVE,NA,crypto_link,LINK,service staking,False,0.2857142857142857
+crypto_aave,AAVE,NA,crypto_ltc,LTC,PoW,False,0.16666666666666666
+crypto_aave,AAVE,NA,crypto_op,OP,rollup,False,0.4
+crypto_aave,AAVE,NA,crypto_pol,POL,PoS,False,0.16666666666666666
+crypto_aave,AAVE,NA,crypto_sol,SOL,PoS family,False,0.375
+crypto_aave,AAVE,NA,crypto_sui,SUI,PoS,False,0.2857142857142857
+crypto_aave,AAVE,NA,crypto_tao,TAO,PoS family,False,0.14285714285714285
+crypto_aave,AAVE,NA,crypto_ton,TON,PoS,False,0.25
+crypto_aave,AAVE,NA,crypto_trx,TRX,DPoS,False,0.3333333333333333
+crypto_aave,AAVE,NA,crypto_uni,UNI,NA,True,0.16666666666666666
+crypto_aave,AAVE,NA,crypto_xlm,XLM,federated consensus,False,0.125
+crypto_aave,AAVE,NA,crypto_xrp,XRP,federated consensus,False,0.1
+crypto_aave,AAVE,NA,crypto_zec,ZEC,PoW,False,0.4
+crypto_ada,ADA,PoS,crypto_arb,ARB,rollup,False,0.2857142857142857
+crypto_ada,ADA,PoS,crypto_avax,AVAX,PoS,True,0.4444444444444444
+crypto_ada,ADA,PoS,crypto_bch,BCH,PoW,False,0.5714285714285714
+crypto_ada,ADA,PoS,crypto_bnb,BNB,PoS family,False,0.6
+crypto_ada,ADA,PoS,crypto_btc,BTC,PoW,False,0.25
+crypto_ada,ADA,PoS,crypto_eth,ETH,PoS,True,0.4
+crypto_ada,ADA,PoS,crypto_hbar,HBAR,hashgraph PoS,False,0.5714285714285714
+crypto_ada,ADA,PoS,crypto_hype,HYPE,PoS family,False,0.6666666666666666
+crypto_ada,ADA,PoS,crypto_link,LINK,service staking,False,0.5
+crypto_ada,ADA,PoS,crypto_ltc,LTC,PoW,False,0.42857142857142855
+crypto_ada,ADA,PoS,crypto_op,OP,rollup,False,0.25
+crypto_ada,ADA,PoS,crypto_pol,POL,PoS,True,0.42857142857142855
+crypto_ada,ADA,PoS,crypto_sol,SOL,PoS family,False,0.4
+crypto_ada,ADA,PoS,crypto_sui,SUI,PoS,True,0.7142857142857143
+crypto_ada,ADA,PoS,crypto_tao,TAO,PoS family,False,0.5714285714285714
+crypto_ada,ADA,PoS,crypto_ton,TON,PoS,True,0.4444444444444444
+crypto_ada,ADA,PoS,crypto_trx,TRX,DPoS,False,0.6666666666666666
+crypto_ada,ADA,PoS,crypto_uni,UNI,NA,False,0.1111111111111111
+crypto_ada,ADA,PoS,crypto_xlm,XLM,federated consensus,False,0.7142857142857143
+crypto_ada,ADA,PoS,crypto_xrp,XRP,federated consensus,False,0.5555555555555556
+crypto_ada,ADA,PoS,crypto_zec,ZEC,PoW,False,0.42857142857142855
+crypto_arb,ARB,rollup,crypto_avax,AVAX,PoS,False,0.0
+crypto_arb,ARB,rollup,crypto_bch,BCH,PoW,False,0.2
+crypto_arb,ARB,rollup,crypto_bnb,BNB,PoS family,False,0.2222222222222222
+crypto_arb,ARB,rollup,crypto_btc,BTC,PoW,False,0.0
+crypto_arb,ARB,rollup,crypto_eth,ETH,PoS,False,0.0
+crypto_arb,ARB,rollup,crypto_hbar,HBAR,hashgraph PoS,False,0.0
+crypto_arb,ARB,rollup,crypto_hype,HYPE,PoS family,False,0.25
+crypto_arb,ARB,rollup,crypto_link,LINK,service staking,False,0.16666666666666666
+crypto_arb,ARB,rollup,crypto_ltc,LTC,PoW,False,0.25
+crypto_arb,ARB,rollup,crypto_op,OP,rollup,True,0.6666666666666666
+crypto_arb,ARB,rollup,crypto_pol,POL,PoS,False,0.0
+crypto_arb,ARB,rollup,crypto_sol,SOL,PoS family,False,0.125
+crypto_arb,ARB,rollup,crypto_sui,SUI,PoS,False,0.16666666666666666
+crypto_arb,ARB,rollup,crypto_tao,TAO,PoS family,False,0.0
+crypto_arb,ARB,rollup,crypto_ton,TON,PoS,False,0.14285714285714285
+crypto_arb,ARB,rollup,crypto_trx,TRX,DPoS,False,0.25
+crypto_arb,ARB,rollup,crypto_uni,UNI,NA,False,0.25
+crypto_arb,ARB,rollup,crypto_xlm,XLM,federated consensus,False,0.16666666666666666
+crypto_arb,ARB,rollup,crypto_xrp,XRP,federated consensus,False,0.125
+crypto_arb,ARB,rollup,crypto_zec,ZEC,PoW,False,0.6666666666666666
+crypto_avax,AVAX,PoS,crypto_bch,BCH,PoW,False,0.25
+crypto_avax,AVAX,PoS,crypto_bnb,BNB,PoS family,False,0.5
+crypto_avax,AVAX,PoS,crypto_btc,BTC,PoW,False,0.125
+crypto_avax,AVAX,PoS,crypto_eth,ETH,PoS,True,0.625
+crypto_avax,AVAX,PoS,crypto_hbar,HBAR,hashgraph PoS,False,0.6666666666666666
+crypto_avax,AVAX,PoS,crypto_hype,HYPE,PoS family,False,0.75
+crypto_avax,AVAX,PoS,crypto_link,LINK,service staking,False,0.5714285714285714
+crypto_avax,AVAX,PoS,crypto_ltc,LTC,PoW,False,0.125
+crypto_avax,AVAX,PoS,crypto_op,OP,rollup,False,0.125
+crypto_avax,AVAX,PoS,crypto_pol,POL,PoS,True,0.5
+crypto_avax,AVAX,PoS,crypto_sol,SOL,PoS family,False,0.625
+crypto_avax,AVAX,PoS,crypto_sui,SUI,PoS,True,0.5714285714285714
+crypto_avax,AVAX,PoS,crypto_tao,TAO,PoS family,False,0.6666666666666666
+crypto_avax,AVAX,PoS,crypto_ton,TON,PoS,True,0.7142857142857143
+crypto_avax,AVAX,PoS,crypto_trx,TRX,DPoS,False,0.5555555555555556
+crypto_avax,AVAX,PoS,crypto_uni,UNI,NA,False,0.2857142857142857
+crypto_avax,AVAX,PoS,crypto_xlm,XLM,federated consensus,False,0.375
+crypto_avax,AVAX,PoS,crypto_xrp,XRP,federated consensus,False,0.625
+crypto_avax,AVAX,PoS,crypto_zec,ZEC,PoW,False,0.125
+crypto_bch,BCH,PoW,crypto_bnb,BNB,PoS family,False,0.3
+crypto_bch,BCH,PoW,crypto_btc,BTC,PoW,True,0.4
+crypto_bch,BCH,PoW,crypto_eth,ETH,PoS,False,0.2222222222222222
+crypto_bch,BCH,PoW,crypto_hbar,HBAR,hashgraph PoS,False,0.3333333333333333
+crypto_bch,BCH,PoW,crypto_hype,HYPE,PoS family,False,0.3333333333333333
+crypto_bch,BCH,PoW,crypto_link,LINK,service staking,False,0.5
+crypto_bch,BCH,PoW,crypto_ltc,LTC,PoW,True,0.75
+crypto_bch,BCH,PoW,crypto_op,OP,rollup,False,0.16666666666666666
+crypto_bch,BCH,PoW,crypto_pol,POL,PoS,False,0.16666666666666666
+crypto_bch,BCH,PoW,crypto_sol,SOL,PoS family,False,0.2222222222222222
+crypto_bch,BCH,PoW,crypto_sui,SUI,PoS,False,0.2857142857142857
+crypto_bch,BCH,PoW,crypto_tao,TAO,PoS family,False,0.3333333333333333
+crypto_bch,BCH,PoW,crypto_ton,TON,PoS,False,0.1111111111111111
+crypto_bch,BCH,PoW,crypto_trx,TRX,DPoS,False,0.3333333333333333
+crypto_bch,BCH,PoW,crypto_uni,UNI,NA,False,0.0
+crypto_bch,BCH,PoW,crypto_xlm,XLM,federated consensus,False,0.8
+crypto_bch,BCH,PoW,crypto_xrp,XRP,federated consensus,False,0.5714285714285714
+crypto_bch,BCH,PoW,crypto_zec,ZEC,PoW,True,0.4
+crypto_bnb,BNB,PoS family,crypto_btc,BTC,PoW,False,0.2
+crypto_bnb,BNB,PoS family,crypto_eth,ETH,PoS,False,0.7777777777777778
+crypto_bnb,BNB,PoS family,crypto_hbar,HBAR,hashgraph PoS,False,0.3
+crypto_bnb,BNB,PoS family,crypto_hype,HYPE,PoS family,True,0.7
+crypto_bnb,BNB,PoS family,crypto_link,LINK,service staking,False,0.4
+crypto_bnb,BNB,PoS family,crypto_ltc,LTC,PoW,False,0.2
+crypto_bnb,BNB,PoS family,crypto_op,OP,rollup,False,0.3333333333333333
+crypto_bnb,BNB,PoS family,crypto_pol,POL,PoS,False,0.3333333333333333
+crypto_bnb,BNB,PoS family,crypto_sol,SOL,PoS family,True,0.7777777777777778
+crypto_bnb,BNB,PoS family,crypto_sui,SUI,PoS,False,0.4
+crypto_bnb,BNB,PoS family,crypto_tao,TAO,PoS family,True,0.3
+crypto_bnb,BNB,PoS family,crypto_ton,TON,PoS,False,0.6666666666666666
+crypto_bnb,BNB,PoS family,crypto_trx,TRX,DPoS,False,0.8888888888888888
+crypto_bnb,BNB,PoS family,crypto_uni,UNI,NA,False,0.3333333333333333
+crypto_bnb,BNB,PoS family,crypto_xlm,XLM,federated consensus,False,0.4
+crypto_bnb,BNB,PoS family,crypto_xrp,XRP,federated consensus,False,0.6
+crypto_bnb,BNB,PoS family,crypto_zec,ZEC,PoW,False,0.2
+crypto_btc,BTC,PoW,crypto_eth,ETH,PoS,False,0.25
+crypto_btc,BTC,PoW,crypto_hbar,HBAR,hashgraph PoS,False,0.16666666666666666
+crypto_btc,BTC,PoW,crypto_hype,HYPE,PoS family,False,0.1
+crypto_btc,BTC,PoW,crypto_link,LINK,service staking,False,0.14285714285714285
+crypto_btc,BTC,PoW,crypto_ltc,LTC,PoW,True,0.5
+crypto_btc,BTC,PoW,crypto_op,OP,rollup,False,0.0
+crypto_btc,BTC,PoW,crypto_pol,POL,PoS,False,0.0
+crypto_btc,BTC,PoW,crypto_sol,SOL,PoS family,False,0.1111111111111111
+crypto_btc,BTC,PoW,crypto_sui,SUI,PoS,False,0.14285714285714285
+crypto_btc,BTC,PoW,crypto_tao,TAO,PoS family,False,0.16666666666666666
+crypto_btc,BTC,PoW,crypto_ton,TON,PoS,False,0.0
+crypto_btc,BTC,PoW,crypto_trx,TRX,DPoS,False,0.1
+crypto_btc,BTC,PoW,crypto_uni,UNI,NA,False,0.0
+crypto_btc,BTC,PoW,crypto_xlm,XLM,federated consensus,False,0.3333333333333333
+crypto_btc,BTC,PoW,crypto_xrp,XRP,federated consensus,False,0.25
+crypto_btc,BTC,PoW,crypto_zec,ZEC,PoW,True,0.2
+crypto_eth,ETH,PoS,crypto_hbar,HBAR,hashgraph PoS,False,0.375
+crypto_eth,ETH,PoS,crypto_hype,HYPE,PoS family,False,0.5
+crypto_eth,ETH,PoS,crypto_link,LINK,service staking,False,0.3333333333333333
+crypto_eth,ETH,PoS,crypto_ltc,LTC,PoW,False,0.1111111111111111
+crypto_eth,ETH,PoS,crypto_op,OP,rollup,False,0.1111111111111111
+crypto_eth,ETH,PoS,crypto_pol,POL,PoS,True,0.42857142857142855
+crypto_eth,ETH,PoS,crypto_sol,SOL,PoS family,False,0.75
+crypto_eth,ETH,PoS,crypto_sui,SUI,PoS,True,0.3333333333333333
+crypto_eth,ETH,PoS,crypto_tao,TAO,PoS family,False,0.375
+crypto_eth,ETH,PoS,crypto_ton,TON,PoS,True,0.625
+crypto_eth,ETH,PoS,crypto_trx,TRX,DPoS,False,0.6666666666666666
+crypto_eth,ETH,PoS,crypto_uni,UNI,NA,False,0.25
+crypto_eth,ETH,PoS,crypto_xlm,XLM,federated consensus,False,0.3333333333333333
+crypto_eth,ETH,PoS,crypto_xrp,XRP,federated consensus,False,0.5555555555555556
+crypto_eth,ETH,PoS,crypto_zec,ZEC,PoW,False,0.0
+crypto_hbar,HBAR,hashgraph PoS,crypto_hype,HYPE,PoS family,False,0.5
+crypto_hbar,HBAR,hashgraph PoS,crypto_link,LINK,service staking,False,0.5
+crypto_hbar,HBAR,hashgraph PoS,crypto_ltc,LTC,PoW,False,0.16666666666666666
+crypto_hbar,HBAR,hashgraph PoS,crypto_op,OP,rollup,False,0.0
+crypto_hbar,HBAR,hashgraph PoS,crypto_pol,POL,PoS,False,0.75
+crypto_hbar,HBAR,hashgraph PoS,crypto_sol,SOL,PoS family,False,0.375
+crypto_hbar,HBAR,hashgraph PoS,crypto_sui,SUI,PoS,False,0.8
+crypto_hbar,HBAR,hashgraph PoS,crypto_tao,TAO,PoS family,False,1.0
+crypto_hbar,HBAR,hashgraph PoS,crypto_ton,TON,PoS,False,0.42857142857142855
+crypto_hbar,HBAR,hashgraph PoS,crypto_trx,TRX,DPoS,False,0.3333333333333333
+crypto_hbar,HBAR,hashgraph PoS,crypto_uni,UNI,NA,False,0.0
+crypto_hbar,HBAR,hashgraph PoS,crypto_xlm,XLM,federated consensus,False,0.5
+crypto_hbar,HBAR,hashgraph PoS,crypto_xrp,XRP,federated consensus,False,0.375
+crypto_hbar,HBAR,hashgraph PoS,crypto_zec,ZEC,PoW,False,0.16666666666666666
+crypto_hype,HYPE,PoS family,crypto_link,LINK,service staking,False,0.625
+crypto_hype,HYPE,PoS family,crypto_ltc,LTC,PoW,False,0.2222222222222222
+crypto_hype,HYPE,PoS family,crypto_op,OP,rollup,False,0.375
+crypto_hype,HYPE,PoS family,crypto_pol,POL,PoS,False,0.375
+crypto_hype,HYPE,PoS family,crypto_sol,SOL,PoS family,True,0.6666666666666666
+crypto_hype,HYPE,PoS family,crypto_sui,SUI,PoS,False,0.625
+crypto_hype,HYPE,PoS family,crypto_tao,TAO,PoS family,True,0.5
+crypto_hype,HYPE,PoS family,crypto_ton,TON,PoS,False,0.75
+crypto_hype,HYPE,PoS family,crypto_trx,TRX,DPoS,False,0.7777777777777778
+crypto_hype,HYPE,PoS family,crypto_uni,UNI,NA,False,0.375
+crypto_hype,HYPE,PoS family,crypto_xlm,XLM,federated consensus,False,0.4444444444444444
+crypto_hype,HYPE,PoS family,crypto_xrp,XRP,federated consensus,False,0.6666666666666666
+crypto_hype,HYPE,PoS family,crypto_zec,ZEC,PoW,False,0.375
+crypto_link,LINK,service staking,crypto_ltc,LTC,PoW,False,0.3333333333333333
+crypto_link,LINK,service staking,crypto_op,OP,rollup,False,0.3333333333333333
+crypto_link,LINK,service staking,crypto_pol,POL,PoS,False,0.3333333333333333
+crypto_link,LINK,service staking,crypto_sol,SOL,PoS family,False,0.5
+crypto_link,LINK,service staking,crypto_sui,SUI,PoS,False,0.42857142857142855
+crypto_link,LINK,service staking,crypto_tao,TAO,PoS family,False,0.5
+crypto_link,LINK,service staking,crypto_ton,TON,PoS,False,0.375
+crypto_link,LINK,service staking,crypto_trx,TRX,DPoS,False,0.4444444444444444
+crypto_link,LINK,service staking,crypto_uni,UNI,NA,False,0.14285714285714285
+crypto_link,LINK,service staking,crypto_xlm,XLM,federated consensus,False,0.42857142857142855
+crypto_link,LINK,service staking,crypto_xrp,XRP,federated consensus,False,0.5
+crypto_link,LINK,service staking,crypto_zec,ZEC,PoW,False,0.3333333333333333
+crypto_ltc,LTC,PoW,crypto_op,OP,rollup,False,0.2
+crypto_ltc,LTC,PoW,crypto_pol,POL,PoS,False,0.0
+crypto_ltc,LTC,PoW,crypto_sol,SOL,PoS family,False,0.1111111111111111
+crypto_ltc,LTC,PoW,crypto_sui,SUI,PoS,False,0.14285714285714285
+crypto_ltc,LTC,PoW,crypto_tao,TAO,PoS family,False,0.16666666666666666
+crypto_ltc,LTC,PoW,crypto_ton,TON,PoS,False,0.0
+crypto_ltc,LTC,PoW,crypto_trx,TRX,DPoS,False,0.2222222222222222
+crypto_ltc,LTC,PoW,crypto_uni,UNI,NA,False,0.0
+crypto_ltc,LTC,PoW,crypto_xlm,XLM,federated consensus,False,0.6
+crypto_ltc,LTC,PoW,crypto_xrp,XRP,federated consensus,False,0.42857142857142855
+crypto_ltc,LTC,PoW,crypto_zec,ZEC,PoW,True,0.5
+crypto_op,OP,rollup,crypto_pol,POL,PoS,False,0.0
+crypto_op,OP,rollup,crypto_sol,SOL,PoS family,False,0.25
+crypto_op,OP,rollup,crypto_sui,SUI,PoS,False,0.14285714285714285
+crypto_op,OP,rollup,crypto_tao,TAO,PoS family,False,0.0
+crypto_op,OP,rollup,crypto_ton,TON,PoS,False,0.2857142857142857
+crypto_op,OP,rollup,crypto_trx,TRX,DPoS,False,0.375
+crypto_op,OP,rollup,crypto_uni,UNI,NA,False,0.5
+crypto_op,OP,rollup,crypto_xlm,XLM,federated consensus,False,0.14285714285714285
+crypto_op,OP,rollup,crypto_xrp,XRP,federated consensus,False,0.25
+crypto_op,OP,rollup,crypto_zec,ZEC,PoW,False,0.5
+crypto_pol,POL,PoS,crypto_sol,SOL,PoS family,False,0.42857142857142855
+crypto_pol,POL,PoS,crypto_sui,SUI,PoS,True,0.6
+crypto_pol,POL,PoS,crypto_tao,TAO,PoS family,False,0.75
+crypto_pol,POL,PoS,crypto_ton,TON,PoS,True,0.5
+crypto_pol,POL,PoS,crypto_trx,TRX,DPoS,False,0.375
+crypto_pol,POL,PoS,crypto_uni,UNI,NA,False,0.0
+crypto_pol,POL,PoS,crypto_xlm,XLM,federated consensus,False,0.3333333333333333
+crypto_pol,POL,PoS,crypto_xrp,XRP,federated consensus,False,0.25
+crypto_pol,POL,PoS,crypto_zec,ZEC,PoW,False,0.0
+crypto_sol,SOL,PoS family,crypto_sui,SUI,PoS,False,0.3333333333333333
+crypto_sol,SOL,PoS family,crypto_tao,TAO,PoS family,True,0.375
+crypto_sol,SOL,PoS family,crypto_ton,TON,PoS,False,0.625
+crypto_sol,SOL,PoS family,crypto_trx,TRX,DPoS,False,0.6666666666666666
+crypto_sol,SOL,PoS family,crypto_uni,UNI,NA,False,0.25
+crypto_sol,SOL,PoS family,crypto_xlm,XLM,federated consensus,False,0.3333333333333333
+crypto_sol,SOL,PoS family,crypto_xrp,XRP,federated consensus,False,0.5555555555555556
+crypto_sol,SOL,PoS family,crypto_zec,ZEC,PoW,False,0.1111111111111111
+crypto_sui,SUI,PoS,crypto_tao,TAO,PoS family,False,0.8
+crypto_sui,SUI,PoS,crypto_ton,TON,PoS,True,0.5714285714285714
+crypto_sui,SUI,PoS,crypto_trx,TRX,DPoS,False,0.4444444444444444
+crypto_sui,SUI,PoS,crypto_uni,UNI,NA,False,0.14285714285714285
+crypto_sui,SUI,PoS,crypto_xlm,XLM,federated consensus,False,0.42857142857142855
+crypto_sui,SUI,PoS,crypto_xrp,XRP,federated consensus,False,0.3333333333333333
+crypto_sui,SUI,PoS,crypto_zec,ZEC,PoW,False,0.3333333333333333
+crypto_tao,TAO,PoS family,crypto_ton,TON,PoS,False,0.42857142857142855
+crypto_tao,TAO,PoS family,crypto_trx,TRX,DPoS,False,0.3333333333333333
+crypto_tao,TAO,PoS family,crypto_uni,UNI,NA,False,0.0
+crypto_tao,TAO,PoS family,crypto_xlm,XLM,federated consensus,False,0.5
+crypto_tao,TAO,PoS family,crypto_xrp,XRP,federated consensus,False,0.375
+crypto_tao,TAO,PoS family,crypto_zec,ZEC,PoW,False,0.16666666666666666
+crypto_ton,TON,PoS,crypto_trx,TRX,DPoS,False,0.75
+crypto_ton,TON,PoS,crypto_uni,UNI,NA,False,0.5
+crypto_ton,TON,PoS,crypto_xlm,XLM,federated consensus,False,0.2222222222222222
+crypto_ton,TON,PoS,crypto_xrp,XRP,federated consensus,False,0.4444444444444444
+crypto_ton,TON,PoS,crypto_zec,ZEC,PoW,False,0.125
+crypto_trx,TRX,DPoS,crypto_uni,UNI,NA,False,0.375
+crypto_trx,TRX,DPoS,crypto_xlm,XLM,federated consensus,False,0.4444444444444444
+crypto_trx,TRX,DPoS,crypto_xrp,XRP,federated consensus,False,0.6666666666666666
+crypto_trx,TRX,DPoS,crypto_zec,ZEC,PoW,False,0.2222222222222222
+crypto_uni,UNI,NA,crypto_xlm,XLM,federated consensus,False,0.0
+crypto_uni,UNI,NA,crypto_xrp,XRP,federated consensus,False,0.25
+crypto_uni,UNI,NA,crypto_zec,ZEC,PoW,False,0.2
+crypto_xlm,XLM,federated consensus,crypto_xrp,XRP,federated consensus,True,0.7142857142857143
+crypto_xlm,XLM,federated consensus,crypto_zec,ZEC,PoW,False,0.3333333333333333
+crypto_xrp,XRP,federated consensus,crypto_zec,ZEC,PoW,False,0.25

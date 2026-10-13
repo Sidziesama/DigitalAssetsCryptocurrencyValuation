@@ -2,7 +2,7 @@
 
 How this research is broken into phases, what each one delivers, and what has to be true before the next one starts. Updated 8 October 2026.
 
-**Current focus: classification-to-valuation synthesis.** The 23-asset classification matrix is complete and H8 has been re-estimated on verified codes. Its temporal validation is frozen for 23 August 2026–22 August 2027 and cannot be estimated early. H1 now has a 3,258-observation one-year robustness panel for the same nine native networks: both coefficients are positive and transactions reach exploratory p = 0.078, but this is retrospective and not sign-stable without XLM. H3 covers 17 material events across ARB, BNB, and UNI and remains unsupported and low-powered. External rule validation remains a limitation. H4 ETH data collection is the next blocked empirical build. Phase 4 is parked.
+**Current focus: classification-to-valuation synthesis.** The 23-asset classification matrix is complete. A 253-pair test shows that architecture contains economic information but is incomplete: same-architecture pairs average 51.7% function overlap versus 33.1% across architectures, while several cross-architecture pairs remain near-identical. H8 has been re-estimated on verified codes and its temporal validation is frozen for 23 August 2026–22 August 2027. H1 is positive but retrospective and XLM-sensitive; H3 remains unsupported and low-powered; H4 still needs ETH archive history. External rule validation remains a limitation. Phase 4 is parked.
 
 The generated test catalog at `research/methods/crypto_hypothesis_test_catalog.md` is the authoritative plain-language map from each active hypothesis to its matrix role, exact data, equation, inference, output and next gate.
 

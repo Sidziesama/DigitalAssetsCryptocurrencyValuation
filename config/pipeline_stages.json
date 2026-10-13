@@ -500,6 +500,11 @@
           "note": "Converts the verified matrix into asset-level economic identity, value channels, cautions, and economic comparables without investment scores."
         },
         {
+          "module": "crypto_architecture_similarity",
+          "args": [],
+          "note": "Tests whether technical architecture is an adequate proxy for similarity across the ten verified economic functions."
+        },
+        {
           "module": "crypto_hypothesis_register",
           "args": []
         },

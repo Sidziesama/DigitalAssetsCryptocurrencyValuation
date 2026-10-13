@@ -8,7 +8,7 @@
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 363 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 365 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -138,7 +138,7 @@ The remaining classification limitation is external reproducibility, not coverag
 
 ### The pipeline
 
-90 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
+91 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -154,7 +154,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 363 tests
+python -m unittest discover -s tests                           # 365 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -170,7 +170,7 @@ Full walkthrough in [`research/findings/2026-09-07-the-math-explained.md`](resea
 
 **The classification instrument is complete; the empirical evidence is exploratory and mixed.**
 
-- **Architecture does not predict economics.** Two PoS base layers in the verified core differ on two of ten functions; two application tokens share one.
+- **Architecture helps, but is not enough.** Same-architecture asset pairs share 51.7% of their economic functions on average versus 33.1% for cross-architecture pairs (label-permutation p = 0.00023). Yet HBAR–TAO have identical function profiles despite different architectures, and BNB–TRX overlap by 88.9%. Architecture is useful context, not a substitute for economic classification. See the [plain-language comparison](research/findings/crypto-architecture-economic-similarity.md).
 - **H1 becomes positive over a longer window, but remains suggestive.** The same nine-network model over 3,258 asset-days gives active addresses 0.1748 (exact p = 0.184) and transactions 0.3208 (p = 0.078). This one-year extension was specified after the 90-day result and is not independent validation; the transaction sign turns slightly negative when XLM is omitted.
 - **The central capture result is definition-dependent.** Fee activity is more strongly associated with market value when a capture route is live: pooled interaction 0.132, exact p = 0.082, positive in all eleven leave-one-out samples. Apply the strict holder-capture rule and it halves to 0.061 with p = 0.478. **Whether a governed treasury counts as capture is the difference between a result and no result.**
 - **Which functions are present is more informative than how many.** In the verified 23-asset H8 extension, raw breadth has leave-one-asset-out RMSE 1.8109; the best single group, financial integration, improves it modestly to 1.7594. Monetary/store, supply absorption and financial integration survive 10% false-discovery control in this sample.

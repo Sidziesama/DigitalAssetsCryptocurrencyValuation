@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 188,
+    "files": 190,
     "by_phase": {
       "00_foundation": 27,
       "01_classification": 64,
-      "02_valuation": 43,
+      "02_valuation": 45,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -44,6 +44,7 @@
       "point_in_time_design_checkpoint.json",
       "venus_bnb_collateral_state_daily.csv",
       "venus_bnb_collateral_state_summary.json",
+      "crypto_architecture_similarity_pairs.csv",
       "crypto_h1_activity_expansion_panel.csv",
       "crypto_h1_activity_history_panel.csv",
       "crypto_h3_supply_event_curve.csv",
@@ -524,6 +525,7 @@
       "written_by": [
         "classification_status",
         "crypto_advisory_profiles",
+        "crypto_architecture_similarity",
         "crypto_collateral",
         "crypto_economic_design",
         "crypto_function_risk_exposure",
@@ -1297,6 +1299,7 @@
         "crypto_verified_universe"
       ],
       "read_by": [
+        "crypto_architecture_similarity",
         "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
@@ -1386,6 +1389,32 @@
       "named_in_config": [
         "pipeline_stages.json"
       ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_architecture_similarity.json",
+      "kind": "summary",
+      "bytes": 1778,
+      "written_by": [
+        "crypto_architecture_similarity"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_architecture_similarity_pairs.csv",
+      "kind": "table",
+      "bytes": 16527,
+      "written_by": [
+        "crypto_architecture_similarity"
+      ],
+      "read_by": [],
+      "named_in_config": [],
       "orphan": false
     },
     {

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "design_frozen_on": "2026-10-13",
+  "research_question": "Do assets with the same technical architecture have more similar economic functions than assets with different architectures?",
+  "universe": "23_asset_complete_verified_matrix",
+  "features": ["va_monetary", "va_gas", "va_stake", "va_burn", "va_scarcity", "va_collateral", "va_gov", "va_protocol", "va_utility", "va_incentive"],
+  "similarity_measure": "jaccard_binary",
+  "primary_statistic": "mean_same_architecture_similarity_minus_mean_cross_architecture_similarity",
+  "inference": {
+    "method": "architecture_label_permutation",
+    "draws": 100000,
+    "seed": 20261013,
+    "two_sided": true
+  },
+  "interpretation": "Descriptive test of whether architecture is an adequate economic grouping. It is not a valuation, causal, or return-prediction test."
+}

@@ -1,0 +1,65 @@
+{
+  "status": "crypto_architecture_similarity_complete",
+  "assets": 23,
+  "pairs": 253,
+  "same_architecture_pairs": 30,
+  "cross_architecture_pairs": 223,
+  "mean_same_architecture_similarity": 0.5172619047619047,
+  "mean_cross_architecture_similarity": 0.33089365791159514,
+  "difference_same_minus_cross": 0.18636824685030956,
+  "permutation_p_two_sided": 0.00023,
+  "permutation_draws": 100000,
+  "top_cross_architecture_pairs": [
+    {
+      "pair": "HBAR\u2013TAO",
+      "architecture": "hashgraph PoS vs PoS family",
+      "similarity": 1.0
+    },
+    {
+      "pair": "BNB\u2013TRX",
+      "architecture": "PoS family vs DPoS",
+      "similarity": 0.8888888888888888
+    },
+    {
+      "pair": "BCH\u2013XLM",
+      "architecture": "PoW vs federated consensus",
+      "similarity": 0.8
+    },
+    {
+      "pair": "HBAR\u2013SUI",
+      "architecture": "hashgraph PoS vs PoS",
+      "similarity": 0.8
+    },
+    {
+      "pair": "SUI\u2013TAO",
+      "architecture": "PoS vs PoS family",
+      "similarity": 0.8
+    },
+    {
+      "pair": "BNB\u2013ETH",
+      "architecture": "PoS family vs PoS",
+      "similarity": 0.7777777777777778
+    },
+    {
+      "pair": "HYPE\u2013TRX",
+      "architecture": "PoS family vs DPoS",
+      "similarity": 0.7777777777777778
+    },
+    {
+      "pair": "AVAX\u2013HYPE",
+      "architecture": "PoS vs PoS family",
+      "similarity": 0.75
+    },
+    {
+      "pair": "ETH\u2013SOL",
+      "architecture": "PoS vs PoS family",
+      "similarity": 0.75
+    },
+    {
+      "pair": "HBAR\u2013POL",
+      "architecture": "hashgraph PoS vs PoS",
+      "similarity": 0.75
+    }
+  ],
+  "interpretation": "Descriptive test of whether architecture is an adequate economic grouping. It is not a valuation, causal, or return-prediction test."
+}
