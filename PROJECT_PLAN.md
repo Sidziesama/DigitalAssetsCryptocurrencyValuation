@@ -154,7 +154,7 @@ Does economic function explain market value? Four registered experiments have ex
 
 The H2 fee-and-capture interaction is 0.132 with an exact p of 0.082 under a loose definition of capture, and 0.061 with p of 0.478 under the strict one. The result is therefore definition-sensitive. The newer 23-asset H8 extension finds that financial integration modestly outpredicts raw function breadth; monetary/store use and supply absorption also survive 10% false-discovery control. These results remain exploratory and non-causal.
 
-**Next checkpoint:** preserve H1 for a genuinely later validation window, add a fourth H3 asset only from official exact-date events under the unchanged 0.5% materiality rule, and configure an archival ETH Beacon endpoint (BNB and legacy stkAAVE now have 365 days). The H8 out-of-sample design is frozen; its 365-day window ends 22 August 2027 and requires at least 292 observations per asset before estimation.
+**Next checkpoint:** preserve H1 for a genuinely later validation window, add a fourth H3 asset only from official exact-date events under the unchanged 0.5% materiality rule, and configure an archival ETH Beacon endpoint. The H4 primary design is now frozen as ETH and BNB consensus stake plus BTC, UNI, and ARB structural controls; legacy stkAAVE remains a separate case study. The H8 out-of-sample design is frozen; its 365-day window ends 22 August 2027 and requires at least 292 observations per asset before estimation.
 
 ## Phase 3 — Risk and market structure (exploratory refresh complete)
 

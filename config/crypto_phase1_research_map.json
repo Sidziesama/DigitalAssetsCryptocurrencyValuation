@@ -55,7 +55,7 @@
       "state": "partial_series",
       "dataset": "data/processed/00_foundation/crypto_h4_bnb_stake_daily.csv",
       "measure": "total_staked_native_units",
-      "note": "BNB consensus stake is complete for 90 days; legacy stkAAVE is a partial component; ETH requires an archival consensus endpoint."
+      "note": "BNB consensus stake and the separate legacy stkAAVE case study each cover 365 days; ETH requires an archival consensus endpoint."
     },
     "staked_supply_ratio": {
       "state": "not_collected",

@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 185,
+    "files": 186,
     "by_phase": {
       "00_foundation": 27,
       "01_classification": 64,
-      "02_valuation": 40,
+      "02_valuation": 41,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -268,6 +268,7 @@
         "crypto_h4_aave_legacy_stake"
       ],
       "read_by": [
+        "crypto_h4_analysis_readiness",
         "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [],
@@ -282,6 +283,7 @@
         "crypto_h4_bnb_stake"
       ],
       "read_by": [
+        "crypto_h4_analysis_readiness",
         "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
@@ -293,7 +295,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 65827,
+      "bytes": 66357,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -321,6 +323,7 @@
       "written_by": [
         "coinpaprika_market",
         "crypto_h2_expansion_readiness",
+        "crypto_h4_analysis_readiness",
         "historical"
       ],
       "read_by": [],
@@ -373,6 +376,7 @@
         "crypto_expansion_inputs",
         "crypto_h2_pilot_panel",
         "crypto_h3_supply_event_ledger",
+        "crypto_h4_analysis_readiness",
         "crypto_h4_readiness",
         "crypto_h8_verified_universe",
         "crypto_hypothesis_test_catalog",
@@ -1741,6 +1745,22 @@
     },
     {
       "phase": "02_valuation",
+      "file": "crypto_h4_analysis_readiness.json",
+      "kind": "summary",
+      "bytes": 2697,
+      "written_by": [
+        "crypto_h4_analysis_readiness"
+      ],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
       "file": "crypto_h8_breadth_pilot.csv",
       "kind": "table",
       "bytes": 252,
@@ -1889,7 +1909,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_test_catalog.json",
       "kind": "summary",
-      "bytes": 9676,
+      "bytes": 10004,
       "written_by": [
         "crypto_hypothesis_test_catalog"
       ],

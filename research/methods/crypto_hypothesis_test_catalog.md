@@ -7,7 +7,7 @@ This file is generated from the active research scope and empirical outputs. It 
 | H1 | estimated_expanded_exploratory_scope_sensitive | asset-day | The classification matrix defines the researched asset universe but is not a regressor in H1. |
 | H2 | estimated_exploratory_definition_sensitive | asset-day | VA_PROTOCOL and VA_BURN evidence determine the effective-dated capture state; the fee-by-capture interaction is the coefficient of interest. |
 | H3 | estimated_multiasset_low_power | asset-level mean of repeated supply events | VA_BURN and VA_SCARCITY motivate the supply mechanism, but exact event quantities and dates—not binary codes—enter the test. |
-| H4 | measurement_blocked | asset-day once three comparable positive-staking histories are complete | VA_STAKE selects positive-staking assets and structural non-staking controls; measured staked units must supply time variation. |
+| H4 | measurement_blocked | asset-day once both comparable consensus-staking histories are complete | VA_STAKE selects positive-staking assets and structural non-staking controls; measured staked units must supply time variation. |
 | H8 | estimated_exploratory_validation_window_frozen | asset cross-section | The complete 23 x 10 matrix is transformed into raw breadth and eight pre-specified group indicators; these are the regressors being compared. |
 
 ## H1 — Is greater network usage associated with higher network value?
@@ -84,7 +84,7 @@ This file is generated from the active research scope and empirical outputs. It 
 
 ## H4 — Does staking reduce liquid float and affect liquidity or risk?
 
-**Sample.** Fixed six-asset design: ETH, BNB, AAVE, BTC, UNI, and ARB
+**Sample.** Primary: ETH and BNB plus BTC, UNI, and ARB structural controls; legacy stkAAVE is a separate case study
 
 **Outcome.** turnover/liquidity proxy, volatility, and drawdown
 
@@ -96,15 +96,15 @@ This file is generated from the active research scope and empirical outputs. It 
 
 **Inference.** Not run. Estimation remains prohibited until the measurement-readiness rule is met and a final model specification is frozen.
 
-**Exact inputs.** `data/processed/00_foundation/crypto_h4_bnb_stake_daily.csv`, `data/processed/00_foundation/crypto_h4_aave_legacy_stake_daily.csv`, `data/processed/01_classification/crypto_h4_eth_stake_daily.csv`
+**Exact inputs.** `config/crypto_h4_analysis.json`, `data/processed/00_foundation/crypto_h4_bnb_stake_daily.csv`, `data/processed/00_foundation/crypto_h4_aave_legacy_stake_daily.csv`, `data/processed/01_classification/crypto_h4_eth_stake_daily.csv`, `data/processed/00_foundation/market_daily_coinpaprika.csv`
 
-**Exact outputs.** `data/processed/01_classification/crypto_h4_measurement_audit.json`
+**Exact outputs.** `data/processed/01_classification/crypto_h4_measurement_audit.json`, `data/processed/02_valuation/crypto_h4_analysis_readiness.json`
 
 **Current result.** Consensus assets ready=1; separate case studies ready=1; pooled estimation ready=False.
 
 **Main limitation.** ETH has no 365-day active-effective-balance history because no archival Beacon endpoint is configured; legacy stkAAVE is not comparable consensus stake.
 
-**Next gate.** Configure ETH_BEACON_ARCHIVE_API_URL and collect the exact 365-day ETH series.
+**Next gate.** Configure ETH_BEACON_ARCHIVE_API_URL and collect ETH active effective balance over the frozen common window. The model may not be estimated or retuned before this gate passes.
 
 ## H8 — Do theory-defined economic-function groups explain valuation better than a raw function count?
 

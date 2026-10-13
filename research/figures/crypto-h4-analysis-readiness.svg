@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="390" viewBox="0 0 940 390" role="img" aria-label="Frozen H4 primary design and data readiness">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="30" y="38" font-family="Arial" font-size="22" font-weight="700" fill="#17212b">H4 primary design: one input remains</text>
+<text x="30" y="63" font-family="Arial" font-size="13" fill="#647383">362-day common window · green = complete · red = missing · legacy stkAAVE remains separate</text>
+<rect x="30" y="105" width="150" height="105" rx="9" fill="#b6534c"/>
+<text x="105" y="138" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#ffffff">ETH stake</text>
+<text x="105" y="170" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#ffffff">0/362</text>
+<text x="105" y="194" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff">MISSING</text>
+<rect x="210" y="105" width="150" height="105" rx="9" fill="#287a52"/>
+<text x="285" y="138" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#ffffff">BNB stake</text>
+<text x="285" y="170" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#ffffff">362/362</text>
+<text x="285" y="194" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff">READY</text>
+<rect x="390" y="105" width="150" height="105" rx="9" fill="#287a52"/>
+<text x="465" y="138" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#ffffff">BTC market</text>
+<text x="465" y="170" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#ffffff">362/362</text>
+<text x="465" y="194" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff">READY</text>
+<rect x="570" y="105" width="150" height="105" rx="9" fill="#287a52"/>
+<text x="645" y="138" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#ffffff">UNI market</text>
+<text x="645" y="170" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#ffffff">362/362</text>
+<text x="645" y="194" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff">READY</text>
+<rect x="750" y="105" width="150" height="105" rx="9" fill="#287a52"/>
+<text x="825" y="138" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#ffffff">ARB market</text>
+<text x="825" y="170" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#ffffff">362/362</text>
+<text x="825" y="194" text-anchor="middle" font-family="Arial" font-size="12" fill="#ffffff">READY</text>
+<line x1="105" y1="235" x2="825" y2="235" stroke="#9aa7b2" stroke-width="2"/>
+<rect x="235" y="275" width="470" height="72" rx="9" fill="#eef2f5" stroke="#9aa7b2"/>
+<text x="470" y="303" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#17212b">ESTIMATION LOCKED</text>
+<text x="470" y="329" text-anchor="middle" font-family="Arial" font-size="13" fill="#647383">Unlock only after ETH active effective balance reaches 362/362</text>
+</svg>

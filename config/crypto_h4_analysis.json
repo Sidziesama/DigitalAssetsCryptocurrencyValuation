@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "hypothesis": "H4",
+  "design_frozen_on": "2026-10-12",
+  "study_start": "2025-08-25",
+  "study_end": "2026-08-21",
+  "primary_sample": {
+    "consensus_staking_assets": ["crypto_eth", "crypto_bnb"],
+    "structural_nonstaking_controls": ["crypto_btc", "crypto_uni", "crypto_arb"]
+  },
+  "separate_case_study": ["crypto_aave"],
+  "minimum_common_days": 350,
+  "predictor": "lagged_staked_share_of_circulating_supply",
+  "outcomes": [
+    "volume_to_market_cap",
+    "realized_volatility_30d_annualized",
+    "drawdown_from_90d_high"
+  ],
+  "controls": ["log_market_cap", "btc_log_return"],
+  "fixed_effects": ["asset", "date"],
+  "inference": "wild_cluster_bootstrap_by_asset_exact_when_feasible",
+  "estimability_rule": "Estimate the primary panel only when both ETH and BNB have complete staking histories over the common market window. Structural controls enter with staked share equal to zero. Analyze legacy stkAAVE separately and never pool it with consensus stake.",
+  "interpretation": "Associational measurement test; no causal or investment claim. Daily volume divided by market capitalization is a turnover proxy, not spread, depth, price impact, or executable liquidity."
+}

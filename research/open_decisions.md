@@ -83,6 +83,8 @@ The reported kappa of 1.00 rests on ten decisions reviewed inside the project. A
 ### C1. Archival Ethereum consensus endpoint — **BLOCKING, all of H4**
 The exact effective-balance collector is implemented and correctly rejects the post-EIP-7251 validator-count shortcut, but public beacon endpoints reject historical validator state. An archive-tier provider is required. Small recurring cost; only the principal investigator can approve it.
 
+The estimation gate has been corrected and frozen. The fixed universe contains two comparable consensus-staking assets, ETH and BNB—not three. The primary panel therefore uses those two assets plus BTC, UNI, and ARB as structural non-staking controls. Legacy stkAAVE is analyzed separately. All market inputs and BNB measurements cover the common 25 August 2025–21 August 2026 window; only ETH remains missing.
+
 ### C2. Aave staking boundary — **RESOLVED**
 Legacy stkAAVE now has a complete 365-day series and remains a separate protocol-risk-stake case study. Umbrella stakes aTokens and GHO rather than AAVE, so it is correctly excluded from the AAVE-token staking series and cannot substitute for consensus stake.
 

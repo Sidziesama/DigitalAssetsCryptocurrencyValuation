@@ -122,7 +122,7 @@
           "module": "crypto_h4_aave_legacy_stake",
           "args": [
             "--start",
-            "2026-05-25",
+            "2025-08-23",
             "--end",
             "2026-08-22"
           ]
@@ -131,7 +131,7 @@
           "module": "crypto_h4_bnb_stake",
           "args": [
             "--start",
-            "2026-05-25",
+            "2025-08-23",
             "--end",
             "2026-08-22"
           ]
@@ -140,7 +140,7 @@
           "module": "crypto_h4_eth_stake",
           "args": [
             "--start",
-            "2026-05-25",
+            "2025-08-23",
             "--end",
             "2026-08-22"
           ],
@@ -362,6 +362,11 @@
         {
           "module": "crypto_h4_measurement_audit",
           "args": []
+        },
+        {
+          "module": "crypto_h4_analysis_readiness",
+          "args": [],
+          "note": "Audits the frozen five-asset primary design and prohibits estimation until ETH and BNB histories are complete."
         },
         {
           "module": "crypto_h8_breadth_pilot",

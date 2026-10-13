@@ -1,0 +1,99 @@
+{
+  "status": "h4_analysis_blocked_on_eth_history",
+  "design_frozen_on": "2026-10-12",
+  "study_window": {
+    "start": "2025-08-25",
+    "end": "2026-08-21",
+    "calendar_days": 362
+  },
+  "primary_assets": [
+    "crypto_eth",
+    "crypto_bnb",
+    "crypto_btc",
+    "crypto_uni",
+    "crypto_arb"
+  ],
+  "consensus_staking_assets_required": 2,
+  "consensus_staking_assets_ready": 1,
+  "market_coverage": [
+    {
+      "asset_id": "crypto_eth",
+      "observed_days": 362,
+      "expected_days": 362,
+      "first_date": "2025-08-25",
+      "last_date": "2026-08-21",
+      "complete": true
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "observed_days": 362,
+      "expected_days": 362,
+      "first_date": "2025-08-25",
+      "last_date": "2026-08-21",
+      "complete": true
+    },
+    {
+      "asset_id": "crypto_btc",
+      "observed_days": 362,
+      "expected_days": 362,
+      "first_date": "2025-08-25",
+      "last_date": "2026-08-21",
+      "complete": true
+    },
+    {
+      "asset_id": "crypto_uni",
+      "observed_days": 362,
+      "expected_days": 362,
+      "first_date": "2025-08-25",
+      "last_date": "2026-08-21",
+      "complete": true
+    },
+    {
+      "asset_id": "crypto_arb",
+      "observed_days": 362,
+      "expected_days": 362,
+      "first_date": "2025-08-25",
+      "last_date": "2026-08-21",
+      "complete": true
+    },
+    {
+      "asset_id": "crypto_aave",
+      "observed_days": 362,
+      "expected_days": 362,
+      "first_date": "2025-08-25",
+      "last_date": "2026-08-21",
+      "complete": true
+    }
+  ],
+  "stake_coverage": [
+    {
+      "asset_id": "crypto_eth",
+      "observed_days": 0,
+      "expected_days": 362,
+      "first_date": null,
+      "last_date": null,
+      "complete": false
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "observed_days": 362,
+      "expected_days": 362,
+      "first_date": "2025-08-25",
+      "last_date": "2026-08-21",
+      "complete": true
+    }
+  ],
+  "aave_case_study_coverage": {
+    "asset_id": "crypto_aave",
+    "observed_days": 362,
+    "expected_days": 362,
+    "first_date": "2025-08-25",
+    "last_date": "2026-08-21",
+    "complete": true
+  },
+  "market_ready": true,
+  "staking_measurement_ready": false,
+  "estimation_allowed": false,
+  "resolved_design_issue": "The earlier three-comparable-positive-series gate was impossible in the fixed universe. The frozen primary design uses the two comparable consensus-staking assets, ETH and BNB, plus BTC, UNI, and ARB structural controls. Legacy stkAAVE remains separate.",
+  "next_required": "Collect ETH active effective balance for every day in the frozen common window; do not estimate or retune the model before that gate passes."
+}
