@@ -4,9 +4,11 @@ from src.pipeline.crypto_hypothesis_register import QUESTIONS, build
 class Tests(unittest.TestCase):
     def test_register_covers_active_hypotheses(self):
         findings={"findings":{
-            "H1":{"transaction_count_coefficient":1,"transaction_count_exact_p":.2},
+            "H1":{"assets":9,"rows":792,"active_addresses_coefficient":.04,"active_addresses_exact_p":.3,"transaction_count_coefficient":-.04,"transaction_count_exact_p":.2},
             "H2":{"pooled_market_cap_interaction":.1,"pooled_market_cap_exact_p":.08},
-            "H3":{"assets":4,"assets_with_within_supply_variation":2,"supply_growth_coefficient":1,"exact_p":.5},
+            "H3":{"assets":4,"assets_with_within_supply_variation":2,"supply_growth_coefficient":1,"exact_p":.5,
+                  "supply_events_estimated":17,"supply_event_assets":["a","b","c"],"supply_event_mean_direction_adjusted_car":-.01,
+                  "supply_events_matching_predicted_sign":8,"supply_event_asset_sign_flip_p":.25},
             "H4":{"assets":6,"positive_assets_with_historical_staking":1},
             "H8":{"verified_universe_assets":23,"verified_universe_decision":"theory_groups_favored","verified_universe_best_group":"bundle_financial_integration","verified_universe_best_group_loo_rmse":1.7,"verified_universe_raw_breadth_loo_rmse":1.8}}}
         strict={"results":[{"specification":"pooled_market_cap","strict_coefficient":.05,"strict_p":.4}]}

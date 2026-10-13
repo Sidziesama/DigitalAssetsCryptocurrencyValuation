@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="350" viewBox="0 0 920 350" role="img" aria-label="H1 activity coefficients by measurement scope">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="30" font-family="Arial" font-size="20" font-weight="600" fill="#17212b">H1 activity coefficients depend on measurement scope</text>
+<text x="24" y="52" font-family="Arial" font-size="12" fill="#647383">Asset and date fixed effects; exact asset-cluster p-values shown. Neither primary coefficient is confirmed.</text>
+<line x1="455" y1="72" x2="455" y2="310" stroke="#647383" stroke-width="1.5"/>
+<text x="24" y="107" font-family="Arial" font-size="13" fill="#17212b">Native networks: Active addresses</text>
+<rect x="455.0" y="92" width="185.3" height="22" fill="#3478b8"/>
+<text x="648.3" y="107" text-anchor="start" font-family="Arial" font-size="12" fill="#17212b">+0.0378 · p=0.344</text>
+<text x="24" y="165" font-family="Arial" font-size="13" fill="#17212b">Native networks: Transactions</text>
+<rect x="248.9" y="150" width="206.1" height="22" fill="#3478b8"/>
+<text x="240.9" y="165" text-anchor="end" font-family="Arial" font-size="12" fill="#17212b">-0.0420 · p=0.137</text>
+<text x="24" y="223" font-family="Arial" font-size="13" fill="#17212b">Networks + tokens: Active addresses</text>
+<rect x="455.0" y="208" width="286.1" height="22" fill="#8aa8c2"/>
+<text x="749.1" y="223" text-anchor="start" font-family="Arial" font-size="12" fill="#17212b">+0.0583 · p=0.281</text>
+<text x="24" y="281" font-family="Arial" font-size="13" fill="#17212b">Networks + tokens: Transactions</text>
+<rect x="455.0" y="266" width="320.0" height="22" fill="#8aa8c2"/>
+<text x="783.0" y="281" text-anchor="start" font-family="Arial" font-size="12" fill="#17212b">+0.0652 · p=0.272</text>
+<text x="455" y="337" text-anchor="middle" font-family="Arial" font-size="12" fill="#647383">Coefficient on lagged log(1 + activity); zero is the vertical line</text>
+</svg>

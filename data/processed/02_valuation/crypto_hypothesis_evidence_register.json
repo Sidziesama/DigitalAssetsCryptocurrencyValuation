@@ -11,12 +11,12 @@
   "hypotheses": [
     {
       "hypothesis": "H1",
-      "sample": "4 assets",
-      "test_state": "estimated_exploratory",
-      "result": "suggestive_not_confirmed",
-      "key_statistic": "transactions coefficient=0.1122; p=0.2500",
-      "advisory_interpretation": "Usage is economically relevant to monitor, but the present sample cannot establish a general valuation relationship.",
-      "next_action": "Expand primary-source activity coverage without selecting assets from observed returns.",
+      "sample": "9 native networks; 792 asset-days",
+      "test_state": "estimated_expanded_exploratory",
+      "result": "mixed_not_confirmed",
+      "key_statistic": "addresses=0.0378, p=0.3438; transactions=-0.0420, p=0.1367",
+      "advisory_interpretation": "The expanded native-network sample gives mixed usage signs and no confirmed relationship; pooling token-contract activity changes the result and is not the primary test.",
+      "next_action": "Extend the fixed common window while preserving native-network and token-contract measurement scopes.",
       "research_question": "Is greater network usage associated with higher network value?"
     },
     {
@@ -31,12 +31,12 @@
     },
     {
       "hypothesis": "H3",
-      "sample": "16 events across 2 assets",
+      "sample": "17 events across 3 assets",
       "test_state": "estimated_multiasset_low_power",
       "result": "not_supported",
-      "key_statistic": "direction-adjusted mean=-0.0120; predicted-sign events=8/16; asset sign-flip p=0.5000",
-      "advisory_interpretation": "The ARB unlock and BNB burn sample does not support the predicted supply-shock return direction; two assets leave the test extremely low-powered.",
-      "next_action": "Preserve the two-asset null result and add independently sourced assets to improve power without selecting on returns.",
+      "key_statistic": "direction-adjusted mean=-0.0113; predicted-sign events=8/17; asset sign-flip p=0.2500",
+      "advisory_interpretation": "The 3-asset supply-event sample does not support the predicted return direction and remains low-powered.",
+      "next_action": "Preserve the current null result and add independently sourced assets without selecting on returns.",
       "research_question": "Is greater circulating-supply growth associated with weaker returns?"
     },
     {

@@ -4,10 +4,10 @@
     {
       "hypothesis": "H1",
       "question": "Is greater network usage associated with higher network value?",
-      "state": "estimated_exploratory",
+      "state": "estimated_expanded_exploratory_scope_sensitive",
       "matrix_role": "The classification matrix defines the researched asset universe but is not a regressor in H1.",
       "observation_unit": "asset-day",
-      "sample": "BTC, ETH, UNI, and AAVE; 352 observations across 88 common dates",
+      "sample": "9 native networks; 792 observations across 88 common dates",
       "outcome": "log market capitalization",
       "predictors": [
         "lagged log(1 + active addresses)",
@@ -18,17 +18,19 @@
         "date fixed effects"
       ],
       "formula": "log(MarketCap_it) = asset_i + date_t + beta1*log1p(ActiveAddresses_i,t-1) + beta2*log1p(Transactions_i,t-1) + error_it",
-      "inference": "Exact wild-cluster sign enumeration across four asset clusters (16 assignments), plus leave-one-asset-out sign stability.",
+      "inference": "Exact wild-cluster sign enumeration across 9 asset clusters, plus leave-one-asset-out sign stability.",
       "input_files": [
-        "data/processed/02_valuation/crypto_h2_exploratory_daily.csv"
+        "data/processed/00_foundation/crypto_fundamentals_daily_coinmetrics.csv",
+        "data/processed/01_classification/crypto_expansion_activity_daily.csv",
+        "data/processed/00_foundation/market_daily_coinpaprika.csv"
       ],
       "output_files": [
-        "data/processed/02_valuation/crypto_h1_activity_pilot.json",
-        "data/processed/02_valuation/crypto_h1_activity_pilot.csv"
+        "data/processed/02_valuation/crypto_h1_activity_expansion.json",
+        "data/processed/02_valuation/crypto_h1_activity_expansion_panel.csv"
       ],
-      "current_result": "Transaction coefficient 0.1122, exact p=0.2500; positive but not confirmed.",
-      "main_limitation": "Four assets cannot support market-wide generalization, and addresses are not unique users.",
-      "next_gate": "Expand provider-defined activity coverage without choosing assets from observed returns."
+      "current_result": "Active-address coefficient 0.0378, exact p=0.3438; transaction coefficient -0.0420, exact p=0.1367; neither confirmed.",
+      "main_limitation": "Provider activity definitions differ across networks, addresses are not users, and active-address sign stability fails when XLM is omitted.",
+      "next_gate": "Collect a longer fixed common window and preserve native-network versus token-contract scope separation."
     },
     {
       "hypothesis": "H2",

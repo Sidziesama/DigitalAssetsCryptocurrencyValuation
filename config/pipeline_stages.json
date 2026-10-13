@@ -332,6 +332,10 @@
           "args": []
         },
         {
+          "module": "crypto_h1_activity_expansion",
+          "args": []
+        },
+        {
           "module": "crypto_h3_supply_pilot",
           "args": []
         },

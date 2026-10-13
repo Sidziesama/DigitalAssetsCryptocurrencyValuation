@@ -6,7 +6,8 @@ from src.pipeline.crypto_hypothesis_test_catalog import ACTIVE, build, render
 class Tests(unittest.TestCase):
     def test_catalog_covers_scope_and_documents_matrix_roles(self):
         findings = {"active_hypotheses": ACTIVE, "findings": {
-            "H1": {"transaction_count_coefficient": .1, "transaction_count_exact_p": .2},
+            "H1": {"assets": 9, "rows": 792, "dates": 88, "active_addresses_coefficient": .05,
+                   "active_addresses_exact_p": .3, "transaction_count_coefficient": -.1, "transaction_count_exact_p": .2},
             "H2": {"pooled_market_cap_interaction": .3, "pooled_market_cap_exact_p": .4}
         }}
         strict = {"results": [{"specification": "pooled_market_cap", "strict_coefficient": .2, "strict_p": .5}]}

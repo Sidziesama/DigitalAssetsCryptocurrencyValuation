@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "document_version": "1.0-frozen-before-expansion-estimation",
+  "status": "frozen_before_expansion_estimation",
+  "freeze_date": "2026-10-12",
+  "hypothesis": "H1",
+  "research_question": "Within comparable native networks, is greater observed ledger activity associated with higher network market value?",
+  "window": {"start": "2026-05-25", "end": "2026-08-22"},
+  "activity_inputs": [
+    "data/processed/00_foundation/crypto_fundamentals_daily_coinmetrics.csv",
+    "data/processed/01_classification/crypto_expansion_activity_daily.csv"
+  ],
+  "market_input": "data/processed/00_foundation/market_daily_coinpaprika.csv",
+  "primary_assets": [
+    "crypto_btc", "crypto_eth", "crypto_ada", "crypto_bch", "crypto_ltc",
+    "crypto_trx", "crypto_xlm", "crypto_xrp", "crypto_zec"
+  ],
+  "token_contract_sensitivity_assets": ["crypto_aave", "crypto_uni", "crypto_link"],
+  "asset_selection_rule": "Include active-universe assets with complete Coin Metrics Community AdrActCnt and TxCnt coverage over the fixed 90-day source window. Exclude DOGE by the prior universe decision and XMR because AdrActCnt is unavailable. The primary sample is restricted to native networks; ERC-20 token-contract activity is retained only as a labeled sensitivity.",
+  "variables": {
+    "outcome": "log_market_cap_usd",
+    "predictors": ["log1p_active_addresses_lag1", "log1p_transaction_count_lag1"],
+    "lag": "one calendar day",
+    "fixed_effects": ["asset", "date"]
+  },
+  "inference": {
+    "method": "CR1 asset-clustered t statistic with exhaustive Rademacher wild-cluster bootstrap under the null",
+    "primary_cluster_unit": "asset",
+    "leave_one_asset_out": true,
+    "two_sided": true
+  },
+  "reporting": [
+    "Report the native-network sample as primary and the pooled network-plus-token sample as sensitivity.",
+    "Call active addresses ledger addresses, not users.",
+    "Do not interpret provider transaction counts as economically identical across chains.",
+    "Treat coefficients as contemporaneous associations, not causal network effects or return forecasts.",
+    "Do not add or remove assets based on estimated coefficients or p-values."
+  ]
+}

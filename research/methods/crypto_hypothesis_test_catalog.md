@@ -4,7 +4,7 @@ This file is generated from the active research scope and empirical outputs. It 
 
 | ID | State | Observation unit | Matrix role |
 |---|---|---|---|
-| H1 | estimated_exploratory | asset-day | The classification matrix defines the researched asset universe but is not a regressor in H1. |
+| H1 | estimated_expanded_exploratory_scope_sensitive | asset-day | The classification matrix defines the researched asset universe but is not a regressor in H1. |
 | H2 | estimated_exploratory_definition_sensitive | asset-day | VA_PROTOCOL and VA_BURN evidence determine the effective-dated capture state; the fee-by-capture interaction is the coefficient of interest. |
 | H3 | estimated_multiasset_low_power | asset-level mean of repeated supply events | VA_BURN and VA_SCARCITY motivate the supply mechanism, but exact event quantities and dates—not binary codes—enter the test. |
 | H4 | measurement_blocked | asset-day once three comparable positive-staking histories are complete | VA_STAKE selects positive-staking assets and structural non-staking controls; measured staked units must supply time variation. |
@@ -12,7 +12,7 @@ This file is generated from the active research scope and empirical outputs. It 
 
 ## H1 — Is greater network usage associated with higher network value?
 
-**Sample.** BTC, ETH, UNI, and AAVE; 352 observations across 88 common dates
+**Sample.** 9 native networks; 792 observations across 88 common dates
 
 **Outcome.** log market capitalization
 
@@ -22,17 +22,17 @@ This file is generated from the active research scope and empirical outputs. It 
 
 **Model.** `log(MarketCap_it) = asset_i + date_t + beta1*log1p(ActiveAddresses_i,t-1) + beta2*log1p(Transactions_i,t-1) + error_it`
 
-**Inference.** Exact wild-cluster sign enumeration across four asset clusters (16 assignments), plus leave-one-asset-out sign stability.
+**Inference.** Exact wild-cluster sign enumeration across 9 asset clusters, plus leave-one-asset-out sign stability.
 
-**Exact inputs.** `data/processed/02_valuation/crypto_h2_exploratory_daily.csv`
+**Exact inputs.** `data/processed/00_foundation/crypto_fundamentals_daily_coinmetrics.csv`, `data/processed/01_classification/crypto_expansion_activity_daily.csv`, `data/processed/00_foundation/market_daily_coinpaprika.csv`
 
-**Exact outputs.** `data/processed/02_valuation/crypto_h1_activity_pilot.json`, `data/processed/02_valuation/crypto_h1_activity_pilot.csv`
+**Exact outputs.** `data/processed/02_valuation/crypto_h1_activity_expansion.json`, `data/processed/02_valuation/crypto_h1_activity_expansion_panel.csv`
 
-**Current result.** Transaction coefficient 0.1122, exact p=0.2500; positive but not confirmed.
+**Current result.** Active-address coefficient 0.0378, exact p=0.3438; transaction coefficient -0.0420, exact p=0.1367; neither confirmed.
 
-**Main limitation.** Four assets cannot support market-wide generalization, and addresses are not unique users.
+**Main limitation.** Provider activity definitions differ across networks, addresses are not users, and active-address sign stability fails when XLM is omitted.
 
-**Next gate.** Expand provider-defined activity coverage without choosing assets from observed returns.
+**Next gate.** Collect a longer fixed common window and preserve native-network versus token-contract scope separation.
 
 ## H2 — Is usage more valuable when fees mechanically reach the token or holders?
 

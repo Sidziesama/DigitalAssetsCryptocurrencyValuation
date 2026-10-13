@@ -10,14 +10,17 @@
   "headline": "In the verified 23-asset classification universe, financial integration is the strongest single valuation indicator and modestly outpredicts raw function breadth; H2 fee-and-capture evidence remains definition-sensitive.",
   "findings": {
     "H1": {
-      "status": "exploratory_positive_association_not_confirmed",
-      "assets": 4,
-      "rows": 352,
-      "active_addresses_coefficient": 0.02843860020498784,
-      "active_addresses_exact_p": 0.5,
-      "transaction_count_coefficient": 0.11223930210248013,
-      "transaction_count_exact_p": 0.25,
-      "plain_finding": "Active-address and transaction-count coefficients are positive in the four-asset panel, and transaction count remains positive in every leave-one-out sample. Exact four-cluster inference does not reject zero, so H1 remains suggestive and cannot be generalized beyond BTC, ETH, UNI, and AAVE."
+      "status": "expanded_native_network_associations_mixed_not_confirmed",
+      "assets": 9,
+      "rows": 792,
+      "dates": 88,
+      "active_addresses_coefficient": 0.037783427794080185,
+      "active_addresses_exact_p": 0.34375,
+      "transaction_count_coefficient": -0.04201798756596002,
+      "transaction_count_exact_p": 0.13671875,
+      "pilot_transaction_count_coefficient": 0.11223930210248013,
+      "pilot_transaction_count_exact_p": 0.25,
+      "plain_finding": "The frozen nine-native-network expansion gives a positive active-address coefficient (0.0378, exact p=0.344) and a negative transaction-count coefficient (-0.0420, exact p=0.137). Neither is confirmed, and the active-address sign reverses when XLM is omitted. A twelve-asset sensitivity that mixes native-network and token-contract activity makes both coefficients positive, demonstrating measurement-scope sensitivity rather than stronger evidence for H1."
     },
     "H2": {
       "status": "exploratory_evidence_at_10pct_not_confirmatory",

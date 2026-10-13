@@ -1,0 +1,209 @@
+{
+  "status": "h1_activity_expansion_complete_exploratory",
+  "design_frozen_before_estimation": true,
+  "primary": {
+    "sample": "native_network_primary",
+    "rows": 792,
+    "assets": [
+      "crypto_ada",
+      "crypto_bch",
+      "crypto_btc",
+      "crypto_eth",
+      "crypto_ltc",
+      "crypto_trx",
+      "crypto_xlm",
+      "crypto_xrp",
+      "crypto_zec"
+    ],
+    "dates": 88,
+    "coefficients": {
+      "log1p_active_addresses_lag1": 0.037783427794080185,
+      "log1p_transaction_count_lag1": -0.04201798756596002
+    },
+    "within_r_squared": 0.06673670901714113,
+    "inference": {
+      "log1p_active_addresses_lag1": {
+        "coefficient": 0.037783427794080185,
+        "cluster_robust_standard_error_cr1": 0.008653711892415906,
+        "observed_t": 4.366152728887761,
+        "wild_cluster_bootstrap_p_two_sided": 0.34375,
+        "bootstrap_assignments": 512,
+        "clusters": 9,
+        "minimum_two_sided_p_resolution": 0.00390625
+      },
+      "log1p_transaction_count_lag1": {
+        "coefficient": -0.04201798756596002,
+        "cluster_robust_standard_error_cr1": 0.0211086792033226,
+        "observed_t": -1.9905550300535244,
+        "wild_cluster_bootstrap_p_two_sided": 0.13671875,
+        "bootstrap_assignments": 512,
+        "clusters": 9,
+        "minimum_two_sided_p_resolution": 0.00390625
+      }
+    },
+    "leave_one_asset_out": [
+      {
+        "excluded_asset": "crypto_ada",
+        "log1p_active_addresses_lag1": 0.04020012766575181,
+        "log1p_transaction_count_lag1": -0.03379712295315529
+      },
+      {
+        "excluded_asset": "crypto_bch",
+        "log1p_active_addresses_lag1": 0.040596303341515504,
+        "log1p_transaction_count_lag1": -0.04036777039496689
+      },
+      {
+        "excluded_asset": "crypto_btc",
+        "log1p_active_addresses_lag1": 0.03897051873673977,
+        "log1p_transaction_count_lag1": -0.05184234202654004
+      },
+      {
+        "excluded_asset": "crypto_eth",
+        "log1p_active_addresses_lag1": 0.035082636441163044,
+        "log1p_transaction_count_lag1": -0.059430670255551626
+      },
+      {
+        "excluded_asset": "crypto_ltc",
+        "log1p_active_addresses_lag1": 0.037840549764187395,
+        "log1p_transaction_count_lag1": -0.04466513645639327
+      },
+      {
+        "excluded_asset": "crypto_trx",
+        "log1p_active_addresses_lag1": 0.03499685522225423,
+        "log1p_transaction_count_lag1": -0.04354857216636054
+      },
+      {
+        "excluded_asset": "crypto_xlm",
+        "log1p_active_addresses_lag1": -0.015099005203604856,
+        "log1p_transaction_count_lag1": -0.012900467158021301
+      },
+      {
+        "excluded_asset": "crypto_xrp",
+        "log1p_active_addresses_lag1": 0.04380338967352745,
+        "log1p_transaction_count_lag1": -0.035373639632553654
+      },
+      {
+        "excluded_asset": "crypto_zec",
+        "log1p_active_addresses_lag1": 0.0356751952656865,
+        "log1p_transaction_count_lag1": -0.036652775929665475
+      }
+    ]
+  },
+  "sensitivity": {
+    "sample": "network_plus_token_sensitivity",
+    "rows": 1056,
+    "assets": [
+      "crypto_aave",
+      "crypto_ada",
+      "crypto_bch",
+      "crypto_btc",
+      "crypto_eth",
+      "crypto_link",
+      "crypto_ltc",
+      "crypto_trx",
+      "crypto_uni",
+      "crypto_xlm",
+      "crypto_xrp",
+      "crypto_zec"
+    ],
+    "dates": 88,
+    "coefficients": {
+      "log1p_active_addresses_lag1": 0.058328347860731905,
+      "log1p_transaction_count_lag1": 0.06523456443784054
+    },
+    "within_r_squared": 0.12121993567192724,
+    "inference": {
+      "log1p_active_addresses_lag1": {
+        "coefficient": 0.058328347860731905,
+        "cluster_robust_standard_error_cr1": 0.01128479135263211,
+        "observed_t": 5.16875731575907,
+        "wild_cluster_bootstrap_p_two_sided": 0.28125,
+        "bootstrap_assignments": 4096,
+        "clusters": 12,
+        "minimum_two_sided_p_resolution": 0.00048828125
+      },
+      "log1p_transaction_count_lag1": {
+        "coefficient": 0.06523456443784054,
+        "cluster_robust_standard_error_cr1": 0.038211085220108305,
+        "observed_t": 1.7072156957089333,
+        "wild_cluster_bootstrap_p_two_sided": 0.2724609375,
+        "bootstrap_assignments": 4096,
+        "clusters": 12,
+        "minimum_two_sided_p_resolution": 0.00048828125
+      }
+    },
+    "leave_one_asset_out": [
+      {
+        "excluded_asset": "crypto_aave",
+        "log1p_active_addresses_lag1": 0.05296987538100946,
+        "log1p_transaction_count_lag1": 0.054012910049942894
+      },
+      {
+        "excluded_asset": "crypto_ada",
+        "log1p_active_addresses_lag1": 0.060803697433560844,
+        "log1p_transaction_count_lag1": 0.06715826804153137
+      },
+      {
+        "excluded_asset": "crypto_bch",
+        "log1p_active_addresses_lag1": 0.06050088882864931,
+        "log1p_transaction_count_lag1": 0.06789113593164116
+      },
+      {
+        "excluded_asset": "crypto_btc",
+        "log1p_active_addresses_lag1": 0.06119731728608392,
+        "log1p_transaction_count_lag1": 0.06860099561912857
+      },
+      {
+        "excluded_asset": "crypto_eth",
+        "log1p_active_addresses_lag1": 0.05861247065087255,
+        "log1p_transaction_count_lag1": 0.06936796893148726
+      },
+      {
+        "excluded_asset": "crypto_link",
+        "log1p_active_addresses_lag1": 0.0569013315494347,
+        "log1p_transaction_count_lag1": 0.06641476017097372
+      },
+      {
+        "excluded_asset": "crypto_ltc",
+        "log1p_active_addresses_lag1": 0.06041610548270401,
+        "log1p_transaction_count_lag1": 0.06420114473439482
+      },
+      {
+        "excluded_asset": "crypto_trx",
+        "log1p_active_addresses_lag1": 0.058463095644862746,
+        "log1p_transaction_count_lag1": 0.06717744776550302
+      },
+      {
+        "excluded_asset": "crypto_uni",
+        "log1p_active_addresses_lag1": 0.05297634769588251,
+        "log1p_transaction_count_lag1": 0.019706341176505243
+      },
+      {
+        "excluded_asset": "crypto_xlm",
+        "log1p_active_addresses_lag1": 0.010339505355317857,
+        "log1p_transaction_count_lag1": 0.09989882977700956
+      },
+      {
+        "excluded_asset": "crypto_xrp",
+        "log1p_active_addresses_lag1": 0.06511981722031474,
+        "log1p_transaction_count_lag1": 0.07148436862534632
+      },
+      {
+        "excluded_asset": "crypto_zec",
+        "log1p_active_addresses_lag1": 0.057729349667076234,
+        "log1p_transaction_count_lag1": 0.07615095377545063
+      }
+    ]
+  },
+  "excluded_by_rule": {
+    "crypto_doge": "prior active-universe exclusion",
+    "crypto_xmr": "active-address metric unavailable"
+  },
+  "interpretation_guardrails": [
+    "Report the native-network sample as primary and the pooled network-plus-token sample as sensitivity.",
+    "Call active addresses ledger addresses, not users.",
+    "Do not interpret provider transaction counts as economically identical across chains.",
+    "Treat coefficients as contemporaneous associations, not causal network effects or return forecasts.",
+    "Do not add or remove assets based on estimated coefficients or p-values."
+  ]
+}

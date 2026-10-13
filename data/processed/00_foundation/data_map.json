@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 178,
+    "files": 180,
     "by_phase": {
       "00_foundation": 24,
       "01_classification": 64,
-      "02_valuation": 36,
+      "02_valuation": 38,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -28,7 +28,6 @@
       "crypto_evidence_tranche_a_blind_review.csv",
       "crypto_evidence_tranche_a_summary.json",
       "crypto_expansion_activity_components.csv",
-      "crypto_expansion_activity_daily.csv",
       "crypto_expansion_collateral_detail.csv",
       "crypto_expansion_venus_current_eligibility.csv",
       "crypto_h2_expansion_evidence_audit.csv",
@@ -195,9 +194,11 @@
         "crypto_collateral",
         "crypto_h2_pilot_panel",
         "crypto_h3_supply_pilot",
+        "crypto_hypothesis_test_catalog",
         "crypto_monetary"
       ],
       "named_in_config": [
+        "crypto_h1_activity_expansion.json",
         "crypto_phase1_research_map.json"
       ],
       "orphan": false
@@ -250,7 +251,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 63172,
+      "bytes": 64014,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -335,7 +336,9 @@
         "crypto_hypothesis_test_catalog",
         "stablecoin_trading_activity"
       ],
-      "named_in_config": [],
+      "named_in_config": [
+        "crypto_h1_activity_expansion.json"
+      ],
       "orphan": false
     },
     {
@@ -710,8 +713,12 @@
       "written_by": [
         "crypto_expansion_inputs"
       ],
-      "read_by": [],
-      "named_in_config": [],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
+      "named_in_config": [
+        "crypto_h1_activity_expansion.json"
+      ],
       "orphan": false
     },
     {
@@ -1209,7 +1216,7 @@
       "phase": "01_classification",
       "file": "crypto_research_scope.json",
       "kind": "summary",
-      "bytes": 2025,
+      "bytes": 1967,
       "written_by": [
         "crypto_research_scope"
       ],
@@ -1324,7 +1331,7 @@
       "phase": "02_valuation",
       "file": "crypto_findings_summary.json",
       "kind": "summary",
-      "bytes": 6054,
+      "bytes": 6373,
       "written_by": [
         "crypto_findings_summary"
       ],
@@ -1339,15 +1346,44 @@
     },
     {
       "phase": "02_valuation",
+      "file": "crypto_h1_activity_expansion.json",
+      "kind": "summary",
+      "bytes": 7131,
+      "written_by": [
+        "crypto_findings_summary",
+        "crypto_h1_activity_expansion"
+      ],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h1_activity_expansion_panel.csv",
+      "kind": "table",
+      "bytes": 129872,
+      "written_by": [
+        "crypto_h1_activity_expansion"
+      ],
+      "read_by": [
+        "crypto_hypothesis_test_catalog"
+      ],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
       "file": "crypto_h1_activity_pilot.csv",
       "kind": "table",
       "bytes": 152,
       "written_by": [
         "crypto_h1_activity_pilot"
       ],
-      "read_by": [
-        "crypto_hypothesis_test_catalog"
-      ],
+      "read_by": [],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -1363,8 +1399,7 @@
       ],
       "read_by": [
         "checkpoint_readiness",
-        "crypto_findings_summary",
-        "crypto_hypothesis_test_catalog"
+        "crypto_findings_summary"
       ],
       "named_in_config": [
         "crypto_phase1_research_map.json",
@@ -1535,10 +1570,10 @@
       "kind": "summary",
       "bytes": 1080,
       "written_by": [
-        "crypto_findings_summary",
         "crypto_h3_supply_event_analysis"
       ],
       "read_by": [
+        "crypto_findings_summary",
         "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
@@ -1759,7 +1794,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.csv",
       "kind": "table",
-      "bytes": 2289,
+      "bytes": 2342,
       "written_by": [
         "crypto_hypothesis_register"
       ],
@@ -1773,7 +1808,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_evidence_register.json",
       "kind": "summary",
-      "bytes": 3521,
+      "bytes": 3574,
       "written_by": [
         "crypto_hypothesis_register"
       ],
@@ -1785,7 +1820,7 @@
       "phase": "02_valuation",
       "file": "crypto_hypothesis_test_catalog.json",
       "kind": "summary",
-      "bytes": 9380,
+      "bytes": 9636,
       "written_by": [
         "crypto_hypothesis_test_catalog"
       ],
