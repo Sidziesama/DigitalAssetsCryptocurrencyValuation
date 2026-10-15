@@ -1,6 +1,6 @@
-# Phase 1 expert panel survey
+# Cryptocurrency classification expert panel
 
-The survey that unblocks Phase 1. Design and rationale are in [`../survey_instrument.md`](../survey_instrument.md); this folder holds the runnable version.
+The survey provides external feedback on the completed classification rules. Design and rationale are in [`../survey_instrument.md`](../survey_instrument.md); this folder holds the runnable version. It does not retroactively turn the single-coded 23-asset matrix into an independently replicated dataset.
 
 ## Build the Google Form
 
@@ -26,13 +26,13 @@ Six sections, about 12 minutes plus an optional 20.
 | Where the lines sit | 6 scenarios + reasoning | The boundary rules, with assets deliberately unnamed |
 | Where materiality begins | 5 | Collateral and monetary thresholds, binary versus graded, what to do with unknowns |
 | What would actually be useful | 4 | Whether risk profile beats fair value as an output |
-| Blind classification (optional) | 12 cells + 1 | Produces the external reliability statistic |
+| Blind classification (optional) | 12 cells + 1 | Produces sampled-cell agreement evidence |
 
 The optional section is **branched**. The routing question sits at the end of section 5, and answering "No, submit my answers now" goes straight to submit rather than walking the respondent through thirteen more questions they opted out of.
 
 ## Before you send it
 
-- **Field and close before re-estimating anything.** Several answers change classifications that determine the project's strongest association. Collecting them after seeing which answer helps would invalidate the result.
+- **Field and close before any rule-driven recoding or new validation estimate.** Preserve the existing exploratory outputs. If panel feedback changes a rule, record a new version and report the old and new results separately.
 - **Record the prediction first.** `survey_instrument.md` states, before fielding, how the panel is expected to rank the ten functions. That is what makes the comparison against the estimated associations a test rather than a story told afterwards.
 - **Target 10 to 15 considered responses** and report it as an expert panel, never as a representative survey.
 - The fee-destruction scenario in Section 2 is a **calibration item** with a near-unanimous expected answer. A respondent who misses it is answering inattentively; note it rather than silently dropping them.
@@ -41,4 +41,4 @@ The optional section is **branched**. The routing question sits at the end of se
 
 Use **Responses → Link to Sheets**, then export as CSV.
 
-The blind-scoring block is built to line up with the existing review machinery: score values are Yes / No / Unknown per asset-and-function cell, which is the grid `review_adjudication` already consumes. Agreement and Cohen's kappa are computed only over cells where both sides gave a determinate answer, with unknowns reported separately as a coverage figure.
+The blind-scoring block is built to line up with the existing review machinery: score values are Yes / No / Unknown per asset-and-function cell, which is the grid `review_adjudication` already consumes. Agreement and Cohen's kappa are computed only over sampled cells where both sides gave a determinate answer, with unknowns reported separately as a coverage figure. Never generalize that statistic to the full 230-cell matrix.

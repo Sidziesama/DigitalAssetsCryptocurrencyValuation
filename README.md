@@ -1,6 +1,6 @@
 # Digital Assets Valuation
 
-**Current checkpoint (12 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. H1 now has a complete one-year robustness panel for the same nine native networks: both activity coefficients are positive and transaction count reaches exploratory p = 0.078, but the extension is retrospective and the transaction sign depends on XLM. H3 includes ARB unlocks, BNB burns, and the completed 100 million UNI burn. H4 still requires archival ETH consensus data.
+**Current checkpoint (15 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. The 253-pair architecture test is complete; H1, H2, H3, and H8 have exploratory results; H4 still requires archival ETH consensus data.
 
 **Plain-English conclusion:** the classification matrix is useful today as an advisory due-diligence tool, but the empirical results are not yet a pricing or trading model. Start with the [`what we did → insight → action` summary](research/findings/crypto-executive-decision-summary.md), then use the [23 asset advisory profiles](research/findings/crypto-advisory-profiles.md) to see each asset's economic identity, possible value channels, cautions, and closest economic comparables. The profiles deliberately contain no investment scores.
 
@@ -8,7 +8,7 @@
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 365 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 368 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -138,7 +138,7 @@ The remaining classification limitation is external reproducibility, not coverag
 
 ### The pipeline
 
-91 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
+92 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -154,7 +154,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 365 tests
+python -m unittest discover -s tests                           # 368 tests
 git status --short                                             # should be empty after a rebuild
 ```
 
@@ -185,7 +185,7 @@ Not defensible, and stated as such: any claim that economic function causes valu
 ### What happens next
 
 1. **Unblock H4 measurement.** Configure `ETH_BEACON_ARCHIVE_API_URL` with a provider that serves historical beacon states, then collect 365 days of active effective balance and run the frozen H4 analysis.
-2. **Broaden H3 without outcome selection.** The multiasset gate now includes ARB, BNB, and UNI. Add a fourth independently sourced asset to improve power while preserving the current definitions, materiality rule, event window, and asset-level randomization.
+2. **Broaden H3 without outcome selection.** The multiasset gate includes ARB, BNB, and UNI. An evidence-only screen rejected OP (below 0.5% materiality), SUI (no exact dated amount), and AVAX (continuous rather than discrete mechanism). Add no fourth asset until official evidence satisfies the unchanged rules without consulting returns.
 3. **Preserve H1 for later validation.** The one-year retrospective robustness extension is complete. Keep the nine-network model fixed and test it on a genuinely later window rather than retuning the activity definition.
 4. **Accumulate the frozen H8 validation window.** The design is now fixed at 23 August 2026–22 August 2027, with financial integration compared against raw breadth using the same leave-one-asset-out RMSE. The readiness audit prevents estimation before the window closes and requires at least 292 daily observations per asset.
 5. **Treat the verified risk refresh as exploratory.** The classification-only refresh is complete; preserve its null false-discovery-controlled result and seek a genuinely later risk window before calling it validation.

@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 190,
+    "files": 191,
     "by_phase": {
       "00_foundation": 27,
       "01_classification": 64,
-      "02_valuation": 45,
+      "02_valuation": 46,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -296,7 +296,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 67092,
+      "bytes": 68164,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1693,6 +1693,20 @@
       ],
       "named_in_config": [
         "crypto_phase1_research_map.json",
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h3_fourth_asset_screen.json",
+      "kind": "summary",
+      "bytes": 651,
+      "written_by": [
+        "crypto_h3_fourth_asset_screen"
+      ],
+      "read_by": [],
+      "named_in_config": [
         "pipeline_stages.json"
       ],
       "orphan": false

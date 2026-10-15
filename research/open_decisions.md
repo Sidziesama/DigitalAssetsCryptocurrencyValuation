@@ -1,108 +1,68 @@
 # Open decisions register
 
-7 September 2026. Every decision in this project that requires human judgment rather than code. Each entry states what is at stake, what would change if the decision went the other way, and who can settle it. Items marked **BLOCKING** prevent a specific result from being reported.
+15 October 2026. This register contains only decisions that remain open. Historical classification questions that have already been adjudicated remain in dated findings and evidence records.
 
-Decisions are grouped by the kind of judgment they need, because that determines who should be asked. Classification-rule decisions suit a panel of researchers and practitioners. Research-design decisions suit an advisor. Resource decisions need the principal investigator.
+## D1. Ethereum archival consensus source — blocks H4
 
----
+**Need:** An endpoint that serves historical Beacon validator states over the frozen common window.
 
-## A. Classification rules
+**Why:** H4 measures active effective balance. Validator count multiplied by 32 ETH is rejected because post-Pectra validators may have larger effective balances.
 
-These define the measuring instrument. They should be settled by people who know both the protocols and the valuation literature, and settled *once*, so the rule generalises to assets not yet classified.
+**Current state:** BNB consensus stake and all market controls are complete. Legacy stkAAVE is complete as a separate non-consensus case study. ETH is 0/362 in the common analysis window.
 
-### A1. Relay policy versus consensus rule for VA_GAS — **BLOCKING, 4 cells**
-On UTXO proof-of-work chains a zero-fee transaction is consensus-valid; fee minimums are node relay policy. The verified Bitcoin decision therefore scores `VA_GAS = 0`. Bitcoin Cash, Litecoin, Dogecoin and Zcash share that property.
+**Who decides:** Principal researcher, because an archive-capable provider may require payment or account setup.
 
-*Options.* (i) Apply the precedent, all five score 0. (ii) Revise the rule to admit economically required fees, in which case all five score 1 and the Bitcoin decision must be re-reviewed.
+**Constraint:** Do not estimate H4 and do not substitute a weaker measure before this is resolved.
 
-*What changes.* Four of the twenty assets in the risk test move on the transaction-service-demand bundle, which is one of the two bundles that produced sub-0.05 associations. Option (ii) also changes the verified core.
+## D2. External rule-validation sample — required for survey fielding
 
-*Do not split them.* Scoring the forks differently from Bitcoin is the one outcome that is indefensible.
+**Need:** Select professor and industry-professional recipients for the frozen survey.
 
-### A2. Governed-treasury capture boundary — settled, seeking external validation
-Adjudicated: governance authority over a treasury is not value capture unless value mechanically terminates at the token through burn, buyback, distribution, or an enforceable claim. Applied to ARB, ADA and Zcash's development fund.
+**Why:** The matrix is complete but 220 of 230 cells are single-coded. External feedback can test whether experts accept the boundary rules and materiality conventions.
 
-*What changes.* This is the single most consequential rule in the project. Under the broad definition the headline H2 interaction is 0.132 with $p = 0.082$; under the strict definition it is 0.061 with $p = 0.478$. External agreement on the rule is worth more than any additional estimate.
+**What the survey can establish:** Agreement or disagreement with rules for monetary use, collateral materiality, gas, incentives, and holder capture.
 
-### A3. Chainlink Reserve and Smart Value Recapture — **BLOCKING, 1 cell**
-Staking rewards are currently emissions-funded, which is service compensation and does not qualify. The official economics page also describes a Reserve and a mechanism called Smart Value Recapture whose disposition could not be established from primary sources.
+**What it cannot establish:** Full-matrix inter-rater reliability, unless external reviewers independently code a representative blind sample.
 
-*Needed.* Primary documentation of where Reserve value goes. If it terminates at LINK, `VA_PROTOCOL = 1`.
+**Who decides:** Principal researcher.
 
-### A4. Optimism buyback status — **BLOCKING, 2 cells**
-Governance approved routing a share of Superchain revenue to OP buybacks and execution was observed for at least two months, but the official thread does not confirm the mechanism is currently live. A paused mechanism scores zero only after review, never by default.
+## D3. Fourth H3 event asset — approval after evidence review
 
-### A5. What counts as material monetary use — **BLOCKING for the risk test**
-The rule requires two behavioral tests plus dated primary evidence of monetary or payment design. The provisional matrix codes fourteen of twenty assets as monetary, including LTC, BCH, XLM, ZEC and DOGE. That generosity is the main reason the twenty-asset risk result cannot be treated as evidence.
+**Need:** A candidate from the existing universe with an official exact-date supply increase or burn that meets the unchanged 0.5% materiality rule.
 
-*Needed.* A defensible materiality threshold. The monetary-store bundle is the strongest single predictor in every cross-sectional test, so this rule effectively determines that result.
+**Why:** H3 currently has 17 events but only three independent asset units, giving low-powered asset-level inference.
 
-### A6. Collateral materiality threshold
-Currently: collateral balances of at least one percent of market capitalization, or one hundred million dollars, sustained for ninety days. Both numbers are defensible and arbitrary.
+**Evidence-only screen completed 15 October 2026:** OP failed the unchanged 0.5% materiality threshold; SUI lacked an official exact event date and amount; AVAX uses a continuous burn rather than a discrete event. No return or price outcome was examined. No candidate was added.
 
-*What changes.* Financial integration is the third-strongest bundle in the risk sorts.
+**Selection rule:** Establish event eligibility without examining its return. Record the candidate, source, date, direction, and materiality before adding market outcomes.
 
-### A7. Sequestration versus destruction — settled, low controversy
-Stellar's fees enter a locked account and are "not given to or used by anyone". Scored as not a burn, because supply is not reduced. Worth confirming as a general rule for any chain that escrows rather than destroys.
+**Who decides:** Principal researcher or advisor after the evidence-only candidate note is complete.
 
-### A8. Issuance-funded rewards are service compensation — settled
-Staking and mining rewards paid from new issuance do not constitute value capture. This is what distinguishes Cardano from Ethereum in the classification and it follows from the same logic as A2.
+## D4. Publication emphasis — advisor discussion
 
-### A9. The bundle map
-Eight bundles were defined from theory before estimation. Seven contain a single function, so bundle count and raw breadth correlate at 0.956 and the bundle-versus-breadth test cannot discriminate.
+Three defensible contributions now exist:
 
-*Options.* (i) Keep the map and report that the test is uninformative at this granularity. (ii) Regroup on theoretical grounds into fewer, larger bundles, freeze the new map, and re-run. Any regrouping must be justified before seeing outcomes.
+1. the ten-function classification instrument and asset profiles;
+2. the result that architecture is informative but incomplete;
+3. the governed-treasury versus holder-capture boundary and its empirical consequence.
 
----
+**Need:** Decide which contribution leads the paper after professor feedback. The underlying results and specifications do not change with the framing.
 
-## B. Research design
+## Resolved boundaries that remain binding
 
-### B1. Should the strict capture rule become the primary H2 specification?
-Currently the frozen pilot uses the broad definition and the strict rule is reported as a sensitivity. If A2 is externally validated, the strict result arguably becomes the headline and the broad one the sensitivity.
+- Governance over ecosystem spending is not holder capture unless value mechanically reaches the token or holder.
+- Issuance-funded staking rewards are security compensation, not protocol capture.
+- Sequestration is not token destruction.
+- Legacy stkAAVE is a separate protocol-risk-stake case and is not pooled with consensus staking.
+- DOGE and XMR remain outside the active estimation universe, with their audit trail preserved.
 
-*Constraint.* Whichever is primary must be declared before the next estimation, not after comparing them.
+## Summary
 
-### B2. Publication framing
-The strongest paper available now is a methods and measurement contribution with pre-registered nulls. The alternative is to wait for the full classification and attempt a results paper.
-
-*Trade-off.* The methods paper is publishable now and the instrument is the novel contribution. The results paper needs at least the twenty-asset classification finished and may still produce nulls.
-
-### B3. Valuation multiple denominator
-The bundle comparison uses market capitalization over daily fees. Market capitalization over activity was withheld because free activity data covers only four of six core assets. Adding a paid activity source would enable it.
-
-### B4. Universe extension
-Twenty-five assets, of which twenty meet the common-window coverage rule. Extending would improve power but requires the same evidence standard per asset, at roughly ten decisions each.
-
-### B5. Second coder identity and blinding protocol
-The reported kappa of 1.00 rests on ten decisions reviewed inside the project. An external reviewer scoring a substantial blind sample converts the review protocol from a described method into a reported reliability statistic. This is the cheapest available upgrade to the paper's methods section.
-
----
-
-## C. Resources
-
-### C1. Archival Ethereum consensus endpoint — **BLOCKING, all of H4**
-The exact effective-balance collector is implemented and correctly rejects the post-EIP-7251 validator-count shortcut, but public beacon endpoints reject historical validator state. An archive-tier provider is required. Small recurring cost; only the principal investigator can approve it.
-
-The estimation gate has been corrected and frozen. The fixed universe contains two comparable consensus-staking assets, ETH and BNB—not three. The primary panel therefore uses those two assets plus BTC, UNI, and ARB as structural non-staking controls. Legacy stkAAVE is analyzed separately. All market inputs and BNB measurements cover the common 25 August 2025–21 August 2026 window; only ETH remains missing.
-
-### C2. Aave staking boundary — **RESOLVED**
-Legacy stkAAVE now has a complete 365-day series and remains a separate protocol-risk-stake case study. Umbrella stakes aTokens and GHO rather than AAVE, so it is correctly excluded from the AAVE-token staking series and cannot substitute for consensus stake.
-
-### C3. Point-in-time unlock and issuance events — **THREE-ASSET GATE RESOLVED; power remains limited**
-Twelve exact-date material ARB unlocks, four official BNB burns, and one completed 100 million UNI burn are estimated. Pooled randomization uses the asset—not the event—as its unit, leaving eight possible sign assignments with three assets. The UNI proposal and vote preceded execution, so anticipation is recorded explicitly. A fourth independently sourced asset would improve power but does not block estimation.
-
-### C4. Independent reproducibility
-All 230 active-universe cells are evidence-backed, but only 10 have an independent blind review. This is reported as a limitation rather than an unfinished coverage task.
-
----
-
-## Summary of what is blocked on what
-
-| Blocked result | Blocking decisions |
+| Open decision | Blocks |
 |---|---|
-| Re-estimating P1_H6 on verified codes | **Resolved 2026-10-09**; verified-input refresh complete |
-| Reporting a confirmatory market-wide function-and-risk claim | A genuinely later, non-overlapping outcome window; C4 remains a classification limitation |
-| H4 pooled estimation | C1 |
-| H3 higher-powered inference | Additional official exact-date event sources under the frozen rule; current two-asset result is estimable but low-powered |
-| Classification coverage | **Resolved**; 230/230 active-universe cells evidence-backed |
-| Choosing the primary H2 specification | A2, then B1 |
+| D1 ETH archive provider | H4 estimation |
+| D2 survey recipients | External rule validation |
+| D3 future fourth H3 asset | Higher-powered H3 inference; current OP/SUI/AVAX screen found no qualifier |
+| D4 publication emphasis | Manuscript positioning, not empirical work |
+
+No classification cell is pending or provisional.

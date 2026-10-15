@@ -356,6 +356,11 @@
           "args": []
         },
         {
+          "module": "crypto_h3_fourth_asset_screen",
+          "args": [],
+          "note": "Screens existing-universe H3 candidates using official event evidence and the fixed materiality rule before any return data are consulted."
+        },
+        {
           "module": "crypto_h4_readiness",
           "args": []
         },

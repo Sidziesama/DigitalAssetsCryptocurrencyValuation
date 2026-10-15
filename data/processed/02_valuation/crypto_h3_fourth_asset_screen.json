@@ -1,0 +1,14 @@
+{
+  "status": "h3_fourth_asset_screen_complete_no_qualifying_candidate",
+  "screen_date": "2026-10-15",
+  "candidates_screened": 3,
+  "eligible_assets": [],
+  "outcome_data_used": false,
+  "minimum_materiality_share": 0.005,
+  "decisions": {
+    "crypto_op": "not_eligible_below_materiality_threshold",
+    "crypto_sui": "not_eligible_exact_date_and_amount_missing",
+    "crypto_avax": "not_eligible_continuous_mechanism_not_discrete_event"
+  },
+  "next_action": "Preserve the current three-asset H3 result. Add no asset until official evidence satisfies exact date, direction, amount, denominator, and 0.5% materiality without consulting returns."
+}

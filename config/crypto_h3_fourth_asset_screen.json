@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "screen_date": "2026-10-15",
+  "hypothesis": "H3",
+  "universe_policy": "existing_active_assets_only",
+  "minimum_materiality_share": 0.005,
+  "required_fields": ["official_exact_event_date", "event_direction", "event_amount_native", "contemporaneous_supply_denominator", "materiality_share"],
+  "outcome_data_prohibited": true,
+  "candidates": [
+    {
+      "asset_id": "crypto_op",
+      "symbol": "OP",
+      "candidate_type": "scheduled_grant_vesting",
+      "official_source_url": "https://gov.optimism.io/t/welcoming-base-to-optimism-governance/6689",
+      "supporting_source_url": "https://gov.optimism.io/t/optimism-gov-summary/9837",
+      "evidence": "The Base grant vests in quarterly installments of 4,473,924 OP. An official governance summary reports approximately 1.66 billion OP circulating, making one installment about 0.27% of that denominator.",
+      "exact_event_date_available": true,
+      "event_amount_native": 4473924,
+      "supply_denominator_native": 1660000000,
+      "materiality_share": 0.002695135,
+      "decision": "not_eligible_below_materiality_threshold"
+    },
+    {
+      "asset_id": "crypto_sui",
+      "symbol": "SUI",
+      "candidate_type": "investor_cliff_and_vesting",
+      "official_source_url": "https://www.docs.sui.io/develop/sui-architecture/tokenomics-overview",
+      "evidence": "Official documentation states that the one-year cliff ended in May 2024 and that a multi-tiered schedule exists, but the page does not establish an exact event date and amount for a discrete test event.",
+      "exact_event_date_available": false,
+      "event_amount_native": null,
+      "supply_denominator_native": null,
+      "materiality_share": null,
+      "decision": "not_eligible_exact_date_and_amount_missing"
+    },
+    {
+      "asset_id": "crypto_avax",
+      "symbol": "AVAX",
+      "candidate_type": "continuous_transaction_fee_burn",
+      "official_source_url": "https://build.avax.network/docs/primary-network/avax-token",
+      "evidence": "Official documentation describes continuous transaction-fee burning offset by validator reward issuance. It does not define a discrete material activation, suspension, or one-time burn event in the analysis period.",
+      "exact_event_date_available": false,
+      "event_amount_native": null,
+      "supply_denominator_native": null,
+      "materiality_share": null,
+      "decision": "not_eligible_continuous_mechanism_not_discrete_event"
+    }
+  ]
+}

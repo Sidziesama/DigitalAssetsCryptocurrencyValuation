@@ -1,6 +1,6 @@
-# Expert panel instrument
+# Expert panel instrument for external rule validation
 
-Draft, 7 September 2026. For a panel of digital-advisory and digital-asset professionals. Purpose is to settle assumptions the project currently carries on its own authority, and to convert the classification review protocol into a reported reliability statistic.
+Updated 15 October 2026. For a panel of digital-advisory and digital-asset professionals. The 23-asset classification matrix is complete. The panel's purpose is to test whether outside experts accept the classification boundaries and materiality conventions. The optional blind exercise can produce a limited agreement statistic for the sampled cells; it is not a reliability statistic for the full matrix.
 
 This is an **expert panel**, not a representative survey. Ten to fifteen considered responses is the target. Report it as a panel and never as a population estimate.
 
@@ -20,7 +20,7 @@ Match the question to the expertise or the answers are worthless.
 
 ## Fielding rules
 
-1. **Field and close this before re-estimating anything.** Several answers change classifications that determine the project's strongest association. Collecting them after seeing which answer helps would invalidate the result.
+1. **Field and close this before any rule-driven recoding or new validation estimate.** Existing exploratory estimates remain published as they are. If panel feedback changes a rule, record the change and treat any re-estimation as a new specification rather than rewriting the old result.
 2. **Anonymise the assets in Section 2.** Naming Arbitrum invites a view about Arbitrum instead of a view about the rule.
 3. **Do not reveal the project's own answers, or which way the data points**, until after the response is submitted. Offer to send findings afterwards as the incentive.
 4. **Q2.2 is a calibration item** with a near-unanimous expected answer. A respondent who misses it is answering randomly; note it, do not silently drop them.
@@ -175,8 +175,8 @@ Present 12 to 15 asset-and-function cells as a table with three columns: asset, 
 
 Sample construction rules, fixed before fielding:
 
-- Draw cells from assets already verified in the project **and** from the pending tranche, so agreement can be measured against both a settled answer and an open one.
-- Include at least three cells the project itself holds pending, so the panel is genuinely contributing rather than only replicating.
+- Draw a representative set from the completed matrix, including both positive and negative codes and at least four of the most judgment-dependent functions.
+- Include the governed-treasury, practical-fee-requirement, issuance-reward, and collateral-materiality boundaries so the exercise tests rules that matter rather than merely easy protocol facts.
 - Do not select cells by whether they favour a result.
 - Keep the same sample for every respondent so kappa is computed on a common grid.
 
@@ -191,10 +191,10 @@ Reporting: raw agreement and Cohen's kappa against the project's verified values
 | 1.1, 1.4 | Economic function is the right organising axis, and architecture belongs outside it | The framing of the paper's contribution |
 | 1.2 | Which functions practitioners believe drive value | Nothing mechanical, but the contrast with the data is itself a finding |
 | 1.3 | The ten functions are complete and non-redundant | A missing function means the taxonomy needs an eleventh code and a new tranche |
-| 2.1, 2.5 | The strict holder-capture rule | Directly flips the project's headline result between significant and not |
+| 2.1, 2.5 | The strict holder-capture rule | Determines whether the broad exploratory H2 association survives the stricter definition |
 | 2.2 | Calibration | Detects inattentive responses |
-| 2.3 | A paused mechanism scores zero | Two pending cells, and the Aave event study's interpretation |
-| 2.4 | Relay policy is not a protocol requirement | Four pending cells, and re-opens the verified Bitcoin decision |
+| 2.3 | A paused mechanism scores zero | Tests the effective-dating rule and the Aave event interpretation |
+| 2.4 | Relay policy is not a protocol requirement | Tests the rule already applied consistently to Bitcoin-family assets |
 | 2.6 | Escrow is not destruction | One verified cell, currently scored on our own reading |
 | 3.1 | The collateral threshold of 1% or 100m dollars over 90 days | Recodes collateral across the universe |
 | 3.2 | What material monetary use requires | Recodes the single strongest predictor in every cross-sectional test |
@@ -203,14 +203,14 @@ Reporting: raw agreement and Cohen's kappa against the project's verified values
 | 3.5 | Unknown stays null and never becomes zero | A core reproducibility rule |
 | 4.1 | Risk exposure rather than fair value is the useful output | The direction of the next phase |
 | 4.3 | The review protocol is what earns trust | What to emphasise in the methods section |
-| 5 | The classification is reproducible by someone outside the project | Produces the external reliability statistic the paper currently lacks |
+| 5 | Sampled classifications can be reproduced by someone outside the project | Produces agreement evidence only for the sampled cells |
 
 ---
 
 ## The question that turns an input into a finding
 
-Q1.2 asks practitioners which functions *should* drive value. The project's own data says monetary use and transaction demand track risk, while revenue capture predicts nothing.
+Q1.2 asks practitioners which functions *should* drive value. The project's exploratory cross-section currently favors monetary/store use, supply absorption, and financial integration, while the fee-and-capture result is definition-sensitive.
 
-If the panel ranks revenue capture at or near the top, the paper gains a second contribution at the cost of a single question: **the mechanism practitioners believe matters most is the one with the least empirical support in this sample.** Report the panel ranking beside the estimated associations and let the gap speak.
+Compare the panel ranking with those estimates without treating either as causal truth. A gap between practitioner priors and measured associations is reportable as a research question, not as proof that the panel or the data is wrong.
 
 Prediction to record before fielding, so this is a test rather than a story told afterwards: capture and monetary use will rank in the top three, incentives and governance in the bottom three.
