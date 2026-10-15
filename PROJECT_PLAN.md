@@ -122,9 +122,7 @@ No other classification decision is currently open.
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline
 python -m unittest discover -s tests                 # 368 tests
-
-The ordered pipeline registry currently contains 92 commands across seven stages.
 git status --short                                   # empty after a committed rebuild
 ```
 
-The pipeline contains 91 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.
+The pipeline contains 92 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.
