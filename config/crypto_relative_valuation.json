@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "experiment_id": "RV1",
+  "freeze_date": "2026-10-19",
+  "status": "frozen_before_relative_valuation_estimation",
+  "research_status": "New exploratory models on previously examined historical outcomes; not preregistered confirmation or temporal validation.",
+  "window": {"start": "2025-08-25", "end": "2026-08-22", "minimum_coverage_share": 0.8},
+  "classification_input": "data/processed/01_classification/crypto_verified_universe_profiles.csv",
+  "market_input": "data/processed/00_foundation/market_daily_coinpaprika.csv",
+  "fundamentals_input": "data/processed/02_valuation/crypto_h2_exploratory_daily.csv",
+  "groups": ["bundle_monetary_store", "bundle_transaction_service_demand", "bundle_security_commitment", "bundle_supply_absorption", "bundle_financial_integration", "bundle_control_rights", "bundle_holder_capture", "bundle_subsidized_participation"],
+  "outcome": "mean_log_market_cap_usd",
+  "models": [
+    {"id": "identity_mean", "sample": "identity", "predictors": []},
+    {"id": "identity_breadth", "sample": "identity", "predictors": ["raw_function_breadth"]},
+    {"id": "identity_groups", "sample": "identity", "predictors": ["all_groups"]},
+    {"id": "fundamentals_mean", "sample": "fundamentals", "predictors": []},
+    {"id": "fundamentals_activity", "sample": "fundamentals", "predictors": ["log_mean_daily_fees", "log_mean_daily_volume", "application_scope"]},
+    {"id": "fundamentals_capture", "sample": "fundamentals", "predictors": ["log_mean_daily_fees", "log_mean_daily_volume", "application_scope", "bundle_holder_capture"]}
+  ],
+  "ridge_penalty": 10.0,
+  "scaling": "Training-fold mean and population standard deviation only; zero-variance columns become zero. Intercept is unpenalized; fixed penalty is never tuned on outcomes.",
+  "comparison": "Leave-one-asset-out RMSE and MAE of log market capitalization, compared only within identical sample; report all models.",
+  "uncertainty": "For each outer held-out asset, refit after omitting each remaining training asset. The 90th percentile absolute inner held-out errors defines a symmetric empirical log-error band around the outer prediction. This is a diagnostic band, without calibrated or guaranteed prediction coverage.",
+  "peers": {"minimum_jaccard": 0.5, "minimum_peers": 3, "scope_must_match": true, "exclude_target": true},
+  "guardrails": [
+    "Current verified classifications describe a retrospective cross-section; they do not reconstruct historical point-in-time classifications or support trading backtests.",
+    "No historical hypothesis is re-estimated or reclassified; H1-H4/H8 remain separate and their frozen designs unchanged.",
+    "Model-implied geometric mean capitalization is not spot fair value or a price target; no share-supply conversion.",
+    "Residuals measure relative model fit, not proven mispricing or actionable alpha.",
+    "Chain and application fee scopes differ; peer multiples require identical observed scope and verified holder capture for holder denominators.",
+    "No p-values or confirmatory hypothesis claims; all model comparisons and sample exclusions are disclosed."
+  ]
+}
