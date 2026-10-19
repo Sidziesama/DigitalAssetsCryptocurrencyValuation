@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_dashboard_estimation",
+  "document_version": "1.0-classification-informed-dashboard",
+  "freeze_date": "2026-10-19",
+  "market_data_end_date": "2026-08-22",
+  "momentum_windows_days": [30, 90],
+  "valuation_average_days": 30,
+  "annualization_days": 365,
+  "minimum_risk_window_days": 30,
+  "guardrails": [
+    "Economic-function classifications and peer groups are inputs and must not be changed in response to market outcomes.",
+    "Technical indicators describe market state; they are not intrinsic value estimates or trading signals.",
+    "Valuation multiples are displayed only when the economic function makes the denominator relevant and the required data are observed.",
+    "Missing data and economically inapplicable metrics are distinct states and neither is converted to zero.",
+    "No composite investment score, price target, recommendation, or asset ranking is produced."
+  ]
+}

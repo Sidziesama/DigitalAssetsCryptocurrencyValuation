@@ -10,7 +10,7 @@
 A Reproducible Classification and Its Empirical Tests}
 \author{First Author\\NYU Tandon School of Engineering
 \and Second Author\\NYU Tandon School of Engineering}
-\date{Living manuscript, version 0.7, 15 October 2026}
+\date{Living manuscript, version 0.8, 19 October 2026}
 
 \begin{document}
 \maketitle
@@ -46,7 +46,7 @@ The approach has three commitments that distinguish it from existing descriptive
 \textbf{Specifications before estimates.} Each experiment has a specification file committed with a freeze date before its estimate is produced, naming outcomes, predictors, samples, inference procedure and multiple-testing treatment. Two results in this paper became weaker when those rules were applied honestly, which is the evidence that the rules bind.
 
 \subsection{Contributions}
-First, a completed classification instrument with an auditable evidence trail: 230 of 230 decisions across 23 active assets are evidence-backed. Independent blind review covers ten decisions and cannot be generalized to the full matrix. Second, a practical distinction between network usage and holder capture, including the governed-treasury boundary that materially changes the H2 estimate. Third, direct empirical checks of popular valuation narratives, including negative evidence against standalone unlock and burn signals. Fourth, a decision-oriented advisory output that states what was measured, what was learned and what action is defensible. Fifth, an execution pipeline of 92 modules in seven ordered stages, with immutable raw snapshots and 368 unit tests, so every number below is regenerable from one command \citep{repo2026}.
+First, a completed classification instrument with an auditable evidence trail: 230 of 230 decisions across 23 active assets are evidence-backed. Independent blind review covers ten decisions and cannot be generalized to the full matrix. Second, a practical distinction between network usage and holder capture, including the governed-treasury boundary that materially changes the H2 estimate. Third, direct empirical checks of popular valuation narratives, including negative evidence against standalone unlock and burn signals. Fourth, a decision-oriented advisory output that states what was measured, what was learned and what action is defensible. Fifth, an execution pipeline of 93 modules in seven ordered stages, with immutable raw snapshots and 371 unit tests, so every number below is regenerable from one command \citep{repo2026}.
 
 \section{Key Findings}
 
@@ -88,6 +88,10 @@ Prepared the staking-liquidity panel & ETH history is missing, so no result exis
 \end{table}
 
 The completed matrix is also translated into 23 asset-level advisory profiles. Each profile states the asset's economic identity, plausible value channels, rule-based cautions, and three closest peers by economic-function overlap. No investment score is assigned: market, custody, liquidity, legal, concentration, and client-suitability review remain separate from the economic classification.
+
+A classification-informed market and valuation dashboard adds descriptive technical context without turning the framework into a trading system. As of 22 August 2026, price and return history cover 22 assets, common-window beta and drawdown measures cover 19, and the existing valuation panel supplies market capitalization for 11. Seven holder-capture assets have measurable market-cap-to-holder-revenue multiples. The dashboard distinguishes unavailable data from economically inapplicable metrics and uses functions to select valuation lenses: fees for service-demand assets, holder revenue only where capture is verified, staking economics for security assets, and supply measures for scarcity or absorption mechanisms. These outputs support peer comparison and due diligence; they are not intrinsic-value estimates, price targets, rankings, or recommendations.
+
+The reproducible companion figure, \texttt{research/figures/crypto-market-risk-map.svg}, maps annualized volatility against maximum drawdown and distinguishes assets with verified holder capture. Its color coding is descriptive and does not represent an investment score.
 
 \section{Method}
 
@@ -307,6 +311,7 @@ The active universe contains 23 assets and all $23 \times 10 = 230$ cells are ev
 \section{Next Steps}
 \begin{enumerate}
 \item Field the frozen expert survey and report agreement or disagreement with the monetary, collateral, gas, incentive, and holder-capture boundaries. Treat this as external rule validation, not full-matrix inter-rater reliability.
+\item Extend the classification-informed dashboard with additional function-specific historical series only where definitions and coverage are auditable; do not add technical indicators that lack an advisory or valuation role.
 \item Preserve the current H3 sample after the evidence-only OP/SUI/AVAX screen found no qualifying fourth asset; add one only if official evidence satisfies the unchanged date and materiality rules without examining its return.
 \item Configure an archival Ethereum consensus endpoint and complete the active-effective-balance history required for the frozen H4 estimation.
 \item Convert documentary functions into series. Governance can become delegated supply and incentives can become programme emissions, allowing currently static codes to enter later panel models.
@@ -325,7 +330,7 @@ The empirical evidence narrows how the framework should be used. Function compos
 This manuscript is maintained as an independent research project at NYU Tandon School of Engineering. Advisory implications are research outputs, not investment or legal advice.
 
 \section*{Reproducibility}
-All code, frozen experiment specifications, evidence files and processed outputs are at \url{https://github.com/Sidziesama/DigitalAssetsCryptocurrencyValuation}. Specifications live in \texttt{config/}; classification outputs in \texttt{data/processed/01\_classification/}; valuation outputs in \texttt{data/processed/02\_valuation/}; and risk outputs in \texttt{data/processed/03\_risk/}. The command \texttt{python -m src.pipeline.run\_stages --repo . --offline} rebuilds every processed artifact from archived raw snapshots, and \texttt{python -m unittest discover -s tests} runs 368 tests including one that fails if any module is absent from the ordered stage map. Every number in this manuscript is regenerable from that pipeline.
+All code, frozen experiment specifications, evidence files and processed outputs are at \url{https://github.com/Sidziesama/DigitalAssetsCryptocurrencyValuation}. Specifications live in \texttt{config/}; classification outputs in \texttt{data/processed/01\_classification/}; valuation outputs in \texttt{data/processed/02\_valuation/}; and risk outputs in \texttt{data/processed/03\_risk/}. The command \texttt{python -m src.pipeline.run\_stages --repo . --offline} rebuilds every processed artifact from archived raw snapshots, and \texttt{python -m unittest discover -s tests} runs 371 tests including one that fails if any module is absent from the ordered stage map. Every number in this manuscript is regenerable from that pipeline.
 
 \bibliographystyle{plainnat}
 \bibliography{references}

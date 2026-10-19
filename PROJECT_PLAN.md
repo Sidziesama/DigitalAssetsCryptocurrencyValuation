@@ -1,6 +1,6 @@
 # Project plan
 
-Current research state and next gates. Updated 15 October 2026.
+Current research state and next gates. Updated 19 October 2026.
 
 ## Objective
 
@@ -21,6 +21,7 @@ The product available today is an economic due-diligence framework. It is not ye
 | H4 staking | Design frozen; BNB and controls ready | Estimation remains blocked by missing historical ETH active stake |
 | H8 valuation groups | Verified-universe extension complete | Financial integration modestly outpredicts raw function breadth; later validation is required |
 | Risk test | Verified-input refresh complete | No function-risk result survives false-discovery correction |
+| Market and valuation dashboard | First reproducible version complete | Technical state covers 22 assets, common-window risk covers 19, and function-relevant valuation coverage is explicitly reported |
 | Stablecoins | Preserved and deferred | Not part of the active cryptocurrency phase |
 
 ## Findings that can be stated plainly
@@ -75,6 +76,15 @@ Existing stablecoin work is preserved but does not gate the active cryptocurrenc
 - Field the frozen expert survey and record rule-level agreement, disagreement, and comments.
 - Report survey feedback as external rule validation, not as full-matrix inter-rater reliability.
 
+### Checkpoint A2 — classification-informed market and valuation dashboard
+
+- Maintain common market-risk measures for every asset with adequate data.
+- Select valuation metrics from verified economic functions instead of applying one universal multiple.
+- Compare assets with economic peers rather than architecture labels alone.
+- Report measured, data-unavailable, and not-applicable fields separately.
+- Use technical indicators as market-state context, never as intrinsic value or automatic trading signals.
+- Produce no composite investment score, price target, ranking, or recommendation.
+
 ### Checkpoint B — improve existing empirical tests without outcome selection
 
 - Preserve the three-asset H3 sample after the evidence-only OP/SUI/AVAX screen found no qualifying fourth asset; add one only if an official source establishes an exact event date and the unchanged 0.5% materiality rule is met.
@@ -110,6 +120,7 @@ No other classification decision is currently open.
 |---|---|
 | Plain-language conclusion | `research/findings/crypto-executive-decision-summary.md` |
 | Asset-level advisory profiles | `research/findings/crypto-advisory-profiles.md` |
+| Market and valuation dashboard | `research/findings/crypto-market-valuation-dashboard.md` |
 | Architecture result | `research/findings/crypto-architecture-economic-similarity.md` |
 | Exact hypothesis designs and status | `research/methods/crypto_hypothesis_test_catalog.md` |
 | Human decisions and blockers | `research/open_decisions.md` |
@@ -121,8 +132,8 @@ No other classification decision is currently open.
 ```bash
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline
-python -m unittest discover -s tests                 # 368 tests
+python -m unittest discover -s tests                 # 371 tests
 git status --short                                   # empty after a committed rebuild
 ```
 
-The pipeline contains 92 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.
+The pipeline contains 93 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.

@@ -505,6 +505,11 @@
           "note": "Converts the verified matrix into asset-level economic identity, value channels, cautions, and economic comparables without investment scores."
         },
         {
+          "module": "crypto_market_valuation_dashboard",
+          "args": [],
+          "note": "Combines economic peer selection with descriptive market risk and function-relevant valuation metrics; missing and inapplicable fields remain distinct."
+        },
+        {
           "module": "crypto_architecture_similarity",
           "args": [],
           "note": "Tests whether technical architecture is an adequate proxy for similarity across the ten verified economic functions."

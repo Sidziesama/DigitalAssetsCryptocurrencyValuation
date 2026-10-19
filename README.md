@@ -1,14 +1,14 @@
 # Digital Assets Valuation
 
-**Current checkpoint (15 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. The 253-pair architecture test is complete; H1, H2, H3, and H8 have exploratory results; H4 still requires archival ETH consensus data.
+**Current checkpoint (19 October 2026).** The classification instrument is complete for the active universe: 23 assets x 10 functions = 230 evidence-backed decisions, with no pending or provisional cells. DOGE and XMR are retained in the audit trail but excluded from estimation. The 253-pair architecture test is complete; H1, H2, H3, and H8 have exploratory results; H4 still requires archival ETH consensus data. A classification-informed market and valuation dashboard now connects economic peers to market state, risk, and economically relevant valuation metrics.
 
-**Plain-English conclusion:** the classification matrix is useful today as an advisory due-diligence tool, but the empirical results are not yet a pricing or trading model. Start with the [`what we did → insight → action` summary](research/findings/crypto-executive-decision-summary.md), then use the [23 asset advisory profiles](research/findings/crypto-advisory-profiles.md) to see each asset's economic identity, possible value channels, cautions, and closest economic comparables. The profiles deliberately contain no investment scores.
+**Plain-English conclusion:** the classification matrix is useful today as an advisory due-diligence tool, but the empirical results are not yet a pricing or trading model. Start with the [`what we did → insight → action` summary](research/findings/crypto-executive-decision-summary.md), then use the [23 asset advisory profiles](research/findings/crypto-advisory-profiles.md) and [market and valuation dashboard](research/findings/crypto-market-valuation-dashboard.md). The dashboard uses technical measures as market context and selects valuation measures by economic function; it deliberately contains no investment scores, targets, or recommendations.
 
 **Can the economic jobs a cryptoasset performs explain what it is worth and how risky it is?**
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 368 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 371 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
 
@@ -138,7 +138,7 @@ The remaining classification limitation is external reproducibility, not coverag
 
 ### The pipeline
 
-92 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
+93 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -154,7 +154,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 368 tests
+python -m unittest discover -s tests                           # 371 tests
 git status --short                                             # should be empty after a rebuild
 ```
 

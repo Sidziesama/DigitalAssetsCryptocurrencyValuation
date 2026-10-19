@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 191,
+    "files": 192,
     "by_phase": {
       "00_foundation": 27,
       "01_classification": 64,
-      "02_valuation": 46,
+      "02_valuation": 47,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -51,7 +51,6 @@
       "crypto_h8_verified_universe_sensitivities.csv",
       "crypto_hypothesis_evidence_register.json",
       "crypto_function_risk_assets.csv",
-      "crypto_function_risk_verified_assets.csv",
       "crypto_return_market_models.csv",
       "crypto_return_panel_summary.json",
       "stablecoin_adoption_summary.json",
@@ -531,6 +530,7 @@
         "crypto_function_risk_exposure",
         "crypto_function_risk_verified_refresh",
         "crypto_h8_verified_universe",
+        "crypto_market_valuation_dashboard",
         "crypto_phase1_bundle_comparison",
         "crypto_phase1_taxonomy",
         "crypto_verified_universe",
@@ -1300,7 +1300,8 @@
       ],
       "read_by": [
         "crypto_architecture_similarity",
-        "crypto_hypothesis_test_catalog"
+        "crypto_hypothesis_test_catalog",
+        "crypto_market_valuation_dashboard"
       ],
       "named_in_config": [
         "crypto_function_risk_verified_refresh.json",
@@ -1385,7 +1386,9 @@
       "written_by": [
         "crypto_advisory_profiles"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_market_valuation_dashboard"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -1587,7 +1590,8 @@
       ],
       "read_by": [
         "crypto_h3_supply_pilot",
-        "crypto_hypothesis_test_catalog"
+        "crypto_hypothesis_test_catalog",
+        "crypto_market_valuation_dashboard"
       ],
       "named_in_config": [
         "crypto_h2_strict_capture_sensitivity.json",
@@ -1995,6 +1999,20 @@
     },
     {
       "phase": "02_valuation",
+      "file": "crypto_market_valuation_dashboard.json",
+      "kind": "summary",
+      "bytes": 78037,
+      "written_by": [
+        "crypto_market_valuation_dashboard"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
       "file": "crypto_mechanism_event_study.csv",
       "kind": "table",
       "bytes": 1668,
@@ -2125,7 +2143,9 @@
       "written_by": [
         "crypto_function_risk_verified_refresh"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_market_valuation_dashboard"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -2194,7 +2214,8 @@
         "crypto_return_panel"
       ],
       "read_by": [
-        "crypto_hypothesis_test_catalog"
+        "crypto_hypothesis_test_catalog",
+        "crypto_market_valuation_dashboard"
       ],
       "named_in_config": [
         "crypto_function_risk_exposure.json",

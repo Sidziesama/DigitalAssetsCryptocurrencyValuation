@@ -1,0 +1,2468 @@
+{
+  "status": "classification_informed_market_valuation_dashboard_complete",
+  "specification_version": "1.0-classification-informed-dashboard",
+  "freeze_date": "2026-10-19",
+  "market_data_end_date": "2026-08-22",
+  "assets": 23,
+  "technical_coverage": 22,
+  "risk_coverage": 19,
+  "market_cap_coverage": 11,
+  "holder_multiple_coverage": 7,
+  "guardrails": [
+    "Economic-function classifications and peer groups are inputs and must not be changed in response to market outcomes.",
+    "Technical indicators describe market state; they are not intrinsic value estimates or trading signals.",
+    "Valuation multiples are displayed only when the economic function makes the denominator relevant and the required data are observed.",
+    "Missing data and economically inapplicable metrics are distinct states and neither is converted to zero.",
+    "No composite investment score, price target, recommendation, or asset ranking is produced."
+  ],
+  "asset_results": [
+    {
+      "asset_id": "crypto_btc",
+      "symbol": "BTC",
+      "architecture_context": "PoW",
+      "economic_groups": [
+        "monetary_store",
+        "financial_integration"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "collateral demand and financial integration"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 77074.93,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.1839654298677842,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.00012937137708224355,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.4303874560201525,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.5974280696335278,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.5297176591351063,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 1495655406.079537,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 1537726880548.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "collateral and financial integration",
+            "money or store-of-value use"
+          ],
+          "similarity": 0.333
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use"
+          ],
+          "similarity": 0.333
+        },
+        {
+          "symbol": "BCH",
+          "shared_functions": [
+            "money or store-of-value use"
+          ],
+          "similarity": 0.25
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (0.0%). Measured valuation fields: market_cap.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_eth",
+      "symbol": "ETH",
+      "architecture_context": "PoS",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "supply_absorption",
+        "financial_integration",
+        "holder_capture"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "burns, sequestration and net supply growth",
+        "collateral demand and financial integration",
+        "holder revenue or token-level capture"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 2422.6,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.2897283829683024,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.15370145486582376,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.6846929567301688,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.8903035453022848,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.6755345017766713,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 893135673.5473548,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 288773120630.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 88.89077715651942,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "measured",
+          "value": 1677.1087863906175,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "AVAX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.833
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "SOL",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (15.4%). Measured valuation fields: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "symbol": "BNB",
+      "architecture_context": "PoS family",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "supply_absorption",
+        "financial_integration",
+        "control_rights",
+        "holder_capture",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "burns, sequestration and net supply growth",
+        "collateral demand and financial integration",
+        "governance scope and controlled treasury",
+        "holder revenue or token-level capture",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 695.28,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.225357325390811,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.058957917663006176,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.3192990459360099,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.5944278572331005,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.5819795013002897,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 146861263.57354775,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 89637429176.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 145.50541786714544,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "measured",
+          "value": 1942.2940706143963,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (5.9%). Measured valuation fields: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "symbol": "XRP",
+      "architecture_context": "federated consensus",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "supply_absorption",
+        "holder_capture",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "burns, sequestration and net supply growth",
+        "holder revenue or token-level capture",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 1.4619,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.3197616683217479,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.08208734270910445,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.7847231370964813,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.958976775530993,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.7201442091031995,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 216198375.16188154,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 85248293265.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 8680.554274584818,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "measured",
+          "value": 25189491.787027076,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "AVAX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (8.2%). Measured valuation fields: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_sol",
+      "symbol": "SOL",
+      "architecture_context": "PoS family",
+      "economic_groups": [
+        "transaction_service_demand",
+        "security_commitment",
+        "supply_absorption",
+        "financial_integration",
+        "holder_capture",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "burns, sequestration and net supply growth",
+        "collateral demand and financial integration",
+        "holder revenue or token-level capture",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 93.82,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.23642593568792836,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.10026973144130413,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.5025560121377122,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.0606703277301284,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.7625682330037789,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 332115689.53430223,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 53007317852.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 16.61285156909096,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "measured",
+          "value": 153.68748234934972,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "collateral and financial integration",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.625
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (10.0%). Measured valuation fields: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_trx",
+      "symbol": "TRX",
+      "architecture_context": "DPoS",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "supply_absorption",
+        "control_rights",
+        "holder_capture",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "burns, sequestration and net supply growth",
+        "governance scope and controlled treasury",
+        "holder revenue or token-level capture",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.3442,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.046518698692611604,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.058791359037462465,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.13296637084065818,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.34595661913055686,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.5110752191970468,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 47897759.05065088,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 32234356617.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 340.47446083168387,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "measured",
+          "value": 109661.15190189352,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-5.9%). Measured valuation fields: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_hype",
+      "symbol": "HYPE",
+      "architecture_context": "PoS family",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "supply_absorption",
+        "control_rights",
+        "holder_capture",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "burns, sequestration and net supply growth",
+        "governance scope and controlled treasury",
+        "holder revenue or token-level capture",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": null,
+        "price_usdt": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.875
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "plain_finding": "90-day market direction is unavailable. No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_zec",
+      "symbol": "ZEC",
+      "architecture_context": "PoW",
+      "economic_groups": [
+        "monetary_store",
+        "control_rights",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "governance scope and controlled treasury",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 802.11,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.5887456176837602,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.2100562704602713,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 1.0895263756910853,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.0525225509096419,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.7178111587982832,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 8117751.183542063,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "ARB",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.6
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (21.0%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_link",
+      "symbol": "LINK",
+      "architecture_context": "service staking",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "holder_capture",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "holder revenue or token-level capture",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 11.648,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.3750442686813835,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.2350758138055351,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.682050757270986,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.1513821917952873,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.7538961038961042,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 42341280.97309938,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (23.5%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_ada",
+      "symbol": "ADA",
+      "architecture_context": "PoS",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "control_rights",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "governance scope and controlled treasury",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.226,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.34124629080118685,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.06727197688815512,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.7698370687461459,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.161475327880679,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.8828799478742465,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 51827802.32701022,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 8318982417.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 2720.4203709876833,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.8
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-6.7%). Measured valuation fields: market_cap, market_cap_to_annualized_fees.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "symbol": "XLM",
+      "architecture_context": "federated consensus",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.1956,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.07295666483817898,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.3261016949152542,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.640132616688111,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.9787022374199867,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.744069912609239,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 11250265.808663622,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "BCH",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.6
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (32.6%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_bch",
+      "symbol": "BCH",
+      "architecture_context": "PoW",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 276.6,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.30594900849858364,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.20288184438040335,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.9589881402026532,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.8937903253075404,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.7256088773598492,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 18912724.16999519,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "XLM",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "LTC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation",
+            "transaction and service demand"
+          ],
+          "similarity": 0.6
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-20.3%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "symbol": "LTC",
+      "architecture_context": "PoW",
+      "economic_groups": [
+        "monetary_store",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 52.45,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.11690800681431002,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.005875663381349372,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.48577032728224734,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 0.8866472755452911,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.701401050788091,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 38352965.08251519,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "BCH",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "XLM",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ZEC",
+          "shared_functions": [
+            "money or store-of-value use",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-0.6%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "symbol": "HBAR",
+      "architecture_context": "hashgraph PoS",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.07742,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.0885826771653544,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.1244062429314634,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.4306729993034993,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.1037826368926487,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.8273836541799059,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 15431466.19017085,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "TAO",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "POL",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-12.4%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_sui",
+      "symbol": "SUI",
+      "architecture_context": "PoS",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "control_rights"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "governance scope and controlled treasury"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.8142,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.09391374445787992,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.21165762974438407,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.6926477053426773,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.219326971346996,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.8768099504744622,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 66469073.055906914,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.8
+        },
+        {
+          "symbol": "HBAR",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "TAO",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-21.2%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_avax",
+      "symbol": "AVAX",
+      "architecture_context": "PoS",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment",
+        "supply_absorption",
+        "holder_capture"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "burns, sequestration and net supply growth",
+        "holder revenue or token-level capture"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 7.494,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.19559668155711551,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.18649587494572295,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.6273782043432792,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.171871048553208,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.9027864798021433,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 42428477.399460874,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 3172965928.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 32.70314201720441,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "measured",
+          "value": 385.936421155938,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "ETH",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.833
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "money or store-of-value use",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-18.6%). Measured valuation fields: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_ton",
+      "symbol": "TON",
+      "architecture_context": "PoS",
+      "economic_groups": [
+        "transaction_service_demand",
+        "security_commitment",
+        "supply_absorption",
+        "control_rights",
+        "holder_capture"
+      ],
+      "selected_valuation_lenses": [
+        "network fees and service demand",
+        "real staking yield, dilution and security budget",
+        "burns, sequestration and net supply growth",
+        "governance scope and controlled treasury",
+        "holder revenue or token-level capture"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-06-30",
+        "price_usdt": {
+          "state": "measured",
+          "value": 1.6,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": -0.15567282321899734,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.29345189975747776,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.910284172656073,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "TRX",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.714
+        },
+        {
+          "symbol": "AVAX",
+          "shared_functions": [
+            "direct holder or token capture",
+            "staked security commitment",
+            "supply reduction or absorption",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (29.3%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_tao",
+      "symbol": "TAO",
+      "architecture_context": "PoS family",
+      "economic_groups": [
+        "monetary_store",
+        "transaction_service_demand",
+        "security_commitment"
+      ],
+      "selected_valuation_lenses": [
+        "monetary adoption and scarcity",
+        "network fees and service demand",
+        "real staking yield, dilution and security budget"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 222.4,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.15292897874546396,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.19097853765005446,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.5603491382595509,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "HBAR",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 1.0
+        },
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "money or store-of-value use",
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.75
+        },
+        {
+          "symbol": "POL",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-19.1%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_uni",
+      "symbol": "UNI",
+      "architecture_context": "NA",
+      "economic_groups": [
+        "supply_absorption",
+        "control_rights",
+        "holder_capture"
+      ],
+      "selected_valuation_lenses": [
+        "burns, sequestration and net supply growth",
+        "governance scope and controlled treasury",
+        "holder revenue or token-level capture"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 4.297,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.1437317008251262,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.26904902539870035,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.8961037213124972,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.2021608774292243,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.8711897209827426,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 19151508.506169006,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 2458410186.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "measured",
+          "value": 2.5508556446504773,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "measured",
+          "value": 32.967576434411626,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "TON",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "supply reduction or absorption"
+          ],
+          "similarity": 0.6
+        },
+        {
+          "symbol": "OP",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "HYPE",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture",
+            "supply reduction or absorption"
+          ],
+          "similarity": 0.429
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (26.9%). Measured valuation fields: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_aave",
+      "symbol": "AAVE",
+      "architecture_context": "NA",
+      "economic_groups": [
+        "security_commitment",
+        "financial_integration",
+        "control_rights",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "real staking yield, dilution and security budget",
+        "collateral demand and financial integration",
+        "governance scope and controlled treasury",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 126.44,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.33136780035800784,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.4772753826381586,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.9623013268983314,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.1540060391893416,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.8410554585038983,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 17634356.072465196,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 1668431121.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "ADA",
+          "shared_functions": [
+            "governance and control rights",
+            "staked security commitment",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "ARB",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "BNB",
+          "shared_functions": [
+            "governance and control rights",
+            "collateral and financial integration",
+            "staked security commitment",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (47.7%). Measured valuation fields: market_cap.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_arb",
+      "symbol": "ARB",
+      "architecture_context": "rollup",
+      "economic_groups": [
+        "control_rights",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "governance scope and controlled treasury",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.099,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.14849187935034802,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.06338694418164614,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.8225879783414968,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.2756543132915439,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.9677690707043876,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 32263739.57233267,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "measured",
+          "value": 634748282.0,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "OP",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "ZEC",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "AAVE",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-6.3%). Measured valuation fields: market_cap.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_op",
+      "symbol": "OP",
+      "architecture_context": "rollup",
+      "economic_groups": [
+        "control_rights",
+        "holder_capture",
+        "subsidized_participation"
+      ],
+      "selected_valuation_lenses": [
+        "governance scope and controlled treasury",
+        "holder revenue or token-level capture",
+        "organic activity after incentive emissions"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.109,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.17710583153347725,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": -0.13216560509554132,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.7447933584371937,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "measured",
+          "value": 1.2887782369850829,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "measured",
+          "value": -0.9825207579305939,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "measured",
+          "value": 18378664.462884612,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "ARB",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "UNI",
+          "shared_functions": [
+            "governance and control rights",
+            "direct holder or token capture"
+          ],
+          "similarity": 0.5
+        },
+        {
+          "symbol": "ZEC",
+          "shared_functions": [
+            "governance and control rights",
+            "subsidized participation"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is negative (-13.2%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees, market_cap_to_annualized_holder_revenue.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    },
+    {
+      "asset_id": "crypto_pol",
+      "symbol": "POL",
+      "architecture_context": "PoS",
+      "economic_groups": [
+        "transaction_service_demand",
+        "security_commitment"
+      ],
+      "selected_valuation_lenses": [
+        "network fees and service demand",
+        "real staking yield, dilution and security budget"
+      ],
+      "technical_market_state": {
+        "as_of_date": "2026-08-22",
+        "price_usdt": {
+          "state": "measured",
+          "value": 0.10726,
+          "unit": "USDT"
+        },
+        "return_30d": {
+          "state": "measured",
+          "value": 0.40447819824538445,
+          "unit": "decimal_return"
+        },
+        "return_90d": {
+          "state": "measured",
+          "value": 0.18663568978869338,
+          "unit": "decimal_return"
+        },
+        "realized_volatility_30d_annualized": {
+          "state": "measured",
+          "value": 0.7534620981348666,
+          "unit": "decimal_volatility"
+        },
+        "market_beta": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "beta"
+        },
+        "max_drawdown": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "decimal_return"
+        },
+        "mean_daily_dollar_volume": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "USD"
+        }
+      },
+      "valuation_metrics": {
+        "market_cap": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "USD"
+        },
+        "market_cap_to_annualized_fees": {
+          "state": "data_unavailable",
+          "value": null,
+          "unit": "multiple"
+        },
+        "market_cap_to_annualized_holder_revenue": {
+          "state": "not_applicable",
+          "value": null,
+          "unit": "multiple"
+        }
+      },
+      "closest_economic_comparables": [
+        {
+          "symbol": "HBAR",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "TAO",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.667
+        },
+        {
+          "symbol": "SUI",
+          "shared_functions": [
+            "staked security commitment",
+            "transaction and service demand"
+          ],
+          "similarity": 0.5
+        }
+      ],
+      "plain_finding": "The asset's 90-day return is positive (18.7%). No function-relevant valuation multiple is currently measurable. Required but unavailable: market_cap, market_cap_to_annualized_fees.",
+      "advisory_action": "Compare market state and valuation only with economic peers; investigate divergence between price, usage, and capture before forming an advisory view.",
+      "investment_score": null
+    }
+  ]
+}

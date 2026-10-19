@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690" role="img" aria-label="Cryptoasset volatility and maximum drawdown risk map">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="34" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#17212b">Market risk map by verified economic classification</text>
+<text x="24" y="60" font-family="Arial, sans-serif" font-size="13" fill="#647383">Further right = higher recent annualized volatility; further up = deeper common-window drawdown. Gold indicates verified holder capture.</text>
+<line x1="90.0" y1="95" x2="90.0" y2="615" stroke="#e6ebef"/>
+<text x="90.0" y="639" text-anchor="middle" font-family="Arial" font-size="11" fill="#647383">0%</text>
+<line x1="90" y1="615.0" x2="1060" y2="615.0" stroke="#e6ebef"/>
+<text x="78" y="619.0" text-anchor="end" font-family="Arial" font-size="11" fill="#647383">0%</text>
+<line x1="284.0" y1="95" x2="284.0" y2="615" stroke="#e6ebef"/>
+<text x="284.0" y="639" text-anchor="middle" font-family="Arial" font-size="11" fill="#647383">24%</text>
+<line x1="90" y1="511.0" x2="1060" y2="511.0" stroke="#e6ebef"/>
+<text x="78" y="515.0" text-anchor="end" font-family="Arial" font-size="11" fill="#647383">21%</text>
+<line x1="478.0" y1="95" x2="478.0" y2="615" stroke="#e6ebef"/>
+<text x="478.0" y="639" text-anchor="middle" font-family="Arial" font-size="11" fill="#647383">47%</text>
+<line x1="90" y1="407.0" x2="1060" y2="407.0" stroke="#e6ebef"/>
+<text x="78" y="411.0" text-anchor="end" font-family="Arial" font-size="11" fill="#647383">42%</text>
+<line x1="672.0" y1="95" x2="672.0" y2="615" stroke="#e6ebef"/>
+<text x="672.0" y="639" text-anchor="middle" font-family="Arial" font-size="11" fill="#647383">71%</text>
+<line x1="90" y1="303.0" x2="1060" y2="303.0" stroke="#e6ebef"/>
+<text x="78" y="307.0" text-anchor="end" font-family="Arial" font-size="11" fill="#647383">64%</text>
+<line x1="866.0" y1="95" x2="866.0" y2="615" stroke="#e6ebef"/>
+<text x="866.0" y="639" text-anchor="middle" font-family="Arial" font-size="11" fill="#647383">94%</text>
+<line x1="90" y1="199.0" x2="1060" y2="199.0" stroke="#e6ebef"/>
+<text x="78" y="203.0" text-anchor="end" font-family="Arial" font-size="11" fill="#647383">85%</text>
+<line x1="1060.0" y1="95" x2="1060.0" y2="615" stroke="#e6ebef"/>
+<text x="1060.0" y="639" text-anchor="middle" font-family="Arial" font-size="11" fill="#647383">118%</text>
+<line x1="90" y1="95.0" x2="1060" y2="95.0" stroke="#e6ebef"/>
+<text x="78" y="99.0" text-anchor="end" font-family="Arial" font-size="11" fill="#647383">106%</text>
+<circle cx="444.8" cy="355.4" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="452.8" y="348.4" font-family="Arial" font-size="11" fill="#17212b">BTC</text>
+<circle cx="654.4" cy="284.0" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="662.4" y="277.0" font-family="Arial" font-size="11" fill="#17212b">ETH</text>
+<circle cx="353.2" cy="329.8" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="361.2" y="322.8" font-family="Arial" font-size="11" fill="#17212b">BNB</text>
+<circle cx="736.9" cy="262.1" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="744.9" y="255.1" font-family="Arial" font-size="11" fill="#17212b">XRP</text>
+<circle cx="504.3" cy="241.3" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="512.3" y="234.3" font-family="Arial" font-size="11" fill="#17212b">SOL</text>
+<circle cx="199.6" cy="364.5" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="207.6" y="357.5" font-family="Arial" font-size="11" fill="#17212b">TRX</text>
+<circle cx="988.1" cy="263.2" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="996.1" y="256.2" font-family="Arial" font-size="11" fill="#17212b">ZEC</text>
+<circle cx="652.2" cy="245.6" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="660.2" y="238.6" font-family="Arial" font-size="11" fill="#17212b">LINK</text>
+<circle cx="724.6" cy="182.3" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="732.6" y="175.3" font-family="Arial" font-size="11" fill="#17212b">ADA</text>
+<circle cx="617.7" cy="250.4" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="625.7" y="243.4" font-family="Arial" font-size="11" fill="#17212b">XLM</text>
+<circle cx="880.5" cy="259.4" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="888.5" y="252.4" font-family="Arial" font-size="11" fill="#17212b">BCH</text>
+<circle cx="490.4" cy="271.3" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="498.4" y="264.3" font-family="Arial" font-size="11" fill="#17212b">LTC</text>
+<circle cx="445.0" cy="209.5" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="453.0" y="202.5" font-family="Arial" font-size="11" fill="#17212b">HBAR</text>
+<circle cx="661.0" cy="185.3" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="669.0" y="178.3" font-family="Arial" font-size="11" fill="#17212b">SUI</text>
+<circle cx="607.2" cy="172.6" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="615.2" y="165.6" font-family="Arial" font-size="11" fill="#17212b">AVAX</text>
+<circle cx="828.7" cy="188.1" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="836.7" y="181.1" font-family="Arial" font-size="11" fill="#17212b">UNI</text>
+<circle cx="883.3" cy="202.8" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="891.3" y="195.8" font-family="Arial" font-size="11" fill="#17212b">AAVE</text>
+<circle cx="768.1" cy="140.7" r="6" fill="#3478b8" opacity="0.88"/>
+<text x="776.1" y="133.7" font-family="Arial" font-size="11" fill="#17212b">ARB</text>
+<circle cx="704.0" cy="133.5" r="6" fill="#d99a2b" opacity="0.88"/>
+<text x="712.0" y="126.5" font-family="Arial" font-size="11" fill="#17212b">OP</text>
+<text x="575.0" y="670" text-anchor="middle" font-family="Arial" font-size="13" fill="#17212b">30-day realized volatility, annualized</text>
+<text x="20" y="355.0" transform="rotate(-90 20 355.0)" text-anchor="middle" font-family="Arial" font-size="13" fill="#17212b">Maximum drawdown depth</text>
+</svg>
