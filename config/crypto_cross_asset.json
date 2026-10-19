@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "experiment_id": "CA1",
+  "status": "frozen_before_cross_asset_estimation",
+  "freeze_date": "2026-10-19",
+  "window": {"start": "2025-08-25", "end": "2026-08-22"},
+  "benchmarks": [
+    {"symbol": "GLD", "label": "Gold (GLD proxy)", "official_source": "https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld"},
+    {"symbol": "SPY", "label": "S&P 500 (SPY proxy)", "official_source": "https://www.ssga.com/us/en/individual/etfs/spdr-sp-500-etf-trust-spy"},
+    {"symbol": "IWM", "label": "Russell 2000 (IWM proxy)", "official_source": "https://www.ishares.com/us/products/239710/iwm-ishares-russell-2000-etf"}
+  ],
+  "market_source": "Yahoo Finance daily adjusted-close chart responses, archived unchanged with retrieval time and SHA-256. Public endpoint availability is not guaranteed; ETF adjusted returns are proxies, not official index total returns.",
+  "crypto_input": "data/processed/03_risk/crypto_return_panel_daily.csv",
+  "classification_input": "data/processed/01_classification/crypto_verified_universe_profiles.csv",
+  "universe_rule": "Fixed set of human-verified active assets with at least 90% calendar close coverage over the frozen window. Report excluded assets. Membership is retrospective and creates survivorship/selection limitations.",
+  "minimum_crypto_coverage": 0.9,
+  "minimum_weekly_pairs": 30,
+  "minimum_down_pairs": 12,
+  "primary_series": "Crypto equal-weight fixed basket",
+  "portfolio_rule": "Daily-rebalanced equal-weight simple returns over the fixed eligible set, compounded between matched benchmark session endpoints. Every daily constituent return is required; no reweighting over missing assets and no fill across missing crypto calendar days. Costs excluded.",
+  "primary_frequency": "Weekly: final common benchmark session in each ISO week; only successive weekly endpoints 4-10 calendar days apart are used. Weekly endpoints aggregate all intervening crypto returns including weekends.",
+  "robustness": ["daily matched session intervals", "Spearman rank correlation", "first versus second chronological half", "crypto closes shifted -1 and +1 calendar day against fixed benchmark endpoints", "BTC and ETH separately", "equal weight excluding BTC and ETH", "SPY-negative and bottom-quintile SPY weeks", "60-session rolling correlations"],
+  "uncertainty": {"method": "circular moving-block bootstrap of paired weekly returns", "draws": 2000, "block_length_weeks": 4, "confidence_level": 0.95, "seed": 20261019},
+  "inference": "Three primary basket-benchmark correlations with percentile intervals; all other asset, group and sensitivity results are descriptive, without p-values or significance selection. No confirmatory significance or multiple-testing rejection claims.",
+  "timing": "ETF session date follows America/New_York. Crypto daily-close dates follow the archived UTC daily bar labels. Closes are not synchronized at 16:00 ET; weekly aggregation and +/-1-day shifts assess sensitivity, not eliminate it.",
+  "guardrails": [
+    "Correlations use matched returns, never price levels. No weekend or holiday price forward filling.",
+    "Benchmark and crypto returns use identical endpoint dates within each scenario. Quote currency differs: crypto USDT prices versus ETF USD prices; depeg basis risk remains.",
+    "Correlation is an association, not causation, diversification assurance, or safe-haven proof. Equity-down correlations are regime diagnostics and may have small samples.",
+    "Function groups overlap and are exploratory descriptions; contemporary verified codes do not reconstruct historical information sets.",
+    "The one-year primary sample cannot establish relationships across multiple market cycles. Market-data coverage ends August 2026 and is not a current October market view.",
+    "Retain existing H1-H4/H8 and RV1 outputs. This is a separately frozen exploratory CA1 extension, not independent confirmation of earlier results."
+  ]
+}
