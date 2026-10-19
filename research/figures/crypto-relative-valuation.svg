@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="460" role="img" aria-label="Held-out valuation error by model">
+<rect width="1040" height="460" fill="white"/>
+<text x="24" y="32" font-family="Arial" font-size="22">How much error remains when valuing an unseen asset?</text>
+<text x="24" y="58" font-family="Arial" font-size="13">Lower is better. Compare models within each sample; labels show improvement over its mean-only baseline.</text>
+<text x="250" y="113" text-anchor="end" font-family="Arial" font-size="13">identity_mean</text>
+<rect x="265" y="95" width="379.92" height="26" fill="#3478b8"/>
+<text x="654.92" y="113" font-family="Arial" font-size="13">2.033 (+0.0%)</text>
+<text x="250" y="162" text-anchor="end" font-family="Arial" font-size="13">identity_breadth</text>
+<rect x="265" y="144" width="339.45" height="26" fill="#3478b8"/>
+<text x="614.45" y="162" font-family="Arial" font-size="13">1.816 (+10.7%)</text>
+<text x="250" y="211" text-anchor="end" font-family="Arial" font-size="13">identity_groups</text>
+<rect x="265" y="193" width="274.55" height="26" fill="#3478b8"/>
+<text x="549.55" y="211" font-family="Arial" font-size="13">1.469 (+27.7%)</text>
+<text x="250" y="260" text-anchor="end" font-family="Arial" font-size="13">fundamentals_mean</text>
+<rect x="265" y="242" width="454.55" height="26" fill="#b87924"/>
+<text x="729.55" y="260" font-family="Arial" font-size="13">2.432 (+0.0%)</text>
+<text x="250" y="309" text-anchor="end" font-family="Arial" font-size="13">fundamentals_activity</text>
+<rect x="265" y="291" width="251.70" height="26" fill="#b87924"/>
+<text x="526.70" y="309" font-family="Arial" font-size="13">1.347 (+44.6%)</text>
+<text x="250" y="358" text-anchor="end" font-family="Arial" font-size="13">fundamentals_capture</text>
+<rect x="265" y="340" width="271.42" height="26" fill="#b87924"/>
+<text x="546.42" y="358" font-family="Arial" font-size="13">1.452 (+40.3%)</text>
+<text x="265" y="430" font-family="Arial" font-size="13">RMSE in log market capitalization — historical exploratory sample</text>
+</svg>

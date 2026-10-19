@@ -8,9 +8,11 @@
 
 This repository builds a reproducible way to answer that. It classifies cryptoassets by economic function rather than by technology or marketing label, proves every classification from dated primary sources, and tests whether those functions explain valuation and risk. Independent research developed at NYU Tandon (MS Financial Engineering), intended for publication.
 
-Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 371 tests check the code that does it.
+Everything here is rebuildable. One command regenerates every processed artifact from archived raw snapshots, and 376 tests check the code that does it.
 
 **One coder does the classification.** Independent reproducibility is untested and is stated as a limitation throughout, not worked around.
+
+**Active build: relative valuation.** The [RV1 model report](research/findings/crypto-relative-valuation.md) compares six frozen exploratory models with each target asset held out. Economic groups reduce error by 19.1% versus raw function count on 22 assets. On the 11-asset fundamentals sample, adding the static capture flag worsens error by 7.8%. Asset estimates, model drivers, empirical error bands, and economic peer multiples are available; large residuals show why these estimates cannot be treated as fair-value targets. Dashboard implementation is secondary.
 
 > **Working on this project?** Read [`CLAUDE.md`](CLAUDE.md) first. It carries the research rules that must not be broken, how to add a module or an experiment, and the traps that have already cost us once.
 
@@ -138,7 +140,7 @@ The remaining classification limitation is external reproducibility, not coverag
 
 ### The pipeline
 
-93 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
+94 commands in seven ordered stages. A test fails if any pipeline module is missing from the stage map.
 
 | Stage | Network | What it does |
 |---|---|---|
@@ -154,7 +156,7 @@ The remaining classification limitation is external reproducibility, not coverag
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline           # every non-network stage, in order
 python -m src.pipeline.run_stages --repo . --stage crypto_h2   # one stage
-python -m unittest discover -s tests                           # 371 tests
+python -m unittest discover -s tests                           # 376 tests
 git status --short                                             # should be empty after a rebuild
 ```
 

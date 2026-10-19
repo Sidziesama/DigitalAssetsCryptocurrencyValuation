@@ -46,7 +46,7 @@ The approach has three commitments that distinguish it from existing descriptive
 \textbf{Specifications before estimates.} Each experiment has a specification file committed with a freeze date before its estimate is produced, naming outcomes, predictors, samples, inference procedure and multiple-testing treatment. Two results in this paper became weaker when those rules were applied honestly, which is the evidence that the rules bind.
 
 \subsection{Contributions}
-First, a completed classification instrument with an auditable evidence trail: 230 of 230 decisions across 23 active assets are evidence-backed. Independent blind review covers ten decisions and cannot be generalized to the full matrix. Second, a practical distinction between network usage and holder capture, including the governed-treasury boundary that materially changes the H2 estimate. Third, direct empirical checks of popular valuation narratives, including negative evidence against standalone unlock and burn signals. Fourth, a decision-oriented advisory output that states what was measured, what was learned and what action is defensible. Fifth, an execution pipeline of 93 modules in seven ordered stages, with immutable raw snapshots and 371 unit tests, so every number below is regenerable from one command \citep{repo2026}.
+First, a completed classification instrument with an auditable evidence trail: 230 of 230 decisions across 23 active assets are evidence-backed. Independent blind review covers ten decisions and cannot be generalized to the full matrix. Second, a practical distinction between network usage and holder capture, including the governed-treasury boundary that materially changes the H2 estimate. Third, direct empirical checks of popular valuation narratives, including negative evidence against standalone unlock and burn signals. Fourth, a decision-oriented advisory output that states what was measured, what was learned and what action is defensible. Fifth, an execution pipeline of 94 modules in seven ordered stages, with immutable raw snapshots and 376 unit tests, so every number below is regenerable from one command \citep{repo2026}.
 
 \section{Key Findings}
 
@@ -308,10 +308,34 @@ The locked design was subsequently refreshed using the completed 23-asset classi
 \subsection{Classification coverage and what remains}
 The active universe contains 23 assets and all $23 \times 10 = 230$ cells are evidence-backed: 220 sourced decisions and ten sourced decisions with an independent blind review. DOGE and XMR are preserved in the audit trail but excluded from estimation. Coverage is complete, but independent reproducibility is not: the blind review covers only burn and protocol-capture decisions for ADA, AVAX, SOL, TRX, and XRP, so its reliability statistic cannot be generalized to the matrix.
 
+\subsection{Exploratory relative valuation models (RV1)}
+The next modelling layer asks whether economic functions and measured fundamentals predict relative asset size. Its specification was committed before estimation, but historical outcomes had already been examined; this is an exploratory extension rather than independent confirmation of H8. Current classifications are retrospective asset descriptors and do not reconstruct historical information sets. The outcome is mean log market capitalization over 25 August 2025--22 August 2026. All-group and raw-count models use the same 22 assets; fundamentals models use the same 11 assets with sufficient fees and volume history.
+
+We estimate ridge regression with an unpenalized intercept and fixed penalty of 10. Predictors are standardized using training assets alone. Every asset is held out of its own fit. We compare held-out root mean squared error (RMSE) and mean absolute error; no model is selected for deployment. For each held-out asset, inner leave-one-asset-out absolute errors from its training set supply a 90th-percentile diagnostic log-error band. These empirical bands have no calibrated prediction coverage guarantee. Predictor contributions reconstruct each fitted log estimate and are descriptive rather than causal.
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Model & Assets & Held-out log-cap RMSE \\
+\midrule
+Identity mean baseline & 22 & 2.033 \\
+Raw function count & 22 & 1.816 \\
+Eight economic groups & 22 & 1.469 \\
+Fundamentals mean baseline & 11 & 2.432 \\
+Fees, volume and scope & 11 & 1.347 \\
+Fees, volume, scope and capture & 11 & 1.452 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Economic groups reduce error by 19.1 percent relative to raw function count. Adding static holder capture increases fundamentals-model error by 7.8 percent. These results preserve both the helpful group comparison and the adverse capture result. Precision remains inadequate for fair-value targets: BTC's observed geometric mean capitalization is about 168 times its held-out identity-model estimate. This large residual identifies omitted asset-specific value and model inadequacy, rather than demonstrated mispricing. Full estimates, contributions and empirical bands are generated in the RV1 asset file.
+
+Peer multiples require matching fee scope, economic-group Jaccard similarity of at least 0.5, at least three peers and exclusion of the target asset. Holder-revenue comparisons additionally require verified capture in both target and peers. Missing data, insufficient peers and economically inapplicable denominators are reported separately. Annualized provider revenue and fees retain their provider definitions and do not automatically represent distributable holder cash flows.
+
 \section{Next Steps}
 \begin{enumerate}
 \item Field the frozen expert survey and report agreement or disagreement with the monetary, collateral, gas, incentive, and holder-capture boundaries. Treat this as external rule validation, not full-matrix inter-rater reliability.
-\item Extend the classification-informed dashboard with additional function-specific historical series only where definitions and coverage are auditable; do not add technical indicators that lack an advisory or valuation role.
+\item Review RV1 asset residuals and data definitions, then freeze an extension adding auditable fundamental measures before new estimates. Dashboard development remains secondary to hypothesis testing and valuation modelling.
 \item Preserve the current H3 sample after the evidence-only OP/SUI/AVAX screen found no qualifying fourth asset; add one only if official evidence satisfies the unchanged date and materiality rules without examining its return.
 \item Configure an archival Ethereum consensus endpoint and complete the active-effective-balance history required for the frozen H4 estimation.
 \item Convert documentary functions into series. Governance can become delegated supply and incentives can become programme emissions, allowing currently static codes to enter later panel models.
@@ -330,7 +354,7 @@ The empirical evidence narrows how the framework should be used. Function compos
 This manuscript is maintained as an independent research project at NYU Tandon School of Engineering. Advisory implications are research outputs, not investment or legal advice.
 
 \section*{Reproducibility}
-All code, frozen experiment specifications, evidence files and processed outputs are at \url{https://github.com/Sidziesama/DigitalAssetsCryptocurrencyValuation}. Specifications live in \texttt{config/}; classification outputs in \texttt{data/processed/01\_classification/}; valuation outputs in \texttt{data/processed/02\_valuation/}; and risk outputs in \texttt{data/processed/03\_risk/}. The command \texttt{python -m src.pipeline.run\_stages --repo . --offline} rebuilds every processed artifact from archived raw snapshots, and \texttt{python -m unittest discover -s tests} runs 371 tests including one that fails if any module is absent from the ordered stage map. Every number in this manuscript is regenerable from that pipeline.
+All code, frozen experiment specifications, evidence files and processed outputs are at \url{https://github.com/Sidziesama/DigitalAssetsCryptocurrencyValuation}. Specifications live in \texttt{config/}; classification outputs in \texttt{data/processed/01\_classification/}; valuation outputs in \texttt{data/processed/02\_valuation/}; and risk outputs in \texttt{data/processed/03\_risk/}. The command \texttt{python -m src.pipeline.run\_stages --repo . --offline} rebuilds every processed artifact from archived raw snapshots, and \texttt{python -m unittest discover -s tests} runs 376 tests including one that fails if any module is absent from the ordered stage map. Every number in this manuscript is regenerable from that pipeline.
 
 \bibliographystyle{plainnat}
 \bibliography{references}

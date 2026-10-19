@@ -76,7 +76,7 @@ Existing stablecoin work is preserved but does not gate the active cryptocurrenc
 - Field the frozen expert survey and record rule-level agreement, disagreement, and comments.
 - Report survey feedback as external rule validation, not as full-matrix inter-rater reliability.
 
-### Checkpoint A2 — classification-informed market and valuation dashboard
+### Checkpoint A2 — dashboard: secondary output, further implementation deferred
 
 - Maintain common market-risk measures for every asset with adequate data.
 - Select valuation metrics from verified economic functions instead of applying one universal multiple.
@@ -84,6 +84,16 @@ Existing stablecoin work is preserved but does not gate the active cryptocurrenc
 - Report measured, data-unavailable, and not-applicable fields separately.
 - Use technical indicators as market-state context, never as intrinsic value or automatic trading signals.
 - Produce no composite investment score, price target, ranking, or recommendation.
+
+### Checkpoint V1 — relative valuation models: active, first build complete
+
+- RV1 specification was committed before estimation; historical outcomes were previously examined, so this is an exploratory modelling extension.
+- Compare all-group ridge regression with mean-only and raw-count benchmarks on the same 22-asset sample.
+- Compare fees, volume and scope with and without holder capture on the same 11-asset sample.
+- Hold every target asset out of its fit and scaler; calculate empirical error bands using only the remaining assets.
+- Report model drivers, asset residuals, failures and scope-matched peer multiples. Static classifications are retrospective descriptors.
+- Current findings: groups reduce error by 19.1% versus raw count; the capture addition worsens fundamentals error by 7.8%; BTC's identity-model residual exposes substantial unexplained asset-specific value.
+- Next: review asset-level failures and improve fundamental measurement under a separately frozen extension. Preserve all current model comparisons.
 
 ### Checkpoint B — improve existing empirical tests without outcome selection
 
@@ -121,6 +131,7 @@ No other classification decision is currently open.
 | Plain-language conclusion | `research/findings/crypto-executive-decision-summary.md` |
 | Asset-level advisory profiles | `research/findings/crypto-advisory-profiles.md` |
 | Market and valuation dashboard | `research/findings/crypto-market-valuation-dashboard.md` |
+| Active relative valuation models and findings | `research/findings/crypto-relative-valuation.md` |
 | Architecture result | `research/findings/crypto-architecture-economic-similarity.md` |
 | Exact hypothesis designs and status | `research/methods/crypto_hypothesis_test_catalog.md` |
 | Human decisions and blockers | `research/open_decisions.md` |
@@ -132,8 +143,8 @@ No other classification decision is currently open.
 ```bash
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline
-python -m unittest discover -s tests                 # 371 tests
+python -m unittest discover -s tests                 # 376 tests
 git status --short                                   # empty after a committed rebuild
 ```
 
-The pipeline contains 93 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.
+The pipeline contains 94 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.

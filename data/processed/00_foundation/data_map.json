@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 192,
+    "files": 195,
     "by_phase": {
       "00_foundation": 27,
       "01_classification": 64,
-      "02_valuation": 47,
+      "02_valuation": 50,
       "03_risk": 10,
       "04_stablecoin_deferred": 44
     },
@@ -50,6 +50,8 @@
       "crypto_h3_supply_event_curve.csv",
       "crypto_h8_verified_universe_sensitivities.csv",
       "crypto_hypothesis_evidence_register.json",
+      "crypto_relative_valuation_assets.csv",
+      "crypto_relative_valuation_models.csv",
       "crypto_function_risk_assets.csv",
       "crypto_return_market_models.csv",
       "crypto_return_panel_summary.json",
@@ -295,7 +297,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 68164,
+      "bytes": 68728,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -384,7 +386,8 @@
       ],
       "named_in_config": [
         "crypto_h1_activity_expansion.json",
-        "crypto_h1_activity_history.json"
+        "crypto_h1_activity_history.json",
+        "crypto_relative_valuation.json"
       ],
       "orphan": false
     },
@@ -1307,7 +1310,8 @@
         "crypto_function_risk_verified_refresh.json",
         "crypto_h3_supply_event_study.json",
         "crypto_h8_out_of_sample_validation.json",
-        "crypto_h8_verified_universe.json"
+        "crypto_h8_verified_universe.json",
+        "crypto_relative_valuation.json"
       ],
       "orphan": false
     },
@@ -1596,7 +1600,8 @@
       "named_in_config": [
         "crypto_h2_strict_capture_sensitivity.json",
         "crypto_mechanism_event_study.json",
-        "crypto_phase1_bundle_comparison.json"
+        "crypto_phase1_bundle_comparison.json",
+        "crypto_relative_valuation.json"
       ],
       "orphan": false
     },
@@ -2091,6 +2096,44 @@
         "crypto_phase1_research_map.json",
         "pipeline_stages.json"
       ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_relative_valuation.json",
+      "kind": "summary",
+      "bytes": 97935,
+      "written_by": [
+        "crypto_relative_valuation"
+      ],
+      "read_by": [],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_relative_valuation_assets.csv",
+      "kind": "table",
+      "bytes": 33681,
+      "written_by": [
+        "crypto_relative_valuation"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_relative_valuation_models.csv",
+      "kind": "table",
+      "bytes": 598,
+      "written_by": [
+        "crypto_relative_valuation"
+      ],
+      "read_by": [],
+      "named_in_config": [],
       "orphan": false
     },
     {
