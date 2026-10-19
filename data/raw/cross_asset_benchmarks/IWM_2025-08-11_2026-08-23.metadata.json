@@ -1,0 +1,7 @@
+{
+  "symbol": "IWM",
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?period1=1754870400&period2=1787443200&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+  "retrieved_at_utc": "2026-10-19T17:49:54.673405+00:00",
+  "sha256": "5f5219ef8541b52bc8f353726c8425ef728e1abcc78433d9d6fb0b5c1cc4eb97",
+  "official_instrument_source": "https://www.ishares.com/us/products/239710/iwm-ishares-russell-2000-etf"
+}

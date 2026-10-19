@@ -95,6 +95,15 @@ Existing stablecoin work is preserved but does not gate the active cryptocurrenc
 - Current findings: groups reduce error by 19.1% versus raw count; the capture addition worsens fundamentals error by 7.8%; BTC's identity-model residual exposes substantial unexplained asset-specific value.
 - Next: review asset-level failures and improve fundamental measurement under a separately frozen extension. Preserve all current model comparisons.
 
+### Checkpoint CA1 — benchmark comparison and advisory synthesis: first build complete
+
+- Archived free adjusted-price histories for GLD, SPY and IWM with retrieval metadata and checksums.
+- Fixed crypto basket has 21 eligible assets; HYPE lacks history and TON fails 90% calendar coverage. Report every exclusion.
+- Primary weekly-return correlations use 52 matched periods, paired four-week block-bootstrap intervals and chronological-half checks.
+- Daily, shifted-close, BTC/ETH, ex-BTC/ETH, function-group, rolling and equity-down views expose sensitivity. No price-level correlations or artificial holiday returns.
+- One editable report and self-contained HTML combine classification, hypothesis tests, RV1, market context and benchmark results.
+- Presentation limitations: only one year, asynchronous closes, USDT/USD basis, retrospective membership and no independent second-vendor price verification. A Goldman Sachs advisory presentation is the intended discussion audience, not an endorsement or quality certification.
+
 ### Checkpoint B — improve existing empirical tests without outcome selection
 
 - Preserve the three-asset H3 sample after the evidence-only OP/SUI/AVAX screen found no qualifying fourth asset; add one only if an official source establishes an exact event date and the unchanged 0.5% materiality rule is met.
@@ -132,6 +141,7 @@ No other classification decision is currently open.
 | Asset-level advisory profiles | `research/findings/crypto-advisory-profiles.md` |
 | Market and valuation dashboard | `research/findings/crypto-market-valuation-dashboard.md` |
 | Active relative valuation models and findings | `research/findings/crypto-relative-valuation.md` |
+| Consolidated advisory report | `research/findings/crypto-advisory-report.md` and `.html` |
 | Architecture result | `research/findings/crypto-architecture-economic-similarity.md` |
 | Exact hypothesis designs and status | `research/methods/crypto_hypothesis_test_catalog.md` |
 | Human decisions and blockers | `research/open_decisions.md` |
@@ -143,8 +153,8 @@ No other classification decision is currently open.
 ```bash
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline
-python -m unittest discover -s tests                 # 376 tests
+python -m unittest discover -s tests                 # 388 tests
 git status --short                                   # empty after a committed rebuild
 ```
 
-The pipeline contains 94 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.
+The pipeline contains 97 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.

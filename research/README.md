@@ -15,6 +15,8 @@ This directory is the human-readable layer of the project. It is deliberately tr
 
 ## Where to start
 
+For the advisory presentation, start with `findings/crypto-advisory-report.md` or its self-contained printable `.html` edition. It consolidates classification, hypothesis findings, RV1 valuation, technical context and CA1 benchmark correlations, including uncertainty, timing sensitivities and equity-down diagnostics. Historical market coverage ends in August 2026.
+
 Start with `findings/crypto-executive-decision-summary.md`: it states what was done, the insight, and the defensible action in plain language. For a meeting, use `meeting/professor_review_checkpoint_2026-10-15.md`. Then use `findings/crypto-advisory-profiles.md` for all 23 asset profiles, `findings/crypto-market-valuation-dashboard.md` for classification-informed market and valuation context, and `findings/crypto-architecture-economic-similarity.md` for the direct test of whether architecture is an adequate economic grouping. For the exact data, equation, matrix role, inference and current result of every active hypothesis, read `methods/crypto_hypothesis_test_catalog.md`; then read the manuscript.
 
 ## How to verify a claim
@@ -23,7 +25,7 @@ Every number in the manuscript comes from a file in `data/processed/`. To check 
 
 ```bash
 python -m src.pipeline.run_stages --repo . --offline   # rebuild all processed artifacts
-python -m unittest discover -s tests                   # 376 tests
+python -m unittest discover -s tests                   # 388 tests
 git status --short                                     # should be empty
 ```
 

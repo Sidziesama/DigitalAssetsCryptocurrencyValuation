@@ -1,17 +1,19 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 195,
+    "files": 202,
     "by_phase": {
-      "00_foundation": 27,
+      "00_foundation": 29,
       "01_classification": 64,
       "02_valuation": 50,
-      "03_risk": 10,
+      "03_risk": 15,
       "04_stablecoin_deferred": 44
     },
     "orphans": [],
     "terminal_outputs": [
       "coverage_summary.json",
+      "cross_asset_benchmarks_daily.csv",
+      "cross_asset_benchmarks_manifest.json",
       "crypto_fee_fundamentals_coverage.csv",
       "crypto_fundamentals_coverage_coinmetrics.csv",
       "crypto_h1_activity_history_coverage.csv",
@@ -52,6 +54,9 @@
       "crypto_hypothesis_evidence_register.json",
       "crypto_relative_valuation_assets.csv",
       "crypto_relative_valuation_models.csv",
+      "crypto_cross_asset_correlations.csv",
+      "crypto_cross_asset_robustness.csv",
+      "crypto_cross_asset_rolling.csv",
       "crypto_function_risk_assets.csv",
       "crypto_return_market_models.csv",
       "crypto_return_panel_summary.json",
@@ -129,6 +134,32 @@
       "bytes": 888,
       "written_by": [
         "registry"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "cross_asset_benchmarks_daily.csv",
+      "kind": "table",
+      "bytes": 52131,
+      "written_by": [
+        "cross_asset_market_data",
+        "crypto_cross_asset"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "00_foundation",
+      "file": "cross_asset_benchmarks_manifest.json",
+      "kind": "summary",
+      "bytes": 2188,
+      "written_by": [
+        "cross_asset_market_data",
+        "crypto_advisory_report"
       ],
       "read_by": [],
       "named_in_config": [],
@@ -297,7 +328,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 68728,
+      "bytes": 69824,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -1307,6 +1338,7 @@
         "crypto_market_valuation_dashboard"
       ],
       "named_in_config": [
+        "crypto_cross_asset.json",
         "crypto_function_risk_verified_refresh.json",
         "crypto_h3_supply_event_study.json",
         "crypto_h8_out_of_sample_validation.json",
@@ -1391,6 +1423,7 @@
         "crypto_advisory_profiles"
       ],
       "read_by": [
+        "crypto_advisory_report",
         "crypto_market_valuation_dashboard"
       ],
       "named_in_config": [
@@ -1404,6 +1437,7 @@
       "kind": "summary",
       "bytes": 1778,
       "written_by": [
+        "crypto_advisory_report",
         "crypto_architecture_similarity"
       ],
       "read_by": [],
@@ -1444,6 +1478,7 @@
       "kind": "summary",
       "bytes": 6645,
       "written_by": [
+        "crypto_advisory_report",
         "crypto_findings_summary"
       ],
       "read_by": [
@@ -2010,7 +2045,9 @@
       "written_by": [
         "crypto_market_valuation_dashboard"
       ],
-      "read_by": [],
+      "read_by": [
+        "crypto_advisory_report"
+      ],
       "named_in_config": [
         "pipeline_stages.json"
       ],
@@ -2104,6 +2141,7 @@
       "kind": "summary",
       "bytes": 97935,
       "written_by": [
+        "crypto_advisory_report",
         "crypto_relative_valuation"
       ],
       "read_by": [],
@@ -2133,6 +2171,74 @@
         "crypto_relative_valuation"
       ],
       "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_cross_asset.json",
+      "kind": "summary",
+      "bytes": 46172,
+      "written_by": [
+        "crypto_cross_asset"
+      ],
+      "read_by": [
+        "cross_asset_market_data",
+        "crypto_advisory_report"
+      ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_cross_asset_correlations.csv",
+      "kind": "table",
+      "bytes": 6700,
+      "written_by": [
+        "crypto_cross_asset"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_cross_asset_robustness.csv",
+      "kind": "table",
+      "bytes": 5531,
+      "written_by": [
+        "crypto_cross_asset"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_cross_asset_rolling.csv",
+      "kind": "table",
+      "bytes": 21422,
+      "written_by": [
+        "crypto_advisory_report",
+        "crypto_cross_asset"
+      ],
+      "read_by": [],
+      "named_in_config": [],
+      "orphan": false
+    },
+    {
+      "phase": "03_risk",
+      "file": "crypto_cross_asset_weekly.csv",
+      "kind": "table",
+      "bytes": 38440,
+      "written_by": [
+        "crypto_cross_asset"
+      ],
+      "read_by": [
+        "crypto_advisory_report"
+      ],
       "named_in_config": [],
       "orphan": false
     },
@@ -2261,6 +2367,7 @@
         "crypto_market_valuation_dashboard"
       ],
       "named_in_config": [
+        "crypto_cross_asset.json",
         "crypto_function_risk_exposure.json",
         "crypto_function_risk_verified_refresh.json",
         "crypto_h3_supply_event_study.json",

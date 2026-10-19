@@ -1,0 +1,39 @@
+{
+  "status": "cross_asset_benchmarks_complete",
+  "instruments": [
+    {
+      "symbol": "GLD",
+      "rows": 260,
+      "first_date": "2025-08-11",
+      "last_date": "2026-08-21",
+      "raw_path": "data/raw/cross_asset_benchmarks/GLD_2025-08-11_2026-08-23.json",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?period1=1754870400&period2=1787443200&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "retrieved_at_utc": "2026-10-19T17:49:54.354196+00:00",
+      "sha256": "528a80562812bcd32c052843005b04cd5e231ebfafa0889043db17235a2c06da",
+      "official_instrument_source": "https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld"
+    },
+    {
+      "symbol": "SPY",
+      "rows": 260,
+      "first_date": "2025-08-11",
+      "last_date": "2026-08-21",
+      "raw_path": "data/raw/cross_asset_benchmarks/SPY_2025-08-11_2026-08-23.json",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1754870400&period2=1787443200&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "retrieved_at_utc": "2026-10-19T17:49:54.549979+00:00",
+      "sha256": "761de3a8804536205b480dd18e3c0c9b9932783b2fca881cbb7581402cc7312e",
+      "official_instrument_source": "https://www.ssga.com/us/en/individual/etfs/spdr-sp-500-etf-trust-spy"
+    },
+    {
+      "symbol": "IWM",
+      "rows": 260,
+      "first_date": "2025-08-11",
+      "last_date": "2026-08-21",
+      "raw_path": "data/raw/cross_asset_benchmarks/IWM_2025-08-11_2026-08-23.json",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?period1=1754870400&period2=1787443200&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "retrieved_at_utc": "2026-10-19T17:49:54.673405+00:00",
+      "sha256": "5f5219ef8541b52bc8f353726c8425ef728e1abcc78433d9d6fb0b5c1cc4eb97",
+      "official_instrument_source": "https://www.ishares.com/us/products/239710/iwm-ishares-russell-2000-etf"
+    }
+  ],
+  "proxy_warning": "Yahoo Finance daily adjusted-close chart responses, archived unchanged with retrieval time and SHA-256. Public endpoint availability is not guaranteed; ETF adjusted returns are proxies, not official index total returns."
+}

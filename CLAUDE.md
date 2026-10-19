@@ -14,7 +14,7 @@ Two things are being produced. **An instrument**: a classification anyone can in
 
 The intended output is a publishable paper. The instrument is the contribution; the empirical results so far are mostly null, and that is reported as the finding rather than buried.
 
-**Active phase: Phase 1, economic classification.** Phases 2 and 3 have exploratory results but are on hold behind Phase 1's gates. Phase 4 (stablecoins) is deferred.
+**Active phase as of 19 October 2026: valuation modelling and advisory synthesis.** Phase 1 has a complete sourced matrix; external rule validation remains outstanding. The researcher authorized RV1 relative valuation and CA1 benchmark comparisons, with specifications committed before their estimates. These are new exploratory extensions on historical data. The rule-validation survey still precedes classification changes and rule-driven re-estimation of earlier hypotheses. Phase 4 (stablecoins) is deferred. Dashboard implementation is secondary.
 
 ---
 
@@ -120,7 +120,7 @@ If a result improves because a rule was loosened, that is a finding about the ru
 
 ---
 
-## 9. Current state
+## 9. Historical checkpoint (14 September 2026)
 
 As of 14 September 2026: 70 pipeline modules, 248 tests, 151 processed files, 21 commits.
 

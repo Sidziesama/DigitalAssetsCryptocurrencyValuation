@@ -1,0 +1,7 @@
+{
+  "symbol": "GLD",
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?period1=1754870400&period2=1787443200&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+  "retrieved_at_utc": "2026-10-19T17:49:54.354196+00:00",
+  "sha256": "528a80562812bcd32c052843005b04cd5e231ebfafa0889043db17235a2c06da",
+  "official_instrument_source": "https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld"
+}

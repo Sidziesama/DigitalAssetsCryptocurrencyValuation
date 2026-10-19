@@ -1,0 +1,61 @@
+benchmark,pairs,pearson,scenario,series,spearman,state
+GLD,250,0.22583290927096958,daily,Crypto equal-weight fixed basket,0.23269889118225892,estimated
+SPY,250,0.4619903908851696,daily,Crypto equal-weight fixed basket,0.4029710555368886,estimated
+IWM,250,0.4353721347700982,daily,Crypto equal-weight fixed basket,0.38705169682714924,estimated
+GLD,250,0.2790374594732669,daily,BTC,0.31427869245907936,estimated
+SPY,250,0.4686419443108876,daily,BTC,0.4358335333365334,estimated
+IWM,250,0.4570399288739529,daily,BTC,0.4510209763356214,estimated
+GLD,250,0.2840535572724069,daily,ETH,0.2714589353429655,estimated
+SPY,250,0.475148680441301,daily,ETH,0.44448595977535643,estimated
+IWM,250,0.4419040091937193,daily,ETH,0.42700676810828975,estimated
+GLD,250,0.2184554120829552,daily,Crypto ex BTC and ETH,0.22597955167282677,estimated
+SPY,250,0.45626988964672116,daily,Crypto ex BTC and ETH,0.39541151058416935,estimated
+IWM,250,0.4297631468204658,daily,Crypto ex BTC and ETH,0.3793523736379782,estimated
+GLD,52,0.04056251505563584,weekly_crypto_shift_minus1,Crypto equal-weight fixed basket,0.17971484675147273,estimated
+SPY,52,0.23038500285129596,weekly_crypto_shift_minus1,Crypto equal-weight fixed basket,0.2948860240758132,estimated
+IWM,52,0.051972976200481434,weekly_crypto_shift_minus1,Crypto equal-weight fixed basket,0.03987022965935286,estimated
+GLD,52,0.10259444044099826,weekly_crypto_shift_minus1,BTC,0.17339708016733543,estimated
+SPY,52,0.2477350397626474,weekly_crypto_shift_minus1,BTC,0.2918125160078545,estimated
+IWM,52,0.08802226561640526,weekly_crypto_shift_minus1,BTC,0.15367540339793392,estimated
+GLD,52,0.07178701122502856,weekly_crypto_shift_minus1,ETH,0.19388713395372661,estimated
+SPY,52,0.21368671464046451,weekly_crypto_shift_minus1,ETH,0.22940322718347136,estimated
+IWM,52,0.06272748643719023,weekly_crypto_shift_minus1,ETH,0.12729445914795526,estimated
+GLD,52,0.03553676015273808,weekly_crypto_shift_minus1,Crypto ex BTC and ETH,0.174421582856655,estimated
+SPY,52,0.22844314866655913,weekly_crypto_shift_minus1,Crypto ex BTC and ETH,0.2834457440450781,estimated
+IWM,52,0.04931251947250834,weekly_crypto_shift_minus1,Crypto ex BTC and ETH,0.015282165115683428,estimated
+GLD,52,0.18233180736175866,weekly_crypto_shift_plus1,Crypto equal-weight fixed basket,0.1448817553146077,estimated
+SPY,52,0.34869147062426376,weekly_crypto_shift_plus1,Crypto equal-weight fixed basket,0.4653803466234099,estimated
+IWM,52,0.3156480719640463,weekly_crypto_shift_plus1,Crypto equal-weight fixed basket,0.37915137027234697,estimated
+GLD,52,0.20656537526742935,weekly_crypto_shift_plus1,BTC,0.1342098523008623,estimated
+SPY,52,0.37852195285159385,weekly_crypto_shift_plus1,BTC,0.4524033125586955,estimated
+IWM,52,0.3437802074883132,weekly_crypto_shift_plus1,BTC,0.38239562878852557,estimated
+GLD,52,0.17790823118242252,weekly_crypto_shift_plus1,ETH,0.16178604968838042,estimated
+SPY,52,0.3630769508776238,weekly_crypto_shift_plus1,ETH,0.40638606676342526,estimated
+IWM,52,0.32157316683455717,weekly_crypto_shift_plus1,ETH,0.355843934090327,estimated
+GLD,52,0.18022933632052593,weekly_crypto_shift_plus1,Crypto ex BTC and ETH,0.14889439084777598,estimated
+SPY,52,0.3447447107924677,weekly_crypto_shift_plus1,Crypto ex BTC and ETH,0.46495347050286007,estimated
+IWM,52,0.3124224972720287,weekly_crypto_shift_plus1,Crypto ex BTC and ETH,0.3706992230854606,estimated
+GLD,26,-0.1662181972045586,weekly_first_half,Crypto equal-weight fixed basket,-0.046153846153846156,estimated
+SPY,26,0.5078557532411065,weekly_first_half,Crypto equal-weight fixed basket,0.48102564102564105,estimated
+IWM,26,0.44686831301385094,weekly_first_half,Crypto equal-weight fixed basket,0.47145299145299147,estimated
+GLD,26,-0.0874988704013674,weekly_first_half,BTC,-0.022905982905982905,estimated
+SPY,26,0.507024901457072,weekly_first_half,BTC,0.49606837606837606,estimated
+IWM,26,0.458348719996247,weekly_first_half,BTC,0.548034188034188,estimated
+GLD,26,-0.11090934908404457,weekly_first_half,ETH,-0.02358974358974359,estimated
+SPY,26,0.5175097343810131,weekly_first_half,ETH,0.49401709401709404,estimated
+IWM,26,0.4445450190705848,weekly_first_half,ETH,0.5124786324786325,estimated
+GLD,26,-0.17109898709523882,weekly_first_half,Crypto ex BTC and ETH,-0.08786324786324787,estimated
+SPY,26,0.5035842107306527,weekly_first_half,Crypto ex BTC and ETH,0.4707692307692308,estimated
+IWM,26,0.44340976590882236,weekly_first_half,Crypto ex BTC and ETH,0.4488888888888889,estimated
+GLD,26,0.4582536914660012,weekly_second_half,Crypto equal-weight fixed basket,0.4235897435897436,estimated
+SPY,26,0.27184443349611653,weekly_second_half,Crypto equal-weight fixed basket,0.5302564102564102,estimated
+IWM,26,0.1510713090445381,weekly_second_half,Crypto equal-weight fixed basket,0.20752136752136752,estimated
+GLD,26,0.4426576268347895,weekly_second_half,BTC,0.3305982905982906,estimated
+SPY,26,0.2724422071838995,weekly_second_half,BTC,0.4605128205128205,estimated
+IWM,26,0.13667598754466315,weekly_second_half,BTC,0.13914529914529913,estimated
+GLD,26,0.44198851340651857,weekly_second_half,ETH,0.4379487179487179,estimated
+SPY,26,0.23803250494989503,weekly_second_half,ETH,0.465982905982906,estimated
+IWM,26,0.08821916940962325,weekly_second_half,ETH,0.14119658119658118,estimated
+GLD,26,0.4565402005800921,weekly_second_half,Crypto ex BTC and ETH,0.41196581196581195,estimated
+SPY,26,0.27210159140441575,weekly_second_half,Crypto ex BTC and ETH,0.5343589743589744,estimated
+IWM,26,0.154538835486964,weekly_second_half,Crypto ex BTC and ETH,0.2123076923076923,estimated

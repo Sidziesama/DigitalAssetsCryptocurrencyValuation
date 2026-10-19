@@ -1,0 +1,7 @@
+{
+  "symbol": "SPY",
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1754870400&period2=1787443200&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+  "retrieved_at_utc": "2026-10-19T17:49:54.549979+00:00",
+  "sha256": "761de3a8804536205b480dd18e3c0c9b9932783b2fca881cbb7581402cc7312e",
+  "official_instrument_source": "https://www.ssga.com/us/en/individual/etfs/spdr-sp-500-etf-trust-spy"
+}

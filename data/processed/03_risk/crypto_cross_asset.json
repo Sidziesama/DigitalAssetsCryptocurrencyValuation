@@ -1,0 +1,1837 @@
+{
+  "status": "exploratory_cross_asset_complete",
+  "experiment_id": "CA1",
+  "window": {
+    "start": "2025-08-25",
+    "end": "2026-08-22"
+  },
+  "primary_frequency": "Weekly: final common benchmark session in each ISO week; only successive weekly endpoints 4-10 calendar days apart are used. Weekly endpoints aggregate all intervening crypto returns including weekends.",
+  "timing": "ETF session date follows America/New_York. Crypto daily-close dates follow the archived UTC daily bar labels. Closes are not synchronized at 16:00 ET; weekly aggregation and +/-1-day shifts assess sensitivity, not eliminate it.",
+  "guardrails": [
+    "Correlations use matched returns, never price levels. No weekend or holiday price forward filling.",
+    "Benchmark and crypto returns use identical endpoint dates within each scenario. Quote currency differs: crypto USDT prices versus ETF USD prices; depeg basis risk remains.",
+    "Correlation is an association, not causation, diversification assurance, or safe-haven proof. Equity-down correlations are regime diagnostics and may have small samples.",
+    "Function groups overlap and are exploratory descriptions; contemporary verified codes do not reconstruct historical information sets.",
+    "The one-year primary sample cannot establish relationships across multiple market cycles. Market-data coverage ends August 2026 and is not a current October market view.",
+    "Retain existing H1-H4/H8 and RV1 outputs. This is a separately frozen exploratory CA1 extension, not independent confirmation of earlier results."
+  ],
+  "uncertainty": {
+    "method": "circular moving-block bootstrap of paired weekly returns",
+    "draws": 2000,
+    "block_length_weeks": 4,
+    "confidence_level": 0.95,
+    "seed": 20261019
+  },
+  "coverage": [
+    {
+      "asset_id": "crypto_btc",
+      "symbol": "BTC",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_eth",
+      "symbol": "ETH",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "symbol": "BNB",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_xrp",
+      "symbol": "XRP",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_sol",
+      "symbol": "SOL",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_trx",
+      "symbol": "TRX",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_hype",
+      "symbol": "HYPE",
+      "close_days": 0,
+      "expected_days": 363,
+      "eligible": 0
+    },
+    {
+      "asset_id": "crypto_zec",
+      "symbol": "ZEC",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_link",
+      "symbol": "LINK",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_ada",
+      "symbol": "ADA",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_xlm",
+      "symbol": "XLM",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_bch",
+      "symbol": "BCH",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_ltc",
+      "symbol": "LTC",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_hbar",
+      "symbol": "HBAR",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_sui",
+      "symbol": "SUI",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_avax",
+      "symbol": "AVAX",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_ton",
+      "symbol": "TON",
+      "close_days": 310,
+      "expected_days": 363,
+      "eligible": 0
+    },
+    {
+      "asset_id": "crypto_tao",
+      "symbol": "TAO",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_uni",
+      "symbol": "UNI",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_aave",
+      "symbol": "AAVE",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_arb",
+      "symbol": "ARB",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_op",
+      "symbol": "OP",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    },
+    {
+      "asset_id": "crypto_pol",
+      "symbol": "POL",
+      "close_days": 363,
+      "expected_days": 363,
+      "eligible": 1
+    }
+  ],
+  "members": {
+    "Crypto equal-weight fixed basket": [
+      "BTC",
+      "ETH",
+      "BNB",
+      "XRP",
+      "SOL",
+      "TRX",
+      "ZEC",
+      "LINK",
+      "ADA",
+      "XLM",
+      "BCH",
+      "LTC",
+      "HBAR",
+      "SUI",
+      "AVAX",
+      "TAO",
+      "UNI",
+      "AAVE",
+      "ARB",
+      "OP",
+      "POL"
+    ],
+    "Crypto ex BTC and ETH": [
+      "BNB",
+      "XRP",
+      "SOL",
+      "TRX",
+      "ZEC",
+      "LINK",
+      "ADA",
+      "XLM",
+      "BCH",
+      "LTC",
+      "HBAR",
+      "SUI",
+      "AVAX",
+      "TAO",
+      "UNI",
+      "AAVE",
+      "ARB",
+      "OP",
+      "POL"
+    ],
+    "Group: monetary_store": [
+      "BTC",
+      "ETH",
+      "BNB",
+      "XRP",
+      "TRX",
+      "ZEC",
+      "LINK",
+      "ADA",
+      "XLM",
+      "BCH",
+      "LTC",
+      "HBAR",
+      "SUI",
+      "AVAX",
+      "TAO"
+    ],
+    "Group: transaction_service_demand": [
+      "ETH",
+      "BNB",
+      "XRP",
+      "SOL",
+      "TRX",
+      "LINK",
+      "ADA",
+      "XLM",
+      "BCH",
+      "HBAR",
+      "SUI",
+      "AVAX",
+      "TAO",
+      "POL"
+    ],
+    "Group: security_commitment": [
+      "ETH",
+      "BNB",
+      "SOL",
+      "TRX",
+      "LINK",
+      "ADA",
+      "HBAR",
+      "SUI",
+      "AVAX",
+      "TAO",
+      "AAVE",
+      "POL"
+    ],
+    "Group: supply_absorption": [
+      "ETH",
+      "BNB",
+      "XRP",
+      "SOL",
+      "TRX",
+      "AVAX",
+      "UNI"
+    ],
+    "Group: financial_integration": [
+      "BTC",
+      "ETH",
+      "BNB",
+      "SOL",
+      "AAVE"
+    ],
+    "Group: control_rights": [
+      "BNB",
+      "TRX",
+      "ZEC",
+      "ADA",
+      "SUI",
+      "UNI",
+      "AAVE",
+      "ARB",
+      "OP"
+    ],
+    "Group: holder_capture": [
+      "ETH",
+      "BNB",
+      "XRP",
+      "SOL",
+      "TRX",
+      "LINK",
+      "AVAX",
+      "UNI",
+      "OP"
+    ],
+    "Group: subsidized_participation": [
+      "BNB",
+      "XRP",
+      "SOL",
+      "TRX",
+      "ZEC",
+      "LINK",
+      "ADA",
+      "XLM",
+      "BCH",
+      "LTC",
+      "AAVE",
+      "ARB",
+      "OP"
+    ]
+  },
+  "weekly_pairs": 52,
+  "correlations": [
+    {
+      "series": "BTC",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.14773303353619044,
+      "spearman": 0.0867412276957227
+    },
+    {
+      "series": "BTC",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.35806195621534587,
+      "spearman": 0.4583795782463929
+    },
+    {
+      "series": "BTC",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2703866409523654,
+      "spearman": 0.35917356783061555
+    },
+    {
+      "series": "ETH",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.11946772377244763,
+      "spearman": 0.09715700503713823
+    },
+    {
+      "series": "ETH",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3409375780046287,
+      "spearman": 0.4312302569794246
+    },
+    {
+      "series": "ETH",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.23834076520187783,
+      "spearman": 0.31366857338000514
+    },
+    {
+      "series": "BNB",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.05984108070924957,
+      "spearman": 0.007086143601126953
+    },
+    {
+      "series": "BNB",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3284410319569179,
+      "spearman": 0.40612994109109535
+    },
+    {
+      "series": "BNB",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.25296137359136966,
+      "spearman": 0.3188764620507129
+    },
+    {
+      "series": "XRP",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.10039307041888311,
+      "spearman": 0.01553829078801332
+    },
+    {
+      "series": "XRP",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2939564619109926,
+      "spearman": 0.46708785110560913
+    },
+    {
+      "series": "XRP",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.19797611851302288,
+      "spearman": 0.24050200631776658
+    },
+    {
+      "series": "SOL",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.037917448492949084,
+      "spearman": 0.0353453427815248
+    },
+    {
+      "series": "SOL",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.33815069978501205,
+      "spearman": 0.3765901135490481
+    },
+    {
+      "series": "SOL",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2834777043275956,
+      "spearman": 0.3469649107828908
+    },
+    {
+      "series": "TRX",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": -0.11138466939988453,
+      "spearman": -0.04738324938102963
+    },
+    {
+      "series": "TRX",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.24427246545673578,
+      "spearman": 0.18620336378382993
+    },
+    {
+      "series": "TRX",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.1507014032327148,
+      "spearman": 0.08050883633569537
+    },
+    {
+      "series": "ZEC",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.1096894898716471,
+      "spearman": 0.04157773414155212
+    },
+    {
+      "series": "ZEC",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.047788449661725886,
+      "spearman": 0.11764705882352941
+    },
+    {
+      "series": "ZEC",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": -0.0452079573324422,
+      "spearman": -0.0016221292580893025
+    },
+    {
+      "series": "LINK",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.0563732314817754,
+      "spearman": -0.0022197558268590455
+    },
+    {
+      "series": "LINK",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3305297000372025,
+      "spearman": 0.3963117903184496
+    },
+    {
+      "series": "LINK",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2665525540897488,
+      "spearman": 0.3049603005207889
+    },
+    {
+      "series": "ADA",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.1768665600558304,
+      "spearman": 0.10782890805088363
+    },
+    {
+      "series": "ADA",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.43705215746718684,
+      "spearman": 0.4705028600700077
+    },
+    {
+      "series": "ADA",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3508070426903949,
+      "spearman": 0.332621873132417
+    },
+    {
+      "series": "XLM",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.11813261307395446,
+      "spearman": 0.16528643387688893
+    },
+    {
+      "series": "XLM",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2839838685307016,
+      "spearman": 0.33356100059762656
+    },
+    {
+      "series": "XLM",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.20427279982373517,
+      "spearman": 0.23623324511226843
+    },
+    {
+      "series": "BCH",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.16350639925175128,
+      "spearman": 0.019038674976521813
+    },
+    {
+      "series": "BCH",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.11023261237129928,
+      "spearman": 0.16665243746264835
+    },
+    {
+      "series": "BCH",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.07710583261246784,
+      "spearman": 0.09784000683001792
+    },
+    {
+      "series": "LTC",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.030401737972645292,
+      "spearman": 0.025100315888329207
+    },
+    {
+      "series": "LTC",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2922741423482685,
+      "spearman": 0.3311704943225476
+    },
+    {
+      "series": "LTC",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.14526320692900407,
+      "spearman": 0.09288824383164006
+    },
+    {
+      "series": "HBAR",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.07828860895979856,
+      "spearman": 0.12089131733970801
+    },
+    {
+      "series": "HBAR",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.4045353466407693,
+      "spearman": 0.5079825834542816
+    },
+    {
+      "series": "HBAR",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2595914713904401,
+      "spearman": 0.2367454964569282
+    },
+    {
+      "series": "SUI",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.0003041427593599304,
+      "spearman": 0.011867156151284896
+    },
+    {
+      "series": "SUI",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3654036171257275,
+      "spearman": 0.38563988730470417
+    },
+    {
+      "series": "SUI",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.33849680264982046,
+      "spearman": 0.31520532741398444
+    },
+    {
+      "series": "AVAX",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.08583971420332656,
+      "spearman": 0.16537180910099888
+    },
+    {
+      "series": "AVAX",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3681678473911824,
+      "spearman": 0.37915137027234697
+    },
+    {
+      "series": "AVAX",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3478200379223759,
+      "spearman": 0.3172543327926236
+    },
+    {
+      "series": "TAO",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": -0.061693904939357294,
+      "spearman": 0.001195253137539486
+    },
+    {
+      "series": "TAO",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.11847378938072134,
+      "spearman": 0.22590284299496285
+    },
+    {
+      "series": "TAO",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.14632275875323197,
+      "spearman": 0.19098437633398788
+    },
+    {
+      "series": "UNI",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.12093521800931355,
+      "spearman": 0.1085972850678733
+    },
+    {
+      "series": "UNI",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.21734880296584846,
+      "spearman": 0.2376846239221378
+    },
+    {
+      "series": "UNI",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.011197789303067708,
+      "spearman": -0.04132160846922223
+    },
+    {
+      "series": "AAVE",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.022336350051924345,
+      "spearman": -0.06497054554768206
+    },
+    {
+      "series": "AAVE",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.18584481817314769,
+      "spearman": 0.21403568684367796
+    },
+    {
+      "series": "AAVE",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.30581990992594976,
+      "spearman": 0.2872876291300265
+    },
+    {
+      "series": "ARB",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.12224293834109487,
+      "spearman": 0.15666353624178264
+    },
+    {
+      "series": "ARB",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.4375044113366938,
+      "spearman": 0.44659779731921795
+    },
+    {
+      "series": "ARB",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3322452704137961,
+      "spearman": 0.30632630410654826
+    },
+    {
+      "series": "OP",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.08142269661680292,
+      "spearman": 0.12968496542303423
+    },
+    {
+      "series": "OP",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3440834139064613,
+      "spearman": 0.34124477076752324
+    },
+    {
+      "series": "OP",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3432505325890641,
+      "spearman": 0.36634508665585247
+    },
+    {
+      "series": "POL",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.17592192097411768,
+      "spearman": 0.1892768718517886
+    },
+    {
+      "series": "POL",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.29789284628756846,
+      "spearman": 0.4192777256040297
+    },
+    {
+      "series": "POL",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.36100999337510825,
+      "spearman": 0.35251430035003845
+    },
+    {
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.10991984843889313,
+      "spearman": 0.09169299069410057,
+      "bootstrap_low": -0.18906907229780995,
+      "bootstrap_high": 0.4109100097661447
+    },
+    {
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.36130299879032485,
+      "spearman": 0.4750277469478357,
+      "bootstrap_low": 0.07727157739191587,
+      "bootstrap_high": 0.6527007029026454
+    },
+    {
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.28198597463943664,
+      "spearman": 0.337317510458465,
+      "bootstrap_low": -0.018131584839120085,
+      "bootstrap_high": 0.5795480930276578
+    },
+    {
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.1068160221578508,
+      "spearman": 0.07769145394006659
+    },
+    {
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.36012013302930757,
+      "spearman": 0.4695637326047981
+    },
+    {
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2831282487661883,
+      "spearman": 0.3330487492529668
+    },
+    {
+      "series": "Group: monetary_store",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.10449675918475969,
+      "spearman": 0.062238538376163235
+    },
+    {
+      "series": "Group: monetary_store",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3481740648008141,
+      "spearman": 0.47630837530948517
+    },
+    {
+      "series": "Group: monetary_store",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2508083304482384,
+      "spearman": 0.3071800563476479
+    },
+    {
+      "series": "Group: transaction_service_demand",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.09904252436953676,
+      "spearman": 0.08913173397080168
+    },
+    {
+      "series": "Group: transaction_service_demand",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3756380757879992,
+      "spearman": 0.49312729445914794
+    },
+    {
+      "series": "Group: transaction_service_demand",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3108625613863572,
+      "spearman": 0.3468795355587808
+    },
+    {
+      "series": "Group: security_commitment",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.07045520035402086,
+      "spearman": 0.08298471783488431
+    },
+    {
+      "series": "Group: security_commitment",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.37054362448321176,
+      "spearman": 0.4536839409203449
+    },
+    {
+      "series": "Group: security_commitment",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3366922826607791,
+      "spearman": 0.35405105438401774
+    },
+    {
+      "series": "Group: supply_absorption",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.0915002586879457,
+      "spearman": 0.08887560829847178
+    },
+    {
+      "series": "Group: supply_absorption",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.36050075060531267,
+      "spearman": 0.4397677793904209
+    },
+    {
+      "series": "Group: supply_absorption",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.24524727850103878,
+      "spearman": 0.26867583027405445
+    },
+    {
+      "series": "Group: financial_integration",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.07840718808224095,
+      "spearman": 0.0018782549304191924
+    },
+    {
+      "series": "Group: financial_integration",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3275984821124891,
+      "spearman": 0.36830871681038163
+    },
+    {
+      "series": "Group: financial_integration",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2995742309170305,
+      "spearman": 0.3460257833176812
+    },
+    {
+      "series": "Group: control_rights",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.10698693730702805,
+      "spearman": 0.057286775377785364
+    },
+    {
+      "series": "Group: control_rights",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.34584240294636065,
+      "spearman": 0.3781268675830274
+    },
+    {
+      "series": "Group: control_rights",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2610698124758086,
+      "spearman": 0.28216511568342867
+    },
+    {
+      "series": "Group: holder_capture",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.08863149884981436,
+      "spearman": 0.08972936053957141
+    },
+    {
+      "series": "Group: holder_capture",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.36842164194186433,
+      "spearman": 0.42175360710321863
+    },
+    {
+      "series": "Group: holder_capture",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2784367303967908,
+      "spearman": 0.3155468283104243
+    },
+    {
+      "series": "Group: subsidized_participation",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.1162835114344862,
+      "spearman": 0.061982412703833346
+    },
+    {
+      "series": "Group: subsidized_participation",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.34649490334330496,
+      "spearman": 0.43993852983864085
+    },
+    {
+      "series": "Group: subsidized_participation",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.26653864599086363,
+      "spearman": 0.3172543327926236
+    }
+  ],
+  "robustness": [
+    {
+      "scenario": "daily",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "GLD",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.22583290927096958,
+      "spearman": 0.23269889118225892
+    },
+    {
+      "scenario": "daily",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "SPY",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.4619903908851696,
+      "spearman": 0.4029710555368886
+    },
+    {
+      "scenario": "daily",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "IWM",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.4353721347700982,
+      "spearman": 0.38705169682714924
+    },
+    {
+      "scenario": "daily",
+      "series": "BTC",
+      "benchmark": "GLD",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.2790374594732669,
+      "spearman": 0.31427869245907936
+    },
+    {
+      "scenario": "daily",
+      "series": "BTC",
+      "benchmark": "SPY",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.4686419443108876,
+      "spearman": 0.4358335333365334
+    },
+    {
+      "scenario": "daily",
+      "series": "BTC",
+      "benchmark": "IWM",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.4570399288739529,
+      "spearman": 0.4510209763356214
+    },
+    {
+      "scenario": "daily",
+      "series": "ETH",
+      "benchmark": "GLD",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.2840535572724069,
+      "spearman": 0.2714589353429655
+    },
+    {
+      "scenario": "daily",
+      "series": "ETH",
+      "benchmark": "SPY",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.475148680441301,
+      "spearman": 0.44448595977535643
+    },
+    {
+      "scenario": "daily",
+      "series": "ETH",
+      "benchmark": "IWM",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.4419040091937193,
+      "spearman": 0.42700676810828975
+    },
+    {
+      "scenario": "daily",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "GLD",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.2184554120829552,
+      "spearman": 0.22597955167282677
+    },
+    {
+      "scenario": "daily",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "SPY",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.45626988964672116,
+      "spearman": 0.39541151058416935
+    },
+    {
+      "scenario": "daily",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "IWM",
+      "pairs": 250,
+      "state": "estimated",
+      "pearson": 0.4297631468204658,
+      "spearman": 0.3793523736379782
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.04056251505563584,
+      "spearman": 0.17971484675147273
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.23038500285129596,
+      "spearman": 0.2948860240758132
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.051972976200481434,
+      "spearman": 0.03987022965935286
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "BTC",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.10259444044099826,
+      "spearman": 0.17339708016733543
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "BTC",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.2477350397626474,
+      "spearman": 0.2918125160078545
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "BTC",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.08802226561640526,
+      "spearman": 0.15367540339793392
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "ETH",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.07178701122502856,
+      "spearman": 0.19388713395372661
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "ETH",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.21368671464046451,
+      "spearman": 0.22940322718347136
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "ETH",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.06272748643719023,
+      "spearman": 0.12729445914795526
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.03553676015273808,
+      "spearman": 0.174421582856655
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.22844314866655913,
+      "spearman": 0.2834457440450781
+    },
+    {
+      "scenario": "weekly_crypto_shift_minus1",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.04931251947250834,
+      "spearman": 0.015282165115683428
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.18233180736175866,
+      "spearman": 0.1448817553146077
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.34869147062426376,
+      "spearman": 0.4653803466234099
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3156480719640463,
+      "spearman": 0.37915137027234697
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "BTC",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.20656537526742935,
+      "spearman": 0.1342098523008623
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "BTC",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.37852195285159385,
+      "spearman": 0.4524033125586955
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "BTC",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3437802074883132,
+      "spearman": 0.38239562878852557
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "ETH",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.17790823118242252,
+      "spearman": 0.16178604968838042
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "ETH",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3630769508776238,
+      "spearman": 0.40638606676342526
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "ETH",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.32157316683455717,
+      "spearman": 0.355843934090327
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "GLD",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.18022933632052593,
+      "spearman": 0.14889439084777598
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "SPY",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3447447107924677,
+      "spearman": 0.46495347050286007
+    },
+    {
+      "scenario": "weekly_crypto_shift_plus1",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "IWM",
+      "pairs": 52,
+      "state": "estimated",
+      "pearson": 0.3124224972720287,
+      "spearman": 0.3706992230854606
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": -0.1662181972045586,
+      "spearman": -0.046153846153846156
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.5078557532411065,
+      "spearman": 0.48102564102564105
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.44686831301385094,
+      "spearman": 0.47145299145299147
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "BTC",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": -0.0874988704013674,
+      "spearman": -0.022905982905982905
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "BTC",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.507024901457072,
+      "spearman": 0.49606837606837606
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "BTC",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.458348719996247,
+      "spearman": 0.548034188034188
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "ETH",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": -0.11090934908404457,
+      "spearman": -0.02358974358974359
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "ETH",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.5175097343810131,
+      "spearman": 0.49401709401709404
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "ETH",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.4445450190705848,
+      "spearman": 0.5124786324786325
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": -0.17109898709523882,
+      "spearman": -0.08786324786324787
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.5035842107306527,
+      "spearman": 0.4707692307692308
+    },
+    {
+      "scenario": "weekly_first_half",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.44340976590882236,
+      "spearman": 0.4488888888888889
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.4582536914660012,
+      "spearman": 0.4235897435897436
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.27184443349611653,
+      "spearman": 0.5302564102564102
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "Crypto equal-weight fixed basket",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.1510713090445381,
+      "spearman": 0.20752136752136752
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "BTC",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.4426576268347895,
+      "spearman": 0.3305982905982906
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "BTC",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.2724422071838995,
+      "spearman": 0.4605128205128205
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "BTC",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.13667598754466315,
+      "spearman": 0.13914529914529913
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "ETH",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.44198851340651857,
+      "spearman": 0.4379487179487179
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "ETH",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.23803250494989503,
+      "spearman": 0.465982905982906
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "ETH",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.08821916940962325,
+      "spearman": 0.14119658119658118
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "GLD",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.4565402005800921,
+      "spearman": 0.41196581196581195
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "SPY",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.27210159140441575,
+      "spearman": 0.5343589743589744
+    },
+    {
+      "scenario": "weekly_second_half",
+      "series": "Crypto ex BTC and ETH",
+      "benchmark": "IWM",
+      "pairs": 26,
+      "state": "estimated",
+      "pearson": 0.154538835486964,
+      "spearman": 0.2123076923076923
+    }
+  ],
+  "stress_regimes": [
+    {
+      "regime": "SPY_negative_week",
+      "series": "Crypto equal-weight fixed basket",
+      "weeks": 21,
+      "state": "estimated",
+      "correlation_with_SPY": 0.07986751371436417,
+      "mean_weekly_return": -0.03305614846278723,
+      "share_negative": 0.6666666666666666
+    },
+    {
+      "regime": "SPY_negative_week",
+      "series": "BTC",
+      "weeks": 21,
+      "state": "estimated",
+      "correlation_with_SPY": 0.07829014513100613,
+      "mean_weekly_return": -0.024109749213306643,
+      "share_negative": 0.6666666666666666
+    },
+    {
+      "regime": "SPY_negative_week",
+      "series": "ETH",
+      "weeks": 21,
+      "state": "estimated",
+      "correlation_with_SPY": 0.07085000860034892,
+      "mean_weekly_return": -0.031390962225185275,
+      "share_negative": 0.5714285714285714
+    },
+    {
+      "regime": "SPY_negative_week",
+      "series": "Crypto ex BTC and ETH",
+      "weeks": 21,
+      "state": "estimated",
+      "correlation_with_SPY": 0.08037582549206584,
+      "mean_weekly_return": -0.03366990657699145,
+      "share_negative": 0.6666666666666666
+    },
+    {
+      "regime": "SPY_negative_week",
+      "series": "GLD",
+      "weeks": 21,
+      "state": "estimated",
+      "correlation_with_SPY": 0.5219321457564118,
+      "mean_weekly_return": 0.001775023435601478,
+      "share_negative": 0.38095238095238093
+    },
+    {
+      "regime": "SPY_negative_week",
+      "series": "SPY",
+      "weeks": 21,
+      "state": "estimated",
+      "correlation_with_SPY": 1.0,
+      "mean_weekly_return": -0.012606122027323433,
+      "share_negative": 1.0
+    },
+    {
+      "regime": "SPY_negative_week",
+      "series": "IWM",
+      "weeks": 21,
+      "state": "estimated",
+      "correlation_with_SPY": 0.5130172850875668,
+      "mean_weekly_return": -0.007770828546419887,
+      "share_negative": 0.7142857142857143
+    },
+    {
+      "regime": "SPY_bottom_quintile_week",
+      "series": "Crypto equal-weight fixed basket",
+      "weeks": 11,
+      "state": "small_sample_descriptive_only",
+      "correlation_with_SPY": null,
+      "mean_weekly_return": -0.027787470849554928,
+      "share_negative": 0.7272727272727273
+    },
+    {
+      "regime": "SPY_bottom_quintile_week",
+      "series": "BTC",
+      "weeks": 11,
+      "state": "small_sample_descriptive_only",
+      "correlation_with_SPY": null,
+      "mean_weekly_return": -0.018057416687459495,
+      "share_negative": 0.7272727272727273
+    },
+    {
+      "regime": "SPY_bottom_quintile_week",
+      "series": "ETH",
+      "weeks": 11,
+      "state": "small_sample_descriptive_only",
+      "correlation_with_SPY": null,
+      "mean_weekly_return": -0.023837373199572517,
+      "share_negative": 0.5454545454545454
+    },
+    {
+      "regime": "SPY_bottom_quintile_week",
+      "series": "Crypto ex BTC and ETH",
+      "weeks": 11,
+      "state": "small_sample_descriptive_only",
+      "correlation_with_SPY": null,
+      "mean_weekly_return": -0.028584208935871436,
+      "share_negative": 0.7272727272727273
+    },
+    {
+      "regime": "SPY_bottom_quintile_week",
+      "series": "GLD",
+      "weeks": 11,
+      "state": "small_sample_descriptive_only",
+      "correlation_with_SPY": null,
+      "mean_weekly_return": -0.01571048784886803,
+      "share_negative": 0.6363636363636364
+    },
+    {
+      "regime": "SPY_bottom_quintile_week",
+      "series": "SPY",
+      "weeks": 11,
+      "state": "small_sample_descriptive_only",
+      "correlation_with_SPY": null,
+      "mean_weekly_return": -0.01934388742891182,
+      "share_negative": 1.0
+    },
+    {
+      "regime": "SPY_bottom_quintile_week",
+      "series": "IWM",
+      "weeks": 11,
+      "state": "small_sample_descriptive_only",
+      "correlation_with_SPY": null,
+      "mean_weekly_return": -0.015308925116075088,
+      "share_negative": 0.8181818181818182
+    }
+  ],
+  "performance": [
+    {
+      "series": "Crypto equal-weight fixed basket",
+      "state": "estimated",
+      "weeks": 52,
+      "total_return": -0.46163880808006197,
+      "annualized_volatility": 0.5693992965783655,
+      "sampled_max_drawdown": -0.6071380619065876,
+      "annualized_geometric_return": -0.46255387298979866,
+      "first_endpoint": "2025-08-22",
+      "last_endpoint": "2026-08-21"
+    },
+    {
+      "series": "BTC",
+      "state": "estimated",
+      "weeks": 52,
+      "total_return": -0.33007767753965245,
+      "annualized_volatility": 0.4651827116616173,
+      "sampled_max_drawdown": -0.508334396884613,
+      "annualized_geometric_return": -0.3308145426928779,
+      "first_endpoint": "2025-08-22",
+      "last_endpoint": "2026-08-21"
+    },
+    {
+      "series": "ETH",
+      "state": "estimated",
+      "weeks": 52,
+      "total_return": -0.479250093645166,
+      "annualized_volatility": 0.6390048408390607,
+      "sampled_max_drawdown": -0.6732911567920166,
+      "annualized_geometric_return": -0.48018272371438764,
+      "first_endpoint": "2025-08-22",
+      "last_endpoint": "2026-08-21"
+    },
+    {
+      "series": "Crypto ex BTC and ETH",
+      "state": "estimated",
+      "weeks": 52,
+      "total_return": -0.4695208731668793,
+      "annualized_volatility": 0.57559489975329,
+      "sampled_max_drawdown": -0.6112247195610571,
+      "annualized_geometric_return": -0.4704439985083301,
+      "first_endpoint": "2025-08-22",
+      "last_endpoint": "2026-08-21"
+    },
+    {
+      "series": "GLD",
+      "state": "estimated",
+      "weeks": 52,
+      "total_return": 0.3631270643804203,
+      "annualized_volatility": 0.23793518248165077,
+      "sampled_max_drawdown": -0.2384289329982232,
+      "annualized_geometric_return": 0.36428764435381744,
+      "first_endpoint": "2025-08-22",
+      "last_endpoint": "2026-08-21"
+    },
+    {
+      "series": "SPY",
+      "state": "estimated",
+      "weeks": 52,
+      "total_return": 0.19974027395862937,
+      "annualized_volatility": 0.12187106856286511,
+      "sampled_max_drawdown": -0.08392281445021865,
+      "annualized_geometric_return": 0.20034064065347423,
+      "first_endpoint": "2025-08-22",
+      "last_endpoint": "2026-08-21"
+    },
+    {
+      "series": "IWM",
+      "state": "estimated",
+      "weeks": 52,
+      "total_return": 0.29061651832376145,
+      "annualized_volatility": 0.1570936431588265,
+      "sampled_max_drawdown": -0.08695486549547216,
+      "annualized_geometric_return": 0.29152140165443496,
+      "first_endpoint": "2025-08-22",
+      "last_endpoint": "2026-08-21"
+    }
+  ],
+  "source_note": "Yahoo Finance daily adjusted-close chart responses, archived unchanged with retrieval time and SHA-256. Public endpoint availability is not guaranteed; ETF adjusted returns are proxies, not official index total returns."
+}

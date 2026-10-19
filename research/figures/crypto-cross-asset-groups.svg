@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="591" viewBox="0 0 1080 591" role="img" aria-label="Economic groups show similar equity co-movement">
+<rect width="1080" height="100%" fill="white"/>
+<text x="25" y="32" font-family="Arial,sans-serif" font-size="22" fill="#19334b" text-anchor="start">Economic groups show similar equity co-movement</text>
+<text x="25" y="57" font-family="Arial,sans-serif" font-size="12" fill="#566677" text-anchor="start">Weekly Pearson correlations. Groups overlap; these are descriptive comparisons.</text>
+<text x="480" y="88" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">GLD</text>
+<text x="660" y="88" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">SPY</text>
+<text x="840" y="88" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">IWM</text>
+<text x="25" y="128" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">Crypto equal-weight fixed basket</text>
+<rect x="400" y="105" width="160" height="32" fill="rgb(228,236,245)"/>
+<text x="480" y="127" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.11</text>
+<rect x="580" y="105" width="160" height="32" fill="rgb(190,212,233)"/>
+<text x="660" y="127" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.36</text>
+<rect x="760" y="105" width="160" height="32" fill="rgb(202,220,237)"/>
+<text x="840" y="127" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.28</text>
+<text x="25" y="166" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">BTC</text>
+<rect x="400" y="143" width="160" height="32" fill="rgb(222,232,243)"/>
+<text x="480" y="165" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.15</text>
+<rect x="580" y="143" width="160" height="32" fill="rgb(191,212,233)"/>
+<text x="660" y="165" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.36</text>
+<rect x="760" y="143" width="160" height="32" fill="rgb(204,221,237)"/>
+<text x="840" y="165" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.27</text>
+<text x="25" y="204" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">ETH</text>
+<rect x="400" y="181" width="160" height="32" fill="rgb(227,235,244)"/>
+<text x="480" y="203" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.12</text>
+<rect x="580" y="181" width="160" height="32" fill="rgb(193,214,234)"/>
+<text x="660" y="203" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.34</text>
+<rect x="760" y="181" width="160" height="32" fill="rgb(209,224,239)"/>
+<text x="840" y="203" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.24</text>
+<text x="25" y="242" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">Crypto ex BTC and ETH</text>
+<rect x="400" y="219" width="160" height="32" fill="rgb(228,236,245)"/>
+<text x="480" y="241" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.11</text>
+<rect x="580" y="219" width="160" height="32" fill="rgb(190,212,233)"/>
+<text x="660" y="241" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.36</text>
+<rect x="760" y="219" width="160" height="32" fill="rgb(202,220,237)"/>
+<text x="840" y="241" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.28</text>
+<text x="25" y="280" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">monetary store</text>
+<rect x="400" y="257" width="160" height="32" fill="rgb(229,237,245)"/>
+<text x="480" y="279" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.10</text>
+<rect x="580" y="257" width="160" height="32" fill="rgb(192,213,234)"/>
+<text x="660" y="279" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.35</text>
+<rect x="760" y="257" width="160" height="32" fill="rgb(207,223,238)"/>
+<text x="840" y="279" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.25</text>
+<text x="25" y="318" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">transaction service demand</text>
+<rect x="400" y="295" width="160" height="32" fill="rgb(230,237,245)"/>
+<text x="480" y="317" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.10</text>
+<rect x="580" y="295" width="160" height="32" fill="rgb(188,211,233)"/>
+<text x="660" y="317" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.38</text>
+<rect x="760" y="295" width="160" height="32" fill="rgb(198,217,236)"/>
+<text x="840" y="317" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.31</text>
+<text x="25" y="356" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">security commitment</text>
+<rect x="400" y="333" width="160" height="32" fill="rgb(234,240,246)"/>
+<text x="480" y="355" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.07</text>
+<rect x="580" y="333" width="160" height="32" fill="rgb(189,211,233)"/>
+<text x="660" y="355" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.37</text>
+<rect x="760" y="333" width="160" height="32" fill="rgb(194,215,234)"/>
+<text x="840" y="355" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.34</text>
+<text x="25" y="394" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">supply absorption</text>
+<rect x="400" y="371" width="160" height="32" fill="rgb(231,238,245)"/>
+<text x="480" y="393" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.09</text>
+<rect x="580" y="371" width="160" height="32" fill="rgb(190,212,233)"/>
+<text x="660" y="393" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.36</text>
+<rect x="760" y="371" width="160" height="32" fill="rgb(208,223,238)"/>
+<text x="840" y="393" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.25</text>
+<text x="25" y="432" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">financial integration</text>
+<rect x="400" y="409" width="160" height="32" fill="rgb(233,239,246)"/>
+<text x="480" y="431" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.08</text>
+<rect x="580" y="409" width="160" height="32" fill="rgb(195,215,235)"/>
+<text x="660" y="431" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.33</text>
+<rect x="760" y="409" width="160" height="32" fill="rgb(200,218,236)"/>
+<text x="840" y="431" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.30</text>
+<text x="25" y="470" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">control rights</text>
+<rect x="400" y="447" width="160" height="32" fill="rgb(228,236,245)"/>
+<text x="480" y="469" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.11</text>
+<rect x="580" y="447" width="160" height="32" fill="rgb(193,214,234)"/>
+<text x="660" y="469" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.35</text>
+<rect x="760" y="447" width="160" height="32" fill="rgb(205,222,238)"/>
+<text x="840" y="469" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.26</text>
+<text x="25" y="508" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">holder capture</text>
+<rect x="400" y="485" width="160" height="32" fill="rgb(231,238,246)"/>
+<text x="480" y="507" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.09</text>
+<rect x="580" y="485" width="160" height="32" fill="rgb(189,211,233)"/>
+<text x="660" y="507" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.37</text>
+<rect x="760" y="485" width="160" height="32" fill="rgb(203,220,237)"/>
+<text x="840" y="507" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.28</text>
+<text x="25" y="546" font-family="Arial,sans-serif" font-size="13" fill="#19334b" text-anchor="start">subsidized participation</text>
+<rect x="400" y="523" width="160" height="32" fill="rgb(227,235,244)"/>
+<text x="480" y="545" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.12</text>
+<rect x="580" y="523" width="160" height="32" fill="rgb(193,214,234)"/>
+<text x="660" y="545" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.35</text>
+<rect x="760" y="523" width="160" height="32" fill="rgb(205,221,238)"/>
+<text x="840" y="545" font-family="Arial,sans-serif" font-size="14" fill="#19334b" text-anchor="middle">0.27</text>
+</svg>

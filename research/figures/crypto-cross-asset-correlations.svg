@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="340" viewBox="0 0 1080 340" role="img" aria-label="Crypto co-movement: equities stronger than gold">
+<rect width="1080" height="100%" fill="white"/>
+<text x="25" y="32" font-family="Arial,sans-serif" font-size="22" fill="#19334b" text-anchor="start">Crypto co-movement: equities stronger than gold</text>
+<text x="25" y="57" font-family="Arial,sans-serif" font-size="12" fill="#566677" text-anchor="start">Weekly return correlations; 52 observations. Lines show marginal 95% block-bootstrap intervals.</text>
+<line x1="280" y1="85" x2="280" y2="265" stroke="#dfe5eb"/>
+<text x="280" y="290" font-family="Arial,sans-serif" font-size="12" fill="#19334b" text-anchor="middle">-1.0</text>
+<line x1="450.0" y1="85" x2="450.0" y2="265" stroke="#dfe5eb"/>
+<text x="450.0" y="290" font-family="Arial,sans-serif" font-size="12" fill="#19334b" text-anchor="middle">-0.5</text>
+<line x1="620" y1="85" x2="620" y2="265" stroke="#dfe5eb"/>
+<text x="620" y="290" font-family="Arial,sans-serif" font-size="12" fill="#19334b" text-anchor="middle">0.0</text>
+<line x1="790.0" y1="85" x2="790.0" y2="265" stroke="#dfe5eb"/>
+<text x="790.0" y="290" font-family="Arial,sans-serif" font-size="12" fill="#19334b" text-anchor="middle">0.5</text>
+<line x1="960" y1="85" x2="960" y2="265" stroke="#dfe5eb"/>
+<text x="960" y="290" font-family="Arial,sans-serif" font-size="12" fill="#19334b" text-anchor="middle">1.0</text>
+<text x="25" y="120" font-family="Arial,sans-serif" font-size="15" fill="#19334b" text-anchor="start">Gold / GLD</text>
+<line x1="555.72" y1="115" x2="759.71" y2="115" stroke="#b88017" stroke-width="4"/>
+<circle cx="657.37" cy="115" r="7" fill="#b88017"/>
+<text x="980" y="120" font-family="Arial,sans-serif" font-size="16" fill="#19334b" text-anchor="start">0.11</text>
+<text x="25" y="180" font-family="Arial,sans-serif" font-size="15" fill="#19334b" text-anchor="start">S&amp;P 500 / SPY</text>
+<line x1="646.27" y1="175" x2="841.92" y2="175" stroke="#276a9e" stroke-width="4"/>
+<circle cx="742.84" cy="175" r="7" fill="#276a9e"/>
+<text x="980" y="180" font-family="Arial,sans-serif" font-size="16" fill="#19334b" text-anchor="start">0.36</text>
+<text x="25" y="240" font-family="Arial,sans-serif" font-size="15" fill="#19334b" text-anchor="start">Russell 2000 / IWM</text>
+<line x1="613.84" y1="235" x2="817.05" y2="235" stroke="#7863a6" stroke-width="4"/>
+<circle cx="715.88" cy="235" r="7" fill="#7863a6"/>
+<text x="980" y="240" font-family="Arial,sans-serif" font-size="16" fill="#19334b" text-anchor="start">0.28</text>
+<text x="620" y="323" font-family="Arial,sans-serif" font-size="12" fill="#19334b" text-anchor="middle">−1: opposite moves       0: little linear relationship       +1: move together</text>
+</svg>

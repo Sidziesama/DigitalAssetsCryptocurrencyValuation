@@ -403,6 +403,11 @@
       "network": false,
       "commands": [
         {
+          "module": "cross_asset_market_data",
+          "args": ["--offline"],
+          "note": "Verify archived ETF snapshot checksums and normalize prices; initial network collection is a separate explicit command."
+        },
+        {
           "module": "crypto_return_panel",
           "args": []
         },
@@ -418,6 +423,11 @@
           "module": "crypto_function_risk_verified_refresh",
           "args": [],
           "note": "Re-estimates the frozen risk specification using the completed 23-asset classification input without changing the model."
+        },
+        {
+          "module": "crypto_cross_asset",
+          "args": [],
+          "note": "Matched weekly crypto/GLD/SPY/IWM correlations, paired block-bootstrap intervals, rolling and timing/regime sensitivities."
         }
       ]
     },
@@ -518,6 +528,11 @@
           "module": "crypto_architecture_similarity",
           "args": [],
           "note": "Tests whether technical architecture is an adequate proxy for similarity across the ten verified economic functions."
+        },
+        {
+          "module": "crypto_advisory_report",
+          "args": [],
+          "note": "Consolidates classification, hypotheses, relative valuation and benchmark risk into editable Markdown and self-contained printable HTML with four figures."
         },
         {
           "module": "crypto_hypothesis_register",
