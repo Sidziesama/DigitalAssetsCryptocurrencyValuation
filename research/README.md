@@ -15,6 +15,8 @@ This directory is the human-readable layer of the project. It is deliberately tr
 
 ## Where to start
 
+For formulas, worked examples, uncertainty methods and the distinction between completed empirical tests and planned H4, read `methods/research-math-and-empirical-analysis.md`. It supersedes the older September math explanation.
+
 For the latest H4 execution and source-access status, read `findings/2026-10-25-h4-access-and-execution-checkpoint.md`. The estimator is implemented, but complete historical ETH effective balance is still required before empirical estimation.
 
 For the 23 October research review, publication assessment and staged valuation roadmap, read `findings/2026-10-23-research-findings-publication-and-valuation-roadmap.md`. It summarizes existing findings without changing or re-estimating the frozen models.

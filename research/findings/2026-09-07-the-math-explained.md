@@ -1,5 +1,7 @@
 # The math behind the evidence, explained
 
+> Historical note: use [the current mathematics and empirical-analysis guide](../methods/research-math-and-empirical-analysis.md) for the implemented October checkpoint. This older note contains earlier sample sizes and overstatements: exhaustive bootstrap enumeration does not guarantee assumption-free inference; Rademacher weights do not generally preserve skewness; and post-adjudication agreement is not an independent reliability result. Its numeric examples should be checked against the named current outputs.
+
 7 September 2026. Every technique used in this project, why it was chosen over the obvious alternative, and what it is doing. Written for someone who knows what a regression is but has not spent time with cluster-robust inference or randomization tests.
 
 ---
