@@ -1,0 +1,46 @@
+{
+  "status": "h4_estimation_blocked_missing_stake",
+  "design_frozen_on": "2026-10-12",
+  "estimation_frozen_on": "2026-10-25",
+  "window": {
+    "start": "2025-08-25",
+    "end": "2026-08-21"
+  },
+  "primary_assets": [
+    "crypto_eth",
+    "crypto_bnb",
+    "crypto_btc",
+    "crypto_uni",
+    "crypto_arb"
+  ],
+  "stake_coverage": [
+    {
+      "asset_id": "crypto_eth",
+      "observed_days": 0,
+      "required_days": 362,
+      "complete": false
+    },
+    {
+      "asset_id": "crypto_bnb",
+      "observed_days": 362,
+      "required_days": 362,
+      "complete": true
+    }
+  ],
+  "estimation_allowed": false,
+  "common_days": 0,
+  "results": [],
+  "absorbed_controls": {
+    "btc_log_return": "Common across assets on each date and therefore exactly absorbed by date fixed effects; never fit it as an independently identified coefficient."
+  },
+  "inference": "Null-imposed wild-cluster t bootstrap with Rademacher asset weights, enumerating all 32 assignments for five assets, with CR1 cluster covariance. Exact enumeration is not a finite-sample validity guarantee, particularly with only two stake-positive assets.",
+  "uncertainty": "No calibrated confidence interval or causal interpretation. Report coefficient, effect per 1-percentage-point change in stake share, cluster standard error, 32-sign bootstrap p and BH q. Two-sided p-value grid is at least 2/32 = 0.0625 in nondegenerate cases.",
+  "guardrails": [
+    "Do not run on partial ETH data or replace it with BNB-only inference.",
+    "Do not select outcomes, windows, controls or quote sources based on results.",
+    "Turnover is not executable market liquidity; trading volume, prices and staking can respond jointly to other forces.",
+    "ETH effective balance measures consensus weight; BNB pool totals use a different chain-specific measurement. Neither measures all inaccessible supply, and liquid staking can leave exposure tradeable."
+  ],
+  "next_required": "Configure ETH_BEACON_ARCHIVE_API_URL locally and collect exact active effective balance for every study date. Historical validator access is required; do not paste credentials into research files.",
+  "common_market_and_price_days_excluding_stake": 361
+}

@@ -59,6 +59,8 @@ def provider_label(url: str) -> str:
 
 
 def normalize(payload: dict[str, Any], day: date, slot: int, provider: str) -> dict[str, Any]:
+    if payload.get('execution_optimistic') is True or payload.get('finalized') is False:
+        raise ValueError('Historical validator response must not be optimistic or explicitly unfinalized')
     records = payload.get("data")
     if not isinstance(records, list) or not records:
         raise ValueError("historical validator response has no data")
@@ -100,6 +102,31 @@ def probe(repo: Path, endpoint: str | None = None) -> dict[str, Any]:
     return result
 
 
+def check_history(repo: Path, endpoint: str | None = None, fetch: Callable[[str], dict[str, Any]] = request_json) -> dict[str, Any]:
+    """Check small historical responses without exposing provider credentials."""
+    source=validate(load_json(repo/'config/crypto_h4_staking_sources.json'))
+    design=load_json(repo/'config/crypto_h4_analysis.json')
+    load_local_env(repo)
+    configured=endpoint or os.environ.get(source['api_url_env'],'')
+    result={'status':'archive_endpoint_required','archive_endpoint_configured':bool(configured),'unblocks_h4':False,'checks':[]}
+    if not configured:return result
+    result['provider']=provider_label(configured)
+    start,end=date.fromisoformat(design['study_start']),date.fromisoformat(design['study_end'])
+    for day in [start,start+(end-start)//2,end]:
+        slot=date_slot(day,source)
+        try:
+            payload=fetch(f"{configured.rstrip('/')}/eth/v1/beacon/states/{slot}/validators?id=0")
+            records=payload.get('data',[])
+            valid=isinstance(records,list) and bool(records) and payload.get('execution_optimistic') is not True and payload.get('finalized') is not False
+            result['checks'].append({'date':str(day),'beacon_slot':slot,'historical_validator_access':valid})
+        except Exception as error:
+            result['checks'].append({'date':str(day),'beacon_slot':slot,'historical_validator_access':False,'error_type':type(error).__name__,'http_status':getattr(error,'code',None)})
+    supported=all(row['historical_validator_access'] for row in result['checks'])
+    result['status']='historical_access_verified_download_budget_review_required' if supported else 'historical_access_not_verified'
+    result['next_required']='Check response sizes, rate limits, storage and any provider charges before collecting 362 full validator snapshots. Three successful small requests do not prove complete history.'
+    return result
+
+
 def collect(repo: Path, start: date, end: date, endpoint: str | None = None, force: bool = False,
             fetch: Callable[[str], dict[str, Any]] = request_json) -> dict[str, Any]:
     source = validate(load_json(repo / "config/crypto_h4_staking_sources.json"))
@@ -125,7 +152,7 @@ def collect(repo: Path, start: date, end: date, endpoint: str | None = None, for
                 }, indent=2) + "\n", encoding="utf-8")
             rows.append(normalize(payload, day, slot, provider))
         except Exception as exc:
-            failures.append({"date": day.isoformat(), "beacon_slot": slot, "error": str(exc)})
+            failures.append({"date": day.isoformat(), "beacon_slot": slot, "error_type": type(exc).__name__, "http_status": getattr(exc,'code',None)})
         day += timedelta(days=1)
     expected = (end - start).days + 1; out = repo / "data/processed/01_classification"
     write_rows(out / "crypto_h4_eth_stake_daily.csv", rows, [
@@ -149,8 +176,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Collect exact historical active ETH consensus effective balance")
     parser.add_argument("--repo", type=Path, default=Path.cwd()); parser.add_argument("--start", type=date.fromisoformat)
     parser.add_argument("--end", type=date.fromisoformat); parser.add_argument("--endpoint"); parser.add_argument("--force", action="store_true")
+    parser.add_argument('--check-history',action='store_true',help='Check three small historical responses and redact endpoint credentials')
     args = parser.parse_args()
     if (args.start is None) != (args.end is None): parser.error("--start and --end must be supplied together")
     if args.start and args.end and args.end < args.start: parser.error("--end must be on or after --start")
-    result = collect(args.repo.resolve(), args.start, args.end, args.endpoint, args.force) if args.start else probe(args.repo.resolve(), args.endpoint)
+    if args.check_history and args.start:parser.error('--check-history uses the frozen study dates and cannot be combined with --start/--end')
+    result = check_history(args.repo.resolve(),args.endpoint) if args.check_history else collect(args.repo.resolve(), args.start, args.end, args.endpoint, args.force) if args.start else probe(args.repo.resolve(), args.endpoint)
     print(json.dumps(result, indent=2))

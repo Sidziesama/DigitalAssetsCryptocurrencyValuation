@@ -1,11 +1,11 @@
 {
   "summary": {
     "status": "data_map_complete",
-    "files": 202,
+    "files": 203,
     "by_phase": {
       "00_foundation": 29,
       "01_classification": 64,
-      "02_valuation": 50,
+      "02_valuation": 51,
       "03_risk": 15,
       "04_stablecoin_deferred": 44
     },
@@ -320,6 +320,7 @@
         "crypto_hypothesis_test_catalog"
       ],
       "named_in_config": [
+        "crypto_h4_estimation.json",
         "crypto_phase1_research_map.json"
       ],
       "orphan": false
@@ -328,7 +329,7 @@
       "phase": "00_foundation",
       "file": "data_map.json",
       "kind": "summary",
-      "bytes": 69824,
+      "bytes": 72416,
       "written_by": [],
       "read_by": [],
       "named_in_config": [
@@ -418,6 +419,7 @@
       "named_in_config": [
         "crypto_h1_activity_expansion.json",
         "crypto_h1_activity_history.json",
+        "crypto_h4_estimation.json",
         "crypto_relative_valuation.json"
       ],
       "orphan": false
@@ -471,7 +473,9 @@
       "read_by": [
         "stablecoin_panel"
       ],
-      "named_in_config": [],
+      "named_in_config": [
+        "crypto_h4_estimation.json"
+      ],
       "orphan": false
     },
     {
@@ -1872,6 +1876,20 @@
       "read_by": [
         "crypto_hypothesis_test_catalog"
       ],
+      "named_in_config": [
+        "pipeline_stages.json"
+      ],
+      "orphan": false
+    },
+    {
+      "phase": "02_valuation",
+      "file": "crypto_h4_estimation.json",
+      "kind": "summary",
+      "bytes": 2199,
+      "written_by": [
+        "crypto_h4_estimation"
+      ],
+      "read_by": [],
       "named_in_config": [
         "pipeline_stages.json"
       ],

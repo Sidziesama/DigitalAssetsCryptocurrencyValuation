@@ -374,6 +374,11 @@
           "note": "Audits the frozen five-asset primary design and prohibits estimation until ETH and BNB histories are complete."
         },
         {
+          "module": "crypto_h4_estimation",
+          "args": [],
+          "note": "Runs the frozen H4 primary panel only after exact ETH and BNB staking histories and common outcomes pass all gates; otherwise emits an explicit blocked status."
+        },
+        {
           "module": "crypto_h8_breadth_pilot",
           "args": []
         },

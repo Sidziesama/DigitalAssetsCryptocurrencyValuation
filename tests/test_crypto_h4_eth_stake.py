@@ -4,7 +4,7 @@ import unittest
 from datetime import date
 from pathlib import Path
 
-from src.pipeline.crypto_h4_eth_stake import date_slot, load_local_env, normalize, provider_label, validate
+from src.pipeline.crypto_h4_eth_stake import check_history, date_slot, load_local_env, normalize, provider_label, validate
 
 
 def source():
@@ -37,6 +37,23 @@ class CryptoH4EthStakeTests(unittest.TestCase):
     def test_invalid_effective_balance_rejected(self):
         with self.assertRaises(ValueError):
             normalize({"data":[{"status":"active_slashed","validator":{"effective_balance":1}}]},date(2026,8,1),1,"x")
+
+    def test_history_probe_does_not_leak_secret_url_in_errors(self):
+        def failing(url):raise RuntimeError('secret-token https://archive.test/private')
+        result=check_history(Path.cwd(),'https://archive.test/secret-token',fetch=failing)
+        import json
+        self.assertNotIn('secret-token',json.dumps(result))
+        self.assertEqual(result['status'],'historical_access_not_verified')
+        self.assertEqual(len(result['checks']),3)
+
+    def test_history_probe_success_does_not_unlock_estimation(self):
+        result=check_history(Path.cwd(),'https://archive.test/token',fetch=lambda url:{'data':[{'index':'0'}],'finalized':True})
+        self.assertFalse(result['unblocks_h4'])
+        self.assertTrue(all(r['historical_validator_access'] for r in result['checks']))
+
+    def test_optimistic_historical_probe_is_rejected(self):
+        result=check_history(Path.cwd(),'https://archive.test/token',fetch=lambda url:{'data':[{'index':'0'}],'execution_optimistic':True})
+        self.assertEqual(result['status'],'historical_access_not_verified')
 
     def test_loads_only_named_local_endpoint_without_overwriting_environment(self):
         with tempfile.TemporaryDirectory() as folder:

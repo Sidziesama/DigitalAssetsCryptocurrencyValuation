@@ -4,6 +4,8 @@
 
 ## D1. Ethereum archival consensus source — blocks H4
 
+**25 October update:** The primary estimator and small historical-access checker are implemented and tested. Market/price inputs support 361 common analysis dates; BNB stake is complete at 362/362, ETH remains 0/362 and no local archive endpoint is configured. PublicNode returned 403, a ChainSafe checkpoint route returned 404, and Beaconcha.in requested an API key. None supplies the required dataset under current access. See `findings/2026-10-25-h4-access-and-execution-checkpoint.md`. Verify endpoint history and download limits before full collection.
+
 **Need:** An endpoint that serves historical Beacon validator states over the frozen common window.
 
 **Why:** H4 measures active effective balance. Validator count multiplied by 32 ETH is rejected because post-Pectra validators may have larger effective balances.

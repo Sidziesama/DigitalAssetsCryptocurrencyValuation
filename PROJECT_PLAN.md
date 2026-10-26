@@ -112,6 +112,8 @@ Existing stablecoin work is preserved but does not gate the active cryptocurrenc
 
 ### Checkpoint C — unblock H4
 
+The 25 October build completes the gated estimator and small historical-access checker. Exact ETH history remains missing (0/362); BNB is complete and other inputs support 361 common dates. No empirical H4 coefficient has been estimated. Source access is the remaining human decision; inspect `research/findings/2026-10-25-h4-access-and-execution-checkpoint.md`.
+
 - Configure an archive-capable Ethereum consensus endpoint.
 - Collect active effective balance over the frozen common window.
 - Run the locked ETH/BNB plus BTC/UNI/ARB panel only after the readiness gate passes.
@@ -153,8 +155,8 @@ No other classification decision is currently open.
 ```bash
 python -m src.pipeline.run_stages --repo . --list
 python -m src.pipeline.run_stages --repo . --offline
-python -m unittest discover -s tests                 # 388 tests
+python -m unittest discover -s tests                 # 398 tests
 git status --short                                   # empty after a committed rebuild
 ```
 
-The pipeline contains 97 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.
+The pipeline contains 98 registered commands in seven ordered stages. A test fails when a pipeline module is not registered.
