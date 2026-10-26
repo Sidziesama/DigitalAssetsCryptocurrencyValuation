@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "hypothesis": "H4",
+  "status": "frozen_before_h4_estimation",
+  "freeze_date": "2026-10-25",
+  "parent_design": "config/crypto_h4_analysis.json",
+  "market_input": "data/processed/00_foundation/market_daily_coinpaprika.csv",
+  "price_input": "data/processed/00_foundation/price_daily_defillama.csv",
+  "eth_input": "data/processed/01_classification/crypto_h4_eth_stake_daily.csv",
+  "bnb_input": "data/processed/00_foundation/crypto_h4_bnb_stake_daily.csv",
+  "predictor": "staked_share_lag1",
+  "predictor_definition": "Previous calendar day's active staked native units divided by circulating units inferred from that same day's CoinPaprika market cap / price. Structural controls are zero by design; missing positive-asset stake is never zero.",
+  "snapshot": "Exact active ETH effective balance at the parent's configured daily 12:00 UTC slot; BNB all-validator pool stake as already collected. No epoch-average, validator-count-times-32, deposit-contract-balance or actual-balance substitution.",
+  "outcome_definitions": {
+    "volume_to_market_cap": "CoinPaprika volume_24h_usd / market_cap_usd on outcome date.",
+    "realized_volatility_30d_annualized": "Population standard deviation of 30 consecutive USD log returns from DeFiLlama daily prices, ending on outcome date, times sqrt(365). Requires 31 consecutive prices.",
+    "drawdown_from_90d_high": "Current DeFiLlama USD price divided by maximum of the 90 consecutive calendar prices ending on outcome date, minus one. Requires all 90 prices."
+  },
+  "warmup": "Use archived pre-window DeFiLlama USD prices for 30/90-day outcome lookbacks. Do not backfill any missing day. First study day lacks a market denominator for the lag unless the preceding calendar day is actually observed.",
+  "controls": ["log_market_cap"],
+  "absorbed_control": {"btc_log_return": "Common across assets on each date and therefore exactly absorbed by date fixed effects; never fit it as an independently identified coefficient."},
+  "fixed_effects": ["asset", "date"],
+  "common_sample": "Use identical complete calendar dates for all five primary assets and all three outcomes, at least parent's minimum_common_days. Require complete valid ETH and BNB stake observations for every day in the parent window before any estimation.",
+  "estimator": "OLS after balanced-panel two-way demeaning; reject singular transformed design.",
+  "inference": "Null-imposed wild-cluster t bootstrap with Rademacher asset weights, enumerating all 32 assignments for five assets, with CR1 cluster covariance. Exact enumeration is not a finite-sample validity guarantee, particularly with only two stake-positive assets.",
+  "multiple_testing": "Benjamini-Hochberg correction across exactly three two-sided H4 outcome tests; report raw p and q without treating exploratory thresholds as confirmation.",
+  "uncertainty": "No calibrated confidence interval or causal interpretation. Report coefficient, effect per 1-percentage-point change in stake share, cluster standard error, 32-sign bootstrap p and BH q. Two-sided p-value grid is at least 2/32 = 0.0625 in nondegenerate cases.",
+  "case_study": "Legacy stkAAVE remains separate and is not estimated by this primary-panel command.",
+  "guardrails": [
+    "Do not run on partial ETH data or replace it with BNB-only inference.",
+    "Do not select outcomes, windows, controls or quote sources based on results.",
+    "Turnover is not executable market liquidity; trading volume, prices and staking can respond jointly to other forces.",
+    "ETH effective balance measures consensus weight; BNB pool totals use a different chain-specific measurement. Neither measures all inaccessible supply, and liquid staking can leave exposure tradeable."
+  ]
+}
